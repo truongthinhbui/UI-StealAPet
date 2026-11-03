@@ -1,0 +1,58 @@
+/* Pity concepts reuse the original Lucky Box rings, tracks, badges and icon bars.
+   Only placement changes to follow OPEN or the existing shovel control. */
+#tab-luckybox,#tab-dig{max-width:1200px;margin:12px auto;padding:0}
+#tab-luckybox .lbWrap,#tab-dig .lbWrap{max-width:1100px}
+#tab-luckybox .lbScene,#tab-dig .digScene{container-type:inline-size}
+.conceptTabs{margin-bottom:10px}
+.digDemoControls{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:8px 0;font-size:12px;color:#a8bfd4}
+.digDemoControls>span{margin-right:auto}
+.digDemoControls button{font-size:12px;padding:6px 10px;border-radius:6px}
+.activityHint{min-height:24px;margin:6px 0 10px;font-size:12px;color:#bed0e1}
+.activityHintDot{display:none}
+/* Shared native meter type and material. No enclosing HUD cards. */
+.pityMeter{position:absolute;z-index:3;pointer-events:none;color:#fff;font-size:clamp(6px,1cqw,12px);font-variant-numeric:tabular-nums;text-shadow:0 1px 3px #000,0 0 6px #000a}
+.pityMeterHeading{display:flex;align-items:center;justify-content:center;gap:.4em;margin-bottom:3px;line-height:1.2}
+.pityMeterHeading>span{font-size:1em;font-weight:700}
+.pityMeterCount{font-size:1em;font-weight:700;color:#fff}
+.pityMeterCaption{display:none}
+.pityMeterTrack{height:1.2em;min-height:5px;background:#061324cc;border:1px solid #fff9;border-radius:5px;overflow:hidden;box-shadow:0 1px 4px #0008}
+.pityMeterFill{height:100%;background:linear-gradient(90deg,var(--pity-color),#fff1b0);transition:width .4s ease;box-shadow:0 0 6px var(--pity-color)}
+/* Ring follows the existing circular action button, as in the original Lucky Box. */
+.pityMeter-ring{left:77.6%;top:59%;width:11.9%;height:22.45%}
+.lbScene .pityMeter-ring{left:58.35%;top:42%;width:7.3%;height:13.8%}
+.pityMeter-ring svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(-90deg);overflow:visible}
+.pityMeterRingTrack,.pityMeterRingFill{fill:none;stroke-width:5}
+.pityMeterRingTrack{stroke:#ffffff33}
+.pityMeterRingFill{stroke:var(--pity-color);stroke-linecap:round;stroke-dasharray:339.3;transition:stroke-dashoffset .4s,stroke .4s;filter:drop-shadow(0 0 3px var(--pity-color))}
+.pityMeter-ring .pityMeterHeading{position:absolute;left:85%;top:-5%;margin:0;padding:2px 4px;border:1px solid #fff9;border-radius:5px;background:var(--pity-color);text-shadow:0 1px 2px #0009;white-space:nowrap}
+.pityMeter-ring .pityMeterHeading>span,.pityMeter-side .pityMeterHeading>span{display:none}
+/* Vertical track and count reuse the bar beside OPEN. */
+.pityMeter-side{left:74.8%;top:61%;width:1.5%;height:17%}
+.lbScene .pityMeter-side{left:55.8%;top:42.8%;width:1.6%;height:12.1%}
+.pityMeter-side .pityMeterHeading{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);white-space:nowrap}
+.pityMeter-side .pityMeterTrack{width:100%;height:100%;display:flex;align-items:flex-end}
+.pityMeter-side .pityMeterFill{width:100%!important;height:calc(var(--pity-value,.7)*100%);background:linear-gradient(0deg,var(--pity-color),#fff1b0);transition:height .4s}
+/* Existing short horizontal bar beside the action. */
+.pityMeter-bar{left:66%;top:69%;width:10%}
+.lbScene .pityMeter-bar{left:46.3%;top:47.6%;width:8.5%}
+/* Original title-bar option; Dig attaches it just above its current progress. */
+.pityMeter-segments{left:42%;top:63.5%;width:17%}
+.lbScene .pityMeter-segments{left:39.5%;top:30%;width:17%}
+/* Original egg/icon bar, with each activity's existing icon asset. */
+.pityMeter-card{left:40%;top:52%;width:21%;padding-top:2.3em}
+.lbScene .pityMeter-card{left:39.5%;top:65%;width:21%}
+.pityNativeIcon{position:absolute;left:50%;top:0;transform:translateX(-50%);width:2em;height:2em;object-fit:contain;filter:drop-shadow(0 2px 3px #0009)}
+.pityMeter-card .pityMeterTrack,.pityMeter-compact .pityMeterTrack{border:1px solid #000;border-radius:999px;background:#2a2118}
+.pityMeter-card .pityMeterFill,.pityMeter-compact .pityMeterFill{background:linear-gradient(90deg,#7b2fbe,#c44fc0,#e8744a,#f3c348,#8fd14f)}
+/* Original no-icon bar: count sits directly on the track. */
+.pityMeter-compact{left:40%;top:62%;width:21%}
+.lbScene .pityMeter-compact{left:39.5%;top:73%;width:21%}
+.pityMeter-compact .pityMeterTrack{height:1.7em}
+.pityMeter-compact .pityMeterHeading{position:absolute;inset:0;margin:0;z-index:1}
+.pityMeterReady .pityMeterCount{color:#fff2a3}
+/* Keep the original dig progress and shovel art intact. */
+.digHit{inset:auto;left:78%;top:60%;width:11%;height:20%;border-radius:50%;background:transparent}
+.digFindResult{position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);z-index:6;font-size:clamp(7px,1cqw,12px);font-weight:700;text-align:center;text-shadow:0 2px 3px #000,0 0 6px #000;color:#fff2a3;opacity:0;pointer-events:none}
+.digFindResult.visible{opacity:1}
+@media(max-width:760px){.digDemoControls>span{display:none}.digDemoControls button{min-height:36px}.pityMeter{font-size:clamp(5px,1cqw,8px)}.activityHint{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.pityMeter *{animation:none!important;transition:none!important}}

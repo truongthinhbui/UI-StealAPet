@@ -1,0 +1,43 @@
+/* Reference visual refresh. Gameplay and reward state remain owned by the engine. */
+#scene .loginpanel{border-color:#e5f4ff;border-radius:12px;background:#eaf3ff}
+#scene .loginhero,#scene .loginpanel.withtabs .loginhero{height:306px;flex-basis:306px;background:#acd4ff url('apex-banner-937.png') center/100% 100% no-repeat;border-bottom:2px solid #e8f4ff}
+#scene .loginpanel.withtabs .loginhero{background-image:url('apex-banner-848.png')}
+#scene .loginhero::before,#scene .loginhero::after{display:none}
+#scene .herocopy{left:61%;padding:18px 20px;gap:12px;align-items:center;text-align:center}
+#scene .herocopy h2,#scene .loginpanel.withtabs .herocopy h2{font-size:58px;line-height:1.05;color:#fff1a6;text-shadow:-3px -3px 0 #142950,3px -3px 0 #142950,-3px 3px 0 #142950,3px 3px 0 #142950,0 5px 8px #274c84}
+#scene .herocopy p:first-of-type{font-size:30px;color:#fff;background:linear-gradient(90deg,#3779bd22,#3779bdaa,#3779bd22);border-radius:30px;padding:7px 17px;white-space:nowrap}
+#scene .herocopy p:last-of-type{font-size:20px;color:#295c92}
+#scene .apexRevealed .loginhero{background:radial-gradient(ellipse at 35% 48%,#fff0ba 0%,#c3e5ff 43%,#85bdff 100%)}
+#scene .apexRevealed .loginhero::before{display:block;left:10%;top:4%;width:48%;height:92%;background:url('apex-chick-revealed.png') center/contain no-repeat;filter:drop-shadow(0 0 22px #ffd86d)}
+#scene .apexRevealed .herocopy h2{font-size:39px}
+#scene .apexRevealed .herocopy p:first-of-type{font-size:24px;white-space:normal}
+#scene .logincards{padding:3px 3px 8px;gap:5px}
+#scene .logincard{position:relative;border:2px solid #eff7ff;border-bottom:12px solid #58b9de;border-radius:10px;background:linear-gradient(#bedbff,#e5f0ff)}
+#scene .logincard:nth-child(2){border-bottom-color:#ff7688}#scene .logincard:nth-child(3){border-bottom-color:#ffda60}#scene .logincard:nth-child(4){border-bottom-color:#b586ff}#scene .logincard:nth-child(5){border-bottom-color:#8bd650}#scene .logincard:nth-child(7){border-bottom-color:#ffa53d}
+#scene .logincard .day{font-size:23px;padding:6px 2px;background:#b6d6ff}
+#scene .logincard img,#scene .loginpanel.withtabs .logincard img{width:91px;height:84px;flex:0 0 84px;max-width:calc(100% - 6px);margin:3px 0;object-fit:contain}
+#scene .logincard .itemname{font-size:22px;line-height:25px}
+#scene .logincard .later{font-size:16px;margin:auto 0 2px}
+#scene .logincard button{font-size:25px;min-height:43px;margin:3px 3px 0;width:calc(100% - 6px);border-radius:10px;background:linear-gradient(#ffe575,#ffc52e);box-shadow:0 2px 0 #ce9319}
+#scene .logincard[data-reward-state='ready']{border-color:#ffdc62;border-bottom-color:#f8c546;box-shadow:0 0 0 2px #fff7c6}
+#scene .logincard[data-reward-state='locked']{background:linear-gradient(#c5ddfc,#dfebff);border-color:#eff7ff;color:#264f76}
+#scene .logincard[data-reward-state='locked'] .day{background:#b6d6ff;color:#264f76}
+#scene [data-reward-state='locked']>img:not(.lockimg){filter:none;opacity:1}
+#scene #gddMilestoneLayer .msrow>img:not(.lockimg){width:68px;height:68px;flex-basis:68px}
+#scene #gddMilestoneLayer .msrow{gap:9px;padding:5px 8px;background:#c7dfff;border-color:#dcecff;border-radius:11px}
+#scene #gddMilestoneLayer .msrow .label{font-size:21px;line-height:1.1}
+#scene #gddMilestoneLayer .msrow[data-reward-state='ready']{background:#fff0bd;border-color:#e8b12e}
+#scene #gddMilestoneLayer .msrow[data-reward-state='claimed']{background:#6d7e94;border-color:#8d9aa9}
+#scene #gddMilestoneLayer .msrow[data-reward-state='claimed']>img{filter:brightness(.52) saturate(.6)}
+#scene .apexCard::after{top:57px;font-size:38px}
+/* One shared background and identical character placement before/after reveal. */
+#scene .loginhero,#scene .loginpanel.withtabs .loginhero,#scene .apexRevealed .loginhero,#scene .apexRevealed.loginpanel.withtabs .loginhero{background:#acd4ff url('apex-background-clean.png') center/100% 100% no-repeat}
+#scene .loginhero::before,#scene .apexRevealed .loginhero::before{content:'';display:block;position:absolute;left:18%;top:8%;width:38%;height:84%;background:url('apex-chick-revealed.png') center/contain no-repeat;filter:brightness(0) drop-shadow(0 0 15px #ffce62)}
+#scene .apexRevealed .loginhero::before{filter:drop-shadow(0 0 15px #ffce62)}
+#scene .loginhero::after{content:'?';display:block;position:absolute;left:37%;top:50%;transform:translate(-50%,-50%);font-size:74px;font-weight:700;color:#fff7d2;text-shadow:0 2px 8px #a87827}
+#scene .apexRevealed .loginhero::after{display:none}
+#scene .apexCard:not([data-reward-state='claimed'])>img{filter:brightness(0);opacity:1}
+#scene .apexRevealed .apexCard:not([data-reward-state='claimed'])>img{filter:none}
+/* Center the chicken and mystery marker within the golden focal area. */
+#scene .loginhero::before,#scene .apexRevealed .loginhero::before{left:23%}
+#scene .loginhero::after{left:42%}
