@@ -62,11 +62,13 @@
   window.PityConcepts.render(root, level / 2, 'open', {level:level, label:(100 + level * 5) + '%'});
   root.querySelector('.activityFeedback').textContent = (message ? message + ' · ' : '') +
    'Next box: ' + odds + ' Mythic chance' + (level === 20 ? ' · Boost capped' : '');
+  var next = Array.from(rewardButtons).find(function(button) { return Number(button.dataset.boxReward) > opens; });
   rewardButtons.forEach(function(button) {
    var threshold = Number(button.dataset.boxReward);
    var received = claimed.has(threshold);
    button.disabled = received || opens < threshold;
-   button.textContent = received ? 'Claimed' : button.disabled ? 'Locked' : 'Claim';
+   button.textContent = received ? '✓ Claimed' : button.disabled ? (button === next ? 'Next reward' : 'Locked') : 'Claim';
+   button.closest('li').dataset.rewardState = received ? 'claimed' : button.disabled ? (button === next ? 'next' : 'locked') : 'ready';
   });
   renderLogo();
  }

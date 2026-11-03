@@ -6,6 +6,37 @@
  var logos = root.querySelectorAll('.luckBarRewardLogo');
  var icons = {25:'milestone-cash.png',50:'polish-dust.png',75:'milestone-cash.png',100:'luckybox-icon.png'};
  var pendingReward;
+ var effects = document.getElementById('secretLuckEffects');
+ var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+ function animateReward(element, frames, duration) {
+  if (!effects.checked || reducedMotion.matches || !element.getClientRects().length) return;
+  element.animate(frames, {duration:duration, easing:'cubic-bezier(.2,.75,.25,1)'});
+ }
+ function revealReward(element) {
+  animateReward(element, [
+   {transform:'scale(.72)', opacity:.55},
+   {transform:'scale(1.16)', opacity:1, offset:.65},
+   {transform:'scale(1)', opacity:1}
+  ], 360);
+ }
+ function celebrateClaim(name) {
+  logos.forEach(function(logo) {
+   if (!effects.checked || reducedMotion.matches || !logo.getClientRects().length) return;
+   var burst = document.createElement('span');
+   burst.className = 'luckClaimBurst';
+   burst.setAttribute('aria-hidden', 'true');
+   burst.textContent = '✓ ' + name;
+   logo.parentElement.appendChild(burst);
+   burst.style.left = (logo.offsetLeft + logo.offsetWidth / 2) + 'px';
+   burst.style.top = logo.offsetTop + 'px';
+   var animation = burst.animate([
+    {transform:'translate(-50%, 0) scale(.82)', opacity:0},
+    {transform:'translate(-50%, -18px) scale(1.08)', opacity:1, offset:.25},
+    {transform:'translate(-50%, -36px) scale(1)', opacity:0}
+   ], {duration:780, easing:'ease-out'});
+   animation.onfinish = function() { burst.remove(); };
+  });
+ }
  logos.forEach(function(logo) {
   logo.addEventListener('click', function() {
    if (pendingReward) pendingReward.click();
@@ -13,6 +44,7 @@
  });
 
  function renderRewardLogos() {
+  var previousReward = pendingReward;
   pendingReward = rewards.find(function(button) { return !button.disabled; });
   var name = pendingReward ? 'Claim ' + pendingReward.previousElementSibling.textContent : 'Lucky Box';
   var threshold = pendingReward?.dataset.luckReward;
@@ -26,6 +58,7 @@
    var label = logo.querySelector('.boxRewardLogoLabel');
    label.textContent = name;
    label.hidden = !pendingReward;
+   if (pendingReward && pendingReward !== previousReward) revealReward(logo.querySelector('img'));
   });
  }
  var rewardStatus = document.getElementById('luckRewardStatus');
@@ -75,11 +108,16 @@
  }
 
  function renderRewards(value) {
+  var next = Array.from(rewards).find(function(button) { return Number(button.dataset.luckReward) > value; });
   rewards.forEach(function(button) {
    var threshold = Number(button.dataset.luckReward);
    var received = claimed.has(threshold);
    button.disabled = received || value < threshold;
-   button.textContent = received ? 'Claimed' : button.disabled ? 'Locked' : 'Claim';
+   button.textContent = received ? '✓ Claimed' : button.disabled ? (button === next ? 'Next reward' : 'Locked') : 'Claim';
+   var card = button.closest('li');
+   var previousState = card.dataset.rewardState;
+   card.dataset.rewardState = received ? 'claimed' : button.disabled ? (button === next ? 'next' : 'locked') : 'ready';
+   if (card.dataset.rewardState === 'ready' && previousState !== 'ready') revealReward(card.querySelector('.luckRewardIcon'));
   });
   renderRewardLogos();
   renderKnots(value);
@@ -90,7 +128,13 @@
    if (claimed.has(threshold) || Number(slider.value) < threshold) return;
    claimed.add(threshold);
    renderRewards(Number(slider.value));
-   rewardStatus.textContent = 'Claimed ' + button.previousElementSibling.textContent + '.';
+   var name = button.previousElementSibling.textContent;
+   rewardStatus.textContent = 'Claimed ' + name + '.';
+   celebrateClaim(name);
+   animateReward(button.closest('li'), [
+    {boxShadow:'0 0 0 0 #ace8bcaa'},
+    {boxShadow:'0 0 0 8px #ace8bc00'}
+   ], 460);
   });
  });
  var stages=[{at:0,color:'#75bc75',light:'#c1efad',name:'Growing'},{at:35,color:'#59b9ed',light:'#bdefff',name:'Rare'},{at:60,color:'#ae79ef',light:'#e5c4ff',name:'Epic'},{at:85,color:'#f4a44c',light:'#ffe0a2',name:'Legendary'},{at:100,color:'#ffd143',light:'#fff5bb',name:'MAX'}];
