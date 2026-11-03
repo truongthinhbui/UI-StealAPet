@@ -63,6 +63,30 @@
  }
  var rewardStatus = document.getElementById('luckRewardStatus');
  var meters = root.querySelectorAll('.secretLuck, .luckConcept');
+ var previousValue;
+ var lastStepTime = -Infinity;
+ function animateLuckStep(value) {
+  var increased = previousValue !== undefined && value > previousValue;
+  previousValue = value;
+  if (!increased) return;
+  var now = performance.now();
+  if (now - lastStepTime < 240) return;
+  lastStepTime = now;
+  meters.forEach(function(meter) {
+   var count = meter.querySelector('.secretLuckPercent');
+   var track = meter.querySelector('.secretLuckFill, .luckDial, .luckCells, .luckMilestoneTrack, .luckMiniTrack');
+   animateReward(count, [
+    {transform:'scale(1)'},
+    {transform:'scale(1.14)', offset:.35},
+    {transform:'scale(1)'}
+   ], 240);
+   animateReward(track, [
+    {filter:'brightness(1)'},
+    {filter:'brightness(1.32)', offset:.35},
+    {filter:'brightness(1)'}
+   ], 220);
+  });
+ }
  var knots = [];
  meters.forEach(function(meter) {
   var dial = meter.querySelector('.luckDial');
@@ -144,6 +168,7 @@
   var low=stages[0],high=stages[1];for(var i=1;i<stages.length;i++){high=stages[i];if(value<=high.at)break;low=high}var t=(value-low.at)/(high.at-low.at),color=blend(low.color,high.color,t),light=blend(low.light,high.light,t),stage=value===100?'Boost capped':low.name;
   document.getElementById('secretLuckStage').textContent=stage;root.style.setProperty('--luck-color',color);
   root.querySelectorAll('.secretLuck, .luckConcept').forEach(function(bar){bar.style.setProperty('--fill',value+'%');bar.style.setProperty('--luck-color',color);bar.style.setProperty('--luck-light',light);bar.style.setProperty('--luck-glow',color+'99');bar.style.setProperty('--luck-strength',(.12+value/150).toFixed(2));bar.classList.toggle('luckNearFull',value>=85);bar.classList.toggle('luckEmpty',value===0);bar.setAttribute('aria-valuenow',value);bar.setAttribute('aria-valuetext',(100+value)+'% Luck Boost, '+stage);bar.querySelector('.secretLuckPercent').textContent=(100+value)+'%';bar.querySelectorAll('[data-threshold]').forEach(function(marker){marker.classList.toggle('reached',value>=Number(marker.dataset.threshold))})})
+  animateLuckStep(value);
  }
 
  function stop(){if(frame!==null)cancelAnimationFrame(frame);frame=null;play.textContent='Play fill';play.setAttribute('aria-pressed','false')}
