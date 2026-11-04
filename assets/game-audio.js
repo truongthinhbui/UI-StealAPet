@@ -12,6 +12,7 @@
   bonus:{notes:[880,1175,1568,1760],duration:.15,level:.09,type:'triangle',priority:3},
   break:{notes:[260,520,1040],duration:.09,level:.10,type:'triangle',priority:3},
   miss:{notes:[220,165],duration:.12,level:.08,type:'sine',priority:1},
+  fail:{notes:[330,247,165],duration:.20,level:.10,type:'triangle',priority:2},
   catch:{notes:[523,659,784,1047,1319,1568],duration:.28,level:.11,type:'triangle',priority:4}
  };
  function unlock(){

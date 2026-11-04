@@ -9,6 +9,7 @@
     tap:{pattern:16,priority:0}, good:{pattern:40,priority:1},
     excellent:{pattern:[30,45,70],priority:2}, bonus:{pattern:[25,30,40,45,75],priority:3},
     break:{pattern:[35,45,80],priority:3}, miss:{pattern:[20,60,20],priority:1},
+    fail:{pattern:[30,60,45],priority:2},
     catch:{pattern:[45,60,65,85,95],priority:4}
   };
   let hapticsEnabled = true, hapticUntil = 0, hapticPriority = -1;
@@ -168,6 +169,29 @@
   const circularEffects = new Set();
   const circularSpeed = () => debugSettings.values[2] || .75 + Math.random() * .5;
   const qtePips = Array.from(root.querySelectorAll('.qtePips i'));
+  const qteLuckChip=root.querySelector('.qteLuckChip');
+  let qteLuckMultiplier=1;
+  function qteHitPoint(){
+    const angle=game.marker*Math.PI*2;
+    const radius=root.querySelector('.fishingRing').clientWidth*.432;
+    return {x:50+Math.sin(angle)*radius/scene.clientWidth*100,y:44-Math.cos(angle)*radius/scene.clientHeight*100};
+  }
+  function luckMotes(point){
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    const dx=(50-point.x)/100*scene.clientWidth;
+    const dy=(71-point.y)/100*scene.clientHeight+qteLuckChip.clientHeight/2;
+    for(let index=0;index<6;index++){
+      const mote=document.createElement('b');mote.className='qteLuckMote';mote.textContent='✦';
+      mote.style.left=point.x+'%';mote.style.top=point.y+'%';scene.appendChild(mote);
+      const motion=mote.animate([
+        {transform:'translate(-50%,-50%) scale(.4)',opacity:0},
+        {transform:`translate(calc(-50% + ${dx*.3+(index-2.5)*8}px),calc(-50% + ${dy*.2-25}px)) scale(1.15)`,opacity:1,offset:.3},
+        {transform:`translate(calc(-50% + ${dx}px),calc(-50% + ${dy}px)) scale(.3)`,opacity:0}
+      ],{duration:620,delay:index*45,easing:'cubic-bezier(.2,.65,.3,1)'});
+      sharedEffects.add(motion);
+      const cleanup=()=>{sharedEffects.delete(motion);mote.remove();};motion.onfinish=cleanup;motion.oncancel=cleanup;
+    }
+  }
   const catchPercent = root.querySelector('.catchProgress strong');
   let qteMotion;
   const distanceEffects = new Set();
@@ -484,7 +508,7 @@
     'Tap when the fish enters either green zone. Reel the distance down to 0 m before 40 seconds run out.',
     'Hold to lift the green zone. Release to lower it. Keep the fish inside.',
     'Hold to reel, then release before tension reaches its limit.',
-    'Tap in the green arc three times to catch the fish.'
+    'Tap green for a hit. Gold raises Luck to x2, x3, then x4. Land 3 hits to catch the fish.'
   ];
   const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(max, value));
   let mode = 0, state = 'idle', held = false, frame, timer, game;
@@ -525,7 +549,10 @@
   }
 
   function finish(caught, reason) {
-    haptic(caught ? 'catch' : reason === 'LINE BROKE' ? 'break' : 'miss');
+    if(caught&&mode===6){
+      qteLuckMultiplier=1;game.qteLuck=1;qteLuckChip.textContent='x1 LUCK';qteLuckChip.hidden=true;
+    }
+    haptic(caught ? 'catch' : mode===6 ? 'fail' : reason === 'LINE BROKE' ? 'break' : 'miss');
     state = 'result';
     held = false;
     holdPress = false;
@@ -609,7 +636,7 @@
     game = {age:0, last:performance.now(), phase:0, tapping:false, phaseTime:0, progress:0, idleTime:0,
       position:.42, tension:0, distance:mode === 3 ? 35 : 25, zone:.60, fish:.48, marker:0, hits:0, misses:0, combo:0,
       roundAge:0, roundPause:0, timingScale:1.65, roundSpeed:circularSpeed(), distancePhase:0, distanceFreezeUntil:0,
-      qteArcStart:Math.random(), knots:[], bonusScore:0};
+      qteArcStart:Math.random(), qteLuck:qteLuckMultiplier, knots:[], bonusScore:0};
     if (mode === 3) [0, 1].forEach(spawnDistanceKnot);
     if (mode === 3 || mode === 6) status.textContent='';
     if (mode === 6) {
@@ -667,8 +694,9 @@
     if (![2, 3, 6].includes(mode)) return;
     const [start, end] = mode === 3 ? (game.marker < .55 ? [.18,.48] : [.61,.82]) : [.16,.36];
     const arcOffset = mode === 6 ? (game.marker - game.qteArcStart + 1) % 1 : 0;
-    const hit = mode === 6 ? arcOffset <= .20 : game.marker >= start && game.marker <= end;
-    const perfect = hit && (mode === 6 ? Math.abs(arcOffset - .10) : Math.abs(game.marker - (start + end) / 2)) < .045;
+    const gold = mode === 6 && arcOffset >= .45 && arcOffset <= .53;
+    const hit = mode === 6 ? arcOffset <= .20 || gold : game.marker >= start && game.marker <= end;
+    const perfect = mode===6 ? gold : hit && Math.abs(game.marker - (start + end) / 2) < .045;
     const distanceBefore = game.distance;
     if (hit) {
       game.combo++;
@@ -708,17 +736,37 @@
       }
     }
     if (mode === 6) {
-      scene.dataset.qteHit = hit ? 'hit' : 'miss';
-      game.qteFeedbackUntil=game.age+(hit?.45:.65);
+      scene.dataset.qteHit = gold ? 'gold' : hit ? 'hit' : 'miss';
+      game.qteFeedbackUntil=game.age+(gold? .85 : hit? .45 : .65);
+      if(gold){
+        qteLuckMultiplier=Math.min(4,qteLuckMultiplier+1);game.qteLuck=qteLuckMultiplier;
+        qteLuckChip.hidden=false;
+        qteLuckChip.textContent='x'+qteLuckMultiplier+' LUCK';
+        status.textContent='GOLD!';impactPunch(qteLuckChip,true);
+        if(game.hits<3)luckMotes(qteHitPoint());impactPunch(status,true);
+      }
       qtePips.forEach((pip, index) => pip.classList.toggle('is-filled', index < game.hits));
-      haptic(hit ? perfect ? 'excellent' : 'good' : 'miss');
-      if (hit) hitJuice(50, 44, perfect);
-      if(hit)impactPunch(root.querySelector('.fishingRing'),perfect);
-      if(hit)fireworks(perfect?'excellent':'hit');
+      haptic(gold ? 'bonus' : hit ? 'good' : 'fail');
+      if (hit) {
+        const point=qteHitPoint();hitJuice(point.x,point.y,gold);
+        impactPunch(qtePips[Math.max(0,game.hits-1)],gold);
+      }
+      if(hit)impactPunch(root.querySelector('.fishingRing'),gold);
+      if(hit&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
+        const contact=document.createElement('span');contact.className='qteContact'+(gold?' qteContact-gold':'');
+        contact.style.transform='rotate('+(game.marker*360)+'deg)';contact.appendChild(document.createElement('b'));
+        root.querySelector('.fishingRing').appendChild(contact);
+        const contactMotion=contact.animate([{opacity:1},{opacity:0}],{duration:gold?500:280,easing:'ease-out'});
+        sharedEffects.add(contactMotion);
+        const cleanContact=()=>{sharedEffects.delete(contactMotion);contact.remove();};
+        contactMotion.onfinish=cleanContact;contactMotion.oncancel=cleanContact;
+        impactPunch(root.querySelector('.qteFishIcon'),gold);
+      }
+      if(gold)fireworks('excellent');
       if(!hit)badFeedback(root.querySelector('.qteCenter'));
       if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
         qteMotion?.cancel();
-        qteMotion = root.querySelector('.qteCenter').animate([{scale:.94},{scale:1.05,offset:.3},{scale:1}],{duration:240,easing:'ease-out'});
+        qteMotion = root.querySelector('.qteCenter').animate([{scale:.97},{scale:gold?1.10:1.025,offset:.3},{scale:1}],{duration:gold?320:180,easing:'cubic-bezier(.16,1,.3,1)'});
       }
       if (hit && game.hits < 3) {
         game.qteArcStart = (game.qteArcStart + .25 + Math.random() * .5) % 1;
@@ -902,6 +950,7 @@
     if(!action)return;
     if(action==='restart'){reset();startChallenge();}
     if(action==='defaults'){
+      qteLuckMultiplier=1;qteLuckChip.textContent='x1 LUCK';qteLuckChip.hidden=true;
       debugSettings.speed=1;
       Object.assign(debugSettings.values,{0:5,2:0,3:2.3,4:.30,6:2.25});
       tapsPerJoint=5;jointCount.value='3';jointThickness.value='mixed';buildJoints();

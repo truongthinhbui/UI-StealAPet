@@ -25,8 +25,18 @@
 .catchProgress strong{color:var(--revival-ink)}
 .catchProgress>div{background:#b9d5f2;box-shadow:inset 0 1px 3px #709aca55}
 .catchProgress i{background:linear-gradient(90deg,#f9c23b,#ffe782);box-shadow:inset 0 1px #fff5c7}
-.fishingScene[data-mode="6"] .fishingRing{background:conic-gradient(from var(--ring-start,57.6deg),#0bc77a 0%,#50ffad 10%,#0bc77a 20%,#b4d4f7 20%);mask:radial-gradient(farthest-side,transparent 78%,#000 79% 97%,transparent 98%)}
-.fishingScene[data-mode="6"] .fishingRing i{background:conic-gradient(transparent 0 var(--angle,0deg),#fff1a6 0 calc(var(--angle,0deg) + 5deg),transparent 0)}
+.fishingScene[data-mode="6"] .fishingRing{background:url('qte-reel-background.png') center/108% 108% no-repeat;mask:none;overflow:visible}
+.fishingScene[data-mode="6"] .fishingRing::before{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(from var(--ring-start,57.6deg),#0bc77a 0%,#50ffad 10%,#0bc77a 20%,transparent 20%);mask:radial-gradient(farthest-side,transparent 72.3%,#000 72.8% 99.8%,transparent 100%)}
+.fishingScene[data-mode="6"] .fishingRing::after{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(from var(--ring-start,57.6deg),transparent 0% 45%,#ffc02b 45%,#fff29a 49%,#ffc02b 53%,transparent 53%);mask:radial-gradient(farthest-side,transparent 74%,#000 74.5% 99%,transparent 99.5%);pointer-events:none}
+.fishingScene[data-mode="6"] .fishingRing i{background:none;transform:rotate(var(--angle,0deg));will-change:transform;z-index:2}
+.fishingScene[data-mode="6"] .fishingRing i::before{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(transparent 0deg 330deg,#e3318a00 330deg,#e3318a66 352deg,#e3318acc 360deg);mask:radial-gradient(farthest-side,transparent 73%,#000 73.5% 99%,transparent 100%)}
+.qteFishIcon{display:none}
+.fishingScene[data-mode="6"] .qteFishIcon{display:block;position:absolute;left:50%;top:6.8%;translate:-50% -50%;width:clamp(24px,4cqw,48px);height:auto;overflow:visible;filter:drop-shadow(0 2px 2px #193d67aa)}
+.qteContact{--contact:#8dffd0;position:absolute;inset:0;border-radius:50%;pointer-events:none;z-index:3}
+.qteContact-gold{--contact:#ffe68b}
+.qteContact b{position:absolute;left:50%;top:6.8%;translate:-50% -50%;width:4cqw;aspect-ratio:1;border:.25cqw solid var(--contact);border-radius:50%;box-shadow:0 0 .7cqw var(--contact);animation:qteContactPop .35s ease-out both}
+@keyframes qteContactPop{from{scale:.3;opacity:1}to{scale:1.7;opacity:0}}
+@media(prefers-reduced-motion:reduce){.qteContact{display:none}.fishingScene[data-mode="6"] .fishingRing i::before{display:none}}
 .fishingScene[data-mode="6"] .qteCenter{background:linear-gradient(155deg,#f4f8ff,#d6e8ff);border:.25cqw solid var(--revival-edge);box-shadow:0 .3cqw .7cqw #194c8255;color:var(--revival-ink);overflow:hidden;text-shadow:none}
 .qteCenter>span{background:linear-gradient(100deg,#2874ce,#55a6ed);color:white;align-self:center;width:84%;text-align:center;border-radius:.4cqw;padding:.6cqw 0;font-weight:700;letter-spacing:.04em}
 .qteCenter{text-align:center}
@@ -113,3 +123,27 @@
 .fishingScene[data-mode="6"][data-qte-hit="miss"] .qteCenter{border-color:#ee947f;box-shadow:0 0 0 .2cqw #ffdfd3,0 0 1.5cqw #ed8d7166}
 @keyframes badMarkPop{0%{scale:.45;opacity:0}30%{scale:1.2;opacity:1}65%{scale:1;opacity:1}100%{scale:1;opacity:0}}
 @media(prefers-reduced-motion:reduce){.badMark{animation:none}}
+.fishingScene[data-mode="6"][data-qte-hit="gold"] .qteCenter{border-color:#ffdd65;box-shadow:0 0 0 .2cqw #fff2b8,0 0 2cqw #ffd052b3}
+.fishingScene[data-mode="6"][data-qte-hit="gold"]:not([data-caught]) .fishingFeedback{color:#765119;background:#fff0bd;border:1px solid #ffe18b;border-radius:.7cqw;padding:.35em .8em;box-shadow:0 0 1cqw #ffd65a66;text-shadow:none;letter-spacing:.03em;font-size:clamp(14px,2cqw,24px);font-weight:700}
+@media(max-width:600px){.qteCenter small{font-size:9px}}
+.qteLuckChip{display:none;position:absolute;left:50%;top:71%;translate:-50% 0;color:#176b42;background:#e1f7e9;border:1px solid #8bd5a8;border-radius:.7cqw;padding:.35em .8em;box-shadow:0 .15cqw .4cqw #255e4733;font:700 clamp(14px,2cqw,24px) 'GFF Latin',Arial,sans-serif;letter-spacing:.03em;pointer-events:none;z-index:5;white-space:nowrap}
+.fishingScene[data-mode="6"] .qteLuckChip{display:block}
+.qteLuckChip[hidden]{display:none!important}
+.fishingScene[data-mode="6"] .fishingFeedback{top:14%!important}
+/* The supplied reel artwork is the face; keep only TAP and the three marks above it. */
+.fishingScene[data-mode="6"] .qteCenter{background:transparent;border:0;box-shadow:none;color:#285b8a}
+.fishingScene[data-mode="6"][data-qte-hit] .qteCenter{box-shadow:none}
+.fishingScene[data-mode="6"] .qtePips i{background:#a4bfd7;border-color:#739abf}
+.fishingScene[data-mode="6"] .qtePips i.is-filled{background:#ffd65a;border-color:#fff3c4;box-shadow:0 0 .6cqw #ffe296}
+.fishingScene[data-mode="6"] .qtePips i{box-shadow:inset 0 1px 2px #5d81aa55;transition:background .15s,box-shadow .15s}
+.fishingScene[data-mode="6"] .qteCenter>strong{letter-spacing:.08em;text-shadow:0 1px #f5fbff;font-weight:800}
+.fishingScene[data-mode="6"] .qteFishIcon{filter:drop-shadow(0 2px 2px #193d67aa) drop-shadow(0 0 .15cqw #fff)}
+.fishingScene[data-mode="6"][data-qte-hit="hit"] .qteFishIcon{filter:drop-shadow(0 0 .6cqw #7bf2ba) drop-shadow(0 2px 2px #193d67aa)}
+.fishingScene[data-mode="6"][data-qte-hit="gold"] .qteFishIcon{filter:drop-shadow(0 0 .9cqw #ffe49b) drop-shadow(0 0 .25cqw #fff7d1)}
+.fishingScene[data-mode="6"][data-qte-hit="gold"] .fishingRing::after{filter:brightness(1.15) drop-shadow(0 0 .35cqw #ffe084)}
+.qteLuckMote{position:absolute;z-index:9;color:#ffe482;font:700 clamp(12px,1.7cqw,22px)/1 Arial;text-shadow:0 0 .4cqw #fff4bb,0 1px 3px #7b592c;pointer-events:none;will-change:transform,opacity}
+.fishingScene[data-mode="6"][data-qte-hit="gold"] .qteLuckChip{border-color:#57bd81;box-shadow:0 0 0 .12cqw #ddffe8,0 .2cqw .6cqw #34895b55}
+.fishingScene[data-mode="6"][data-qte-hit="hit"] .fishingTap::before,.fishingScene[data-mode="6"][data-qte-hit="gold"] .fishingTap::before{content:'';position:absolute;inset:0;border:2px solid #b4f5d0;border-radius:50%;pointer-events:none;animation:qteButtonCue .35s ease-out both}
+.fishingScene[data-mode="6"][data-qte-hit="gold"] .fishingTap::before{border-color:#ffe59e;box-shadow:0 0 1cqw #ffd55f88}
+@keyframes qteButtonCue{from{scale:.9;opacity:.9}to{scale:1.2;opacity:0}}
+@media(prefers-reduced-motion:reduce){.qteLuckMote,.fishingScene[data-mode="6"] .fishingTap::before{display:none}.fishingScene[data-mode="6"] .qtePips i{transition:none}}
