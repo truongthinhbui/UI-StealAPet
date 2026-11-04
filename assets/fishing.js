@@ -2,6 +2,61 @@
   'use strict';
   const root = document.getElementById('tab-fishing');
   const scene = root.querySelector('.fishingScene');
+  const viewport = root.querySelector('.fishingViewport');
+  const rotateButton = root.querySelector('.fishingRotate');
+  const fullscreenButton = root.querySelector('.fishingFullscreen');
+  // Unsupported browsers simply keep the visual feedback.
+  function haptic(kind = 'tap') {
+    if (document.hidden || typeof navigator.vibrate !== 'function') return;
+    try {
+      navigator.vibrate(kind === 'break' ? [35, 25, 65] : 12);
+    } catch {
+      // Device or browser policies may disable vibration.
+    }
+  }
+
+  function setFullscreen(enabled) {
+    viewport.toggleAttribute('data-immersive', enabled);
+    document.documentElement.classList.toggle('fishingImmersive', enabled);
+    fullscreenButton.setAttribute('aria-pressed', String(enabled));
+    fullscreenButton.textContent = enabled ? 'Exit fullscreen' : 'Fullscreen';
+  }
+
+  rotateButton.addEventListener('click', () => {
+    const rotated = viewport.toggleAttribute('data-rotated');
+    rotateButton.setAttribute('aria-pressed', String(rotated));
+    rotateButton.textContent = rotated ? 'Reset rotation' : 'Rotate';
+  });
+
+  fullscreenButton.addEventListener('click', async () => {
+    if (viewport.hasAttribute('data-immersive')) {
+      setFullscreen(false);
+      if (document.fullscreenElement === viewport) await document.exitFullscreen();
+      return;
+    }
+    setFullscreen(true);
+    try {
+      await viewport.requestFullscreen?.();
+    } catch {
+      // Use the fixed viewport when native fullscreen is unavailable.
+    }
+  });
+
+  document.addEventListener('fullscreenchange', () => {
+    if (!document.fullscreenElement) setFullscreen(false);
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && viewport.hasAttribute('data-immersive') && !document.fullscreenElement) {
+      setFullscreen(false);
+      fullscreenButton.focus();
+    }
+  });
+
+  for (const eventName of ['contextmenu', 'selectstart', 'dragstart']) {
+    scene.addEventListener(eventName, event => event.preventDefault());
+  }
+
   const button = root.querySelector('.fishingTap');
   const status = root.querySelector('.fishingFeedback');
   const title = root.querySelector('.fishingHud strong');
@@ -59,6 +114,7 @@
       const threshold = Number(joint.dataset.progress);
       if (progress < threshold + jointHalfWidth(index) || joint.classList.contains('is-broken')) return;
       joint.classList.add('is-broken');
+      haptic('break');
       if (!debris || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       const [x, y, edge] = rodEdge(threshold);
       for (const direction of [-1, 1]) {
@@ -88,6 +144,7 @@
   let mode = 0, state = 'idle', held = false, frame, timer, game;
 
   function finish(caught, reason) {
+    if (reason === 'LINE BROKE') haptic('break');
     state = 'result';
     held = false;
     holdPress = false;
@@ -289,6 +346,7 @@
   button.addEventListener('click', tap);
   button.addEventListener('pointerdown', event => {
     if (!event.isPrimary || event.button !== 0) return;
+    if (state !== 'result') haptic();
     held = state === 'active';
     holdPress = held && mode === 0 && !game.tapping;
     button.setPointerCapture(event.pointerId);

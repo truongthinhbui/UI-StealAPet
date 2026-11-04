@@ -209,6 +209,8 @@ html[data-smooth] #scene .today{display:none!important}#scene .taskGuideButton{w
  <div class="fishingModes" role="group" aria-label="Fishing mechanics"><button type="button" data-fishing-mode="0" aria-pressed="true">1. Hold / Tap</button><button type="button" data-fishing-mode="1" aria-pressed="false">2. Tug-of-War</button><button type="button" data-fishing-mode="2" aria-pressed="false">3. Circular Timing</button><button type="button" data-fishing-mode="3" aria-pressed="false">4. Distance Timing</button><button type="button" data-fishing-mode="4" aria-pressed="false">5. Catch Zone</button><button type="button" data-fishing-mode="5" aria-pressed="false">6. Tension</button><button type="button" data-fishing-mode="6" aria-pressed="false">7. Simple QTE</button></div>
  <p class="fishingInstructions"></p>
  <div class="fishingDebug"><label for="fishingJointCount">Debug · Joints</label><select id="fishingJointCount"><option value="1">1 joint</option><option value="2">2 joints</option><option value="3" selected>3 joints</option><option value="4">4 joints</option><option value="5">5 joints</option></select><label for="fishingJointThickness">Thickness</label><select id="fishingJointThickness"><option value="mixed">Mixed</option><option value="thin">Thin</option><option value="thick">Thick</option><option value="alternating">Alternating</option><option value="rising">Increasing</option></select></div>
+ <div class="fishingViewport">
+  <div class="fishingViewControls"><button type="button" class="fishingRotate" aria-pressed="false">Rotate</button><button type="button" class="fishingFullscreen" aria-pressed="false">Fullscreen</button></div>
  <div class="fishingScene">
   <img src="assets/fishing-scene-clean.png" alt="Fishing game scene">
   <div class="fishingHud" aria-hidden="true"><strong></strong><div class="fishingTrack"><i class="fishingZone"></i><i class="fishingMarker"></i></div><small></small></div>
@@ -235,6 +237,7 @@ html[data-smooth] #scene .today{display:none!important}#scene .taskGuideButton{w
   <div class="fishingRing" aria-hidden="true"><i></i></div>
   <button class="fishingTap" type="button" aria-label="Tap to fish"></button>
   <span class="fishingFeedback" role="status"></span>
+ </div>
  </div>
 </div>
 </main><link rel="stylesheet" href="assets/fishing.css"><script src="assets/fishing.js"></script>
