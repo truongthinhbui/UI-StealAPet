@@ -23,7 +23,7 @@ body,button,#scene,#scene *,nav button{font-family:'GFF Latin',Arial,sans-serif!
 .prototypeTabs{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px;padding:0;list-style:none;border-bottom:2px solid #24405c}.prototypeTabs button{border:1px solid #2d4f70;border-bottom:none;border-radius:8px 8px 0 0;background:#16283b;color:#9fc4e8;padding:10px 18px;font:15px system-ui;cursor:pointer}.prototypeTabs button.active{background:#111e2c;color:#fff;border-color:#82b9ea;font-weight:600}.prototypeTabs button:not(.active):hover{background:#1c3350}.prototypePane{display:none}.prototypePane.active{display:block}.prototypePane.placeholder{padding:40px 16px;color:#9fc4e8;text-align:center;font:16px system-ui}
 .lbSubTabs{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 12px;padding:0;list-style:none}.lbSubBtn{border:1px solid #3a618a;border-radius:20px;background:#1c3350;color:#bcdcfa;padding:7px 14px;font:13px system-ui;cursor:pointer}.lbSubBtn.active{background:#2874ce;color:#fff;border-color:#82b9ea}.lbSubBtn:not(.active):hover{background:#24415f}
 .lbWrap{max-width:900px;margin:0 auto}.lbSubPane{display:none}.lbSubPane.active{display:block}
-.panelFrame{width:100%;max-width:900px;aspect-ratio:1759/932;margin:auto;border-radius:10px;overflow:hidden;background:#0a1620;display:flex;align-items:center;justify-content:center}
+.panelFrame{width:100%;max-width:1100px;aspect-ratio:1844/853;margin:auto;border-radius:10px;overflow:hidden;background:#0a1620;display:flex;align-items:center;justify-content:center}
 .panelFrame #viewport{width:100%;flex-shrink:0}
 .lbScene{position:relative;width:100%;aspect-ratio:1759/932;margin:auto;border-radius:10px;overflow:hidden;background-color:#0a1620;font-family:system-ui,Arial,sans-serif;color:#fff;--pity-c1:#5ab8ff;--pity-c2:#8fd4ff;--pity-glow:#5ab8ff99;--pity-pulse-dur:2.4s;--pity-pulse-scale:1}
 .lbSceneBg,.digSceneBg{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;pointer-events:none;z-index:0}
@@ -206,7 +206,7 @@ html[data-smooth] #scene .today{display:none!important}#scene .taskGuideButton{w
 </div>
 <details class="luckReference"><summary>Design references</summary><ul><li><a href="https://developer.apple.com/design/human-interface-guidelines/progress-indicators">Apple HIG · Linear and circular progress</a></li><li><a href="https://grafana.com/docs/grafana/latest/visualizations/panels-visualizations/visualizations/gauge/">Grafana · Arc gauge and thresholds</a></li><li><a href="https://grafana.com/docs/grafana/latest/visualizations/panels-visualizations/visualizations/bar-gauge/">Grafana · Segmented bar gauge</a></li></ul></details><p class="luckDesignNote" id="secretLuckExplanation" role="status">Luck Boost caps at a 3% Mythic chance. Open Milestones to claim separate bonus rewards.</p></section>
 <div id="tab-fishing" class="prototypePane active" role="tabpanel">
- <div class="fishingModes" role="group" aria-label="Fishing mechanics"><button type="button" data-fishing-mode="0" aria-pressed="true">1. Hold / Tap</button><button type="button" data-fishing-mode="1" aria-pressed="false">2. Tug-of-War</button><button type="button" data-fishing-mode="2" aria-pressed="false">3. Circular Timing</button><button type="button" data-fishing-mode="3" aria-pressed="false">4. Distance Timing</button><button type="button" data-fishing-mode="4" aria-pressed="false">5. Catch Zone</button><button type="button" data-fishing-mode="5" aria-pressed="false">6. Tension</button><button type="button" data-fishing-mode="6" aria-pressed="false">7. Simple QTE</button></div>
+ <div class="fishingModes" role="group" aria-label="Fishing mechanics"><button type="button" data-fishing-mode="0" aria-pressed="true">1. Hold / Tap</button><button type="button" data-fishing-mode="2" aria-pressed="false">3. Circular Timing</button><button type="button" data-fishing-mode="4" aria-pressed="false">5. Catch Zone</button><button type="button" data-fishing-mode="6" aria-pressed="false">7. Simple QTE</button><button type="button" data-fishing-mode="3" aria-pressed="false">4. Distance Timing</button><button type="button" data-fishing-mode="1" aria-pressed="false">2. Tug-of-War</button><button type="button" data-fishing-mode="5" aria-pressed="false">6. Tension</button></div>
  <p class="fishingInstructions"></p>
  <div class="fishingDebug"><label for="fishingJointCount">Debug · Joints</label><select id="fishingJointCount"><option value="1">1 joint</option><option value="2">2 joints</option><option value="3" selected>3 joints</option><option value="4">4 joints</option><option value="5">5 joints</option></select><label for="fishingJointThickness">Thickness</label><select id="fishingJointThickness"><option value="mixed">Mixed</option><option value="thin">Thin</option><option value="thick">Thick</option><option value="alternating">Alternating</option><option value="rising">Increasing</option></select></div>
  <div class="fishingViewport">
@@ -235,6 +235,12 @@ html[data-smooth] #scene .today{display:none!important}#scene .taskGuideButton{w
  <g class="fishingHoldNeedle"><path d="M139 273 L116 275" stroke="#302e20" stroke-width="2"/><path d="M111 271 L121 271 L124 279 L112 280 Z" fill="#263046"/></g>
 </svg>
   <div class="fishingRing" aria-hidden="true"><i></i></div>
+  <div class="catchProgress" aria-hidden="true"><span>REELING IN <strong>0%</strong></span><div><i></i></div></div>
+  <div class="qteCenter" aria-hidden="true"><span>LAND THE CATCH</span><strong>TAP</strong><div class="qtePips"><i></i><i></i><i></i></div><small>HIT THE GREEN ARC</small></div>
+  <div class="circularTiming" aria-hidden="true">
+   <div class="circularDial"><div class="circularTarget"></div><div class="circularMoving"></div><div class="circularCenter"><strong class="circularPrompt">FISH ON</strong><small class="circularHint">TAP TO START</small></div></div>
+   <div class="circularComboWrap"><span>COMBO</span><strong class="circularCombo">0</strong></div>
+  </div>
   <button class="fishingTap" type="button" aria-label="Tap to fish"></button>
   <span class="fishingFeedback" role="status"></span>
  </div>

@@ -9,33 +9,15 @@ html.previewImmersive,html.previewRotated{overflow:hidden}
 .previewImmersive main{position:fixed;inset:0;max-width:none;width:100%;height:100dvh;overflow:auto;background:#111e2c;padding:8px}
 .previewRotated main{position:fixed;inset:auto;left:100%;top:0;max-width:none;width:100dvh;height:100dvw;transform-origin:0 0;transform:rotate(90deg);overflow:auto;background:#111e2c;padding:8px}
 .previewImmersive .previewControls,.previewRotated .previewControls{position:sticky;top:0;z-index:100;background:#111e2c;padding:4px 0}
-/* Browser layout: retain the game canvas on desktop; reflow controls on small screens. */
+/* Scale the existing game canvas on every screen; preserve the original reward UI. */
 html{color-scheme:dark}body{min-width:320px;min-height:100dvh}main{width:100%;padding:clamp(6px,1vw,16px)}button{-webkit-tap-highlight-color:transparent;touch-action:manipulation}button:focus-visible{outline:3px solid #ffe06a;outline-offset:3px}img{-webkit-user-drag:none}#viewport{border-radius:12px}nav{opacity:1;gap:8px}nav button{min-height:44px}#scene .rewardbox{max-width:calc(100% - 28px)}
-@media(max-width:760px){
- main{padding:8px}#viewport{height:auto!important;overflow:visible}#scene{position:relative;width:100%;height:auto;transform:none!important;display:flex;flex-direction:column;gap:12px;padding:12px;background:linear-gradient(145deg,#286ed0,#16396b);border:2px solid #9cceff;border-radius:16px}
- #scene .polishheader{position:relative;left:auto;top:auto;width:100%;height:auto;min-height:48px;background:none;font-size:32px;padding:0;order:0}
- #scene .gddTimer{position:relative;left:auto;top:auto;width:auto;height:auto;min-height:32px;justify-content:flex-start;background:none;font-size:20px;order:1}
- #scene .panelCatEars,#scene .coverlock,#scene>.rail,#scene>.activitybg{display:none}
- #scene .loginpanel,#scene .loginpanel.withtabs,#scene .taskpanel{position:relative;left:auto;top:auto;width:100%;height:auto;min-height:0;order:2;flex-shrink:0}
- #scene .loginhero,#scene .loginpanel.withtabs .loginhero{height:220px;flex-basis:220px}
- #scene .herocopy{left:58%;padding:8px;gap:9px}#scene .herocopy h2,#scene .loginpanel.withtabs .herocopy h2{font-size:clamp(26px,6vw,43px)}#scene .apexRevealed .herocopy h2{font-size:clamp(23px,5vw,34px)}#scene .herocopy p:first-of-type,#scene .apexRevealed .herocopy p:first-of-type{font-size:19px;white-space:normal;padding:6px}#scene .herocopy p:last-of-type{font-size:17px}
- #scene .loginhero::before,#scene .apexRevealed .loginhero::before{left:17%;width:40%}#scene .loginhero::after{left:37%;font-size:52px}
- #scene .logincards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:8px;flex:none}#scene .logincard{min-height:190px}#scene .logincard .day{font-size:19px}#scene .logincard img,#scene .loginpanel.withtabs .logincard img{width:76px;height:72px;flex-basis:72px}#scene .logincard .itemname{font-size:18px;white-space:normal}#scene .logincard .later{font-size:14px}#scene .logincard button{min-height:44px;font-size:20px}#scene .logincard[data-reward-state='claimed']::after{font-size:65px}
- #scene .head{height:52px;padding:0 12px}#scene .head .title{font-size:24px}#scene .meta{height:44px;padding:0 12px;font-size:20px}#scene #rows{max-height:420px;padding:6px;overflow-y:auto}#scene .row{padding:12px 8px 12px 54px;gap:8px;min-height:108px;height:auto;flex-wrap:wrap}#scene .row::before{left:8px;width:36px;height:44px}#scene .row .name{flex:1 1 calc(100% - 80px);font-size:20px}#scene .row small{font-size:16px}#scene .row .pts{width:70px;font-size:20px}#scene .row button,#scene .row .done,#scene .taskGuideButton{min-height:44px;width:120px;flex-basis:120px;font-size:20px;margin-left:auto}
- #scene .taskopen,#scene .taskopen.showreturn{position:relative;left:auto;top:auto;width:100%;min-height:48px;height:auto;background:#3389df;border:2px solid #b2dfff;border-radius:9px;order:3;font-size:22px}#scene .taskopen span{display:none}#scene .taskopen::after{content:'DAILY TASKS'}#scene .taskopen.showreturn::after{content:'← 7-Day Login'}
- #scene .gddShopLink{position:relative;left:auto;top:auto;width:100%;height:auto;min-height:48px;opacity:1;background:#d7eaff;color:#285c94;order:4;font-size:20px}#scene .gddShopLink::after{content:'Buy missing rebirth pets'}
- #scene .activityhead{position:relative;left:auto;top:auto;width:100%;height:44px;padding:0;background:none;font-size:25px;order:5}#scene .total{position:relative;left:auto;top:auto;width:100%;height:40px;padding:0 10px;border-radius:8px;font-size:24px;order:6}
- #scene #gddMilestoneLayer{position:relative;inset:auto;display:grid;grid-template-columns:1fr;gap:8px;order:7;pointer-events:auto}#scene #gddMilestoneLayer .msnode{display:none}#scene #gddMilestoneLayer .msrow{position:relative;left:auto;top:auto!important;width:100%;height:auto;min-height:86px;padding:8px;gap:10px}#scene #gddMilestoneLayer .msrow::before{content:attr(data-threshold);position:static;transform:none;flex:0 0 38px;width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:#347ccd;color:#fff;font-size:20px;text-shadow:none}#scene #gddMilestoneLayer .msrow[data-reward-state='claimed']::before{background:#29496c}#scene #gddMilestoneLayer .msrow[data-reward-state='claimed']::after{left:55px;top:17px}#scene #gddMilestoneLayer .msrow>img:not(.lockimg){width:52px;height:58px;flex-basis:52px}#scene #gddMilestoneLayer .msrow .label{font-size:20px}#scene .gddClaim{min-height:44px;font-size:18px!important;flex-basis:65px}
- #scene .reward,#scene .shopholder{position:fixed;inset:0;z-index:50}#scene .rewardbox{width:420px;padding:20px;font-size:21px;max-height:90dvh;overflow:auto}#scene .rewardbox h2{font-size:26px}#scene .rewardbox button{min-width:0;width:100%;min-height:48px;font-size:21px}
- #scene .originalShop{left:50%;top:50%;transform:translate(-50%,-50%) scale(var(--web-shop-scale,.3));transform-origin:center}
- #scene .pointfly{display:none}nav button{flex:1;font-size:14px;padding:8px}
-}
-@media(max-width:380px){#scene .logincards{grid-template-columns:repeat(3,minmax(0,1fr))}#scene #gddMilestoneLayer .msrow{gap:6px}#scene #gddMilestoneLayer .msrow .label{font-size:18px}}
+
+
 /* Bold UI typography and informational pet directions. */
 #scene .msrow .label,#scene #gddMilestoneLayer .msrow .label,#scene .herocopy p,#scene .logincard .day,#scene .logincard .itemname,#scene .logincard .later,#scene .row .name,#scene .row small,#scene button,#scene .rewardbox p{font-weight:700!important}
 #scene .petDirectionsRoute{padding:15px 12px;background:#d6eaff;border:2px solid #a5cdf5;border-radius:10px;color:#245c96;font-size:25px;line-height:1.4}
 #scene .herocopy p:first-of-type{white-space:normal}
-@media(max-width:760px){#scene .petDirectionsRoute{font-size:20px}}
+
 /* Daily rewards progress from cool common colors to a warm Apex finish. */
 #scene .logincard:nth-child(1){--tier-top:#dcecff;--tier-bottom:#b9d9f5;--tier-head:#b2d2f0;--tier-edge:#83b5df}
 #scene .logincard:nth-child(2){--tier-top:#d4f6f2;--tier-bottom:#a9dedc;--tier-head:#a7dcd9;--tier-edge:#46bbb6}
@@ -81,7 +63,7 @@ html{color-scheme:dark}body{min-width:320px;min-height:100dvh}main{width:100%;pa
 #scene .logincard{cursor:pointer}
 #scene .logincard.previewSelected{outline:3px solid #fff3a4;outline-offset:-4px}
 #scene .logincard:focus-visible{outline:3px solid #fff;outline-offset:-4px}
-@media(max-width:760px){#scene .eventHeaderCover{display:none}#scene .previewDaily .loginhero>img{left:17%;width:40%}#scene .previewDaily .herocopy h2{font-size:29px}}
+
 /* Complete ear ornament, with safe padding above the event frame. */
 #scene .panelCatEars{left:236px;top:43px;width:245px;height:76px;object-fit:contain;overflow:visible;z-index:2}
 
@@ -103,7 +85,7 @@ html{color-scheme:dark}body{min-width:320px;min-height:100dvh}main{width:100%;pa
 #scene .apexBurstParticle:nth-child(4n){clip-path:polygon(50% 0,62% 35%,100% 50%,62% 65%,50% 100%,38% 65%,0 50%,38% 35%);width:15px;height:15px}
 @keyframes apexFlashOut{0%{opacity:0;transform:scale(.2)}20%{opacity:.9;transform:scale(.8)}100%{opacity:0;transform:scale(1.7)}}
 @keyframes apexParticleOut{0%{opacity:0;transform:translate(0,0) scale(.2) rotate(0)}12%{opacity:1}65%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.25) rotate(var(--spin))}}
-@media(max-width:760px){#scene .apexInlineBurst{left:37%;transform:scale(.75)}}
+
 @media(prefers-reduced-motion:reduce){#scene .apexInlineBurst{display:none}}
 
 /* Screen-space activity flight works with both scaled canvas and mobile flow. */
@@ -112,4 +94,4 @@ html{color-scheme:dark}body{min-width:320px;min-height:100dvh}main{width:100%;pa
 /* Keep navigation opaque while reward flights temporarily disable controls. */
 #scene .taskopen.showreturn,#scene .taskopen.showreturn:disabled{opacity:1;background:#2f86d7;border:2px solid #b1d7ff;isolation:isolate;color:#fff}
 #scene .taskopen.showreturn span{opacity:1}
-@media(min-width:761px){#scene .taskopen.showreturn{z-index:7;display:flex;align-items:center;justify-content:center;font-size:24px}#scene .taskopen.showreturn span{display:block}}
+#scene .taskopen.showreturn{z-index:7;display:flex;align-items:center;justify-content:center;font-size:24px}#scene .taskopen.showreturn span{display:block}
