@@ -16,6 +16,7 @@
  function finish(){
   if(completed)return;
   dug=100;completed=true;
+  window.RevivalAudio?.play(pity===10 ? 'catch' : 'excellent');
   if(pity===10){pity=0;result='✦ Guaranteed reward found! Pity reset to 0/10.'}
   else{pity++;result=pity===10?'✦ Pity 10/10! Your next dig is guaranteed.':'Discovery complete · Pity +1 ('+pity+'/10)'}
   render();

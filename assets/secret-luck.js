@@ -151,6 +151,7 @@
    var threshold = Number(button.dataset.luckReward);
    if (claimed.has(threshold) || Number(slider.value) < threshold) return;
    claimed.add(threshold);
+   window.RevivalAudio?.play('bonus');
    renderRewards(Number(slider.value));
    var name = button.previousElementSibling.textContent;
    rewardStatus.textContent = 'Claimed ' + name + '.';

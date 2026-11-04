@@ -90,6 +90,7 @@
 .fishingViewControls button {font-size:13px;min-height:44px;padding:6px 10px}
 .fishingHapticStatus{font-size:11px;color:#bed0e1;max-width:220px}
 .fishingHaptics[aria-pressed="true"]{border-color:#a9edcc;background:#244f50}
+.gameSoundToggle[aria-pressed="true"]{border-color:#edd39b;background:#504a31}
 .fishingModes button{min-height:44px}
 .fishingTap{min-width:44px;min-height:44px}
 .fishingScene{border-radius:10px;isolation:isolate}

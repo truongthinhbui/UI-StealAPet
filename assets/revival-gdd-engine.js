@@ -66,7 +66,7 @@ if(typeof document!=='undefined'){
  function button(text,fn,disabled=false){const b=document.createElement('button');b.textContent=text;b.onclick=fn;b.disabled=disabled;return b;}
  function receipt(r){const box=$('#reward .rewardbox');box.replaceChildren();const title=document.createElement('h2');title.textContent=r.ok?'SENT TO MAIL':'UNAVAILABLE';const p=document.createElement('p');p.textContent=r.ok?'Rewards have been sent to your mailbox.':r.reason;box.append(title,p);box.append(button('CONTINUE',()=>$('#reward').style.display='none'));$('#reward').style.display='grid';}
  const effectiveNow=()=>Math.max(Date.now(),s.utcDay*86400000);
- function getClaim(kind,i){const r=claim(s,kind,i,effectiveNow());save();draw();receipt(r);}
+ function getClaim(kind,i){const r=claim(s,kind,i,effectiveNow());window.RevivalAudio?.play(r.ok?'bonus':'miss');save();draw();receipt(r);}
  let selectedDay=6;
  function renderDayPreview(){
  const panel=$('#polishedlogin'),cards=[...panel.querySelectorAll('.logincard')],hero=panel.querySelector('.loginhero'),card=cards[selectedDay],isApex=selectedDay===6,revealed=s.eventDay>=2;
@@ -131,6 +131,7 @@ if(typeof document!=='undefined'){
   const result=claimActivity(s,i,effectiveNow());save();
   try{
    if(result.ok&&result.points){
+    window.RevivalAudio?.play('bonus');
     const target=$('#total');let dest=target.getBoundingClientRect();
     if(dest.top<0||dest.bottom>innerHeight){target.scrollIntoView({block:'center',behavior:'instant'});dest=target.getBoundingClientRect();}
     const sx=origin?origin.left+origin.width/2:innerWidth/2,sy=origin?Math.max(30,Math.min(innerHeight-30,origin.top+origin.height/2)):innerHeight/2;

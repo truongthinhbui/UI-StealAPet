@@ -49,6 +49,7 @@
   updateHaptics();
   // A light tap must not interrupt a stronger hit, bonus, or catch pattern.
   function haptic(kind = 'tap') {
+    window.RevivalAudio?.play(kind);
     if (!hapticsEnabled || document.hidden || !canVibrate || navigator.userActivation?.hasBeenActive === false) return false;
     const effect = hapticPatterns[kind] || hapticPatterns.tap;
     const now = performance.now();
@@ -148,7 +149,6 @@
   const circularSpeed = () => debugSettings.values[2] || .75 + Math.random() * .5;
   const qtePips = Array.from(root.querySelectorAll('.qtePips i'));
   const catchPercent = root.querySelector('.catchProgress strong');
-  let qteLastCycle = -1;
   let qteMotion;
   const distanceEffects = new Set();
   const sharedEffects = new Set();
@@ -272,7 +272,7 @@
     const playing = state === 'active';
     circularCombo.textContent = state === 'idle' ? '0' : String(game.combo);
     circularPrompt.textContent = playing ? '' : state === 'idle' ? 'FISH ON' : scene.hasAttribute('data-caught') ? 'CAUGHT' : 'ESCAPED';
-    circularHint.textContent = playing ? '' : state === 'idle' ? 'TAP TO START' : 'TRY AGAIN SOON';
+    circularHint.textContent = playing || state === 'idle' ? '' : 'TRY AGAIN SOON';
   }
 
   function judgeCircular(quality) {
@@ -386,6 +386,7 @@
     debugReadout.textContent = 'Tab '+(mode+1)+' · '+(state==='idle'?'Sẵn sàng':state==='result'?'Kết quả':debugPaused?'Tạm dừng':'Đang chạy')+(state==='active'?' · '+game.age.toFixed(1)+'s · Combo '+game.combo:'');
   }
   function renderPreview() {
+    status.textContent='';
     scene.dataset.preview='';
     button.setAttribute('aria-label',mode===0||mode===4?'Hold to start fishing':'Tap to start fishing');
     scene.style.setProperty('--angle','0deg');
@@ -423,6 +424,7 @@
   }
 
   function reset() {
+    window.RevivalAudio?.stop();
     clearTimeout(timer);
     cancelAnimationFrame(frame);
     state = 'idle';
@@ -443,7 +445,6 @@
     circularEffects.forEach(motion => motion.cancel());
     circularEffects.clear();
     qteMotion?.cancel();
-    qteLastCycle = -1;
     delete scene.dataset.zoneInside;
     delete scene.dataset.qteHit;
     delete scene.dataset.distanceHit;
@@ -537,11 +538,6 @@
       return;
     }
     if (![2, 3, 6].includes(mode)) return;
-    if (mode === 6) {
-      const cycle = Math.floor(game.age / debugSettings.values[6]);
-      if (cycle === qteLastCycle) return;
-      qteLastCycle = cycle;
-    }
     const [start, end] = mode === 3 ? (game.marker < .55 ? [.18,.48] : [.61,.82]) : [.16,.36];
     const arcOffset = mode === 6 ? (game.marker - game.qteArcStart + 1) % 1 : 0;
     const hit = mode === 6 ? arcOffset <= .20 : game.marker >= start && game.marker <= end;
@@ -586,6 +582,7 @@
     }
     if (mode === 6) {
       scene.dataset.qteHit = hit ? 'hit' : 'miss';
+      game.qteFeedbackUntil=game.age+.45;
       qtePips.forEach((pip, index) => pip.classList.toggle('is-filled', index < game.hits));
       haptic(hit ? perfect ? 'excellent' : 'good' : 'miss');
       if (hit) hitJuice(50, 44, perfect);
@@ -683,7 +680,7 @@
         break;
       }
       case 6: {
-        if (Math.floor(game.age / debugSettings.values[6]) !== qteLastCycle) delete scene.dataset.qteHit;
+        if(game.qteFeedbackUntil&&game.age>game.qteFeedbackUntil){delete scene.dataset.qteHit;status.textContent='';game.qteFeedbackUntil=0;}
         game.marker = (game.age / debugSettings.values[6]) % 1;
         draw(game.hits + ' / 3 hits', 'Tap in the green arc', game.hits / 3, 0, 0, .20, game.qteArcStart * 360);
         break;
@@ -803,7 +800,7 @@
       if(state!=='active'){reset();startChallenge();}
       if(mode===3)[0,1].forEach(spawnDistanceKnot);
       if(mode===2){game.roundAge=0;game.roundPause=0;game.roundSpeed=circularSpeed();game.timingScale=1.65;scene.style.setProperty('--timing-scale','1.65');delete scene.dataset.judgement;status.textContent='';}
-      if(mode===6){game.qteArcStart=Math.random();scene.style.setProperty('--ring-start',game.qteArcStart*360+'deg');qteLastCycle=-1;delete scene.dataset.qteHit;}
+      if(mode===6){game.qteArcStart=Math.random();scene.style.setProperty('--ring-start',game.qteArcStart*360+'deg');delete scene.dataset.qteHit;}
     }
     syncDebug();
   });

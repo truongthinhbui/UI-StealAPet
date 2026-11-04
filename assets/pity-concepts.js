@@ -76,6 +76,7 @@
  function open() {
   clearTimeout(timer);
   var mythic = Math.random() < chance();
+  window.RevivalAudio?.play(mythic ? 'catch' : 'good');
   opens++;
   var result = mythic ? 'Mythic pet found!' : 'Box opened';
   render(result);
@@ -94,6 +95,7 @@
    var threshold = Number(button.dataset.boxReward);
    if (opens < threshold || claimed.has(threshold)) return;
    claimed.add(threshold);
+   window.RevivalAudio?.play('bonus');
    rewardStatus.textContent = 'Claimed ' + button.previousElementSibling.textContent + '.';
    render();
   });

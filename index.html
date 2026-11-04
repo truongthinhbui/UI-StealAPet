@@ -238,7 +238,7 @@ html[data-smooth] #scene .today{display:none!important}#scene .taskGuideButton{w
   <div class="catchProgress" aria-hidden="true"><span>REELING IN <strong>0%</strong></span><div><i></i></div></div>
   <div class="qteCenter" aria-hidden="true"><span>LAND THE CATCH</span><strong>TAP</strong><div class="qtePips"><i></i><i></i><i></i></div><small>HIT THE GREEN ARC</small></div>
   <div class="circularTiming" aria-hidden="true">
-   <div class="circularDial"><div class="circularTarget"></div><div class="circularMoving"></div><div class="circularCenter"><strong class="circularPrompt">FISH ON</strong><small class="circularHint">TAP TO START</small></div></div>
+   <div class="circularDial"><div class="circularTarget"></div><div class="circularMoving"></div><div class="circularCenter"><strong class="circularPrompt">FISH ON</strong><small class="circularHint"></small></div></div>
    <div class="circularComboWrap"><span>COMBO</span><strong class="circularCombo">0</strong></div>
   </div>
   <button class="fishingTap" type="button" aria-label="Tap to fish"></button>
@@ -246,7 +246,7 @@ html[data-smooth] #scene .today{display:none!important}#scene .taskGuideButton{w
  </div>
  </div>
 </div>
-</main><link rel="stylesheet" href="assets/fishing.css"><script src="assets/fishing.js"></script>
+</main><link rel="stylesheet" href="assets/fishing.css"><script src="assets/game-audio.js"></script><script src="assets/fishing.js"></script>
 <script src="assets/revival-gdd-engine.js"></script><script src="assets/web-responsive.js"></script>
 <script>document.querySelectorAll('.prototypeTabs button').forEach(function(btn){btn.addEventListener('click',function(){document.querySelectorAll('.prototypeTabs button').forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false')});document.querySelectorAll('.prototypePane').forEach(function(p){p.classList.remove('active')});btn.classList.add('active');btn.setAttribute('aria-selected','true');document.getElementById(btn.dataset.tab).classList.add('active');document.querySelector('main>nav').style.display=btn.dataset.tab==='tab-player-reward'?'':'none'})})
 document.querySelectorAll('.lbSubBtn').forEach(function(btn){btn.addEventListener('click',function(){var pane=btn.closest('.prototypePane');pane.querySelectorAll('.lbSubBtn').forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false')});pane.querySelectorAll('.lbSubPane').forEach(function(p){p.classList.remove('active')});btn.classList.add('active');btn.setAttribute('aria-selected','true');document.getElementById(btn.dataset.sub).classList.add('active')})});
