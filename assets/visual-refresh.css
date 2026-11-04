@@ -41,3 +41,15 @@
 /* Center the chicken and mystery marker within the golden focal area. */
 #scene .loginhero::before,#scene .apexRevealed .loginhero::before{left:23%}
 #scene .loginhero::after{left:42%}
+/* Refine the existing reward components without replacing their artwork. */
+#scene .taskpanel,#scene .loginpanel{animation:none}
+#scene .herocopy{gap:10px}
+#scene .herocopy p:last-of-type{color:#244f7c;font-size:21px}
+#scene .logincard .dailyLock{gap:5px;color:#47698b;font-size:17px;font-weight:700}
+#scene .logincard .dailyLock img,#scene .loginpanel.withtabs .logincard .dailyLock img{width:22px;min-width:22px;max-width:22px;height:25px;flex-basis:22px}
+#scene .logincard button,#scene .taskGuideButton,#scene .gddClaim{min-height:48px;border-radius:8px}
+#scene .logincard:focus-visible{outline:4px solid #285faf;outline-offset:-4px}
+#scene .logincard.previewSelected{outline:3px solid #e9b43f;outline-offset:-4px}
+#scene .row .name{line-height:1.2}
+#scene .row small{color:#426789}
+#scene #gddMilestoneLayer .msrow .label{font-size:22px;line-height:1.18}

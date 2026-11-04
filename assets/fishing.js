@@ -6,13 +6,15 @@
   const rotateButton = root.querySelector('.fishingRotate');
   const fullscreenButton = root.querySelector('.fishingFullscreen');
   const hapticPatterns = {
-    tap:{pattern:10,priority:0}, good:{pattern:22,priority:1},
-    excellent:{pattern:[18,22,35],priority:2}, bonus:{pattern:[20,18,25,18,45],priority:3},
-    break:{pattern:[30,24,55],priority:3}, miss:{pattern:[12,35,12],priority:1},
-    catch:{pattern:[25,25,40,25,65],priority:4}
+    tap:{pattern:16,priority:0}, good:{pattern:40,priority:1},
+    excellent:{pattern:[30,45,70],priority:2}, bonus:{pattern:[25,30,40,45,75],priority:3},
+    break:{pattern:[35,45,80],priority:3}, miss:{pattern:[20,60,20],priority:1},
+    catch:{pattern:[45,60,65,85,95],priority:4}
   };
   let hapticsEnabled = true, hapticUntil = 0, hapticPriority = -1;
+  let hapticFeel=1;
   try { hapticsEnabled = localStorage.getItem('revival-haptics') !== 'off'; } catch {}
+  try { const saved=Number(localStorage.getItem('revival-haptic-feel'));if([.65,1,1.4].includes(saved))hapticFeel=saved; } catch {}
   const hapticToggle = document.createElement('button');
   hapticToggle.type = 'button';
   hapticToggle.className = 'fishingHaptics';
@@ -22,11 +24,22 @@
   hapticStatus.className = 'fishingHapticStatus';
   hapticStatus.setAttribute('role','status');
   const canVibrate = typeof navigator.vibrate === 'function';
+  const hapticFeelLabel=document.createElement('label');
+  hapticFeelLabel.className='fishingHapticFeel';
+  hapticFeelLabel.innerHTML='Nhịp rung <select aria-label="Độ dài nhịp rung"><option value="0.65">Nhẹ</option><option value="1">Vừa</option><option value="1.4">Rõ</option></select>';
+  const hapticFeelSelect=hapticFeelLabel.querySelector('select');
+  hapticFeelSelect.value=String(hapticFeel);
+  hapticFeelSelect.addEventListener('change',()=>{
+    hapticFeel=Number(hapticFeelSelect.value);
+    try{localStorage.setItem('revival-haptic-feel',String(hapticFeel));}catch{}
+    stopHaptic();haptic('excellent');
+  });
   const updateHaptics = () => {
     hapticToggle.textContent = canVibrate ? 'Rung: ' + (hapticsEnabled ? 'Bật' : 'Tắt') : 'Rung: Không hỗ trợ';
     hapticToggle.setAttribute('aria-pressed',String(hapticsEnabled));
     hapticToggle.disabled = !canVibrate;
     hapticTest.disabled = !canVibrate || !hapticsEnabled;
+    hapticFeelSelect.disabled = !canVibrate || !hapticsEnabled;
     if (!canVibrate) hapticStatus.textContent = 'Trình duyệt không hỗ trợ rung';
   };
   function stopHaptic() {
@@ -45,7 +58,7 @@
     stopHaptic();
     hapticStatus.textContent = haptic('bonus') ? 'Đã gửi nhịp rung thử' : 'Trình duyệt chưa cho phép rung';
   });
-  root.querySelector('.fishingViewControls').append(hapticToggle,hapticTest,hapticStatus);
+  root.querySelector('.fishingViewControls').append(hapticToggle,hapticFeelLabel,hapticTest,hapticStatus);
   updateHaptics();
   // A light tap must not interrupt a stronger hit, bonus, or catch pattern.
   function haptic(kind = 'tap') {
@@ -53,11 +66,12 @@
     if (!hapticsEnabled || document.hidden || !canVibrate || navigator.userActivation?.hasBeenActive === false) return false;
     const effect = hapticPatterns[kind] || hapticPatterns.tap;
     const now = performance.now();
-    if (now < hapticUntil && effect.priority < hapticPriority) return false;
+    if (now < hapticUntil && effect.priority <= hapticPriority) return false;
+    const pattern=Array.isArray(effect.pattern)?effect.pattern.map((duration,index)=>index%2?duration:Math.round(duration*hapticFeel)):Math.round(effect.pattern*hapticFeel);
     try {
-      const accepted = navigator.vibrate(effect.pattern);
+      const accepted = navigator.vibrate(pattern);
       if (accepted) {
-        hapticUntil = now + (Array.isArray(effect.pattern) ? effect.pattern.reduce((sum,n)=>sum+n,0) : effect.pattern);
+        hapticUntil = now + (Array.isArray(pattern) ? pattern.reduce((sum,n)=>sum+n,0) : pattern);
         hapticPriority = effect.priority;
       }
       return accepted;
@@ -109,6 +123,12 @@
   }
 
   const button = root.querySelector('.fishingTap');
+  // Cancel native long-press handling only on the game action, leaving page
+  // scrolling and debug fields alone. Touch actions are handled on pointerup.
+  let actionPointer=null,lastTouchAction=-Infinity;
+  for(const eventName of ['touchstart','touchmove']){
+    button.addEventListener(eventName,event=>{if(event.cancelable)event.preventDefault();},{passive:false});
+  }
   const status = root.querySelector('.fishingFeedback');
   const title = root.querySelector('.fishingHud strong');
   const detail = root.querySelector('.fishingHud small');
@@ -152,22 +172,120 @@
   let qteMotion;
   const distanceEffects = new Set();
   const sharedEffects = new Set();
+  let fireworksCanvas,fireworksContext,fireworksFrame=0,fireworksLast=0;
+  let fireworksQueue=[],fireworksParticles=[];
+  function stopFireworks(){
+    cancelAnimationFrame(fireworksFrame);fireworksFrame=0;
+    fireworksQueue=[];fireworksParticles=[];
+    if(fireworksCanvas){fireworksContext.clearRect(0,0,scene.clientWidth,scene.clientHeight);fireworksCanvas.hidden=true;fireworksCanvas.dataset.particles='0';}
+  }
+  function fireworks(kind='hit'){
+    if(document.hidden||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    if(!fireworksCanvas){
+      fireworksCanvas=document.createElement('canvas');fireworksCanvas.className='fishingFireworks';
+      fireworksCanvas.setAttribute('aria-hidden','true');
+      fireworksContext=fireworksCanvas.getContext('2d');
+      if(!fireworksContext){fireworksCanvas=null;return;}
+      scene.appendChild(fireworksCanvas);
+    }
+    const width=scene.clientWidth,height=scene.clientHeight,dpr=Math.min(devicePixelRatio||1,1.5);
+    if(fireworksCanvas.width!==Math.round(width*dpr)||fireworksCanvas.height!==Math.round(height*dpr)){
+      fireworksCanvas.width=Math.round(width*dpr);fireworksCanvas.height=Math.round(height*dpr);
+      fireworksContext.setTransform(dpr,0,0,dpr,0,0);
+    }
+    fireworksCanvas.hidden=false;
+    const now=performance.now();
+    const shells=kind==='catch'?[[.24,.32,0],[.76,.32,240],[.5,.38,480]]:[[.5,.42,0]];
+    for(const [x,y,delay] of shells){
+      if(fireworksQueue.length>=6)break;
+      fireworksQueue.push({x:x*width,y:y*height,born:now+delay+170,launch:now+delay,count:kind==='catch'?48:kind==='excellent'?36:20,power:kind==='catch'?1:kind==='excellent'?.8:.6});
+    }
+    if(fireworksFrame)return;
+    fireworksLast=now;
+    const draw=now=>{
+      const dt=Math.min(.035,(now-fireworksLast)/1000);fireworksLast=now;
+      const ctx=fireworksContext,w=scene.clientWidth,h=scene.clientHeight;
+      ctx.clearRect(0,0,w,h);
+      const colors=['#ffe28a','#fff5cf','#80f6c1','#91ceff'];
+      fireworksQueue=fireworksQueue.filter(shell=>{
+        if(now<shell.born){
+          if(now>=shell.launch){const progress=(now-shell.launch)/170;ctx.globalAlpha=.9;ctx.fillStyle='#ffeaa5';ctx.fillRect(shell.x,shell.y+(1-progress)*h*.17,2,10);}
+          return true;
+        }
+        for(let i=0;i<shell.count&&fireworksParticles.length<180;i++){
+          const angle=i/shell.count*Math.PI*2,speed=w*(.10+Math.random()*.13)*shell.power;
+          fireworksParticles.push({x:shell.x,y:shell.y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,age:0,life:.7+Math.random()*.55,color:colors[i%4],star:i%5===0});
+        }
+        return false;
+      });
+      fireworksParticles=fireworksParticles.filter(p=>{
+        p.age+=dt;if(p.age>=p.life)return false;
+        const oldX=p.x,oldY=p.y;
+        p.x+=p.vx*dt;p.y+=p.vy*dt;p.vy+=h*.22*dt;p.vx*=Math.exp(-dt*.8);
+        ctx.globalAlpha=Math.max(0,1-p.age/p.life);ctx.strokeStyle=p.color;ctx.fillStyle=p.color;
+        ctx.lineWidth=Math.max(1,w*.002);ctx.beginPath();ctx.moveTo(oldX,oldY);ctx.lineTo(p.x,p.y);ctx.stroke();
+        const size=p.star?Math.max(2,w*.0035):Math.max(1.5,w*.002);
+        if(p.star){ctx.fillRect(p.x-size,p.y-1,size*2,2);ctx.fillRect(p.x-1,p.y-size,2,size*2);}else ctx.fillRect(p.x,p.y,size,size);
+        return true;
+      });
+      ctx.globalAlpha=1;
+      fireworksCanvas.dataset.particles=String(fireworksParticles.length);
+      if(fireworksQueue.length||fireworksParticles.length)fireworksFrame=requestAnimationFrame(draw);
+      else{fireworksFrame=0;fireworksCanvas.hidden=true;ctx.clearRect(0,0,w,h);}
+    };
+    fireworksFrame=requestAnimationFrame(draw);
+  }
+  const impactMotions = new Map();
+  function impactPunch(element, strong=false) {
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    impactMotions.get(element)?.cancel();
+    const motion=element.animate([{scale:1},{scale:.94,offset:.12},{scale:strong?1.14:1.07,offset:.35},{scale:.99,offset:.7},{scale:1}],{duration:strong?480:320,easing:'ease-out'});
+    impactMotions.set(element,motion);
+    const cleanup=()=>{if(impactMotions.get(element)===motion)impactMotions.delete(element);};
+    motion.onfinish=cleanup;motion.oncancel=cleanup;
+  }
+  function badFeedback(element){
+    hitJuice(50,44,'bad');
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    impactMotions.get(element)?.cancel();
+    const motion=element.animate([
+      {transform:'translateX(0)',scale:1},
+      {transform:'translateX(-5px)',scale:.96,offset:.15},
+      {transform:'translateX(5px)',scale:.99,offset:.32},
+      {transform:'translateX(-3px)',scale:1,offset:.5},
+      {transform:'translateX(2px)',scale:1,offset:.7},
+      {transform:'translateX(0)',scale:1}
+    ],{duration:340,easing:'ease-out'});
+    impactMotions.set(element,motion);
+    const cleanup=()=>{if(impactMotions.get(element)===motion)impactMotions.delete(element);};
+    motion.onfinish=cleanup;motion.oncancel=cleanup;
+  }
   function hitJuice(x, y, strong = false, parent = scene) {
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const celebration=strong==='catch';
+    const bad=strong==='bad';
+    const existing=parent.querySelectorAll(':scope > .gameJuice');
+    if(existing.length>=4)existing[0].getAnimations().forEach(animation=>animation.cancel());
     const burst = document.createElement('div');
-    burst.className = 'gameJuice' + (strong ? ' gameJuice-gold' : '');
+    burst.className = 'gameJuice' + (strong&&!bad ? ' gameJuice-gold' : '') + (celebration?' gameJuice-catch':'')+(bad?' gameJuice-bad':'');
     burst.style.left = x + '%';
     burst.style.top = y + '%';
     parent.appendChild(burst);
-    const motion = burst.animate([{opacity:1},{opacity:1,offset:.65},{opacity:0}],{duration:strong ? 650 : 420});
+    const flash=document.createElement('b');flash.className='juiceFlash';burst.appendChild(flash);
+    const halo=document.createElement('b');halo.className='juiceHalo';burst.appendChild(halo);
+    if(bad){const mark=document.createElement('b');mark.className='badMark';mark.textContent='×';burst.appendChild(mark);}
+    const motion = burst.animate([{opacity:1},{opacity:1,offset:.65},{opacity:0}],{duration:bad?520:celebration?1150:strong ? 800 : 500});
     sharedEffects.add(motion);
     const cleanup = () => { sharedEffects.delete(motion); burst.remove(); };
     motion.onfinish = cleanup;
     motion.oncancel = cleanup;
-    const count = strong ? 12 : 6;
+    const count = bad?8:celebration?32:strong ? 20 : 10;
     for (let i = 0; i < count; i++) {
       const spark = document.createElement('i');
       spark.style.setProperty('--spark-angle', (i * 360 / count) + 'deg');
+      spark.style.setProperty('--spark-travel',(bad?4+i%3:celebration?12+i%4*2:strong?8+i%3*2:5+i%3)+'cqw');
+      spark.style.setProperty('--spark-wait',(i%4*18)+'ms');
+      spark.style.setProperty('--spark-color',celebration?['#fff5b6','#ffd45a','#8cf2cd','#b7d9ff'][i%4]:'var(--juice)');
       burst.appendChild(spark);
     }
   }
@@ -206,7 +324,7 @@
       motion.oncancel = cleanup;
     };
     animate(hud, hit ? [{scale:1},{scale:.98,offset:.12},{scale:perfect ? 1.06 : 1.035,offset:.35},{scale:1}]
-      : [{translate:'0 0'},{translate:'-4px 0',offset:.2},{translate:'4px 0',offset:.4},{translate:'-2px 0',offset:.65},{translate:'0 0'}],{duration:280,easing:'ease-out'});
+      : [{transform:'translateX(0)'},{transform:'translateX(-4px)',offset:.2},{transform:'translateX(4px)',offset:.4},{transform:'translateX(-2px)',offset:.65},{transform:'translateX(0)'}],{duration:280,easing:'ease-out'});
     animate(title,[{scale:1},{scale:1.2,offset:.25},{scale:1}],{duration:300,easing:'ease-out'});
     const label = document.createElement('b');
     label.className = 'distanceFloat';
@@ -272,7 +390,7 @@
     const playing = state === 'active';
     circularCombo.textContent = state === 'idle' ? '0' : String(game.combo);
     circularPrompt.textContent = playing ? '' : state === 'idle' ? 'FISH ON' : scene.hasAttribute('data-caught') ? 'CAUGHT' : 'ESCAPED';
-    circularHint.textContent = playing || state === 'idle' ? '' : 'TRY AGAIN SOON';
+    circularHint.textContent = playing || state === 'idle' ? '' : scene.hasAttribute('data-caught') ? 'NICE CATCH!' : 'TRY AGAIN SOON';
   }
 
   function judgeCircular(quality) {
@@ -282,15 +400,17 @@
     if (!good) game.misses++;
     scene.dataset.judgement = quality;
     status.textContent = quality.toUpperCase();
-    game.roundPause = .28;
+    game.roundPause = quality === 'excellent' ? .8 : good ? .45 : .65;
     updateCircular();
     if (good) {
       circularJuice(quality);
       hitJuice(50, 44, quality === 'excellent');
-    } else haptic('miss');
+      impactPunch(circularDial,quality==='excellent');
+      if(quality==='excellent')fireworks('excellent');
+    } else {haptic('miss');badFeedback(circularDial);}
     if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       circularMotion?.cancel();
-      circularMotion = status.animate([{opacity:0,scale:.82,translate:'0 4px'},{opacity:1,scale:1.08,translate:'0 0',offset:.35},{opacity:1,scale:1,translate:'0 0'}],{duration:230,easing:'ease-out'});
+      circularMotion = status.animate([{opacity:0,scale:.82},{opacity:1,scale:1.08,offset:.35},{opacity:1,scale:1}],{duration:quality === 'excellent' ? 360 : 280,easing:'ease-out'});
     }
     if (game.combo >= 3) finish(true);
     else if (game.misses >= 4) finish(false);
@@ -360,7 +480,7 @@
   const instructions = [
     'Hold to the next joint, then tap to break it. Hold again after breaking a joint to keep the bar from draining.',
     'Hold to pull toward Catch. Release to cool the line.',
-    'Use the TAP button when the purple rings overlap. Build a combo of 3 to catch the fish.',
+    'Use the TAP button when the gold ring overlaps the blue target. Build a combo of 3 to catch the fish.',
     'Tap when the fish enters either green zone. Reel the distance down to 0 m before 40 seconds run out.',
     'Hold to lift the green zone. Release to lower it. Keep the fish inside.',
     'Hold to reel, then release before tension reaches its limit.',
@@ -416,15 +536,21 @@
     delete scene.dataset.tapping;
     delete scene.dataset.decaying;
     scene.toggleAttribute('data-caught', caught);
-    if (caught && [0, 2, 4, 6].includes(mode)) hitJuice(50, 44, true);
-    status.textContent = caught ? 'CAUGHT!' : reason || 'FISH ESCAPED';
+    if (caught && [0, 2, 4, 6].includes(mode)) {
+      hitJuice(50, 44, 'catch');
+      stopFireworks();fireworks('catch');
+      impactPunch(mode===2?circularDial:root.querySelector(mode===6?'.qteCenter':'.fishingHud'),true);
+    }
+    status.textContent = caught ? 'ĐÃ BẮT ĐƯỢC CÁ!' : reason || 'FISH ESCAPED';
+    if(caught)impactPunch(status,true);
     if (mode === 2) updateCircular();
-    timer = setTimeout(reset, 1500);
+    timer = setTimeout(reset, caught ? 2800 : 1500);
     updateDebugReadout();
   }
 
   function reset() {
     window.RevivalAudio?.stop();
+    stopFireworks();
     clearTimeout(timer);
     cancelAnimationFrame(frame);
     state = 'idle';
@@ -454,6 +580,7 @@
     clearDistanceEffects();
     sharedEffects.forEach(motion => motion.cancel());
     sharedEffects.clear();
+    impactMotions.forEach(motion=>motion.cancel());impactMotions.clear();
     root.querySelectorAll('.gameJuice').forEach(burst => burst.remove());
     qtePips.forEach(pip => pip.classList.remove('is-filled'));
     catchPercent.textContent = '0%';
@@ -472,7 +599,7 @@
   }
 
   function startChallenge() {
-    if ([1,5].includes(mode)) return;
+    if (![2,4,6].includes(mode)) return;
     state = 'active';
     delete scene.dataset.preview;
     scene.dataset.active = '';
@@ -582,10 +709,13 @@
     }
     if (mode === 6) {
       scene.dataset.qteHit = hit ? 'hit' : 'miss';
-      game.qteFeedbackUntil=game.age+.45;
+      game.qteFeedbackUntil=game.age+(hit?.45:.65);
       qtePips.forEach((pip, index) => pip.classList.toggle('is-filled', index < game.hits));
       haptic(hit ? perfect ? 'excellent' : 'good' : 'miss');
       if (hit) hitJuice(50, 44, perfect);
+      if(hit)impactPunch(root.querySelector('.fishingRing'),perfect);
+      if(hit)fireworks(perfect?'excellent':'hit');
+      if(!hit)badFeedback(root.querySelector('.qteCenter'));
       if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
         qteMotion?.cancel();
         qteMotion = root.querySelector('.qteCenter').animate([{scale:.94},{scale:1.05,offset:.3},{scale:1}],{duration:240,easing:'ease-out'});
@@ -708,7 +838,7 @@
         game.progress = clamp(game.progress + dt * (inside ? .28 : -.12));
         const milestone = Math.floor(game.progress * 4);
         if (inside && ((!game.zoneWasInside && game.age - (game.lastZoneJuice || -1) > .65) || milestone > (game.zoneMilestone || 0))) {
-          hitJuice(50, 44, milestone > (game.zoneMilestone || 0));
+          impactPunch(root.querySelector('.catchProgress'),milestone > (game.zoneMilestone || 0));
           haptic('good');
           game.lastZoneJuice = game.age;
         }
@@ -734,7 +864,7 @@
   }
 
   function select(index) {
-    if ([1,5].includes(index) || !debugModes[index]) return;
+    if (![2,4,6].includes(index) || !debugModes[index]) return;
     reset();
     mode = index;
     debugControls.hidden = index !== 0;
@@ -751,7 +881,7 @@
 
   modes.forEach(item => item.addEventListener('click', () => select(Number(item.dataset.fishingMode))));
   modes.forEach(item=>{
-    if([1,5].includes(Number(item.dataset.fishingMode))){
+    if(![2,4,6].includes(Number(item.dataset.fishingMode))){
       item.disabled=true;
       item.setAttribute('aria-disabled','true');
       item.textContent+=' · 🔒';
@@ -804,15 +934,29 @@
     }
     syncDebug();
   });
-  button.addEventListener('click', tap);
+  button.addEventListener('click',event=>{
+    if(event.detail!==0&&performance.now()-lastTouchAction<500){event.preventDefault();return;}
+    tap();
+  });
   button.addEventListener('pointerdown', event => {
     if (!event.isPrimary || event.button !== 0) return;
+    event.preventDefault();
+    actionPointer=event.pointerId;
+    if(event.pointerType!=='mouse')window.getSelection()?.removeAllRanges();
     if (state !== 'result') haptic();
     if(state==='idle'&&(mode===0||mode===4))startChallenge();
     held = state === 'active' && !debugPaused;
     holdPress = held && mode === 0 && !game.tapping;
     button.setPointerCapture(event.pointerId);
-  });
+  },{passive:false});
+  button.addEventListener('pointerup',event=>{
+    if(event.pointerId!==actionPointer)return;
+    held=false;actionPointer=null;
+    if(event.pointerType==='touch'||event.pointerType==='pen'){
+      event.preventDefault();lastTouchAction=performance.now();tap();
+    }
+  },{passive:false});
+  button.addEventListener('pointercancel',()=>{actionPointer=null;holdPress=false;});
   ['pointerup','pointercancel','lostpointercapture','blur'].forEach(event => button.addEventListener(event, () => { held = false; }));
   button.addEventListener('keydown', event => {
     if ((event.key === ' ' || event.key === 'Enter') && !event.repeat) {
@@ -825,6 +969,7 @@
   button.addEventListener('keyup', () => { held = false; });
   window.addEventListener('blur',()=>{held=false;holdPress=false;stopHaptic();});
   document.addEventListener('visibilitychange',()=>{
+    if(document.hidden)stopFireworks();
     held=false; holdPress=false; stopHaptic();
     if (state !== 'active') return;
     cancelAnimationFrame(frame);

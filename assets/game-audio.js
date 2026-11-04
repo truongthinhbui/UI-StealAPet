@@ -8,11 +8,11 @@
  const cues={
   tap:{notes:[420],duration:.045,level:.07,type:'sine',priority:0},
   good:{notes:[660,880],duration:.11,level:.10,type:'sine',priority:1},
-  excellent:{notes:[784,1047,1319],duration:.15,level:.10,type:'triangle',priority:2},
+  excellent:{notes:[784,1047,1319,1568],duration:.18,level:.10,type:'triangle',priority:2},
   bonus:{notes:[880,1175,1568,1760],duration:.15,level:.09,type:'triangle',priority:3},
   break:{notes:[260,520,1040],duration:.09,level:.10,type:'triangle',priority:3},
   miss:{notes:[220,165],duration:.12,level:.08,type:'sine',priority:1},
-  catch:{notes:[523,659,784,1047],duration:.22,level:.11,type:'triangle',priority:4}
+  catch:{notes:[523,659,784,1047,1319,1568],duration:.28,level:.11,type:'triangle',priority:4}
  };
  function unlock(){
   if(!enabled||!AudioEngine||document.hidden)return;

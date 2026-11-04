@@ -1,0 +1,115 @@
+/* The same palette, type, panel edges and claim gold used by Revival rewards. */
+.fishingScene{
+ --revival-paper:#eaf3ff;--revival-row:#c7dfff;--revival-edge:#e5f4ff;
+ --revival-ink:#285b8a;--revival-blue:#358ee1;--revival-gold:#ffd65a;
+ font-family:'GFF Latin',Arial,sans-serif;
+}
+.fishingScene :is(.circularTiming,.circularCenter strong,.circularCenter small,.circularComboWrap,.qteCenter,.fishingFeedback,.catchProgress){font-family:inherit}
+.circularTarget{border-color:#a8cffb;border-top-color:#dceeff;border-bottom-color:#7eb7f1;box-shadow:0 0 0 .2cqw var(--revival-edge),inset 0 0 0 .2cqw #f4f9ff,0 .3cqw .7cqw #194c8266}
+.circularMoving{border-color:#ffd65a;border-top-color:#fff0ab;border-bottom-color:#efb632;box-shadow:0 0 .7cqw #ffda6d80,inset 0 0 .4cqw #fff0ab80}
+.circularCenter{color:var(--revival-ink)}
+.circularCenter strong{color:#fff1a6;text-shadow:-1px -1px #244d76,1px -1px #244d76,-1px 1px #244d76,1px 1px #244d76,0 2px 4px #244d76}
+.circularCenter small{color:#fff;text-shadow:0 1px 3px #244d76}
+.circularComboWrap{padding:0;gap:0;border:.2cqw solid var(--revival-edge);border-radius:.7cqw;min-width:13cqw;overflow:hidden;background:var(--revival-paper);color:var(--revival-ink);box-shadow:0 .25cqw .5cqw #194c8240;text-shadow:none;letter-spacing:.06em}
+.circularComboWrap>span{align-self:stretch;display:flex;flex:1;align-items:center;justify-content:center;padding:.7cqw 1cqw;color:#fff;background:linear-gradient(100deg,#2874ce,#55a6ed);border-right:1px solid #b8d8fb}
+.circularCombo{padding:.35cqw 1.2cqw;color:var(--revival-ink);font-size:2.5cqw}
+.fishingScene[data-mode="4"] .fishingHud{padding:0 1.2cqw 1cqw;border:.2cqw solid var(--revival-edge);background:var(--revival-paper);box-shadow:0 .4cqw 1cqw #194c8266;border-radius:.9cqw;color:var(--revival-ink);text-shadow:none}
+.fishingScene[data-mode="4"] .fishingHud strong{display:block;width:calc(100% + 2.4cqw);margin:0 -1.2cqw;padding:.9cqw .6cqw;background:linear-gradient(100deg,#2874ce,#55a6ed);color:white;border-bottom:1px solid #badcff;border-radius:.6cqw .6cqw 0 0;font-size:1.15cqw;line-height:1.25}
+.fishingScene[data-mode="4"] .fishingHud small{color:#39658b;font-size:1cqw;font-weight:700}
+.fishingScene[data-mode="4"] .fishingTrack{border-color:#7caee0;background:repeating-linear-gradient(0deg,transparent 0 9%,#a8c8eb66 9% 10%),#c7dfff;box-shadow:inset 0 .2cqw .5cqw #80a7d244}
+.fishingScene[data-mode="4"] .fishingZone{border:.17cqw solid #fff9c2;background:linear-gradient(90deg,#5bcf9cbb,#a6edb9);box-shadow:0 0 .7cqw #53bf8b55}
+.fishingScene[data-mode="4"][data-zone-inside] .fishingZone{border-color:#fff8bc;background:linear-gradient(90deg,#43c992,#8ce9a6);box-shadow:0 0 1.2cqw #56d59a99}
+.fishingScene[data-mode="4"] .fishingMarker{background:#ffd65a;border:1px solid #fff0b5;box-shadow:0 .15cqw .3cqw #285b8a80,0 0 .5cqw #fff0b5}
+.fishingScene[data-mode="4"] .fishingMarker::before{border-left-color:#ffd65a}
+.fishingScene[data-mode="4"] .catchProgress{padding:.8cqw 1cqw;background:var(--revival-paper);border:.2cqw solid var(--revival-edge);border-radius:.7cqw;box-shadow:0 .25cqw .5cqw #194c8255;color:var(--revival-ink);font-weight:700;text-shadow:none}
+.catchProgress strong{color:var(--revival-ink)}
+.catchProgress>div{background:#b9d5f2;box-shadow:inset 0 1px 3px #709aca55}
+.catchProgress i{background:linear-gradient(90deg,#f9c23b,#ffe782);box-shadow:inset 0 1px #fff5c7}
+.fishingScene[data-mode="6"] .fishingRing{background:conic-gradient(from var(--ring-start,57.6deg),#0bc77a 0%,#50ffad 10%,#0bc77a 20%,#b4d4f7 20%);mask:radial-gradient(farthest-side,transparent 78%,#000 79% 97%,transparent 98%)}
+.fishingScene[data-mode="6"] .fishingRing i{background:conic-gradient(transparent 0 var(--angle,0deg),#fff1a6 0 calc(var(--angle,0deg) + 5deg),transparent 0)}
+.fishingScene[data-mode="6"] .qteCenter{background:linear-gradient(155deg,#f4f8ff,#d6e8ff);border:.25cqw solid var(--revival-edge);box-shadow:0 .3cqw .7cqw #194c8255;color:var(--revival-ink);overflow:hidden;text-shadow:none}
+.qteCenter>span{background:linear-gradient(100deg,#2874ce,#55a6ed);color:white;align-self:center;width:84%;text-align:center;border-radius:.4cqw;padding:.6cqw 0;font-weight:700;letter-spacing:.04em}
+.qteCenter{text-align:center}
+.qteCenter>strong{color:var(--revival-ink);text-shadow:0 1px white}
+.qteCenter small{color:#3d7199;font-weight:700}
+.qtePips i{background:#b9d5f2;border:1px solid #86b2df;box-shadow:inset 0 1px 2px #86a9cf55}
+.qtePips i.is-filled{background:linear-gradient(#ffe989,#ffc83d);border-color:#fff3bb;box-shadow:0 0 .6cqw #ffce5680}
+.fishingScene[data-mode="6"][data-qte-hit="hit"] .qteCenter{border-color:#fff1af;box-shadow:0 0 1.5cqw #7fe5b280}
+.fishingScene[data-mode="6"][data-qte-hit="miss"] .qteCenter{border-color:#f0a394;box-shadow:0 0 1cqw #d68e7655}
+.fishingScene:is([data-mode="2"],[data-mode="4"],[data-mode="6"]) .fishingFeedback{border:1px solid var(--revival-edge);border-radius:.7cqw;background:var(--revival-paper);padding:.2em .6em;color:var(--revival-ink);box-shadow:0 .3cqw .7cqw #194c8255;text-shadow:none}
+.fishingScene[data-mode="2"][data-judgement="good"] .fishingFeedback,.fishingScene[data-mode="6"][data-qte-hit="hit"] .fishingFeedback{background:#dcf5e6;color:#277251;border-color:#a5dec2}
+.fishingScene[data-mode="2"][data-judgement="excellent"] .fishingFeedback{background:#fff0bd;color:#80601c;border-color:#ffe18b}
+.fishingScene[data-mode="2"][data-judgement="bad"] .fishingFeedback,.fishingScene[data-mode="6"][data-qte-hit="miss"] .fishingFeedback{background:#ffe4dc;color:#a45247;border-color:#efb2a3}
+.fishingScene[data-mode="2"][data-judgement="bad"] .circularTarget{border-color:#efb2a3;box-shadow:0 0 0 .2cqw #ffe7df,0 .2cqw .5cqw #194c8255}
+.fishingScene:is([data-mode="2"],[data-mode="4"],[data-mode="6"])[data-caught] .fishingFeedback{color:#70521a;background:linear-gradient(#fff0b3,#ffd65a);border-color:#fff4c9;box-shadow:0 0 1.7cqw #ffd65a80}
+
+/* Keep the original scene brightness; increase readability on the controls. */
+.circularTarget{box-shadow:0 0 0 .22cqw #f4faff,inset 0 0 0 .22cqw #f4faff,0 0 0 .5cqw #194a7880,0 .3cqw .8cqw #07182b99}
+.circularMoving{border-color:#ffcf42;border-top-color:#fff0a0;border-bottom-color:#edb126;box-shadow:0 0 .3cqw #fff2be,inset 0 0 .3cqw #fff2be}
+.circularCenter strong{font-size:clamp(14px,2cqw,24px)}
+.circularComboWrap{font-size:clamp(10px,1.15cqw,15px);min-width:15cqw}
+.circularCombo{font-size:clamp(20px,2.8cqw,34px)}
+.fishingScene[data-mode="4"] .fishingHud{width:21%!important;box-shadow:0 .5cqw 1.5cqw #07182b99}
+.fishingScene[data-mode="4"] .fishingHud strong{font-size:clamp(10px,1.3cqw,17px)}
+.fishingScene[data-mode="4"] .fishingHud small{font-size:clamp(10px,1.1cqw,14px);color:#28577f;line-height:1.35}
+.fishingScene[data-mode="4"] .fishingTrack{width:45%;border-width:.25cqw;background:repeating-linear-gradient(0deg,transparent 0 9%,#91b6dc55 9% 10%),#bbd7f6}
+.fishingScene[data-mode="4"] .fishingMarker{min-width:22px;min-height:12px;border-color:#fff8d8}
+.fishingScene[data-mode="4"] .catchProgress{width:24%;font-size:clamp(10px,1.15cqw,15px);box-shadow:0 .3cqw .8cqw #07182b99}
+.catchProgress>div{height:max(6px,.75cqw)}
+.fishingScene[data-mode="6"] .qteCenter{width:20%;gap:.75cqw;box-shadow:0 .4cqw 1cqw #07182b99}
+.fishingScene[data-mode="6"] .fishingRing{width:25%}
+.qteCenter>span{font-size:clamp(9px,.95cqw,13px);line-height:1.25}
+.qteCenter>strong{font-size:clamp(20px,3cqw,38px)}
+.qteCenter small{font-size:clamp(9px,.9cqw,12px);color:#28577f}
+.qtePips{gap:1cqw}.qtePips i{width:clamp(10px,1.3cqw,17px);height:clamp(10px,1.3cqw,17px)}
+.fishingScene:is([data-mode="2"],[data-mode="4"],[data-mode="6"]) .fishingFeedback{font-size:clamp(15px,2.6cqw,32px);font-weight:800;border-width:2px;letter-spacing:.02em;white-space:nowrap;box-shadow:0 .4cqw 1cqw #07182b99}
+.fishingScene[data-mode="2"][data-judgement="bad"] .fishingFeedback{font-size:clamp(15px,2.4cqw,30px)}
+@media(max-width:600px){
+ .fishingScene[data-mode="6"] .qteCenter{width:27%}
+ .fishingScene[data-mode="6"] .fishingRing{width:33%}
+ .qteCenter small{display:none}
+ .fishingScene[data-mode="4"] .fishingHud{width:26%!important}
+ .fishingScene[data-mode="4"] .fishingHud small{min-height:0}
+ .fishingScene[data-mode="4"] .catchProgress{width:32%}
+ .circularComboWrap{min-width:22cqw}
+}
+.fishingScene:is([data-mode="2"],[data-mode="4"],[data-mode="6"])[data-caught] .fishingFeedback{display:block;top:14%!important;left:50%;transform:translate(-50%,-50%);z-index:10;width:max-content;max-width:94%;white-space:normal;text-align:center;font-size:clamp(14px,2.3cqw,28px);padding:.45em .85em;border:2px solid #fff5c8;border-radius:.8cqw;background:linear-gradient(#fff1b8,#ffd65a);color:#70521a;box-shadow:0 .4cqw 1cqw #234b7a66,0 0 1.2cqw #ffd65a70}
+
+/* Short local impact flashes, with longer rings and stars to read the reward. */
+.gameJuice,.gameJuice-gold{background:none}
+.gameJuice-gold{width:16cqw}.gameJuice-catch{width:24cqw}
+.juiceFlash{position:absolute;inset:-10%;border-radius:50%;background:radial-gradient(circle,#fffefa 0,#fff0b5a8 18%,transparent 65%);animation:juiceFlash .26s ease-out both}
+.gameJuice::before,.gameJuice::after,.juiceHalo{border-width:.3cqw;animation-duration:.6s;box-shadow:0 0 .7cqw var(--juice)}
+.gameJuice::after{animation-delay:.08s}
+.juiceHalo{position:absolute;inset:30%;border:.14cqw solid var(--juice);border-radius:50%;animation:gameJuiceWave .65s .13s ease-out both}
+.gameJuice i{height:1.7cqw;background:var(--spark-color,var(--juice));animation:juiceSpark .65s var(--spark-wait,0ms) cubic-bezier(.12,.7,.3,1) both;box-shadow:0 0 .45cqw var(--spark-color,var(--juice))}
+.gameJuice-gold i:nth-child(2n){height:1.1cqw;width:1.1cqw}
+.gameJuice-catch i{animation-duration:.95s}
+.gameJuice-catch i:nth-child(3n){width:.5cqw;height:1.4cqw;clip-path:none;border-radius:.15cqw}
+.fishingScene[data-mode="2"][data-judgement="excellent"] .fishingFeedback{box-shadow:0 0 0 .2cqw #fff5c2,0 0 2cqw #ffd860a6,0 .3cqw 1cqw #31567c66}
+.fishingScene[data-mode="6"][data-qte-hit="hit"] .qtePips .is-filled{box-shadow:0 0 .8cqw #ffda66,inset 0 1px #fff8c6}
+@keyframes juiceFlash{0%{scale:.3;opacity:0}20%{scale:1;opacity:.85}100%{scale:1.35;opacity:0}}
+@keyframes juiceSpark{0%{transform:rotate(var(--spark-angle)) translateY(-1cqw) scale(.4);opacity:0}12%{opacity:1}65%{opacity:1}100%{transform:rotate(var(--spark-angle)) translateY(calc(-1 * var(--spark-travel,8cqw))) scale(0);opacity:0}}
+@media(prefers-reduced-motion:reduce){.juiceFlash,.juiceHalo{display:none}}
+.fishingFireworks{position:absolute;inset:0;width:100%;height:100%;z-index:9;pointer-events:none;border-radius:inherit}
+.fishingFireworks[hidden]{display:none}
+.fishingHapticFeel{display:flex;align-items:center;gap:5px;color:#d3e5f1;font-size:11px}
+.fishingHapticFeel select{min-height:44px;max-width:72px;padding:5px;border:1px solid #82b9ea;border-radius:8px;background:#1c405d;color:#fff;font:inherit}
+.fishingHapticFeel select:disabled{opacity:.5}
+
+/* Layout translation must run before impact scale, so the anchor stays fixed. */
+.circularDial,.fishingScene[data-mode="6"] .qteCenter,.fishingScene:not([data-mode="2"]) .fishingRing,.fishingScene:not([data-mode="2"]) .fishingHud{transform:none;translate:-50% -50%}
+.fishingScene[data-mode="4"] .catchProgress,.circularComboWrap{transform:none;translate:-50% 0}
+.fishingScene:not([data-mode="2"]) .fishingFeedback{transform:none;translate:-50% 0}
+.fishingScene[data-mode="2"] .fishingFeedback,.fishingScene:is([data-mode="2"],[data-mode="4"],[data-mode="6"])[data-caught] .fishingFeedback{transform:none;translate:-50% -50%}
+.fishingScene:is([data-mode="3"],[data-mode="4"]) .fishingMarker,.distanceImpact{transform:none;translate:-50% -50%}
+.gameJuice-bad{--juice:#ff927d}
+.gameJuice-bad .juiceFlash{background:radial-gradient(circle,#ffd7cf99 0,#ff755433 25%,transparent 60%);animation-duration:.2s}
+.gameJuice-bad::before,.gameJuice-bad::after,.gameJuice-bad .juiceHalo{display:none}
+.gameJuice-bad i{height:.8cqw;width:.4cqw;border-radius:0;animation-duration:.45s}
+.badMark{position:absolute;left:50%;top:-20%;translate:-50% -50%;color:#ffe5dd;font:800 clamp(22px,4cqw,46px)/1 Arial;paint-order:stroke fill;-webkit-text-stroke:1px #bd5142;text-shadow:0 2px 4px #733d49;animation:badMarkPop .4s ease-out both}
+.fishingScene[data-mode="2"][data-judgement="bad"] .fishingFeedback,.fishingScene[data-mode="6"][data-qte-hit="miss"] .fishingFeedback{background:linear-gradient(#fff0e9,#ffc8b9);color:#9e3c30;border:2px solid #fff0e5;box-shadow:0 0 0 .2cqw #e98570,0 .3cqw .7cqw #8e4a4266;font-weight:800}
+.fishingScene[data-mode="2"][data-judgement="bad"] .circularTarget{border-color:#f59f8b;border-top-color:#ffcebf;border-bottom-color:#d97262;box-shadow:0 0 0 .2cqw #ffe2d8,inset 0 0 1cqw #ffb09a77,0 0 1.5cqw #ef8a6966}
+.fishingScene[data-mode="6"][data-qte-hit="miss"] .qteCenter{border-color:#ee947f;box-shadow:0 0 0 .2cqw #ffdfd3,0 0 1.5cqw #ed8d7166}
+@keyframes badMarkPop{0%{scale:.45;opacity:0}30%{scale:1.2;opacity:1}65%{scale:1;opacity:1}100%{scale:1;opacity:0}}
+@media(prefers-reduced-motion:reduce){.badMark{animation:none}}
