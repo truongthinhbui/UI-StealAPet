@@ -6,6 +6,14 @@
  const layer=document.getElementById('gddMilestoneLayer');
  if(layer){const annotate=()=>{let threshold='';for(const child of layer.children){if(child.classList.contains('msnode'))threshold=child.textContent.trim();else if(child.classList.contains('msrow'))child.dataset.threshold=threshold;}};annotate();new MutationObserver(annotate).observe(layer,{childList:true});}
  document.querySelectorAll('img').forEach(img=>{img.decoding='async';img.draggable=false;});
+ // Images created by reward/shop scripts should also wait until visible.
+ new MutationObserver(records=>{
+  for(const record of records)for(const node of record.addedNodes){
+   if(node.nodeType!==1)continue;
+   const images=node.matches('img')?[node]:node.querySelectorAll('img');
+   for(const img of images){if(!img.hasAttribute('loading'))img.loading='lazy';img.decoding='async';img.draggable=false;}
+  }
+ }).observe(document.querySelector('main'),{childList:true,subtree:true});
  const main=document.querySelector('main');
  if(!main)return;
  const controls=document.createElement('div');

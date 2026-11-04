@@ -31,7 +31,7 @@
 #scene #gddMilestoneLayer .msrow[data-reward-state='claimed']>img{filter:brightness(.52) saturate(.6)}
 #scene .apexCard::after{top:57px;font-size:38px}
 /* One shared background and identical character placement before/after reveal. */
-#scene .loginhero,#scene .loginpanel.withtabs .loginhero,#scene .apexRevealed .loginhero,#scene .apexRevealed.loginpanel.withtabs .loginhero{background:#acd4ff url('apex-background-clean.png') center/100% 100% no-repeat}
+#scene .loginhero,#scene .loginpanel.withtabs .loginhero,#scene .apexRevealed .loginhero,#scene .apexRevealed.loginpanel.withtabs .loginhero{background:#acd4ff url('apex-background-clean.jpg') center/100% 100% no-repeat}
 #scene .loginhero::before,#scene .apexRevealed .loginhero::before{content:'';display:block;position:absolute;left:18%;top:8%;width:38%;height:84%;background:url('apex-chick-revealed.png') center/contain no-repeat;filter:brightness(0) drop-shadow(0 0 15px #ffce62)}
 #scene .apexRevealed .loginhero::before{filter:drop-shadow(0 0 15px #ffce62)}
 #scene .loginhero::after{content:'?';display:block;position:absolute;left:37%;top:50%;transform:translate(-50%,-50%);font-size:74px;font-weight:700;color:#fff7d2;text-shadow:0 2px 8px #a87827}
