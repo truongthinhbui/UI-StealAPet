@@ -118,6 +118,23 @@
   const jointCount = root.querySelector('#fishingJointCount');
   const jointThickness = root.querySelector('#fishingJointThickness');
   const debugControls = root.querySelector('.fishingDebug');
+  const debugSettings = {speed:1, values:{0:5,2:0,3:2.3,4:.30,6:2.25}};
+  let debugPaused = false;
+  const debugPanel = document.createElement('details');
+  debugPanel.className = 'fishingDebugPanel';
+  debugPanel.innerHTML = '<summary>Debug · tùy chỉnh cơ chế</summary><div class="fishingDebugTools"><label>Tốc độ mô phỏng <select class="debugSpeed"><option value=".5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label><label class="debugModeLabel"><span></span><select class="debugModeValue"></select></label><button type="button" data-debug="restart">Chơi lại</button><button type="button" data-debug="pause" aria-pressed="false">Tạm dừng</button><button type="button" data-debug="step">Bước +1/30s</button><button type="button" data-debug="shuffle">Đổi mục tiêu</button><button type="button" data-debug="win">Thử bắt cá</button><button type="button" data-debug="lose">Thử thất bại</button><button type="button" data-debug="defaults">Mặc định</button></div><output class="fishingDebugReadout" aria-live="off"></output>';
+  debugControls.before(debugPanel);
+  debugPanel.appendChild(debugControls);
+  const debugReadout = debugPanel.querySelector('output');
+  const debugModeValue = debugPanel.querySelector('.debugModeValue');
+  const debugPauseButton = debugPanel.querySelector('[data-debug="pause"]');
+  const debugModes = {
+    0:{label:'Tap / khớp',options:[[3,'3 tap'],[5,'5 tap'],[7,'7 tap']]},
+    2:{label:'Tốc độ thu vòng',options:[[0,'Random'],[.75,'Chậm'],[1,'Vừa'],[1.25,'Nhanh']]},
+    3:{label:'Tốc độ cá',options:[[1.7,'Chậm'],[2.3,'Hiện tại'],[2.8,'Nhanh']]},
+    4:{label:'Độ rộng vùng xanh',options:[[.22,'Hẹp'],[.30,'Hiện tại'],[.40,'Rộng']]},
+    6:{label:'Thời gian / vòng',options:[[3,'3 giây'],[2.25,'2.25 giây'],[1.75,'1.75 giây']]}
+  };
   let holdJoints = [];
   let stops = [];
   const debris = root.querySelector('.fishingHoldDebris');
@@ -128,7 +145,7 @@
   const circularDial = root.querySelector('.circularDial');
   const circularTarget = root.querySelector('.circularTarget');
   const circularEffects = new Set();
-  const circularSpeed = () => .75 + Math.random() * .5;
+  const circularSpeed = () => debugSettings.values[2] || .75 + Math.random() * .5;
   const qtePips = Array.from(root.querySelectorAll('.qtePips i'));
   const catchPercent = root.querySelector('.catchProgress strong');
   let qteLastCycle = -1;
@@ -293,7 +310,7 @@
   };
   let jointWidths = widthPresets.mixed;
   const jointHalfWidth = index => jointWidths[index % jointWidths.length] / 2;
-  const tapsPerJoint = 5;
+  let tapsPerJoint = 5;
   const decayDelay = .35;
   const decayRate = .13;
   let holdPress = false;
@@ -351,6 +368,40 @@
   ];
   const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(max, value));
   let mode = 0, state = 'idle', held = false, frame, timer, game;
+  function syncDebug() {
+    const config = debugModes[mode];
+    debugPanel.querySelector('.debugModeLabel span').textContent = config.label;
+    debugModeValue.replaceChildren(...config.options.map(([value,label])=>{
+      const option = document.createElement('option');option.value=value;option.textContent=label;return option;
+    }));
+    debugModeValue.value=String(debugSettings.values[mode]);
+    debugPauseButton.textContent=debugPaused ? 'Tiếp tục' : 'Tạm dừng';
+    debugPauseButton.setAttribute('aria-pressed',String(debugPaused));
+    debugPanel.querySelector('[data-debug="step"]').disabled=!debugPaused;
+    debugPanel.querySelector('[data-debug="shuffle"]').hidden=![2,3,6].includes(mode);
+    updateDebugReadout();
+  }
+  function updateDebugReadout() {
+    debugReadout.dataset.time=state==='active'?game.age.toFixed(3):'';
+    debugReadout.textContent = 'Tab '+(mode+1)+' · '+(state==='idle'?'Sẵn sàng':state==='result'?'Kết quả':debugPaused?'Tạm dừng':'Đang chạy')+(state==='active'?' · '+game.age.toFixed(1)+'s · Combo '+game.combo:'');
+  }
+  function renderPreview() {
+    scene.dataset.preview='';
+    button.setAttribute('aria-label',mode===0||mode===4?'Hold to start fishing':'Tap to start fishing');
+    scene.style.setProperty('--angle','0deg');
+    scene.style.setProperty('--marker',mode===4?'48%':'0%');
+    scene.style.setProperty('--zone-start',mode===4 ? (60-debugSettings.values[4]*50)+'%' : '18%');
+    scene.style.setProperty('--zone-size',mode===4 ? debugSettings.values[4]*100+'%' : '30%');
+    scene.style.setProperty('--distance-left','100%');
+    if(mode===0)status.textContent='HOLD TO START';
+    if(mode===3){
+      title.textContent='35 m';detail.textContent='40 s · TAP TO START';
+      distanceKnots.forEach((knot,index)=>{knot.style.left=(index===0?'33%':'71.5%');knot.hidden=false;});
+    }
+    if(mode===4){title.textContent='KEEP FISH IN GREEN';detail.textContent='Hold ↑ · Release ↓';}
+    if(mode===6){scene.dataset.timing='';scene.style.setProperty('--ring-start','57.6deg');scene.style.setProperty('--ring-fill','20%');}
+    updateDebugReadout();
+  }
 
   function finish(caught, reason) {
     haptic(caught ? 'catch' : reason === 'LINE BROKE' ? 'break' : 'miss');
@@ -368,12 +419,14 @@
     status.textContent = caught ? 'CAUGHT!' : reason || 'FISH ESCAPED';
     if (mode === 2) updateCircular();
     timer = setTimeout(reset, 1500);
+    updateDebugReadout();
   }
 
   function reset() {
     clearTimeout(timer);
     cancelAnimationFrame(frame);
     state = 'idle';
+    debugPaused=false;
     delete scene.dataset.caught;
     stopHaptic();
     held = false;
@@ -383,6 +436,8 @@
     delete scene.dataset.ring;
     delete scene.dataset.timing;
     delete scene.dataset.holding;
+    delete scene.dataset.tapping;
+    delete scene.dataset.decaying;
     delete scene.dataset.judgement;
     circularMotion?.cancel();
     circularEffects.forEach(motion => motion.cancel());
@@ -411,10 +466,14 @@
     button.setAttribute('aria-label', 'Tap to fish');
     updateCircular();
     scene.style.setProperty('--timing-scale', '1.65');
+    renderPreview();
+    syncDebug();
   }
 
   function startChallenge() {
+    if ([1,5].includes(mode)) return;
     state = 'active';
+    delete scene.dataset.preview;
     scene.dataset.active = '';
     if ([0, 2, 5, 6].includes(mode)) scene.dataset.ring = '';
     if (mode === 2 || mode === 6) scene.dataset.timing = '';
@@ -424,6 +483,7 @@
       roundAge:0, roundPause:0, timingScale:1.65, roundSpeed:circularSpeed(), distancePhase:0, distanceFreezeUntil:0,
       qteArcStart:Math.random(), knots:[], bonusScore:0};
     if (mode === 3) [0, 1].forEach(spawnDistanceKnot);
+    if (mode === 3 || mode === 6) status.textContent='';
     if (mode === 6) {
       scene.style.setProperty('--ring-start', game.qteArcStart * 360 + 'deg');
       scene.style.setProperty('--angle', '0deg');
@@ -435,6 +495,7 @@
   }
 
   function tap() {
+    if (debugPaused) return;
     if (holdPress) {
       holdPress = false;
       return;
@@ -477,7 +538,7 @@
     }
     if (![2, 3, 6].includes(mode)) return;
     if (mode === 6) {
-      const cycle = Math.floor(game.age / 2.25);
+      const cycle = Math.floor(game.age / debugSettings.values[6]);
       if (cycle === qteLastCycle) return;
       qteLastCycle = cycle;
     }
@@ -554,8 +615,8 @@
   }
 
   function tick(now) {
-    if (state !== 'active') return;
-    const dt = Math.min(.05, (now - game.last) / 1000);
+    if (state !== 'active' || debugPaused) return;
+    const dt = Math.min(.05, (now - game.last) / 1000) * debugSettings.speed;
     game.last = now;
     game.age += dt;
     game.phaseTime += dt;
@@ -622,8 +683,8 @@
         break;
       }
       case 6: {
-        if (Math.floor(game.age / 2.25) !== qteLastCycle) delete scene.dataset.qteHit;
-        game.marker = (game.age / 2.25) % 1;
+        if (Math.floor(game.age / debugSettings.values[6]) !== qteLastCycle) delete scene.dataset.qteHit;
+        game.marker = (game.age / debugSettings.values[6]) % 1;
         draw(game.hits + ' / 3 hits', 'Tap in the green arc', game.hits / 3, 0, 0, .20, game.qteArcStart * 360);
         break;
       }
@@ -637,15 +698,16 @@
           status.textContent = '';
           game.distanceFeedbackUntil = 0;
         }
-        if (game.age >= game.distanceFreezeUntil) game.distancePhase += dt * 2.3;
+        if (game.age >= game.distanceFreezeUntil) game.distancePhase += dt * debugSettings.values[3];
         game.marker = (1 - Math.cos(game.distancePhase)) / 2;
         scene.style.setProperty('--distance-left', Math.round(game.distance / 35 * 100) + '%');
         draw(Math.ceil(game.distance) + ' m', Math.ceil(40 - game.age) + ' s · TAP IN GREEN', game.marker, .18, .30);
         break;
       case 4: {
-        game.zone = clamp(game.zone + dt * (held ? -.63 : .49), .15, .85);
+        const zoneSize = debugSettings.values[4];
+        game.zone = clamp(game.zone + dt * (held ? -.63 : .49), zoneSize/2, 1-zoneSize/2);
         game.fish = .5 + .28 * Math.sin(game.age * 1.9) + .09 * Math.sin(game.age * 4.1);
-        const inside = Math.abs(game.fish - game.zone) < .15;
+        const inside = Math.abs(game.fish - game.zone) < zoneSize/2;
         game.progress = clamp(game.progress + dt * (inside ? .28 : -.12));
         const milestone = Math.floor(game.progress * 4);
         if (inside && ((!game.zoneWasInside && game.age - (game.lastZoneJuice || -1) > .65) || milestone > (game.zoneMilestone || 0))) {
@@ -658,7 +720,7 @@
         scene.toggleAttribute('data-zone-inside', inside);
         scene.style.setProperty('--catch-progress', Math.round(game.progress * 100) + '%');
         catchPercent.textContent = Math.round(game.progress * 100) + '%';
-        draw(Math.round(game.progress * 100) + '% caught', inside ? 'In zone' : 'Hold up · release down', game.fish, game.zone - .15, .30);
+        draw(Math.round(game.progress * 100) + '% caught', inside ? 'In zone' : 'Hold up · release down', game.fish, game.zone - zoneSize/2, zoneSize);
         if (game.progress >= 1) finish(true);
         break;
       }
@@ -670,10 +732,12 @@
         else if (game.distance === 0) finish(true);
         break;
     }
+    if (debugPanel.open && Math.floor(game.age*5)!==game.debugReadoutFrame){game.debugReadoutFrame=Math.floor(game.age*5);updateDebugReadout();}
     if (state === 'active') frame = requestAnimationFrame(tick);
   }
 
   function select(index) {
+    if ([1,5].includes(index) || !debugModes[index]) return;
     reset();
     mode = index;
     debugControls.hidden = index !== 0;
@@ -684,21 +748,79 @@
     }
     root.querySelector('.fishingInstructions').textContent = instructions[index];
     modes.forEach(item => item.setAttribute('aria-pressed', String(Number(item.dataset.fishingMode) === index)));
+    renderPreview();
+    syncDebug();
   }
 
   modes.forEach(item => item.addEventListener('click', () => select(Number(item.dataset.fishingMode))));
+  modes.forEach(item=>{
+    if([1,5].includes(Number(item.dataset.fishingMode))){
+      item.disabled=true;
+      item.setAttribute('aria-disabled','true');
+      item.textContent+=' · 🔒';
+      item.title='Mode đang khóa';
+    }
+  });
+  debugPanel.addEventListener('toggle',updateDebugReadout);
+  debugPanel.querySelector('.debugSpeed').addEventListener('change',event=>{
+    debugSettings.speed=Number(event.target.value);
+  });
+  debugModeValue.addEventListener('change',()=>{
+    debugSettings.values[mode]=Number(debugModeValue.value);
+    tapsPerJoint=debugSettings.values[0];
+    reset();
+  });
+  debugPanel.addEventListener('click',event=>{
+    const action=event.target.closest('[data-debug]')?.dataset.debug;
+    if(!action)return;
+    if(action==='restart'){reset();startChallenge();}
+    if(action==='defaults'){
+      debugSettings.speed=1;
+      Object.assign(debugSettings.values,{0:5,2:0,3:2.3,4:.30,6:2.25});
+      tapsPerJoint=5;jointCount.value='3';jointThickness.value='mixed';buildJoints();
+      debugPanel.querySelector('.debugSpeed').value='1';reset();
+    }
+    if(action==='pause'){
+      if(state==='result')return;
+      if(state==='idle')startChallenge();
+      debugPaused=!debugPaused;held=false;holdPress=false;stopHaptic();cancelAnimationFrame(frame);
+      if(!debugPaused){game.last=performance.now();frame=requestAnimationFrame(tick);}
+    }
+    if(action==='step'&&debugPaused&&state==='active'){
+      debugPaused=false;tick(game.last+1000/30);cancelAnimationFrame(frame);debugPaused=state==='active';
+    }
+    if(action==='win'||action==='lose'){
+      if(state!=='active'){reset();startChallenge();}
+      if(action==='win'){
+        if(mode===2)game.combo=3;
+        if(mode===3){game.distance=0;title.textContent='0 m';scene.style.setProperty('--distance-left','0%');}
+        if(mode===4){game.progress=1;title.textContent='100% caught';catchPercent.textContent='100%';scene.style.setProperty('--catch-progress','100%');}
+        if(mode===6){game.hits=3;qtePips.forEach(pip=>pip.classList.add('is-filled'));}
+      }
+      finish(action==='win',action==='lose'?'DEBUG · FISH ESCAPED':undefined);
+    }
+    if(action==='shuffle'){
+      if(state!=='active'){reset();startChallenge();}
+      if(mode===3)[0,1].forEach(spawnDistanceKnot);
+      if(mode===2){game.roundAge=0;game.roundPause=0;game.roundSpeed=circularSpeed();game.timingScale=1.65;scene.style.setProperty('--timing-scale','1.65');delete scene.dataset.judgement;status.textContent='';}
+      if(mode===6){game.qteArcStart=Math.random();scene.style.setProperty('--ring-start',game.qteArcStart*360+'deg');qteLastCycle=-1;delete scene.dataset.qteHit;}
+    }
+    syncDebug();
+  });
   button.addEventListener('click', tap);
   button.addEventListener('pointerdown', event => {
     if (!event.isPrimary || event.button !== 0) return;
     if (state !== 'result') haptic();
-    held = state === 'active';
+    if(state==='idle'&&(mode===0||mode===4))startChallenge();
+    held = state === 'active' && !debugPaused;
     holdPress = held && mode === 0 && !game.tapping;
     button.setPointerCapture(event.pointerId);
   });
   ['pointerup','pointercancel','lostpointercapture','blur'].forEach(event => button.addEventListener(event, () => { held = false; }));
   button.addEventListener('keydown', event => {
     if ((event.key === ' ' || event.key === 'Enter') && !event.repeat) {
-      held = state === 'active';
+      if(state==='idle'&&(mode===0||mode===4))startChallenge();
+      held = state === 'active' && !debugPaused;
       holdPress = held && mode === 0 && !game.tapping;
     }
     if (event.repeat && (event.key === ' ' || event.key === 'Enter')) event.preventDefault();
@@ -709,7 +831,7 @@
     held=false; holdPress=false; stopHaptic();
     if (state !== 'active') return;
     cancelAnimationFrame(frame);
-    if (!document.hidden) { game.last=performance.now(); frame=requestAnimationFrame(tick); }
+    if (!document.hidden && !debugPaused) { game.last=performance.now(); frame=requestAnimationFrame(tick); }
   });
   document.querySelectorAll('.prototypeTabs button').forEach(item => item.addEventListener('click', () => {
     if (item.dataset.tab !== 'tab-fishing') reset();

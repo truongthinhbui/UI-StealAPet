@@ -43,6 +43,18 @@
 .fishingHoldJoint.is-broken {visibility:hidden}
 .fishingDebug {max-width:1100px;margin:0 auto 10px;display:flex;align-items:center;gap:8px;color:#c4dbea;font-size:12px}
 .fishingDebug[hidden] {display:none}
+.fishingDebugPanel{max-width:1100px;margin:8px auto 12px;border:1px solid #44627a;border-radius:9px;background:#13283b;color:#d8e7f4;font-size:12px}
+.fishingDebugPanel summary{cursor:pointer;padding:12px;min-height:44px;font-weight:700}
+.fishingDebugTools{display:flex;flex-wrap:wrap;align-items:end;gap:8px;padding:0 12px 10px}
+.fishingDebugTools label{display:flex;flex-direction:column;gap:5px}
+.fishingDebugTools button,.fishingDebugTools select,.fishingDebugPanel .fishingDebug select{min-height:44px;font:inherit;padding:7px 10px;border:1px solid #63829b;border-radius:7px;background:#1d3c55;color:#eaf4ff}
+.fishingDebugTools button[aria-pressed="true"]{border-color:#ffdf8b;color:#ffedb6}
+.fishingDebugReadout{display:block;padding:8px 12px;border-top:1px solid #35516a;font-variant-numeric:tabular-nums;color:#b6d5e9;min-height:34px}
+.fishingDebugPanel .fishingDebug{padding:0 12px 10px;margin:0}
+.fishingModes button:disabled{opacity:.45;cursor:not-allowed;filter:saturate(.4)}
+.fishingScene[data-mode="3"] .fishingHud,.fishingScene[data-mode="4"] .fishingHud{display:block}
+.fishingScene[data-mode="6"] .fishingRing{display:block}
+.fishingScene[data-mode="0"][data-preview] .fishingFeedback{left:50%;top:85%;font-size:1.8cqw;font-weight:700;background:#11283de8}
 .fishingDebug select {border:1px solid #4e6b82;border-radius:6px;background:#132b40;color:#edf7ff;padding:5px 8px}
 .fishingHoldRod {filter:drop-shadow(0 2px 2px #0a162bbb)}
 .fishingHoldJoint {fill:#eee1c4}
