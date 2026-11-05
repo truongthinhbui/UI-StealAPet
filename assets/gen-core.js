@@ -70,7 +70,7 @@
     const rebirth=options.rebirth||1,full=!!options.fishing,logLimit=options.logLimit??10000;
     const random=seeded(seed),counts=Object.fromEntries(config.catalog.map(gen=>[gen.id,0]));
     const result={scenario:scenario.id,runId:scenario.id+'-r'+rebirth,name:scenario.name,seed,rebirth,band:profile(rebirth).label,configVersion:config.version,fishConfigVersion:global.FishingPool?.config.version||null,iterations:0,none:0,one:0,two:0,counts,expected:expectation(scenario,rebirth),petCounts:{},combinations:{},records:[],logLimit};
-    result.rarityCounts={};result.rarityFirst={};result.timeline=[{cast:0,counts:{}}];
+    result.rarityCounts={};result.rarityFirst={};result.genFirst={};result.timeline=[{cast:0,counts:{},pets:{},gens:{},combos:{}}];
     const chartEvery=Math.max(1,options.chartEvery||1000);
     const fixed=scenario.pattern?points(scenario.pattern):null;
     return {result,step(amount){
@@ -86,12 +86,12 @@
           const cast=result.iterations+i+1;
           result.rarityCounts[pet.rarity]=(result.rarityCounts[pet.rarity]||0)+1;
           if(!result.rarityFirst[pet.rarity])result.rarityFirst[pet.rarity]={cast,pet:pet.name};
-          if(cast%chartEvery===0)result.timeline.push({cast,counts:{...result.rarityCounts}});
-          const entry=result.petCounts[pet.id]||(result.petCounts[pet.id]={id:pet.id,name:pet.name,rarity:pet.rarity,count:0,none:0,one:0,two:0,gens:{}});
+          const entry=result.petCounts[pet.id]||(result.petCounts[pet.id]={id:pet.id,name:pet.name,rarity:pet.rarity,firstCast:cast,count:0,none:0,one:0,two:0,gens:{}});
           entry.count++;entry[rewards.length===0?'none':rewards.length===1?'one':'two']++;
-          for(const gen of rewards)entry.gens[gen.id]=(entry.gens[gen.id]||0)+1;
+          for(const gen of rewards){entry.gens[gen.id]=(entry.gens[gen.id]||0)+1;if(!result.genFirst[gen.id])result.genFirst[gen.id]=cast;}
           const ids=rewards.map(g=>g.id).sort(),key=pet.id+'|'+ids.join('+');
-          const combo=result.combinations[key]||(result.combinations[key]={petId:pet.id,pet:pet.name,rarity:pet.rarity,genIds:ids,count:0});combo.count++;
+          const combo=result.combinations[key]||(result.combinations[key]={petId:pet.id,pet:pet.name,rarity:pet.rarity,genIds:ids,firstCast:cast,count:0});combo.count++;
+          if(cast%chartEvery===0)result.timeline.push({cast,counts:{...result.rarityCounts},pets:Object.fromEntries(Object.entries(result.petCounts).map(([k,v])=>[k,v.count])),gens:{...counts},combos:Object.fromEntries(Object.entries(result.combinations).map(([k,v])=>[k,v.count]))});
           if(result.records.length<logLimit)result.records.push({cast:result.iterations+i+1,rebirth,pattern:[...pattern],points:score,petId:pet.id,pet:pet.name,rarity:pet.rarity,genIds:rewards.map(g=>g.id),claimCents:pet.claimCents});
         }
       }
