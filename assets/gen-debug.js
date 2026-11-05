@@ -18,7 +18,7 @@
   const formatMoney=cents=>{const value=BigInt(cents);return (value/100n).toString()+'.'+(value%100n).toString().padStart(2,'0');};
   const selectedReport=()=>reports.find(r=>r.runId===$('.genDetailScenario').value);
   const percent=value=>(value*100).toLocaleString('vi-VN',{minimumFractionDigits:2,maximumFractionDigits:4})+'%';
-  const tiers={basic:'Phổ thông',uncommon:'Ít gặp',advanced:'Nâng cao',rare:'Hiếm',epic:'Cao cấp',exclusive:'Cực hiếm'};
+  const tiers={basic:'COMMON',uncommon:'RARE',advanced:'EPIC',rare:'LEGENDARY',epic:'MYTHIC',exclusive:'APEX'};
   for(const scenario of core.scenarios){const option=document.createElement('option');option.value=scenario.id;option.textContent=scenario.name;$('.genSimScenario').appendChild(option);}
   let reports=[],cancelled=false,running=false;
   function table(headers,rows){

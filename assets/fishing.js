@@ -574,8 +574,21 @@
     updateDebugReadout();
   }
 
-  function finish(caught, reason) {
+  function finish(caught, reason, reveal=false) {
     if(state!=='active')return;
+    if(caught&&mode===6&&!reveal){
+      state='settling';held=false;holdPress=false;
+      cancelAnimationFrame(frame);
+      delete scene.dataset.holding;
+      delete scene.dataset.tapping;
+      scene.dataset.revealing='';
+      timer=setTimeout(()=>{
+        if(state!=='settling')return;
+        delete scene.dataset.revealing;
+        state='active';finish(caught,reason,true);
+      },350);
+      return;
+    }
     if(caught&&mode===6){
       const pending=rewards.resolve({mutationPoints:game.mutationPoints,results:game.qteResults});
       game.mutationPoints=pending.mutationPoints;game.mutationRewards=pending.mutationRewards;game.mutations=pending.mutationRewards.length;
@@ -613,6 +626,7 @@
     clearTimeout(timer);
     cancelAnimationFrame(frame);
     state = 'idle';
+    delete scene.dataset.revealing;
     debugPaused=false;
     delete scene.dataset.caught;
     stopHaptic();
