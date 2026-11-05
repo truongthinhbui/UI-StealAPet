@@ -1,0 +1,98 @@
+1: A=0. Changelog
+2: A=Date | B=Description
+3: A=2026-08-25 00:00:00 | B=Event Fishing GDD v1.1 — Secret/Mythic chase weights capped below 0.05% per active RB pool; ClaimK remains 1.10.
+5: A=1. Overview
+6: A=Fishing Event is a weather-dependent activity. It becomes available when the active weather is High Tide / Flood or Heavy Rain. Players go outdoors, face valid water, cast for free, then decide whether to buy the caught result.
+7: A=Goal | B=- Give players a clear reason to react to Heavy Rain and Flood / High Tide.
+- Keep fishing location-dependent and exposed outside the base.
+- Make the catch a readable purchase decision instead of an automatic reward.
+- Keep the pet pool and chest counters server-configured.
+8: A=Core Loop | B=Qualifying weather starts → player goes outdoors → faces water → Cast is free → catch appears in hand / temporary inventory → player selects Buy or Release → counters and inventory resolve → continue while weather remains valid.
+10: A=2. Event Activation & Weather
+11: A=Rule | B=Details
+12: A=Activation Weather | B=`HighTide` OR `HeavyRain`. `HighTide` may use Flood / Triều Cường as player-facing copy.
+13: A=Heavy Rain Handling | B=Heavy Rain may represent Rain + High Tide stacking with a display-name override. Do not create a third independent weather system just for Fishing.
+14: A=Event Availability | B=Fishing is active only while a qualifying weather state is active. Weather System owns the state and wave end time.
+15: A=Post-event | B=No new Cast after the wave ends. An already-started Cast and any pending catch may still resolve.
+16: A=Non-qualifying Weather | B=Normal, Rainy alone, Windy, GroundShake, and other states do not enable Fishing unless added to config.
+18: A=3. Fishing Eligibility
+19: A=Rule | B=Details
+20: A=Must Face Water | B=Player must be looking toward a server-recognized water surface within configured distance and facing angle.
+21: A=Indoor Restriction | B=Player cannot fish inside a house or other indoor-valid volume.
+22: A=Outdoor Requirement | B=Player must be in an outdoor-valid state. Fishing does not grant base protection or invulnerability.
+23: A=Cast Cost | B=Cast cost is 0 Money. Money is charged only after the player selects Buy.
+24: A=Pending Catch Gate | B=A player with an unresolved PendingFishingCatch cannot Cast again.
+25: A=Cast Timing | B=Cast animation, resolution delay, cooldown, and interruption rules are configurable; tune for short mobile sessions.
+27: A=4. Cast & Catch Flow
+28: A=Step | B=Details | C=Server Rule | D=Outcome
+29: A=1. Find Water | B=Move outdoors and face valid water. | C=Validate outdoor state, water target, facing, and distance. | D=Cast becomes available.
+30: A=2. Cast | B=Press Cast; rod / cast feedback plays. | C=Validate Active phase, no pending catch, player state, and cooldown. Charge 0 Money. | D=One server-owned CastID begins.
+31: A=3. Resolve | B=Catch animation reveals a fish/pet or Chest 1/2/3. | C=Roll once from Fishing / chest config; stamp CatchID, result, rarity, and price. | D=One PendingFishingCatch is created.
+32: A=4. Decide | B=Player selects Buy or Release / Don't Buy. | C=Buy charges stamped price atomically; Release removes only the pending offer. | D=Bought result routes to Base or temporary inventory; Release grants nothing.
+33: A=5. Continue | B=Resolve the current offer before casting again. | C=One pending catch per player; update counters once per successful Cast. | D=Cast again while weather and eligibility remain valid.
+35: A=5. Catch Outcome Probability
+36: A=Rule | B=Details
+37: A=Outcome | B=Each successful Cast resolves into exactly one Fish / pet, Chest 1, Chest 2, or Chest 3 outcome.
+38: A=Chest Counters | B=Chest 1, Chest 2, and Chest 3 each use an independent catch counter.
+39: A=Rate Lookup | B=Read the current value of each counter from the configured rate table.
+40: A=Fish Rate | B=Fish % = 100% - Chest 1% - Chest 2% - Chest 3%.
+41: A=Pet-pool Pity | B=No pet-pool pity or guaranteed pet counter. Chest guarantees are a separate system.
+42: A=Price Formula | B=For pet results, ClaimPrice = SpawnPrice × ClaimK. Stamp the result and price when the catch resolves.
+44: A=6. Hand / Temporary Inventory Resolution
+45: A=State | B=Details | C=Player Experience | D=Inventory Effect
+46: A=Pending Catch | B=Create one server-owned PendingFishingCatch with CatchID, result ID, rarity, stamped price, source band, and counter snapshot. | C=Result appears in the player's hand with an offer card. | D=Temporary inventory is the recoverable pending record; the result is not yet owned.
+47: A=Buy | B=Validate CatchID, Money, capacity, and player state; deduct the stamped price atomically. | C=Show exact Money deduction before confirmation. | D=Route to Base if a slot exists; otherwise route to Event Pet Inventory if capacity exists.
+48: A=Release / Don't Buy | B=Confirm if needed, then delete the pending CatchID. | C=Clearly state that the result will be lost. | D=Charge 0; grant 0.
+49: A=Base Full / Buffer Full | B=Do not charge until a valid destination exists. | C=Keep the catch pending and show the required action. | D=Never silently discard or auto-replace another pet.
+50: A=Close / Disconnect | B=Persist the pending catch by CatchID and restore it on re-entry. | C=One offer card only; no second Cast until resolved. | D=No reroll, duplicate pet, or duplicate chest bundle.
+52: A=7. Chest Rate Configuration
+53: A=Chest Tier | B=Starting Rate | C=Hard Guarantee | D=Reset When Awarded
+54: A=Chest 1 | B=15% target starting rate; exact per-counter ramp is data-driven. | C=9 successful catches | D=Reset Chest 1 only.
+55: A=Chest 2 | B=7% target starting rate; exact per-counter ramp is data-driven. | C=17 successful catches | D=Reset Chest 1 and Chest 2.
+56: A=Chest 3 | B=2% target starting rate; exact per-counter ramp is data-driven. | C=30 successful catches | D=Reset Chest 1, Chest 2, and Chest 3.
+57: A=Priority | B=If multiple guarantees are ready, award only the highest tier: Chest 3 > Chest 2 > Chest 1.
+59: A=8. Counter Reset Rules
+60: A=Catch Result | B=Reset Chest 1 | C=Reset Chest 2 | D=Reset Chest 3
+61: A=Fish | B=No | C=No | D=No
+62: A=Chest 1 | B=Yes | C=No | D=No
+63: A=Chest 2 | B=Yes | C=Yes | D=No
+64: A=Chest 3 | B=Yes | C=Yes | D=Yes
+65: A=Higher-tier Rule | B=A higher-tier Chest resets itself and every lower-tier counter. A lower-tier Chest never resets a higher-tier counter.
+67: A=9. Catch Resolution Order
+68: A=Step | B=Details
+69: A=1 | B=Validate qualifying weather: High Tide / Flood or Heavy Rain must be active when Cast begins.
+70: A=2 | B=Validate player state: outdoors, facing valid water, no pending catch, and valid Cast timing.
+71: A=3 | B=Increment all three chest counters once for the successful Cast attempt.
+72: A=4 | B=Check hard guarantees in priority order: Chest 3 → Chest 2 → Chest 1.
+73: A=5 | B=If a guarantee exists, award the highest guaranteed Chest and apply its reset rule.
+74: A=6 | B=Otherwise read Chest rates from the current counters and calculate Fish as the remainder.
+75: A=7 | B=Roll one result and stamp CatchID, result, rarity, and purchase price.
+76: A=8 | B=Persist the hand / temporary-inventory offer; resolve Buy or Release before another Cast.
+78: A=10. Validation & Anti-cheat
+79: A=Check | B=Rule | D=Failure Result
+80: A=Free Cast | B=Cast request must not modify Money or accept a client-supplied price. | D=Reject invalid payload; no charge or grant.
+81: A=Water / Outdoor | B=Server validates location, water target, facing, and indoor state. | D=Reject Cast without charge.
+82: A=Cast Continuity | B=Resolve must match the server-created CastID and timing window. | D=Reject duplicate, delayed, or spoofed resolution.
+83: A=Catch Privacy | B=CatchID, result, weights, and price are server-owned until reveal. | D=No client-side roll or price reroll.
+84: A=Buy Transaction | B=Validate CatchID, stamped price, Money balance, and destination capacity atomically. | D=No partial deduction or duplicate grant.
+85: A=Counter Update | B=Increment and reset counters in the same authoritative catch transaction. | D=Prevent double-counting or reset exploits.
+86: A=Exposure | B=Fishing cannot call base-protection or invulnerability flows. | D=QA failure if Fishing creates a safe theft window.
+88: A=11. Config Knobs
+89: A=Parameter | B=Value / Rule
+90: A=Qualifying Weather Types | B=HighTide / Flood and HeavyRain.
+91: A=Cast Cost | B=0 Money.
+92: A=Water Detection | B=Existing environment / interaction validation; exact distance and facing angle TBD.
+93: A=Cast Timing | B=Cast time, catch timing, animation, input method, interruption, and cooldown TBD.
+94: A=Fishing Pool | B=Fishing master-data rows by active RB band; server-normalize against configured pool total. Every Secret, Apex, or new/chase pet must remain <0.05% per active band.
+95: A=Temporary Inventory | B=Use existing Event Pet Inventory / pending-catch persistence; capacity and final routing must be confirmed.
+96: A=Chest Contents | B=Chest 1/2/3 reward tables and purchase prices TBD.
+98: A=12. QA / PO Decisions
+99: A=Priority | B=Scenario / Decision | C=Expected Result
+100: A=P0 | B=Heavy Rain and High Tide / Flood activation. | C=Fishing appears only for qualifying states; no duplicate event when HeavyRain display stacking is active.
+101: A=P0 | B=Free Cast and spam. | C=Cast deducts 0 Money; cooldown and pending-catch gate prevent duplicate requests.
+102: A=P0 | B=Hand / temporary inventory. | C=One pending result appears, persists by CatchID, and blocks a second Cast.
+103: A=P0 | B=Buy / Release. | C=Buy deducts stamped ClaimPrice once; Release grants nothing and charges nothing.
+104: A=P0 | B=Reconnect / event end. | C=Pending catch remains recoverable and resolves once.
+105: A=P1 | B=Pool caps / normalization. | C=After normalization, every Secret, Apex, and new/chase pet is <0.05% in its active RB pool; recheck after any weight change.
+106: A=PO | B=Pool whitelist. | C=Resolve current 34-row Fishing sheet versus the 29-pet/no-COMMON target.
+107: A=PO | B=Chest data migration. | C=Replace legacy EventFishing low starting rates and 30/40/50 caps with the approved 15%/7%/2% and 9/17/30 target, or explicitly re-lock another table.

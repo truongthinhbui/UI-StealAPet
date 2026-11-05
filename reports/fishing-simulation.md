@@ -35,4 +35,4 @@ Seed 20261105. 10000 casts per scenario per Rebirth band. All six patterns and f
 | R19+ | Full vàng | 32 | 4038 | 5962 | 0 | 3.130% |
 | R19+ | Ngẫu nhiên theo tỉ lệ tap | 31 | 8156 | 1844 | 0 | 3.220% |
 
-See fishing-casts.csv for individual casts: Rebirth, taps, points, pet ID, pet, rarity and exact Gen combination. fishing-simulation.json additionally contains all pet counts, per-pet Gen incidence and every observed combination. All 21 Gen have positive weights; rare outcomes may be absent in a finite sample.
+See fishing-casts.csv for individual casts: Rebirth, taps, points, pet ID, pet, rarity and exact Gen combination. fishing-simulation.json additionally contains all pet counts, per-pet Gen incidence and every observed combination. All 17 Gen have positive weights; rare outcomes may be absent in a finite sample.

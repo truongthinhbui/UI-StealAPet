@@ -29,7 +29,7 @@
 .fishingScene[data-mode="6"] .fishingRing::before{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(from var(--ring-start,57.6deg),#0bc77a 0%,#50ffad 10%,#0bc77a 20%,transparent 20%);mask:radial-gradient(farthest-side,transparent 72.3%,#000 72.8% 99.8%,transparent 100%)}
 .fishingScene[data-mode="6"] .fishingRing::after{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(from var(--ring-start,57.6deg),transparent 0% 45%,#ffc02b 45%,#fff29a 49%,#ffc02b 53%,transparent 53%);mask:radial-gradient(farthest-side,transparent 74%,#000 74.5% 99%,transparent 99.5%);pointer-events:none}
 .fishingScene[data-mode="6"] .fishingRing i{background:none;transform:rotate(var(--angle,0deg));will-change:transform;z-index:2}
-.fishingScene[data-mode="6"] .fishingRing i::before{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(transparent 0deg 330deg,#e3318a00 330deg,#e3318a66 352deg,#e3318acc 360deg);mask:radial-gradient(farthest-side,transparent 73%,#000 73.5% 99%,transparent 100%)}
+.fishingScene[data-mode="6"] .fishingRing i::before{content:'';position:absolute;inset:0;border-radius:50%;background:conic-gradient(transparent 0deg 330deg,transparent 330deg,color-mix(in srgb,var(--qte-fish-color,#a9bdce) 40%,transparent) 352deg,color-mix(in srgb,var(--qte-fish-color,#a9bdce) 80%,transparent) 360deg);mask:radial-gradient(farthest-side,transparent 73%,#000 73.5% 99%,transparent 100%)}
 .qteFishIcon{display:none}
 .fishingScene[data-mode="6"] .qteFishIcon{display:block;position:absolute;left:50%;top:6.8%;translate:-50% -50%;width:clamp(24px,4cqw,48px);height:auto;overflow:visible;filter:drop-shadow(0 2px 2px #193d67aa)}
 .qteContact{--contact:#8dffd0;position:absolute;inset:0;border-radius:50%;pointer-events:none;z-index:3}
@@ -307,3 +307,13 @@
 .poolHorizontalControls{margin:10px 0 7px;color:#a9cfe7;font:11px Arial,sans-serif}.poolHorizontalControls>span{display:block;margin-bottom:6px}.poolHorizontalBar{display:flex;align-items:center;gap:8px}.poolHorizontalBar button{padding:3px 10px;min-height:30px;font-size:16px;line-height:1}.poolScrollTrack{flex:1;min-width:0;height:20px;overflow-x:scroll;overflow-y:hidden;background:#102b3e;border:1px solid #50748e;border-radius:5px;scrollbar-color:#8eb7d5 #18384f;scrollbar-width:auto}.poolScrollTrack>div{height:1px}
 .poolAllColumns .poolFishTable table,.poolAllColumns .poolGenTable table{min-width:1650px}.poolAllColumns table th:nth-child(n+5),.poolAllColumns table td:nth-child(n+5){min-width:110px}.poolAllColumns table th:nth-child(2),.poolAllColumns table td:nth-child(2){position:sticky;left:0;min-width:165px;z-index:2;background:#19364b}.poolAllColumns table th:nth-child(2){z-index:4;background:#254c69}.poolAllColumns table tbody tr:nth-child(even) td:nth-child(2){background:#1b384f}
 .fishingChart{margin:16px 0;padding:16px;border:1px solid #466a82;border-radius:12px;background:#142e42;color:#dcebf6;font:12px Arial,sans-serif}.fishingChart[hidden]{display:none}.chartHeading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.chartHeading h3{margin:0}.chartHeading label{display:flex;gap:8px;align-items:center}.chartRun,.chartLegend{color:#a8c6dc}.chartMetrics{font-weight:bold;margin:12px 0;color:#f1df9b}.fishingChart svg{display:block;width:100%;height:auto;min-height:180px}.fishingChart svg text{fill:#bfdaed;font:12px Arial,sans-serif}.chartFirst{max-height:280px}.fishingChart>p:last-child{color:#a8c6dc;line-height:1.5;margin-bottom:0}
+.fishingScene[data-mode="6"] .qteFishIcon>path:first-child{fill:var(--qte-fish-color,#a9bdce)}
+.fishingScene[data-mode="6"] .qteFishIcon>path:nth-child(2){fill:var(--qte-fish-fin,#dce8f0)}
+.fishingOffer[data-rarity="common"]{--rarity-ink:#16844e;--rarity-bg:#e4faec;--rarity-edge:#7dd5a1}
+.fishingOffer[data-rarity="legendary"]{--rarity-ink:#ba3030;--rarity-bg:#ffe8e4;--rarity-edge:#ec9e93}
+.fishingOffer[data-rarity="mythic"]{--rarity-ink:#93600a;--rarity-bg:#fff1c8;--rarity-edge:#e8c25c}
+.offerMutation[data-tier="basic"]{--gen-ink:#16844e;--gen-bg:#e4faec;--gen-edge:#7dd5a1}
+.offerMutation[data-tier="uncommon"]{--gen-ink:#1766af;--gen-bg:#e2f1ff;--gen-edge:#8fbfe7}
+.offerMutation[data-tier="advanced"]{--gen-ink:#8140af;--gen-bg:#f2e7ff;--gen-edge:#c3a0e2}
+.offerMutation[data-tier="rare"]{--gen-ink:#ba3030;--gen-bg:#ffe8e4;--gen-edge:#ec9e93}
+.offerMutation[data-tier="epic"]{--gen-ink:#93600a;--gen-bg:#fff1c8;--gen-edge:#e8c25c}

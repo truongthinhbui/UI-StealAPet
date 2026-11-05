@@ -1,0 +1,88 @@
+{
+  "assumptions": {
+    "secondsPerCast": 10,
+    "castsPerEvent": 18,
+    "tapChance": 0.6,
+    "chests": false
+  },
+  "fishing": [
+    {
+      "band": "R1\u2013R4",
+      "apexPerCast": 0.00011,
+      "webGivenGen": 2e-06,
+      "webPerCastGold": 1.2e-06,
+      "apexWebPerCastGold": 1.32e-10,
+      "meanCasts": 7575757575.757575,
+      "mean18CastEvents": 420875421.347643,
+      "meanActiveYears": 2402.256968467014,
+      "extraCastFactorOverApexOnly": 833333.3333333334
+    },
+    {
+      "band": "R5\u2013R8",
+      "apexPerCast": 0.000165,
+      "webGivenGen": 9e-06,
+      "webPerCastGold": 5.4e-06,
+      "apexWebPerCastGold": 8.909999999999999e-10,
+      "meanCasts": 1122334455.667789,
+      "mean18CastEvents": 62351914.67598828,
+      "meanActiveYears": 355.8899212543725,
+      "extraCastFactorOverApexOnly": 185185.1851851852
+    },
+    {
+      "band": "R9\u2013R13",
+      "apexPerCast": 0.00022,
+      "webGivenGen": 3.6e-05,
+      "webPerCastGold": 2.16e-05,
+      "apexWebPerCastGold": 4.752e-09,
+      "meanCasts": 210437710.43771043,
+      "mean18CastEvents": 11690984.385428363,
+      "meanActiveYears": 66.72936023519483,
+      "extraCastFactorOverApexOnly": 46296.2962962963
+    },
+    {
+      "band": "R14\u2013R18",
+      "apexPerCast": 0.00033,
+      "webGivenGen": 9e-05,
+      "webPerCastGold": 5.4000000000000005e-05,
+      "apexWebPerCastGold": 1.782e-08,
+      "meanCasts": 56116722.78338945,
+      "mean18CastEvents": 3117596.1824105517,
+      "meanActiveYears": 17.794496062718622,
+      "extraCastFactorOverApexOnly": 18518.51851851852
+    },
+    {
+      "band": "R19+",
+      "apexPerCast": 0.0004100123003690111,
+      "webGivenGen": 0.00027,
+      "webPerCastGold": 0.000162,
+      "apexWebPerCastGold": 6.642199265977979e-08,
+      "meanCasts": 15055254.441433303,
+      "mean18CastEvents": 836403.4967463939,
+      "meanActiveYears": 4.77398986600498,
+      "extraCastFactorOverApexOnly": 6172.839506172839
+    }
+  ],
+  "luckyBox": {
+    "60001.0": {
+      "total": 100000.0,
+      "apex": 0
+    },
+    "60002.0": {
+      "total": 179431.0,
+      "apex": 30.0
+    },
+    "60003.0": {
+      "total": 34542.0,
+      "apex": 541.0
+    }
+  },
+  "digMythic": {
+    "total": 999600.0,
+    "apex": 17600.0,
+    "rate": 0.017607042817126852
+  },
+  "weather": {
+    "cycleMinutes": 69.0,
+    "fishingMinutes": 11.0
+  }
+}

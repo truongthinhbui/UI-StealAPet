@@ -1,0 +1,65 @@
+1: A=MutaGen Config - Individual Target Mutation with S / SS / SSS
+3: A=Key | B=Value | C=Notes | K=RankMin | L=RankMax | M=PetGroup | N=BaseUseCostLv1
+4: A=LevelMultiplier | B=1.04 | C=Matches planned pet leveling: value/generation scales x1.5 per level. | K=1.0 | L=9.0 | M=Common normal | N=25000.0 | O=25.k
+5: A=SecretMultiplier | B=0.55 | C=Applied to success chance when pet is Secret. | K=10.0 | L=20.0 | M=Common secret | N=100000.0 | O=100.k
+6: A=MinChance | B=0.02 | C=Clamp lower bound. | K=21.0 | L=30.0 | M=Rare normal | N=450000.0 | O=450.k
+7: A=MaxChance | B=0.75 | C=Clamp upper bound. | K=31.0 | L=40.0 | M=Rare secret | N=1800000 | O=1.8m
+8: A=UseCostFormula | B==BaseUseCostLv1*POWER(LevelMultiplier,PetLevel-1) | C=Formula reference only. | K=41.0 | L=52.0 | M=Epic normal | N=50000000.0 | O=50.m
+9: K=53.0 | L=70.0 | M=Epic secret | N=200000000 | O=200.m
+10: K=71.0 | L=89.0 | M=Legendary normal | N=1000000000.0 | O=1.B
+11: K=90.0 | L=120.0 | M=Legendary secret | N=5000000000 | O=5.B | P=PetRarity | Q=PetRarityMult | R=Notes
+12: K=121.0 | L=132.0 | M=Mythic low | N=20000000000.0 | O=20.B | P=COMMON | Q=1.0 | R=Easiest to mutate.
+13: K=133.0 | L=200.0 | M=Mythic high | N=100000000000 | O=100.B | P=RARE | Q=0.95
+14: K=201.0 | L=400.0 | M=Mythic secret | N=700000000000.0 | O=700.B | P=EPIC | Q=0.9
+15: K=401.0 | L=500.0 | M=Apex/Divine normal | N=3500000000000.0 | O=3.5T | P=LEGENDARY | Q=0.8
+16: K=501.0 | L=9999.0 | M=Apex/Divine secret | N=20000000000000.0 | O=20.T | P=MYTHIC | Q=0.7
+17: P=APEX/DIVINE | Q=0.45 | R=Use one naming convention in final data.
+23: A=LookupKey | B=ID | C=ItemName | D=TargetMutation | E=Grade | F=BuyCostPetCoin | G=BaseChanceByGrade | H=TargetRule | I=CanUseOnNormalOnly | J=CanUseOnSecret | K=ConsumeItemOnFail | L=ConsumeMoneyOnFail | M=Backup
+24: A=Golden|S | B=0.0 | C=MutaGen Golden S | D=Golden | E=S | F=20.0 | G=0.6 | H=Apply Golden only | I=True | J=True | K=True | L=True | M=0.55
+25: A=Golden|SS | B=1.0 | C=MutaGen Golden SS | D=Golden | E=SS | F=25.0 | G=0.72 | H=Apply Golden only | I=True | J=True | K=True | L=True | M=0.65
+26: A=Golden|SSS | B=2.0 | C=MutaGen Golden SSS | D=Golden | E=SSS | F=30.0 | G=0.8 | H=Apply Golden only | I=True | J=True | K=True | L=True | M=0.75
+27: A=Frozen|S | B=3.0 | C=MutaGen Frozen S | D=Frozen | E=S | F=35.0 | G=0.55 | H=Apply Frozen only | I=True | J=True | K=True | L=True | M=0.5
+28: A=Frozen|SS | B=4.0 | C=MutaGen Frozen SS | D=Frozen | E=SS | F=40.0 | G=0.67 | H=Apply Frozen only | I=True | J=True | K=True | L=True | M=0.6
+29: A=Frozen|SSS | B=5.0 | C=MutaGen Frozen SSS | D=Frozen | E=SSS | F=50.0 | G=0.75 | H=Apply Frozen only | I=True | J=True | K=True | L=True | M=0.7
+30: A=Magma|S | B=6.0 | C=MutaGen Magma S | D=Magma | E=S | F=60.0 | G=0.5 | H=Apply Magma only | I=True | J=True | K=True | L=True | M=0.45
+31: A=Magma|SS | B=7.0 | C=MutaGen Magma SS | D=Magma | E=SS | F=80.0 | G=0.62 | H=Apply Magma only | I=True | J=True | K=True | L=True | M=0.55
+32: A=Magma|SSS | B=8.0 | C=MutaGen Magma SSS | D=Magma | E=SSS | F=100.0 | G=0.7 | H=Apply Magma only | I=True | J=True | K=True | L=True | M=0.65
+33: A=Clover|S | B=9.0 | C=MutaGen Clover S | D=Clover | E=S | F=125.0 | G=0.45 | H=Apply Clover only | I=True | J=True | K=True | L=True | M=0.4
+34: A=Clover|SS | B=10.0 | C=MutaGen Clover SS | D=Clover | E=SS | F=150.0 | G=0.57 | H=Apply Clover only | I=True | J=True | K=True | L=True | M=0.5
+35: A=Clover|SSS | B=11.0 | C=MutaGen Clover SSS | D=Clover | E=SSS | F=180.0 | G=0.65 | H=Apply Clover only | I=True | J=True | K=True | L=True | M=0.6
+36: A=Fossilized|S | B=12.0 | C=MutaGen Fossilized S | D=Fossilized | E=S | F=200.0 | G=0.35 | H=Apply Fossilized only | I=True | J=True | K=True | L=True | M=0.3
+37: A=Fossilized|SS | B=13.0 | C=MutaGen Fossilized SS | D=Fossilized | E=SS | F=240.0 | G=0.47 | H=Apply Fossilized only | I=True | J=True | K=True | L=True | M=0.4
+38: A=Fossilized|SSS | B=14.0 | C=MutaGen Fossilized SSS | D=Fossilized | E=SSS | F=275.0 | G=0.55 | H=Apply Fossilized only | I=True | J=True | K=True | L=True | M=0.5
+39: A=Sweetheart|S | B=15.0 | C=MutaGen Sweetheart S | D=Sweetheart | E=S | F=300.0 | G=0.3 | H=Apply Sweetheart only | I=True | J=True | K=True | L=True | M=0.3
+40: A=Sweetheart|SS | B=16.0 | C=MutaGen Sweetheart SS | D=Sweetheart | E=SS | F=350.0 | G=0.42 | H=Apply Sweetheart only | I=True | J=True | K=True | L=True | M=0.4
+41: A=Sweetheart|SSS | B=17.0 | C=MutaGen Sweetheart SSS | D=Sweetheart | E=SSS | F=375.0 | G=0.5 | H=Apply Sweetheart only | I=True | J=True | K=True | L=True | M=0.5
+42: A=Crystalline|S | B=18.0 | C=MutaGen Crystalline S | D=Crystalline | E=S | F=400.0 | G=0.25 | H=Apply Crystalline only | I=True | J=True | K=True | L=True | M=0.25
+43: A=Crystalline|SS | B=19.0 | C=MutaGen Crystalline SS | D=Crystalline | E=SS | F=440.0 | G=0.37 | H=Apply Crystalline only | I=True | J=True | K=True | L=True | M=0.35
+44: A=Crystalline|SSS | B=20.0 | C=MutaGen Crystalline SSS | D=Crystalline | E=SSS | F=480.0 | G=0.45 | H=Apply Crystalline only | I=True | J=True | K=True | L=True | M=0.45
+45: A=Radioactive|S | B=21.0 | C=MutaGen Radioactive S | D=Radioactive | E=S | F=500.0 | G=0.25 | H=Apply Radioactive only | I=True | J=True | K=True | L=True | M=0.25
+46: A=Radioactive|SS | B=22.0 | C=MutaGen Radioactive SS | D=Radioactive | E=SS | F=550.0 | G=0.37 | H=Apply Radioactive only | I=True | J=True | K=True | L=True | M=0.35
+47: A=Radioactive|SSS | B=23.0 | C=MutaGen Radioactive SSS | D=Radioactive | E=SSS | F=600.0 | G=0.45 | H=Apply Radioactive only | I=True | J=True | K=True | L=True | M=0.45
+48: A=Webbed|S | B=24.0 | C=MutaGen Webbed S | D=Webbed | E=S | F=500.0 | G=0.2 | H=Apply Webbed only | I=True | J=True | K=True | L=True | M=0.2
+49: A=Webbed|SS | B=25.0 | C=MutaGen Webbed SS | D=Webbed | E=SS | F=550.0 | G=0.32 | H=Apply Webbed only | I=True | J=True | K=True | L=True | M=0.3
+50: A=Webbed|SSS | B=26.0 | C=MutaGen Webbed SSS | D=Webbed | E=SSS | F=600.0 | G=0.4 | H=Apply Webbed only | I=True | J=True | K=True | L=True | M=0.4
+51: A=Galaxy|S | B=27.0 | C=MutaGen Galaxy S | D=Galaxy | E=S | H=Apply Galaxy only
+52: A=Galaxy|SS | B=28.0 | C=MutaGen Galaxy SS | D=Galaxy | E=SS | H=Apply Galaxy only
+53: A=Galaxy|SSS | B=29.0 | C=MutaGen Galaxy SSS | D=Galaxy | E=SSS | H=Apply Galaxy only
+56: A=Attempt Calculator
+57: A=Input | B=Value | C=Formula/Lookup | D=Notes
+58: A=TargetMutation | B=Magma
+59: A=Grade | B=SS
+60: A=PetRarity | B=MYTHIC
+61: A=IsSecret | B=False
+62: A=PetRank | B=145.0
+63: A=PetLevel | B=1.0 | D=Level scaling uses 1.5^(Level-1).
+64: A=LookupKey | B=Magma|SS | C=Magma|SS
+65: A=BuyCostPetCoin | B=80 | C=80
+66: A=BaseChanceByGrade | B=0.62 | C=0.62
+67: A=PetRarityMult | B=0.7 | C=0.7
+68: A=SecretMult | B=1 | C=1
+69: A=FinalChance | B=0.434 | C=0.434
+70: A=BaseUseCostLv1 | B=100000000000 | C=100000000000 | D=100.B
+71: A=LevelMultiplier | B=1.04 | C=1.04
+72: A=UseCost | B=100000000000 | C=100000000000 | D=100.B
+73: A=ResultOnSuccess | B=Apply Magma only | C=Apply Magma only

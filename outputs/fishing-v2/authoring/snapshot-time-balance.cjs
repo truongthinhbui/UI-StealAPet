@@ -1,0 +1,1 @@
+const fs=require('fs');const file='assets/gen-config.js',s=fs.readFileSync(file,'utf8'),g=JSON.parse(s.slice(s.indexOf('=')+1).trim().replace(/;$/,''));if(g.version!=='merged-gen-8-17-pool')throw Error('Expected v8 baseline');fs.writeFileSync('outputs/fishing-v2/authoring/gen-v8-before-time-balance.json',JSON.stringify(g,null,2));

@@ -1,0 +1,865 @@
+{
+  "version": "merged-gen-9-time-balanced-17",
+  "byBand": [
+    [
+      {
+        "id": "gold",
+        "name": "Golden",
+        "tier": "COMMON",
+        "family": "MutaGen",
+        "rate": 0.428492,
+        "casts": 35360.08875665158,
+        "activeHours": 98.22246876847662,
+        "elapsedHours": 616.1227586386261
+      },
+      {
+        "id": "soaked",
+        "name": "Soaked",
+        "tier": "COMMON",
+        "family": "WeatherGen",
+        "rate": 0.318454,
+        "casts": 47578.34774100859,
+        "activeHours": 132.1620770583572,
+        "elapsedHours": 829.0166651842405
+      },
+      {
+        "id": "frost",
+        "name": "Frozen",
+        "tier": "RARE",
+        "family": "MutaGen",
+        "rate": 0.10419,
+        "casts": 145421.97093305644,
+        "activeHours": 403.9499192584901,
+        "elapsedHours": 2533.8676753487107
+      },
+      {
+        "id": "ice",
+        "name": "Frost",
+        "tier": "RARE",
+        "family": "WeatherGen",
+        "rate": 0.071393,
+        "casts": 212226.90111796887,
+        "activeHours": 589.5191697721358,
+        "elapsedHours": 3697.892974025215
+      },
+      {
+        "id": "wind",
+        "name": "Gale",
+        "tier": "RARE",
+        "family": "WeatherGen",
+        "rate": 0.027172,
+        "casts": 557615.0136727201,
+        "activeHours": 1548.9305935353334,
+        "elapsedHours": 9716.019177630727
+      },
+      {
+        "id": "coral",
+        "name": "Magma",
+        "tier": "EPIC",
+        "family": "MutaGen",
+        "rate": 0.013101,
+        "casts": 1156515.9263808222,
+        "activeHours": 3212.5442399467283,
+        "elapsedHours": 20151.41386875675
+      },
+      {
+        "id": "thundered",
+        "name": "Thundered",
+        "tier": "EPIC",
+        "family": "WeatherGen",
+        "rate": 0.01078,
+        "casts": 1405520.8860403665,
+        "activeHours": 3904.2246834454627,
+        "elapsedHours": 24490.136650703356
+      },
+      {
+        "id": "clover",
+        "name": "Clover",
+        "tier": "EPIC",
+        "family": "MutaGen",
+        "rate": 0.007719,
+        "casts": 1962885.756123222,
+        "activeHours": 5452.4604336756165,
+        "elapsedHours": 34201.79726578341
+      },
+      {
+        "id": "lunar",
+        "name": "Eclipse",
+        "tier": "EPIC",
+        "family": "WeatherGen",
+        "rate": 0.006366,
+        "casts": 2380068.3555631717,
+        "activeHours": 6611.300987675477,
+        "elapsedHours": 41470.888013600714
+      },
+      {
+        "id": "fossilized",
+        "name": "Fossilized",
+        "tier": "LEGENDARY",
+        "family": "MutaGen",
+        "rate": 0.00271,
+        "casts": 5590965.000559095,
+        "activeHours": 15530.458334886376,
+        "elapsedHours": 97418.32955519635
+      },
+      {
+        "id": "rainbow",
+        "name": "Prismatic",
+        "tier": "LEGENDARY",
+        "family": "WeatherGen",
+        "rate": 0.002163,
+        "casts": 7004861.373793412,
+        "activeHours": 19457.948260537254,
+        "elapsedHours": 122054.40272518824
+      },
+      {
+        "id": "vortex",
+        "name": "Vortex",
+        "tier": "LEGENDARY",
+        "family": "WeatherGen",
+        "rate": 0.001693,
+        "casts": 8949506.88217079,
+        "activeHours": 24859.741339363307,
+        "elapsedHours": 155938.37749236982
+      },
+      {
+        "id": "sequin",
+        "name": "Sequin",
+        "tier": "LEGENDARY",
+        "family": "WeatherGen",
+        "rate": 0.001552,
+        "casts": 9762574.195563884,
+        "activeHours": 27118.26165434412,
+        "elapsedHours": 170105.45946815857
+      },
+      {
+        "id": "sweetheart",
+        "name": "Sweetheart",
+        "tier": "LEGENDARY",
+        "family": "MutaGen",
+        "rate": 0.001215,
+        "casts": 12470382.84075321,
+        "activeHours": 34639.95233542559,
+        "elapsedHours": 217286.97374039688
+      },
+      {
+        "id": "diamond",
+        "name": "Crystalline",
+        "tier": "MYTHIC",
+        "family": "MutaGen",
+        "rate": 0.001,
+        "casts": 15151515.15151515,
+        "activeHours": 42087.54208754208,
+        "elapsedHours": 264003.67309458216
+      },
+      {
+        "id": "radioactive",
+        "name": "Radioactive",
+        "tier": "MYTHIC",
+        "family": "MutaGen",
+        "rate": 0.001,
+        "casts": 15151515.15151515,
+        "activeHours": 42087.54208754208,
+        "elapsedHours": 264003.67309458216
+      },
+      {
+        "id": "webbed",
+        "name": "Webbed",
+        "tier": "MYTHIC",
+        "family": "MutaGen",
+        "rate": 0.001,
+        "casts": 15151515.15151515,
+        "activeHours": 42087.54208754208,
+        "elapsedHours": 264003.67309458216
+      }
+    ],
+    [
+      {
+        "id": "gold",
+        "name": "Golden",
+        "tier": "COMMON",
+        "family": "MutaGen",
+        "rate": 0.338395,
+        "casts": 29849.76167204037,
+        "activeHours": 82.91600464455658,
+        "elapsedHours": 520.1094836794913
+      },
+      {
+        "id": "soaked",
+        "name": "Soaked",
+        "tier": "COMMON",
+        "family": "WeatherGen",
+        "rate": 0.259886,
+        "casts": 38867.08056998107,
+        "activeHours": 107.96411269439187,
+        "elapsedHours": 677.2294341739126
+      },
+      {
+        "id": "frost",
+        "name": "Frozen",
+        "tier": "RARE",
+        "family": "MutaGen",
+        "rate": 0.130571,
+        "casts": 77360.28751415017,
+        "activeHours": 214.88968753930604,
+        "elapsedHours": 1347.9444036556467
+      },
+      {
+        "id": "ice",
+        "name": "Frost",
+        "tier": "RARE",
+        "family": "WeatherGen",
+        "rate": 0.093291,
+        "casts": 108274.21831698774,
+        "activeHours": 300.76171754718814,
+        "elapsedHours": 1886.5962282505438
+      },
+      {
+        "id": "wind",
+        "name": "Gale",
+        "tier": "RARE",
+        "family": "WeatherGen",
+        "rate": 0.039509,
+        "casts": 255663.52226100638,
+        "activeHours": 710.1764507250177,
+        "elapsedHours": 4454.743190911474
+      },
+      {
+        "id": "coral",
+        "name": "Magma",
+        "tier": "EPIC",
+        "family": "MutaGen",
+        "rate": 0.030208,
+        "casts": 334381.95514466707,
+        "activeHours": 928.8387642907419,
+        "elapsedHours": 5826.352248732835
+      },
+      {
+        "id": "thundered",
+        "name": "Thundered",
+        "tier": "EPIC",
+        "family": "WeatherGen",
+        "rate": 0.025412,
+        "casts": 397489.77258815133,
+        "activeHours": 1104.1382571893093,
+        "elapsedHours": 6925.95815873294
+      },
+      {
+        "id": "clover",
+        "name": "Clover",
+        "tier": "EPIC",
+        "family": "MutaGen",
+        "rate": 0.018909,
+        "casts": 534190.6024120844,
+        "activeHours": 1483.8627844780121,
+        "elapsedHours": 9307.866557180258
+      },
+      {
+        "id": "lunar",
+        "name": "Eclipse",
+        "tier": "EPIC",
+        "family": "WeatherGen",
+        "rate": 0.015907,
+        "casts": 635004.0926013768,
+        "activeHours": 1763.9002572260467,
+        "elapsedHours": 11064.465249872475
+      },
+      {
+        "id": "fossilized",
+        "name": "Fossilized",
+        "tier": "LEGENDARY",
+        "family": "MutaGen",
+        "rate": 0.010762,
+        "casts": 938581.1281369728,
+        "activeHours": 2607.16980038048,
+        "elapsedHours": 16354.065111477557
+      },
+      {
+        "id": "rainbow",
+        "name": "Prismatic",
+        "tier": "LEGENDARY",
+        "family": "WeatherGen",
+        "rate": 0.008824,
+        "casts": 1144720.0930428493,
+        "activeHours": 3179.778036230137,
+        "elapsedHours": 19945.880409079953
+      },
+      {
+        "id": "vortex",
+        "name": "Vortex",
+        "tier": "LEGENDARY",
+        "family": "WeatherGen",
+        "rate": 0.007061,
+        "casts": 1430535.3492437478,
+        "activeHours": 3973.7093034548548,
+        "elapsedHours": 24925.994721671366
+      },
+      {
+        "id": "sequin",
+        "name": "Sequin",
+        "tier": "LEGENDARY",
+        "family": "WeatherGen",
+        "rate": 0.006441,
+        "casts": 1568236.3143937434,
+        "activeHours": 4356.211984427065,
+        "elapsedHours": 27325.329720497048
+      },
+      {
+        "id": "sweetheart",
+        "name": "Sweetheart",
+        "tier": "LEGENDARY",
+        "family": "MutaGen",
+        "rate": 0.005418,
+        "casts": 1864342.9496142676,
+        "activeHours": 5178.730415595188,
+        "elapsedHours": 32484.76351600618
+      },
+      {
+        "id": "diamond",
+        "name": "Crystalline",
+        "tier": "MYTHIC",
+        "family": "MutaGen",
+        "rate": 0.003268,
+        "casts": 3090884.3638341804,
+        "activeHours": 8585.78989953939,
+        "elapsedHours": 53856.31846074708
+      },
+      {
+        "id": "radioactive",
+        "name": "Radioactive",
+        "tier": "MYTHIC",
+        "family": "MutaGen",
+        "rate": 0.003138,
+        "casts": 3218932.4732345766,
+        "activeHours": 8941.479092318268,
+        "elapsedHours": 56087.4597609055
+      },
+      {
+        "id": "webbed",
+        "name": "Webbed",
+        "tier": "MYTHIC",
+        "family": "MutaGen",
+        "rate": 0.003,
+        "casts": 3367003.3670033673,
+        "activeHours": 9352.78713056491,
+        "elapsedHours": 58667.48290990716
+      }
+    ],
+    [
+      {
+        "id": "gold",
+        "name": "Golden",
+        "tier": "COMMON",
+        "family": "MutaGen",
+        "rate": 0.252841,
+        "casts": 29962.536043432734,
+        "activeHours": 83.22926678731315,
+        "elapsedHours": 522.0744916658734
+      },
+      {
+        "id": "soaked",
+        "name": "Soaked",
+        "tier": "COMMON",
+        "family": "WeatherGen",
+        "rate": 0.200704,
+        "casts": 37745.922232529374,
+        "activeHours": 104.84978397924826,
+        "elapsedHours": 657.6940995061937
+      },
+      {
+        "id": "frost",
+        "name": "Frozen",
+        "tier": "RARE",
+        "family": "MutaGen",
+        "rate": 0.134323,
+        "casts": 56399.55611293356,
+        "activeHours": 156.66543364703767,
+        "elapsedHours": 982.719538331418
+      },
+      {
+        "id": "ice",
+        "name": "Frost",
+        "tier": "RARE",
+        "family": "WeatherGen",
+        "rate": 0.100095,
+        "casts": 75685.67436692717,
+        "activeHours": 210.23798435257547,
+        "elapsedHours": 1318.7655382116097
+      },
+      {
+        "id": "wind",
+        "name": "Gale",
+        "tier": "RARE",
+        "family": "WeatherGen",
+        "rate": 0.052796,
+        "casts": 143491.12765659473,
+        "activeHours": 398.58646571276313,
+        "elapsedHours": 2500.2241940164236
+      },
+      {
+        "id": "coral",
+        "name": "Magma",
+        "tier": "EPIC",
+        "family": "MutaGen",
+        "rate": 0.047202,
+        "casts": 160496.53776868724,
+        "activeHours": 445.8237160241312,
+        "elapsedHours": 2796.530582333187
+      },
+      {
+        "id": "thundered",
+        "name": "Thundered",
+        "tier": "EPIC",
+        "family": "WeatherGen",
+        "rate": 0.045382,
+        "casts": 166933.09188130923,
+        "activeHours": 463.70303300363673,
+        "elapsedHours": 2908.6826615682667
+      },
+      {
+        "id": "clover",
+        "name": "Clover",
+        "tier": "EPIC",
+        "family": "MutaGen",
+        "rate": 0.035042,
+        "casts": 216190.78750521023,
+        "activeHours": 600.5299652922506,
+        "elapsedHours": 3766.960691378663
+      },
+      {
+        "id": "lunar",
+        "name": "Eclipse",
+        "tier": "EPIC",
+        "family": "WeatherGen",
+        "rate": 0.030123,
+        "casts": 251494.1266061672,
+        "activeHours": 698.5947961282423,
+        "elapsedHours": 4382.094630258975
+      },
+      {
+        "id": "fossilized",
+        "name": "Fossilized",
+        "tier": "LEGENDARY",
+        "family": "MutaGen",
+        "rate": 0.021401,
+        "casts": 353990.82172597427,
+        "activeHours": 983.3078381277063,
+        "elapsedHours": 6168.021893710158
+      },
+      {
+        "id": "rainbow",
+        "name": "Prismatic",
+        "tier": "LEGENDARY",
+        "family": "WeatherGen",
+        "rate": 0.01796,
+        "casts": 421812.78261456435,
+        "activeHours": 1171.7021739293455,
+        "elapsedHours": 7349.76818192044
+      },
+      {
+        "id": "vortex",
+        "name": "Vortex",
+        "tier": "LEGENDARY",
+        "family": "WeatherGen",
+        "rate": 0.014843,
+        "casts": 510392.6144147123,
+        "activeHours": 1417.7572622630896,
+        "elapsedHours": 8893.204645104835
+      },
+      {
+        "id": "sequin",
+        "name": "Sequin",
+        "tier": "LEGENDARY",
+        "family": "WeatherGen",
+        "rate": 0.013658,
+        "casts": 554675.470475734,
+        "activeHours": 1540.7651957659277,
+        "elapsedHours": 9664.79986434991
+      },
+      {
+        "id": "sweetheart",
+        "name": "Sweetheart",
+        "tier": "LEGENDARY",
+        "family": "MutaGen",
+        "rate": 0.011741,
+        "casts": 645239.5516359403,
+        "activeHours": 1792.332087877612,
+        "elapsedHours": 11242.810369414112
+      },
+      {
+        "id": "diamond",
+        "name": "Crystalline",
+        "tier": "MYTHIC",
+        "family": "MutaGen",
+        "rate": 0.007608,
+        "casts": 995762.0367715004,
+        "activeHours": 2766.005657698612,
+        "elapsedHours": 17350.39912556402
+      },
+      {
+        "id": "radioactive",
+        "name": "Radioactive",
+        "tier": "MYTHIC",
+        "family": "MutaGen",
+        "rate": 0.007281,
+        "casts": 1040483.1171209416,
+        "activeHours": 2890.2308808915045,
+        "elapsedHours": 18129.63007104671
+      },
+      {
+        "id": "webbed",
+        "name": "Webbed",
+        "tier": "MYTHIC",
+        "family": "MutaGen",
+        "rate": 0.007,
+        "casts": 1082251.0822510822,
+        "activeHours": 3006.253006253006,
+        "elapsedHours": 18857.405221041583
+      }
+    ],
+    [
+      {
+        "id": "gold",
+        "name": "Golden",
+        "tier": "COMMON",
+        "family": "MutaGen",
+        "rate": 0.174353,
+        "casts": 28967.124457308164,
+        "activeHours": 80.46423460363378,
+        "elapsedHours": 504.7301988773392
+      },
+      {
+        "id": "soaked",
+        "name": "Soaked",
+        "tier": "COMMON",
+        "family": "WeatherGen",
+        "rate": 0.146084,
+        "casts": 34572.60925566832,
+        "activeHours": 96.03502571018979,
+        "elapsedHours": 602.4015249093723
+      },
+      {
+        "id": "frost",
+        "name": "Frozen",
+        "tier": "RARE",
+        "family": "MutaGen",
+        "rate": 0.123817,
+        "casts": 40790.07769938741,
+        "activeHours": 113.30577138718725,
+        "elapsedHours": 710.736202337811
+      },
+      {
+        "id": "ice",
+        "name": "Frost",
+        "tier": "RARE",
+        "family": "WeatherGen",
+        "rate": 0.098838,
+        "casts": 51098.81877926557,
+        "activeHours": 141.9411632757377,
+        "elapsedHours": 890.3582060023547
+      },
+      {
+        "id": "wind",
+        "name": "Gale",
+        "tier": "RARE",
+        "family": "WeatherGen",
+        "rate": 0.06563,
+        "casts": 76954.21378188406,
+        "activeHours": 213.76170494967795,
+        "elapsedHours": 1340.8688765025254
+      },
+      {
+        "id": "coral",
+        "name": "Magma",
+        "tier": "EPIC",
+        "family": "MutaGen",
+        "rate": 0.05845,
+        "casts": 86407.27203601456,
+        "activeHours": 240.02020010004046,
+        "elapsedHours": 1505.5812551729807
+      },
+      {
+        "id": "thundered",
+        "name": "Thundered",
+        "tier": "EPIC",
+        "family": "WeatherGen",
+        "rate": 0.055573,
+        "casts": 90880.55441500462,
+        "activeHours": 252.44598448612393,
+        "elapsedHours": 1583.5248117765957
+      },
+      {
+        "id": "clover",
+        "name": "Clover",
+        "tier": "EPIC",
+        "family": "MutaGen",
+        "rate": 0.047946,
+        "casts": 105337.35974857237,
+        "activeHours": 292.6037770793677,
+        "elapsedHours": 1835.4236925887608
+      },
+      {
+        "id": "lunar",
+        "name": "Eclipse",
+        "tier": "EPIC",
+        "family": "WeatherGen",
+        "rate": 0.042702,
+        "casts": 118273.2670719182,
+        "activeHours": 328.53685297755055,
+        "elapsedHours": 2060.822077768272
+      },
+      {
+        "id": "fossilized",
+        "name": "Fossilized",
+        "tier": "LEGENDARY",
+        "family": "MutaGen",
+        "rate": 0.035314,
+        "casts": 143017.07681103956,
+        "activeHours": 397.26965780844324,
+        "elapsedHours": 2491.9642171620526
+      },
+      {
+        "id": "rainbow",
+        "name": "Prismatic",
+        "tier": "LEGENDARY",
+        "family": "WeatherGen",
+        "rate": 0.030871,
+        "casts": 163600.30612889284,
+        "activeHours": 454.44529480248013,
+        "elapsedHours": 2850.611394670102
+      },
+      {
+        "id": "vortex",
+        "name": "Vortex",
+        "tier": "LEGENDARY",
+        "family": "WeatherGen",
+        "rate": 0.026678,
+        "casts": 189313.48116444453,
+        "activeHours": 525.8707810123459,
+        "elapsedHours": 3298.6439899865336
+      },
+      {
+        "id": "sequin",
+        "name": "Sequin",
+        "tier": "LEGENDARY",
+        "family": "WeatherGen",
+        "rate": 0.02503,
+        "casts": 201778.0683381962,
+        "activeHours": 560.4946342727673,
+        "elapsedHours": 3515.8299786200855
+      },
+      {
+        "id": "sweetheart",
+        "name": "Sweetheart",
+        "tier": "LEGENDARY",
+        "family": "MutaGen",
+        "rate": 0.022292,
+        "casts": 226561.32471312807,
+        "activeHours": 629.3370130920224,
+        "elapsedHours": 3947.6594457590495
+      },
+      {
+        "id": "diamond",
+        "name": "Crystalline",
+        "tier": "MYTHIC",
+        "family": "MutaGen",
+        "rate": 0.016008,
+        "casts": 315498.8162484414,
+        "activeHours": 876.385600690115,
+        "elapsedHours": 5497.327858874358
+      },
+      {
+        "id": "radioactive",
+        "name": "Radioactive",
+        "tier": "MYTHIC",
+        "family": "MutaGen",
+        "rate": 0.015414,
+        "casts": 327657.0034063222,
+        "activeHours": 910.1583427953394,
+        "elapsedHours": 5709.175059352583
+      },
+      {
+        "id": "webbed",
+        "name": "Webbed",
+        "tier": "MYTHIC",
+        "family": "MutaGen",
+        "rate": 0.015,
+        "casts": 336700.3367003368,
+        "activeHours": 935.278713056491,
+        "elapsedHours": 5866.748290990716
+      }
+    ],
+    [
+      {
+        "id": "gold",
+        "name": "Golden",
+        "tier": "COMMON",
+        "family": "MutaGen",
+        "rate": 0.11354,
+        "casts": 35801.644347252004,
+        "activeHours": 99.44901207570001,
+        "elapsedHours": 623.8165302930273
+      },
+      {
+        "id": "soaked",
+        "name": "Soaked",
+        "tier": "COMMON",
+        "family": "WeatherGen",
+        "rate": 0.101461,
+        "casts": 40063.85408370697,
+        "activeHours": 111.28848356585269,
+        "elapsedHours": 698.0823060039851
+      },
+      {
+        "id": "frost",
+        "name": "Frozen",
+        "tier": "RARE",
+        "family": "MutaGen",
+        "rate": 0.099496,
+        "casts": 40855.09667913275,
+        "activeHours": 113.48637966425764,
+        "elapsedHours": 711.8691088030706
+      },
+      {
+        "id": "ice",
+        "name": "Frost",
+        "tier": "RARE",
+        "family": "WeatherGen",
+        "rate": 0.086215,
+        "casts": 47148.62493982477,
+        "activeHours": 130.96840261062437,
+        "elapsedHours": 821.5290709211891
+      },
+      {
+        "id": "wind",
+        "name": "Gale",
+        "tier": "RARE",
+        "family": "WeatherGen",
+        "rate": 0.069275,
+        "casts": 58678.00359706954,
+        "activeHours": 162.99445443630427,
+        "elapsedHours": 1022.4197596459087
+      },
+      {
+        "id": "coral",
+        "name": "Magma",
+        "tier": "EPIC",
+        "family": "MutaGen",
+        "rate": 0.064355,
+        "casts": 63163.99190718658,
+        "activeHours": 175.45553307551828,
+        "elapsedHours": 1100.5847074737055
+      },
+      {
+        "id": "thundered",
+        "name": "Thundered",
+        "tier": "EPIC",
+        "family": "WeatherGen",
+        "rate": 0.059783,
+        "casts": 67994.55864019858,
+        "activeHours": 188.8737740005516,
+        "elapsedHours": 1184.7536732761873
+      },
+      {
+        "id": "clover",
+        "name": "Clover",
+        "tier": "EPIC",
+        "family": "MutaGen",
+        "rate": 0.056738,
+        "casts": 71643.67265654397,
+        "activeHours": 199.01020182373327,
+        "elapsedHours": 1248.3367205306904
+      },
+      {
+        "id": "lunar",
+        "name": "Eclipse",
+        "tier": "EPIC",
+        "family": "WeatherGen",
+        "rate": 0.05271,
+        "casts": 77118.54864706872,
+        "activeHours": 214.218190686302,
+        "elapsedHours": 1343.7322870322578
+      },
+      {
+        "id": "fossilized",
+        "name": "Fossilized",
+        "tier": "LEGENDARY",
+        "family": "MutaGen",
+        "rate": 0.04754,
+        "casts": 85505.23136699606,
+        "activeHours": 237.51453157498904,
+        "elapsedHours": 1489.8638798794768
+      },
+      {
+        "id": "rainbow",
+        "name": "Prismatic",
+        "tier": "LEGENDARY",
+        "family": "WeatherGen",
+        "rate": 0.043648,
+        "casts": 93129.55230908615,
+        "activeHours": 258.69320085857265,
+        "elapsedHours": 1622.7118962946831
+      },
+      {
+        "id": "vortex",
+        "name": "Vortex",
+        "tier": "LEGENDARY",
+        "family": "WeatherGen",
+        "rate": 0.039781,
+        "casts": 102182.41620841589,
+        "activeHours": 283.84004502337746,
+        "elapsedHours": 1780.4511915102769
+      },
+      {
+        "id": "sequin",
+        "name": "Sequin",
+        "tier": "LEGENDARY",
+        "family": "WeatherGen",
+        "rate": 0.038202,
+        "casts": 106405.91328168662,
+        "activeHours": 295.57198133801836,
+        "elapsedHours": 1854.0424283930245
+      },
+      {
+        "id": "sweetheart",
+        "name": "Sweetheart",
+        "tier": "LEGENDARY",
+        "family": "MutaGen",
+        "rate": 0.035482,
+        "casts": 114562.8402904851,
+        "activeHours": 318.23011191801413,
+        "elapsedHours": 1996.1707020311799
+      },
+      {
+        "id": "diamond",
+        "name": "Crystalline",
+        "tier": "MYTHIC",
+        "family": "MutaGen",
+        "rate": 0.03125,
+        "casts": 130077.39837398376,
+        "activeHours": 361.32610659439933,
+        "elapsedHours": 2266.5001231830497
+      },
+      {
+        "id": "radioactive",
+        "name": "Radioactive",
+        "tier": "MYTHIC",
+        "family": "MutaGen",
+        "rate": 0.030524,
+        "casts": 133171.23244617326,
+        "activeHours": 369.92009012825906,
+        "elapsedHours": 2320.407838077261
+      },
+      {
+        "id": "webbed",
+        "name": "Webbed",
+        "tier": "MYTHIC",
+        "family": "MutaGen",
+        "rate": 0.03,
+        "casts": 135497.28997289974,
+        "activeHours": 376.38136103583264,
+        "elapsedHours": 2360.937628315677
+      }
+    ]
+  ]
+}

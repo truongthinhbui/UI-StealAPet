@@ -1,0 +1,102 @@
+1: A=ID | B=Name | C=Cost | D=Description | E=TimeLock | F=Requirement | G=NameLocalize | H=Note
+2: A=string | B=string | C=int | D=string | E=int | F=int | G=string
+3: A=1.0 | B=RandomPet | C=20.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMPET | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMPET
+4: A=2.0 | B=RandomItem | C=5.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMITEM | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMITEM
+5: A=3.0 | B=PetSpecial | C=50.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_SPECIALPET | H=Giá tăng thành 200 & 500. Max cap 3
+8: A=ID | B=Type | C=Cost | D=Description | E=TimeLock | F=Requirement | G=NameLocalize | H=IconResource | I=Limit | J=IDGift | K=Note
+9: A=string | B=string | C=int | D=string | E=int | F=int | G=string | H=string | I=string | J=int
+10: A=1.0 | B=RandomPet | C=20.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMPET | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMPET | H=RandomPetPool
+11: A=2.0 | B=RandomItem | C=5.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMITEM | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMITEM | H=RandomItemPool
+12: A=3.0 | B=SpecialPet | C=75.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_SPECIALPET | H=WOMBAT | I=75;200;500 | J=51035.0 | K=Giá tăng thành 200 & 500. Max cap 3
+13: A=4.0 | B=SpecialPet | C=75.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_SPECIALPET | H=LLAMA | I=75;100 | J=50083.0 | K=Giá tăng thành 100. Limit 2
+14: A=5.0 | B=SpecialPet | C=75.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_SPECIALPET | H=SLOTH | I=75;100 | J=50074.0 | K=Giá tăng thành 100. Limit 2
+15: A=6.0 | B=SpecialPet | C=125.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_SPECIALPET | H=JAVELINA | I=125.0 | J=50086.0 | K=Limit 1
+17: Q=1.0 | R=Pet
+18: Q=2.0 | R=Money
+19: Q=3.0 | R=Pet Coin
+20: A=ID | B=Type | C=Cost | D=Description | E=TimeLock | F=Requirement | G=NameLocalize | H=IconResource | I=Limit | J=IDGift | K=Time Available | L=Note | R=4.0 | S=RandomPet
+21: A=string | B=string | C=int | D=string | E=int | F=int | G=string | H=string | I=string | J=int | K=int | R=5.0 | S=MoneyTime
+22: A=1.0 | B=SpecialPet | C=500.0 | D=HUD_SHOP_EVENT_DETAILS_PET_LIMITED | E=10000.0 | F=0.0 | G=MRFOOTBALL | H=MRFOOTBALL | I=500.0 | J=51037.0 | K=1781913600.0 | L=Limit 1
+23: A=2.0 | B=SpecialPet | C=100.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=GILAMONSTER | H=GILAMONSTER | I=100;200 | J=51038.0 | K=0.0
+24: A=3.0 | B=SpecialPet | C=90.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=DINGO | H=DINGO | I=100.0 | J=51029.0 | K=0.0
+25: A=4.0 | B=SpecialPet | C=75.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=KOMODO | H=KOMODO | I=75;100 | J=50076.0 | K=0.0 | L=Giá tăng thành 100. Limit 2
+26: A=5.0 | B=SpecialPet | C=75.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=AXOLOTLWHITE | H=AXOLOTLWHITE | I=75;100 | J=50082.0 | K=0.0 | L=Giá tăng thành 100. Limit 2
+27: A=6.0 | B=SpecialPet | C=50.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=SLOTH | H=SLOTH | I=50;75 | J=50074.0 | K=0.0 | L=Giá tăng thành 75. Limit 2
+28: A=7.0 | B=SpecialPet | C=50.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=BABOON | H=BABOON | I=50;75 | J=50084.0 | K=0.0 | L=Giá tăng thành 75. Limit 2
+29: A=8.0 | B=RandomItem | C=5.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMITEM | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMITEM | H=RandomItem | I=5.0 | K=0.0
+30: A=9.0 | B=RandomPet | C=20.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMPET | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMPET | H=RandomPet | I=20.0 | K=0.0
+31: A=10.0 | B=DailyShard | C=0.0 | D=HUD_SHOP_EVENT_DETAILS_DAILY_SHARD | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_DAILY_SHARD | H=DailyShard | I=10.0 | K=0.0 | L=1 daily
+34: A=ID | B=Type | C=Cost | D=Description | E=TimeLock | F=Requirement | G=NameLocalize | H=IconResource | I=Limit | J=IDGift | K=Time Available | L=Note
+35: A=string | B=string | C=int | D=string | E=int | F=int | G=string | H=string | I=string | J=int | K=int
+36: A=1.0 | B=SpecialPet | C=1250.0 | D=HUD_SHOP_EVENT_DETAILS_PET_LIMITED | E=1000.0 | F=0.0 | G=DRAGON | H=DRAGON | I=1250.0 | J=51042.0 | K=1782259200.0
+37: A=2.0 | B=SpecialPet | C=350.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=HORNEDLIZARD | H=HORNEDLIZARD | I=350.0 | J=51039.0 | K=0.0
+38: A=3.0 | B=SpecialPet | C=350.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=LYNX | H=LYNX | I=350.0 | J=51040.0 | K=1782691200.0
+39: A=4.0 | B=SpecialPet | C=350.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=PRONGHORN | H=PRONGHORN | I=350.0 | J=51041.0 | K=1783036800.0
+40: A=5.0 | B=SpecialPet | C=75.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=MARTEN | H=MARTEN | I=75;100 | J=50090.0 | K=0.0
+41: A=6.0 | B=SpecialPet | C=75.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=MOUSE | H=MOUSE | I=75;100 | J=51030.0 | K=0.0
+42: A=7.0 | B=SpecialPet | C=75.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=JERBOA | H=JERBOA | I=75;100 | J=50094.0 | K=0.0
+43: A=8.0 | B=RandomItem | C=10.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMITEM | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMITEM | H=RandomItem | I=10.0 | K=0.0
+44: A=9.0 | B=RandomPet | C=20.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMPET | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMPET | H=RandomPet | I=20.0 | K=0.0
+45: A=10.0 | B=BaseColor | C=30.0 | D=HUD_SHOP_EVENT_DETAILS_BASECOLOR | E=1000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_BASECOLOR | H=Ball2Base | I=30.0 | J=6.0 | L=idgift là id của base
+46: A=11.0 | B=DailyShard | C=0.0 | D=HUD_SHOP_EVENT_DETAILS_DAILY_SHARD | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_DAILY_SHARD | H=DailyShard | I=10.0 | K=0.0 | L=1 daily
+49: A=ID | B=Type | C=Cost | D=Description | E=TimeLock | F=Requirement | G=NameLocalize | H=IconResource | I=Limit | J=IDGift | K=Time Available | L=Note
+50: A=string | B=string | C=int | D=string | E=int | F=int | G=string | H=string | I=string | J=int | K=int
+51: A=1.0 | B=SpecialPet | C=150.0 | D=HUD_SHOP_EVENT_DETAILS_PET_LIMITED | E=1000.0 | F=0.0 | G=PIRANHA | H=PIRANHA | I=150;300 | J=50101.0 | K=0.0
+52: A=2.0 | B=SpecialPet | C=40.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=MARTEN | H=MARTEN | I=40;80 | J=50090.0 | K=0.0
+53: A=3.0 | B=SpecialPet | C=30.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=AXOLOTLWHITE | H=AXOLOTLWHITE | I=30;75 | J=50082.0 | K=0.0
+54: A=4.0 | B=SpecialPet | C=30.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=BABOON | H=BABOON | I=30;75 | J=50084.0 | K=0.0
+55: A=5.0 | B=RandomItem | C=10.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMITEM | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMITEM | H=RandomItem | K=0.0
+56: A=6.0 | B=RandomPet | C=20.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMPET | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMPET | H=RandomPet | K=0.0
+57: A=7.0 | B=BaseColor | C=30.0 | D=HUD_SHOP_EVENT_DETAILS_BASECOLOR | E=1000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_BASECOLOR_SWEATHEART | H=SweatHeartBase | J=7.0 | K=0.0 | L=idgift là id của base
+58: A=8.0 | B=DailyShard | C=0.0 | D=HUD_SHOP_EVENT_DETAILS_DAILY_SHARD | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_DAILY_SHARD | H=DailyShard | K=0.0 | L=1 daily
+61: A=ID | B=Type | C=Cost | D=Description | E=TimeLock | F=Requirement | G=NameLocalize | H=IconResource | I=Limit | J=IDGift | K=Time Available | L=Note
+62: A=string | B=string | C=int | D=string | E=int | F=int | G=string | H=string | I=string | J=int | K=int
+63: A=1.0 | B=SpecialPet | C=600.0 | D=HUD_SHOP_EVENT_DETAILS_PET_LIMITED | E=1000.0 | F=0.0 | G=NUMBAT | H=NUMBAT | I=600;600 | J=50103.0 | K=0.0
+64: A=2.0 | B=SpecialPet | C=125.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=JAVELINA | H=JAVELINA | I=125;125;125 | J=50086.0 | K=0.0
+65: A=3.0 | B=SpecialPet | C=125.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=IGUANA | H=IGUANA | I=125;125;125 | J=51028.0 | K=0.0
+66: A=4.0 | B=SpecialPet | C=75.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=SLOTH | H=SLOTH | I=75;75 | J=50074.0 | K=0.0
+67: A=5.0 | B=RandomItem | C=10.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMITEM | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMITEM | H=RandomItem | K=0.0
+68: A=6.0 | B=RandomPet | C=20.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMPET | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMPET | H=RandomPet | K=0.0
+69: A=7.0 | B=DailyShard | C=0.0 | D=HUD_SHOP_EVENT_DETAILS_DAILY_SHARD | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_DAILY_SHARD | H=DailyShard | K=0.0 | L=1 daily
+71: A=ID | B=Type | C=Cost | D=Description | E=TimeLock | F=Requirement | G=NameLocalize | H=IconResource | I=Limit | J=IDGift | K=Time Available | L=Note
+72: A=string | B=string | C=int | D=string | E=int | F=int | G=string | H=string | I=string | J=int | K=int
+73: A=1.0 | B=SpecialPet | C=200.0 | D=HUD_SHOP_EVENT_DETAILS_PET_LIMITED | E=1000.0 | F=0.0 | G=OTTER | H=OTTER | I=200;300 | J=51044.0 | K=0.0
+74: A=2.0 | B=SpecialPet | C=200.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=FERRET | H=FERRET | I=200;300 | J=50105.0 | K=0.0
+75: A=3.0 | B=SpecialPet | C=75.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=DINGO | H=DINGO | I=75;100 | J=51029.0 | K=0.0
+76: A=4.0 | B=SpecialPet | C=75.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=WOMBAT | H=WOMBAT | I=75;100 | J=51035.0 | K=0.0
+77: A=5.0 | B=RandomItem | C=10.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMITEM | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMITEM | H=RandomItem | K=0.0
+78: A=6.0 | B=RandomPet | C=20.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMPET | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMPET | H=RandomPet | K=0.0
+79: A=7.0 | B=BaseColor | C=30.0 | D=HUD_SHOP_EVENT_DETAILS_BASECOLOR | E=1000.0 | F=0.0 | G=PROMPT_BASE_COLOR_LEGO | H=LegoBase | J=8.0 | K=0.0 | L=idgift là id của base
+80: A=8.0 | B=DailyShard | C=0.0 | D=HUD_SHOP_EVENT_DETAILS_DAILY_SHARD | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_DAILY_SHARD | H=DailyShard | K=0.0 | L=1 daily
+84: A=ID | B=Type | C=Cost | D=Description | E=TimeLock | F=Requirement | G=NameLocalize | H=IconResource | I=Limit | J=IDGift | K=Time Available | L=Limit 2
+85: A=string | B=string | C=int | D=string | E=int | F=int | G=string | H=string | I=string | J=int | K=int
+86: A=1.0 | B=SpecialPet | C=1000.0 | D=HUD_SHOP_EVENT_DETAILS_PET_LIMITED | E=10000.0 | F=0.0 | G=PEGASUS | H=PEGASUS | I=1000.0 | J=51045.0 | K=0.0 | L=1.0
+87: A=2.0 | B=LUCKYBOX | C=75.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=LUCKYBOXLEGENDARY | H=LUCKYBOXLEGENDARY | J=56002.0 | K=0.0
+88: A=3.0 | B=MRFOOTBALL | C=300.0 | D=HUD_SHOP_EVENT_DETAILS_PET_LIMITED | E=10000.0 | F=0.0 | G=MRFOOTBALL | H=MRFOOTBALL | I=300.0 | J=51037.0 | L=1.0
+89: A=4.0 | B=SpecialPet | C=100.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=MARTEN | H=MARTEN | I=100;150 | J=50090.0 | K=0.0 | L=2.0
+90: A=5.0 | B=SpecialPet | C=150.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=NUMBAT | H=NUMBAT | I=100;150 | J=50103.0 | K=0.0 | L=2.0
+91: A=6.0 | B=RandomItem | C=15.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMITEM | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMITEM | H=RandomItem | K=0.0
+92: A=7.0 | B=RandomPet | C=20.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMPET | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMPET | H=RandomPet | K=0.0
+93: A=8.0 | B=BaseColor | C=30.0 | D=HUD_SHOP_EVENT_DETAILS_BASECOLOR | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_BASECOLOR_SWEATHEART | J=9.0 | K=0.0 | L=1.0
+94: A=9.0 | B=DailyShard | C=0.0 | D=HUD_SHOP_EVENT_DETAILS_DAILY_SHARD | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_DAILY_SHARD | H=DailyShard | K=0.0
+97: A=ID | B=Type | C=Cost | D=Description | E=TimeLock | F=Requirement | G=NameLocalize | H=IconResource | I=Limit | J=IDGift | K=Time Available | L=Limit 2
+98: A=string | B=string | C=int | D=string | E=int | F=int | G=string | H=string | I=string | J=int | K=int
+99: A=1.0 | B=SpecialPet | C=400.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=CHICK_PUMPKIN | H=CHICK_PUMPKIN | I=400.0 | J=51047.0 | K=0.0 | L=1.0
+100: A=2.0 | B=SpecialPet | C=250.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=GOLDFISH | H=GOLDFISH | I=250.0 | J=50107.0 | K=0.0 | L=1.0
+101: A=3.0 | B=SpecialPet | C=150.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=IGUANA | H=IGUANA | I=150.0 | J=51028.0 | K=0.0 | L=1.0
+102: A=4.0 | B=LUCKYBOX | C=20.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=LUCKYBOXMYTHIC | H=LUCKYBOXMYTHIC | L=3.0
+103: A=5.0 | B=LUCKYBOX | C=15.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=LUCKYBOXLEGENDARY | H=LUCKYBOXLEGENDARY | J=56002.0 | K=0.0 | L=5.0
+104: A=6.0 | B=RandomPet | C=10.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMPET | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMPET | H=RandomPet | K=0.0 | L=10.0
+105: A=7.0 | B=RandomItem | C=10.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMITEM | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMITEM | H=RandomItem | K=0.0
+107: A=ID | B=Type | C=Cost | D=Description | E=TimeLock | F=Requirement | G=NameLocalize | H=IconResource | I=Limit | J=IDGift | K=Time Available | L=Limit 2
+108: A=string | B=string | C=int | D=string | E=int | F=int | G=string | H=string | I=string | J=int | K=int
+109: A=1.0 | B=SpecialPet | C=400.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=SHARK | H=SHARK | I=400.0 | K=0.0 | L=1.0
+110: A=2.0 | B=SpecialPet | C=400.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=CHICK_PUMPKIN | H=CHICK_PUMPKIN | I=400.0 | J=51047.0 | K=0.0
+111: A=3.0 | B=SpecialPet | C=250.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=BULL_PUMPKIN | H=BULL_PUMPKIN | I=250.0 | K=0.0
+112: A=4.0 | B=WeatherGen | C=100.0 | E=10000.0 | F=0.0 | G=Sparkle S WeatherGen ×5 | H=Sparkle S WeatherGen ×5 | K=0.0
+113: A=5.0 | B=SpecialPet | C=75.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=WOMBAT | H=WOMBAT | J=51035.0 | K=0.0 | L=1.0
+114: A=6.0 | B=WeatherGen | C=20.0 | E=10000.0 | F=0.0 | G=Random S WeatherGen x5 | K=0.0
+115: A=7.0 | B=LUCKYBOX | C=20.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=LUCKYBOXMYTHIC | H=LUCKYBOXMYTHIC | J=56002.0 | K=0.0 | L=3.0
+116: A=8.0 | B=LUCKYBOX | C=15.0 | D=HUD_SHOP_EVENT_DETAILS_SPECIALPET | E=10000.0 | F=0.0 | G=LUCKYBOXLEGENDARY | H=LUCKYBOXLEGENDARY | J=56003.0 | K=0.0 | L=5.0
+117: A=9.0 | B=RandomPet | C=10.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMPET | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMPET | H=RandomPet | K=0.0 | L=10.0
+118: A=10.0 | B=RandomItem | C=10.0 | D=HUD_SHOP_EVENT_DETAILS_RANDOMITEM | E=10000.0 | F=0.0 | G=HUD_SHOP_EVENT_ITEM_RANDOMITEM | H=RandomItem | K=0.0

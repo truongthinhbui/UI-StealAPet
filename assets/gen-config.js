@@ -1,6 +1,5 @@
-// Authored Rebirth progression; original species and Gen retained.
 window.GenConfig = {
-  "version": "merged-gen-7-rebirth-progression",
+  "version": "merged-gen-14-r9-five-bands",
   "source": "[Craftland] Steal A Pet Master Data.xlsx",
   "rules": {
     "green": 5,
@@ -16,143 +15,123 @@ window.GenConfig = {
   },
   "rebirthProfiles": [
     {
-      "min": 1,
-      "max": 4,
-      "label": "R1–R4",
-      "weights": {
-        "gold": 617500,
-        "soaked": 332500,
-        "frost": 32340,
-        "ice": 14700,
-        "wind": 1960,
-        "coral": 428,
-        "thundered": 285,
-        "clover": 142,
-        "lunar": 95,
-        "fossilized": 16,
-        "rainbow": 10,
-        "vortex": 6,
-        "sequin": 5,
-        "sweetheart": 3,
-        "diamond": 2,
-        "radioactive": 2,
-        "webbed": 2,
-        "bling": 1,
-        "stormspark": 1,
-        "cosmic": 1,
-        "aurora": 1
-      }
-    },
-    {
-      "min": 5,
-      "max": 8,
-      "label": "R5–R8",
-      "weights": {
-        "gold": 585000,
-        "soaked": 315000,
-        "frost": 62700,
-        "ice": 28500,
-        "wind": 3800,
-        "coral": 2025,
-        "thundered": 1350,
-        "clover": 675,
-        "lunar": 450,
-        "fossilized": 180,
-        "rainbow": 113,
-        "vortex": 67,
-        "sequin": 54,
-        "sweetheart": 36,
-        "diamond": 11,
-        "radioactive": 10,
-        "webbed": 9,
-        "bling": 8,
-        "stormspark": 7,
-        "cosmic": 3,
-        "aurora": 2
-      }
-    },
-    {
       "min": 9,
-      "max": 13,
-      "label": "R9–R13",
+      "max": 12,
+      "label": "R9–R12",
       "weights": {
-        "gold": 539500,
-        "soaked": 290500,
-        "frost": 99000,
-        "ice": 45000,
-        "wind": 6000,
-        "coral": 8100,
-        "thundered": 5400,
-        "clover": 2700,
-        "lunar": 1800,
-        "fossilized": 720,
-        "rainbow": 450,
-        "vortex": 270,
-        "sequin": 216,
-        "sweetheart": 144,
-        "diamond": 45,
-        "radioactive": 40,
-        "webbed": 36,
-        "bling": 32,
-        "stormspark": 27,
-        "cosmic": 12,
-        "aurora": 8
+        "gold": 370000,
+        "soaked": 370000,
+        "frost": 68000,
+        "ice": 68000,
+        "wind": 68000,
+        "coral": 10000,
+        "thundered": 10000,
+        "clover": 10000,
+        "lunar": 10000,
+        "fossilized": 2600,
+        "rainbow": 2600,
+        "vortex": 2600,
+        "sequin": 2600,
+        "sweetheart": 2600,
+        "diamond": 1000,
+        "radioactive": 1000,
+        "webbed": 1000
       }
     },
     {
-      "min": 14,
-      "max": 18,
-      "label": "R14–R18",
+      "min": 13,
+      "max": 16,
+      "label": "R13–R16",
       "weights": {
-        "gold": 481000,
-        "soaked": 259000,
-        "frost": 145200,
-        "ice": 66000,
-        "wind": 8800,
-        "coral": 15750,
-        "thundered": 10500,
-        "clover": 5250,
-        "lunar": 3500,
-        "fossilized": 1800,
-        "rainbow": 1125,
-        "vortex": 675,
-        "sequin": 540,
-        "sweetheart": 360,
-        "diamond": 113,
-        "radioactive": 99,
-        "webbed": 90,
-        "bling": 81,
-        "stormspark": 67,
-        "cosmic": 30,
-        "aurora": 20
+        "gold": 300000,
+        "soaked": 300000,
+        "frost": 85000,
+        "ice": 85000,
+        "wind": 85000,
+        "coral": 22000,
+        "thundered": 22000,
+        "clover": 22000,
+        "lunar": 22000,
+        "fossilized": 9600,
+        "rainbow": 9600,
+        "vortex": 9600,
+        "sequin": 9600,
+        "sweetheart": 9600,
+        "diamond": 3000,
+        "radioactive": 3000,
+        "webbed": 3000
       }
     },
     {
-      "min": 19,
+      "min": 17,
+      "max": 20,
+      "label": "R17–R20",
+      "weights": {
+        "gold": 225000,
+        "soaked": 225000,
+        "frost": 95000,
+        "ice": 95000,
+        "wind": 95000,
+        "coral": 40000,
+        "thundered": 40000,
+        "clover": 40000,
+        "lunar": 40000,
+        "fossilized": 16800,
+        "rainbow": 16800,
+        "vortex": 16800,
+        "sequin": 16800,
+        "sweetheart": 16800,
+        "diamond": 7000,
+        "radioactive": 7000,
+        "webbed": 7000
+      }
+    },
+    {
+      "min": 21,
+      "max": 24,
+      "label": "R21–R24",
+      "weights": {
+        "gold": 160000,
+        "soaked": 160000,
+        "frost": 95000,
+        "ice": 95000,
+        "wind": 95000,
+        "coral": 52000,
+        "thundered": 52000,
+        "clover": 52000,
+        "lunar": 52000,
+        "fossilized": 28400,
+        "rainbow": 28400,
+        "vortex": 28400,
+        "sequin": 28400,
+        "sweetheart": 28400,
+        "diamond": 15000,
+        "radioactive": 15000,
+        "webbed": 15000
+      }
+    },
+    {
+      "min": 25,
       "max": null,
-      "label": "R19+",
+      "label": "R25+",
       "weights": {
-        "gold": 409500,
-        "soaked": 220500,
-        "frost": 198000,
-        "ice": 90000,
-        "wind": 12000,
-        "coral": 27000,
-        "thundered": 18000,
-        "clover": 9000,
-        "lunar": 6000,
-        "fossilized": 3400,
-        "rainbow": 2125,
-        "vortex": 1275,
-        "sequin": 1020,
-        "sweetheart": 680,
-        "diamond": 338,
-        "radioactive": 297,
-        "webbed": 270,
-        "bling": 243,
-        "stormspark": 202,
-        "cosmic": 90,
-        "aurora": 60
+        "gold": 100003,
+        "soaked": 100003,
+        "frost": 80000,
+        "ice": 80000,
+        "wind": 80000,
+        "coral": 60000,
+        "thundered": 60000,
+        "clover": 60000,
+        "lunar": 60000,
+        "fossilized": 41416,
+        "rainbow": 41416,
+        "vortex": 41416,
+        "sequin": 41416,
+        "sweetheart": 41416,
+        "diamond": 37638,
+        "radioactive": 37638,
+        "webbed": 37638
       }
     }
   ],
@@ -163,7 +142,7 @@ window.GenConfig = {
       "family": "MutaGen",
       "tier": "basic",
       "fishingEnabled": true,
-      "fishingWeight": 617500,
+      "fishingWeight": 370000,
       "icon": {
         "file": "assets/mutations/gold.png"
       },
@@ -209,7 +188,7 @@ window.GenConfig = {
       "family": "WeatherGen",
       "tier": "basic",
       "fishingEnabled": true,
-      "fishingWeight": 332500,
+      "fishingWeight": 370000,
       "icon": {
         "atlas": 0
       },
@@ -255,7 +234,7 @@ window.GenConfig = {
       "family": "MutaGen",
       "tier": "uncommon",
       "fishingEnabled": true,
-      "fishingWeight": 32340,
+      "fishingWeight": 68000,
       "icon": {
         "file": "assets/mutations/frost.png"
       },
@@ -301,7 +280,7 @@ window.GenConfig = {
       "family": "WeatherGen",
       "tier": "uncommon",
       "fishingEnabled": true,
-      "fishingWeight": 14700,
+      "fishingWeight": 68000,
       "icon": {
         "atlas": 1
       },
@@ -347,7 +326,7 @@ window.GenConfig = {
       "family": "WeatherGen",
       "tier": "uncommon",
       "fishingEnabled": true,
-      "fishingWeight": 1960,
+      "fishingWeight": 68000,
       "icon": {
         "file": "assets/mutations/wind.png"
       },
@@ -393,7 +372,7 @@ window.GenConfig = {
       "family": "MutaGen",
       "tier": "advanced",
       "fishingEnabled": true,
-      "fishingWeight": 428,
+      "fishingWeight": 10000,
       "icon": {
         "file": "assets/mutations/coral.png"
       },
@@ -439,7 +418,7 @@ window.GenConfig = {
       "family": "WeatherGen",
       "tier": "advanced",
       "fishingEnabled": true,
-      "fishingWeight": 285,
+      "fishingWeight": 10000,
       "icon": {
         "atlas": 2
       },
@@ -485,7 +464,7 @@ window.GenConfig = {
       "family": "MutaGen",
       "tier": "advanced",
       "fishingEnabled": true,
-      "fishingWeight": 142,
+      "fishingWeight": 10000,
       "icon": {
         "file": "assets/mutations/clover.png"
       },
@@ -531,7 +510,7 @@ window.GenConfig = {
       "family": "WeatherGen",
       "tier": "advanced",
       "fishingEnabled": true,
-      "fishingWeight": 95,
+      "fishingWeight": 10000,
       "icon": {
         "file": "assets/mutations/lunar.png"
       },
@@ -577,7 +556,7 @@ window.GenConfig = {
       "family": "MutaGen",
       "tier": "rare",
       "fishingEnabled": true,
-      "fishingWeight": 16,
+      "fishingWeight": 2600,
       "icon": {
         "atlas": 8
       },
@@ -623,7 +602,7 @@ window.GenConfig = {
       "family": "WeatherGen",
       "tier": "rare",
       "fishingEnabled": true,
-      "fishingWeight": 10,
+      "fishingWeight": 2600,
       "icon": {
         "file": "assets/mutations/rainbow.png"
       },
@@ -669,7 +648,7 @@ window.GenConfig = {
       "family": "WeatherGen",
       "tier": "rare",
       "fishingEnabled": true,
-      "fishingWeight": 6,
+      "fishingWeight": 2600,
       "icon": {
         "atlas": 3
       },
@@ -715,7 +694,7 @@ window.GenConfig = {
       "family": "WeatherGen",
       "tier": "rare",
       "fishingEnabled": true,
-      "fishingWeight": 5,
+      "fishingWeight": 2600,
       "icon": {
         "atlas": 4
       },
@@ -761,7 +740,7 @@ window.GenConfig = {
       "family": "MutaGen",
       "tier": "rare",
       "fishingEnabled": true,
-      "fishingWeight": 3,
+      "fishingWeight": 2600,
       "icon": {
         "atlas": 9
       },
@@ -807,7 +786,7 @@ window.GenConfig = {
       "family": "MutaGen",
       "tier": "epic",
       "fishingEnabled": true,
-      "fishingWeight": 2,
+      "fishingWeight": 1000,
       "icon": {
         "file": "assets/mutations/diamond.png"
       },
@@ -853,7 +832,7 @@ window.GenConfig = {
       "family": "MutaGen",
       "tier": "epic",
       "fishingEnabled": true,
-      "fishingWeight": 2,
+      "fishingWeight": 1000,
       "icon": {
         "atlas": 10
       },
@@ -899,7 +878,7 @@ window.GenConfig = {
       "family": "MutaGen",
       "tier": "epic",
       "fishingEnabled": true,
-      "fishingWeight": 2,
+      "fishingWeight": 1000,
       "icon": {
         "atlas": 11
       },
@@ -938,198 +917,15 @@ window.GenConfig = {
         "levelCostMultiplier": 2.05,
         "mergedStackingRule": null
       }
-    },
-    {
-      "id": "bling",
-      "name": "Bling Bling",
-      "family": "WeatherGen",
-      "tier": "epic",
-      "fishingEnabled": true,
-      "fishingWeight": 1,
-      "icon": {
-        "atlas": 5
-      },
-      "source": {
-        "sheet": "WeatherGen Config",
-        "grades": [
-          {
-            "row": 48,
-            "grade": "S",
-            "petCoinCost": 420,
-            "baseChance": 0.05
-          },
-          {
-            "row": 49,
-            "grade": "SS",
-            "petCoinCost": 450,
-            "baseChance": 0.15
-          },
-          {
-            "row": 50,
-            "grade": "SSS",
-            "petCoinCost": 480,
-            "baseChance": 0.25
-          }
-        ]
-      },
-      "configured": true,
-      "effectSource": {
-        "sheet": "Weather Effects",
-        "sourceName": "Sparkle",
-        "sourceId": 9,
-        "materialKey": null,
-        "effectKey": "Sparkle",
-        "valueField": "MultiplierPrice",
-        "value": 0.2,
-        "levelCostMultiplier": 1.3,
-        "mergedStackingRule": null
-      }
-    },
-    {
-      "id": "stormspark",
-      "name": "Stormspark",
-      "family": "WeatherGen",
-      "tier": "epic",
-      "fishingEnabled": true,
-      "fishingWeight": 1,
-      "icon": {
-        "atlas": 6
-      },
-      "source": {
-        "sheet": "WeatherGen Config",
-        "grades": [
-          {
-            "row": 51,
-            "grade": "S",
-            "petCoinCost": 450,
-            "baseChance": 0.05
-          },
-          {
-            "row": 52,
-            "grade": "SS",
-            "petCoinCost": 480,
-            "baseChance": 0.15
-          },
-          {
-            "row": 53,
-            "grade": "SSS",
-            "petCoinCost": 510,
-            "baseChance": 0.25
-          }
-        ]
-      },
-      "configured": true,
-      "effectSource": {
-        "sheet": "Weather Effects",
-        "sourceName": "Stormspark",
-        "sourceId": 11,
-        "materialKey": null,
-        "effectKey": "Stormspark",
-        "valueField": "MultiplierPrice",
-        "value": 0.2,
-        "levelCostMultiplier": 1.3,
-        "mergedStackingRule": null
-      }
-    },
-    {
-      "id": "cosmic",
-      "name": "Galaxy",
-      "family": "MutaGen",
-      "tier": "exclusive",
-      "fishingEnabled": true,
-      "fishingWeight": 1,
-      "icon": {
-        "file": "assets/mutations/cosmic.png"
-      },
-      "source": {
-        "sheet": "MutaGen Config",
-        "grades": [
-          {
-            "row": 51,
-            "grade": "S",
-            "petCoinCost": null,
-            "baseChance": null
-          },
-          {
-            "row": 52,
-            "grade": "SS",
-            "petCoinCost": null,
-            "baseChance": null
-          },
-          {
-            "row": 53,
-            "grade": "SSS",
-            "petCoinCost": null,
-            "baseChance": null
-          }
-        ]
-      },
-      "configured": false,
-      "effectSource": {
-        "sheet": "Mutation 2.0",
-        "sourceName": "Galaxy",
-        "sourceId": 12,
-        "materialKey": "GalaxyMat",
-        "effectKey": "GalaxyEffect",
-        "valueField": "Multiplier",
-        "value": null,
-        "levelCostMultiplier": null,
-        "mergedStackingRule": null
-      }
-    },
-    {
-      "id": "aurora",
-      "name": "Aurora",
-      "family": "WeatherGen",
-      "tier": "exclusive",
-      "fishingEnabled": true,
-      "fishingWeight": 1,
-      "icon": {
-        "atlas": 7
-      },
-      "source": {
-        "sheet": "WeatherGen Config",
-        "grades": [
-          {
-            "row": 54,
-            "grade": "S",
-            "petCoinCost": null,
-            "baseChance": null
-          },
-          {
-            "row": 55,
-            "grade": "SS",
-            "petCoinCost": null,
-            "baseChance": null
-          },
-          {
-            "row": 56,
-            "grade": "SSS",
-            "petCoinCost": null,
-            "baseChance": null
-          }
-        ]
-      },
-      "configured": false,
-      "effectSource": {
-        "sheet": "Weather Effects",
-        "sourceName": "Aurora",
-        "sourceId": 10,
-        "materialKey": null,
-        "effectKey": "Aurora",
-        "valueField": "MultiplierPrice",
-        "value": 0.18,
-        "levelCostMultiplier": 1.15,
-        "mergedStackingRule": null
-      }
     }
   ],
   "notes": [
-    "All 21 Gen may drop in Fishing. Rare Gen have positive, very small weights.",
     "Weights are authored Fishing balance, not item application chances.",
     "Rebirth changes type weights, not tap score or guaranteed rarity.",
     "Item prices and effect stacking gaps remain source metadata; they do not disable authored Fishing drops.",
-    "Rebirth progression v7: all Gen remain possible; higher Rebirth increases quality, not chance to receive a Gen. Green 5%, gold 20%, red 0%; max one Gen."
+    "Fishing excludes Bling Bling, Stormspark, Galaxy and Aurora. Remaining 17 weights proportionally normalized to 1,000,000 per band. Fish data unchanged.",
+    "v13: all Gen of a rarity have exactly equal probabilities per Rebirth band. COMMON > RARE > EPIC > LEGENDARY > MYTHIC per Gen. R19+ full-gold Apex + any specific MYTHIC Gen takes ~300 active fishing hours at 10s/cast. Original fish pool and tap rules unchanged.",
+    "Fishing unlocks R9. Gen bands: R9-12, R13-16, R17-20, R21-24, R25+. Fish source weights/bands unchanged."
   ],
   "rollOrder": [
     "fish",
@@ -1138,44 +934,67 @@ window.GenConfig = {
   ],
   "rarityBudgetByBand": [
     {
-      "basic": 950000,
-      "uncommon": 49000,
-      "advanced": 950,
-      "rare": 40,
-      "epic": 8,
-      "exclusive": 2
-    },
-    {
-      "basic": 900000,
-      "uncommon": 95000,
-      "advanced": 4500,
-      "rare": 450,
-      "epic": 45,
-      "exclusive": 5
-    },
-    {
-      "basic": 830000,
-      "uncommon": 150000,
-      "advanced": 18000,
-      "rare": 1800,
-      "epic": 180,
-      "exclusive": 20
-    },
-    {
       "basic": 740000,
-      "uncommon": 220000,
-      "advanced": 35000,
-      "rare": 4500,
-      "epic": 450,
-      "exclusive": 50
+      "uncommon": 204000,
+      "advanced": 40000,
+      "rare": 13000,
+      "epic": 3000,
+      "exclusive": 0
     },
     {
-      "basic": 630000,
-      "uncommon": 300000,
-      "advanced": 60000,
-      "rare": 8500,
-      "epic": 1350,
-      "exclusive": 150
+      "basic": 600000,
+      "uncommon": 255000,
+      "advanced": 88000,
+      "rare": 48000,
+      "epic": 9000,
+      "exclusive": 0
+    },
+    {
+      "basic": 450000,
+      "uncommon": 285000,
+      "advanced": 160000,
+      "rare": 84000,
+      "epic": 21000,
+      "exclusive": 0
+    },
+    {
+      "basic": 320000,
+      "uncommon": 285000,
+      "advanced": 208000,
+      "rare": 142000,
+      "epic": 45000,
+      "exclusive": 0
+    },
+    {
+      "basic": 200006,
+      "uncommon": 240000,
+      "advanced": 240000,
+      "rare": 207080,
+      "epic": 112914,
+      "exclusive": 0
     }
-  ]
+  ],
+  "timeBalance": {
+    "reference": "300 active fishing hours for Apex + Webbed, full gold, final Gen band R25+; fish weights and original fish bands retained.",
+    "secondsPerCast": 10,
+    "weatherCycleMinutes": 69,
+    "fishingMinutesPerCycle": 11,
+    "castsPerCycle": 66,
+    "referenceTapChance": 0.6,
+    "webbedConditionalByBand": [
+      0.001,
+      0.003,
+      0.007,
+      0.015,
+      0.037638
+    ],
+    "method": "Equal per-Gen weight within each rarity; strictly decreasing probability by rarity; R19+ MYTHIC 37638 each preserves active 300h Apex + Webbed target.",
+    "baselineVersion": "merged-gen-12-webbed-active300h",
+    "fishPoolChanged": false,
+    "targetElapsedHours": null,
+    "actualElapsedHours": 1881.8249867014797,
+    "rarityOrderException": null,
+    "targetActiveHours": 300,
+    "actualActiveHours": 300.0010848364678
+  }
 };

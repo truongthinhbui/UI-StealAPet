@@ -1,0 +1,68 @@
+1: A=WeatherGen Config - Individual Target WeatherEffect with S / SS / SSS
+3: A=Key | B=Value | C=Notes | K=RankMin | L=RankMax | M=PetGroup | N=BaseUseCostLv1
+4: A=LevelMultiplier | B=1.04 | C=Matches planned pet leveling: value/generation scales x1.5 per level. | K=1.0 | L=9.0 | M=Common normal | N=18000.0 | O=18.k
+5: A=SecretMultiplier | B=0.55 | C=Applied to success chance when pet is Secret. | K=10.0 | L=20.0 | M=Common secret | N=69000.0 | O=69.k
+6: A=MinChance | B=0.02 | C=Clamp lower bound. | K=21.0 | L=30.0 | M=SS normal | N=308000.0 | O=308.k
+7: A=MaxChance | B=0.75 | C=Clamp upper bound. | K=31.0 | L=40.0 | M=SS secret | N=1229000.0 | O=1.23m
+8: A=UseCostFormula | B==BaseUseCostLv1*POWER(LevelMultiplier,PetLevel-1) | C=Formula reference only. | K=41.0 | L=52.0 | M=SSS normal | N=34125000.0 | O=34.13m
+9: K=53.0 | L=70.0 | M=SSS secret | N=136500000.0 | O=136.5m
+10: K=71.0 | L=89.0 | M=Legendary normal | N=682500000.0 | O=682.5m
+11: K=90.0 | L=120.0 | M=Legendary secret | N=3412500000.0 | O=3.41B | P=PetRarity | Q=PetRarityMult | R=Notes
+12: K=121.0 | L=132.0 | M=Mythic low | N=13650000000.0 | O=13.65B | P=COMMON | Q=1.0 | R=Easiest to mutate.
+13: K=133.0 | L=200.0 | M=Mythic high | N=68250000000.0 | O=68.25B | P=RARE | Q=0.9
+14: K=201.0 | L=400.0 | M=Mythic secret | N=477750000000.0 | O=477.75B | P=EPIC | Q=0.8
+15: K=401.0 | L=500.0 | M=Apex/Divine normal | N=2388750000000.0 | O=2.39T | P=LEGENDARY | Q=0.75
+16: K=501.0 | L=9999.0 | M=Apex/Divine secret | N=13650000000000.0 | O=13.65T | P=MYTHIC | Q=0.5
+17: P=APEX/DIVINE | Q=0.2 | R=Use one naming convention in final data.
+23: A=LookupKey | B=ID | C=ItemName | D=TargetMutation | E=Grade | F=BuyCostPetCoin | G=BaseChanceByGrade
+24: A=Soaked|S | B=0.0 | C=WeatherGen Soaked S | D=Soaked | E=S | F=15.0 | G=0.45
+25: A=Soaked|SS | B=1.0 | C=WeatherGen Soaked SS | D=Soaked | E=SS | F=20.0 | G=0.55
+26: A=Soaked|SSS | B=2.0 | C=WeatherGen Soaked SSS | D=Soaked | E=SSS | F=25.0 | G=0.65
+27: A=Frost|S | B=3.0 | C=WeatherGen Frost Common | D=Frost | E=S | F=30.0 | G=0.35
+28: A=Frost|SS | B=4.0 | C=WeatherGen Frost SS | D=Frost | E=SS | F=40.0 | G=0.45
+29: A=Frost|SSS | B=5.0 | C=WeatherGen Frost SSS | D=Frost | E=SSS | F=50.0 | G=0.55
+30: A=Gale|S | B=6.0 | C=WeatherGen Gale Common | D=Gale | E=S | F=60.0 | G=0.4
+31: A=Gale|SS | B=7.0 | C=WeatherGen Gale SS | D=Gale | E=SS | F=40.0 | G=0.5
+32: A=Gale|SSS | B=8.0 | C=WeatherGen Gale SSS | D=Gale | E=SSS | F=70.0 | G=0.6
+33: A=Thundered|S | B=9.0 | C=WeatherGen Thundered Common | D=Thundered | E=S | F=90.0 | G=0.3
+34: A=Thundered|SS | B=10.0 | C=WeatherGen Thundered SS | D=Thundered | E=SS | F=100.0 | G=0.4
+35: A=Thundered|SSS | B=11.0 | C=WeatherGen Thundered SSS | D=Thundered | E=SSS | F=120.0 | G=0.5
+36: A=Eclipse|S | B=12.0 | C=WeatherGen Eclipse Common | D=Eclipse | E=S | F=130.0 | G=0.2
+37: A=Eclipse|SS | B=13.0 | C=WeatherGen Eclipse SS | D=Eclipse | E=SS | F=160.0 | G=0.3
+38: A=Eclipse|SSS | B=14.0 | C=WeatherGen Eclipse SSS | D=Eclipse | E=SSS | F=180.0 | G=0.4
+39: A=Prismatic|S | B=15.0 | C=WeatherGen Prismatic Common | D=Prismatic | E=S | F=200.0 | G=0.2
+40: A=Prismatic|SS | B=16.0 | C=WeatherGen Prismatic SS | D=Prismatic | E=SS | F=230.0 | G=0.3
+41: A=Prismatic|SSS | B=17.0 | C=WeatherGen Prismatic SSS | D=Prismatic | E=SSS | F=250.0 | G=0.4
+42: A=Vortex|S | B=18.0 | C=WeatherGen Vortex Common | D=Vortex | E=S | F=260.0 | G=0.15
+43: A=Vortex|SS | B=19.0 | C=WeatherGen Vortex SS | D=Vortex | E=SS | F=290.0 | G=0.25
+44: A=Vortex|SSS | B=20.0 | C=WeatherGen Vortex SSS | D=Vortex | E=SSS | F=320.0 | G=0.35
+45: A=Sequin|S | B=21.0 | C=WeatherGen Sequin Common | D=Sequin | E=S | F=330.0 | G=0.05
+46: A=Sequin|SS | B=22.0 | C=WeatherGen Sequin SS | D=Sequin | E=SS | F=360.0 | G=0.15
+47: A=Sequin|SSS | B=23.0 | C=WeatherGen Sequin SSS | D=Sequin | E=SSS | F=390.0 | G=0.25
+48: A=Sparkle|S | B=24.0 | C=WeatherGen Sparkle S | D=Bling Bling | E=S | F=420.0 | G=0.05
+49: A=Sparkle|SS | B=25.0 | C=WeatherGen Sparkle SS | D=Bling Bling | E=SS | F=450.0 | G=0.15
+50: A=Sparkle|SSS | B=26.0 | C=WeatherGen Sparkle SSS | D=Bling Bling | E=SSS | F=480.0 | G=0.25
+51: A=Stormspark|S | B=27.0 | C=WeatherGen Stormspark S | D=Stormspark | E=S | F=450.0 | G=0.05
+52: A=Stormspark|SS | B=28.0 | C=WeatherGen Stormspark SS | D=Stormspark | E=SS | F=480.0 | G=0.15
+53: A=Stormspark|SSS | B=29.0 | C=WeatherGen Stormspark SSS | D=Stormspark | E=SSS | F=510.0 | G=0.25
+54: A=Aurora|S | B=30.0 | C=WeatherGen Aurora S | D=Aurora | E=S
+55: A=Aurora|SS | B=31.0 | C=WeatherGen Aurora SS | D=Aurora | E=SS
+56: A=Aurora|SSS | B=32.0 | C=WeatherGen Aurora SSS | D=Aurora | E=SSS
+59: A=Attempt Calculator
+60: A=Input | B=Value | C=Formula/Lookup | D=Notes
+61: A=TargetMutation | B=Frost
+62: A=Grade | B=SS
+63: A=PetRarity | B=APEX/DIVINE
+64: A=IsSecret | B=False
+65: A=PetRank | B=2006.0
+66: A=PetLevel | B=1.0 | D=Level scaling uses 1.5^(Level-1).
+67: A=LookupKey | B=Frost|SS | C=Frost|SS
+68: A=BuyCostPetCoin | B=40 | C=40
+69: A=BaseChanceByGrade | B=0.45 | C=0.45
+70: A=PetRarityMult | B=0.2 | C=0.2
+71: A=SecretMult | B=1 | C=1
+72: A=FinalChance | B=0.09 | C=0.09
+73: A=BaseUseCostLv1 | B=13650000000000 | C=13650000000000 | D=13.65T
+74: A=LevelMultiplier | B=1.04 | C=1.04
+75: A=UseCost | B=13650000000000 | C=13650000000000 | D=13.65T
+76: A=ResultOnSuccess | B=Apply Frost only | C=Apply Frost only

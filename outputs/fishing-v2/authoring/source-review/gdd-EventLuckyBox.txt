@@ -1,0 +1,42 @@
+1: A=0. Changelog
+2: A=Date | B= | C=Description
+3: A=Aug 25, 2026 | B= | C=Lucky Box Storm GDD v1.4 — price balance aligned to EventFishing / EventDig: 1.10× EV sink for blind line-side boxes.
+5: A=1. Overview
+6: A=Overview | B= | C=A Lucky Box is a pet-line object. Buy one like a pet; it opens into one random pet from the selected box type's fixed pool.
+7: A=Goal | B= | C=LuckyBoxStorm creates short bursts of extra Lucky Boxes on the existing pet line. Weather changes spawn frequency only.
+8: A=Core Loop | B= | C=LuckyBoxStorm begins → extra Lucky Boxes spawn on the pet line → player buys one like a pet → box opens → random pet from its fixed box-type pool joins the base.
+10: A=2. LuckyBoxStorm Weather
+11: A=Rule | B= | C=Details
+12: A=Weather ID | B= | C=LuckyBoxStorm
+13: A=Player-facing name | B= | C=Lucky Box Storm / Mưa Hộp May Mắn
+14: A=Effect | B= | C=During the weather, spawn extra Lucky Boxes on the existing pet line. No direct reward and no new purchase flow.
+15: A=Duration | B= | C=90 sec. The storm only increases Lucky Box spawns; normal pet-line behavior remains.
+16: A=End | B= | C=Stop new weather spawns at expiry. A box already on the line completes its normal walk-off or purchase flow.
+19: A=3. Line Spawn & Box Flow
+20: A=Rule | B= | C=Details
+21: A=Spawn target | B= | C=Existing shared pet line; reuse pet walk, FCFS purchase, and end-of-line despawn behavior.
+22: A=Box object | B= | C=LuckyBox pseudo-pet entry. It occupies a normal pet-line slot and is visible/purchasable to every player.
+23: A=Purchase | B= | C=Money only; apply normal base-full block. No auto-sell, no free pet, and no special claim protection.
+24: A=Open result | B= | C=Selected box type → weighted random pet from its fixed pool → grant Level 1 pet; use normal post-reveal stealability.
+25: A=Price / pool stamp | B= | C=At spawn, stamp box type, price = CEILING(pool ExpectedEV × 1.10), pool version, and server-side result seed. This follows Fishing’s 1.10 ClaimK; Dig’s +2% ROI is not comparable due to its weather, scan, mash, and outdoor-exposure friction.
+26: A=Concurrency | B= | C=Max 1 Lucky Box visible. If occupied, defer the next weather spawn until the normal line slot is free.
+28: A=4. Fixed Box Types, Price & Pool
+29: A=Box Type | B=Fixed Price | C=Expected EV | D=Guaranteed pool coverage | E=Rare additions
+30: A=EPIC | B=17,456,555 | C=15,869,595 | D=All active normal EPIC; all active normal LEGENDARY (low). | E=POLARBEAR, RHINO, WOLF, HORNBILL (ultra low). | F=17.46m
+31: A=LEGENDARY | B=404,068,322,294,421 | C=367,334,838,449,473 | D=All active normal LEGENDARY; all active normal MYTHIC (ultra low). | E=Secret EPIC: FennecFox/SnowWeasel/Skunk/Parrot. APEX: TasmanianDevil, Komodo, Serval, RedPanda (impossible). | F=404.07T
+32: A=MYTHIC | B=357,308,281,088,598,604 | C=324,825,710,080,544,185 | D=All active normal MYTHIC. | E=Secret EPIC ultra low; Secret LEGENDARY low; late APEX Bandicoot→Lemur (impossible). | F=357.31Q
+33: A=Pool rule | B= | C=“All” = positive MobWeight and non-secret in Mob (V2.14.0). Secret pets enter only where explicitly listed. Pools deliberately overlap.
+34: A=Weight rule | B= | C=DrawWeight uses Mob 2.14 as its base. EPIC keeps EPIC ×100, LEGENDARY ×5, Mythic picks 100; LEGENDARY keeps normal LEGENDARY ×100, Mythic picks 100, Apex 1; MYTHIC keeps normal MYTHIC ×100, Secret Epic 100, Secret Legendary 3,200, late Apex 1.
+35: A=No gate | B= | C=There are exactly three Lucky Box types. Rebirth does not gate price, type eligibility, pool, or result.
+38: A=5. Runtime Config (v1)
+39: A=Key | B=Value | C=Notes
+40: A=WeatherId | B=LuckyBoxStorm | C=Weather state only; it increases Lucky Box spawn frequency.
+41: A=DurationSec | B=60.0 | C=No new weather spawns after expiry.
+42: A=FirstSpawnDelaySec | B=10 | C=First extra Lucky Box after weather begins.
+43: A=SpawnIntervalSec | B=25 | C=Cadence for subsequent extra Lucky Boxes.
+44: A=MaxBoxesPerEvent | B=3 | C=Three attempted weather spawns per storm.
+45: A=MaxConcurrentBoxes | B=1 | C=Preserves a readable pet line; defer while an existing Lucky Box remains.
+46: A=BoxTypeWeights | B=EPIC=60; LEGENDARY=30; MYTHIC=10 | C=One fixed type is selected independently for every spawned box.
+47: A=BoxPriceSource | B=LuckyBox Config[BoxType].Price | C=EV-linked price for each of the three types; no Rebirth lookup.
+48: A=PetPoolSource | B=LuckyBox Pool[BoxID] | C=Explicit members, MobWeight, and DrawWeight live in the master-data sheet.
+49: A=Result | B=Random pet (Level 1) | C=No fixed pet, no free pet, no Apex box, and no Rebirth gate.

@@ -1,0 +1,16 @@
+1: A=ID | B=Name | C=Icon | D=Effects | E=EffectNames | F=Column 1
+2: A=int | B=string | C=string | D=string
+3: A=1.0 | B=Rainy | C=RainyWeather | D=1;4 | E=Soaked, Thundered
+4: A=2.0 | B=Snowy | C=SnowyWeather | D=2 | E=Frost
+5: A=3.0 | B=Windy | C=WindyWeather | D=3 | E=Gale
+6: A=4.0 | B=Shadowfall | C=ShadowfallWeather | D=5 | E=Eclipse
+7: A=5.0 | B=Rainbow | C=RainbowWeather | D=6 | E=Prismatic
+8: A=6.0 | B=Tempest | C=TempestWeather | D=7 | E=Vortex
+9: A=7.0 | B=Nebula | C=NebulaWeather | D=8;10 | E=Sequin, Aurora | F=Tinh Vân
+10: A=8.0 | B=HighTide | C=HighTideWeather | F=Triều Cường
+11: A=9.0 | B=HeavyRain | C=HRainyWeather | D=1;4 | E=Soaked, Thundered | F=Mưa Lớn
+12: A=10.0 | B=GroundShake | C=GroundShakeWeather | F=Rung Chấn
+13: A=11.0 | B=GiftboxStorm | C=GiftboxStormWeather
+14: A=12.0 | B=MeteorShower | C=MeteorShowerWeather | F=Mưa Sao Băng | H=New Permanent Event
+16: A=Tsunami
+17: A=SolarStorm

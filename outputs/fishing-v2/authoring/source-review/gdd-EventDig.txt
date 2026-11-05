@@ -1,0 +1,148 @@
+1: A=EventDig_GDD
+2: A=Version | B=Date | C=Scope | D=Change
+3: A=1.6 | B=Aug 25, 2026 | C=Event Dig | D=Reworked scan candidate rates after audit: rate cells are per-spot weights out of 1,000; candidate visibility uses the best of all shown spots.
+4: A=2.0 | B=2026-10-21 00:00:00 | C=Event Dig | D=Rework: scan is free; spot mix comes from the player's rebirth band; dig is the paid step, flat price by spot rarity (15K / 100K / 2M / 300M / 500Q unchanged); Chase Apex guaranteed by a pity counter on paid digs.
+6: A=1. Overview
+7: A=GroundShake weather → Scan (free) → Pick a spot → Pay by spot color → Mash → Pet appears in hand → Take or Swap.
+8: A=Event Dig is a short, weather-gated way to obtain pets from a separate Dig Pool. The event appears only when the earthquake weather is active. Scan is free. Dig is the Money sink, flat price by spot rarity.
+9: A=Headline reward: Dig Pool pet. The reward is not auto-granted to the base; it must be resolved from the player's hand.
+10: A=Topic | B=Decision | C=Design intent | E=Source / note
+11: A=Event name | B=Event Dig | C=Weather-gated digging event. | E=Current Plan: Dig Pool.
+12: A=Start condition | B=GroundShake weather wave (Earthquake player-facing copy) | C=Event appears only while the earthquake weather is active. | E=Weathers: GroundShake, ID 10; Weather Waves contains PLAY (dig) entries.
+13: A=Event phases | B=Active → Post-event → Hard stop | C=Active allows Scan, Dig, and Resolve. Post-event allows existing spots and pending hand rewards to resolve. | E=Capture wave end time on start.
+14: A=Economy | B=Pay on dig, flat price by spot rarity | C=Player pays for the color they see. Spot color is the promise: the pet is that rarity or above. Low bands rarely see Legendary/Mythic spots, so the expensive tiers are a dream, not a wall. | E=v1.6 charged the same prices on scan, before the player saw anything.
+15: A=Visibility | B=Private per player | C=A player sees and can claim only their own spots. | E=Server state keyed by player UUID.
+16: A=Reward source | B=Separate Dig Pool, banded by rebirth | C=Spot rarity mix follows the player's rebirth band (same bands as Mob). Pet per spot = MoleDigging Cast1–5 (own rarity + bleed up). Without bands, cheap low-RB digs would undercut the conveyor. | E=MoleDigging Cast1–Cast5 weights; band table in section 4.
+17: A=Exposure | B=Normal base exposure rules remain | C=Dig interaction protection must not remove the game's theft tension. | E=ProtectPlayer is limited to mash/reveal.
+18: A=Segment | B=Role | C=Fit
+19: A=R9–R13 | B=Primary | C=Mostly Common/Rare/Epic spots. Cheap digs, cheap pets. A Mythic spot is a jackpot moment (~2.5% per scan).
+20: A=R14–R18 | B=Primary | C=Epic/Legendary spots are normal. Mythic spot ~1 in 7 scans.
+21: A=R19+ | B=Primary chase | C=Mythic spot ~1 in 3 scans. Chase Apex (Goldenmole) reachable through pity, section 4.3.
+23: A=2. Core Loop
+24: A=Step | B=Player action / feedback | C=Server rule | D=Success | E=Failure / exit
+25: A=1. Weather | B=GroundShake starts; Dig button and event FX appear. | C=Start once per GroundShake wave; stamp EventStartTime and EventEndTime. | D=Player can equip Dig Mode during Active. | E=Windy, Rainy, or other weather does not start Dig.
+26: A=2. Equip | B=Shovel replaces the right-hand weapon in Dig Mode. | C=Shovel state is client UX only; server checks event phase for every request. | D=Scan and Dig controls become available. | E=No Scan after Active ends.
+27: A=3. Scan | B=Tap Scan. Free. Existing spots disappear before the new roll. | C=Validate phase, cooldown, ≤3 scans this wave; roll 5 private spots from the player's rebirth band table. | D=5 colored spots appear; player chooses one. | E=Cap or cooldown is rejected. Nothing is charged.
+28: A=4. Pick + pay | B=Move to a spot. Its price is shown on it. Confirm to pay. | C=Validate ownership, unconsumed state, distance ≤ 2.0 units, balance; deduct DigPrice[rarity] atomically; add pity points in the same transaction. | D=Dig/Mash starts on the selected spot. | E=Insufficient Money or invalid spot is rejected without a charge.
+29: A=5. Mash | B=Tap the moving meter; movement, sprint, jump, and attack are locked. | C=Server records target SpotID and protects the player only for the interaction. | D=Pet reward roll starts. | E=Failed mash: the paid spot stays, retry is free. The player already paid; a miss costs time, not the pet.
+30: A=6. Resolve | B=Pet appears in the player's hand with a reward card. | C=Create one server-owned PendingDigReward transaction; no auto-grant. | D=Player chooses Take or Swap. | E=Close/leave keeps the pending reward for later resolution; never silently discard.
+32: A=3. GroundShake Event Rules
+33: A=Parameter | B=Rule
+34: A=Trigger | B=OnWeatherWaveStart(GroundShake) starts Event Dig.
+35: A=Duration | B=EventEndTime equals the GroundShake wave end time captured at start. A weather change does not cancel an already-started event.
+36: A=Active | B=Scan, approach, mash, and reward resolution are enabled.
+37: A=Post-event | B=No new Scan. Existing spots, an active mash, and a pending hand reward can be resolved.
+38: A=Hard stop | B=Clear spot visuals and incomplete mash state. Persist any already-earned pending reward by transaction ID until the player resolves it.
+39: A=Re-entry | B=Reconnecting or re-entering the room restores the pending hand reward and resolution UI, but does not recreate consumed spots.
+40: A=Duplicate waves | B=A new GroundShake wave starts a new event only after the previous event has no active or pending state.
+42: A=4. Scan Configuration
+43: A=Scan is free. Every scan rolls 5 private spots. Each spot's rarity is a weighted roll (weights out of 1,000) from the player's rebirth band row below. P(≥1 Mythic) = 1 − (1 − MythicRate/1,000)^5. Weights are example shape, not tuned.
+44: A=Rebirth band | B=Spots | C=Common | D=Rare | E=Epic | F=Legendary | G=Mythic | H=P(≥1 Mythic in 5) | J=
+45: A=R9–R13 | B=5.0 | C=400.0 | D=350.0 | E=200.0 | F=45.0 | G=5.0 | H=2.5% | J=
+46: A=R14–R18 | B=5.0 | C=250.0 | D=300.0 | E=280.0 | F=140.0 | G=30.0 | H=14.1% | J=
+47: A=R19+ | B=5.0 | C=150.0 | D=250.0 | E=300.0 | F=220.0 | G=80.0 | H=34.1% | J=
+48: A=Balance intent | B=Same spot count in every band. Band only changes the color mix. One table, one UI layout.
+49: A=Balance intent | B=Chase Apex is not in the normal spot/pet roll. It comes from the Chase pool on Mythic spots and from pity (4.3).
+50: A=Balance intent | B=Keep the 3,000 ms cooldown, re-scan replacement, and max 3 scans per wave. Free scan without a hard cap is a reroll button.
+51: A=Balance intent | B=Dig unlocks at R9 (Rebirth 2.2). Bands below R9 are not configured.
+55: A=4.1 Dig Price
+56: A=Paid when the player confirms a dig on a spot. Flat price by spot rarity, same at every rebirth. Affordability comes from the band pool (low bands rarely see expensive spots), not from price scaling.
+57: A=Spot rarity | B=Config cost (raw) | C=Display cost
+58: A=Common | B=15000.0 | C=15K
+59: A=Rare | B=100000.0 | C=100K
+60: A=Epic | B=2000000.0 | C=2M
+61: A=Legendary | B=300000000.0 | C=300M
+62: A=Mythic | B=5e+17 | C=500Q
+63: A=Price floor | B=DigPrice ≥ pet SellPrice × 1.1 for every pet the band can show. Check per band before release; if the floor wins, raise the % for that rarity.
+64: A=Implementation gate | B=Re-run Monte Carlo (price % vs band pool EV) after any change to %, band weights, spot count, scan cap or pity points. Audit actual reward issuance after launch.
+69: A=4.2 Scan Behaviour
+70: A=Parameter | B=Rule | C=Player implication
+71: A=Cooldown | B=3,000 ms after a successful Scan request | C=Prevents rapid rerolling.
+72: A=Scan cap | B=3 scans per player per GroundShake wave | C=Hard cap because scans are free.
+73: A=Spot count | B=5 private spots every scan, all bands. | C=Same count everywhere; band changes the color mix only.
+74: A=Selection | B=Player sees rarity colors and the price on each spot. Paying on a spot consumes the scan. | C=The choice is meaningful; unchosen spots are candidates, not extra rewards.
+75: A=Re-scan | B=Clear all current owner spots before rolling new spots. | C=Unused spots are traded for a new free scan.
+76: A=Private / hidden reward | B=Spot rarity and position are private; exact pet is server-hidden until resolution. | C=Protects ownership and preserves the reveal.
+78: A=4.3 Chase Pity
+79: A=Guarantees the dig Chase Apex from a short Chase list. For dig, this replaces the climbing per-shot chance in the Chase & Limited tab. Fish and Lucky Box keep theirs.
+80: A=Rule | B=Value | C=Note
+81: A=Target | B=Dig Chase list (Goldenmole now; max 2–3 pets). Pity picks one at equal odds. | C=Not any Apex. Not Limited.
+82: A=Counter | B=Lifetime per player, dig channel only. Resets to 0 on any Chase hit (pity or natural). Survives list rotation and reconnect. | C=A rotation must not wipe progress.
+83: A=What counts | B=Paid digs only, weighted by spot rarity. Free scans = 0. | C=Charged in the same transaction as DigPrice.
+84: A=Points | B=Common 0 · Rare 0 · Epic 1 · Legendary 2 · Mythic 4 | C=Weights kill the cheap path: 48 Common digs ≈ 10% of one cap would otherwise buy an Apex.
+85: A=Guarantee | B=PityN = 48 points. Pity fires on the paid dig that reaches N; that dig's pet is the Chase pet. | C=Example: 2 Mythic digs/day → day 6. Not tuned; lock N after one week of dig telemetry per band.
+86: A=Daily cap | B=8 paid digs per player per day (server daily reset). | C=Digs past the cap are allowed but add 0 points.
+87: A=Natural rate | B=Chase pool still rolls at its base chance on Mythic spots. Pity is the floor, not the only path.
+88: A=Player sees | B=Chase progress x/48 and digs today x/8. No odds shown.
+90: A=5. Dig / Mash Difficulty
+91: A=Keep the existing rarity difficulty curve. Accessibility comes from dig price and band weights; do not make cheap tiers mechanically punishing. A failed mash never loses the paid spot.
+92: A=Spot rarity | B=Base mash power | C=Base drift speed | D=Difficulty intent
+93: A=Common | B=45 | C=10 | D=Largest / slowest target.
+94: A=Rare | B=35 | C=13 | D=Clear step up from Common.
+95: A=Epic | B=28 | C=17 | D=High precision.
+96: A=Legendary | B=22 | C=22 | D=Very high precision.
+97: A=Mythic | B=18 | C=28 | D=Highest precision and speed.
+98: A=Tuning note | B=Do not add new button combinations or extra punishment for casual controls. Tune price % and band weights before changing mash difficulty.
+100: A=6. Reward Pool
+101: A=Spot rarity | B=Pool | C=Roll rule | D=Mutation / weather
+102: A=Common | B=Dig Cast1 / Common pool | C=Weighted server roll from MoleDigging.Cast1_Common. | D=Mutation=None; no weather IDs at roll.
+103: A=Rare | B=Dig Cast2 / Rare pool | C=Weighted server roll from MoleDigging.Cast2_Rare. | D=Mutation=None; no weather IDs at roll.
+104: A=Epic | B=Dig Cast3 / Epic pool | C=Weighted server roll from MoleDigging.Cast3_Epic. | D=Mutation=None; no weather IDs at roll.
+105: A=Legendary | B=Dig Cast4 / Legendary pool | C=Weighted server roll from MoleDigging.Cast4_Legendary. | D=Mutation=None; no weather IDs at roll.
+106: A=Mythic | B=Dig Cast5 / Mythic pool | C=Weighted server roll from MoleDigging.Cast5_Mythic. | D=Mutation=None; no weather IDs at roll.
+107: A=Out of scope | B=The reconstructed Bronze/Silver/Gold chest branch remains out of scope for v1.3. If enabled, simulate it as a separate reward path before approval.
+109: A=7. Reward Resolution: Player Hand → Take or Swap | D=NOT IMPLEMENT IN 2.14
+110: A=State | B=Rule
+111: A=Pending hand reward | B=After a successful Dig, the pet is shown in the player's left hand and recorded as one PendingDigReward. The pet is not yet in the base.
+112: A=Take | B=If the base has an open pet slot, place the hand pet directly into the base.
+113: A=Swap | B=Player selects an in-base pet. The Dig pet occupies the selected base slot; the displaced pet routes to the existing Event Pet Inventory buffer.
+114: A=Buffer full | B=Do not auto-discard. Show explicit confirmation to replace the oldest buffered pet, or let the player cancel and keep the Dig pet pending in hand.
+115: A=Close / disconnect | B=Keep the pending reward descriptor and show the resolve UI on re-entry. No second reward can be generated while one is pending.
+116: A=Resolve complete | B=Clear the hand visual, transaction, and current Scan spots. Return to Dig Mode if the event is still Active.
+117: A=Situation | B=UI
+118: A=Base has space | B=Take to Base is the primary action; Swap remains available.
+119: A=Base is full | B=Swap with Base Pet is the primary action; show which pet will be displaced.
+120: A=Buffer is full | B=Show the buffered pet and the destructive consequence before confirmation. Cancel leaves the new reward in hand.
+121: A=Event ends | B=Keep the hand reward and a clear Resolve Reward entry visible; do not strand or silently remove it.
+122: A=Reward reveal | B=One GetItem animation and one reward card; prevent duplicate hand pets or overlapping reveal UI.
+124: A=8. Validation and Anti-cheat
+125: A=Check | B=Rule | C=Failure result
+126: A=Weather / phase | B=Request is valid only in Active or Post-event as allowed by the action. | C=Reject without charge or grant.
+127: A=Dig charge | B=Validate balance and deduct DigPrice atomically before mash starts; pity points and daily dig count update in the same transaction. | C=No partial dig, no negative balance, no points without a charge.
+128: A=Spot ownership | B=Spot belongs to the requesting player's UUID and is unconsumed. | C=Reject.
+129: A=Distance | B=Ground distance to SpotID must be ≤ 2.0 units. | C=Reject.
+130: A=Target continuity | B=Mash finish must match the server-recorded _PlayerMashSpotId. | C=Reject and clean up mash state.
+131: A=Reward transaction | B=One pending reward per player; resolve by transaction ID. | C=Reject duplicate Take/Swap/replay.
+132: A=Inventory write | B=Base/buffer swap is a single server transaction. | C=Roll back on failure; no lost or duplicated pet.
+133: A=Protection | B=Interaction protection covers mash and the short reveal only. | C=Always restore protection during cleanup.
+135: A=9. Economy / Cohort Review
+136: A=Review | B=Requirement | C=Verdict / action
+137: A=Accessibility | B=Every band from R9 can afford the spots it usually sees. | C=Pass by design: band pool gates what shows up; price is flat. An R9 player who sees a 500Q Mythic spot can't buy it, that's intended (2.5% of scans).
+138: A=Scam feel | B=Spot color is the promise. Player pays for what they see; pet is that rarity or above. | C=Below-ticket outcomes = 0 by design. Validate with playtest sentiment.
+139: A=Jackpot safety | B=Natural Apex chance on Mythic spots stays ≤1.8% (Cast5 bleed). Chase Apex only via Chase pool + pity. | C=Pass if Cast5 unchanged. Pity supply = ~1 Chase pet per active digger per ~6 days; budget it.
+140: A=Casual fairness | B=Dig unlocks at R9. No completion gate. | C=Pass as optional content.
+141: A=Faucet comparison | B=Compare Dig pet EV per active minute against Fishing and normal Mob acquisition, per band. | C=Required before live sign-off; do not allow a >2× efficiency gap without an explicit decision.
+142: A=Burn horizon | B=Digs per wave a player at each band can afford from a typical wallet; days to pity for a daily player. | C=Required before launch; needs dig/wallet telemetry per band.
+143: A=Stockpile risk | B=Model players with existing Money stockpiles, not only zero-balance players. Stockpile + 8 Mythic digs/day = fastest pity path. | C=Required for live rebalance.
+145: A=10. UI / VFX
+146: A=Moment | B=Requirement
+147: A=GroundShake start | B=Earthquake cue, Dig button, weather name, remaining event timer. Show Chase progress x/48 and digs today x/8 in Dig Mode.
+148: A=Dig Mode | B=Shovel in right hand; normal weapon hidden; Scan and Dig states are explicit. Scans left this wave shown on the Scan button.
+149: A=Scan | B=Private rarity-tinted glows. Each spot shows its price; grey it out if the player cannot afford it. Re-scan button says it clears current spots.
+150: A=Mash | B=Readable meter; rarity-specific power/drift; movement lock and interaction protection with a visible shield cue. On fail: "Try again" on the same spot, no charge.
+151: A=Reward | B=Pet in left hand, one reveal animation, Take and Swap actions.
+152: A=Swap | B=Selected base pet is highlighted; displaced-pet destination and any destructive replacement are explicit.
+153: A=Post-event | B=Disable Scan, keep Resolve Reward available, and show the number of unresolved spots/rewards.
+155: A=11. QA and PO Decisions
+156: A=Priority | B=Test / decision | C=Expected result
+157: A=P0 | B=GroundShake starts Dig; Windy and other weather do not. | C=Only canonical GroundShake wave activates the event.
+158: A=P0 | B=Free scan, cooldown, cap 3/wave, private spots, re-scan replacement. | C=Nothing charged on scan; only owner sees spots; old spots clear; 4th scan rejected.
+159: A=P0 | B=Band spot roll. | C=5 spots every scan; rarity mix matches the player's rebirth band; band changes after rebirth.
+160: A=P0 | B=Dig charge, failed mash, spoofed target. | C=Flat DigPrice[rarity] charged once on confirm; failed mash keeps the paid spot and charges nothing on retry; only valid nearby owned spots resolve.
+161: A=P0 | B=Take with free base slot. | C=Pet goes directly from hand to base; no duplicate.
+162: A=P0 | B=Swap with free buffer. | C=New pet occupies selected base slot; displaced pet enters Event Pet Inventory.
+163: A=P0 | B=Full buffer confirmation. | C=No silent discard; Cancel preserves the pending hand reward.
+164: A=P0 | B=Quit / reconnect / hard stop with pending hand reward. | C=Reward remains recoverable and can be resolved once.
+165: A=P0 | B=Pity counter. | C=Points add on paid dig only (0 for free scan, 0 past daily cap); fires at 48; resets on Chase hit; survives reconnect and Chase list rotation.
+166: A=P1 | B=Price floor per band. | C=DigPrice ≥ SellPrice × 1.1 for every pet the band can show.
+167: A=PO | B=Approve % of cap table, band weights, PityN and the dig Chase list. | C=Or send back with target numbers.

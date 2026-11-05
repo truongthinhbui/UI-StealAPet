@@ -1,0 +1,38 @@
+1: A=ID | B=Cast1_Common | C=Cast2_Rare | D=Cast3_Epic | E=Cast4_Legendary | F=Cast5_Mythic | G=Name | H=Rank | I=Rarity | J=Rate_C | K=Rate_R | L=Rate_E | M=Rate_L | N=Rate_M | O=Note | P=Scan | Q=Price | W=_PlayerMaxQuantity | X=Cum_Chest1_% | Y=Cum_Chest2_% | Z=Cum_Chest3_%
+2: A=3.0 | B=100000.0 | C=0.0 | D=0.0 | E=0.0 | F=0.0 | G=RABBIT | H=3.0 | I=COMMON | J=0.1 | K=0 | L=0 | M=0 | N=0 | O= | P=COMMON | Q=15000.0 | R=15.k | W=1.0 | X=2.0 | Y=-- | Z=--
+3: A=8.0 | B=500000.0 | C=80000.0 | D=0.0 | E=0.0 | F=0.0 | G=DOG | H=8.0 | I=COMMON | J=0.5 | K=0.08 | L=0 | M=0 | N=0 | O= | P=RARE | Q=100000.0 | R=100.k
+4: A=1001.0 | B=150000.0 | C=20000.0 | D=0.0 | E=0.0 | F=0.0 | G=MOLE | H=10.0 | I=COMMON | J=0.15 | K=0.02 | L=0 | M=0 | N=0 | O=SECRET | P=EPIC | Q=2000000.0 | R=2.m | W=2.0 | X=4.0 | Y=-- | Z=--
+5: A=10.0 | B=80000.0 | C=100000.0 | D=0.0 | E=0.0 | F=0.0 | G=HAMSTER | H=22.0 | I=RARE | J=0.08 | K=0.1 | L=0 | M=0 | N=0 | O= | P=LEGENDARY | Q=300000000.0 | R=300.m | W=3.0 | X=10.0 | Y=-- | Z=--
+6: A=15.0 | B=80000.0 | C=300000.0 | D=0.0 | E=0.0 | F=0.0 | G=RACOON | H=27.0 | I=RARE | J=0.08 | K=0.3 | L=0 | M=0 | N=0 | O= | P=MYTHIC | Q=5e+17 | R=500.Q | W=4.0 | X=17.0 | Y=6.8 | Z=--
+7: A=16.0 | B=50000.0 | C=220000.0 | D=0.0 | E=0.0 | F=0.0 | G=SQUIRREL | H=28.0 | I=RARE | J=0.05 | K=0.22 | L=0 | M=0 | N=0 | O= | W=5.0 | X=25.6 | Y=13.3 | Z=--
+8: A=53.0 | B=35000.0 | C=175000.0 | D=0.0 | E=0.0 | F=0.0 | G=SNAKE | H=30.0 | I=RARE | J=0.035 | K=0.175 | L=0 | M=0 | N=0 | O= | W=6.0 | X=35.7 | Y=19.2 | Z=--
+9: A=1008.0 | B=0.0 | C=3000.0 | D=0.0 | E=0.0 | F=0.0 | G=POSSUM | H=32.0 | I=RARE | J=0 | K=0.003 | L=0 | M=0 | N=0 | O=SECRET | W=7.0 | X=44.5 | Y=24.8 | Z=--
+10: A=1013.0 | B=0.0 | C=2000.0 | D=0.0 | E=0.0 | F=0.0 | G=BAT | H=33.0 | I=RARE | J=0 | K=0.002 | L=0 | M=0 | N=0 | O=SECRET | P=ScanRarity | Q=SpotCount | R=CommonRate | S=RareRate | T=EpicRate | U=LegendaryRate | V=MythicRate | W= | X=52.1 | Y=29.9 | Z=2.0
+11: A=18.0 | B=4500.0 | C=70000.0 | D=420000.0 | E=0.0 | F=0.0 | G=OWL | H=41.0 | I=EPIC | J=0.0045 | K=0.07 | L=0.42 | M=0 | N=0 | O= | P=Common | Q=3.0 | R=650.0 | S=330.0 | T=20.0 | U=0.0 | V=0.0 | W= | X=86.6 | Y=34.7 | Z=4.0
+12: A=20.0 | B=500.0 | C=28500.0 | D=420000.0 | E=0.0 | F=0.0 | G=BISON | H=43.0 | I=EPIC | J=0.0005 | K=0.0285 | L=0.42 | M=0 | N=0 | O= | P=Rare | Q=4.0 | R=200.0 | S=600.0 | T=180.0 | U=20.0 | V=0.0 | W= | X=89.2 | Y=39.2 | Z=5.9
+13: A=1003.0 | B=0.0 | C=490.0 | D=70250.0 | E=0.0 | F=0.0 | G=FENNECFOX | H=53.0 | I=EPIC | J=0 | K=0.00049 | L=0.07025 | M=0 | N=0 | O=SECRET | P=Epic | Q=5.0 | R=0.0 | S=100.0 | T=840.0 | U=58.0 | V=2.0 | W= | X=91.3 | Y=54.2 | Z=7.8
+14: A=1014.0 | B=0.0 | C=10.0 | D=70000.0 | E=0.0 | F=0.0 | G=SKUNK | H=55.0 | I=EPIC | J=0 | K=1e-05 | L=0.07 | M=0 | N=0 | O=SECRET | P=Legendary | Q=6.0 | R=0.0 | S=20.0 | T=470.0 | U=500.0 | V=10.0 | W= | X=100.0 | Y=57.3 | Z=9.6
+15: A=29.0 | B=0.0 | C=990.0 | D=10000.0 | E=456770.0 | F=0.0 | G=CAMEL | H=72.0 | I=LEGENDARY | J=0 | K=0.00099 | L=0.01 | M=0.45677 | N=0 | O=JACKPOT in D1 | P=Mythic | Q=7.0 | R=0.0 | S=10.0 | T=120.0 | U=420.0 | V=450.0 | W= | X=-- | Y=60.2 | Z=11.4
+16: A=65.0 | B=0.0 | C=10.0 | D=8000.0 | E=456770.0 | F=0.0 | G=BULL | H=87.0 | I=LEGENDARY | J=0 | K=1e-05 | L=0.008 | M=0.45677 | N=0 | O=JACKPOT in D2 | W=14.0 | X=-- | Y=63.0 | Z=13.2
+17: A=1004.0 | B=0.0 | C=0.0 | D=700.0 | E=40230.0 | F=0.0 | G=KIWI | H=90.0 | I=LEGENDARY | J=0 | K=0 | L=0.0007 | M=0.04023 | N=0 | O=SECRET | P=SelectionModel | Q=BEST_VISIBLE_SPOT_ONE_REWARD | W=15.0 | X=-- | Y=65.5 | Z=14.9
+18: A=1015.0 | B=0.0 | C=0.0 | D=730.0 | E=35230.0 | F=0.0 | G=RATTLESNAKE | H=92.0 | I=LEGENDARY | J=0 | K=0 | L=0.00073 | M=0.03523 | N=0 | O=SECRET | P=MaxPaidScansPerWave | Q=3.0 | W=16.0 | X=-- | Y=67.9 | Z=16.6
+19: A=72.0 | B=0.0 | C=0.0 | D=100.0 | E=7667.0 | F=167000.0 | G=COYOTE | H=145.0 | I=MYTHIC | J=0 | K=0 | L=0.0001 | M=0.007667 | N=0.1670668267 | O=JACKPOT in D1/D2/D3/D4 | P=PriceBasis | Q=SPREAD_POOL_FIXED_PRICE_LOTTERY | W=17.0 | X=-- | Y=90.8 | Z=18.3
+20: A=77.0 | B=0.0 | C=0.0 | D=100.0 | E=650.0 | F=163000.0 | G=ARMADILLO | H=149.0 | I=MYTHIC | J=0 | K=0 | L=0.0001 | M=0.00065 | N=0.1630652261 | O=JACKPOT in D3/D4 | P=PoolWeightTotal | Q=1000000.0 | W=18.0 | X=-- | Y=94.4 | Z=21.5
+21: A=1025.0 | B=0.0 | C=0.0 | D=50.0 | E=650.0 | F=163000.0 | G=FOX | H=208.0 | I=MYTHIC | J=0 | K=0 | L=5e-05 | M=0.00065 | N=0.1630652261 | O=SECRET - JACKPOT in D3/D4 | W=19.0 | X=-- | Y=95.1 | Z=23.1
+22: A=1027.0 | B=0.0 | C=0.0 | D=50.0 | E=650.0 | F=163000.0 | G=PORCUPINE | H=209.0 | I=MYTHIC | J=0 | K=0 | L=5e-05 | M=0.00065 | N=0.1630652261 | O=SECRET - JACKPOT in D4 | W=20.0 | X=-- | Y=98.6 | Z=26.1
+23: A=1029.0 | B=0.0 | C=0.0 | D=10.0 | E=650.0 | F=163000.0 | G=DINGO | H=210.0 | I=MYTHIC | J=0 | K=0 | L=1e-05 | M=0.00065 | N=0.1630652261 | O=SECRET | W=21.0 | X=-- | Y=100.0 | Z=29.0
+24: A=1030.0 | B=0.0 | C=0.0 | D=10.0 | E=650.0 | F=163000.0 | G=MOUSE | H=211.0 | I=MYTHIC | J=0 | K=0 | L=1e-05 | M=0.00065 | N=0.1630652261 | O=SECRET | W=22.0 | X=-- | Y=-- | Z=33.2
+25: A=88.0 | B=0.0 | C=0.0 | D=0.0 | E=10.0 | F=4000.0 | G=MEERKAT | H=406.0 | I=APEX | J=0 | K=0 | L=0 | M=1e-05 | N=0.00400160064 | O= | W=23.0 | X=-- | Y=-- | Z=34.5
+26: A=91.0 | B=0.0 | C=0.0 | D=0.0 | E=9.0 | F=3000.0 | G=HEDGEHOG | H=409.0 | I=APEX | J=0 | K=0 | L=0 | M=9e-06 | N=0.00300120048 | O= | W=24.0 | X=-- | Y=-- | Z=35.8
+27: A=92.0 | B=0.0 | C=0.0 | D=0.0 | E=9.0 | F=2500.0 | G=WILDBOAR | H=410.0 | I=APEX | J=0 | K=0 | L=0 | M=9e-06 | N=0.0025010004 | O= | W=25.0 | X=-- | Y=-- | Z=37.1
+28: A=94.0 | B=0.0 | C=0.0 | D=0.0 | E=9.0 | F=2500.0 | G=JERBOA | H=412.0 | I=APEX | J=0 | K=0 | L=0 | M=9e-06 | N=0.0025010004 | O= | W=26.0 | X=-- | Y=-- | Z=38.3
+29: A=100.0 | B=0.0 | C=0.0 | D=0.0 | E=9.0 | F=3500.0 | G=BADGER | H=418.0 | I=APEX | J=0 | K=0 | L=0 | M=9e-06 | N=0.00350140056 | O= | W=27.0 | X=-- | Y=-- | Z=40.8
+30: A=110.0 | B=0.0 | C=0.0 | D=0.0 | E=5.0 | F=580.0 | G=ECHIDNA | H=428.0 | I=APEX | J=0 | K=0 | L=0 | M=5e-06 | N=0.0005802320928 | O=NEW PET - JACKPOT in D4 | W=28.0 | X=-- | Y=-- | Z=41.9
+31: A=111.0 | B=0.0 | C=0.0 | D=0.0 | E=5.0 | F=500.0 | G=CHIPMUNK | H=429.0 | I=APEX | J=0 | K=0 | L=0 | M=5e-06 | N=0.00050020008 | O=NEW PET - JACKPOT in D4 | W=29.0 | X=-- | Y=-- | Z=43.1
+32: A=114.0 | B=0.0 | C=0.0 | D=0.0 | E=1.0 | F=50.0 | G=GOLDENMOLE | H=430.0 | I=APEX | J=0 | K=0 | L=0 | M=1e-06 | N=5.0020008e-05 | O=NEW PET | W=30.0 | X=-- | Y=-- | Z=100.0
+33: A=113.0 | B=0.0 | C=0.0 | D=0.0 | E=5.0 | F=750.0 | G=JACKRABBIT | H=431.0 | I=APEX | J=0 | K=0 | L=0 | M=5e-06 | N=0.00075030012 | O=NEW PET
+34: A=112.0 | B=0.0 | C=0.0 | D=0.0 | E=1.0 | F=100.0 | G=COBRA | H=432.0 | I=APEX | J=0 | K=0 | L=0 | M=1e-06 | N=0.000100040016 | O=NEW PET
+35: A=1035.0 | B=0.0 | C=0.0 | D=0.0 | E=15.0 | F=100.0 | G=WOMBAT | H=506.0 | I=APEX | J=0 | K=0 | L=0 | M=1.5e-05 | N=0.000100040016 | O=SECRET
+36: A=118.0 | B=0.0 | C=0.0 | D=0.0 | E=5.0 | F=20.0 | G=EMU | H=516.0 | I=APEX | J=0 | K=0 | L=0 | M=5e-06 | N=2.00080032e-05 | O=2.15.0 PLAN — NOT RELEASED; Apex share held at 1.80%
+37: B=1000000 | C=1000000 | D=1000000 | E=1000000 | F=999600 | G=POOL_TOTAL
+41: F=100.0

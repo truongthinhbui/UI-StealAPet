@@ -1,0 +1,27 @@
+1: A=ID | B=WeatherType | C=Duration | D=WeatherName | E=Note
+2: A=int | B=int | C=int | D=
+3: A=1.0 | B=10.0 | C=3.0 | D=GroundShake | E=PLAY (dig) | H=1.0 | I=Rainy
+4: A=2.0 | B=3.0 | C=3.0 | D=Windy | E= | H=2.0 | I=Snowy
+5: A=3.0 | B=8.0 | C=3.0 | D=HighTide | E=PLAY (fish) | H=3.0 | I=Windy
+6: A=4.0 | B=3.0 | C=3.0 | D=Windy | E= | H=4.0 | I=Shadowfall
+7: A=5.0 | B=10.0 | C=3.0 | D=GroundShake | E=PLAY (dig) | H=5.0 | I=Rainbow
+8: A=6.0 | B=4.0 | C=3.0 | D=Shadowfall | E= | H=6.0 | I=Tempest
+9: A=7.0 | B=10.0 | C=3.0 | D=GroundShake | E=PLAY (dig) | H=7.0 | I=Nebula
+10: A=8.0 | B=2.0 | C=3.0 | D=Snowy | E= | H=8.0 | I=HighTide
+11: A=9.0 | B=8.0 | C=3.0 | D=HighTide | E=PLAY (fish) | H=9.0 | I=HeavyRain
+12: A=10.0 | B=5.0 | C=3.0 | D=Rainbow | E= | H=10.0 | I=GroundShake
+13: A=11.0 | B=10.0 | C=3.0 | D=GroundShake | E=PLAY (dig) | H=11.0 | I=GiftboxStorm
+14: A=12.0 | B=6.0 | C=3.0 | D=Tempest | E= | H=12.0 | I=MeteorShower
+15: A=13.0 | B=10.0 | C=3.0 | D=GroundShake | E=PLAY (dig)
+16: A=14.0 | B=7.0 | C=2.0 | D=Nebula | E=
+17: A=15.0 | B=1.0 | C=1.0 | D=Rainy | E=
+18: A=16.0 | B=9.0 | C=2.0 | D=HeavyRain | E=PLAY (fish)
+19: A=17.0 | B=1.0 | C=2.0 | D=Rainy | E=
+20: A=18.0 | B=0.0 | C=2.0 | D=Normal | E=
+21: A=19.0 | B=10.0 | C=3.0 | D=GroundShake | E=PLAY (dig)
+22: A=20.0 | B=4.0 | C=5.0 | D=Shadowfall | E=
+23: A=21.0 | B=10.0 | C=3.0 | D=GroundShake | E=PLAY (dig)
+24: A=22.0 | B=3.0 | C=3.0 | D=Windy | E=
+25: A=23.0 | B=9.0 | C=3.0 | D=HeavyRain | E=PLAY (fish)
+26: A=24.0 | B=1.0 | C=3.0 | D=Rainy | E=
+27: A=25.0 | B=11.0 | C=1.0 | D=GiftboxStorm | E=

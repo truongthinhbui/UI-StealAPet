@@ -1,0 +1,47 @@
+1: A=0. Changelog
+2: A=Date | C=Description | I= 
+3: A=2026-05-05 00:00:00 | C=Initial Design
+6: K= 
+7: A=1. Overview
+8: A=2-part event: Pre-Match (Teaser) → The Match
+9: A=Two-phase football event.
+- Phase 1 (Teaser) runs 7 days before launch — a Ball appears in every room, players kick it, kicks accumulate.
+- Phase 2 (Main) runs 14 days — Ball stays in play, players steal it, hold it outside their base to earn Dust, and score at the Whistle for a bonus and a room-wide flex moment.
+
+Headline prize: Mr Football, event-exclusive pet. 1 per account. | H=            
+10: A=Goal | B=- Introduce event-exclusive pet (Mr Football) as the headline reward
+- Swapable with other events for event duration (ex: 14 days).
+- Create a predictable multiplayer moment that encourages players to stay active together.
+- Reward room participation instead of solo farming.
+- Add a simple recurring event loop with clear short-term rewards and a longer-term exchange goal. | H= 
+11: A=Core Loop | B=Phase 1: Ball appears -> kick -> Dust awareness reward.
+Phase 2: Ball spawns -> steal/kick -> bring to goal to earn gems-> ball destroyed -> 5-min cooldown -> spend Gems -> Mr Football.
+13: A=2. Phase 1
+14: A=A Ball entity spawns in each room every 3 min. Players kick it — same interact key as stealing a pet. Kicks are tracked server-side per player. No dedicated teaser UI needed, just a small kick counter on the Ball itself.
+15: A=Kicks | B=Bonus
+16: A=1–4 | B=0.0
+17: A=5–15 | B=0.0
+19: A=3. Phase 2
+20: A=Rule Name | B=Rules
+21: A=Ball in room | B=1 Ball spawns at room center every 10 min. At Whistle, ball is destroyed and room enters 10-min cooldown before next spawn.
+22: A=Steal | B=Any player can steal the Ball from another player using the standard steal interact. No extra cooldown beyond normal steal rules.
+23: A=Base rule | B=Ball cannot enter any player's base. If carrier enters base, ball auto-drops at the base entrance. Carrier inside base is never a valid scorer.
+25: A=4. Room Scaling 
+26: A=Active players in room | B=Balls per wave | C=Value | D=Speed penalty
+27: A=1.0 | B=0
+28: A=2.0 | B=1 | C=2/ball
+29: A=3.0 | B=2 | C=4/ball
+30: A=4.0 | B=3 | C=4/ball
+31: A=5.0 | B=4 | C=6/ball
+32: A=6.0 | B=5 | C=6/ball
+34: A=5. Shop & Economy
+35: A=Shop Item | B=Price | C=Limit | D=Role / Rule
+36: A=Limited Divine Pet | B=config | C=2/account | D=Accessible WC event pet. Target: ~90%+ of average players can buy by active day 5.
+37: A=Mr Football | B=config | C=1/account | D=Premium WC limited pet. Standalone shop item; player can rush this by skipping Eagle.
+39: A=6. Balance Prediction
+40: A=Target | B=Price threshold | C=Clear rate
+41: A=Limited by active day 5 | B=config | C=0.959
+42: A=Mr Football only by active day 7 | B=config | C=0.099
+43: A=Limited + Mr Football by active day 7 | B=config | C=0.002
+44: A=Limited + Mr Football by active day 14 | B=config | C=0.795
+45: A=Mr Football only by active day 14 | B=config | C=0.989

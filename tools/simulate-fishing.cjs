@@ -6,7 +6,7 @@ const {GenCore:core,FishingPool:fish}=context.window,count=Number(process.argv[2
 if(!Number.isInteger(count)||count<1||count>1000000||!Number.isInteger(seed)||seed<0||seed>4294967295)throw Error('Invalid count or seed');
 const reports=[];
 for(const rb of core.config.rebirthProfiles.map(profile=>profile.min))for(const scenario of core.scenarios){
-  const current=core.profile(rb);assert.equal(current.total,1000000);assert.equal(current.pool.length,21);
+  const current=core.profile(rb);assert.equal(current.total,1000000);assert.equal(current.pool.length,core.config.catalog.filter(g=>g.fishingEnabled).length);
   const sim=core.simulation(scenario,seed,{rebirth:rb,fishing:true,logLimit:1000}),result=sim.step(count);
   assert.equal(result.none+result.one+result.two,count);assert.equal(result.two,0);
   assert.equal(Object.values(result.petCounts).reduce((n,p)=>n+p.count,0),count);
@@ -23,7 +23,7 @@ for(const rb of core.config.rebirthProfiles.map(profile=>profile.min))for(const 
 const percentage=x=>(100*x).toFixed(3)+'%';
 const lines=['# Full Fishing simulation','','Seed '+seed+'. '+count+' casts per scenario per Rebirth band. All six patterns and five Rebirth bands; '+(count*30)+' casts total. Up to the first 1,000 casts of each run are retained in JSON/CSV; aggregates cover every cast. These are revealed offers, not automatic inventory grants.','','| Rebirth | Pattern | Unique pets | No Gen | One Gen | Two Gen | Common pets |','|---|---|---:|---:|---:|---:|---:|'];
 for(const r of reports)lines.push(`| ${r.band} | ${r.name} | ${Object.keys(r.petCounts).length} | ${r.none} | ${r.one} | ${r.two} | ${percentage(Object.values(r.petCounts).filter(p=>p.rarity==='COMMON').reduce((n,p)=>n+p.count,0)/count)} |`);
-lines.push('','See fishing-casts.csv for individual casts: Rebirth, taps, points, pet ID, pet, rarity and exact Gen combination. fishing-simulation.json additionally contains all pet counts, per-pet Gen incidence and every observed combination. All 21 Gen have positive weights; rare outcomes may be absent in a finite sample.');
+lines.push('','See fishing-casts.csv for individual casts: Rebirth, taps, points, pet ID, pet, rarity and exact Gen combination. fishing-simulation.json additionally contains all pet counts, per-pet Gen incidence and every observed combination. All 17 Gen have positive weights; rare outcomes may be absent in a finite sample.');
 const rows=[['Scenario','Rebirth','Band','Seed','Cast','Tap1','Tap2','Tap3','Points','PetID','Pet','Rarity','Gen','ClaimCents','GenConfig','FishConfig']];
 for(const r of reports)for(const row of r.records)rows.push([r.name,r.rebirth,r.band,r.seed,row.cast,...row.pattern,row.points,row.petId,row.pet,row.rarity,row.genIds.map(id=>core.config.catalog.find(g=>g.id===id).name).join('+'),row.claimCents,r.configVersion,r.fishConfigVersion]);
 fs.mkdirSync(path.join(root,'reports'),{recursive:true});

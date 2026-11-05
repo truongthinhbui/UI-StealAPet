@@ -1,0 +1,52 @@
+[
+  {
+    "band": "R1–R4",
+    "apexRateMin": 0.00049033,
+    "apexRateMax": 0.00050389,
+    "hoursMin": 5512.667006246955,
+    "hoursMax": 5665.118956167842,
+    "hoursUsingWeeklyMeanRate": 5576.155467038071,
+    "apexOnlyMinutesMin": 198.45601222489034,
+    "apexOnlyMinutesMax": 203.9442824220423
+  },
+  {
+    "band": "R5–R8",
+    "apexRateMin": 0.0010793,
+    "apexRateMax": 0.0011090499999999999,
+    "hoursMin": 2504.6461185499106,
+    "hoursMax": 2573.6845898061506,
+    "hoursUsingWeeklyMeanRate": 2533.4054847215384,
+    "apexOnlyMinutesMin": 90.16726026779678,
+    "apexOnlyMinutesMax": 92.65264523302139
+  },
+  {
+    "band": "R9–R13",
+    "apexRateMin": 0.00539748,
+    "apexRateMax": 0.0055445,
+    "hoursMin": 500.9969839981564,
+    "hoursMax": 514.6434591286634,
+    "hoursUsingWeeklyMeanRate": 506.58354528065183,
+    "apexOnlyMinutesMin": 18.035891423933627,
+    "apexOnlyMinutesMax": 18.527164528631882
+  },
+  {
+    "band": "R14–R18",
+    "apexRateMin": 0.00697111,
+    "apexRateMax": 0.00716324,
+    "hoursMin": 387.7823132797139,
+    "hoursMax": 398.46993918870567,
+    "hoursUsingWeeklyMeanRate": 392.1490593083549,
+    "apexOnlyMinutesMin": 13.9601632780697,
+    "apexOnlyMinutesMax": 14.344917810793403
+  },
+  {
+    "band": "R19+",
+    "apexRateMin": 0.00972334,
+    "apexRateMax": 0.01000742,
+    "hoursMin": 277.5718194877179,
+    "hoursMax": 285.68144051095385,
+    "hoursUsingWeeklyMeanRate": 281.0879091513598,
+    "apexOnlyMinutesMin": 9.992585501557844,
+    "apexOnlyMinutesMax": 10.284531858394336
+  }
+]

@@ -1,4 +1,3 @@
-// Original fish weights retained; Rebirth ranges aligned with user reference.
 window.FishingConfig = {
   "version": "fishing-legacy-fish-first-v3-rb14",
   "source": {
@@ -46,7 +45,40 @@ window.FishingConfig = {
     "greenMutation": 5,
     "goldMutation": 20,
     "missMutation": 0,
-    "cooldown": 0
+    "cooldown": 0,
+    "rarityTiming": {
+      "COMMON": {
+        "secondsPerRevolution": 2.8,
+        "color": "#31c779",
+        "finColor": "#abf8ce"
+      },
+      "RARE": {
+        "secondsPerRevolution": 2.5,
+        "color": "#42aaff",
+        "finColor": "#a5d9ff"
+      },
+      "EPIC": {
+        "secondsPerRevolution": 2.25,
+        "color": "#ac69f0",
+        "finColor": "#dfbaff"
+      },
+      "LEGENDARY": {
+        "secondsPerRevolution": 2,
+        "color": "#f05252",
+        "finColor": "#ffc0b6"
+      },
+      "MYTHIC": {
+        "secondsPerRevolution": 1.8,
+        "color": "#ffcc40",
+        "finColor": "#fff1a6"
+      },
+      "APEX": {
+        "secondsPerRevolution": 1.6,
+        "color": "#27d9bd",
+        "finColor": "#a3fff0"
+      }
+    },
+    "minRebirth": 9
   },
   "chests": {
     "enabled": false,

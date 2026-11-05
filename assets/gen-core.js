@@ -8,14 +8,14 @@
     const entries=pool.map(gen=>({...gen,fishingWeight:profile.weights[gen.id]||0})).filter(gen=>gen.fishingWeight>0);
     return {...profile,pool:entries,total:entries.reduce((sum,gen)=>sum+gen.fishingWeight,0)};
   });
-  function profile(rebirth=1){return profiles.find(p=>rebirth>=p.min&&(p.max===null||rebirth<=p.max))||profiles[0];}
+  function profile(rebirth=9){return profiles.find(p=>rebirth>=p.min&&(p.max===null||rebirth<=p.max))||profiles[0];}
   function seeded(seed){let value=Number(seed)>>>0;return ()=>{value=(value+0x6D2B79F5)>>>0;let x=value;x=Math.imul(x^x>>>15,x|1);x^=x+Math.imul(x^x>>>7,x|61);return ((x^x>>>14)>>>0)/4294967296;};}
   function count(points,random=Math.random){
     const maximum=config.rules.taps*Math.max(config.rules.green,config.rules.gold,config.rules.red);
     const chance=Math.max(0,Math.min(config.rules.maxGen*100,maximum,Number(points)||0));
     return random()*100<chance?1:0;
   }
-  function choose(amount,random=Math.random,rebirth=1){
+  function choose(amount,random=Math.random,rebirth=9){
     const active=profile(rebirth).pool;
     const selected=[];let remaining=profile(rebirth).total;
     for(let slot=0;slot<Math.min(amount,config.rules.maxGen,active.length);slot++){
@@ -28,14 +28,14 @@
     }
     return selected;
   }
-  function roll(points,random=Math.random,rebirth=1){return choose(count(points,random),random,rebirth);}
-  function catchRoll(score,rebirth=1,random=Math.random){
+  function roll(points,random=Math.random,rebirth=9){return choose(count(points,random),random,rebirth);}
+  function catchRoll(score,rebirth=9,random=Math.random){
     const pet=global.FishingPool.pick(rebirth,random);
     const rewards=roll(score,random,rebirth);
     return {pet,rewards};
   }
   function points(pattern){return pattern.slice(0,config.rules.taps).reduce((sum,result)=>sum+(config.rules[result]||0),0);}
-  function expected(score,rebirth=1){
+  function expected(score,rebirth=9){
     const current=profile(rebirth),active=current.pool,total=current.total;
     const maximum=config.rules.taps*Math.max(config.rules.green,config.rules.gold,config.rules.red);
     score=Math.max(0,Math.min(config.rules.maxGen*100,maximum,score));
@@ -55,7 +55,7 @@
     {id:'gold',name:'Full vàng',pattern:['gold','gold','gold']},
     {id:'mixed',name:'Ngẫu nhiên theo tỉ lệ tap',distribution:{red:.3,green:.5,gold:.2}}
   ];
-  function expectation(scenario,rebirth=1){
+  function expectation(scenario,rebirth=9){
     if(scenario.pattern)return expected(points(scenario.pattern),rebirth);
     const out={none:0,one:0,two:0,gen:Object.fromEntries(config.catalog.map(g=>[g.id,0]))};
     const d=scenario.distribution;
@@ -67,7 +67,7 @@
     return out;
   }
   function simulation(scenario,seed,options={}){
-    const rebirth=options.rebirth||1,full=!!options.fishing,logLimit=options.logLimit??10000;
+    const rebirth=options.rebirth||9,full=!!options.fishing,logLimit=options.logLimit??10000;
     const random=seeded(seed),counts=Object.fromEntries(config.catalog.map(gen=>[gen.id,0]));
     const result={scenario:scenario.id,runId:scenario.id+'-r'+rebirth,name:scenario.name,seed,rebirth,band:profile(rebirth).label,configVersion:config.version,fishConfigVersion:global.FishingPool?.config.version||null,iterations:0,none:0,one:0,two:0,counts,expected:expectation(scenario,rebirth),petCounts:{},combinations:{},records:[],logLimit};
     result.rarityCounts={};result.rarityFirst={};result.genFirst={};result.timeline=[{cast:0,counts:{},pets:{},gens:{},combos:{}}];

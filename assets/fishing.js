@@ -157,7 +157,7 @@
     2:{label:'Tốc độ thu vòng',options:[[0,'Random'],[.75,'Chậm'],[1,'Vừa'],[1.25,'Nhanh']]},
     3:{label:'Tốc độ cá',options:[[1.7,'Chậm'],[2.3,'Hiện tại'],[2.8,'Nhanh']]},
     4:{label:'Độ rộng vùng xanh',options:[[.22,'Hẹp'],[.30,'Hiện tại'],[.40,'Rộng']]},
-    6:{label:'Thời gian / vòng',options:[[3,'3 giây'],[2.25,'2.25 giây'],[1.75,'1.75 giây']]}
+    6:{label:'Tốc độ theo rarity',options:[[3,'Chậm ×0.75'],[2.25,'Theo config rarity'],[1.75,'Nhanh ×1.29']]}
   };
   let holdJoints = [];
   let stops = [];
@@ -626,6 +626,9 @@
     clearTimeout(timer);
     cancelAnimationFrame(frame);
     state = 'idle';
+    delete scene.dataset.fishRarity;
+    scene.style.removeProperty('--qte-fish-color');
+    scene.style.removeProperty('--qte-fish-fin');
     delete scene.dataset.revealing;
     debugPaused=false;
     delete scene.dataset.caught;
@@ -677,6 +680,7 @@
   function restorePendingCatch(){
     const pending=rewards.pending;
     if(!pending)return;
+    applyFishRarity(pending.rarity);
     state='result';game={mutationPoints:pending.mutationPoints,mutationRewards:pending.mutationRewards,mutations:pending.mutationRewards.length,qteResults:pending.results};
     qtePips.forEach((pip,index)=>{pip.dataset.result=pending.results[index];pip.classList.add('is-filled');});
     renderMutation(true);status.textContent='KẾT QUẢ ĐANG CHỜ';scene.dataset.caught='';rewards.render();
@@ -684,10 +688,18 @@
   }
   root.addEventListener('fishingofferresolved',()=>{haptic('tap');reset();});
 
+  function applyFishRarity(rarity){
+    const timing=window.FishingConfig.mechanic.rarityTiming[rarity]||window.FishingConfig.mechanic.rarityTiming.COMMON;
+    scene.dataset.fishRarity=rarity;
+    scene.style.setProperty('--qte-fish-color',timing.color);
+    scene.style.setProperty('--qte-fish-fin',timing.finColor);
+    return timing;
+  }
   function startChallenge() {
     if (mode !== 6) return;
     const error=rewards.begin();
     if(error){status.textContent=error;return;}
+    const fishTiming=applyFishRarity(rewards.castRarity);
     state = 'active';
     delete scene.dataset.preview;
     scene.dataset.active = '';
@@ -697,6 +709,7 @@
     game = {age:0, last:performance.now(), phase:0, tapping:false, phaseTime:0, progress:0, idleTime:0,
       position:.42, tension:0, distance:mode === 3 ? 35 : 25, zone:.60, fish:.48, marker:0, hits:0, misses:0, combo:0,
       roundAge:0, roundPause:0, timingScale:1.65, roundSpeed:circularSpeed(), distancePhase:0, distanceFreezeUntil:0,
+      qteSecondsPerRevolution:fishTiming.secondsPerRevolution,
       qteArcStart:Math.random(), mutationPoints:0, mutations:0, qteResults:[], knots:[], bonusScore:0};
     if (mode === 3) [0, 1].forEach(spawnDistanceKnot);
     if (mode === 3 || mode === 6) status.textContent='';
@@ -928,7 +941,7 @@
       }
       case 6: {
         if(game.qteFeedbackUntil&&game.age>game.qteFeedbackUntil){delete scene.dataset.qteHit;status.textContent='';game.qteFeedbackUntil=0;}
-        game.marker = (game.age / debugSettings.values[6]) % 1;
+        game.marker = (game.age / (game.qteSecondsPerRevolution * debugSettings.values[6] / 2.25)) % 1;
         draw(game.qteResults.length + ' / 3 taps', 'Green: Good · Gold: Excellent · Red: Miss', game.qteResults.length / 3, 0, 0, .20, game.qteArcStart * 360);
         break;
       }

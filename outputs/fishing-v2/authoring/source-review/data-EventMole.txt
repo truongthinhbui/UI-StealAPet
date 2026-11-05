@@ -1,0 +1,25 @@
+1: A=IDPOOL | B=Type | C=Weight | D=Quantity
+2: A=ID | B=Type | C=Weight | D=Quantity
+3: A=int | B=int | C=int | D=string | I=TypeReward | J=Desc | K=Value | L=Description
+4: A=1.0 | B=-1.0 | C=10.0 | D=0.0 | H=0.0103950104
+5: A=2.0 | B=0.0 | C=240.0 | D=0.0 | H=0.2494802495
+6: A=1.0 | B=2.0 | C=390.0 | D=20010.0 | H=0.4054054054
+7: A=2.0 | B=2.0 | C=175.0 | D=30010.0 | H=0.1819126819 | I=-1.0 | J=Boom
+8: A=5.0 | B=3.0 | C=55.0 | D=1.0 | H=0.05717255717 | I=0.0 | J=Miss
+9: A=6.0 | B=3.0 | C=5.0 | D=5.0 | H=0.005197505198 | I=1.0 | J=Pet | K=IdPet;Mutation | L=HUD_REWARD_DETAILS_PET
+10: A=3.0 | B=7.0 | C=50.0 | D=5.0 | H=0.05197505198 | I=2.0 | J=Money | K=money Rank Value | L=HUD_REWARD_DETAILS_MONEY
+11: A=4.0 | B=7.0 | C=25.0 | D=10.0 | H=0.02598752599 | I=3.0 | J=Pet Coin | K=int value | L=HUD_REWARD_DETAILS_PET_COIN
+12: A=9.0 | B=7.0 | C=12.0 | D=50.0 | H=0.01247401247 | I=4.0 | J=RandomPet | K=Rarity;Mutation | L=HUD_REWARD_DETAILS_RANDOM_PET
+13: I=5.0 | J=MoneyTime | K=int value: 4h | L=HUD_REWARD_DETAILS_MONEY_TIME
+14: I=6.0 | J=RandomSecretPool | K=IdPool;Mutation | L=HUD_REWARD_DETAILS_RANDOM_PET_SECRET
+15: I=7.0 | J=Dust | K=int value | L=HUD_REWARD_DETAILS_DUST
+20: A=ID | B=IsMeteoriteFall | C=Duration | D=Name | I=number of dig | K=IDPOOL | L=Type | M=Weight | N=IDGift | O=VALUE | P=NOTE
+21: A=int | B=int | C=int | I=min | J=5.0 | K=ID | L=Type | M=Weight | N=GiftID | O=Value | P=anh note giúp em là phần thưởng này là gì với nha anh
+22: A=1.0 | B=0 | C=600.0 | D=Normal | G=em đang tính giây cho nó nha anh | I=max | J=9.0 | K=int | L=int | M=int | N=int | O=string | P=bruv
+23: A=2.0 | B=1.0 | C=10.0 | D=Meteorite | I=0.52 | K=1.0 | L=2.0 | M=520.0 | N=51024.0 | O=100.0k | P=100k Money
+24: A=3.0 | B=0.0 | C=600.0 | D=Normal | I=0.05 | K=2.0 | L=2.0 | M=50.0 | N=51025.0 | O=1.0m | P=1m Money
+25: A=4.0 | B=1.0 | C=10.0 | D=Meteorite | I=0.2 | K=3.0 | L=5.0 | M=200.0 | N=51026.0 | O=0.5h | P=0.5 Hr Money
+26: A=5.0 | B=0.0 | C=600.0 | D=Normal | I=0.07 | K=4.0 | L=3.0 | M=70.0 | N=51027.0 | O=5.0 | P=5 Pet Coin
+27: A=6.0 | B=1.0 | C=10.0 | D=Meteorite | I=0.001 | K=5.0 | L=3.0 | M=1.0 | N=51028.0 | O=20.0 | P=20 Pet Coin
+28: I=0.14 | K=6.0 | L=7.0 | M=140.0 | N=51029.0 | O=10.0 | P=10 Dust
+29: I=0.019 | K=7.0 | L=7.0 | M=19.0 | N=51030.0 | O=50.0 | P=50 Dust

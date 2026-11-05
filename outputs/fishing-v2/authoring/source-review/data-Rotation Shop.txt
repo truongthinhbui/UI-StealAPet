@@ -1,0 +1,1938 @@
+1: A=ID | B=Items | C=Duration | D=ItemIds | E=ItemCounts | H=ID | I=Type | J=Value | K=Price | L=DiscountPrice | M=Pet | N=Mutation | O=Weather | Q=ID | R=Type | S=Value | T=Price | U=Discount Price | V=Item | X=ID | Y=Type | Z=Value | AA=Price | AB=Discount Price | AC=Item
+2: A=int | B=string | C=int | D=string | E=string | H=11001.0 | I=1.0 | J=40.0 | K=60.0 | L=60.0 | M=POLARBEAR | Q=int | R=int | S=int | T=int | U=int | X=int | Y=int | Z=int | AA=int | AB=int
+3: A=1.0 | B={ID:11007;Count:4};{ID:12003;Count:1};{ID:30005;Count:3};{ID:14646;Count:1};{ID:22001;Count:3};{ID:22002;Count:2};{ID:22003;Count:3} | C=5.0 | D=11007,12003,30005,14646,22001,22002,22003 | E=4,1,3,1,3,2,3 | H=11002.0 | I=1.0 | J=41.0 | K=60.0 | L=60.0 | M=RHINO | Q=22001.0 | R=1.0 | T=40.0 | U=36 | V=Golden | X=30001.0 | Y=1.0 | Z=1.0 | AA=15.0 | AB=15.0 | AC=Rainy
+4: A=2.0 | B={ID:11014;Count:4};{ID:13021;Count:1};{ID:30001;Count:1};{ID:14057;Count:1};{ID:22004;Count:1};{ID:22005;Count:2} | C=5.0 | D=11014,13021,30001,14057,22004,22005 | E=4,1,1,1,1,2 | H=11003.0 | I=1.0 | J=42.0 | K=60.0 | L=60.0 | M=WOLF | Q=22002.0 | R=1.0 | T=50.0 | U=45 | V=Frozen | X=30002.0 | Y=1.0 | Z=2.0 | AA=25.0 | AB=25.0 | AC=Snowy
+5: A=3.0 | B={ID:11002;Count:4};{ID:14295;Count:1};{ID:30005;Count:3};{ID:14388;Count:1};{ID:22003;Count:2};{ID:22004;Count:1};{ID:22006;Count:1} | C=5.0 | D=11002,14295,30005,14388,22003,22004,22006 | E=4,1,3,1,2,1,1 | H=11004.0 | I=1.0 | J=45.0 | K=60.0 | L=60.0 | M=HORNBILL | Q=22003.0 | R=1.0 | T=70.0 | U=63 | V=Magma | X=30003.0 | Y=1.0 | Z=3.0 | AA=25.0 | AB=25.0 | AC=Windy
+6: A=4.0 | B={ID:11012;Count:4};{ID:13081;Count:1};{ID:30002;Count:2};{ID:14579;Count:1};{ID:22001;Count:3} | C=5.0 | D=11012,13081,30002,14579,22001 | E=4,1,2,1,3 | H=11005.0 | I=1.0 | J=43.0 | K=60.0 | L=60.0 | M=HIPPO | Q=22004.0 | R=1.0 | T=100.0 | U=90 | V=Clover | X=30004.0 | Y=1.0 | Z=4.0 | AA=75.0 | AB=65.0 | AC=Shadowfall
+7: A=5.0 | B={ID:11028;Count:2};{ID:12049;Count:1};{ID:30005;Count:3};{ID:14591;Count:1};{ID:22001;Count:1};{ID:22002;Count:1};{ID:22003;Count:1};{ID:22004;Count:1};{ID:22005;Count:1};{ID:22006;Count:1} | C=5.0 | D=11028,12049,30005,14591,22001,22002,22003,22004,22005,22006 | E=2,1,3,1,1,1,1,1,1,1 | H=11006.0 | I=1.0 | J=46.0 | K=60.0 | L=60.0 | M=BROWNBEAR | Q=22005.0 | R=1.0 | T=150.0 | U=150.0 | V=Fossilized | X=30005.0 | Y=1.0 | Z=5.0 | AA=45.0 | AB=39.0 | AC=Rainbow
+8: A=6.0 | B={ID:11011;Count:4};{ID:15100;Count:1};{ID:30002;Count:1};{ID:14483;Count:1};{ID:22002;Count:3};{ID:22005;Count:1} | C=5.0 | D=11011,15100,30002,14483,22002,22005 | E=4,1,1,1,3,1 | H=11007.0 | I=1.0 | J=47.0 | K=60.0 | L=60.0 | M=MANATEE | Q=22006.0 | R=1.0 | T=200.0 | U=200.0 | V=Sweetheart
+9: A=7.0 | B={ID:11005;Count:4};{ID:14847;Count:1};{ID:30005;Count:1};{ID:14157;Count:1};{ID:22002;Count:3};{ID:22004;Count:2};{ID:22005;Count:1} | C=5.0 | D=11005,14847,30005,14157,22002,22004,22005 | E=4,1,1,1,3,2,1 | H=11008.0 | I=1.0 | J=48.0 | K=100.0 | L=100.0 | M=OSTRICH | Q=7.0
+10: A=8.0 | B={ID:11018;Count:4};{ID:12061;Count:1};{ID:30003;Count:2};{ID:14492;Count:1};{ID:22001;Count:2};{ID:22006;Count:3} | C=5.0 | D=11018,12061,30003,14492,22001,22006 | E=4,1,2,1,2,3 | H=11009.0 | I=1.0 | J=44.0 | K=100.0 | L=100.0 | M=SMALLWHALE | Q=8.0
+11: A=9.0 | B={ID:11009;Count:3};{ID:14912;Count:1};{ID:30005;Count:3};{ID:14533;Count:1};{ID:22003;Count:1};{ID:22005;Count:2} | C=5.0 | D=11009,14912,30005,14533,22003,22005 | E=3,1,3,1,1,2 | H=11010.0 | I=1.0 | J=49.0 | K=100.0 | L=100.0 | M=GORILLA
+12: A=10.0 | B={ID:11031;Count:2};{ID:13044;Count:1};{ID:30001;Count:1};{ID:14321;Count:1};{ID:22002;Count:1};{ID:22003;Count:2};{ID:22004;Count:3} | C=5.0 | D=11031,13044,30001,14321,22002,22003,22004 | E=2,1,1,1,1,2,3 | H=11011.0 | I=1.0 | J=50.0 | K=100.0 | L=100.0 | M=BELUGA
+13: A=11.0 | B={ID:11015;Count:4};{ID:14182;Count:1};{ID:30004;Count:2};{ID:14561;Count:1};{ID:22005;Count:3};{ID:22006;Count:2} | C=5.0 | D=11015,14182,30004,14561,22005,22006 | E=4,1,2,1,3,2 | H=11012.0 | I=1.0 | J=51.0 | K=100.0 | L=100.0 | M=NARWHAL
+14: A=12.0 | B={ID:11001;Count:4};{ID:12012;Count:1};{ID:30005;Count:3};{ID:14611;Count:1};{ID:22001;Count:2};{ID:22002;Count:1} | C=5.0 | D=11001,12012,30005,14611,22001,22002 | E=4,1,3,1,2,1 | H=11013.0 | I=1.0 | J=56.0 | K=100.0 | L=100.0 | M=HUSKY
+15: A=13.0 | B={ID:11023;Count:2};{ID:14771;Count:1};{ID:30002;Count:2};{ID:14376;Count:1};{ID:22004;Count:3} | C=5.0 | D=11023,14771,30002,14376,22004 | E=2,1,2,1,3 | H=11014.0 | I=1.0 | J=60.0 | K=100.0 | L=100.0 | M=PLATYPUS
+16: A=14.0 | B={ID:11017;Count:4};{ID:13091;Count:1};{ID:30001;Count:1};{ID:14508;Count:1};{ID:22003;Count:1};{ID:22005;Count:1};{ID:22006;Count:2} | C=5.0 | D=11017,13091,30001,14508,22003,22005,22006 | E=4,1,1,1,1,1,2 | H=11015.0 | I=1.0 | J=61.0 | K=160.0 | L=160.0 | M=JAGUAR
+17: A=15.0 | B={ID:11006;Count:3};{ID:14244;Count:1};{ID:30003;Count:2};{ID:14465;Count:1};{ID:22002;Count:3} | C=5.0 | D=11006,14244,30003,14465,22002 | E=3,1,2,1,3 | H=11016.0 | I=1.0 | J=62.0 | K=160.0 | L=160.0 | M=REINDEER
+18: A=16.0 | B={ID:11025;Count:2};{ID:12075;Count:1};{ID:30005;Count:3};{ID:14687;Count:1};{ID:22001;Count:1};{ID:22004;Count:2};{ID:22006;Count:3} | C=5.0 | D=11025,12075,30005,14687,22001,22004,22006 | E=2,1,3,1,1,2,3 | H=11017.0 | I=1.0 | J=63.0 | K=160.0 | L=160.0 | M=ARCTICFOX
+19: A=17.0 | B={ID:11008;Count:4};{ID:14988;Count:1};{ID:30002;Count:2};{ID:14345;Count:1};{ID:22003;Count:2} | C=5.0 | D=11008,14988,30002,14345,22003 | E=4,1,2,1,2 | H=11018.0 | I=1.0 | J=64.0 | K=160.0 | L=160.0 | M=COW
+20: A=18.0 | B={ID:11019;Count:3};{ID:13063;Count:1};{ID:30001;Count:1};{ID:14570;Count:1};{ID:22002;Count:1};{ID:22005;Count:3} | C=5.0 | D=11019,13063,30001,14570,22002,22005 | E=3,1,1,1,1,3 | H=11019.0 | I=1.0 | J=66.0 | K=160.0 | L=160.0 | M=OX
+21: A=19.0 | B={ID:11030;Count:2};{ID:14819;Count:1};{ID:30005;Count:3};{ID:14194;Count:1};{ID:22001;Count:2};{ID:22003;Count:2};{ID:22004;Count:1} | C=5.0 | D=11030,14819,30005,14194,22001,22003,22004 | E=2,1,3,1,2,2,1 | H=11020.0 | I=1.0 | J=67.0 | K=240.0 | L=240.0 | M=TURKEY
+22: A=20.0 | B={ID:11013;Count:4};{ID:12036;Count:1};{ID:30004;Count:2};{ID:14402;Count:1};{ID:22006;Count:3} | C=5.0 | D=11013,12036,30004,14402,22006 | E=4,1,2,1,3 | H=11021.0 | I=1.0 | J=68.0 | K=160.0 | L=160.0 | M=FRILLNECKEDLIZARD
+23: A=21.0 | B={ID:11027;Count:2};{ID:14109;Count:1};{ID:30005;Count:3};{ID:14547;Count:1};{ID:22001;Count:1};{ID:22002;Count:1};{ID:22005;Count:2} | C=5.0 | D=11027,14109,30005,14547,22001,22002,22005 | E=2,1,3,1,1,1,2 | H=11022.0 | I=1.0 | J=69.0 | K=240.0 | L=240.0 | M=TORTOISE
+24: A=22.0 | B={ID:11004;Count:4};{ID:13014;Count:1};{ID:30001;Count:1};{ID:14655;Count:1};{ID:22003;Count:2};{ID:22006;Count:1} | C=5.0 | D=11004,13014,30001,14655,22003,22006 | E=4,1,1,1,2,1 | H=11023.0 | I=1.0 | J=70.0 | K=240.0 | L=240.0 | M=SEAHORSE
+25: A=23.0 | B={ID:11020;Count:3};{ID:14702;Count:1};{ID:30003;Count:2};{ID:14359;Count:1};{ID:22004;Count:3};{ID:22005;Count:2} | C=5.0 | D=11020,14702,30003,14359,22004,22005 | E=3,1,2,1,3,2 | H=11024.0 | I=1.0 | J=71.0 | K=160.0 | L=160.0 | M=ALPACA
+26: A=24.0 | B={ID:11010;Count:4};{ID:12058;Count:1};{ID:30005;Count:3};{ID:14512;Count:1};{ID:22001;Count:2} | C=5.0 | D=11010,12058,30005,14512,22001 | E=4,1,3,1,2 | H=11025.0 | I=1.0 | J=72.0 | K=240.0 | L=240.0 | M=COYOTE
+27: A=25.0 | B={ID:11024;Count:2};{ID:14941;Count:1};{ID:30002;Count:2};{ID:14474;Count:1};{ID:22002;Count:1};{ID:22003;Count:2};{ID:22006;Count:3} | C=5.0 | D=11024,14941,30002,14474,22002,22003,22006 | E=2,1,2,1,1,2,3 | H=11026.0 | I=1.0 | J=73.0 | K=240.0 | L=240.0 | M=CATFISH
+28: A=26.0 | B={ID:11016;Count:4};{ID:13072;Count:1};{ID:30001;Count:1};{ID:14690;Count:1};{ID:22005;Count:3} | C=5.0 | D=11016,13072,30001,14690,22005 | E=4,1,1,1,3 | H=11027.0 | I=1.0 | J=75.0 | K=240.0 | L=240.0 | M=MALLARD
+29: A=27.0 | B={ID:11003;Count:4};{ID:14166;Count:1};{ID:30004;Count:2};{ID:14585;Count:1};{ID:22001;Count:1};{ID:22004;Count:3} | C=5.0 | D=11003,14166,30004,14585,22001,22004 | E=4,1,2,1,1,3 | H=11028.0 | I=1.0 | J=77.0 | K=360.0 | L=360.0 | M=ARMADILLO
+30: A=28.0 | B={ID:11029;Count:2};{ID:12084;Count:1};{ID:30005;Count:3};{ID:14317;Count:1};{ID:22002;Count:2};{ID:22005;Count:1};{ID:22006;Count:2} | C=5.0 | D=11029,12084,30005,14317,22002,22005,22006 | E=2,1,3,1,2,1,2 | H=11029.0 | I=1.0 | J=78.0 | K=360.0 | L=360.0 | M=AXOLOTLBLUE
+31: A=29.0 | B={ID:11021;Count:3};{ID:14868;Count:1};{ID:30003;Count:2};{ID:14440;Count:1};{ID:22003;Count:3} | C=5.0 | D=11021,14868,30003,14440,22003 | E=3,1,2,1,3 | H=11030.0 | I=1.0 | J=79.0 | K=240.0 | L=240.0 | M=AXOLOTLPINK
+32: A=30.0 | B={ID:11032;Count:2};{ID:13055;Count:1};{ID:30001;Count:1};{ID:14524;Count:1};{ID:22001;Count:1};{ID:22002;Count:2};{ID:22003;Count:3} | C=5.0 | D=11032,13055,30001,14524,22001,22002,22003 | E=2,1,1,1,1,2,3 | H=11031.0 | I=1.0 | J=80.0 | K=360.0 | L=360.0 | M=AXOLOTLGREEN
+33: A=31.0 | B={ID:11026;Count:2};{ID:14213;Count:1};{ID:30005;Count:3};{ID:14602;Count:1};{ID:22004;Count:1};{ID:22006;Count:2} | C=5.0 | D=11026,14213,30005,14602,22004,22006 | E=2,1,3,1,1,2 | H=11032.0 | I=1.0 | J=81.0 | K=360.0 | L=360.0 | M=AXOLOTLORANGE
+34: A=32.0 | B={ID:11007;Count:4};{ID:12027;Count:1};{ID:30002;Count:2};{ID:14383;Count:1};{ID:22001;Count:3};{ID:22005;Count:1} | C=5.0 | D=11007,12027,30002,14383,22001,22005 | E=4,1,2,1,3,1 | H=11033.0 | I=1.0 | J=82.0 | K=360.0 | L=360.0 | M=AXOLOTLWHITE
+35: A=33.0 | B={ID:11014;Count:4};{ID:14955;Count:1};{ID:30004;Count:2};{ID:14566;Count:1};{ID:22002;Count:1};{ID:22003;Count:2} | C=5.0 | D=11014,14955,30004,14566,22002,22003 | E=4,1,2,1,1,2 | H=11034.0 | I=1.0 | J=84.0 | K=360.0 | L=360.0 | M=BABOON
+36: A=34.0 | B={ID:11002;Count:4};{ID:13033;Count:1};{ID:30001;Count:1};{ID:14496;Count:1};{ID:22004;Count:2} | C=5.0 | D=11002,13033,30001,14496,22004 | E=4,1,1,1,2 | H=12001.0 | I=2.0 | J=40.0 | K=80.0 | L=80.0 | M=POLARBEAR | N=Golden
+37: A=35.0 | B={ID:11012;Count:4};{ID:14748;Count:1};{ID:30003;Count:2};{ID:14538;Count:1};{ID:22001;Count:1};{ID:22006;Count:3} | C=5.0 | D=11012,14748,30003,14538,22001,22006 | E=4,1,2,1,1,3 | H=12002.0 | I=2.0 | J=40.0 | K=100.0 | L=100.0 | M=POLARBEAR | N=Frozen
+38: A=36.0 | B={ID:11028;Count:2};{ID:12068;Count:1};{ID:30005;Count:3};{ID:14328;Count:1};{ID:22003;Count:2};{ID:22005;Count:1} | C=5.0 | D=11028,12068,30005,14328,22003,22005 | E=2,1,3,1,2,1 | H=12003.0 | I=2.0 | J=40.0 | K=120.0 | L=120.0 | M=POLARBEAR | N=Magma
+39: A=37.0 | B={ID:11011;Count:4};{ID:14137;Count:1};{ID:30002;Count:2};{ID:14673;Count:1};{ID:22002;Count:3};{ID:22004;Count:1};{ID:22006;Count:2} | C=5.0 | D=11011,14137,30002,14673,22002,22004,22006 | E=4,1,2,1,3,1,2 | H=12004.0 | I=2.0 | J=40.0 | K=130.0 | L=130.0 | M=POLARBEAR | N=Clover
+40: A=38.0 | B={ID:11005;Count:4};{ID:14884;Count:1};{ID:30005;Count:3};{ID:14503;Count:1};{ID:22001;Count:3} | C=5.0 | D=11005,14884,30005,14503,22001 | E=4,1,3,1,3 | H=12005.0 | I=2.0 | J=40.0 | K=135.0 | L=135.0 | M=POLARBEAR | N=Fossilized
+41: A=39.0 | B={ID:11018;Count:4};{ID:13095;Count:1};{ID:30001;Count:1};{ID:14458;Count:1};{ID:22003;Count:1};{ID:22004;Count:2} | C=5.0 | D=11018,13095,30001,14458,22003,22004 | E=4,1,1,1,1,2 | H=12006.0 | I=2.0 | J=40.0 | K=140.0 | L=140.0 | M=POLARBEAR | N=Sweetheart
+42: A=40.0 | B={ID:11009;Count:3};{ID:14272;Count:1};{ID:30004;Count:2};{ID:14593;Count:1};{ID:22005;Count:3} | C=5.0 | D=11009,14272,30004,14593,22005 | E=3,1,2,1,3 | H=12007.0 | I=2.0 | J=40.0 | K=145.0 | L=145.0 | M=POLARBEAR | N=Crystalline
+43: A=41.0 | B={ID:11031;Count:2};{ID:12019;Count:1};{ID:30005;Count:3};{ID:14362;Count:1};{ID:22002;Count:1};{ID:22006;Count:2} | C=5.0 | D=11031,12019,30005,14362,22002,22006 | E=2,1,3,1,1,2 | H=12008.0 | I=2.0 | J=40.0 | K=145.0 | L=145.0 | M=POLARBEAR | N=Webbed
+44: A=42.0 | B={ID:11015;Count:4};{ID:14903;Count:1};{ID:30002;Count:2};{ID:14542;Count:1};{ID:22001;Count:2};{ID:22003;Count:1} | C=5.0 | D=11015,14903,30002,14542,22001,22003 | E=4,1,2,1,2,1 | H=12009.0 | I=2.0 | J=41.0 | K=80.0 | L=80.0 | M=RHINO | N=Golden
+45: A=43.0 | B={ID:11001;Count:4};{ID:13047;Count:1};{ID:30001;Count:1};{ID:14415;Count:1};{ID:22004;Count:1};{ID:22005;Count:3} | C=5.0 | D=11001,13047,30001,14415,22004,22005 | E=4,1,1,1,1,3 | H=12010.0 | I=2.0 | J=41.0 | K=100.0 | L=100.0 | M=RHINO | N=Frozen
+46: A=44.0 | B={ID:11023;Count:2};{ID:14789;Count:1};{ID:30003;Count:2};{ID:14624;Count:1};{ID:22006;Count:2} | C=5.0 | D=11023,14789,30003,14624,22006 | E=2,1,2,1,2 | H=12011.0 | I=2.0 | J=41.0 | K=120.0 | L=120.0 | M=RHINO | N=Magma
+47: A=45.0 | B={ID:11017;Count:4};{ID:12073;Count:1};{ID:30005;Count:3};{ID:14551;Count:1};{ID:22001;Count:1};{ID:22002;Count:2};{ID:22003;Count:1} | C=5.0 | D=11017,12073,30005,14551,22001,22002,22003 | E=4,1,3,1,1,2,1 | H=12012.0 | I=2.0 | J=41.0 | K=130.0 | L=130.0 | M=RHINO | N=Clover
+48: A=46.0 | B={ID:11006;Count:3};{ID:14191;Count:1};{ID:30004;Count:2};{ID:14390;Count:1};{ID:22005;Count:2};{ID:22006;Count:3} | C=5.0 | D=11006,14191,30004,14390,22005,22006 | E=3,1,2,1,2,3 | H=12013.0 | I=2.0 | J=41.0 | K=135.0 | L=135.0 | M=RHINO | N=Fossilized
+49: A=47.0 | B={ID:11025;Count:2};{ID:14826;Count:1};{ID:30002;Count:2};{ID:14519;Count:1};{ID:22002;Count:3} | C=5.0 | D=11025,14826,30002,14519,22002 | E=2,1,2,1,3 | H=12014.0 | I=2.0 | J=41.0 | K=140.0 | L=140.0 | M=RHINO | N=Sweetheart
+50: A=48.0 | B={ID:11008;Count:4};{ID:13088;Count:1};{ID:30001;Count:1};{ID:14661;Count:1};{ID:22003;Count:2};{ID:22004;Count:1} | C=5.0 | D=11008,13088,30001,14661,22003,22004 | E=4,1,1,1,2,1 | H=12015.0 | I=2.0 | J=41.0 | K=145.0 | L=145.0 | M=RHINO | N=Crystalline
+51: A=49.0 | B={ID:11019;Count:3};{ID:14231;Count:1};{ID:30005;Count:3};{ID:14467;Count:1};{ID:22001;Count:1};{ID:22005;Count:2} | C=5.0 | D=11019,14231,30005,14467,22001,22005 | E=3,1,3,1,1,2 | H=12016.0 | I=2.0 | J=41.0 | K=145.0 | L=145.0 | M=RHINO | N=Webbed
+52: A=50.0 | B={ID:11030;Count:2};{ID:14974;Count:1};{ID:30003;Count:2};{ID:14597;Count:1};{ID:22006;Count:3} | C=5.0 | D=11030,14974,30003,14597,22006 | E=2,1,2,1,3 | H=12017.0 | I=2.0 | J=42.0 | K=80.0 | L=80.0 | M=WOLF | N=Golden
+53: A=51.0 | B={ID:11013;Count:4};{ID:12041;Count:1};{ID:30005;Count:3};{ID:14349;Count:1};{ID:22002;Count:1};{ID:22003;Count:2};{ID:22004;Count:1} | C=5.0 | D=11013,12041,30005,14349,22002,22003,22004 | E=4,1,3,1,1,2,1 | H=12018.0 | I=2.0 | J=42.0 | K=100.0 | L=100.0 | M=WOLF | N=Frozen
+54: A=52.0 | B={ID:11027;Count:2};{ID:14891;Count:1};{ID:30002;Count:2};{ID:14529;Count:1};{ID:22005;Count:3} | C=5.0 | D=11027,14891,30002,14529,22005 | E=2,1,2,1,3 | H=12019.0 | I=2.0 | J=42.0 | K=120.0 | L=120.0 | M=WOLF | N=Magma
+55: A=53.0 | B={ID:11004;Count:4};{ID:13025;Count:1};{ID:30001;Count:1};{ID:14636;Count:1};{ID:22001;Count:2};{ID:22006;Count:2} | C=5.0 | D=11004,13025,30001,14636,22001,22006 | E=4,1,1,1,2,2 | H=12020.0 | I=2.0 | J=42.0 | K=130.0 | L=130.0 | M=WOLF | N=Clover
+56: A=54.0 | B={ID:11020;Count:3};{ID:14158;Count:1};{ID:30004;Count:2};{ID:14489;Count:1};{ID:22002;Count:1};{ID:22004;Count:3} | C=5.0 | D=11020,14158,30004,14489,22002,22004 | E=3,1,2,1,1,3 | H=12021.0 | I=2.0 | J=42.0 | K=135.0 | L=135.0 | M=WOLF | N=Fossilized
+57: A=55.0 | B={ID:11010;Count:4};{ID:14716;Count:1};{ID:30005;Count:3};{ID:14573;Count:1};{ID:22003;Count:2};{ID:22005;Count:1} | C=5.0 | D=11010,14716,30005,14573,22003,22005 | E=4,1,3,1,2,1 | H=12022.0 | I=2.0 | J=42.0 | K=140.0 | L=140.0 | M=WOLF | N=Sweetheart
+58: A=56.0 | B={ID:11024;Count:2};{ID:12092;Count:1};{ID:30003;Count:2};{ID:14311;Count:1};{ID:22001;Count:1};{ID:22002;Count:2};{ID:22006;Count:3} | C=5.0 | D=11024,12092,30003,14311,22001,22002,22006 | E=2,1,2,1,1,2,3 | H=12023.0 | I=2.0 | J=42.0 | K=145.0 | L=145.0 | M=WOLF | N=Crystalline
+59: A=57.0 | B={ID:11016;Count:4};{ID:14936;Count:1};{ID:30002;Count:2};{ID:14544;Count:1};{ID:22004;Count:2} | C=5.0 | D=11016,14936,30002,14544,22004 | E=4,1,2,1,2 | H=12024.0 | I=2.0 | J=42.0 | K=145.0 | L=145.0 | M=WOLF | N=Webbed
+60: A=58.0 | B={ID:11003;Count:4};{ID:13067;Count:1};{ID:30001;Count:1};{ID:14680;Count:1};{ID:22005;Count:1};{ID:22006;Count:3} | C=5.0 | D=11003,13067,30001,14680,22005,22006 | E=4,1,1,1,1,3 | H=12025.0 | I=2.0 | J=45.0 | K=80.0 | L=80.0 | M=HORNBILL | N=Golden
+61: A=59.0 | B={ID:11029;Count:2};{ID:14287;Count:1};{ID:30005;Count:3};{ID:14422;Count:1};{ID:22001;Count:2};{ID:22003;Count:2} | C=5.0 | D=11029,14287,30005,14422,22001,22003 | E=2,1,3,1,2,2 | H=12026.0 | I=2.0 | J=45.0 | K=100.0 | L=100.0 | M=HORNBILL | N=Frozen
+62: A=60.0 | B={ID:11021;Count:3};{ID:14852;Count:1};{ID:30004;Count:2};{ID:14563;Count:1};{ID:22002;Count:1};{ID:22004;Count:2};{ID:22005;Count:3} | C=5.0 | D=11021,14852,30004,14563,22002,22004,22005 | E=3,1,2,1,1,2,3 | H=12027.0 | I=2.0 | J=45.0 | K=120.0 | L=120.0 | M=HORNBILL | N=Magma
+63: H=12028.0 | I=2.0 | J=45.0 | K=130.0 | L=130.0 | M=HORNBILL | N=Clover
+64: H=12029.0 | I=2.0 | J=45.0 | K=135.0 | L=135.0 | M=HORNBILL | N=Fossilized
+65: H=12030.0 | I=2.0 | J=45.0 | K=140.0 | L=140.0 | M=HORNBILL | N=Sweetheart
+66: H=12031.0 | I=2.0 | J=45.0 | K=145.0 | L=145.0 | M=HORNBILL | N=Crystalline
+67: H=12032.0 | I=2.0 | J=45.0 | K=145.0 | L=145.0 | M=HORNBILL | N=Webbed
+68: H=12033.0 | I=2.0 | J=43.0 | K=80.0 | L=80.0 | M=HIPPO | N=Golden
+69: H=12034.0 | I=2.0 | J=43.0 | K=100.0 | L=100.0 | M=HIPPO | N=Frozen
+70: H=12035.0 | I=2.0 | J=43.0 | K=120.0 | L=120.0 | M=HIPPO | N=Magma
+71: H=12036.0 | I=2.0 | J=43.0 | K=130.0 | L=130.0 | M=HIPPO | N=Clover
+72: H=12037.0 | I=2.0 | J=43.0 | K=135.0 | L=135.0 | M=HIPPO | N=Fossilized
+73: H=12038.0 | I=2.0 | J=43.0 | K=140.0 | L=140.0 | M=HIPPO | N=Sweetheart
+74: H=12039.0 | I=2.0 | J=43.0 | K=145.0 | L=145.0 | M=HIPPO | N=Crystalline
+75: H=12040.0 | I=2.0 | J=43.0 | K=145.0 | L=145.0 | M=HIPPO | N=Webbed
+76: H=12041.0 | I=2.0 | J=46.0 | K=80.0 | L=80.0 | M=BROWNBEAR | N=Golden
+77: H=12042.0 | I=2.0 | J=46.0 | K=100.0 | L=100.0 | M=BROWNBEAR | N=Frozen
+78: H=12043.0 | I=2.0 | J=46.0 | K=120.0 | L=120.0 | M=BROWNBEAR | N=Magma
+79: H=12044.0 | I=2.0 | J=46.0 | K=130.0 | L=130.0 | M=BROWNBEAR | N=Clover
+80: H=12045.0 | I=2.0 | J=46.0 | K=135.0 | L=135.0 | M=BROWNBEAR | N=Fossilized
+81: H=12046.0 | I=2.0 | J=46.0 | K=140.0 | L=140.0 | M=BROWNBEAR | N=Sweetheart
+82: H=12047.0 | I=2.0 | J=46.0 | K=145.0 | L=145.0 | M=BROWNBEAR | N=Crystalline
+83: H=12048.0 | I=2.0 | J=46.0 | K=145.0 | L=145.0 | M=BROWNBEAR | N=Webbed
+84: H=12049.0 | I=2.0 | J=47.0 | K=80.0 | L=80.0 | M=MANATEE | N=Golden
+85: H=12050.0 | I=2.0 | J=47.0 | K=100.0 | L=100.0 | M=MANATEE | N=Frozen
+86: H=12051.0 | I=2.0 | J=47.0 | K=120.0 | L=120.0 | M=MANATEE | N=Magma
+87: H=12052.0 | I=2.0 | J=47.0 | K=130.0 | L=130.0 | M=MANATEE | N=Clover
+88: H=12053.0 | I=2.0 | J=47.0 | K=135.0 | L=135.0 | M=MANATEE | N=Fossilized
+89: H=12054.0 | I=2.0 | J=47.0 | K=140.0 | L=140.0 | M=MANATEE | N=Sweetheart
+90: H=12055.0 | I=2.0 | J=47.0 | K=145.0 | L=145.0 | M=MANATEE | N=Crystalline
+91: H=12056.0 | I=2.0 | J=47.0 | K=145.0 | L=145.0 | M=MANATEE | N=Webbed
+92: H=12057.0 | I=2.0 | J=48.0 | K=135.0 | L=135.0 | M=OSTRICH | N=Golden
+93: H=12058.0 | I=2.0 | J=48.0 | K=170.0 | L=170.0 | M=OSTRICH | N=Frozen
+94: H=12059.0 | I=2.0 | J=48.0 | K=200.0 | L=200.0 | M=OSTRICH | N=Magma
+95: H=12060.0 | I=2.0 | J=48.0 | K=215.0 | L=215.0 | M=OSTRICH | N=Clover
+96: H=12061.0 | I=2.0 | J=48.0 | K=225.0 | L=225.0 | M=OSTRICH | N=Fossilized
+97: H=12062.0 | I=2.0 | J=48.0 | K=230.0 | L=230.0 | M=OSTRICH | N=Sweetheart
+98: H=12063.0 | I=2.0 | J=48.0 | K=240.0 | L=240.0 | M=OSTRICH | N=Crystalline
+99: H=12064.0 | I=2.0 | J=48.0 | K=240.0 | L=240.0 | M=OSTRICH | N=Webbed
+100: H=12065.0 | I=2.0 | J=44.0 | K=135.0 | L=135.0 | M=SMALLWHALE | N=Golden
+101: H=12066.0 | I=2.0 | J=44.0 | K=170.0 | L=170.0 | M=SMALLWHALE | N=Frozen
+102: H=12067.0 | I=2.0 | J=44.0 | K=200.0 | L=200.0 | M=SMALLWHALE | N=Magma
+103: H=12068.0 | I=2.0 | J=44.0 | K=215.0 | L=215.0 | M=SMALLWHALE | N=Clover
+104: H=12069.0 | I=2.0 | J=44.0 | K=225.0 | L=225.0 | M=SMALLWHALE | N=Fossilized
+105: H=12070.0 | I=2.0 | J=44.0 | K=230.0 | L=230.0 | M=SMALLWHALE | N=Sweetheart
+106: H=12071.0 | I=2.0 | J=44.0 | K=240.0 | L=240.0 | M=SMALLWHALE | N=Crystalline
+107: H=12072.0 | I=2.0 | J=44.0 | K=240.0 | L=240.0 | M=SMALLWHALE | N=Webbed
+108: H=12073.0 | I=2.0 | J=49.0 | K=135.0 | L=135.0 | M=GORILLA | N=Golden
+109: H=12074.0 | I=2.0 | J=49.0 | K=170.0 | L=170.0 | M=GORILLA | N=Frozen
+110: H=12075.0 | I=2.0 | J=49.0 | K=200.0 | L=200.0 | M=GORILLA | N=Magma
+111: H=12076.0 | I=2.0 | J=49.0 | K=215.0 | L=215.0 | M=GORILLA | N=Clover
+112: H=12077.0 | I=2.0 | J=49.0 | K=225.0 | L=225.0 | M=GORILLA | N=Fossilized
+113: H=12078.0 | I=2.0 | J=49.0 | K=230.0 | L=230.0 | M=GORILLA | N=Sweetheart
+114: H=12079.0 | I=2.0 | J=49.0 | K=240.0 | L=240.0 | M=GORILLA | N=Crystalline
+115: H=12080.0 | I=2.0 | J=49.0 | K=240.0 | L=240.0 | M=GORILLA | N=Webbed
+116: H=12081.0 | I=2.0 | J=50.0 | K=135.0 | L=135.0 | M=BELUGA | N=Golden
+117: H=12082.0 | I=2.0 | J=50.0 | K=170.0 | L=170.0 | M=BELUGA | N=Frozen
+118: H=12083.0 | I=2.0 | J=50.0 | K=200.0 | L=200.0 | M=BELUGA | N=Magma
+119: H=12084.0 | I=2.0 | J=50.0 | K=215.0 | L=215.0 | M=BELUGA | N=Clover
+120: H=12085.0 | I=2.0 | J=50.0 | K=225.0 | L=225.0 | M=BELUGA | N=Fossilized
+121: H=12086.0 | I=2.0 | J=50.0 | K=230.0 | L=230.0 | M=BELUGA | N=Sweetheart
+122: H=12087.0 | I=2.0 | J=50.0 | K=240.0 | L=240.0 | M=BELUGA | N=Crystalline
+123: H=12088.0 | I=2.0 | J=50.0 | K=240.0 | L=240.0 | M=BELUGA | N=Webbed
+124: H=12089.0 | I=2.0 | J=51.0 | K=135.0 | L=135.0 | M=NARWHAL | N=Golden
+125: H=12090.0 | I=2.0 | J=51.0 | K=170.0 | L=170.0 | M=NARWHAL | N=Frozen
+126: H=12091.0 | I=2.0 | J=51.0 | K=200.0 | L=200.0 | M=NARWHAL | N=Magma
+127: H=12092.0 | I=2.0 | J=51.0 | K=215.0 | L=215.0 | M=NARWHAL | N=Clover
+128: H=12093.0 | I=2.0 | J=51.0 | K=225.0 | L=225.0 | M=NARWHAL | N=Fossilized
+129: H=12094.0 | I=2.0 | J=51.0 | K=230.0 | L=230.0 | M=NARWHAL | N=Sweetheart
+130: H=12095.0 | I=2.0 | J=51.0 | K=240.0 | L=240.0 | M=NARWHAL | N=Crystalline
+131: H=12096.0 | I=2.0 | J=51.0 | K=240.0 | L=240.0 | M=NARWHAL | N=Webbed
+132: H=12097.0 | I=2.0 | J=56.0 | K=135.0 | L=135.0 | M=HUSKY | N=Golden
+133: H=12098.0 | I=2.0 | J=56.0 | K=170.0 | L=170.0 | M=HUSKY | N=Frozen
+134: H=12099.0 | I=2.0 | J=56.0 | K=200.0 | L=200.0 | M=HUSKY | N=Magma
+135: H=12100.0 | I=2.0 | J=56.0 | K=215.0 | L=215.0 | M=HUSKY | N=Clover
+136: H=12101.0 | I=2.0 | J=56.0 | K=225.0 | L=225.0 | M=HUSKY | N=Fossilized
+137: H=12102.0 | I=2.0 | J=56.0 | K=230.0 | L=230.0 | M=HUSKY | N=Sweetheart
+138: H=12103.0 | I=2.0 | J=56.0 | K=240.0 | L=240.0 | M=HUSKY | N=Crystalline
+139: H=12104.0 | I=2.0 | J=56.0 | K=240.0 | L=240.0 | M=HUSKY | N=Webbed
+140: H=12105.0 | I=2.0 | J=60.0 | K=135.0 | L=135.0 | M=PLATYPUS | N=Golden
+141: H=12106.0 | I=2.0 | J=60.0 | K=170.0 | L=170.0 | M=PLATYPUS | N=Frozen
+142: H=12107.0 | I=2.0 | J=60.0 | K=200.0 | L=200.0 | M=PLATYPUS | N=Magma
+143: H=12108.0 | I=2.0 | J=60.0 | K=215.0 | L=215.0 | M=PLATYPUS | N=Clover
+144: H=12109.0 | I=2.0 | J=60.0 | K=225.0 | L=225.0 | M=PLATYPUS | N=Fossilized
+145: H=12110.0 | I=2.0 | J=60.0 | K=230.0 | L=230.0 | M=PLATYPUS | N=Sweetheart
+146: H=12111.0 | I=2.0 | J=60.0 | K=240.0 | L=240.0 | M=PLATYPUS | N=Crystalline
+147: H=12112.0 | I=2.0 | J=60.0 | K=240.0 | L=240.0 | M=PLATYPUS | N=Webbed
+148: H=12113.0 | I=2.0 | J=61.0 | K=215.0 | L=215.0 | M=JAGUAR | N=Golden
+149: H=12114.0 | I=2.0 | J=61.0 | K=270.0 | L=270.0 | M=JAGUAR | N=Frozen
+150: H=12115.0 | I=2.0 | J=61.0 | K=320.0 | L=320.0 | M=JAGUAR | N=Magma
+151: H=12116.0 | I=2.0 | J=61.0 | K=345.0 | L=345.0 | M=JAGUAR | N=Clover
+152: H=12117.0 | I=2.0 | J=61.0 | K=360.0 | L=360.0 | M=JAGUAR | N=Fossilized
+153: H=12118.0 | I=2.0 | J=61.0 | K=370.0 | L=370.0 | M=JAGUAR | N=Sweetheart
+154: H=12119.0 | I=2.0 | J=61.0 | K=380.0 | L=380.0 | M=JAGUAR | N=Crystalline
+155: H=12120.0 | I=2.0 | J=61.0 | K=385.0 | L=385.0 | M=JAGUAR | N=Webbed
+156: H=12121.0 | I=2.0 | J=62.0 | K=215.0 | L=215.0 | M=REINDEER | N=Golden
+157: H=12122.0 | I=2.0 | J=62.0 | K=270.0 | L=270.0 | M=REINDEER | N=Frozen
+158: H=12123.0 | I=2.0 | J=62.0 | K=320.0 | L=320.0 | M=REINDEER | N=Magma
+159: H=12124.0 | I=2.0 | J=62.0 | K=345.0 | L=345.0 | M=REINDEER | N=Clover
+160: H=12125.0 | I=2.0 | J=62.0 | K=360.0 | L=360.0 | M=REINDEER | N=Fossilized
+161: H=12126.0 | I=2.0 | J=62.0 | K=370.0 | L=370.0 | M=REINDEER | N=Sweetheart
+162: H=12127.0 | I=2.0 | J=62.0 | K=380.0 | L=380.0 | M=REINDEER | N=Crystalline
+163: H=12128.0 | I=2.0 | J=62.0 | K=385.0 | L=385.0 | M=REINDEER | N=Webbed
+164: H=12129.0 | I=2.0 | J=63.0 | K=215.0 | L=215.0 | M=ARCTICFOX | N=Golden
+165: H=12130.0 | I=2.0 | J=63.0 | K=270.0 | L=270.0 | M=ARCTICFOX | N=Frozen
+166: H=12131.0 | I=2.0 | J=63.0 | K=320.0 | L=320.0 | M=ARCTICFOX | N=Magma
+167: H=12132.0 | I=2.0 | J=63.0 | K=345.0 | L=345.0 | M=ARCTICFOX | N=Clover
+168: H=12133.0 | I=2.0 | J=63.0 | K=360.0 | L=360.0 | M=ARCTICFOX | N=Fossilized
+169: H=12134.0 | I=2.0 | J=63.0 | K=370.0 | L=370.0 | M=ARCTICFOX | N=Sweetheart
+170: H=12135.0 | I=2.0 | J=63.0 | K=380.0 | L=380.0 | M=ARCTICFOX | N=Crystalline
+171: H=12136.0 | I=2.0 | J=63.0 | K=385.0 | L=385.0 | M=ARCTICFOX | N=Webbed
+172: H=12137.0 | I=2.0 | J=64.0 | K=215.0 | L=215.0 | M=COW | N=Golden
+173: H=12138.0 | I=2.0 | J=64.0 | K=270.0 | L=270.0 | M=COW | N=Frozen
+174: H=12139.0 | I=2.0 | J=64.0 | K=320.0 | L=320.0 | M=COW | N=Magma
+175: H=12140.0 | I=2.0 | J=64.0 | K=345.0 | L=345.0 | M=COW | N=Clover
+176: H=12141.0 | I=2.0 | J=64.0 | K=360.0 | L=360.0 | M=COW | N=Fossilized
+177: H=12142.0 | I=2.0 | J=64.0 | K=370.0 | L=370.0 | M=COW | N=Sweetheart
+178: H=12143.0 | I=2.0 | J=64.0 | K=380.0 | L=380.0 | M=COW | N=Crystalline
+179: H=12144.0 | I=2.0 | J=64.0 | K=385.0 | L=385.0 | M=COW | N=Webbed
+180: H=12145.0 | I=2.0 | J=66.0 | K=215.0 | L=215.0 | M=OX | N=Golden
+181: H=12146.0 | I=2.0 | J=66.0 | K=270.0 | L=270.0 | M=OX | N=Frozen
+182: H=12147.0 | I=2.0 | J=66.0 | K=320.0 | L=320.0 | M=OX | N=Magma
+183: H=12148.0 | I=2.0 | J=66.0 | K=345.0 | L=345.0 | M=OX | N=Clover
+184: H=12149.0 | I=2.0 | J=66.0 | K=360.0 | L=360.0 | M=OX | N=Fossilized
+185: H=12150.0 | I=2.0 | J=66.0 | K=370.0 | L=370.0 | M=OX | N=Sweetheart
+186: H=12151.0 | I=2.0 | J=66.0 | K=380.0 | L=380.0 | M=OX | N=Crystalline
+187: H=12152.0 | I=2.0 | J=66.0 | K=385.0 | L=385.0 | M=OX | N=Webbed
+188: H=12153.0 | I=2.0 | J=67.0 | K=320.0 | L=320.0 | M=TURKEY | N=Golden
+189: H=12154.0 | I=2.0 | J=67.0 | K=400.0 | L=400.0 | M=TURKEY | N=Frozen
+190: H=12155.0 | I=2.0 | J=67.0 | K=480.0 | L=480.0 | M=TURKEY | N=Magma
+191: H=12156.0 | I=2.0 | J=67.0 | K=515.0 | L=515.0 | M=TURKEY | N=Clover
+192: H=12157.0 | I=2.0 | J=67.0 | K=540.0 | L=540.0 | M=TURKEY | N=Fossilized
+193: H=12158.0 | I=2.0 | J=67.0 | K=555.0 | L=555.0 | M=TURKEY | N=Sweetheart
+194: H=12159.0 | I=2.0 | J=67.0 | K=570.0 | L=570.0 | M=TURKEY | N=Crystalline
+195: H=12160.0 | I=2.0 | J=67.0 | K=580.0 | L=580.0 | M=TURKEY | N=Webbed
+196: H=12161.0 | I=2.0 | J=68.0 | K=215.0 | L=215.0 | M=FRILLNECKEDLIZARD | N=Golden
+197: H=12162.0 | I=2.0 | J=68.0 | K=270.0 | L=270.0 | M=FRILLNECKEDLIZARD | N=Frozen
+198: H=12163.0 | I=2.0 | J=68.0 | K=320.0 | L=320.0 | M=FRILLNECKEDLIZARD | N=Magma
+199: H=12164.0 | I=2.0 | J=68.0 | K=345.0 | L=345.0 | M=FRILLNECKEDLIZARD | N=Clover
+200: H=12165.0 | I=2.0 | J=68.0 | K=360.0 | L=360.0 | M=FRILLNECKEDLIZARD | N=Fossilized
+201: H=12166.0 | I=2.0 | J=68.0 | K=370.0 | L=370.0 | M=FRILLNECKEDLIZARD | N=Sweetheart
+202: H=12167.0 | I=2.0 | J=68.0 | K=380.0 | L=380.0 | M=FRILLNECKEDLIZARD | N=Crystalline
+203: H=12168.0 | I=2.0 | J=68.0 | K=385.0 | L=385.0 | M=FRILLNECKEDLIZARD | N=Webbed
+204: H=12169.0 | I=2.0 | J=69.0 | K=320.0 | L=320.0 | M=TORTOISE | N=Golden
+205: H=12170.0 | I=2.0 | J=69.0 | K=400.0 | L=400.0 | M=TORTOISE | N=Frozen
+206: H=12171.0 | I=2.0 | J=69.0 | K=480.0 | L=480.0 | M=TORTOISE | N=Magma
+207: H=12172.0 | I=2.0 | J=69.0 | K=515.0 | L=515.0 | M=TORTOISE | N=Clover
+208: H=12173.0 | I=2.0 | J=69.0 | K=540.0 | L=540.0 | M=TORTOISE | N=Fossilized
+209: H=12174.0 | I=2.0 | J=69.0 | K=555.0 | L=555.0 | M=TORTOISE | N=Sweetheart
+210: H=12175.0 | I=2.0 | J=69.0 | K=570.0 | L=570.0 | M=TORTOISE | N=Crystalline
+211: H=12176.0 | I=2.0 | J=69.0 | K=580.0 | L=580.0 | M=TORTOISE | N=Webbed
+212: H=12177.0 | I=2.0 | J=70.0 | K=320.0 | L=320.0 | M=SEAHORSE | N=Golden
+213: H=12178.0 | I=2.0 | J=70.0 | K=400.0 | L=400.0 | M=SEAHORSE | N=Frozen
+214: H=12179.0 | I=2.0 | J=70.0 | K=480.0 | L=480.0 | M=SEAHORSE | N=Magma
+215: H=12180.0 | I=2.0 | J=70.0 | K=515.0 | L=515.0 | M=SEAHORSE | N=Clover
+216: H=12181.0 | I=2.0 | J=70.0 | K=540.0 | L=540.0 | M=SEAHORSE | N=Fossilized
+217: H=12182.0 | I=2.0 | J=70.0 | K=555.0 | L=555.0 | M=SEAHORSE | N=Sweetheart
+218: H=12183.0 | I=2.0 | J=70.0 | K=570.0 | L=570.0 | M=SEAHORSE | N=Crystalline
+219: H=12184.0 | I=2.0 | J=70.0 | K=580.0 | L=580.0 | M=SEAHORSE | N=Webbed
+220: H=12185.0 | I=2.0 | J=71.0 | K=215.0 | L=215.0 | M=ALPACA | N=Golden
+221: H=12186.0 | I=2.0 | J=71.0 | K=270.0 | L=270.0 | M=ALPACA | N=Frozen
+222: H=12187.0 | I=2.0 | J=71.0 | K=320.0 | L=320.0 | M=ALPACA | N=Magma
+223: H=12188.0 | I=2.0 | J=71.0 | K=345.0 | L=345.0 | M=ALPACA | N=Clover
+224: H=12189.0 | I=2.0 | J=71.0 | K=360.0 | L=360.0 | M=ALPACA | N=Fossilized
+225: H=12190.0 | I=2.0 | J=71.0 | K=370.0 | L=370.0 | M=ALPACA | N=Sweetheart
+226: H=12191.0 | I=2.0 | J=71.0 | K=380.0 | L=380.0 | M=ALPACA | N=Crystalline
+227: H=12192.0 | I=2.0 | J=71.0 | K=385.0 | L=385.0 | M=ALPACA | N=Webbed
+228: H=12193.0 | I=2.0 | J=72.0 | K=320.0 | L=320.0 | M=COYOTE | N=Golden
+229: H=12194.0 | I=2.0 | J=72.0 | K=400.0 | L=400.0 | M=COYOTE | N=Frozen
+230: H=12195.0 | I=2.0 | J=72.0 | K=480.0 | L=480.0 | M=COYOTE | N=Magma
+231: H=12196.0 | I=2.0 | J=72.0 | K=515.0 | L=515.0 | M=COYOTE | N=Clover
+232: H=12197.0 | I=2.0 | J=72.0 | K=540.0 | L=540.0 | M=COYOTE | N=Fossilized
+233: H=12198.0 | I=2.0 | J=72.0 | K=555.0 | L=555.0 | M=COYOTE | N=Sweetheart
+234: H=12199.0 | I=2.0 | J=72.0 | K=570.0 | L=570.0 | M=COYOTE | N=Crystalline
+235: H=12200.0 | I=2.0 | J=72.0 | K=580.0 | L=580.0 | M=COYOTE | N=Webbed
+236: H=12201.0 | I=2.0 | J=73.0 | K=320.0 | L=320.0 | M=CATFISH | N=Golden
+237: H=12202.0 | I=2.0 | J=73.0 | K=400.0 | L=400.0 | M=CATFISH | N=Frozen
+238: H=12203.0 | I=2.0 | J=73.0 | K=480.0 | L=480.0 | M=CATFISH | N=Magma
+239: H=12204.0 | I=2.0 | J=73.0 | K=515.0 | L=515.0 | M=CATFISH | N=Clover
+240: H=12205.0 | I=2.0 | J=73.0 | K=540.0 | L=540.0 | M=CATFISH | N=Fossilized
+241: H=12206.0 | I=2.0 | J=73.0 | K=555.0 | L=555.0 | M=CATFISH | N=Sweetheart
+242: H=12207.0 | I=2.0 | J=73.0 | K=570.0 | L=570.0 | M=CATFISH | N=Crystalline
+243: H=12208.0 | I=2.0 | J=73.0 | K=580.0 | L=580.0 | M=CATFISH | N=Webbed
+244: H=12209.0 | I=2.0 | J=75.0 | K=320.0 | L=320.0 | M=MALLARD | N=Golden
+245: H=12210.0 | I=2.0 | J=75.0 | K=400.0 | L=400.0 | M=MALLARD | N=Frozen
+246: H=12211.0 | I=2.0 | J=75.0 | K=480.0 | L=480.0 | M=MALLARD | N=Magma
+247: H=12212.0 | I=2.0 | J=75.0 | K=515.0 | L=515.0 | M=MALLARD | N=Clover
+248: H=12213.0 | I=2.0 | J=75.0 | K=540.0 | L=540.0 | M=MALLARD | N=Fossilized
+249: H=12214.0 | I=2.0 | J=75.0 | K=555.0 | L=555.0 | M=MALLARD | N=Sweetheart
+250: H=12215.0 | I=2.0 | J=75.0 | K=570.0 | L=570.0 | M=MALLARD | N=Crystalline
+251: H=12216.0 | I=2.0 | J=75.0 | K=580.0 | L=580.0 | M=MALLARD | N=Webbed
+252: H=12217.0 | I=2.0 | J=77.0 | K=480.0 | L=480.0 | M=ARMADILLO | N=Golden
+253: H=12218.0 | I=2.0 | J=77.0 | K=600.0 | L=600.0 | M=ARMADILLO | N=Frozen
+254: H=12219.0 | I=2.0 | J=77.0 | K=720.0 | L=720.0 | M=ARMADILLO | N=Magma
+255: H=12220.0 | I=2.0 | J=77.0 | K=770.0 | L=770.0 | M=ARMADILLO | N=Clover
+256: H=12221.0 | I=2.0 | J=77.0 | K=810.0 | L=810.0 | M=ARMADILLO | N=Fossilized
+257: H=12222.0 | I=2.0 | J=77.0 | K=830.0 | L=830.0 | M=ARMADILLO | N=Sweetheart
+258: H=12223.0 | I=2.0 | J=77.0 | K=855.0 | L=855.0 | M=ARMADILLO | N=Crystalline
+259: H=12224.0 | I=2.0 | J=77.0 | K=865.0 | L=865.0 | M=ARMADILLO | N=Webbed
+260: H=12225.0 | I=2.0 | J=78.0 | K=480.0 | L=480.0 | M=AXOLOTLBLUE | N=Golden
+261: H=12226.0 | I=2.0 | J=78.0 | K=600.0 | L=600.0 | M=AXOLOTLBLUE | N=Frozen
+262: H=12227.0 | I=2.0 | J=78.0 | K=720.0 | L=720.0 | M=AXOLOTLBLUE | N=Magma
+263: H=12228.0 | I=2.0 | J=78.0 | K=770.0 | L=770.0 | M=AXOLOTLBLUE | N=Clover
+264: H=12229.0 | I=2.0 | J=78.0 | K=810.0 | L=810.0 | M=AXOLOTLBLUE | N=Fossilized
+265: H=12230.0 | I=2.0 | J=78.0 | K=830.0 | L=830.0 | M=AXOLOTLBLUE | N=Sweetheart
+266: H=12231.0 | I=2.0 | J=78.0 | K=855.0 | L=855.0 | M=AXOLOTLBLUE | N=Crystalline
+267: H=12232.0 | I=2.0 | J=78.0 | K=865.0 | L=865.0 | M=AXOLOTLBLUE | N=Webbed
+268: H=12233.0 | I=2.0 | J=79.0 | K=320.0 | L=320.0 | M=AXOLOTLPINK | N=Golden
+269: H=12234.0 | I=2.0 | J=79.0 | K=400.0 | L=400.0 | M=AXOLOTLPINK | N=Frozen
+270: H=12235.0 | I=2.0 | J=79.0 | K=480.0 | L=480.0 | M=AXOLOTLPINK | N=Magma
+271: H=12236.0 | I=2.0 | J=79.0 | K=515.0 | L=515.0 | M=AXOLOTLPINK | N=Clover
+272: H=12237.0 | I=2.0 | J=79.0 | K=540.0 | L=540.0 | M=AXOLOTLPINK | N=Fossilized
+273: H=12238.0 | I=2.0 | J=79.0 | K=555.0 | L=555.0 | M=AXOLOTLPINK | N=Sweetheart
+274: H=12239.0 | I=2.0 | J=79.0 | K=570.0 | L=570.0 | M=AXOLOTLPINK | N=Crystalline
+275: H=12240.0 | I=2.0 | J=79.0 | K=580.0 | L=580.0 | M=AXOLOTLPINK | N=Webbed
+276: H=12241.0 | I=2.0 | J=80.0 | K=480.0 | L=480.0 | M=AXOLOTLGREEN | N=Golden
+277: H=12242.0 | I=2.0 | J=80.0 | K=600.0 | L=600.0 | M=AXOLOTLGREEN | N=Frozen
+278: H=12243.0 | I=2.0 | J=80.0 | K=720.0 | L=720.0 | M=AXOLOTLGREEN | N=Magma
+279: H=12244.0 | I=2.0 | J=80.0 | K=770.0 | L=770.0 | M=AXOLOTLGREEN | N=Clover
+280: H=12245.0 | I=2.0 | J=80.0 | K=810.0 | L=810.0 | M=AXOLOTLGREEN | N=Fossilized
+281: H=12246.0 | I=2.0 | J=80.0 | K=830.0 | L=830.0 | M=AXOLOTLGREEN | N=Sweetheart
+282: H=12247.0 | I=2.0 | J=80.0 | K=855.0 | L=855.0 | M=AXOLOTLGREEN | N=Crystalline
+283: H=12248.0 | I=2.0 | J=80.0 | K=865.0 | L=865.0 | M=AXOLOTLGREEN | N=Webbed
+284: H=12249.0 | I=2.0 | J=81.0 | K=480.0 | L=480.0 | M=AXOLOTLORANGE | N=Golden
+285: H=12250.0 | I=2.0 | J=81.0 | K=600.0 | L=600.0 | M=AXOLOTLORANGE | N=Frozen
+286: H=12251.0 | I=2.0 | J=81.0 | K=720.0 | L=720.0 | M=AXOLOTLORANGE | N=Magma
+287: H=12252.0 | I=2.0 | J=81.0 | K=770.0 | L=770.0 | M=AXOLOTLORANGE | N=Clover
+288: H=12253.0 | I=2.0 | J=81.0 | K=810.0 | L=810.0 | M=AXOLOTLORANGE | N=Fossilized
+289: H=12254.0 | I=2.0 | J=81.0 | K=830.0 | L=830.0 | M=AXOLOTLORANGE | N=Sweetheart
+290: H=12255.0 | I=2.0 | J=81.0 | K=855.0 | L=855.0 | M=AXOLOTLORANGE | N=Crystalline
+291: H=12256.0 | I=2.0 | J=81.0 | K=865.0 | L=865.0 | M=AXOLOTLORANGE | N=Webbed
+292: H=12257.0 | I=2.0 | J=82.0 | K=480.0 | L=480.0 | M=AXOLOTLWHITE | N=Golden
+293: H=12258.0 | I=2.0 | J=82.0 | K=600.0 | L=600.0 | M=AXOLOTLWHITE | N=Frozen
+294: H=12259.0 | I=2.0 | J=82.0 | K=720.0 | L=720.0 | M=AXOLOTLWHITE | N=Magma
+295: H=12260.0 | I=2.0 | J=82.0 | K=770.0 | L=770.0 | M=AXOLOTLWHITE | N=Clover
+296: H=12261.0 | I=2.0 | J=82.0 | K=810.0 | L=810.0 | M=AXOLOTLWHITE | N=Fossilized
+297: H=12262.0 | I=2.0 | J=82.0 | K=830.0 | L=830.0 | M=AXOLOTLWHITE | N=Sweetheart
+298: H=12263.0 | I=2.0 | J=82.0 | K=855.0 | L=855.0 | M=AXOLOTLWHITE | N=Crystalline
+299: H=12264.0 | I=2.0 | J=82.0 | K=865.0 | L=865.0 | M=AXOLOTLWHITE | N=Webbed
+300: H=12265.0 | I=2.0 | J=84.0 | K=480.0 | L=480.0 | M=BABOON | N=Golden
+301: H=12266.0 | I=2.0 | J=84.0 | K=600.0 | L=600.0 | M=BABOON | N=Frozen
+302: H=12267.0 | I=2.0 | J=84.0 | K=720.0 | L=720.0 | M=BABOON | N=Magma
+303: H=12268.0 | I=2.0 | J=84.0 | K=770.0 | L=770.0 | M=BABOON | N=Clover
+304: H=12269.0 | I=2.0 | J=84.0 | K=810.0 | L=810.0 | M=BABOON | N=Fossilized
+305: H=12270.0 | I=2.0 | J=84.0 | K=830.0 | L=830.0 | M=BABOON | N=Sweetheart
+306: H=12271.0 | I=2.0 | J=84.0 | K=855.0 | L=855.0 | M=BABOON | N=Crystalline
+307: H=12272.0 | I=2.0 | J=84.0 | K=865.0 | L=865.0 | M=BABOON | N=Webbed
+308: H=13001.0 | I=3.0 | J=40.0 | K=75.0 | L=75.0 | M=POLARBEAR | O=Soaked
+309: H=13002.0 | I=3.0 | J=40.0 | K=85.0 | L=85.0 | M=POLARBEAR | O=Frost
+310: H=13003.0 | I=3.0 | J=40.0 | K=80.0 | L=80.0 | M=POLARBEAR | O=Gale
+311: H=13004.0 | I=3.0 | J=40.0 | K=90.0 | L=90.0 | M=POLARBEAR | O=Thundered
+312: H=13005.0 | I=3.0 | J=40.0 | K=105.0 | L=105.0 | M=POLARBEAR | O=Eclipse
+313: H=13006.0 | I=3.0 | J=40.0 | K=105.0 | L=105.0 | M=POLARBEAR | O=Prismatic
+314: H=13007.0 | I=3.0 | J=41.0 | K=75.0 | L=75.0 | M=RHINO | O=Soaked
+315: H=13008.0 | I=3.0 | J=41.0 | K=85.0 | L=85.0 | M=RHINO | O=Frost
+316: H=13009.0 | I=3.0 | J=41.0 | K=80.0 | L=80.0 | M=RHINO | O=Gale
+317: H=13010.0 | I=3.0 | J=41.0 | K=90.0 | L=90.0 | M=RHINO | O=Thundered
+318: H=13011.0 | I=3.0 | J=41.0 | K=105.0 | L=105.0 | M=RHINO | O=Eclipse
+319: H=13012.0 | I=3.0 | J=41.0 | K=105.0 | L=105.0 | M=RHINO | O=Prismatic
+320: H=13013.0 | I=3.0 | J=42.0 | K=75.0 | L=75.0 | M=WOLF | O=Soaked
+321: H=13014.0 | I=3.0 | J=42.0 | K=85.0 | L=85.0 | M=WOLF | O=Frost
+322: H=13015.0 | I=3.0 | J=42.0 | K=80.0 | L=80.0 | M=WOLF | O=Gale
+323: H=13016.0 | I=3.0 | J=42.0 | K=90.0 | L=90.0 | M=WOLF | O=Thundered
+324: H=13017.0 | I=3.0 | J=42.0 | K=105.0 | L=105.0 | M=WOLF | O=Eclipse
+325: H=13018.0 | I=3.0 | J=42.0 | K=105.0 | L=105.0 | M=WOLF | O=Prismatic
+326: H=13019.0 | I=3.0 | J=45.0 | K=75.0 | L=75.0 | M=HORNBILL | O=Soaked
+327: H=13020.0 | I=3.0 | J=45.0 | K=85.0 | L=85.0 | M=HORNBILL | O=Frost
+328: H=13021.0 | I=3.0 | J=45.0 | K=80.0 | L=80.0 | M=HORNBILL | O=Gale
+329: H=13022.0 | I=3.0 | J=45.0 | K=90.0 | L=90.0 | M=HORNBILL | O=Thundered
+330: H=13023.0 | I=3.0 | J=45.0 | K=105.0 | L=105.0 | M=HORNBILL | O=Eclipse
+331: H=13024.0 | I=3.0 | J=45.0 | K=105.0 | L=105.0 | M=HORNBILL | O=Prismatic
+332: H=13025.0 | I=3.0 | J=43.0 | K=75.0 | L=75.0 | M=HIPPO | O=Soaked
+333: H=13026.0 | I=3.0 | J=43.0 | K=85.0 | L=85.0 | M=HIPPO | O=Frost
+334: H=13027.0 | I=3.0 | J=43.0 | K=80.0 | L=80.0 | M=HIPPO | O=Gale
+335: H=13028.0 | I=3.0 | J=43.0 | K=90.0 | L=90.0 | M=HIPPO | O=Thundered
+336: H=13029.0 | I=3.0 | J=43.0 | K=105.0 | L=105.0 | M=HIPPO | O=Eclipse
+337: H=13030.0 | I=3.0 | J=43.0 | K=105.0 | L=105.0 | M=HIPPO | O=Prismatic
+338: H=13031.0 | I=3.0 | J=46.0 | K=75.0 | L=75.0 | M=BROWNBEAR | O=Soaked
+339: H=13032.0 | I=3.0 | J=46.0 | K=85.0 | L=85.0 | M=BROWNBEAR | O=Frost
+340: H=13033.0 | I=3.0 | J=46.0 | K=80.0 | L=80.0 | M=BROWNBEAR | O=Gale
+341: H=13034.0 | I=3.0 | J=46.0 | K=90.0 | L=90.0 | M=BROWNBEAR | O=Thundered
+342: H=13035.0 | I=3.0 | J=46.0 | K=105.0 | L=105.0 | M=BROWNBEAR | O=Eclipse
+343: H=13036.0 | I=3.0 | J=46.0 | K=105.0 | L=105.0 | M=BROWNBEAR | O=Prismatic
+344: H=13037.0 | I=3.0 | J=47.0 | K=75.0 | L=75.0 | M=MANATEE | O=Soaked
+345: H=13038.0 | I=3.0 | J=47.0 | K=85.0 | L=85.0 | M=MANATEE | O=Frost
+346: H=13039.0 | I=3.0 | J=47.0 | K=80.0 | L=80.0 | M=MANATEE | O=Gale
+347: H=13040.0 | I=3.0 | J=47.0 | K=90.0 | L=90.0 | M=MANATEE | O=Thundered
+348: H=13041.0 | I=3.0 | J=47.0 | K=105.0 | L=105.0 | M=MANATEE | O=Eclipse
+349: H=13042.0 | I=3.0 | J=47.0 | K=105.0 | L=105.0 | M=MANATEE | O=Prismatic
+350: H=13043.0 | I=3.0 | J=48.0 | K=120.0 | L=120.0 | M=OSTRICH | O=Soaked
+351: H=13044.0 | I=3.0 | J=48.0 | K=140.0 | L=140.0 | M=OSTRICH | O=Frost
+352: H=13045.0 | I=3.0 | J=48.0 | K=135.0 | L=135.0 | M=OSTRICH | O=Gale
+353: H=13046.0 | I=3.0 | J=48.0 | K=150.0 | L=150.0 | M=OSTRICH | O=Thundered
+354: H=13047.0 | I=3.0 | J=48.0 | K=175.0 | L=175.0 | M=OSTRICH | O=Eclipse
+355: H=13048.0 | I=3.0 | J=48.0 | K=170.0 | L=170.0 | M=OSTRICH | O=Prismatic
+356: H=13049.0 | I=3.0 | J=44.0 | K=120.0 | L=120.0 | M=SMALLWHALE | O=Soaked
+357: H=13050.0 | I=3.0 | J=44.0 | K=140.0 | L=140.0 | M=SMALLWHALE | O=Frost
+358: H=13051.0 | I=3.0 | J=44.0 | K=135.0 | L=135.0 | M=SMALLWHALE | O=Gale
+359: H=13052.0 | I=3.0 | J=44.0 | K=150.0 | L=150.0 | M=SMALLWHALE | O=Thundered
+360: H=13053.0 | I=3.0 | J=44.0 | K=175.0 | L=175.0 | M=SMALLWHALE | O=Eclipse
+361: H=13054.0 | I=3.0 | J=44.0 | K=170.0 | L=170.0 | M=SMALLWHALE | O=Prismatic
+362: H=13055.0 | I=3.0 | J=49.0 | K=120.0 | L=120.0 | M=GORILLA | O=Soaked
+363: H=13056.0 | I=3.0 | J=49.0 | K=140.0 | L=140.0 | M=GORILLA | O=Frost
+364: H=13057.0 | I=3.0 | J=49.0 | K=135.0 | L=135.0 | M=GORILLA | O=Gale
+365: H=13058.0 | I=3.0 | J=49.0 | K=150.0 | L=150.0 | M=GORILLA | O=Thundered
+366: H=13059.0 | I=3.0 | J=49.0 | K=175.0 | L=175.0 | M=GORILLA | O=Eclipse
+367: H=13060.0 | I=3.0 | J=49.0 | K=170.0 | L=170.0 | M=GORILLA | O=Prismatic
+368: H=13061.0 | I=3.0 | J=50.0 | K=120.0 | L=120.0 | M=BELUGA | O=Soaked
+369: H=13062.0 | I=3.0 | J=50.0 | K=140.0 | L=140.0 | M=BELUGA | O=Frost
+370: H=13063.0 | I=3.0 | J=50.0 | K=135.0 | L=135.0 | M=BELUGA | O=Gale
+371: H=13064.0 | I=3.0 | J=50.0 | K=150.0 | L=150.0 | M=BELUGA | O=Thundered
+372: H=13065.0 | I=3.0 | J=50.0 | K=175.0 | L=175.0 | M=BELUGA | O=Eclipse
+373: H=13066.0 | I=3.0 | J=50.0 | K=170.0 | L=170.0 | M=BELUGA | O=Prismatic
+374: H=13067.0 | I=3.0 | J=51.0 | K=120.0 | L=120.0 | M=NARWHAL | O=Soaked
+375: H=13068.0 | I=3.0 | J=51.0 | K=140.0 | L=140.0 | M=NARWHAL | O=Frost
+376: H=13069.0 | I=3.0 | J=51.0 | K=135.0 | L=135.0 | M=NARWHAL | O=Gale
+377: H=13070.0 | I=3.0 | J=51.0 | K=150.0 | L=150.0 | M=NARWHAL | O=Thundered
+378: H=13071.0 | I=3.0 | J=51.0 | K=175.0 | L=175.0 | M=NARWHAL | O=Eclipse
+379: H=13072.0 | I=3.0 | J=51.0 | K=170.0 | L=170.0 | M=NARWHAL | O=Prismatic
+380: H=13073.0 | I=3.0 | J=56.0 | K=120.0 | L=120.0 | M=HUSKY | O=Soaked
+381: H=13074.0 | I=3.0 | J=56.0 | K=140.0 | L=140.0 | M=HUSKY | O=Frost
+382: H=13075.0 | I=3.0 | J=56.0 | K=135.0 | L=135.0 | M=HUSKY | O=Gale
+383: H=13076.0 | I=3.0 | J=56.0 | K=150.0 | L=150.0 | M=HUSKY | O=Thundered
+384: H=13077.0 | I=3.0 | J=56.0 | K=175.0 | L=175.0 | M=HUSKY | O=Eclipse
+385: H=13078.0 | I=3.0 | J=56.0 | K=170.0 | L=170.0 | M=HUSKY | O=Prismatic
+386: H=13079.0 | I=3.0 | J=60.0 | K=120.0 | L=120.0 | M=PLATYPUS | O=Soaked
+387: H=13080.0 | I=3.0 | J=60.0 | K=140.0 | L=140.0 | M=PLATYPUS | O=Frost
+388: H=13081.0 | I=3.0 | J=60.0 | K=135.0 | L=135.0 | M=PLATYPUS | O=Gale
+389: H=13082.0 | I=3.0 | J=60.0 | K=150.0 | L=150.0 | M=PLATYPUS | O=Thundered
+390: H=13083.0 | I=3.0 | J=60.0 | K=175.0 | L=175.0 | M=PLATYPUS | O=Eclipse
+391: H=13084.0 | I=3.0 | J=60.0 | K=170.0 | L=170.0 | M=PLATYPUS | O=Prismatic
+392: H=13085.0 | I=3.0 | J=61.0 | K=195.0 | L=195.0 | M=JAGUAR | O=Soaked
+393: H=13086.0 | I=3.0 | J=61.0 | K=220.0 | L=220.0 | M=JAGUAR | O=Frost
+394: H=13087.0 | I=3.0 | J=61.0 | K=215.0 | L=215.0 | M=JAGUAR | O=Gale
+395: H=13088.0 | I=3.0 | J=61.0 | K=240.0 | L=240.0 | M=JAGUAR | O=Thundered
+396: H=13089.0 | I=3.0 | J=61.0 | K=280.0 | L=280.0 | M=JAGUAR | O=Eclipse
+397: H=13090.0 | I=3.0 | J=61.0 | K=275.0 | L=275.0 | M=JAGUAR | O=Prismatic
+398: H=13091.0 | I=3.0 | J=62.0 | K=195.0 | L=195.0 | M=REINDEER | O=Soaked
+399: H=13092.0 | I=3.0 | J=62.0 | K=220.0 | L=220.0 | M=REINDEER | O=Frost
+400: H=13093.0 | I=3.0 | J=62.0 | K=215.0 | L=215.0 | M=REINDEER | O=Gale
+401: H=13094.0 | I=3.0 | J=62.0 | K=240.0 | L=240.0 | M=REINDEER | O=Thundered
+402: H=13095.0 | I=3.0 | J=62.0 | K=280.0 | L=280.0 | M=REINDEER | O=Eclipse
+403: H=13096.0 | I=3.0 | J=62.0 | K=275.0 | L=275.0 | M=REINDEER | O=Prismatic
+404: H=13097.0 | I=3.0 | J=63.0 | K=195.0 | L=195.0 | M=ARCTICFOX | O=Soaked
+405: H=13098.0 | I=3.0 | J=63.0 | K=220.0 | L=220.0 | M=ARCTICFOX | O=Frost
+406: H=13099.0 | I=3.0 | J=63.0 | K=215.0 | L=215.0 | M=ARCTICFOX | O=Gale
+407: H=13100.0 | I=3.0 | J=63.0 | K=240.0 | L=240.0 | M=ARCTICFOX | O=Thundered
+408: H=13101.0 | I=3.0 | J=63.0 | K=280.0 | L=280.0 | M=ARCTICFOX | O=Eclipse
+409: H=13102.0 | I=3.0 | J=63.0 | K=275.0 | L=275.0 | M=ARCTICFOX | O=Prismatic
+410: H=13103.0 | I=3.0 | J=64.0 | K=195.0 | L=195.0 | M=COW | O=Soaked
+411: H=13104.0 | I=3.0 | J=64.0 | K=220.0 | L=220.0 | M=COW | O=Frost
+412: H=13105.0 | I=3.0 | J=64.0 | K=215.0 | L=215.0 | M=COW | O=Gale
+413: H=13106.0 | I=3.0 | J=64.0 | K=240.0 | L=240.0 | M=COW | O=Thundered
+414: H=13107.0 | I=3.0 | J=64.0 | K=280.0 | L=280.0 | M=COW | O=Eclipse
+415: H=13108.0 | I=3.0 | J=64.0 | K=275.0 | L=275.0 | M=COW | O=Prismatic
+416: H=13109.0 | I=3.0 | J=66.0 | K=195.0 | L=195.0 | M=OX | O=Soaked
+417: H=13110.0 | I=3.0 | J=66.0 | K=220.0 | L=220.0 | M=OX | O=Frost
+418: H=13111.0 | I=3.0 | J=66.0 | K=215.0 | L=215.0 | M=OX | O=Gale
+419: H=13112.0 | I=3.0 | J=66.0 | K=240.0 | L=240.0 | M=OX | O=Thundered
+420: H=13113.0 | I=3.0 | J=66.0 | K=280.0 | L=280.0 | M=OX | O=Eclipse
+421: H=13114.0 | I=3.0 | J=66.0 | K=275.0 | L=275.0 | M=OX | O=Prismatic
+422: H=13115.0 | I=3.0 | J=67.0 | K=290.0 | L=290.0 | M=TURKEY | O=Soaked
+423: H=13116.0 | I=3.0 | J=67.0 | K=330.0 | L=330.0 | M=TURKEY | O=Frost
+424: H=13117.0 | I=3.0 | J=67.0 | K=320.0 | L=320.0 | M=TURKEY | O=Gale
+425: H=13118.0 | I=3.0 | J=67.0 | K=360.0 | L=360.0 | M=TURKEY | O=Thundered
+426: H=13119.0 | I=3.0 | J=67.0 | K=420.0 | L=420.0 | M=TURKEY | O=Eclipse
+427: H=13120.0 | I=3.0 | J=67.0 | K=410.0 | L=410.0 | M=TURKEY | O=Prismatic
+428: H=13121.0 | I=3.0 | J=68.0 | K=195.0 | L=195.0 | M=FRILLNECKEDLIZARD | O=Soaked
+429: H=13122.0 | I=3.0 | J=68.0 | K=220.0 | L=220.0 | M=FRILLNECKEDLIZARD | O=Frost
+430: H=13123.0 | I=3.0 | J=68.0 | K=215.0 | L=215.0 | M=FRILLNECKEDLIZARD | O=Gale
+431: H=13124.0 | I=3.0 | J=68.0 | K=240.0 | L=240.0 | M=FRILLNECKEDLIZARD | O=Thundered
+432: H=13125.0 | I=3.0 | J=68.0 | K=280.0 | L=280.0 | M=FRILLNECKEDLIZARD | O=Eclipse
+433: H=13126.0 | I=3.0 | J=68.0 | K=275.0 | L=275.0 | M=FRILLNECKEDLIZARD | O=Prismatic
+434: H=13127.0 | I=3.0 | J=69.0 | K=290.0 | L=290.0 | M=TORTOISE | O=Soaked
+435: H=13128.0 | I=3.0 | J=69.0 | K=330.0 | L=330.0 | M=TORTOISE | O=Frost
+436: H=13129.0 | I=3.0 | J=69.0 | K=320.0 | L=320.0 | M=TORTOISE | O=Gale
+437: H=13130.0 | I=3.0 | J=69.0 | K=360.0 | L=360.0 | M=TORTOISE | O=Thundered
+438: H=13131.0 | I=3.0 | J=69.0 | K=420.0 | L=420.0 | M=TORTOISE | O=Eclipse
+439: H=13132.0 | I=3.0 | J=69.0 | K=410.0 | L=410.0 | M=TORTOISE | O=Prismatic
+440: H=13133.0 | I=3.0 | J=70.0 | K=290.0 | L=290.0 | M=SEAHORSE | O=Soaked
+441: H=13134.0 | I=3.0 | J=70.0 | K=330.0 | L=330.0 | M=SEAHORSE | O=Frost
+442: H=13135.0 | I=3.0 | J=70.0 | K=320.0 | L=320.0 | M=SEAHORSE | O=Gale
+443: H=13136.0 | I=3.0 | J=70.0 | K=360.0 | L=360.0 | M=SEAHORSE | O=Thundered
+444: H=13137.0 | I=3.0 | J=70.0 | K=420.0 | L=420.0 | M=SEAHORSE | O=Eclipse
+445: H=13138.0 | I=3.0 | J=70.0 | K=410.0 | L=410.0 | M=SEAHORSE | O=Prismatic
+446: H=13139.0 | I=3.0 | J=71.0 | K=195.0 | L=195.0 | M=ALPACA | O=Soaked
+447: H=13140.0 | I=3.0 | J=71.0 | K=220.0 | L=220.0 | M=ALPACA | O=Frost
+448: H=13141.0 | I=3.0 | J=71.0 | K=215.0 | L=215.0 | M=ALPACA | O=Gale
+449: H=13142.0 | I=3.0 | J=71.0 | K=240.0 | L=240.0 | M=ALPACA | O=Thundered
+450: H=13143.0 | I=3.0 | J=71.0 | K=280.0 | L=280.0 | M=ALPACA | O=Eclipse
+451: H=13144.0 | I=3.0 | J=71.0 | K=275.0 | L=275.0 | M=ALPACA | O=Prismatic
+452: H=13145.0 | I=3.0 | J=72.0 | K=290.0 | L=290.0 | M=COYOTE | O=Soaked
+453: H=13146.0 | I=3.0 | J=72.0 | K=330.0 | L=330.0 | M=COYOTE | O=Frost
+454: H=13147.0 | I=3.0 | J=72.0 | K=320.0 | L=320.0 | M=COYOTE | O=Gale
+455: H=13148.0 | I=3.0 | J=72.0 | K=360.0 | L=360.0 | M=COYOTE | O=Thundered
+456: H=13149.0 | I=3.0 | J=72.0 | K=420.0 | L=420.0 | M=COYOTE | O=Eclipse
+457: H=13150.0 | I=3.0 | J=72.0 | K=410.0 | L=410.0 | M=COYOTE | O=Prismatic
+458: H=13151.0 | I=3.0 | J=73.0 | K=290.0 | L=290.0 | M=CATFISH | O=Soaked
+459: H=13152.0 | I=3.0 | J=73.0 | K=330.0 | L=330.0 | M=CATFISH | O=Frost
+460: H=13153.0 | I=3.0 | J=73.0 | K=320.0 | L=320.0 | M=CATFISH | O=Gale
+461: H=13154.0 | I=3.0 | J=73.0 | K=360.0 | L=360.0 | M=CATFISH | O=Thundered
+462: H=13155.0 | I=3.0 | J=73.0 | K=420.0 | L=420.0 | M=CATFISH | O=Eclipse
+463: H=13156.0 | I=3.0 | J=73.0 | K=410.0 | L=410.0 | M=CATFISH | O=Prismatic
+464: H=13157.0 | I=3.0 | J=75.0 | K=290.0 | L=290.0 | M=MALLARD | O=Soaked
+465: H=13158.0 | I=3.0 | J=75.0 | K=330.0 | L=330.0 | M=MALLARD | O=Frost
+466: H=13159.0 | I=3.0 | J=75.0 | K=320.0 | L=320.0 | M=MALLARD | O=Gale
+467: H=13160.0 | I=3.0 | J=75.0 | K=360.0 | L=360.0 | M=MALLARD | O=Thundered
+468: H=13161.0 | I=3.0 | J=75.0 | K=420.0 | L=420.0 | M=MALLARD | O=Eclipse
+469: H=13162.0 | I=3.0 | J=75.0 | K=410.0 | L=410.0 | M=MALLARD | O=Prismatic
+470: H=13163.0 | I=3.0 | J=77.0 | K=435.0 | L=435.0 | M=ARMADILLO | O=Soaked
+471: H=13164.0 | I=3.0 | J=77.0 | K=490.0 | L=490.0 | M=ARMADILLO | O=Frost
+472: H=13165.0 | I=3.0 | J=77.0 | K=480.0 | L=480.0 | M=ARMADILLO | O=Gale
+473: H=13166.0 | I=3.0 | J=77.0 | K=535.0 | L=535.0 | M=ARMADILLO | O=Thundered
+474: H=13167.0 | I=3.0 | J=77.0 | K=630.0 | L=630.0 | M=ARMADILLO | O=Eclipse
+475: H=13168.0 | I=3.0 | J=77.0 | K=615.0 | L=615.0 | M=ARMADILLO | O=Prismatic
+476: H=13169.0 | I=3.0 | J=78.0 | K=435.0 | L=435.0 | M=AXOLOTLBLUE | O=Soaked
+477: H=13170.0 | I=3.0 | J=78.0 | K=490.0 | L=490.0 | M=AXOLOTLBLUE | O=Frost
+478: H=13171.0 | I=3.0 | J=78.0 | K=480.0 | L=480.0 | M=AXOLOTLBLUE | O=Gale
+479: H=13172.0 | I=3.0 | J=78.0 | K=535.0 | L=535.0 | M=AXOLOTLBLUE | O=Thundered
+480: H=13173.0 | I=3.0 | J=78.0 | K=630.0 | L=630.0 | M=AXOLOTLBLUE | O=Eclipse
+481: H=13174.0 | I=3.0 | J=78.0 | K=615.0 | L=615.0 | M=AXOLOTLBLUE | O=Prismatic
+482: H=13175.0 | I=3.0 | J=79.0 | K=290.0 | L=290.0 | M=AXOLOTLPINK | O=Soaked
+483: H=13176.0 | I=3.0 | J=79.0 | K=330.0 | L=330.0 | M=AXOLOTLPINK | O=Frost
+484: H=13177.0 | I=3.0 | J=79.0 | K=320.0 | L=320.0 | M=AXOLOTLPINK | O=Gale
+485: H=13178.0 | I=3.0 | J=79.0 | K=360.0 | L=360.0 | M=AXOLOTLPINK | O=Thundered
+486: H=13179.0 | I=3.0 | J=79.0 | K=420.0 | L=420.0 | M=AXOLOTLPINK | O=Eclipse
+487: H=13180.0 | I=3.0 | J=79.0 | K=410.0 | L=410.0 | M=AXOLOTLPINK | O=Prismatic
+488: H=13181.0 | I=3.0 | J=80.0 | K=435.0 | L=435.0 | M=AXOLOTLGREEN | O=Soaked
+489: H=13182.0 | I=3.0 | J=80.0 | K=490.0 | L=490.0 | M=AXOLOTLGREEN | O=Frost
+490: H=13183.0 | I=3.0 | J=80.0 | K=480.0 | L=480.0 | M=AXOLOTLGREEN | O=Gale
+491: H=13184.0 | I=3.0 | J=80.0 | K=535.0 | L=535.0 | M=AXOLOTLGREEN | O=Thundered
+492: H=13185.0 | I=3.0 | J=80.0 | K=630.0 | L=630.0 | M=AXOLOTLGREEN | O=Eclipse
+493: H=13186.0 | I=3.0 | J=80.0 | K=615.0 | L=615.0 | M=AXOLOTLGREEN | O=Prismatic
+494: H=13187.0 | I=3.0 | J=81.0 | K=435.0 | L=435.0 | M=AXOLOTLORANGE | O=Soaked
+495: H=13188.0 | I=3.0 | J=81.0 | K=490.0 | L=490.0 | M=AXOLOTLORANGE | O=Frost
+496: H=13189.0 | I=3.0 | J=81.0 | K=480.0 | L=480.0 | M=AXOLOTLORANGE | O=Gale
+497: H=13190.0 | I=3.0 | J=81.0 | K=535.0 | L=535.0 | M=AXOLOTLORANGE | O=Thundered
+498: H=13191.0 | I=3.0 | J=81.0 | K=630.0 | L=630.0 | M=AXOLOTLORANGE | O=Eclipse
+499: H=13192.0 | I=3.0 | J=81.0 | K=615.0 | L=615.0 | M=AXOLOTLORANGE | O=Prismatic
+500: H=13193.0 | I=3.0 | J=82.0 | K=435.0 | L=435.0 | M=AXOLOTLWHITE | O=Soaked
+501: H=13194.0 | I=3.0 | J=82.0 | K=490.0 | L=490.0 | M=AXOLOTLWHITE | O=Frost
+502: H=13195.0 | I=3.0 | J=82.0 | K=480.0 | L=480.0 | M=AXOLOTLWHITE | O=Gale
+503: H=13196.0 | I=3.0 | J=82.0 | K=535.0 | L=535.0 | M=AXOLOTLWHITE | O=Thundered
+504: H=13197.0 | I=3.0 | J=82.0 | K=630.0 | L=630.0 | M=AXOLOTLWHITE | O=Eclipse
+505: H=13198.0 | I=3.0 | J=82.0 | K=615.0 | L=615.0 | M=AXOLOTLWHITE | O=Prismatic
+506: H=13199.0 | I=3.0 | J=84.0 | K=435.0 | L=435.0 | M=BABOON | O=Soaked
+507: H=13200.0 | I=3.0 | J=84.0 | K=490.0 | L=490.0 | M=BABOON | O=Frost
+508: H=13201.0 | I=3.0 | J=84.0 | K=480.0 | L=480.0 | M=BABOON | O=Gale
+509: H=13202.0 | I=3.0 | J=84.0 | K=535.0 | L=535.0 | M=BABOON | O=Thundered
+510: H=13203.0 | I=3.0 | J=84.0 | K=630.0 | L=630.0 | M=BABOON | O=Eclipse
+511: H=13204.0 | I=3.0 | J=84.0 | K=615.0 | L=615.0 | M=BABOON | O=Prismatic
+512: H=14001.0 | I=4.0 | J=40.0 | K=100.0 | L=100.0 | M=POLARBEAR | N=Golden | O=Soaked
+513: H=14002.0 | I=4.0 | J=40.0 | K=110.0 | L=110.0 | M=POLARBEAR | N=Golden | O=Frost
+514: H=14003.0 | I=4.0 | J=40.0 | K=110.0 | L=110.0 | M=POLARBEAR | N=Golden | O=Gale
+515: H=14004.0 | I=4.0 | J=40.0 | K=120.0 | L=120.0 | M=POLARBEAR | N=Golden | O=Thundered
+516: H=14005.0 | I=4.0 | J=40.0 | K=140.0 | L=140.0 | M=POLARBEAR | N=Golden | O=Eclipse
+517: H=14006.0 | I=4.0 | J=40.0 | K=140.0 | L=140.0 | M=POLARBEAR | N=Golden | O=Prismatic
+518: H=14007.0 | I=4.0 | J=40.0 | K=120.0 | L=120.0 | M=POLARBEAR | N=Frozen | O=Soaked
+519: H=14008.0 | I=4.0 | J=40.0 | K=140.0 | L=140.0 | M=POLARBEAR | N=Frozen | O=Frost
+520: H=14009.0 | I=4.0 | J=40.0 | K=135.0 | L=135.0 | M=POLARBEAR | N=Frozen | O=Gale
+521: H=14010.0 | I=4.0 | J=40.0 | K=150.0 | L=150.0 | M=POLARBEAR | N=Frozen | O=Thundered
+522: H=14011.0 | I=4.0 | J=40.0 | K=175.0 | L=175.0 | M=POLARBEAR | N=Frozen | O=Eclipse
+523: H=14012.0 | I=4.0 | J=40.0 | K=170.0 | L=170.0 | M=POLARBEAR | N=Frozen | O=Prismatic
+524: H=14013.0 | I=4.0 | J=40.0 | K=145.0 | L=145.0 | M=POLARBEAR | N=Magma | O=Soaked
+525: H=14014.0 | I=4.0 | J=40.0 | K=165.0 | L=165.0 | M=POLARBEAR | N=Magma | O=Frost
+526: H=14015.0 | I=4.0 | J=40.0 | K=160.0 | L=160.0 | M=POLARBEAR | N=Magma | O=Gale
+527: H=14016.0 | I=4.0 | J=40.0 | K=180.0 | L=180.0 | M=POLARBEAR | N=Magma | O=Thundered
+528: H=14017.0 | I=4.0 | J=40.0 | K=210.0 | L=210.0 | M=POLARBEAR | N=Magma | O=Eclipse
+529: H=14018.0 | I=4.0 | J=40.0 | K=205.0 | L=205.0 | M=POLARBEAR | N=Magma | O=Prismatic
+530: H=14019.0 | I=4.0 | J=40.0 | K=155.0 | L=155.0 | M=POLARBEAR | N=Clover | O=Soaked
+531: H=14020.0 | I=4.0 | J=40.0 | K=175.0 | L=175.0 | M=POLARBEAR | N=Clover | O=Frost
+532: H=14021.0 | I=4.0 | J=40.0 | K=170.0 | L=170.0 | M=POLARBEAR | N=Clover | O=Gale
+533: H=14022.0 | I=4.0 | J=40.0 | K=190.0 | L=190.0 | M=POLARBEAR | N=Clover | O=Thundered
+534: H=14023.0 | I=4.0 | J=40.0 | K=225.0 | L=225.0 | M=POLARBEAR | N=Clover | O=Eclipse
+535: H=14024.0 | I=4.0 | J=40.0 | K=220.0 | L=220.0 | M=POLARBEAR | N=Clover | O=Prismatic
+536: H=14025.0 | I=4.0 | J=40.0 | K=165.0 | L=165.0 | M=POLARBEAR | N=Fossilized | O=Soaked
+537: H=14026.0 | I=4.0 | J=40.0 | K=185.0 | L=185.0 | M=POLARBEAR | N=Fossilized | O=Frost
+538: H=14027.0 | I=4.0 | J=40.0 | K=180.0 | L=180.0 | M=POLARBEAR | N=Fossilized | O=Gale
+539: H=14028.0 | I=4.0 | J=40.0 | K=200.0 | L=200.0 | M=POLARBEAR | N=Fossilized | O=Thundered
+540: H=14029.0 | I=4.0 | J=40.0 | K=240.0 | L=240.0 | M=POLARBEAR | N=Fossilized | O=Eclipse
+541: H=14030.0 | I=4.0 | J=40.0 | K=230.0 | L=230.0 | M=POLARBEAR | N=Fossilized | O=Prismatic
+542: H=14031.0 | I=4.0 | J=40.0 | K=170.0 | L=170.0 | M=POLARBEAR | N=Sweetheart | O=Soaked
+543: H=14032.0 | I=4.0 | J=40.0 | K=190.0 | L=190.0 | M=POLARBEAR | N=Sweetheart | O=Frost
+544: H=14033.0 | I=4.0 | J=40.0 | K=185.0 | L=185.0 | M=POLARBEAR | N=Sweetheart | O=Gale
+545: H=14034.0 | I=4.0 | J=40.0 | K=205.0 | L=205.0 | M=POLARBEAR | N=Sweetheart | O=Thundered
+546: H=14035.0 | I=4.0 | J=40.0 | K=245.0 | L=245.0 | M=POLARBEAR | N=Sweetheart | O=Eclipse
+547: H=14036.0 | I=4.0 | J=40.0 | K=235.0 | L=235.0 | M=POLARBEAR | N=Sweetheart | O=Prismatic
+548: H=14037.0 | I=4.0 | J=40.0 | K=175.0 | L=175.0 | M=POLARBEAR | N=Crystalline | O=Soaked
+549: H=14038.0 | I=4.0 | J=40.0 | K=195.0 | L=195.0 | M=POLARBEAR | N=Crystalline | O=Frost
+550: H=14039.0 | I=4.0 | J=40.0 | K=190.0 | L=190.0 | M=POLARBEAR | N=Crystalline | O=Gale
+551: H=14040.0 | I=4.0 | J=40.0 | K=215.0 | L=215.0 | M=POLARBEAR | N=Crystalline | O=Thundered
+552: H=14041.0 | I=4.0 | J=40.0 | K=250.0 | L=250.0 | M=POLARBEAR | N=Crystalline | O=Eclipse
+553: H=14042.0 | I=4.0 | J=40.0 | K=245.0 | L=245.0 | M=POLARBEAR | N=Crystalline | O=Prismatic
+554: H=14043.0 | I=4.0 | J=40.0 | K=175.0 | L=175.0 | M=POLARBEAR | N=Webbed | O=Soaked
+555: H=14044.0 | I=4.0 | J=40.0 | K=200.0 | L=200.0 | M=POLARBEAR | N=Webbed | O=Frost
+556: H=14045.0 | I=4.0 | J=40.0 | K=195.0 | L=195.0 | M=POLARBEAR | N=Webbed | O=Gale
+557: H=14046.0 | I=4.0 | J=40.0 | K=215.0 | L=215.0 | M=POLARBEAR | N=Webbed | O=Thundered
+558: H=14047.0 | I=4.0 | J=40.0 | K=255.0 | L=255.0 | M=POLARBEAR | N=Webbed | O=Eclipse
+559: H=14048.0 | I=4.0 | J=40.0 | K=245.0 | L=245.0 | M=POLARBEAR | N=Webbed | O=Prismatic
+560: H=14049.0 | I=4.0 | J=41.0 | K=100.0 | L=100.0 | M=RHINO | N=Golden | O=Soaked
+561: H=14050.0 | I=4.0 | J=41.0 | K=110.0 | L=110.0 | M=RHINO | N=Golden | O=Frost
+562: H=14051.0 | I=4.0 | J=41.0 | K=110.0 | L=110.0 | M=RHINO | N=Golden | O=Gale
+563: H=14052.0 | I=4.0 | J=41.0 | K=120.0 | L=120.0 | M=RHINO | N=Golden | O=Thundered
+564: H=14053.0 | I=4.0 | J=41.0 | K=140.0 | L=140.0 | M=RHINO | N=Golden | O=Eclipse
+565: H=14054.0 | I=4.0 | J=41.0 | K=140.0 | L=140.0 | M=RHINO | N=Golden | O=Prismatic
+566: H=14055.0 | I=4.0 | J=41.0 | K=120.0 | L=120.0 | M=RHINO | N=Frozen | O=Soaked
+567: H=14056.0 | I=4.0 | J=41.0 | K=140.0 | L=140.0 | M=RHINO | N=Frozen | O=Frost
+568: H=14057.0 | I=4.0 | J=41.0 | K=135.0 | L=135.0 | M=RHINO | N=Frozen | O=Gale
+569: H=14058.0 | I=4.0 | J=41.0 | K=150.0 | L=150.0 | M=RHINO | N=Frozen | O=Thundered
+570: H=14059.0 | I=4.0 | J=41.0 | K=175.0 | L=175.0 | M=RHINO | N=Frozen | O=Eclipse
+571: H=14060.0 | I=4.0 | J=41.0 | K=170.0 | L=170.0 | M=RHINO | N=Frozen | O=Prismatic
+572: H=14061.0 | I=4.0 | J=41.0 | K=145.0 | L=145.0 | M=RHINO | N=Magma | O=Soaked
+573: H=14062.0 | I=4.0 | J=41.0 | K=165.0 | L=165.0 | M=RHINO | N=Magma | O=Frost
+574: H=14063.0 | I=4.0 | J=41.0 | K=160.0 | L=160.0 | M=RHINO | N=Magma | O=Gale
+575: H=14064.0 | I=4.0 | J=41.0 | K=180.0 | L=180.0 | M=RHINO | N=Magma | O=Thundered
+576: H=14065.0 | I=4.0 | J=41.0 | K=210.0 | L=210.0 | M=RHINO | N=Magma | O=Eclipse
+577: H=14066.0 | I=4.0 | J=41.0 | K=205.0 | L=205.0 | M=RHINO | N=Magma | O=Prismatic
+578: H=14067.0 | I=4.0 | J=41.0 | K=155.0 | L=155.0 | M=RHINO | N=Clover | O=Soaked
+579: H=14068.0 | I=4.0 | J=41.0 | K=175.0 | L=175.0 | M=RHINO | N=Clover | O=Frost
+580: H=14069.0 | I=4.0 | J=41.0 | K=170.0 | L=170.0 | M=RHINO | N=Clover | O=Gale
+581: H=14070.0 | I=4.0 | J=41.0 | K=190.0 | L=190.0 | M=RHINO | N=Clover | O=Thundered
+582: H=14071.0 | I=4.0 | J=41.0 | K=225.0 | L=225.0 | M=RHINO | N=Clover | O=Eclipse
+583: H=14072.0 | I=4.0 | J=41.0 | K=220.0 | L=220.0 | M=RHINO | N=Clover | O=Prismatic
+584: H=14073.0 | I=4.0 | J=41.0 | K=165.0 | L=165.0 | M=RHINO | N=Fossilized | O=Soaked
+585: H=14074.0 | I=4.0 | J=41.0 | K=185.0 | L=185.0 | M=RHINO | N=Fossilized | O=Frost
+586: H=14075.0 | I=4.0 | J=41.0 | K=180.0 | L=180.0 | M=RHINO | N=Fossilized | O=Gale
+587: H=14076.0 | I=4.0 | J=41.0 | K=200.0 | L=200.0 | M=RHINO | N=Fossilized | O=Thundered
+588: H=14077.0 | I=4.0 | J=41.0 | K=240.0 | L=240.0 | M=RHINO | N=Fossilized | O=Eclipse
+589: H=14078.0 | I=4.0 | J=41.0 | K=230.0 | L=230.0 | M=RHINO | N=Fossilized | O=Prismatic
+590: H=14079.0 | I=4.0 | J=41.0 | K=170.0 | L=170.0 | M=RHINO | N=Sweetheart | O=Soaked
+591: H=14080.0 | I=4.0 | J=41.0 | K=190.0 | L=190.0 | M=RHINO | N=Sweetheart | O=Frost
+592: H=14081.0 | I=4.0 | J=41.0 | K=185.0 | L=185.0 | M=RHINO | N=Sweetheart | O=Gale
+593: H=14082.0 | I=4.0 | J=41.0 | K=205.0 | L=205.0 | M=RHINO | N=Sweetheart | O=Thundered
+594: H=14083.0 | I=4.0 | J=41.0 | K=245.0 | L=245.0 | M=RHINO | N=Sweetheart | O=Eclipse
+595: H=14084.0 | I=4.0 | J=41.0 | K=235.0 | L=235.0 | M=RHINO | N=Sweetheart | O=Prismatic
+596: H=14085.0 | I=4.0 | J=41.0 | K=175.0 | L=175.0 | M=RHINO | N=Crystalline | O=Soaked
+597: H=14086.0 | I=4.0 | J=41.0 | K=195.0 | L=195.0 | M=RHINO | N=Crystalline | O=Frost
+598: H=14087.0 | I=4.0 | J=41.0 | K=190.0 | L=190.0 | M=RHINO | N=Crystalline | O=Gale
+599: H=14088.0 | I=4.0 | J=41.0 | K=215.0 | L=215.0 | M=RHINO | N=Crystalline | O=Thundered
+600: H=14089.0 | I=4.0 | J=41.0 | K=250.0 | L=250.0 | M=RHINO | N=Crystalline | O=Eclipse
+601: H=14090.0 | I=4.0 | J=41.0 | K=245.0 | L=245.0 | M=RHINO | N=Crystalline | O=Prismatic
+602: H=14091.0 | I=4.0 | J=41.0 | K=175.0 | L=175.0 | M=RHINO | N=Webbed | O=Soaked
+603: H=14092.0 | I=4.0 | J=41.0 | K=200.0 | L=200.0 | M=RHINO | N=Webbed | O=Frost
+604: H=14093.0 | I=4.0 | J=41.0 | K=195.0 | L=195.0 | M=RHINO | N=Webbed | O=Gale
+605: H=14094.0 | I=4.0 | J=41.0 | K=215.0 | L=215.0 | M=RHINO | N=Webbed | O=Thundered
+606: H=14095.0 | I=4.0 | J=41.0 | K=255.0 | L=255.0 | M=RHINO | N=Webbed | O=Eclipse
+607: H=14096.0 | I=4.0 | J=41.0 | K=245.0 | L=245.0 | M=RHINO | N=Webbed | O=Prismatic
+608: H=14097.0 | I=4.0 | J=42.0 | K=100.0 | L=100.0 | M=WOLF | N=Golden | O=Soaked
+609: H=14098.0 | I=4.0 | J=42.0 | K=110.0 | L=110.0 | M=WOLF | N=Golden | O=Frost
+610: H=14099.0 | I=4.0 | J=42.0 | K=110.0 | L=110.0 | M=WOLF | N=Golden | O=Gale
+611: H=14100.0 | I=4.0 | J=42.0 | K=120.0 | L=120.0 | M=WOLF | N=Golden | O=Thundered
+612: H=14101.0 | I=4.0 | J=42.0 | K=140.0 | L=140.0 | M=WOLF | N=Golden | O=Eclipse
+613: H=14102.0 | I=4.0 | J=42.0 | K=140.0 | L=140.0 | M=WOLF | N=Golden | O=Prismatic
+614: H=14103.0 | I=4.0 | J=42.0 | K=120.0 | L=120.0 | M=WOLF | N=Frozen | O=Soaked
+615: H=14104.0 | I=4.0 | J=42.0 | K=140.0 | L=140.0 | M=WOLF | N=Frozen | O=Frost
+616: H=14105.0 | I=4.0 | J=42.0 | K=135.0 | L=135.0 | M=WOLF | N=Frozen | O=Gale
+617: H=14106.0 | I=4.0 | J=42.0 | K=150.0 | L=150.0 | M=WOLF | N=Frozen | O=Thundered
+618: H=14107.0 | I=4.0 | J=42.0 | K=175.0 | L=175.0 | M=WOLF | N=Frozen | O=Eclipse
+619: H=14108.0 | I=4.0 | J=42.0 | K=170.0 | L=170.0 | M=WOLF | N=Frozen | O=Prismatic
+620: H=14109.0 | I=4.0 | J=42.0 | K=145.0 | L=145.0 | M=WOLF | N=Magma | O=Soaked
+621: H=14110.0 | I=4.0 | J=42.0 | K=165.0 | L=165.0 | M=WOLF | N=Magma | O=Frost
+622: H=14111.0 | I=4.0 | J=42.0 | K=160.0 | L=160.0 | M=WOLF | N=Magma | O=Gale
+623: H=14112.0 | I=4.0 | J=42.0 | K=180.0 | L=180.0 | M=WOLF | N=Magma | O=Thundered
+624: H=14113.0 | I=4.0 | J=42.0 | K=210.0 | L=210.0 | M=WOLF | N=Magma | O=Eclipse
+625: H=14114.0 | I=4.0 | J=42.0 | K=205.0 | L=205.0 | M=WOLF | N=Magma | O=Prismatic
+626: H=14115.0 | I=4.0 | J=42.0 | K=155.0 | L=155.0 | M=WOLF | N=Clover | O=Soaked
+627: H=14116.0 | I=4.0 | J=42.0 | K=175.0 | L=175.0 | M=WOLF | N=Clover | O=Frost
+628: H=14117.0 | I=4.0 | J=42.0 | K=170.0 | L=170.0 | M=WOLF | N=Clover | O=Gale
+629: H=14118.0 | I=4.0 | J=42.0 | K=190.0 | L=190.0 | M=WOLF | N=Clover | O=Thundered
+630: H=14119.0 | I=4.0 | J=42.0 | K=225.0 | L=225.0 | M=WOLF | N=Clover | O=Eclipse
+631: H=14120.0 | I=4.0 | J=42.0 | K=220.0 | L=220.0 | M=WOLF | N=Clover | O=Prismatic
+632: H=14121.0 | I=4.0 | J=42.0 | K=165.0 | L=165.0 | M=WOLF | N=Fossilized | O=Soaked
+633: H=14122.0 | I=4.0 | J=42.0 | K=185.0 | L=185.0 | M=WOLF | N=Fossilized | O=Frost
+634: H=14123.0 | I=4.0 | J=42.0 | K=180.0 | L=180.0 | M=WOLF | N=Fossilized | O=Gale
+635: H=14124.0 | I=4.0 | J=42.0 | K=200.0 | L=200.0 | M=WOLF | N=Fossilized | O=Thundered
+636: H=14125.0 | I=4.0 | J=42.0 | K=240.0 | L=240.0 | M=WOLF | N=Fossilized | O=Eclipse
+637: H=14126.0 | I=4.0 | J=42.0 | K=230.0 | L=230.0 | M=WOLF | N=Fossilized | O=Prismatic
+638: H=14127.0 | I=4.0 | J=42.0 | K=170.0 | L=170.0 | M=WOLF | N=Sweetheart | O=Soaked
+639: H=14128.0 | I=4.0 | J=42.0 | K=190.0 | L=190.0 | M=WOLF | N=Sweetheart | O=Frost
+640: H=14129.0 | I=4.0 | J=42.0 | K=185.0 | L=185.0 | M=WOLF | N=Sweetheart | O=Gale
+641: H=14130.0 | I=4.0 | J=42.0 | K=205.0 | L=205.0 | M=WOLF | N=Sweetheart | O=Thundered
+642: H=14131.0 | I=4.0 | J=42.0 | K=245.0 | L=245.0 | M=WOLF | N=Sweetheart | O=Eclipse
+643: H=14132.0 | I=4.0 | J=42.0 | K=235.0 | L=235.0 | M=WOLF | N=Sweetheart | O=Prismatic
+644: H=14133.0 | I=4.0 | J=42.0 | K=175.0 | L=175.0 | M=WOLF | N=Crystalline | O=Soaked
+645: H=14134.0 | I=4.0 | J=42.0 | K=195.0 | L=195.0 | M=WOLF | N=Crystalline | O=Frost
+646: H=14135.0 | I=4.0 | J=42.0 | K=190.0 | L=190.0 | M=WOLF | N=Crystalline | O=Gale
+647: H=14136.0 | I=4.0 | J=42.0 | K=215.0 | L=215.0 | M=WOLF | N=Crystalline | O=Thundered
+648: H=14137.0 | I=4.0 | J=42.0 | K=250.0 | L=250.0 | M=WOLF | N=Crystalline | O=Eclipse
+649: H=14138.0 | I=4.0 | J=42.0 | K=245.0 | L=245.0 | M=WOLF | N=Crystalline | O=Prismatic
+650: H=14139.0 | I=4.0 | J=42.0 | K=175.0 | L=175.0 | M=WOLF | N=Webbed | O=Soaked
+651: H=14140.0 | I=4.0 | J=42.0 | K=200.0 | L=200.0 | M=WOLF | N=Webbed | O=Frost
+652: H=14141.0 | I=4.0 | J=42.0 | K=195.0 | L=195.0 | M=WOLF | N=Webbed | O=Gale
+653: H=14142.0 | I=4.0 | J=42.0 | K=215.0 | L=215.0 | M=WOLF | N=Webbed | O=Thundered
+654: H=14143.0 | I=4.0 | J=42.0 | K=255.0 | L=255.0 | M=WOLF | N=Webbed | O=Eclipse
+655: H=14144.0 | I=4.0 | J=42.0 | K=245.0 | L=245.0 | M=WOLF | N=Webbed | O=Prismatic
+656: H=14145.0 | I=4.0 | J=45.0 | K=100.0 | L=100.0 | M=HORNBILL | N=Golden | O=Soaked
+657: H=14146.0 | I=4.0 | J=45.0 | K=110.0 | L=110.0 | M=HORNBILL | N=Golden | O=Frost
+658: H=14147.0 | I=4.0 | J=45.0 | K=110.0 | L=110.0 | M=HORNBILL | N=Golden | O=Gale
+659: H=14148.0 | I=4.0 | J=45.0 | K=120.0 | L=120.0 | M=HORNBILL | N=Golden | O=Thundered
+660: H=14149.0 | I=4.0 | J=45.0 | K=140.0 | L=140.0 | M=HORNBILL | N=Golden | O=Eclipse
+661: H=14150.0 | I=4.0 | J=45.0 | K=140.0 | L=140.0 | M=HORNBILL | N=Golden | O=Prismatic
+662: H=14151.0 | I=4.0 | J=45.0 | K=120.0 | L=120.0 | M=HORNBILL | N=Frozen | O=Soaked
+663: H=14152.0 | I=4.0 | J=45.0 | K=140.0 | L=140.0 | M=HORNBILL | N=Frozen | O=Frost
+664: H=14153.0 | I=4.0 | J=45.0 | K=135.0 | L=135.0 | M=HORNBILL | N=Frozen | O=Gale
+665: H=14154.0 | I=4.0 | J=45.0 | K=150.0 | L=150.0 | M=HORNBILL | N=Frozen | O=Thundered
+666: H=14155.0 | I=4.0 | J=45.0 | K=175.0 | L=175.0 | M=HORNBILL | N=Frozen | O=Eclipse
+667: H=14156.0 | I=4.0 | J=45.0 | K=170.0 | L=170.0 | M=HORNBILL | N=Frozen | O=Prismatic
+668: H=14157.0 | I=4.0 | J=45.0 | K=145.0 | L=145.0 | M=HORNBILL | N=Magma | O=Soaked
+669: H=14158.0 | I=4.0 | J=45.0 | K=165.0 | L=165.0 | M=HORNBILL | N=Magma | O=Frost
+670: H=14159.0 | I=4.0 | J=45.0 | K=160.0 | L=160.0 | M=HORNBILL | N=Magma | O=Gale
+671: H=14160.0 | I=4.0 | J=45.0 | K=180.0 | L=180.0 | M=HORNBILL | N=Magma | O=Thundered
+672: H=14161.0 | I=4.0 | J=45.0 | K=210.0 | L=210.0 | M=HORNBILL | N=Magma | O=Eclipse
+673: H=14162.0 | I=4.0 | J=45.0 | K=205.0 | L=205.0 | M=HORNBILL | N=Magma | O=Prismatic
+674: H=14163.0 | I=4.0 | J=45.0 | K=155.0 | L=155.0 | M=HORNBILL | N=Clover | O=Soaked
+675: H=14164.0 | I=4.0 | J=45.0 | K=175.0 | L=175.0 | M=HORNBILL | N=Clover | O=Frost
+676: H=14165.0 | I=4.0 | J=45.0 | K=170.0 | L=170.0 | M=HORNBILL | N=Clover | O=Gale
+677: H=14166.0 | I=4.0 | J=45.0 | K=190.0 | L=190.0 | M=HORNBILL | N=Clover | O=Thundered
+678: H=14167.0 | I=4.0 | J=45.0 | K=225.0 | L=225.0 | M=HORNBILL | N=Clover | O=Eclipse
+679: H=14168.0 | I=4.0 | J=45.0 | K=220.0 | L=220.0 | M=HORNBILL | N=Clover | O=Prismatic
+680: H=14169.0 | I=4.0 | J=45.0 | K=165.0 | L=165.0 | M=HORNBILL | N=Fossilized | O=Soaked
+681: H=14170.0 | I=4.0 | J=45.0 | K=185.0 | L=185.0 | M=HORNBILL | N=Fossilized | O=Frost
+682: H=14171.0 | I=4.0 | J=45.0 | K=180.0 | L=180.0 | M=HORNBILL | N=Fossilized | O=Gale
+683: H=14172.0 | I=4.0 | J=45.0 | K=200.0 | L=200.0 | M=HORNBILL | N=Fossilized | O=Thundered
+684: H=14173.0 | I=4.0 | J=45.0 | K=240.0 | L=240.0 | M=HORNBILL | N=Fossilized | O=Eclipse
+685: H=14174.0 | I=4.0 | J=45.0 | K=230.0 | L=230.0 | M=HORNBILL | N=Fossilized | O=Prismatic
+686: H=14175.0 | I=4.0 | J=45.0 | K=170.0 | L=170.0 | M=HORNBILL | N=Sweetheart | O=Soaked
+687: H=14176.0 | I=4.0 | J=45.0 | K=190.0 | L=190.0 | M=HORNBILL | N=Sweetheart | O=Frost
+688: H=14177.0 | I=4.0 | J=45.0 | K=185.0 | L=185.0 | M=HORNBILL | N=Sweetheart | O=Gale
+689: H=14178.0 | I=4.0 | J=45.0 | K=205.0 | L=205.0 | M=HORNBILL | N=Sweetheart | O=Thundered
+690: H=14179.0 | I=4.0 | J=45.0 | K=245.0 | L=245.0 | M=HORNBILL | N=Sweetheart | O=Eclipse
+691: H=14180.0 | I=4.0 | J=45.0 | K=235.0 | L=235.0 | M=HORNBILL | N=Sweetheart | O=Prismatic
+692: H=14181.0 | I=4.0 | J=45.0 | K=175.0 | L=175.0 | M=HORNBILL | N=Crystalline | O=Soaked
+693: H=14182.0 | I=4.0 | J=45.0 | K=195.0 | L=195.0 | M=HORNBILL | N=Crystalline | O=Frost
+694: H=14183.0 | I=4.0 | J=45.0 | K=190.0 | L=190.0 | M=HORNBILL | N=Crystalline | O=Gale
+695: H=14184.0 | I=4.0 | J=45.0 | K=215.0 | L=215.0 | M=HORNBILL | N=Crystalline | O=Thundered
+696: H=14185.0 | I=4.0 | J=45.0 | K=250.0 | L=250.0 | M=HORNBILL | N=Crystalline | O=Eclipse
+697: H=14186.0 | I=4.0 | J=45.0 | K=245.0 | L=245.0 | M=HORNBILL | N=Crystalline | O=Prismatic
+698: H=14187.0 | I=4.0 | J=45.0 | K=175.0 | L=175.0 | M=HORNBILL | N=Webbed | O=Soaked
+699: H=14188.0 | I=4.0 | J=45.0 | K=200.0 | L=200.0 | M=HORNBILL | N=Webbed | O=Frost
+700: H=14189.0 | I=4.0 | J=45.0 | K=195.0 | L=195.0 | M=HORNBILL | N=Webbed | O=Gale
+701: H=14190.0 | I=4.0 | J=45.0 | K=215.0 | L=215.0 | M=HORNBILL | N=Webbed | O=Thundered
+702: H=14191.0 | I=4.0 | J=45.0 | K=255.0 | L=255.0 | M=HORNBILL | N=Webbed | O=Eclipse
+703: H=14192.0 | I=4.0 | J=45.0 | K=245.0 | L=245.0 | M=HORNBILL | N=Webbed | O=Prismatic
+704: H=14193.0 | I=4.0 | J=43.0 | K=100.0 | L=100.0 | M=HIPPO | N=Golden | O=Soaked
+705: H=14194.0 | I=4.0 | J=43.0 | K=110.0 | L=110.0 | M=HIPPO | N=Golden | O=Frost
+706: H=14195.0 | I=4.0 | J=43.0 | K=110.0 | L=110.0 | M=HIPPO | N=Golden | O=Gale
+707: H=14196.0 | I=4.0 | J=43.0 | K=120.0 | L=120.0 | M=HIPPO | N=Golden | O=Thundered
+708: H=14197.0 | I=4.0 | J=43.0 | K=140.0 | L=140.0 | M=HIPPO | N=Golden | O=Eclipse
+709: H=14198.0 | I=4.0 | J=43.0 | K=140.0 | L=140.0 | M=HIPPO | N=Golden | O=Prismatic
+710: H=14199.0 | I=4.0 | J=43.0 | K=120.0 | L=120.0 | M=HIPPO | N=Frozen | O=Soaked
+711: H=14200.0 | I=4.0 | J=43.0 | K=140.0 | L=140.0 | M=HIPPO | N=Frozen | O=Frost
+712: H=14201.0 | I=4.0 | J=43.0 | K=135.0 | L=135.0 | M=HIPPO | N=Frozen | O=Gale
+713: H=14202.0 | I=4.0 | J=43.0 | K=150.0 | L=150.0 | M=HIPPO | N=Frozen | O=Thundered
+714: H=14203.0 | I=4.0 | J=43.0 | K=175.0 | L=175.0 | M=HIPPO | N=Frozen | O=Eclipse
+715: H=14204.0 | I=4.0 | J=43.0 | K=170.0 | L=170.0 | M=HIPPO | N=Frozen | O=Prismatic
+716: H=14205.0 | I=4.0 | J=43.0 | K=145.0 | L=145.0 | M=HIPPO | N=Magma | O=Soaked
+717: H=14206.0 | I=4.0 | J=43.0 | K=165.0 | L=165.0 | M=HIPPO | N=Magma | O=Frost
+718: H=14207.0 | I=4.0 | J=43.0 | K=160.0 | L=160.0 | M=HIPPO | N=Magma | O=Gale
+719: H=14208.0 | I=4.0 | J=43.0 | K=180.0 | L=180.0 | M=HIPPO | N=Magma | O=Thundered
+720: H=14209.0 | I=4.0 | J=43.0 | K=210.0 | L=210.0 | M=HIPPO | N=Magma | O=Eclipse
+721: H=14210.0 | I=4.0 | J=43.0 | K=205.0 | L=205.0 | M=HIPPO | N=Magma | O=Prismatic
+722: H=14211.0 | I=4.0 | J=43.0 | K=155.0 | L=155.0 | M=HIPPO | N=Clover | O=Soaked
+723: H=14212.0 | I=4.0 | J=43.0 | K=175.0 | L=175.0 | M=HIPPO | N=Clover | O=Frost
+724: H=14213.0 | I=4.0 | J=43.0 | K=170.0 | L=170.0 | M=HIPPO | N=Clover | O=Gale
+725: H=14214.0 | I=4.0 | J=43.0 | K=190.0 | L=190.0 | M=HIPPO | N=Clover | O=Thundered
+726: H=14215.0 | I=4.0 | J=43.0 | K=225.0 | L=225.0 | M=HIPPO | N=Clover | O=Eclipse
+727: H=14216.0 | I=4.0 | J=43.0 | K=220.0 | L=220.0 | M=HIPPO | N=Clover | O=Prismatic
+728: H=14217.0 | I=4.0 | J=43.0 | K=165.0 | L=165.0 | M=HIPPO | N=Fossilized | O=Soaked
+729: H=14218.0 | I=4.0 | J=43.0 | K=185.0 | L=185.0 | M=HIPPO | N=Fossilized | O=Frost
+730: H=14219.0 | I=4.0 | J=43.0 | K=180.0 | L=180.0 | M=HIPPO | N=Fossilized | O=Gale
+731: H=14220.0 | I=4.0 | J=43.0 | K=200.0 | L=200.0 | M=HIPPO | N=Fossilized | O=Thundered
+732: H=14221.0 | I=4.0 | J=43.0 | K=240.0 | L=240.0 | M=HIPPO | N=Fossilized | O=Eclipse
+733: H=14222.0 | I=4.0 | J=43.0 | K=230.0 | L=230.0 | M=HIPPO | N=Fossilized | O=Prismatic
+734: H=14223.0 | I=4.0 | J=43.0 | K=170.0 | L=170.0 | M=HIPPO | N=Sweetheart | O=Soaked
+735: H=14224.0 | I=4.0 | J=43.0 | K=190.0 | L=190.0 | M=HIPPO | N=Sweetheart | O=Frost
+736: H=14225.0 | I=4.0 | J=43.0 | K=185.0 | L=185.0 | M=HIPPO | N=Sweetheart | O=Gale
+737: H=14226.0 | I=4.0 | J=43.0 | K=205.0 | L=205.0 | M=HIPPO | N=Sweetheart | O=Thundered
+738: H=14227.0 | I=4.0 | J=43.0 | K=245.0 | L=245.0 | M=HIPPO | N=Sweetheart | O=Eclipse
+739: H=14228.0 | I=4.0 | J=43.0 | K=235.0 | L=235.0 | M=HIPPO | N=Sweetheart | O=Prismatic
+740: H=14229.0 | I=4.0 | J=43.0 | K=175.0 | L=175.0 | M=HIPPO | N=Crystalline | O=Soaked
+741: H=14230.0 | I=4.0 | J=43.0 | K=195.0 | L=195.0 | M=HIPPO | N=Crystalline | O=Frost
+742: H=14231.0 | I=4.0 | J=43.0 | K=190.0 | L=190.0 | M=HIPPO | N=Crystalline | O=Gale
+743: H=14232.0 | I=4.0 | J=43.0 | K=215.0 | L=215.0 | M=HIPPO | N=Crystalline | O=Thundered
+744: H=14233.0 | I=4.0 | J=43.0 | K=250.0 | L=250.0 | M=HIPPO | N=Crystalline | O=Eclipse
+745: H=14234.0 | I=4.0 | J=43.0 | K=245.0 | L=245.0 | M=HIPPO | N=Crystalline | O=Prismatic
+746: H=14235.0 | I=4.0 | J=43.0 | K=175.0 | L=175.0 | M=HIPPO | N=Webbed | O=Soaked
+747: H=14236.0 | I=4.0 | J=43.0 | K=200.0 | L=200.0 | M=HIPPO | N=Webbed | O=Frost
+748: H=14237.0 | I=4.0 | J=43.0 | K=195.0 | L=195.0 | M=HIPPO | N=Webbed | O=Gale
+749: H=14238.0 | I=4.0 | J=43.0 | K=215.0 | L=215.0 | M=HIPPO | N=Webbed | O=Thundered
+750: H=14239.0 | I=4.0 | J=43.0 | K=255.0 | L=255.0 | M=HIPPO | N=Webbed | O=Eclipse
+751: H=14240.0 | I=4.0 | J=43.0 | K=245.0 | L=245.0 | M=HIPPO | N=Webbed | O=Prismatic
+752: H=14241.0 | I=4.0 | J=46.0 | K=100.0 | L=100.0 | M=BROWNBEAR | N=Golden | O=Soaked
+753: H=14242.0 | I=4.0 | J=46.0 | K=110.0 | L=110.0 | M=BROWNBEAR | N=Golden | O=Frost
+754: H=14243.0 | I=4.0 | J=46.0 | K=110.0 | L=110.0 | M=BROWNBEAR | N=Golden | O=Gale
+755: H=14244.0 | I=4.0 | J=46.0 | K=120.0 | L=120.0 | M=BROWNBEAR | N=Golden | O=Thundered
+756: H=14245.0 | I=4.0 | J=46.0 | K=140.0 | L=140.0 | M=BROWNBEAR | N=Golden | O=Eclipse
+757: H=14246.0 | I=4.0 | J=46.0 | K=140.0 | L=140.0 | M=BROWNBEAR | N=Golden | O=Prismatic
+758: H=14247.0 | I=4.0 | J=46.0 | K=120.0 | L=120.0 | M=BROWNBEAR | N=Frozen | O=Soaked
+759: H=14248.0 | I=4.0 | J=46.0 | K=140.0 | L=140.0 | M=BROWNBEAR | N=Frozen | O=Frost
+760: H=14249.0 | I=4.0 | J=46.0 | K=135.0 | L=135.0 | M=BROWNBEAR | N=Frozen | O=Gale
+761: H=14250.0 | I=4.0 | J=46.0 | K=150.0 | L=150.0 | M=BROWNBEAR | N=Frozen | O=Thundered
+762: H=14251.0 | I=4.0 | J=46.0 | K=175.0 | L=175.0 | M=BROWNBEAR | N=Frozen | O=Eclipse
+763: H=14252.0 | I=4.0 | J=46.0 | K=170.0 | L=170.0 | M=BROWNBEAR | N=Frozen | O=Prismatic
+764: H=14253.0 | I=4.0 | J=46.0 | K=145.0 | L=145.0 | M=BROWNBEAR | N=Magma | O=Soaked
+765: H=14254.0 | I=4.0 | J=46.0 | K=165.0 | L=165.0 | M=BROWNBEAR | N=Magma | O=Frost
+766: H=14255.0 | I=4.0 | J=46.0 | K=160.0 | L=160.0 | M=BROWNBEAR | N=Magma | O=Gale
+767: H=14256.0 | I=4.0 | J=46.0 | K=180.0 | L=180.0 | M=BROWNBEAR | N=Magma | O=Thundered
+768: H=14257.0 | I=4.0 | J=46.0 | K=210.0 | L=210.0 | M=BROWNBEAR | N=Magma | O=Eclipse
+769: H=14258.0 | I=4.0 | J=46.0 | K=205.0 | L=205.0 | M=BROWNBEAR | N=Magma | O=Prismatic
+770: H=14259.0 | I=4.0 | J=46.0 | K=155.0 | L=155.0 | M=BROWNBEAR | N=Clover | O=Soaked
+771: H=14260.0 | I=4.0 | J=46.0 | K=175.0 | L=175.0 | M=BROWNBEAR | N=Clover | O=Frost
+772: H=14261.0 | I=4.0 | J=46.0 | K=170.0 | L=170.0 | M=BROWNBEAR | N=Clover | O=Gale
+773: H=14262.0 | I=4.0 | J=46.0 | K=190.0 | L=190.0 | M=BROWNBEAR | N=Clover | O=Thundered
+774: H=14263.0 | I=4.0 | J=46.0 | K=225.0 | L=225.0 | M=BROWNBEAR | N=Clover | O=Eclipse
+775: H=14264.0 | I=4.0 | J=46.0 | K=220.0 | L=220.0 | M=BROWNBEAR | N=Clover | O=Prismatic
+776: H=14265.0 | I=4.0 | J=46.0 | K=165.0 | L=165.0 | M=BROWNBEAR | N=Fossilized | O=Soaked
+777: H=14266.0 | I=4.0 | J=46.0 | K=185.0 | L=185.0 | M=BROWNBEAR | N=Fossilized | O=Frost
+778: H=14267.0 | I=4.0 | J=46.0 | K=180.0 | L=180.0 | M=BROWNBEAR | N=Fossilized | O=Gale
+779: H=14268.0 | I=4.0 | J=46.0 | K=200.0 | L=200.0 | M=BROWNBEAR | N=Fossilized | O=Thundered
+780: H=14269.0 | I=4.0 | J=46.0 | K=240.0 | L=240.0 | M=BROWNBEAR | N=Fossilized | O=Eclipse
+781: H=14270.0 | I=4.0 | J=46.0 | K=230.0 | L=230.0 | M=BROWNBEAR | N=Fossilized | O=Prismatic
+782: H=14271.0 | I=4.0 | J=46.0 | K=170.0 | L=170.0 | M=BROWNBEAR | N=Sweetheart | O=Soaked
+783: H=14272.0 | I=4.0 | J=46.0 | K=190.0 | L=190.0 | M=BROWNBEAR | N=Sweetheart | O=Frost
+784: H=14273.0 | I=4.0 | J=46.0 | K=185.0 | L=185.0 | M=BROWNBEAR | N=Sweetheart | O=Gale
+785: H=14274.0 | I=4.0 | J=46.0 | K=205.0 | L=205.0 | M=BROWNBEAR | N=Sweetheart | O=Thundered
+786: H=14275.0 | I=4.0 | J=46.0 | K=245.0 | L=245.0 | M=BROWNBEAR | N=Sweetheart | O=Eclipse
+787: H=14276.0 | I=4.0 | J=46.0 | K=235.0 | L=235.0 | M=BROWNBEAR | N=Sweetheart | O=Prismatic
+788: H=14277.0 | I=4.0 | J=46.0 | K=175.0 | L=175.0 | M=BROWNBEAR | N=Crystalline | O=Soaked
+789: H=14278.0 | I=4.0 | J=46.0 | K=195.0 | L=195.0 | M=BROWNBEAR | N=Crystalline | O=Frost
+790: H=14279.0 | I=4.0 | J=46.0 | K=190.0 | L=190.0 | M=BROWNBEAR | N=Crystalline | O=Gale
+791: H=14280.0 | I=4.0 | J=46.0 | K=215.0 | L=215.0 | M=BROWNBEAR | N=Crystalline | O=Thundered
+792: H=14281.0 | I=4.0 | J=46.0 | K=250.0 | L=250.0 | M=BROWNBEAR | N=Crystalline | O=Eclipse
+793: H=14282.0 | I=4.0 | J=46.0 | K=245.0 | L=245.0 | M=BROWNBEAR | N=Crystalline | O=Prismatic
+794: H=14283.0 | I=4.0 | J=46.0 | K=175.0 | L=175.0 | M=BROWNBEAR | N=Webbed | O=Soaked
+795: H=14284.0 | I=4.0 | J=46.0 | K=200.0 | L=200.0 | M=BROWNBEAR | N=Webbed | O=Frost
+796: H=14285.0 | I=4.0 | J=46.0 | K=195.0 | L=195.0 | M=BROWNBEAR | N=Webbed | O=Gale
+797: H=14286.0 | I=4.0 | J=46.0 | K=215.0 | L=215.0 | M=BROWNBEAR | N=Webbed | O=Thundered
+798: H=14287.0 | I=4.0 | J=46.0 | K=255.0 | L=255.0 | M=BROWNBEAR | N=Webbed | O=Eclipse
+799: H=14288.0 | I=4.0 | J=46.0 | K=245.0 | L=245.0 | M=BROWNBEAR | N=Webbed | O=Prismatic
+800: H=14289.0 | I=4.0 | J=47.0 | K=100.0 | L=100.0 | M=MANATEE | N=Golden | O=Soaked
+801: H=14290.0 | I=4.0 | J=47.0 | K=110.0 | L=110.0 | M=MANATEE | N=Golden | O=Frost
+802: H=14291.0 | I=4.0 | J=47.0 | K=110.0 | L=110.0 | M=MANATEE | N=Golden | O=Gale
+803: H=14292.0 | I=4.0 | J=47.0 | K=120.0 | L=120.0 | M=MANATEE | N=Golden | O=Thundered
+804: H=14293.0 | I=4.0 | J=47.0 | K=140.0 | L=140.0 | M=MANATEE | N=Golden | O=Eclipse
+805: H=14294.0 | I=4.0 | J=47.0 | K=140.0 | L=140.0 | M=MANATEE | N=Golden | O=Prismatic
+806: H=14295.0 | I=4.0 | J=47.0 | K=120.0 | L=120.0 | M=MANATEE | N=Frozen | O=Soaked
+807: H=14296.0 | I=4.0 | J=47.0 | K=140.0 | L=140.0 | M=MANATEE | N=Frozen | O=Frost
+808: H=14297.0 | I=4.0 | J=47.0 | K=135.0 | L=135.0 | M=MANATEE | N=Frozen | O=Gale
+809: H=14298.0 | I=4.0 | J=47.0 | K=150.0 | L=150.0 | M=MANATEE | N=Frozen | O=Thundered
+810: H=14299.0 | I=4.0 | J=47.0 | K=175.0 | L=175.0 | M=MANATEE | N=Frozen | O=Eclipse
+811: H=14300.0 | I=4.0 | J=47.0 | K=170.0 | L=170.0 | M=MANATEE | N=Frozen | O=Prismatic
+812: H=14301.0 | I=4.0 | J=47.0 | K=145.0 | L=145.0 | M=MANATEE | N=Magma | O=Soaked
+813: H=14302.0 | I=4.0 | J=47.0 | K=165.0 | L=165.0 | M=MANATEE | N=Magma | O=Frost
+814: H=14303.0 | I=4.0 | J=47.0 | K=160.0 | L=160.0 | M=MANATEE | N=Magma | O=Gale
+815: H=14304.0 | I=4.0 | J=47.0 | K=180.0 | L=180.0 | M=MANATEE | N=Magma | O=Thundered
+816: H=14305.0 | I=4.0 | J=47.0 | K=210.0 | L=210.0 | M=MANATEE | N=Magma | O=Eclipse
+817: H=14306.0 | I=4.0 | J=47.0 | K=205.0 | L=205.0 | M=MANATEE | N=Magma | O=Prismatic
+818: H=14307.0 | I=4.0 | J=47.0 | K=155.0 | L=155.0 | M=MANATEE | N=Clover | O=Soaked
+819: H=14308.0 | I=4.0 | J=47.0 | K=175.0 | L=175.0 | M=MANATEE | N=Clover | O=Frost
+820: H=14309.0 | I=4.0 | J=47.0 | K=170.0 | L=170.0 | M=MANATEE | N=Clover | O=Gale
+821: H=14310.0 | I=4.0 | J=47.0 | K=190.0 | L=190.0 | M=MANATEE | N=Clover | O=Thundered
+822: H=14311.0 | I=4.0 | J=47.0 | K=225.0 | L=225.0 | M=MANATEE | N=Clover | O=Eclipse
+823: H=14312.0 | I=4.0 | J=47.0 | K=220.0 | L=220.0 | M=MANATEE | N=Clover | O=Prismatic
+824: H=14313.0 | I=4.0 | J=47.0 | K=165.0 | L=165.0 | M=MANATEE | N=Fossilized | O=Soaked
+825: H=14314.0 | I=4.0 | J=47.0 | K=185.0 | L=185.0 | M=MANATEE | N=Fossilized | O=Frost
+826: H=14315.0 | I=4.0 | J=47.0 | K=180.0 | L=180.0 | M=MANATEE | N=Fossilized | O=Gale
+827: H=14316.0 | I=4.0 | J=47.0 | K=200.0 | L=200.0 | M=MANATEE | N=Fossilized | O=Thundered
+828: H=14317.0 | I=4.0 | J=47.0 | K=240.0 | L=240.0 | M=MANATEE | N=Fossilized | O=Eclipse
+829: H=14318.0 | I=4.0 | J=47.0 | K=230.0 | L=230.0 | M=MANATEE | N=Fossilized | O=Prismatic
+830: H=14319.0 | I=4.0 | J=47.0 | K=170.0 | L=170.0 | M=MANATEE | N=Sweetheart | O=Soaked
+831: H=14320.0 | I=4.0 | J=47.0 | K=190.0 | L=190.0 | M=MANATEE | N=Sweetheart | O=Frost
+832: H=14321.0 | I=4.0 | J=47.0 | K=185.0 | L=185.0 | M=MANATEE | N=Sweetheart | O=Gale
+833: H=14322.0 | I=4.0 | J=47.0 | K=205.0 | L=205.0 | M=MANATEE | N=Sweetheart | O=Thundered
+834: H=14323.0 | I=4.0 | J=47.0 | K=245.0 | L=245.0 | M=MANATEE | N=Sweetheart | O=Eclipse
+835: H=14324.0 | I=4.0 | J=47.0 | K=235.0 | L=235.0 | M=MANATEE | N=Sweetheart | O=Prismatic
+836: H=14325.0 | I=4.0 | J=47.0 | K=175.0 | L=175.0 | M=MANATEE | N=Crystalline | O=Soaked
+837: H=14326.0 | I=4.0 | J=47.0 | K=195.0 | L=195.0 | M=MANATEE | N=Crystalline | O=Frost
+838: H=14327.0 | I=4.0 | J=47.0 | K=190.0 | L=190.0 | M=MANATEE | N=Crystalline | O=Gale
+839: H=14328.0 | I=4.0 | J=47.0 | K=215.0 | L=215.0 | M=MANATEE | N=Crystalline | O=Thundered
+840: H=14329.0 | I=4.0 | J=47.0 | K=250.0 | L=250.0 | M=MANATEE | N=Crystalline | O=Eclipse
+841: H=14330.0 | I=4.0 | J=47.0 | K=245.0 | L=245.0 | M=MANATEE | N=Crystalline | O=Prismatic
+842: H=14331.0 | I=4.0 | J=47.0 | K=175.0 | L=175.0 | M=MANATEE | N=Webbed | O=Soaked
+843: H=14332.0 | I=4.0 | J=47.0 | K=200.0 | L=200.0 | M=MANATEE | N=Webbed | O=Frost
+844: H=14333.0 | I=4.0 | J=47.0 | K=195.0 | L=195.0 | M=MANATEE | N=Webbed | O=Gale
+845: H=14334.0 | I=4.0 | J=47.0 | K=215.0 | L=215.0 | M=MANATEE | N=Webbed | O=Thundered
+846: H=14335.0 | I=4.0 | J=47.0 | K=255.0 | L=255.0 | M=MANATEE | N=Webbed | O=Eclipse
+847: H=14336.0 | I=4.0 | J=47.0 | K=245.0 | L=245.0 | M=MANATEE | N=Webbed | O=Prismatic
+848: H=14337.0 | I=4.0 | J=48.0 | K=160.0 | L=160.0 | M=OSTRICH | N=Golden | O=Soaked
+849: H=14338.0 | I=4.0 | J=48.0 | K=185.0 | L=185.0 | M=OSTRICH | N=Golden | O=Frost
+850: H=14339.0 | I=4.0 | J=48.0 | K=180.0 | L=180.0 | M=OSTRICH | N=Golden | O=Gale
+851: H=14340.0 | I=4.0 | J=48.0 | K=200.0 | L=200.0 | M=OSTRICH | N=Golden | O=Thundered
+852: H=14341.0 | I=4.0 | J=48.0 | K=235.0 | L=235.0 | M=OSTRICH | N=Golden | O=Eclipse
+853: H=14342.0 | I=4.0 | J=48.0 | K=230.0 | L=230.0 | M=OSTRICH | N=Golden | O=Prismatic
+854: H=14343.0 | I=4.0 | J=48.0 | K=200.0 | L=200.0 | M=OSTRICH | N=Frozen | O=Soaked
+855: H=14344.0 | I=4.0 | J=48.0 | K=230.0 | L=230.0 | M=OSTRICH | N=Frozen | O=Frost
+856: H=14345.0 | I=4.0 | J=48.0 | K=220.0 | L=220.0 | M=OSTRICH | N=Frozen | O=Gale
+857: H=14346.0 | I=4.0 | J=48.0 | K=250.0 | L=250.0 | M=OSTRICH | N=Frozen | O=Thundered
+858: H=14347.0 | I=4.0 | J=48.0 | K=295.0 | L=295.0 | M=OSTRICH | N=Frozen | O=Eclipse
+859: H=14348.0 | I=4.0 | J=48.0 | K=285.0 | L=285.0 | M=OSTRICH | N=Frozen | O=Prismatic
+860: H=14349.0 | I=4.0 | J=48.0 | K=240.0 | L=240.0 | M=OSTRICH | N=Magma | O=Soaked
+861: H=14350.0 | I=4.0 | J=48.0 | K=275.0 | L=275.0 | M=OSTRICH | N=Magma | O=Frost
+862: H=14351.0 | I=4.0 | J=48.0 | K=265.0 | L=265.0 | M=OSTRICH | N=Magma | O=Gale
+863: H=14352.0 | I=4.0 | J=48.0 | K=300.0 | L=300.0 | M=OSTRICH | N=Magma | O=Thundered
+864: H=14353.0 | I=4.0 | J=48.0 | K=350.0 | L=350.0 | M=OSTRICH | N=Magma | O=Eclipse
+865: H=14354.0 | I=4.0 | J=48.0 | K=340.0 | L=340.0 | M=OSTRICH | N=Magma | O=Prismatic
+866: H=14355.0 | I=4.0 | J=48.0 | K=260.0 | L=260.0 | M=OSTRICH | N=Clover | O=Soaked
+867: H=14356.0 | I=4.0 | J=48.0 | K=290.0 | L=290.0 | M=OSTRICH | N=Clover | O=Frost
+868: H=14357.0 | I=4.0 | J=48.0 | K=285.0 | L=285.0 | M=OSTRICH | N=Clover | O=Gale
+869: H=14358.0 | I=4.0 | J=48.0 | K=320.0 | L=320.0 | M=OSTRICH | N=Clover | O=Thundered
+870: H=14359.0 | I=4.0 | J=48.0 | K=375.0 | L=375.0 | M=OSTRICH | N=Clover | O=Eclipse
+871: H=14360.0 | I=4.0 | J=48.0 | K=365.0 | L=365.0 | M=OSTRICH | N=Clover | O=Prismatic
+872: H=14361.0 | I=4.0 | J=48.0 | K=270.0 | L=270.0 | M=OSTRICH | N=Fossilized | O=Soaked
+873: H=14362.0 | I=4.0 | J=48.0 | K=310.0 | L=310.0 | M=OSTRICH | N=Fossilized | O=Frost
+874: H=14363.0 | I=4.0 | J=48.0 | K=300.0 | L=300.0 | M=OSTRICH | N=Fossilized | O=Gale
+875: H=14364.0 | I=4.0 | J=48.0 | K=335.0 | L=335.0 | M=OSTRICH | N=Fossilized | O=Thundered
+876: H=14365.0 | I=4.0 | J=48.0 | K=395.0 | L=395.0 | M=OSTRICH | N=Fossilized | O=Eclipse
+877: H=14366.0 | I=4.0 | J=48.0 | K=385.0 | L=385.0 | M=OSTRICH | N=Fossilized | O=Prismatic
+878: H=14367.0 | I=4.0 | J=48.0 | K=280.0 | L=280.0 | M=OSTRICH | N=Sweetheart | O=Soaked
+879: H=14368.0 | I=4.0 | J=48.0 | K=315.0 | L=315.0 | M=OSTRICH | N=Sweetheart | O=Frost
+880: H=14369.0 | I=4.0 | J=48.0 | K=305.0 | L=305.0 | M=OSTRICH | N=Sweetheart | O=Gale
+881: H=14370.0 | I=4.0 | J=48.0 | K=345.0 | L=345.0 | M=OSTRICH | N=Sweetheart | O=Thundered
+882: H=14371.0 | I=4.0 | J=48.0 | K=405.0 | L=405.0 | M=OSTRICH | N=Sweetheart | O=Eclipse
+883: H=14372.0 | I=4.0 | J=48.0 | K=395.0 | L=395.0 | M=OSTRICH | N=Sweetheart | O=Prismatic
+884: H=14373.0 | I=4.0 | J=48.0 | K=285.0 | L=285.0 | M=OSTRICH | N=Crystalline | O=Soaked
+885: H=14374.0 | I=4.0 | J=48.0 | K=325.0 | L=325.0 | M=OSTRICH | N=Crystalline | O=Frost
+886: H=14375.0 | I=4.0 | J=48.0 | K=315.0 | L=315.0 | M=OSTRICH | N=Crystalline | O=Gale
+887: H=14376.0 | I=4.0 | J=48.0 | K=355.0 | L=355.0 | M=OSTRICH | N=Crystalline | O=Thundered
+888: H=14377.0 | I=4.0 | J=48.0 | K=415.0 | L=415.0 | M=OSTRICH | N=Crystalline | O=Eclipse
+889: H=14378.0 | I=4.0 | J=48.0 | K=405.0 | L=405.0 | M=OSTRICH | N=Crystalline | O=Prismatic
+890: H=14379.0 | I=4.0 | J=48.0 | K=290.0 | L=290.0 | M=OSTRICH | N=Webbed | O=Soaked
+891: H=14380.0 | I=4.0 | J=48.0 | K=330.0 | L=330.0 | M=OSTRICH | N=Webbed | O=Frost
+892: H=14381.0 | I=4.0 | J=48.0 | K=320.0 | L=320.0 | M=OSTRICH | N=Webbed | O=Gale
+893: H=14382.0 | I=4.0 | J=48.0 | K=360.0 | L=360.0 | M=OSTRICH | N=Webbed | O=Thundered
+894: H=14383.0 | I=4.0 | J=48.0 | K=420.0 | L=420.0 | M=OSTRICH | N=Webbed | O=Eclipse
+895: H=14384.0 | I=4.0 | J=48.0 | K=410.0 | L=410.0 | M=OSTRICH | N=Webbed | O=Prismatic
+896: H=14385.0 | I=4.0 | J=44.0 | K=160.0 | L=160.0 | M=SMALLWHALE | N=Golden | O=Soaked
+897: H=14386.0 | I=4.0 | J=44.0 | K=185.0 | L=185.0 | M=SMALLWHALE | N=Golden | O=Frost
+898: H=14387.0 | I=4.0 | J=44.0 | K=180.0 | L=180.0 | M=SMALLWHALE | N=Golden | O=Gale
+899: H=14388.0 | I=4.0 | J=44.0 | K=200.0 | L=200.0 | M=SMALLWHALE | N=Golden | O=Thundered
+900: H=14389.0 | I=4.0 | J=44.0 | K=235.0 | L=235.0 | M=SMALLWHALE | N=Golden | O=Eclipse
+901: H=14390.0 | I=4.0 | J=44.0 | K=230.0 | L=230.0 | M=SMALLWHALE | N=Golden | O=Prismatic
+902: H=14391.0 | I=4.0 | J=44.0 | K=200.0 | L=200.0 | M=SMALLWHALE | N=Frozen | O=Soaked
+903: H=14392.0 | I=4.0 | J=44.0 | K=230.0 | L=230.0 | M=SMALLWHALE | N=Frozen | O=Frost
+904: H=14393.0 | I=4.0 | J=44.0 | K=220.0 | L=220.0 | M=SMALLWHALE | N=Frozen | O=Gale
+905: H=14394.0 | I=4.0 | J=44.0 | K=250.0 | L=250.0 | M=SMALLWHALE | N=Frozen | O=Thundered
+906: H=14395.0 | I=4.0 | J=44.0 | K=295.0 | L=295.0 | M=SMALLWHALE | N=Frozen | O=Eclipse
+907: H=14396.0 | I=4.0 | J=44.0 | K=285.0 | L=285.0 | M=SMALLWHALE | N=Frozen | O=Prismatic
+908: H=14397.0 | I=4.0 | J=44.0 | K=240.0 | L=240.0 | M=SMALLWHALE | N=Magma | O=Soaked
+909: H=14398.0 | I=4.0 | J=44.0 | K=275.0 | L=275.0 | M=SMALLWHALE | N=Magma | O=Frost
+910: H=14399.0 | I=4.0 | J=44.0 | K=265.0 | L=265.0 | M=SMALLWHALE | N=Magma | O=Gale
+911: H=14400.0 | I=4.0 | J=44.0 | K=300.0 | L=300.0 | M=SMALLWHALE | N=Magma | O=Thundered
+912: H=14401.0 | I=4.0 | J=44.0 | K=350.0 | L=350.0 | M=SMALLWHALE | N=Magma | O=Eclipse
+913: H=14402.0 | I=4.0 | J=44.0 | K=340.0 | L=340.0 | M=SMALLWHALE | N=Magma | O=Prismatic
+914: H=14403.0 | I=4.0 | J=44.0 | K=260.0 | L=260.0 | M=SMALLWHALE | N=Clover | O=Soaked
+915: H=14404.0 | I=4.0 | J=44.0 | K=290.0 | L=290.0 | M=SMALLWHALE | N=Clover | O=Frost
+916: H=14405.0 | I=4.0 | J=44.0 | K=285.0 | L=285.0 | M=SMALLWHALE | N=Clover | O=Gale
+917: H=14406.0 | I=4.0 | J=44.0 | K=320.0 | L=320.0 | M=SMALLWHALE | N=Clover | O=Thundered
+918: H=14407.0 | I=4.0 | J=44.0 | K=375.0 | L=375.0 | M=SMALLWHALE | N=Clover | O=Eclipse
+919: H=14408.0 | I=4.0 | J=44.0 | K=365.0 | L=365.0 | M=SMALLWHALE | N=Clover | O=Prismatic
+920: H=14409.0 | I=4.0 | J=44.0 | K=270.0 | L=270.0 | M=SMALLWHALE | N=Fossilized | O=Soaked
+921: H=14410.0 | I=4.0 | J=44.0 | K=310.0 | L=310.0 | M=SMALLWHALE | N=Fossilized | O=Frost
+922: H=14411.0 | I=4.0 | J=44.0 | K=300.0 | L=300.0 | M=SMALLWHALE | N=Fossilized | O=Gale
+923: H=14412.0 | I=4.0 | J=44.0 | K=335.0 | L=335.0 | M=SMALLWHALE | N=Fossilized | O=Thundered
+924: H=14413.0 | I=4.0 | J=44.0 | K=395.0 | L=395.0 | M=SMALLWHALE | N=Fossilized | O=Eclipse
+925: H=14414.0 | I=4.0 | J=44.0 | K=385.0 | L=385.0 | M=SMALLWHALE | N=Fossilized | O=Prismatic
+926: H=14415.0 | I=4.0 | J=44.0 | K=280.0 | L=280.0 | M=SMALLWHALE | N=Sweetheart | O=Soaked
+927: H=14416.0 | I=4.0 | J=44.0 | K=315.0 | L=315.0 | M=SMALLWHALE | N=Sweetheart | O=Frost
+928: H=14417.0 | I=4.0 | J=44.0 | K=305.0 | L=305.0 | M=SMALLWHALE | N=Sweetheart | O=Gale
+929: H=14418.0 | I=4.0 | J=44.0 | K=345.0 | L=345.0 | M=SMALLWHALE | N=Sweetheart | O=Thundered
+930: H=14419.0 | I=4.0 | J=44.0 | K=405.0 | L=405.0 | M=SMALLWHALE | N=Sweetheart | O=Eclipse
+931: H=14420.0 | I=4.0 | J=44.0 | K=395.0 | L=395.0 | M=SMALLWHALE | N=Sweetheart | O=Prismatic
+932: H=14421.0 | I=4.0 | J=44.0 | K=285.0 | L=285.0 | M=SMALLWHALE | N=Crystalline | O=Soaked
+933: H=14422.0 | I=4.0 | J=44.0 | K=325.0 | L=325.0 | M=SMALLWHALE | N=Crystalline | O=Frost
+934: H=14423.0 | I=4.0 | J=44.0 | K=315.0 | L=315.0 | M=SMALLWHALE | N=Crystalline | O=Gale
+935: H=14424.0 | I=4.0 | J=44.0 | K=355.0 | L=355.0 | M=SMALLWHALE | N=Crystalline | O=Thundered
+936: H=14425.0 | I=4.0 | J=44.0 | K=415.0 | L=415.0 | M=SMALLWHALE | N=Crystalline | O=Eclipse
+937: H=14426.0 | I=4.0 | J=44.0 | K=405.0 | L=405.0 | M=SMALLWHALE | N=Crystalline | O=Prismatic
+938: H=14427.0 | I=4.0 | J=44.0 | K=290.0 | L=290.0 | M=SMALLWHALE | N=Webbed | O=Soaked
+939: H=14428.0 | I=4.0 | J=44.0 | K=330.0 | L=330.0 | M=SMALLWHALE | N=Webbed | O=Frost
+940: H=14429.0 | I=4.0 | J=44.0 | K=320.0 | L=320.0 | M=SMALLWHALE | N=Webbed | O=Gale
+941: H=14430.0 | I=4.0 | J=44.0 | K=360.0 | L=360.0 | M=SMALLWHALE | N=Webbed | O=Thundered
+942: H=14431.0 | I=4.0 | J=44.0 | K=420.0 | L=420.0 | M=SMALLWHALE | N=Webbed | O=Eclipse
+943: H=14432.0 | I=4.0 | J=44.0 | K=410.0 | L=410.0 | M=SMALLWHALE | N=Webbed | O=Prismatic
+944: H=14433.0 | I=4.0 | J=49.0 | K=160.0 | L=160.0 | M=GORILLA | N=Golden | O=Soaked
+945: H=14434.0 | I=4.0 | J=49.0 | K=185.0 | L=185.0 | M=GORILLA | N=Golden | O=Frost
+946: H=14435.0 | I=4.0 | J=49.0 | K=180.0 | L=180.0 | M=GORILLA | N=Golden | O=Gale
+947: H=14436.0 | I=4.0 | J=49.0 | K=200.0 | L=200.0 | M=GORILLA | N=Golden | O=Thundered
+948: H=14437.0 | I=4.0 | J=49.0 | K=235.0 | L=235.0 | M=GORILLA | N=Golden | O=Eclipse
+949: H=14438.0 | I=4.0 | J=49.0 | K=230.0 | L=230.0 | M=GORILLA | N=Golden | O=Prismatic
+950: H=14439.0 | I=4.0 | J=49.0 | K=200.0 | L=200.0 | M=GORILLA | N=Frozen | O=Soaked
+951: H=14440.0 | I=4.0 | J=49.0 | K=230.0 | L=230.0 | M=GORILLA | N=Frozen | O=Frost
+952: H=14441.0 | I=4.0 | J=49.0 | K=220.0 | L=220.0 | M=GORILLA | N=Frozen | O=Gale
+953: H=14442.0 | I=4.0 | J=49.0 | K=250.0 | L=250.0 | M=GORILLA | N=Frozen | O=Thundered
+954: H=14443.0 | I=4.0 | J=49.0 | K=295.0 | L=295.0 | M=GORILLA | N=Frozen | O=Eclipse
+955: H=14444.0 | I=4.0 | J=49.0 | K=285.0 | L=285.0 | M=GORILLA | N=Frozen | O=Prismatic
+956: H=14445.0 | I=4.0 | J=49.0 | K=240.0 | L=240.0 | M=GORILLA | N=Magma | O=Soaked
+957: H=14446.0 | I=4.0 | J=49.0 | K=275.0 | L=275.0 | M=GORILLA | N=Magma | O=Frost
+958: H=14447.0 | I=4.0 | J=49.0 | K=265.0 | L=265.0 | M=GORILLA | N=Magma | O=Gale
+959: H=14448.0 | I=4.0 | J=49.0 | K=300.0 | L=300.0 | M=GORILLA | N=Magma | O=Thundered
+960: H=14449.0 | I=4.0 | J=49.0 | K=350.0 | L=350.0 | M=GORILLA | N=Magma | O=Eclipse
+961: H=14450.0 | I=4.0 | J=49.0 | K=340.0 | L=340.0 | M=GORILLA | N=Magma | O=Prismatic
+962: H=14451.0 | I=4.0 | J=49.0 | K=260.0 | L=260.0 | M=GORILLA | N=Clover | O=Soaked
+963: H=14452.0 | I=4.0 | J=49.0 | K=290.0 | L=290.0 | M=GORILLA | N=Clover | O=Frost
+964: H=14453.0 | I=4.0 | J=49.0 | K=285.0 | L=285.0 | M=GORILLA | N=Clover | O=Gale
+965: H=14454.0 | I=4.0 | J=49.0 | K=320.0 | L=320.0 | M=GORILLA | N=Clover | O=Thundered
+966: H=14455.0 | I=4.0 | J=49.0 | K=375.0 | L=375.0 | M=GORILLA | N=Clover | O=Eclipse
+967: H=14456.0 | I=4.0 | J=49.0 | K=365.0 | L=365.0 | M=GORILLA | N=Clover | O=Prismatic
+968: H=14457.0 | I=4.0 | J=49.0 | K=270.0 | L=270.0 | M=GORILLA | N=Fossilized | O=Soaked
+969: H=14458.0 | I=4.0 | J=49.0 | K=310.0 | L=310.0 | M=GORILLA | N=Fossilized | O=Frost
+970: H=14459.0 | I=4.0 | J=49.0 | K=300.0 | L=300.0 | M=GORILLA | N=Fossilized | O=Gale
+971: H=14460.0 | I=4.0 | J=49.0 | K=335.0 | L=335.0 | M=GORILLA | N=Fossilized | O=Thundered
+972: H=14461.0 | I=4.0 | J=49.0 | K=395.0 | L=395.0 | M=GORILLA | N=Fossilized | O=Eclipse
+973: H=14462.0 | I=4.0 | J=49.0 | K=385.0 | L=385.0 | M=GORILLA | N=Fossilized | O=Prismatic
+974: H=14463.0 | I=4.0 | J=49.0 | K=280.0 | L=280.0 | M=GORILLA | N=Sweetheart | O=Soaked
+975: H=14464.0 | I=4.0 | J=49.0 | K=315.0 | L=315.0 | M=GORILLA | N=Sweetheart | O=Frost
+976: H=14465.0 | I=4.0 | J=49.0 | K=305.0 | L=305.0 | M=GORILLA | N=Sweetheart | O=Gale
+977: H=14466.0 | I=4.0 | J=49.0 | K=345.0 | L=345.0 | M=GORILLA | N=Sweetheart | O=Thundered
+978: H=14467.0 | I=4.0 | J=49.0 | K=405.0 | L=405.0 | M=GORILLA | N=Sweetheart | O=Eclipse
+979: H=14468.0 | I=4.0 | J=49.0 | K=395.0 | L=395.0 | M=GORILLA | N=Sweetheart | O=Prismatic
+980: H=14469.0 | I=4.0 | J=49.0 | K=285.0 | L=285.0 | M=GORILLA | N=Crystalline | O=Soaked
+981: H=14470.0 | I=4.0 | J=49.0 | K=325.0 | L=325.0 | M=GORILLA | N=Crystalline | O=Frost
+982: H=14471.0 | I=4.0 | J=49.0 | K=315.0 | L=315.0 | M=GORILLA | N=Crystalline | O=Gale
+983: H=14472.0 | I=4.0 | J=49.0 | K=355.0 | L=355.0 | M=GORILLA | N=Crystalline | O=Thundered
+984: H=14473.0 | I=4.0 | J=49.0 | K=415.0 | L=415.0 | M=GORILLA | N=Crystalline | O=Eclipse
+985: H=14474.0 | I=4.0 | J=49.0 | K=405.0 | L=405.0 | M=GORILLA | N=Crystalline | O=Prismatic
+986: H=14475.0 | I=4.0 | J=49.0 | K=290.0 | L=290.0 | M=GORILLA | N=Webbed | O=Soaked
+987: H=14476.0 | I=4.0 | J=49.0 | K=330.0 | L=330.0 | M=GORILLA | N=Webbed | O=Frost
+988: H=14477.0 | I=4.0 | J=49.0 | K=320.0 | L=320.0 | M=GORILLA | N=Webbed | O=Gale
+989: H=14478.0 | I=4.0 | J=49.0 | K=360.0 | L=360.0 | M=GORILLA | N=Webbed | O=Thundered
+990: H=14479.0 | I=4.0 | J=49.0 | K=420.0 | L=420.0 | M=GORILLA | N=Webbed | O=Eclipse
+991: H=14480.0 | I=4.0 | J=49.0 | K=410.0 | L=410.0 | M=GORILLA | N=Webbed | O=Prismatic
+992: H=14481.0 | I=4.0 | J=50.0 | K=160.0 | L=160.0 | M=BELUGA | N=Golden | O=Soaked
+993: H=14482.0 | I=4.0 | J=50.0 | K=185.0 | L=185.0 | M=BELUGA | N=Golden | O=Frost
+994: H=14483.0 | I=4.0 | J=50.0 | K=180.0 | L=180.0 | M=BELUGA | N=Golden | O=Gale
+995: H=14484.0 | I=4.0 | J=50.0 | K=200.0 | L=200.0 | M=BELUGA | N=Golden | O=Thundered
+996: H=14485.0 | I=4.0 | J=50.0 | K=235.0 | L=235.0 | M=BELUGA | N=Golden | O=Eclipse
+997: H=14486.0 | I=4.0 | J=50.0 | K=230.0 | L=230.0 | M=BELUGA | N=Golden | O=Prismatic
+998: H=14487.0 | I=4.0 | J=50.0 | K=200.0 | L=200.0 | M=BELUGA | N=Frozen | O=Soaked
+999: H=14488.0 | I=4.0 | J=50.0 | K=230.0 | L=230.0 | M=BELUGA | N=Frozen | O=Frost
+1000: H=14489.0 | I=4.0 | J=50.0 | K=220.0 | L=220.0 | M=BELUGA | N=Frozen | O=Gale
+1001: H=14490.0 | I=4.0 | J=50.0 | K=250.0 | L=250.0 | M=BELUGA | N=Frozen | O=Thundered
+1002: H=14491.0 | I=4.0 | J=50.0 | K=295.0 | L=295.0 | M=BELUGA | N=Frozen | O=Eclipse
+1003: H=14492.0 | I=4.0 | J=50.0 | K=285.0 | L=285.0 | M=BELUGA | N=Frozen | O=Prismatic
+1004: H=14493.0 | I=4.0 | J=50.0 | K=240.0 | L=240.0 | M=BELUGA | N=Magma | O=Soaked
+1005: H=14494.0 | I=4.0 | J=50.0 | K=275.0 | L=275.0 | M=BELUGA | N=Magma | O=Frost
+1006: H=14495.0 | I=4.0 | J=50.0 | K=265.0 | L=265.0 | M=BELUGA | N=Magma | O=Gale
+1007: H=14496.0 | I=4.0 | J=50.0 | K=300.0 | L=300.0 | M=BELUGA | N=Magma | O=Thundered
+1008: H=14497.0 | I=4.0 | J=50.0 | K=350.0 | L=350.0 | M=BELUGA | N=Magma | O=Eclipse
+1009: H=14498.0 | I=4.0 | J=50.0 | K=340.0 | L=340.0 | M=BELUGA | N=Magma | O=Prismatic
+1010: H=14499.0 | I=4.0 | J=50.0 | K=260.0 | L=260.0 | M=BELUGA | N=Clover | O=Soaked
+1011: H=14500.0 | I=4.0 | J=50.0 | K=290.0 | L=290.0 | M=BELUGA | N=Clover | O=Frost
+1012: H=14501.0 | I=4.0 | J=50.0 | K=285.0 | L=285.0 | M=BELUGA | N=Clover | O=Gale
+1013: H=14502.0 | I=4.0 | J=50.0 | K=320.0 | L=320.0 | M=BELUGA | N=Clover | O=Thundered
+1014: H=14503.0 | I=4.0 | J=50.0 | K=375.0 | L=375.0 | M=BELUGA | N=Clover | O=Eclipse
+1015: H=14504.0 | I=4.0 | J=50.0 | K=365.0 | L=365.0 | M=BELUGA | N=Clover | O=Prismatic
+1016: H=14505.0 | I=4.0 | J=50.0 | K=270.0 | L=270.0 | M=BELUGA | N=Fossilized | O=Soaked
+1017: H=14506.0 | I=4.0 | J=50.0 | K=310.0 | L=310.0 | M=BELUGA | N=Fossilized | O=Frost
+1018: H=14507.0 | I=4.0 | J=50.0 | K=300.0 | L=300.0 | M=BELUGA | N=Fossilized | O=Gale
+1019: H=14508.0 | I=4.0 | J=50.0 | K=335.0 | L=335.0 | M=BELUGA | N=Fossilized | O=Thundered
+1020: H=14509.0 | I=4.0 | J=50.0 | K=395.0 | L=395.0 | M=BELUGA | N=Fossilized | O=Eclipse
+1021: H=14510.0 | I=4.0 | J=50.0 | K=385.0 | L=385.0 | M=BELUGA | N=Fossilized | O=Prismatic
+1022: H=14511.0 | I=4.0 | J=50.0 | K=280.0 | L=280.0 | M=BELUGA | N=Sweetheart | O=Soaked
+1023: H=14512.0 | I=4.0 | J=50.0 | K=315.0 | L=315.0 | M=BELUGA | N=Sweetheart | O=Frost
+1024: H=14513.0 | I=4.0 | J=50.0 | K=305.0 | L=305.0 | M=BELUGA | N=Sweetheart | O=Gale
+1025: H=14514.0 | I=4.0 | J=50.0 | K=345.0 | L=345.0 | M=BELUGA | N=Sweetheart | O=Thundered
+1026: H=14515.0 | I=4.0 | J=50.0 | K=405.0 | L=405.0 | M=BELUGA | N=Sweetheart | O=Eclipse
+1027: H=14516.0 | I=4.0 | J=50.0 | K=395.0 | L=395.0 | M=BELUGA | N=Sweetheart | O=Prismatic
+1028: H=14517.0 | I=4.0 | J=50.0 | K=285.0 | L=285.0 | M=BELUGA | N=Crystalline | O=Soaked
+1029: H=14518.0 | I=4.0 | J=50.0 | K=325.0 | L=325.0 | M=BELUGA | N=Crystalline | O=Frost
+1030: H=14519.0 | I=4.0 | J=50.0 | K=315.0 | L=315.0 | M=BELUGA | N=Crystalline | O=Gale
+1031: H=14520.0 | I=4.0 | J=50.0 | K=355.0 | L=355.0 | M=BELUGA | N=Crystalline | O=Thundered
+1032: H=14521.0 | I=4.0 | J=50.0 | K=415.0 | L=415.0 | M=BELUGA | N=Crystalline | O=Eclipse
+1033: H=14522.0 | I=4.0 | J=50.0 | K=405.0 | L=405.0 | M=BELUGA | N=Crystalline | O=Prismatic
+1034: H=14523.0 | I=4.0 | J=50.0 | K=290.0 | L=290.0 | M=BELUGA | N=Webbed | O=Soaked
+1035: H=14524.0 | I=4.0 | J=50.0 | K=330.0 | L=330.0 | M=BELUGA | N=Webbed | O=Frost
+1036: H=14525.0 | I=4.0 | J=50.0 | K=320.0 | L=320.0 | M=BELUGA | N=Webbed | O=Gale
+1037: H=14526.0 | I=4.0 | J=50.0 | K=360.0 | L=360.0 | M=BELUGA | N=Webbed | O=Thundered
+1038: H=14527.0 | I=4.0 | J=50.0 | K=420.0 | L=420.0 | M=BELUGA | N=Webbed | O=Eclipse
+1039: H=14528.0 | I=4.0 | J=50.0 | K=410.0 | L=410.0 | M=BELUGA | N=Webbed | O=Prismatic
+1040: H=14529.0 | I=4.0 | J=51.0 | K=160.0 | L=160.0 | M=NARWHAL | N=Golden | O=Soaked
+1041: H=14530.0 | I=4.0 | J=51.0 | K=185.0 | L=185.0 | M=NARWHAL | N=Golden | O=Frost
+1042: H=14531.0 | I=4.0 | J=51.0 | K=180.0 | L=180.0 | M=NARWHAL | N=Golden | O=Gale
+1043: H=14532.0 | I=4.0 | J=51.0 | K=200.0 | L=200.0 | M=NARWHAL | N=Golden | O=Thundered
+1044: H=14533.0 | I=4.0 | J=51.0 | K=235.0 | L=235.0 | M=NARWHAL | N=Golden | O=Eclipse
+1045: H=14534.0 | I=4.0 | J=51.0 | K=230.0 | L=230.0 | M=NARWHAL | N=Golden | O=Prismatic
+1046: H=14535.0 | I=4.0 | J=51.0 | K=200.0 | L=200.0 | M=NARWHAL | N=Frozen | O=Soaked
+1047: H=14536.0 | I=4.0 | J=51.0 | K=230.0 | L=230.0 | M=NARWHAL | N=Frozen | O=Frost
+1048: H=14537.0 | I=4.0 | J=51.0 | K=220.0 | L=220.0 | M=NARWHAL | N=Frozen | O=Gale
+1049: H=14538.0 | I=4.0 | J=51.0 | K=250.0 | L=250.0 | M=NARWHAL | N=Frozen | O=Thundered
+1050: H=14539.0 | I=4.0 | J=51.0 | K=295.0 | L=295.0 | M=NARWHAL | N=Frozen | O=Eclipse
+1051: H=14540.0 | I=4.0 | J=51.0 | K=285.0 | L=285.0 | M=NARWHAL | N=Frozen | O=Prismatic
+1052: H=14541.0 | I=4.0 | J=51.0 | K=240.0 | L=240.0 | M=NARWHAL | N=Magma | O=Soaked
+1053: H=14542.0 | I=4.0 | J=51.0 | K=275.0 | L=275.0 | M=NARWHAL | N=Magma | O=Frost
+1054: H=14543.0 | I=4.0 | J=51.0 | K=265.0 | L=265.0 | M=NARWHAL | N=Magma | O=Gale
+1055: H=14544.0 | I=4.0 | J=51.0 | K=300.0 | L=300.0 | M=NARWHAL | N=Magma | O=Thundered
+1056: H=14545.0 | I=4.0 | J=51.0 | K=350.0 | L=350.0 | M=NARWHAL | N=Magma | O=Eclipse
+1057: H=14546.0 | I=4.0 | J=51.0 | K=340.0 | L=340.0 | M=NARWHAL | N=Magma | O=Prismatic
+1058: H=14547.0 | I=4.0 | J=51.0 | K=260.0 | L=260.0 | M=NARWHAL | N=Clover | O=Soaked
+1059: H=14548.0 | I=4.0 | J=51.0 | K=290.0 | L=290.0 | M=NARWHAL | N=Clover | O=Frost
+1060: H=14549.0 | I=4.0 | J=51.0 | K=285.0 | L=285.0 | M=NARWHAL | N=Clover | O=Gale
+1061: H=14550.0 | I=4.0 | J=51.0 | K=320.0 | L=320.0 | M=NARWHAL | N=Clover | O=Thundered
+1062: H=14551.0 | I=4.0 | J=51.0 | K=375.0 | L=375.0 | M=NARWHAL | N=Clover | O=Eclipse
+1063: H=14552.0 | I=4.0 | J=51.0 | K=365.0 | L=365.0 | M=NARWHAL | N=Clover | O=Prismatic
+1064: H=14553.0 | I=4.0 | J=51.0 | K=270.0 | L=270.0 | M=NARWHAL | N=Fossilized | O=Soaked
+1065: H=14554.0 | I=4.0 | J=51.0 | K=310.0 | L=310.0 | M=NARWHAL | N=Fossilized | O=Frost
+1066: H=14555.0 | I=4.0 | J=51.0 | K=300.0 | L=300.0 | M=NARWHAL | N=Fossilized | O=Gale
+1067: H=14556.0 | I=4.0 | J=51.0 | K=335.0 | L=335.0 | M=NARWHAL | N=Fossilized | O=Thundered
+1068: H=14557.0 | I=4.0 | J=51.0 | K=395.0 | L=395.0 | M=NARWHAL | N=Fossilized | O=Eclipse
+1069: H=14558.0 | I=4.0 | J=51.0 | K=385.0 | L=385.0 | M=NARWHAL | N=Fossilized | O=Prismatic
+1070: H=14559.0 | I=4.0 | J=51.0 | K=280.0 | L=280.0 | M=NARWHAL | N=Sweetheart | O=Soaked
+1071: H=14560.0 | I=4.0 | J=51.0 | K=315.0 | L=315.0 | M=NARWHAL | N=Sweetheart | O=Frost
+1072: H=14561.0 | I=4.0 | J=51.0 | K=305.0 | L=305.0 | M=NARWHAL | N=Sweetheart | O=Gale
+1073: H=14562.0 | I=4.0 | J=51.0 | K=345.0 | L=345.0 | M=NARWHAL | N=Sweetheart | O=Thundered
+1074: H=14563.0 | I=4.0 | J=51.0 | K=405.0 | L=405.0 | M=NARWHAL | N=Sweetheart | O=Eclipse
+1075: H=14564.0 | I=4.0 | J=51.0 | K=395.0 | L=395.0 | M=NARWHAL | N=Sweetheart | O=Prismatic
+1076: H=14565.0 | I=4.0 | J=51.0 | K=285.0 | L=285.0 | M=NARWHAL | N=Crystalline | O=Soaked
+1077: H=14566.0 | I=4.0 | J=51.0 | K=325.0 | L=325.0 | M=NARWHAL | N=Crystalline | O=Frost
+1078: H=14567.0 | I=4.0 | J=51.0 | K=315.0 | L=315.0 | M=NARWHAL | N=Crystalline | O=Gale
+1079: H=14568.0 | I=4.0 | J=51.0 | K=355.0 | L=355.0 | M=NARWHAL | N=Crystalline | O=Thundered
+1080: H=14569.0 | I=4.0 | J=51.0 | K=415.0 | L=415.0 | M=NARWHAL | N=Crystalline | O=Eclipse
+1081: H=14570.0 | I=4.0 | J=51.0 | K=405.0 | L=405.0 | M=NARWHAL | N=Crystalline | O=Prismatic
+1082: H=14571.0 | I=4.0 | J=51.0 | K=290.0 | L=290.0 | M=NARWHAL | N=Webbed | O=Soaked
+1083: H=14572.0 | I=4.0 | J=51.0 | K=330.0 | L=330.0 | M=NARWHAL | N=Webbed | O=Frost
+1084: H=14573.0 | I=4.0 | J=51.0 | K=320.0 | L=320.0 | M=NARWHAL | N=Webbed | O=Gale
+1085: H=14574.0 | I=4.0 | J=51.0 | K=360.0 | L=360.0 | M=NARWHAL | N=Webbed | O=Thundered
+1086: H=14575.0 | I=4.0 | J=51.0 | K=420.0 | L=420.0 | M=NARWHAL | N=Webbed | O=Eclipse
+1087: H=14576.0 | I=4.0 | J=51.0 | K=410.0 | L=410.0 | M=NARWHAL | N=Webbed | O=Prismatic
+1088: H=14577.0 | I=4.0 | J=56.0 | K=160.0 | L=160.0 | M=HUSKY | N=Golden | O=Soaked
+1089: H=14578.0 | I=4.0 | J=56.0 | K=185.0 | L=185.0 | M=HUSKY | N=Golden | O=Frost
+1090: H=14579.0 | I=4.0 | J=56.0 | K=180.0 | L=180.0 | M=HUSKY | N=Golden | O=Gale
+1091: H=14580.0 | I=4.0 | J=56.0 | K=200.0 | L=200.0 | M=HUSKY | N=Golden | O=Thundered
+1092: H=14581.0 | I=4.0 | J=56.0 | K=235.0 | L=235.0 | M=HUSKY | N=Golden | O=Eclipse
+1093: H=14582.0 | I=4.0 | J=56.0 | K=230.0 | L=230.0 | M=HUSKY | N=Golden | O=Prismatic
+1094: H=14583.0 | I=4.0 | J=56.0 | K=200.0 | L=200.0 | M=HUSKY | N=Frozen | O=Soaked
+1095: H=14584.0 | I=4.0 | J=56.0 | K=230.0 | L=230.0 | M=HUSKY | N=Frozen | O=Frost
+1096: H=14585.0 | I=4.0 | J=56.0 | K=220.0 | L=220.0 | M=HUSKY | N=Frozen | O=Gale
+1097: H=14586.0 | I=4.0 | J=56.0 | K=250.0 | L=250.0 | M=HUSKY | N=Frozen | O=Thundered
+1098: H=14587.0 | I=4.0 | J=56.0 | K=295.0 | L=295.0 | M=HUSKY | N=Frozen | O=Eclipse
+1099: H=14588.0 | I=4.0 | J=56.0 | K=285.0 | L=285.0 | M=HUSKY | N=Frozen | O=Prismatic
+1100: H=14589.0 | I=4.0 | J=56.0 | K=240.0 | L=240.0 | M=HUSKY | N=Magma | O=Soaked
+1101: H=14590.0 | I=4.0 | J=56.0 | K=275.0 | L=275.0 | M=HUSKY | N=Magma | O=Frost
+1102: H=14591.0 | I=4.0 | J=56.0 | K=265.0 | L=265.0 | M=HUSKY | N=Magma | O=Gale
+1103: H=14592.0 | I=4.0 | J=56.0 | K=300.0 | L=300.0 | M=HUSKY | N=Magma | O=Thundered
+1104: H=14593.0 | I=4.0 | J=56.0 | K=350.0 | L=350.0 | M=HUSKY | N=Magma | O=Eclipse
+1105: H=14594.0 | I=4.0 | J=56.0 | K=340.0 | L=340.0 | M=HUSKY | N=Magma | O=Prismatic
+1106: H=14595.0 | I=4.0 | J=56.0 | K=260.0 | L=260.0 | M=HUSKY | N=Clover | O=Soaked
+1107: H=14596.0 | I=4.0 | J=56.0 | K=290.0 | L=290.0 | M=HUSKY | N=Clover | O=Frost
+1108: H=14597.0 | I=4.0 | J=56.0 | K=285.0 | L=285.0 | M=HUSKY | N=Clover | O=Gale
+1109: H=14598.0 | I=4.0 | J=56.0 | K=320.0 | L=320.0 | M=HUSKY | N=Clover | O=Thundered
+1110: H=14599.0 | I=4.0 | J=56.0 | K=375.0 | L=375.0 | M=HUSKY | N=Clover | O=Eclipse
+1111: H=14600.0 | I=4.0 | J=56.0 | K=365.0 | L=365.0 | M=HUSKY | N=Clover | O=Prismatic
+1112: H=14601.0 | I=4.0 | J=56.0 | K=270.0 | L=270.0 | M=HUSKY | N=Fossilized | O=Soaked
+1113: H=14602.0 | I=4.0 | J=56.0 | K=310.0 | L=310.0 | M=HUSKY | N=Fossilized | O=Frost
+1114: H=14603.0 | I=4.0 | J=56.0 | K=300.0 | L=300.0 | M=HUSKY | N=Fossilized | O=Gale
+1115: H=14604.0 | I=4.0 | J=56.0 | K=335.0 | L=335.0 | M=HUSKY | N=Fossilized | O=Thundered
+1116: H=14605.0 | I=4.0 | J=56.0 | K=395.0 | L=395.0 | M=HUSKY | N=Fossilized | O=Eclipse
+1117: H=14606.0 | I=4.0 | J=56.0 | K=385.0 | L=385.0 | M=HUSKY | N=Fossilized | O=Prismatic
+1118: H=14607.0 | I=4.0 | J=56.0 | K=280.0 | L=280.0 | M=HUSKY | N=Sweetheart | O=Soaked
+1119: H=14608.0 | I=4.0 | J=56.0 | K=315.0 | L=315.0 | M=HUSKY | N=Sweetheart | O=Frost
+1120: H=14609.0 | I=4.0 | J=56.0 | K=305.0 | L=305.0 | M=HUSKY | N=Sweetheart | O=Gale
+1121: H=14610.0 | I=4.0 | J=56.0 | K=345.0 | L=345.0 | M=HUSKY | N=Sweetheart | O=Thundered
+1122: H=14611.0 | I=4.0 | J=56.0 | K=405.0 | L=405.0 | M=HUSKY | N=Sweetheart | O=Eclipse
+1123: H=14612.0 | I=4.0 | J=56.0 | K=395.0 | L=395.0 | M=HUSKY | N=Sweetheart | O=Prismatic
+1124: H=14613.0 | I=4.0 | J=56.0 | K=285.0 | L=285.0 | M=HUSKY | N=Crystalline | O=Soaked
+1125: H=14614.0 | I=4.0 | J=56.0 | K=325.0 | L=325.0 | M=HUSKY | N=Crystalline | O=Frost
+1126: H=14615.0 | I=4.0 | J=56.0 | K=315.0 | L=315.0 | M=HUSKY | N=Crystalline | O=Gale
+1127: H=14616.0 | I=4.0 | J=56.0 | K=355.0 | L=355.0 | M=HUSKY | N=Crystalline | O=Thundered
+1128: H=14617.0 | I=4.0 | J=56.0 | K=415.0 | L=415.0 | M=HUSKY | N=Crystalline | O=Eclipse
+1129: H=14618.0 | I=4.0 | J=56.0 | K=405.0 | L=405.0 | M=HUSKY | N=Crystalline | O=Prismatic
+1130: H=14619.0 | I=4.0 | J=56.0 | K=290.0 | L=290.0 | M=HUSKY | N=Webbed | O=Soaked
+1131: H=14620.0 | I=4.0 | J=56.0 | K=330.0 | L=330.0 | M=HUSKY | N=Webbed | O=Frost
+1132: H=14621.0 | I=4.0 | J=56.0 | K=320.0 | L=320.0 | M=HUSKY | N=Webbed | O=Gale
+1133: H=14622.0 | I=4.0 | J=56.0 | K=360.0 | L=360.0 | M=HUSKY | N=Webbed | O=Thundered
+1134: H=14623.0 | I=4.0 | J=56.0 | K=420.0 | L=420.0 | M=HUSKY | N=Webbed | O=Eclipse
+1135: H=14624.0 | I=4.0 | J=56.0 | K=410.0 | L=410.0 | M=HUSKY | N=Webbed | O=Prismatic
+1136: H=14625.0 | I=4.0 | J=60.0 | K=160.0 | L=160.0 | M=PLATYPUS | N=Golden | O=Soaked
+1137: H=14626.0 | I=4.0 | J=60.0 | K=185.0 | L=185.0 | M=PLATYPUS | N=Golden | O=Frost
+1138: H=14627.0 | I=4.0 | J=60.0 | K=180.0 | L=180.0 | M=PLATYPUS | N=Golden | O=Gale
+1139: H=14628.0 | I=4.0 | J=60.0 | K=200.0 | L=200.0 | M=PLATYPUS | N=Golden | O=Thundered
+1140: H=14629.0 | I=4.0 | J=60.0 | K=235.0 | L=235.0 | M=PLATYPUS | N=Golden | O=Eclipse
+1141: H=14630.0 | I=4.0 | J=60.0 | K=230.0 | L=230.0 | M=PLATYPUS | N=Golden | O=Prismatic
+1142: H=14631.0 | I=4.0 | J=60.0 | K=200.0 | L=200.0 | M=PLATYPUS | N=Frozen | O=Soaked
+1143: H=14632.0 | I=4.0 | J=60.0 | K=230.0 | L=230.0 | M=PLATYPUS | N=Frozen | O=Frost
+1144: H=14633.0 | I=4.0 | J=60.0 | K=220.0 | L=220.0 | M=PLATYPUS | N=Frozen | O=Gale
+1145: H=14634.0 | I=4.0 | J=60.0 | K=250.0 | L=250.0 | M=PLATYPUS | N=Frozen | O=Thundered
+1146: H=14635.0 | I=4.0 | J=60.0 | K=295.0 | L=295.0 | M=PLATYPUS | N=Frozen | O=Eclipse
+1147: H=14636.0 | I=4.0 | J=60.0 | K=285.0 | L=285.0 | M=PLATYPUS | N=Frozen | O=Prismatic
+1148: H=14637.0 | I=4.0 | J=60.0 | K=240.0 | L=240.0 | M=PLATYPUS | N=Magma | O=Soaked
+1149: H=14638.0 | I=4.0 | J=60.0 | K=275.0 | L=275.0 | M=PLATYPUS | N=Magma | O=Frost
+1150: H=14639.0 | I=4.0 | J=60.0 | K=265.0 | L=265.0 | M=PLATYPUS | N=Magma | O=Gale
+1151: H=14640.0 | I=4.0 | J=60.0 | K=300.0 | L=300.0 | M=PLATYPUS | N=Magma | O=Thundered
+1152: H=14641.0 | I=4.0 | J=60.0 | K=350.0 | L=350.0 | M=PLATYPUS | N=Magma | O=Eclipse
+1153: H=14642.0 | I=4.0 | J=60.0 | K=340.0 | L=340.0 | M=PLATYPUS | N=Magma | O=Prismatic
+1154: H=14643.0 | I=4.0 | J=60.0 | K=260.0 | L=260.0 | M=PLATYPUS | N=Clover | O=Soaked
+1155: H=14644.0 | I=4.0 | J=60.0 | K=290.0 | L=290.0 | M=PLATYPUS | N=Clover | O=Frost
+1156: H=14645.0 | I=4.0 | J=60.0 | K=285.0 | L=285.0 | M=PLATYPUS | N=Clover | O=Gale
+1157: H=14646.0 | I=4.0 | J=60.0 | K=320.0 | L=320.0 | M=PLATYPUS | N=Clover | O=Thundered
+1158: H=14647.0 | I=4.0 | J=60.0 | K=375.0 | L=375.0 | M=PLATYPUS | N=Clover | O=Eclipse
+1159: H=14648.0 | I=4.0 | J=60.0 | K=365.0 | L=365.0 | M=PLATYPUS | N=Clover | O=Prismatic
+1160: H=14649.0 | I=4.0 | J=60.0 | K=270.0 | L=270.0 | M=PLATYPUS | N=Fossilized | O=Soaked
+1161: H=14650.0 | I=4.0 | J=60.0 | K=310.0 | L=310.0 | M=PLATYPUS | N=Fossilized | O=Frost
+1162: H=14651.0 | I=4.0 | J=60.0 | K=300.0 | L=300.0 | M=PLATYPUS | N=Fossilized | O=Gale
+1163: H=14652.0 | I=4.0 | J=60.0 | K=335.0 | L=335.0 | M=PLATYPUS | N=Fossilized | O=Thundered
+1164: H=14653.0 | I=4.0 | J=60.0 | K=395.0 | L=395.0 | M=PLATYPUS | N=Fossilized | O=Eclipse
+1165: H=14654.0 | I=4.0 | J=60.0 | K=385.0 | L=385.0 | M=PLATYPUS | N=Fossilized | O=Prismatic
+1166: H=14655.0 | I=4.0 | J=60.0 | K=280.0 | L=280.0 | M=PLATYPUS | N=Sweetheart | O=Soaked
+1167: H=14656.0 | I=4.0 | J=60.0 | K=315.0 | L=315.0 | M=PLATYPUS | N=Sweetheart | O=Frost
+1168: H=14657.0 | I=4.0 | J=60.0 | K=305.0 | L=305.0 | M=PLATYPUS | N=Sweetheart | O=Gale
+1169: H=14658.0 | I=4.0 | J=60.0 | K=345.0 | L=345.0 | M=PLATYPUS | N=Sweetheart | O=Thundered
+1170: H=14659.0 | I=4.0 | J=60.0 | K=405.0 | L=405.0 | M=PLATYPUS | N=Sweetheart | O=Eclipse
+1171: H=14660.0 | I=4.0 | J=60.0 | K=395.0 | L=395.0 | M=PLATYPUS | N=Sweetheart | O=Prismatic
+1172: H=14661.0 | I=4.0 | J=60.0 | K=285.0 | L=285.0 | M=PLATYPUS | N=Crystalline | O=Soaked
+1173: H=14662.0 | I=4.0 | J=60.0 | K=325.0 | L=325.0 | M=PLATYPUS | N=Crystalline | O=Frost
+1174: H=14663.0 | I=4.0 | J=60.0 | K=315.0 | L=315.0 | M=PLATYPUS | N=Crystalline | O=Gale
+1175: H=14664.0 | I=4.0 | J=60.0 | K=355.0 | L=355.0 | M=PLATYPUS | N=Crystalline | O=Thundered
+1176: H=14665.0 | I=4.0 | J=60.0 | K=415.0 | L=415.0 | M=PLATYPUS | N=Crystalline | O=Eclipse
+1177: H=14666.0 | I=4.0 | J=60.0 | K=405.0 | L=405.0 | M=PLATYPUS | N=Crystalline | O=Prismatic
+1178: H=14667.0 | I=4.0 | J=60.0 | K=290.0 | L=290.0 | M=PLATYPUS | N=Webbed | O=Soaked
+1179: H=14668.0 | I=4.0 | J=60.0 | K=330.0 | L=330.0 | M=PLATYPUS | N=Webbed | O=Frost
+1180: H=14669.0 | I=4.0 | J=60.0 | K=320.0 | L=320.0 | M=PLATYPUS | N=Webbed | O=Gale
+1181: H=14670.0 | I=4.0 | J=60.0 | K=360.0 | L=360.0 | M=PLATYPUS | N=Webbed | O=Thundered
+1182: H=14671.0 | I=4.0 | J=60.0 | K=420.0 | L=420.0 | M=PLATYPUS | N=Webbed | O=Eclipse
+1183: H=14672.0 | I=4.0 | J=60.0 | K=410.0 | L=410.0 | M=PLATYPUS | N=Webbed | O=Prismatic
+1184: H=14673.0 | I=4.0 | J=61.0 | K=260.0 | L=260.0 | M=JAGUAR | N=Golden | O=Soaked
+1185: H=14674.0 | I=4.0 | J=61.0 | K=290.0 | L=290.0 | M=JAGUAR | N=Golden | O=Frost
+1186: H=14675.0 | I=4.0 | J=61.0 | K=285.0 | L=285.0 | M=JAGUAR | N=Golden | O=Gale
+1187: H=14676.0 | I=4.0 | J=61.0 | K=315.0 | L=315.0 | M=JAGUAR | N=Golden | O=Thundered
+1188: H=14677.0 | I=4.0 | J=61.0 | K=375.0 | L=375.0 | M=JAGUAR | N=Golden | O=Eclipse
+1189: H=14678.0 | I=4.0 | J=61.0 | K=365.0 | L=365.0 | M=JAGUAR | N=Golden | O=Prismatic
+1190: H=14679.0 | I=4.0 | J=61.0 | K=320.0 | L=320.0 | M=JAGUAR | N=Frozen | O=Soaked
+1191: H=14680.0 | I=4.0 | J=61.0 | K=365.0 | L=365.0 | M=JAGUAR | N=Frozen | O=Frost
+1192: H=14681.0 | I=4.0 | J=61.0 | K=355.0 | L=355.0 | M=JAGUAR | N=Frozen | O=Gale
+1193: H=14682.0 | I=4.0 | J=61.0 | K=395.0 | L=395.0 | M=JAGUAR | N=Frozen | O=Thundered
+1194: H=14683.0 | I=4.0 | J=61.0 | K=465.0 | L=465.0 | M=JAGUAR | N=Frozen | O=Eclipse
+1195: H=14684.0 | I=4.0 | J=61.0 | K=455.0 | L=455.0 | M=JAGUAR | N=Frozen | O=Prismatic
+1196: H=14685.0 | I=4.0 | J=61.0 | K=385.0 | L=385.0 | M=JAGUAR | N=Magma | O=Soaked
+1197: H=14686.0 | I=4.0 | J=61.0 | K=440.0 | L=440.0 | M=JAGUAR | N=Magma | O=Frost
+1198: H=14687.0 | I=4.0 | J=61.0 | K=425.0 | L=425.0 | M=JAGUAR | N=Magma | O=Gale
+1199: H=14688.0 | I=4.0 | J=61.0 | K=475.0 | L=475.0 | M=JAGUAR | N=Magma | O=Thundered
+1200: H=14689.0 | I=4.0 | J=61.0 | K=560.0 | L=560.0 | M=JAGUAR | N=Magma | O=Eclipse
+1201: H=14690.0 | I=4.0 | J=61.0 | K=545.0 | L=545.0 | M=JAGUAR | N=Magma | O=Prismatic
+1202: H=14691.0 | I=4.0 | J=61.0 | K=410.0 | L=410.0 | M=JAGUAR | N=Clover | O=Soaked
+1203: H=14692.0 | I=4.0 | J=61.0 | K=465.0 | L=465.0 | M=JAGUAR | N=Clover | O=Frost
+1204: H=14693.0 | I=4.0 | J=61.0 | K=450.0 | L=450.0 | M=JAGUAR | N=Clover | O=Gale
+1205: H=14694.0 | I=4.0 | J=61.0 | K=505.0 | L=505.0 | M=JAGUAR | N=Clover | O=Thundered
+1206: H=14695.0 | I=4.0 | J=61.0 | K=600.0 | L=600.0 | M=JAGUAR | N=Clover | O=Eclipse
+1207: H=14696.0 | I=4.0 | J=61.0 | K=580.0 | L=580.0 | M=JAGUAR | N=Clover | O=Prismatic
+1208: H=14697.0 | I=4.0 | J=61.0 | K=435.0 | L=435.0 | M=JAGUAR | N=Fossilized | O=Soaked
+1209: H=14698.0 | I=4.0 | J=61.0 | K=490.0 | L=490.0 | M=JAGUAR | N=Fossilized | O=Frost
+1210: H=14699.0 | I=4.0 | J=61.0 | K=480.0 | L=480.0 | M=JAGUAR | N=Fossilized | O=Gale
+1211: H=14700.0 | I=4.0 | J=61.0 | K=535.0 | L=535.0 | M=JAGUAR | N=Fossilized | O=Thundered
+1212: H=14701.0 | I=4.0 | J=61.0 | K=630.0 | L=630.0 | M=JAGUAR | N=Fossilized | O=Eclipse
+1213: H=14702.0 | I=4.0 | J=61.0 | K=615.0 | L=615.0 | M=JAGUAR | N=Fossilized | O=Prismatic
+1214: H=14703.0 | I=4.0 | J=61.0 | K=445.0 | L=445.0 | M=JAGUAR | N=Sweetheart | O=Soaked
+1215: H=14704.0 | I=4.0 | J=61.0 | K=505.0 | L=505.0 | M=JAGUAR | N=Sweetheart | O=Frost
+1216: H=14705.0 | I=4.0 | J=61.0 | K=490.0 | L=490.0 | M=JAGUAR | N=Sweetheart | O=Gale
+1217: H=14706.0 | I=4.0 | J=61.0 | K=545.0 | L=545.0 | M=JAGUAR | N=Sweetheart | O=Thundered
+1218: H=14707.0 | I=4.0 | J=61.0 | K=645.0 | L=645.0 | M=JAGUAR | N=Sweetheart | O=Eclipse
+1219: H=14708.0 | I=4.0 | J=61.0 | K=630.0 | L=630.0 | M=JAGUAR | N=Sweetheart | O=Prismatic
+1220: H=14709.0 | I=4.0 | J=61.0 | K=460.0 | L=460.0 | M=JAGUAR | N=Crystalline | O=Soaked
+1221: H=14710.0 | I=4.0 | J=61.0 | K=520.0 | L=520.0 | M=JAGUAR | N=Crystalline | O=Frost
+1222: H=14711.0 | I=4.0 | J=61.0 | K=505.0 | L=505.0 | M=JAGUAR | N=Crystalline | O=Gale
+1223: H=14712.0 | I=4.0 | J=61.0 | K=565.0 | L=565.0 | M=JAGUAR | N=Crystalline | O=Thundered
+1224: H=14713.0 | I=4.0 | J=61.0 | K=665.0 | L=665.0 | M=JAGUAR | N=Crystalline | O=Eclipse
+1225: H=14714.0 | I=4.0 | J=61.0 | K=645.0 | L=645.0 | M=JAGUAR | N=Crystalline | O=Prismatic
+1226: H=14715.0 | I=4.0 | J=61.0 | K=465.0 | L=465.0 | M=JAGUAR | N=Webbed | O=Soaked
+1227: H=14716.0 | I=4.0 | J=61.0 | K=525.0 | L=525.0 | M=JAGUAR | N=Webbed | O=Frost
+1228: H=14717.0 | I=4.0 | J=61.0 | K=510.0 | L=510.0 | M=JAGUAR | N=Webbed | O=Gale
+1229: H=14718.0 | I=4.0 | J=61.0 | K=570.0 | L=570.0 | M=JAGUAR | N=Webbed | O=Thundered
+1230: H=14719.0 | I=4.0 | J=61.0 | K=675.0 | L=675.0 | M=JAGUAR | N=Webbed | O=Eclipse
+1231: H=14720.0 | I=4.0 | J=61.0 | K=655.0 | L=655.0 | M=JAGUAR | N=Webbed | O=Prismatic
+1232: H=14721.0 | I=4.0 | J=62.0 | K=260.0 | L=260.0 | M=REINDEER | N=Golden | O=Soaked
+1233: H=14722.0 | I=4.0 | J=62.0 | K=290.0 | L=290.0 | M=REINDEER | N=Golden | O=Frost
+1234: H=14723.0 | I=4.0 | J=62.0 | K=285.0 | L=285.0 | M=REINDEER | N=Golden | O=Gale
+1235: H=14724.0 | I=4.0 | J=62.0 | K=315.0 | L=315.0 | M=REINDEER | N=Golden | O=Thundered
+1236: H=14725.0 | I=4.0 | J=62.0 | K=375.0 | L=375.0 | M=REINDEER | N=Golden | O=Eclipse
+1237: H=14726.0 | I=4.0 | J=62.0 | K=365.0 | L=365.0 | M=REINDEER | N=Golden | O=Prismatic
+1238: H=14727.0 | I=4.0 | J=62.0 | K=320.0 | L=320.0 | M=REINDEER | N=Frozen | O=Soaked
+1239: H=14728.0 | I=4.0 | J=62.0 | K=365.0 | L=365.0 | M=REINDEER | N=Frozen | O=Frost
+1240: H=14729.0 | I=4.0 | J=62.0 | K=355.0 | L=355.0 | M=REINDEER | N=Frozen | O=Gale
+1241: H=14730.0 | I=4.0 | J=62.0 | K=395.0 | L=395.0 | M=REINDEER | N=Frozen | O=Thundered
+1242: H=14731.0 | I=4.0 | J=62.0 | K=465.0 | L=465.0 | M=REINDEER | N=Frozen | O=Eclipse
+1243: H=14732.0 | I=4.0 | J=62.0 | K=455.0 | L=455.0 | M=REINDEER | N=Frozen | O=Prismatic
+1244: H=14733.0 | I=4.0 | J=62.0 | K=385.0 | L=385.0 | M=REINDEER | N=Magma | O=Soaked
+1245: H=14734.0 | I=4.0 | J=62.0 | K=440.0 | L=440.0 | M=REINDEER | N=Magma | O=Frost
+1246: H=14735.0 | I=4.0 | J=62.0 | K=425.0 | L=425.0 | M=REINDEER | N=Magma | O=Gale
+1247: H=14736.0 | I=4.0 | J=62.0 | K=475.0 | L=475.0 | M=REINDEER | N=Magma | O=Thundered
+1248: H=14737.0 | I=4.0 | J=62.0 | K=560.0 | L=560.0 | M=REINDEER | N=Magma | O=Eclipse
+1249: H=14738.0 | I=4.0 | J=62.0 | K=545.0 | L=545.0 | M=REINDEER | N=Magma | O=Prismatic
+1250: H=14739.0 | I=4.0 | J=62.0 | K=410.0 | L=410.0 | M=REINDEER | N=Clover | O=Soaked
+1251: H=14740.0 | I=4.0 | J=62.0 | K=465.0 | L=465.0 | M=REINDEER | N=Clover | O=Frost
+1252: H=14741.0 | I=4.0 | J=62.0 | K=450.0 | L=450.0 | M=REINDEER | N=Clover | O=Gale
+1253: H=14742.0 | I=4.0 | J=62.0 | K=505.0 | L=505.0 | M=REINDEER | N=Clover | O=Thundered
+1254: H=14743.0 | I=4.0 | J=62.0 | K=600.0 | L=600.0 | M=REINDEER | N=Clover | O=Eclipse
+1255: H=14744.0 | I=4.0 | J=62.0 | K=580.0 | L=580.0 | M=REINDEER | N=Clover | O=Prismatic
+1256: H=14745.0 | I=4.0 | J=62.0 | K=435.0 | L=435.0 | M=REINDEER | N=Fossilized | O=Soaked
+1257: H=14746.0 | I=4.0 | J=62.0 | K=490.0 | L=490.0 | M=REINDEER | N=Fossilized | O=Frost
+1258: H=14747.0 | I=4.0 | J=62.0 | K=480.0 | L=480.0 | M=REINDEER | N=Fossilized | O=Gale
+1259: H=14748.0 | I=4.0 | J=62.0 | K=535.0 | L=535.0 | M=REINDEER | N=Fossilized | O=Thundered
+1260: H=14749.0 | I=4.0 | J=62.0 | K=630.0 | L=630.0 | M=REINDEER | N=Fossilized | O=Eclipse
+1261: H=14750.0 | I=4.0 | J=62.0 | K=615.0 | L=615.0 | M=REINDEER | N=Fossilized | O=Prismatic
+1262: H=14751.0 | I=4.0 | J=62.0 | K=445.0 | L=445.0 | M=REINDEER | N=Sweetheart | O=Soaked
+1263: H=14752.0 | I=4.0 | J=62.0 | K=505.0 | L=505.0 | M=REINDEER | N=Sweetheart | O=Frost
+1264: H=14753.0 | I=4.0 | J=62.0 | K=490.0 | L=490.0 | M=REINDEER | N=Sweetheart | O=Gale
+1265: H=14754.0 | I=4.0 | J=62.0 | K=545.0 | L=545.0 | M=REINDEER | N=Sweetheart | O=Thundered
+1266: H=14755.0 | I=4.0 | J=62.0 | K=645.0 | L=645.0 | M=REINDEER | N=Sweetheart | O=Eclipse
+1267: H=14756.0 | I=4.0 | J=62.0 | K=630.0 | L=630.0 | M=REINDEER | N=Sweetheart | O=Prismatic
+1268: H=14757.0 | I=4.0 | J=62.0 | K=460.0 | L=460.0 | M=REINDEER | N=Crystalline | O=Soaked
+1269: H=14758.0 | I=4.0 | J=62.0 | K=520.0 | L=520.0 | M=REINDEER | N=Crystalline | O=Frost
+1270: H=14759.0 | I=4.0 | J=62.0 | K=505.0 | L=505.0 | M=REINDEER | N=Crystalline | O=Gale
+1271: H=14760.0 | I=4.0 | J=62.0 | K=565.0 | L=565.0 | M=REINDEER | N=Crystalline | O=Thundered
+1272: H=14761.0 | I=4.0 | J=62.0 | K=665.0 | L=665.0 | M=REINDEER | N=Crystalline | O=Eclipse
+1273: H=14762.0 | I=4.0 | J=62.0 | K=645.0 | L=645.0 | M=REINDEER | N=Crystalline | O=Prismatic
+1274: H=14763.0 | I=4.0 | J=62.0 | K=465.0 | L=465.0 | M=REINDEER | N=Webbed | O=Soaked
+1275: H=14764.0 | I=4.0 | J=62.0 | K=525.0 | L=525.0 | M=REINDEER | N=Webbed | O=Frost
+1276: H=14765.0 | I=4.0 | J=62.0 | K=510.0 | L=510.0 | M=REINDEER | N=Webbed | O=Gale
+1277: H=14766.0 | I=4.0 | J=62.0 | K=570.0 | L=570.0 | M=REINDEER | N=Webbed | O=Thundered
+1278: H=14767.0 | I=4.0 | J=62.0 | K=675.0 | L=675.0 | M=REINDEER | N=Webbed | O=Eclipse
+1279: H=14768.0 | I=4.0 | J=62.0 | K=655.0 | L=655.0 | M=REINDEER | N=Webbed | O=Prismatic
+1280: H=14769.0 | I=4.0 | J=63.0 | K=260.0 | L=260.0 | M=ARCTICFOX | N=Golden | O=Soaked
+1281: H=14770.0 | I=4.0 | J=63.0 | K=290.0 | L=290.0 | M=ARCTICFOX | N=Golden | O=Frost
+1282: H=14771.0 | I=4.0 | J=63.0 | K=285.0 | L=285.0 | M=ARCTICFOX | N=Golden | O=Gale
+1283: H=14772.0 | I=4.0 | J=63.0 | K=315.0 | L=315.0 | M=ARCTICFOX | N=Golden | O=Thundered
+1284: H=14773.0 | I=4.0 | J=63.0 | K=375.0 | L=375.0 | M=ARCTICFOX | N=Golden | O=Eclipse
+1285: H=14774.0 | I=4.0 | J=63.0 | K=365.0 | L=365.0 | M=ARCTICFOX | N=Golden | O=Prismatic
+1286: H=14775.0 | I=4.0 | J=63.0 | K=320.0 | L=320.0 | M=ARCTICFOX | N=Frozen | O=Soaked
+1287: H=14776.0 | I=4.0 | J=63.0 | K=365.0 | L=365.0 | M=ARCTICFOX | N=Frozen | O=Frost
+1288: H=14777.0 | I=4.0 | J=63.0 | K=355.0 | L=355.0 | M=ARCTICFOX | N=Frozen | O=Gale
+1289: H=14778.0 | I=4.0 | J=63.0 | K=395.0 | L=395.0 | M=ARCTICFOX | N=Frozen | O=Thundered
+1290: H=14779.0 | I=4.0 | J=63.0 | K=465.0 | L=465.0 | M=ARCTICFOX | N=Frozen | O=Eclipse
+1291: H=14780.0 | I=4.0 | J=63.0 | K=455.0 | L=455.0 | M=ARCTICFOX | N=Frozen | O=Prismatic
+1292: H=14781.0 | I=4.0 | J=63.0 | K=385.0 | L=385.0 | M=ARCTICFOX | N=Magma | O=Soaked
+1293: H=14782.0 | I=4.0 | J=63.0 | K=440.0 | L=440.0 | M=ARCTICFOX | N=Magma | O=Frost
+1294: H=14783.0 | I=4.0 | J=63.0 | K=425.0 | L=425.0 | M=ARCTICFOX | N=Magma | O=Gale
+1295: H=14784.0 | I=4.0 | J=63.0 | K=475.0 | L=475.0 | M=ARCTICFOX | N=Magma | O=Thundered
+1296: H=14785.0 | I=4.0 | J=63.0 | K=560.0 | L=560.0 | M=ARCTICFOX | N=Magma | O=Eclipse
+1297: H=14786.0 | I=4.0 | J=63.0 | K=545.0 | L=545.0 | M=ARCTICFOX | N=Magma | O=Prismatic
+1298: H=14787.0 | I=4.0 | J=63.0 | K=410.0 | L=410.0 | M=ARCTICFOX | N=Clover | O=Soaked
+1299: H=14788.0 | I=4.0 | J=63.0 | K=465.0 | L=465.0 | M=ARCTICFOX | N=Clover | O=Frost
+1300: H=14789.0 | I=4.0 | J=63.0 | K=450.0 | L=450.0 | M=ARCTICFOX | N=Clover | O=Gale
+1301: H=14790.0 | I=4.0 | J=63.0 | K=505.0 | L=505.0 | M=ARCTICFOX | N=Clover | O=Thundered
+1302: H=14791.0 | I=4.0 | J=63.0 | K=600.0 | L=600.0 | M=ARCTICFOX | N=Clover | O=Eclipse
+1303: H=14792.0 | I=4.0 | J=63.0 | K=580.0 | L=580.0 | M=ARCTICFOX | N=Clover | O=Prismatic
+1304: H=14793.0 | I=4.0 | J=63.0 | K=435.0 | L=435.0 | M=ARCTICFOX | N=Fossilized | O=Soaked
+1305: H=14794.0 | I=4.0 | J=63.0 | K=490.0 | L=490.0 | M=ARCTICFOX | N=Fossilized | O=Frost
+1306: H=14795.0 | I=4.0 | J=63.0 | K=480.0 | L=480.0 | M=ARCTICFOX | N=Fossilized | O=Gale
+1307: H=14796.0 | I=4.0 | J=63.0 | K=535.0 | L=535.0 | M=ARCTICFOX | N=Fossilized | O=Thundered
+1308: H=14797.0 | I=4.0 | J=63.0 | K=630.0 | L=630.0 | M=ARCTICFOX | N=Fossilized | O=Eclipse
+1309: H=14798.0 | I=4.0 | J=63.0 | K=615.0 | L=615.0 | M=ARCTICFOX | N=Fossilized | O=Prismatic
+1310: H=14799.0 | I=4.0 | J=63.0 | K=445.0 | L=445.0 | M=ARCTICFOX | N=Sweetheart | O=Soaked
+1311: H=14800.0 | I=4.0 | J=63.0 | K=505.0 | L=505.0 | M=ARCTICFOX | N=Sweetheart | O=Frost
+1312: H=14801.0 | I=4.0 | J=63.0 | K=490.0 | L=490.0 | M=ARCTICFOX | N=Sweetheart | O=Gale
+1313: H=14802.0 | I=4.0 | J=63.0 | K=545.0 | L=545.0 | M=ARCTICFOX | N=Sweetheart | O=Thundered
+1314: H=14803.0 | I=4.0 | J=63.0 | K=645.0 | L=645.0 | M=ARCTICFOX | N=Sweetheart | O=Eclipse
+1315: H=14804.0 | I=4.0 | J=63.0 | K=630.0 | L=630.0 | M=ARCTICFOX | N=Sweetheart | O=Prismatic
+1316: H=14805.0 | I=4.0 | J=63.0 | K=460.0 | L=460.0 | M=ARCTICFOX | N=Crystalline | O=Soaked
+1317: H=14806.0 | I=4.0 | J=63.0 | K=520.0 | L=520.0 | M=ARCTICFOX | N=Crystalline | O=Frost
+1318: H=14807.0 | I=4.0 | J=63.0 | K=505.0 | L=505.0 | M=ARCTICFOX | N=Crystalline | O=Gale
+1319: H=14808.0 | I=4.0 | J=63.0 | K=565.0 | L=565.0 | M=ARCTICFOX | N=Crystalline | O=Thundered
+1320: H=14809.0 | I=4.0 | J=63.0 | K=665.0 | L=665.0 | M=ARCTICFOX | N=Crystalline | O=Eclipse
+1321: H=14810.0 | I=4.0 | J=63.0 | K=645.0 | L=645.0 | M=ARCTICFOX | N=Crystalline | O=Prismatic
+1322: H=14811.0 | I=4.0 | J=63.0 | K=465.0 | L=465.0 | M=ARCTICFOX | N=Webbed | O=Soaked
+1323: H=14812.0 | I=4.0 | J=63.0 | K=525.0 | L=525.0 | M=ARCTICFOX | N=Webbed | O=Frost
+1324: H=14813.0 | I=4.0 | J=63.0 | K=510.0 | L=510.0 | M=ARCTICFOX | N=Webbed | O=Gale
+1325: H=14814.0 | I=4.0 | J=63.0 | K=570.0 | L=570.0 | M=ARCTICFOX | N=Webbed | O=Thundered
+1326: H=14815.0 | I=4.0 | J=63.0 | K=675.0 | L=675.0 | M=ARCTICFOX | N=Webbed | O=Eclipse
+1327: H=14816.0 | I=4.0 | J=63.0 | K=655.0 | L=655.0 | M=ARCTICFOX | N=Webbed | O=Prismatic
+1328: H=14817.0 | I=4.0 | J=64.0 | K=260.0 | L=260.0 | M=COW | N=Golden | O=Soaked
+1329: H=14818.0 | I=4.0 | J=64.0 | K=290.0 | L=290.0 | M=COW | N=Golden | O=Frost
+1330: H=14819.0 | I=4.0 | J=64.0 | K=285.0 | L=285.0 | M=COW | N=Golden | O=Gale
+1331: H=14820.0 | I=4.0 | J=64.0 | K=315.0 | L=315.0 | M=COW | N=Golden | O=Thundered
+1332: H=14821.0 | I=4.0 | J=64.0 | K=375.0 | L=375.0 | M=COW | N=Golden | O=Eclipse
+1333: H=14822.0 | I=4.0 | J=64.0 | K=365.0 | L=365.0 | M=COW | N=Golden | O=Prismatic
+1334: H=14823.0 | I=4.0 | J=64.0 | K=320.0 | L=320.0 | M=COW | N=Frozen | O=Soaked
+1335: H=14824.0 | I=4.0 | J=64.0 | K=365.0 | L=365.0 | M=COW | N=Frozen | O=Frost
+1336: H=14825.0 | I=4.0 | J=64.0 | K=355.0 | L=355.0 | M=COW | N=Frozen | O=Gale
+1337: H=14826.0 | I=4.0 | J=64.0 | K=395.0 | L=395.0 | M=COW | N=Frozen | O=Thundered
+1338: H=14827.0 | I=4.0 | J=64.0 | K=465.0 | L=465.0 | M=COW | N=Frozen | O=Eclipse
+1339: H=14828.0 | I=4.0 | J=64.0 | K=455.0 | L=455.0 | M=COW | N=Frozen | O=Prismatic
+1340: H=14829.0 | I=4.0 | J=64.0 | K=385.0 | L=385.0 | M=COW | N=Magma | O=Soaked
+1341: H=14830.0 | I=4.0 | J=64.0 | K=440.0 | L=440.0 | M=COW | N=Magma | O=Frost
+1342: H=14831.0 | I=4.0 | J=64.0 | K=425.0 | L=425.0 | M=COW | N=Magma | O=Gale
+1343: H=14832.0 | I=4.0 | J=64.0 | K=475.0 | L=475.0 | M=COW | N=Magma | O=Thundered
+1344: H=14833.0 | I=4.0 | J=64.0 | K=560.0 | L=560.0 | M=COW | N=Magma | O=Eclipse
+1345: H=14834.0 | I=4.0 | J=64.0 | K=545.0 | L=545.0 | M=COW | N=Magma | O=Prismatic
+1346: H=14835.0 | I=4.0 | J=64.0 | K=410.0 | L=410.0 | M=COW | N=Clover | O=Soaked
+1347: H=14836.0 | I=4.0 | J=64.0 | K=465.0 | L=465.0 | M=COW | N=Clover | O=Frost
+1348: H=14837.0 | I=4.0 | J=64.0 | K=450.0 | L=450.0 | M=COW | N=Clover | O=Gale
+1349: H=14838.0 | I=4.0 | J=64.0 | K=505.0 | L=505.0 | M=COW | N=Clover | O=Thundered
+1350: H=14839.0 | I=4.0 | J=64.0 | K=600.0 | L=600.0 | M=COW | N=Clover | O=Eclipse
+1351: H=14840.0 | I=4.0 | J=64.0 | K=580.0 | L=580.0 | M=COW | N=Clover | O=Prismatic
+1352: H=14841.0 | I=4.0 | J=64.0 | K=435.0 | L=435.0 | M=COW | N=Fossilized | O=Soaked
+1353: H=14842.0 | I=4.0 | J=64.0 | K=490.0 | L=490.0 | M=COW | N=Fossilized | O=Frost
+1354: H=14843.0 | I=4.0 | J=64.0 | K=480.0 | L=480.0 | M=COW | N=Fossilized | O=Gale
+1355: H=14844.0 | I=4.0 | J=64.0 | K=535.0 | L=535.0 | M=COW | N=Fossilized | O=Thundered
+1356: H=14845.0 | I=4.0 | J=64.0 | K=630.0 | L=630.0 | M=COW | N=Fossilized | O=Eclipse
+1357: H=14846.0 | I=4.0 | J=64.0 | K=615.0 | L=615.0 | M=COW | N=Fossilized | O=Prismatic
+1358: H=14847.0 | I=4.0 | J=64.0 | K=445.0 | L=445.0 | M=COW | N=Sweetheart | O=Soaked
+1359: H=14848.0 | I=4.0 | J=64.0 | K=505.0 | L=505.0 | M=COW | N=Sweetheart | O=Frost
+1360: H=14849.0 | I=4.0 | J=64.0 | K=490.0 | L=490.0 | M=COW | N=Sweetheart | O=Gale
+1361: H=14850.0 | I=4.0 | J=64.0 | K=545.0 | L=545.0 | M=COW | N=Sweetheart | O=Thundered
+1362: H=14851.0 | I=4.0 | J=64.0 | K=645.0 | L=645.0 | M=COW | N=Sweetheart | O=Eclipse
+1363: H=14852.0 | I=4.0 | J=64.0 | K=630.0 | L=630.0 | M=COW | N=Sweetheart | O=Prismatic
+1364: H=14853.0 | I=4.0 | J=64.0 | K=460.0 | L=460.0 | M=COW | N=Crystalline | O=Soaked
+1365: H=14854.0 | I=4.0 | J=64.0 | K=520.0 | L=520.0 | M=COW | N=Crystalline | O=Frost
+1366: H=14855.0 | I=4.0 | J=64.0 | K=505.0 | L=505.0 | M=COW | N=Crystalline | O=Gale
+1367: H=14856.0 | I=4.0 | J=64.0 | K=565.0 | L=565.0 | M=COW | N=Crystalline | O=Thundered
+1368: H=14857.0 | I=4.0 | J=64.0 | K=665.0 | L=665.0 | M=COW | N=Crystalline | O=Eclipse
+1369: H=14858.0 | I=4.0 | J=64.0 | K=645.0 | L=645.0 | M=COW | N=Crystalline | O=Prismatic
+1370: H=14859.0 | I=4.0 | J=64.0 | K=465.0 | L=465.0 | M=COW | N=Webbed | O=Soaked
+1371: H=14860.0 | I=4.0 | J=64.0 | K=525.0 | L=525.0 | M=COW | N=Webbed | O=Frost
+1372: H=14861.0 | I=4.0 | J=64.0 | K=510.0 | L=510.0 | M=COW | N=Webbed | O=Gale
+1373: H=14862.0 | I=4.0 | J=64.0 | K=570.0 | L=570.0 | M=COW | N=Webbed | O=Thundered
+1374: H=14863.0 | I=4.0 | J=64.0 | K=675.0 | L=675.0 | M=COW | N=Webbed | O=Eclipse
+1375: H=14864.0 | I=4.0 | J=64.0 | K=655.0 | L=655.0 | M=COW | N=Webbed | O=Prismatic
+1376: H=14865.0 | I=4.0 | J=66.0 | K=260.0 | L=260.0 | M=OX | N=Golden | O=Soaked
+1377: H=14866.0 | I=4.0 | J=66.0 | K=290.0 | L=290.0 | M=OX | N=Golden | O=Frost
+1378: H=14867.0 | I=4.0 | J=66.0 | K=285.0 | L=285.0 | M=OX | N=Golden | O=Gale
+1379: H=14868.0 | I=4.0 | J=66.0 | K=315.0 | L=315.0 | M=OX | N=Golden | O=Thundered
+1380: H=14869.0 | I=4.0 | J=66.0 | K=375.0 | L=375.0 | M=OX | N=Golden | O=Eclipse
+1381: H=14870.0 | I=4.0 | J=66.0 | K=365.0 | L=365.0 | M=OX | N=Golden | O=Prismatic
+1382: H=14871.0 | I=4.0 | J=66.0 | K=320.0 | L=320.0 | M=OX | N=Frozen | O=Soaked
+1383: H=14872.0 | I=4.0 | J=66.0 | K=365.0 | L=365.0 | M=OX | N=Frozen | O=Frost
+1384: H=14873.0 | I=4.0 | J=66.0 | K=355.0 | L=355.0 | M=OX | N=Frozen | O=Gale
+1385: H=14874.0 | I=4.0 | J=66.0 | K=395.0 | L=395.0 | M=OX | N=Frozen | O=Thundered
+1386: H=14875.0 | I=4.0 | J=66.0 | K=465.0 | L=465.0 | M=OX | N=Frozen | O=Eclipse
+1387: H=14876.0 | I=4.0 | J=66.0 | K=455.0 | L=455.0 | M=OX | N=Frozen | O=Prismatic
+1388: H=14877.0 | I=4.0 | J=66.0 | K=385.0 | L=385.0 | M=OX | N=Magma | O=Soaked
+1389: H=14878.0 | I=4.0 | J=66.0 | K=440.0 | L=440.0 | M=OX | N=Magma | O=Frost
+1390: H=14879.0 | I=4.0 | J=66.0 | K=425.0 | L=425.0 | M=OX | N=Magma | O=Gale
+1391: H=14880.0 | I=4.0 | J=66.0 | K=475.0 | L=475.0 | M=OX | N=Magma | O=Thundered
+1392: H=14881.0 | I=4.0 | J=66.0 | K=560.0 | L=560.0 | M=OX | N=Magma | O=Eclipse
+1393: H=14882.0 | I=4.0 | J=66.0 | K=545.0 | L=545.0 | M=OX | N=Magma | O=Prismatic
+1394: H=14883.0 | I=4.0 | J=66.0 | K=410.0 | L=410.0 | M=OX | N=Clover | O=Soaked
+1395: H=14884.0 | I=4.0 | J=66.0 | K=465.0 | L=465.0 | M=OX | N=Clover | O=Frost
+1396: H=14885.0 | I=4.0 | J=66.0 | K=450.0 | L=450.0 | M=OX | N=Clover | O=Gale
+1397: H=14886.0 | I=4.0 | J=66.0 | K=505.0 | L=505.0 | M=OX | N=Clover | O=Thundered
+1398: H=14887.0 | I=4.0 | J=66.0 | K=600.0 | L=600.0 | M=OX | N=Clover | O=Eclipse
+1399: H=14888.0 | I=4.0 | J=66.0 | K=580.0 | L=580.0 | M=OX | N=Clover | O=Prismatic
+1400: H=14889.0 | I=4.0 | J=66.0 | K=435.0 | L=435.0 | M=OX | N=Fossilized | O=Soaked
+1401: H=14890.0 | I=4.0 | J=66.0 | K=490.0 | L=490.0 | M=OX | N=Fossilized | O=Frost
+1402: H=14891.0 | I=4.0 | J=66.0 | K=480.0 | L=480.0 | M=OX | N=Fossilized | O=Gale
+1403: H=14892.0 | I=4.0 | J=66.0 | K=535.0 | L=535.0 | M=OX | N=Fossilized | O=Thundered
+1404: H=14893.0 | I=4.0 | J=66.0 | K=630.0 | L=630.0 | M=OX | N=Fossilized | O=Eclipse
+1405: H=14894.0 | I=4.0 | J=66.0 | K=615.0 | L=615.0 | M=OX | N=Fossilized | O=Prismatic
+1406: H=14895.0 | I=4.0 | J=66.0 | K=445.0 | L=445.0 | M=OX | N=Sweetheart | O=Soaked
+1407: H=14896.0 | I=4.0 | J=66.0 | K=505.0 | L=505.0 | M=OX | N=Sweetheart | O=Frost
+1408: H=14897.0 | I=4.0 | J=66.0 | K=490.0 | L=490.0 | M=OX | N=Sweetheart | O=Gale
+1409: H=14898.0 | I=4.0 | J=66.0 | K=545.0 | L=545.0 | M=OX | N=Sweetheart | O=Thundered
+1410: H=14899.0 | I=4.0 | J=66.0 | K=645.0 | L=645.0 | M=OX | N=Sweetheart | O=Eclipse
+1411: H=14900.0 | I=4.0 | J=66.0 | K=630.0 | L=630.0 | M=OX | N=Sweetheart | O=Prismatic
+1412: H=14901.0 | I=4.0 | J=66.0 | K=460.0 | L=460.0 | M=OX | N=Crystalline | O=Soaked
+1413: H=14902.0 | I=4.0 | J=66.0 | K=520.0 | L=520.0 | M=OX | N=Crystalline | O=Frost
+1414: H=14903.0 | I=4.0 | J=66.0 | K=505.0 | L=505.0 | M=OX | N=Crystalline | O=Gale
+1415: H=14904.0 | I=4.0 | J=66.0 | K=565.0 | L=565.0 | M=OX | N=Crystalline | O=Thundered
+1416: H=14905.0 | I=4.0 | J=66.0 | K=665.0 | L=665.0 | M=OX | N=Crystalline | O=Eclipse
+1417: H=14906.0 | I=4.0 | J=66.0 | K=645.0 | L=645.0 | M=OX | N=Crystalline | O=Prismatic
+1418: H=14907.0 | I=4.0 | J=66.0 | K=465.0 | L=465.0 | M=OX | N=Webbed | O=Soaked
+1419: H=14908.0 | I=4.0 | J=66.0 | K=525.0 | L=525.0 | M=OX | N=Webbed | O=Frost
+1420: H=14909.0 | I=4.0 | J=66.0 | K=510.0 | L=510.0 | M=OX | N=Webbed | O=Gale
+1421: H=14910.0 | I=4.0 | J=66.0 | K=570.0 | L=570.0 | M=OX | N=Webbed | O=Thundered
+1422: H=14911.0 | I=4.0 | J=66.0 | K=675.0 | L=675.0 | M=OX | N=Webbed | O=Eclipse
+1423: H=14912.0 | I=4.0 | J=66.0 | K=655.0 | L=655.0 | M=OX | N=Webbed | O=Prismatic
+1424: H=14913.0 | I=4.0 | J=67.0 | K=385.0 | L=385.0 | M=TURKEY | N=Golden | O=Soaked
+1425: H=14914.0 | I=4.0 | J=67.0 | K=435.0 | L=435.0 | M=TURKEY | N=Golden | O=Frost
+1426: H=14915.0 | I=4.0 | J=67.0 | K=425.0 | L=425.0 | M=TURKEY | N=Golden | O=Gale
+1427: H=14916.0 | I=4.0 | J=67.0 | K=475.0 | L=475.0 | M=TURKEY | N=Golden | O=Thundered
+1428: H=14917.0 | I=4.0 | J=67.0 | K=560.0 | L=560.0 | M=TURKEY | N=Golden | O=Eclipse
+1429: H=14918.0 | I=4.0 | J=67.0 | K=545.0 | L=545.0 | M=TURKEY | N=Golden | O=Prismatic
+1430: H=14919.0 | I=4.0 | J=67.0 | K=480.0 | L=480.0 | M=TURKEY | N=Frozen | O=Soaked
+1431: H=14920.0 | I=4.0 | J=67.0 | K=545.0 | L=545.0 | M=TURKEY | N=Frozen | O=Frost
+1432: H=14921.0 | I=4.0 | J=67.0 | K=530.0 | L=530.0 | M=TURKEY | N=Frozen | O=Gale
+1433: H=14922.0 | I=4.0 | J=67.0 | K=590.0 | L=590.0 | M=TURKEY | N=Frozen | O=Thundered
+1434: H=14923.0 | I=4.0 | J=67.0 | K=700.0 | L=700.0 | M=TURKEY | N=Frozen | O=Eclipse
+1435: H=14924.0 | I=4.0 | J=67.0 | K=680.0 | L=680.0 | M=TURKEY | N=Frozen | O=Prismatic
+1436: H=14925.0 | I=4.0 | J=67.0 | K=580.0 | L=580.0 | M=TURKEY | N=Magma | O=Soaked
+1437: H=14926.0 | I=4.0 | J=67.0 | K=655.0 | L=655.0 | M=TURKEY | N=Magma | O=Frost
+1438: H=14927.0 | I=4.0 | J=67.0 | K=635.0 | L=635.0 | M=TURKEY | N=Magma | O=Gale
+1439: H=14928.0 | I=4.0 | J=67.0 | K=715.0 | L=715.0 | M=TURKEY | N=Magma | O=Thundered
+1440: H=14929.0 | I=4.0 | J=67.0 | K=840.0 | L=840.0 | M=TURKEY | N=Magma | O=Eclipse
+1441: H=14930.0 | I=4.0 | J=67.0 | K=820.0 | L=820.0 | M=TURKEY | N=Magma | O=Prismatic
+1442: H=14931.0 | I=4.0 | J=67.0 | K=615.0 | L=615.0 | M=TURKEY | N=Clover | O=Soaked
+1443: H=14932.0 | I=4.0 | J=67.0 | K=700.0 | L=700.0 | M=TURKEY | N=Clover | O=Frost
+1444: H=14933.0 | I=4.0 | J=67.0 | K=675.0 | L=675.0 | M=TURKEY | N=Clover | O=Gale
+1445: H=14934.0 | I=4.0 | J=67.0 | K=760.0 | L=760.0 | M=TURKEY | N=Clover | O=Thundered
+1446: H=14935.0 | I=4.0 | J=67.0 | K=895.0 | L=895.0 | M=TURKEY | N=Clover | O=Eclipse
+1447: H=14936.0 | I=4.0 | J=67.0 | K=870.0 | L=870.0 | M=TURKEY | N=Clover | O=Prismatic
+1448: H=14937.0 | I=4.0 | J=67.0 | K=650.0 | L=650.0 | M=TURKEY | N=Fossilized | O=Soaked
+1449: H=14938.0 | I=4.0 | J=67.0 | K=735.0 | L=735.0 | M=TURKEY | N=Fossilized | O=Frost
+1450: H=14939.0 | I=4.0 | J=67.0 | K=715.0 | L=715.0 | M=TURKEY | N=Fossilized | O=Gale
+1451: H=14940.0 | I=4.0 | J=67.0 | K=800.0 | L=800.0 | M=TURKEY | N=Fossilized | O=Thundered
+1452: H=14941.0 | I=4.0 | J=67.0 | K=945.0 | L=945.0 | M=TURKEY | N=Fossilized | O=Eclipse
+1453: H=14942.0 | I=4.0 | J=67.0 | K=920.0 | L=920.0 | M=TURKEY | N=Fossilized | O=Prismatic
+1454: H=14943.0 | I=4.0 | J=67.0 | K=665.0 | L=665.0 | M=TURKEY | N=Sweetheart | O=Soaked
+1455: H=14944.0 | I=4.0 | J=67.0 | K=755.0 | L=755.0 | M=TURKEY | N=Sweetheart | O=Frost
+1456: H=14945.0 | I=4.0 | J=67.0 | K=730.0 | L=730.0 | M=TURKEY | N=Sweetheart | O=Gale
+1457: H=14946.0 | I=4.0 | J=67.0 | K=820.0 | L=820.0 | M=TURKEY | N=Sweetheart | O=Thundered
+1458: H=14947.0 | I=4.0 | J=67.0 | K=970.0 | L=970.0 | M=TURKEY | N=Sweetheart | O=Eclipse
+1459: H=14948.0 | I=4.0 | J=67.0 | K=940.0 | L=940.0 | M=TURKEY | N=Sweetheart | O=Prismatic
+1460: H=14949.0 | I=4.0 | J=67.0 | K=685.0 | L=685.0 | M=TURKEY | N=Crystalline | O=Soaked
+1461: H=14950.0 | I=4.0 | J=67.0 | K=775.0 | L=775.0 | M=TURKEY | N=Crystalline | O=Frost
+1462: H=14951.0 | I=4.0 | J=67.0 | K=755.0 | L=755.0 | M=TURKEY | N=Crystalline | O=Gale
+1463: H=14952.0 | I=4.0 | J=67.0 | K=845.0 | L=845.0 | M=TURKEY | N=Crystalline | O=Thundered
+1464: H=14953.0 | I=4.0 | J=67.0 | K=970.0 | L=970.0 | M=TURKEY | N=Crystalline | O=Prismatic
+1465: H=14954.0 | I=4.0 | J=67.0 | K=695.0 | L=695.0 | M=TURKEY | N=Webbed | O=Soaked
+1466: H=14955.0 | I=4.0 | J=67.0 | K=785.0 | L=785.0 | M=TURKEY | N=Webbed | O=Frost
+1467: H=14956.0 | I=4.0 | J=67.0 | K=765.0 | L=765.0 | M=TURKEY | N=Webbed | O=Gale
+1468: H=14957.0 | I=4.0 | J=67.0 | K=855.0 | L=855.0 | M=TURKEY | N=Webbed | O=Thundered
+1469: H=14958.0 | I=4.0 | J=67.0 | K=980.0 | L=980.0 | M=TURKEY | N=Webbed | O=Prismatic
+1470: H=14959.0 | I=4.0 | J=68.0 | K=260.0 | L=260.0 | M=FRILLNECKEDLIZARD | N=Golden | O=Soaked
+1471: H=14960.0 | I=4.0 | J=68.0 | K=290.0 | L=290.0 | M=FRILLNECKEDLIZARD | N=Golden | O=Frost
+1472: H=14961.0 | I=4.0 | J=68.0 | K=285.0 | L=285.0 | M=FRILLNECKEDLIZARD | N=Golden | O=Gale
+1473: H=14962.0 | I=4.0 | J=68.0 | K=315.0 | L=315.0 | M=FRILLNECKEDLIZARD | N=Golden | O=Thundered
+1474: H=14963.0 | I=4.0 | J=68.0 | K=375.0 | L=375.0 | M=FRILLNECKEDLIZARD | N=Golden | O=Eclipse
+1475: H=14964.0 | I=4.0 | J=68.0 | K=365.0 | L=365.0 | M=FRILLNECKEDLIZARD | N=Golden | O=Prismatic
+1476: H=14965.0 | I=4.0 | J=68.0 | K=320.0 | L=320.0 | M=FRILLNECKEDLIZARD | N=Frozen | O=Soaked
+1477: H=14966.0 | I=4.0 | J=68.0 | K=365.0 | L=365.0 | M=FRILLNECKEDLIZARD | N=Frozen | O=Frost
+1478: H=14967.0 | I=4.0 | J=68.0 | K=355.0 | L=355.0 | M=FRILLNECKEDLIZARD | N=Frozen | O=Gale
+1479: H=14968.0 | I=4.0 | J=68.0 | K=395.0 | L=395.0 | M=FRILLNECKEDLIZARD | N=Frozen | O=Thundered
+1480: H=14969.0 | I=4.0 | J=68.0 | K=465.0 | L=465.0 | M=FRILLNECKEDLIZARD | N=Frozen | O=Eclipse
+1481: H=14970.0 | I=4.0 | J=68.0 | K=455.0 | L=455.0 | M=FRILLNECKEDLIZARD | N=Frozen | O=Prismatic
+1482: H=14971.0 | I=4.0 | J=68.0 | K=385.0 | L=385.0 | M=FRILLNECKEDLIZARD | N=Magma | O=Soaked
+1483: H=14972.0 | I=4.0 | J=68.0 | K=440.0 | L=440.0 | M=FRILLNECKEDLIZARD | N=Magma | O=Frost
+1484: H=14973.0 | I=4.0 | J=68.0 | K=425.0 | L=425.0 | M=FRILLNECKEDLIZARD | N=Magma | O=Gale
+1485: H=14974.0 | I=4.0 | J=68.0 | K=475.0 | L=475.0 | M=FRILLNECKEDLIZARD | N=Magma | O=Thundered
+1486: H=14975.0 | I=4.0 | J=68.0 | K=560.0 | L=560.0 | M=FRILLNECKEDLIZARD | N=Magma | O=Eclipse
+1487: H=14976.0 | I=4.0 | J=68.0 | K=545.0 | L=545.0 | M=FRILLNECKEDLIZARD | N=Magma | O=Prismatic
+1488: H=14977.0 | I=4.0 | J=68.0 | K=410.0 | L=410.0 | M=FRILLNECKEDLIZARD | N=Clover | O=Soaked
+1489: H=14978.0 | I=4.0 | J=68.0 | K=465.0 | L=465.0 | M=FRILLNECKEDLIZARD | N=Clover | O=Frost
+1490: H=14979.0 | I=4.0 | J=68.0 | K=450.0 | L=450.0 | M=FRILLNECKEDLIZARD | N=Clover | O=Gale
+1491: H=14980.0 | I=4.0 | J=68.0 | K=505.0 | L=505.0 | M=FRILLNECKEDLIZARD | N=Clover | O=Thundered
+1492: H=14981.0 | I=4.0 | J=68.0 | K=600.0 | L=600.0 | M=FRILLNECKEDLIZARD | N=Clover | O=Eclipse
+1493: H=14982.0 | I=4.0 | J=68.0 | K=580.0 | L=580.0 | M=FRILLNECKEDLIZARD | N=Clover | O=Prismatic
+1494: H=14983.0 | I=4.0 | J=68.0 | K=435.0 | L=435.0 | M=FRILLNECKEDLIZARD | N=Fossilized | O=Soaked
+1495: H=14984.0 | I=4.0 | J=68.0 | K=490.0 | L=490.0 | M=FRILLNECKEDLIZARD | N=Fossilized | O=Frost
+1496: H=14985.0 | I=4.0 | J=68.0 | K=480.0 | L=480.0 | M=FRILLNECKEDLIZARD | N=Fossilized | O=Gale
+1497: H=14986.0 | I=4.0 | J=68.0 | K=535.0 | L=535.0 | M=FRILLNECKEDLIZARD | N=Fossilized | O=Thundered
+1498: H=14987.0 | I=4.0 | J=68.0 | K=630.0 | L=630.0 | M=FRILLNECKEDLIZARD | N=Fossilized | O=Eclipse
+1499: H=14988.0 | I=4.0 | J=68.0 | K=615.0 | L=615.0 | M=FRILLNECKEDLIZARD | N=Fossilized | O=Prismatic
+1500: H=14989.0 | I=4.0 | J=68.0 | K=445.0 | L=445.0 | M=FRILLNECKEDLIZARD | N=Sweetheart | O=Soaked
+1501: H=14990.0 | I=4.0 | J=68.0 | K=505.0 | L=505.0 | M=FRILLNECKEDLIZARD | N=Sweetheart | O=Frost
+1502: H=14991.0 | I=4.0 | J=68.0 | K=490.0 | L=490.0 | M=FRILLNECKEDLIZARD | N=Sweetheart | O=Gale
+1503: H=14992.0 | I=4.0 | J=68.0 | K=545.0 | L=545.0 | M=FRILLNECKEDLIZARD | N=Sweetheart | O=Thundered
+1504: H=14993.0 | I=4.0 | J=68.0 | K=645.0 | L=645.0 | M=FRILLNECKEDLIZARD | N=Sweetheart | O=Eclipse
+1505: H=14994.0 | I=4.0 | J=68.0 | K=630.0 | L=630.0 | M=FRILLNECKEDLIZARD | N=Sweetheart | O=Prismatic
+1506: H=14995.0 | I=4.0 | J=68.0 | K=460.0 | L=460.0 | M=FRILLNECKEDLIZARD | N=Crystalline | O=Soaked
+1507: H=14996.0 | I=4.0 | J=68.0 | K=520.0 | L=520.0 | M=FRILLNECKEDLIZARD | N=Crystalline | O=Frost
+1508: H=14997.0 | I=4.0 | J=68.0 | K=505.0 | L=505.0 | M=FRILLNECKEDLIZARD | N=Crystalline | O=Gale
+1509: H=14998.0 | I=4.0 | J=68.0 | K=565.0 | L=565.0 | M=FRILLNECKEDLIZARD | N=Crystalline | O=Thundered
+1510: H=14999.0 | I=4.0 | J=68.0 | K=665.0 | L=665.0 | M=FRILLNECKEDLIZARD | N=Crystalline | O=Eclipse
+1511: H=15000.0 | I=4.0 | J=68.0 | K=645.0 | L=645.0 | M=FRILLNECKEDLIZARD | N=Crystalline | O=Prismatic
+1512: H=15001.0 | I=4.0 | J=68.0 | K=465.0 | L=465.0 | M=FRILLNECKEDLIZARD | N=Webbed | O=Soaked
+1513: H=15002.0 | I=4.0 | J=68.0 | K=525.0 | L=525.0 | M=FRILLNECKEDLIZARD | N=Webbed | O=Frost
+1514: H=15003.0 | I=4.0 | J=68.0 | K=510.0 | L=510.0 | M=FRILLNECKEDLIZARD | N=Webbed | O=Gale
+1515: H=15004.0 | I=4.0 | J=68.0 | K=570.0 | L=570.0 | M=FRILLNECKEDLIZARD | N=Webbed | O=Thundered
+1516: H=15005.0 | I=4.0 | J=68.0 | K=675.0 | L=675.0 | M=FRILLNECKEDLIZARD | N=Webbed | O=Eclipse
+1517: H=15006.0 | I=4.0 | J=68.0 | K=655.0 | L=655.0 | M=FRILLNECKEDLIZARD | N=Webbed | O=Prismatic
+1518: H=15007.0 | I=4.0 | J=69.0 | K=385.0 | L=385.0 | M=TORTOISE | N=Golden | O=Soaked
+1519: H=15008.0 | I=4.0 | J=69.0 | K=435.0 | L=435.0 | M=TORTOISE | N=Golden | O=Frost
+1520: H=15009.0 | I=4.0 | J=69.0 | K=425.0 | L=425.0 | M=TORTOISE | N=Golden | O=Gale
+1521: H=15010.0 | I=4.0 | J=69.0 | K=475.0 | L=475.0 | M=TORTOISE | N=Golden | O=Thundered
+1522: H=15011.0 | I=4.0 | J=69.0 | K=560.0 | L=560.0 | M=TORTOISE | N=Golden | O=Eclipse
+1523: H=15012.0 | I=4.0 | J=69.0 | K=545.0 | L=545.0 | M=TORTOISE | N=Golden | O=Prismatic
+1524: H=15013.0 | I=4.0 | J=69.0 | K=480.0 | L=480.0 | M=TORTOISE | N=Frozen | O=Soaked
+1525: H=15014.0 | I=4.0 | J=69.0 | K=545.0 | L=545.0 | M=TORTOISE | N=Frozen | O=Frost
+1526: H=15015.0 | I=4.0 | J=69.0 | K=530.0 | L=530.0 | M=TORTOISE | N=Frozen | O=Gale
+1527: H=15016.0 | I=4.0 | J=69.0 | K=590.0 | L=590.0 | M=TORTOISE | N=Frozen | O=Thundered
+1528: H=15017.0 | I=4.0 | J=69.0 | K=700.0 | L=700.0 | M=TORTOISE | N=Frozen | O=Eclipse
+1529: H=15018.0 | I=4.0 | J=69.0 | K=680.0 | L=680.0 | M=TORTOISE | N=Frozen | O=Prismatic
+1530: H=15019.0 | I=4.0 | J=69.0 | K=580.0 | L=580.0 | M=TORTOISE | N=Magma | O=Soaked
+1531: H=15020.0 | I=4.0 | J=69.0 | K=655.0 | L=655.0 | M=TORTOISE | N=Magma | O=Frost
+1532: H=15021.0 | I=4.0 | J=69.0 | K=635.0 | L=635.0 | M=TORTOISE | N=Magma | O=Gale
+1533: H=15022.0 | I=4.0 | J=69.0 | K=715.0 | L=715.0 | M=TORTOISE | N=Magma | O=Thundered
+1534: H=15023.0 | I=4.0 | J=69.0 | K=840.0 | L=840.0 | M=TORTOISE | N=Magma | O=Eclipse
+1535: H=15024.0 | I=4.0 | J=69.0 | K=820.0 | L=820.0 | M=TORTOISE | N=Magma | O=Prismatic
+1536: H=15025.0 | I=4.0 | J=69.0 | K=615.0 | L=615.0 | M=TORTOISE | N=Clover | O=Soaked
+1537: H=15026.0 | I=4.0 | J=69.0 | K=700.0 | L=700.0 | M=TORTOISE | N=Clover | O=Frost
+1538: H=15027.0 | I=4.0 | J=69.0 | K=675.0 | L=675.0 | M=TORTOISE | N=Clover | O=Gale
+1539: H=15028.0 | I=4.0 | J=69.0 | K=760.0 | L=760.0 | M=TORTOISE | N=Clover | O=Thundered
+1540: H=15029.0 | I=4.0 | J=69.0 | K=895.0 | L=895.0 | M=TORTOISE | N=Clover | O=Eclipse
+1541: H=15030.0 | I=4.0 | J=69.0 | K=870.0 | L=870.0 | M=TORTOISE | N=Clover | O=Prismatic
+1542: H=15031.0 | I=4.0 | J=69.0 | K=650.0 | L=650.0 | M=TORTOISE | N=Fossilized | O=Soaked
+1543: H=15032.0 | I=4.0 | J=69.0 | K=735.0 | L=735.0 | M=TORTOISE | N=Fossilized | O=Frost
+1544: H=15033.0 | I=4.0 | J=69.0 | K=715.0 | L=715.0 | M=TORTOISE | N=Fossilized | O=Gale
+1545: H=15034.0 | I=4.0 | J=69.0 | K=800.0 | L=800.0 | M=TORTOISE | N=Fossilized | O=Thundered
+1546: H=15035.0 | I=4.0 | J=69.0 | K=945.0 | L=945.0 | M=TORTOISE | N=Fossilized | O=Eclipse
+1547: H=15036.0 | I=4.0 | J=69.0 | K=920.0 | L=920.0 | M=TORTOISE | N=Fossilized | O=Prismatic
+1548: H=15037.0 | I=4.0 | J=69.0 | K=665.0 | L=665.0 | M=TORTOISE | N=Sweetheart | O=Soaked
+1549: H=15038.0 | I=4.0 | J=69.0 | K=755.0 | L=755.0 | M=TORTOISE | N=Sweetheart | O=Frost
+1550: H=15039.0 | I=4.0 | J=69.0 | K=730.0 | L=730.0 | M=TORTOISE | N=Sweetheart | O=Gale
+1551: H=15040.0 | I=4.0 | J=69.0 | K=820.0 | L=820.0 | M=TORTOISE | N=Sweetheart | O=Thundered
+1552: H=15041.0 | I=4.0 | J=69.0 | K=970.0 | L=970.0 | M=TORTOISE | N=Sweetheart | O=Eclipse
+1553: H=15042.0 | I=4.0 | J=69.0 | K=940.0 | L=940.0 | M=TORTOISE | N=Sweetheart | O=Prismatic
+1554: H=15043.0 | I=4.0 | J=69.0 | K=685.0 | L=685.0 | M=TORTOISE | N=Crystalline | O=Soaked
+1555: H=15044.0 | I=4.0 | J=69.0 | K=775.0 | L=775.0 | M=TORTOISE | N=Crystalline | O=Frost
+1556: H=15045.0 | I=4.0 | J=69.0 | K=755.0 | L=755.0 | M=TORTOISE | N=Crystalline | O=Gale
+1557: H=15046.0 | I=4.0 | J=69.0 | K=845.0 | L=845.0 | M=TORTOISE | N=Crystalline | O=Thundered
+1558: H=15047.0 | I=4.0 | J=69.0 | K=970.0 | L=970.0 | M=TORTOISE | N=Crystalline | O=Prismatic
+1559: H=15048.0 | I=4.0 | J=69.0 | K=695.0 | L=695.0 | M=TORTOISE | N=Webbed | O=Soaked
+1560: H=15049.0 | I=4.0 | J=69.0 | K=785.0 | L=785.0 | M=TORTOISE | N=Webbed | O=Frost
+1561: H=15050.0 | I=4.0 | J=69.0 | K=765.0 | L=765.0 | M=TORTOISE | N=Webbed | O=Gale
+1562: H=15051.0 | I=4.0 | J=69.0 | K=855.0 | L=855.0 | M=TORTOISE | N=Webbed | O=Thundered
+1563: H=15052.0 | I=4.0 | J=69.0 | K=980.0 | L=980.0 | M=TORTOISE | N=Webbed | O=Prismatic
+1564: H=15053.0 | I=4.0 | J=70.0 | K=385.0 | L=385.0 | M=SEAHORSE | N=Golden | O=Soaked
+1565: H=15054.0 | I=4.0 | J=70.0 | K=435.0 | L=435.0 | M=SEAHORSE | N=Golden | O=Frost
+1566: H=15055.0 | I=4.0 | J=70.0 | K=425.0 | L=425.0 | M=SEAHORSE | N=Golden | O=Gale
+1567: H=15056.0 | I=4.0 | J=70.0 | K=475.0 | L=475.0 | M=SEAHORSE | N=Golden | O=Thundered
+1568: H=15057.0 | I=4.0 | J=70.0 | K=560.0 | L=560.0 | M=SEAHORSE | N=Golden | O=Eclipse
+1569: H=15058.0 | I=4.0 | J=70.0 | K=545.0 | L=545.0 | M=SEAHORSE | N=Golden | O=Prismatic
+1570: H=15059.0 | I=4.0 | J=70.0 | K=480.0 | L=480.0 | M=SEAHORSE | N=Frozen | O=Soaked
+1571: H=15060.0 | I=4.0 | J=70.0 | K=545.0 | L=545.0 | M=SEAHORSE | N=Frozen | O=Frost
+1572: H=15061.0 | I=4.0 | J=70.0 | K=530.0 | L=530.0 | M=SEAHORSE | N=Frozen | O=Gale
+1573: H=15062.0 | I=4.0 | J=70.0 | K=590.0 | L=590.0 | M=SEAHORSE | N=Frozen | O=Thundered
+1574: H=15063.0 | I=4.0 | J=70.0 | K=700.0 | L=700.0 | M=SEAHORSE | N=Frozen | O=Eclipse
+1575: H=15064.0 | I=4.0 | J=70.0 | K=680.0 | L=680.0 | M=SEAHORSE | N=Frozen | O=Prismatic
+1576: H=15065.0 | I=4.0 | J=70.0 | K=580.0 | L=580.0 | M=SEAHORSE | N=Magma | O=Soaked
+1577: H=15066.0 | I=4.0 | J=70.0 | K=655.0 | L=655.0 | M=SEAHORSE | N=Magma | O=Frost
+1578: H=15067.0 | I=4.0 | J=70.0 | K=635.0 | L=635.0 | M=SEAHORSE | N=Magma | O=Gale
+1579: H=15068.0 | I=4.0 | J=70.0 | K=715.0 | L=715.0 | M=SEAHORSE | N=Magma | O=Thundered
+1580: H=15069.0 | I=4.0 | J=70.0 | K=840.0 | L=840.0 | M=SEAHORSE | N=Magma | O=Eclipse
+1581: H=15070.0 | I=4.0 | J=70.0 | K=820.0 | L=820.0 | M=SEAHORSE | N=Magma | O=Prismatic
+1582: H=15071.0 | I=4.0 | J=70.0 | K=615.0 | L=615.0 | M=SEAHORSE | N=Clover | O=Soaked
+1583: H=15072.0 | I=4.0 | J=70.0 | K=700.0 | L=700.0 | M=SEAHORSE | N=Clover | O=Frost
+1584: H=15073.0 | I=4.0 | J=70.0 | K=675.0 | L=675.0 | M=SEAHORSE | N=Clover | O=Gale
+1585: H=15074.0 | I=4.0 | J=70.0 | K=760.0 | L=760.0 | M=SEAHORSE | N=Clover | O=Thundered
+1586: H=15075.0 | I=4.0 | J=70.0 | K=895.0 | L=895.0 | M=SEAHORSE | N=Clover | O=Eclipse
+1587: H=15076.0 | I=4.0 | J=70.0 | K=870.0 | L=870.0 | M=SEAHORSE | N=Clover | O=Prismatic
+1588: H=15077.0 | I=4.0 | J=70.0 | K=650.0 | L=650.0 | M=SEAHORSE | N=Fossilized | O=Soaked
+1589: H=15078.0 | I=4.0 | J=70.0 | K=735.0 | L=735.0 | M=SEAHORSE | N=Fossilized | O=Frost
+1590: H=15079.0 | I=4.0 | J=70.0 | K=715.0 | L=715.0 | M=SEAHORSE | N=Fossilized | O=Gale
+1591: H=15080.0 | I=4.0 | J=70.0 | K=800.0 | L=800.0 | M=SEAHORSE | N=Fossilized | O=Thundered
+1592: H=15081.0 | I=4.0 | J=70.0 | K=945.0 | L=945.0 | M=SEAHORSE | N=Fossilized | O=Eclipse
+1593: H=15082.0 | I=4.0 | J=70.0 | K=920.0 | L=920.0 | M=SEAHORSE | N=Fossilized | O=Prismatic
+1594: H=15083.0 | I=4.0 | J=70.0 | K=665.0 | L=665.0 | M=SEAHORSE | N=Sweetheart | O=Soaked
+1595: H=15084.0 | I=4.0 | J=70.0 | K=755.0 | L=755.0 | M=SEAHORSE | N=Sweetheart | O=Frost
+1596: H=15085.0 | I=4.0 | J=70.0 | K=730.0 | L=730.0 | M=SEAHORSE | N=Sweetheart | O=Gale
+1597: H=15086.0 | I=4.0 | J=70.0 | K=820.0 | L=820.0 | M=SEAHORSE | N=Sweetheart | O=Thundered
+1598: H=15087.0 | I=4.0 | J=70.0 | K=970.0 | L=970.0 | M=SEAHORSE | N=Sweetheart | O=Eclipse
+1599: H=15088.0 | I=4.0 | J=70.0 | K=940.0 | L=940.0 | M=SEAHORSE | N=Sweetheart | O=Prismatic
+1600: H=15089.0 | I=4.0 | J=70.0 | K=685.0 | L=685.0 | M=SEAHORSE | N=Crystalline | O=Soaked
+1601: H=15090.0 | I=4.0 | J=70.0 | K=775.0 | L=775.0 | M=SEAHORSE | N=Crystalline | O=Frost
+1602: H=15091.0 | I=4.0 | J=70.0 | K=755.0 | L=755.0 | M=SEAHORSE | N=Crystalline | O=Gale
+1603: H=15092.0 | I=4.0 | J=70.0 | K=845.0 | L=845.0 | M=SEAHORSE | N=Crystalline | O=Thundered
+1604: H=15093.0 | I=4.0 | J=70.0 | K=970.0 | L=970.0 | M=SEAHORSE | N=Crystalline | O=Prismatic
+1605: H=15094.0 | I=4.0 | J=70.0 | K=695.0 | L=695.0 | M=SEAHORSE | N=Webbed | O=Soaked
+1606: H=15095.0 | I=4.0 | J=70.0 | K=785.0 | L=785.0 | M=SEAHORSE | N=Webbed | O=Frost
+1607: H=15096.0 | I=4.0 | J=70.0 | K=765.0 | L=765.0 | M=SEAHORSE | N=Webbed | O=Gale
+1608: H=15097.0 | I=4.0 | J=70.0 | K=855.0 | L=855.0 | M=SEAHORSE | N=Webbed | O=Thundered
+1609: H=15098.0 | I=4.0 | J=70.0 | K=980.0 | L=980.0 | M=SEAHORSE | N=Webbed | O=Prismatic
+1610: H=15099.0 | I=4.0 | J=71.0 | K=260.0 | L=260.0 | M=ALPACA | N=Golden | O=Soaked
+1611: H=15100.0 | I=4.0 | J=71.0 | K=290.0 | L=290.0 | M=ALPACA | N=Golden | O=Frost
+1612: H=15101.0 | I=4.0 | J=71.0 | K=285.0 | L=285.0 | M=ALPACA | N=Golden | O=Gale
+1613: H=15102.0 | I=4.0 | J=71.0 | K=315.0 | L=315.0 | M=ALPACA | N=Golden | O=Thundered
+1614: H=15103.0 | I=4.0 | J=71.0 | K=375.0 | L=375.0 | M=ALPACA | N=Golden | O=Eclipse
+1615: H=15104.0 | I=4.0 | J=71.0 | K=365.0 | L=365.0 | M=ALPACA | N=Golden | O=Prismatic
+1616: H=15105.0 | I=4.0 | J=71.0 | K=320.0 | L=320.0 | M=ALPACA | N=Frozen | O=Soaked
+1617: H=15106.0 | I=4.0 | J=71.0 | K=365.0 | L=365.0 | M=ALPACA | N=Frozen | O=Frost
+1618: H=15107.0 | I=4.0 | J=71.0 | K=355.0 | L=355.0 | M=ALPACA | N=Frozen | O=Gale
+1619: H=15108.0 | I=4.0 | J=71.0 | K=395.0 | L=395.0 | M=ALPACA | N=Frozen | O=Thundered
+1620: H=15109.0 | I=4.0 | J=71.0 | K=465.0 | L=465.0 | M=ALPACA | N=Frozen | O=Eclipse
+1621: H=15110.0 | I=4.0 | J=71.0 | K=455.0 | L=455.0 | M=ALPACA | N=Frozen | O=Prismatic
+1622: H=15111.0 | I=4.0 | J=71.0 | K=385.0 | L=385.0 | M=ALPACA | N=Magma | O=Soaked
+1623: H=15112.0 | I=4.0 | J=71.0 | K=440.0 | L=440.0 | M=ALPACA | N=Magma | O=Frost
+1624: H=15113.0 | I=4.0 | J=71.0 | K=425.0 | L=425.0 | M=ALPACA | N=Magma | O=Gale
+1625: H=15114.0 | I=4.0 | J=71.0 | K=475.0 | L=475.0 | M=ALPACA | N=Magma | O=Thundered
+1626: H=15115.0 | I=4.0 | J=71.0 | K=560.0 | L=560.0 | M=ALPACA | N=Magma | O=Eclipse
+1627: H=15116.0 | I=4.0 | J=71.0 | K=545.0 | L=545.0 | M=ALPACA | N=Magma | O=Prismatic
+1628: H=15117.0 | I=4.0 | J=71.0 | K=410.0 | L=410.0 | M=ALPACA | N=Clover | O=Soaked
+1629: H=15118.0 | I=4.0 | J=71.0 | K=465.0 | L=465.0 | M=ALPACA | N=Clover | O=Frost
+1630: H=15119.0 | I=4.0 | J=71.0 | K=450.0 | L=450.0 | M=ALPACA | N=Clover | O=Gale
+1631: H=15120.0 | I=4.0 | J=71.0 | K=505.0 | L=505.0 | M=ALPACA | N=Clover | O=Thundered
+1632: H=15121.0 | I=4.0 | J=71.0 | K=600.0 | L=600.0 | M=ALPACA | N=Clover | O=Eclipse
+1633: H=15122.0 | I=4.0 | J=71.0 | K=580.0 | L=580.0 | M=ALPACA | N=Clover | O=Prismatic
+1634: H=15123.0 | I=4.0 | J=71.0 | K=435.0 | L=435.0 | M=ALPACA | N=Fossilized | O=Soaked
+1635: H=15124.0 | I=4.0 | J=71.0 | K=490.0 | L=490.0 | M=ALPACA | N=Fossilized | O=Frost
+1636: H=15125.0 | I=4.0 | J=71.0 | K=480.0 | L=480.0 | M=ALPACA | N=Fossilized | O=Gale
+1637: H=15126.0 | I=4.0 | J=71.0 | K=535.0 | L=535.0 | M=ALPACA | N=Fossilized | O=Thundered
+1638: H=15127.0 | I=4.0 | J=71.0 | K=630.0 | L=630.0 | M=ALPACA | N=Fossilized | O=Eclipse
+1639: H=15128.0 | I=4.0 | J=71.0 | K=615.0 | L=615.0 | M=ALPACA | N=Fossilized | O=Prismatic
+1640: H=15129.0 | I=4.0 | J=71.0 | K=445.0 | L=445.0 | M=ALPACA | N=Sweetheart | O=Soaked
+1641: H=15130.0 | I=4.0 | J=71.0 | K=505.0 | L=505.0 | M=ALPACA | N=Sweetheart | O=Frost
+1642: H=15131.0 | I=4.0 | J=71.0 | K=490.0 | L=490.0 | M=ALPACA | N=Sweetheart | O=Gale
+1643: H=15132.0 | I=4.0 | J=71.0 | K=545.0 | L=545.0 | M=ALPACA | N=Sweetheart | O=Thundered
+1644: H=15133.0 | I=4.0 | J=71.0 | K=645.0 | L=645.0 | M=ALPACA | N=Sweetheart | O=Eclipse
+1645: H=15134.0 | I=4.0 | J=71.0 | K=630.0 | L=630.0 | M=ALPACA | N=Sweetheart | O=Prismatic
+1646: H=15135.0 | I=4.0 | J=71.0 | K=460.0 | L=460.0 | M=ALPACA | N=Crystalline | O=Soaked
+1647: H=15136.0 | I=4.0 | J=71.0 | K=520.0 | L=520.0 | M=ALPACA | N=Crystalline | O=Frost
+1648: H=15137.0 | I=4.0 | J=71.0 | K=505.0 | L=505.0 | M=ALPACA | N=Crystalline | O=Gale
+1649: H=15138.0 | I=4.0 | J=71.0 | K=565.0 | L=565.0 | M=ALPACA | N=Crystalline | O=Thundered
+1650: H=15139.0 | I=4.0 | J=71.0 | K=665.0 | L=665.0 | M=ALPACA | N=Crystalline | O=Eclipse
+1651: H=15140.0 | I=4.0 | J=71.0 | K=645.0 | L=645.0 | M=ALPACA | N=Crystalline | O=Prismatic
+1652: H=15141.0 | I=4.0 | J=71.0 | K=465.0 | L=465.0 | M=ALPACA | N=Webbed | O=Soaked
+1653: H=15142.0 | I=4.0 | J=71.0 | K=525.0 | L=525.0 | M=ALPACA | N=Webbed | O=Frost
+1654: H=15143.0 | I=4.0 | J=71.0 | K=510.0 | L=510.0 | M=ALPACA | N=Webbed | O=Gale
+1655: H=15144.0 | I=4.0 | J=71.0 | K=570.0 | L=570.0 | M=ALPACA | N=Webbed | O=Thundered
+1656: H=15145.0 | I=4.0 | J=71.0 | K=675.0 | L=675.0 | M=ALPACA | N=Webbed | O=Eclipse
+1657: H=15146.0 | I=4.0 | J=71.0 | K=655.0 | L=655.0 | M=ALPACA | N=Webbed | O=Prismatic
+1658: H=15147.0 | I=4.0 | J=72.0 | K=385.0 | L=385.0 | M=COYOTE | N=Golden | O=Soaked
+1659: H=15148.0 | I=4.0 | J=72.0 | K=435.0 | L=435.0 | M=COYOTE | N=Golden | O=Frost
+1660: H=15149.0 | I=4.0 | J=72.0 | K=425.0 | L=425.0 | M=COYOTE | N=Golden | O=Gale
+1661: H=15150.0 | I=4.0 | J=72.0 | K=475.0 | L=475.0 | M=COYOTE | N=Golden | O=Thundered
+1662: H=15151.0 | I=4.0 | J=72.0 | K=560.0 | L=560.0 | M=COYOTE | N=Golden | O=Eclipse
+1663: H=15152.0 | I=4.0 | J=72.0 | K=545.0 | L=545.0 | M=COYOTE | N=Golden | O=Prismatic
+1664: H=15153.0 | I=4.0 | J=72.0 | K=480.0 | L=480.0 | M=COYOTE | N=Frozen | O=Soaked
+1665: H=15154.0 | I=4.0 | J=72.0 | K=545.0 | L=545.0 | M=COYOTE | N=Frozen | O=Frost
+1666: H=15155.0 | I=4.0 | J=72.0 | K=530.0 | L=530.0 | M=COYOTE | N=Frozen | O=Gale
+1667: H=15156.0 | I=4.0 | J=72.0 | K=590.0 | L=590.0 | M=COYOTE | N=Frozen | O=Thundered
+1668: H=15157.0 | I=4.0 | J=72.0 | K=700.0 | L=700.0 | M=COYOTE | N=Frozen | O=Eclipse
+1669: H=15158.0 | I=4.0 | J=72.0 | K=680.0 | L=680.0 | M=COYOTE | N=Frozen | O=Prismatic
+1670: H=15159.0 | I=4.0 | J=72.0 | K=580.0 | L=580.0 | M=COYOTE | N=Magma | O=Soaked
+1671: H=15160.0 | I=4.0 | J=72.0 | K=655.0 | L=655.0 | M=COYOTE | N=Magma | O=Frost
+1672: H=15161.0 | I=4.0 | J=72.0 | K=635.0 | L=635.0 | M=COYOTE | N=Magma | O=Gale
+1673: H=15162.0 | I=4.0 | J=72.0 | K=715.0 | L=715.0 | M=COYOTE | N=Magma | O=Thundered
+1674: H=15163.0 | I=4.0 | J=72.0 | K=840.0 | L=840.0 | M=COYOTE | N=Magma | O=Eclipse
+1675: H=15164.0 | I=4.0 | J=72.0 | K=820.0 | L=820.0 | M=COYOTE | N=Magma | O=Prismatic
+1676: H=15165.0 | I=4.0 | J=72.0 | K=615.0 | L=615.0 | M=COYOTE | N=Clover | O=Soaked
+1677: H=15166.0 | I=4.0 | J=72.0 | K=700.0 | L=700.0 | M=COYOTE | N=Clover | O=Frost
+1678: H=15167.0 | I=4.0 | J=72.0 | K=675.0 | L=675.0 | M=COYOTE | N=Clover | O=Gale
+1679: H=15168.0 | I=4.0 | J=72.0 | K=760.0 | L=760.0 | M=COYOTE | N=Clover | O=Thundered
+1680: H=15169.0 | I=4.0 | J=72.0 | K=895.0 | L=895.0 | M=COYOTE | N=Clover | O=Eclipse
+1681: H=15170.0 | I=4.0 | J=72.0 | K=870.0 | L=870.0 | M=COYOTE | N=Clover | O=Prismatic
+1682: H=15171.0 | I=4.0 | J=72.0 | K=650.0 | L=650.0 | M=COYOTE | N=Fossilized | O=Soaked
+1683: H=15172.0 | I=4.0 | J=72.0 | K=735.0 | L=735.0 | M=COYOTE | N=Fossilized | O=Frost
+1684: H=15173.0 | I=4.0 | J=72.0 | K=715.0 | L=715.0 | M=COYOTE | N=Fossilized | O=Gale
+1685: H=15174.0 | I=4.0 | J=72.0 | K=800.0 | L=800.0 | M=COYOTE | N=Fossilized | O=Thundered
+1686: H=15175.0 | I=4.0 | J=72.0 | K=945.0 | L=945.0 | M=COYOTE | N=Fossilized | O=Eclipse
+1687: H=15176.0 | I=4.0 | J=72.0 | K=920.0 | L=920.0 | M=COYOTE | N=Fossilized | O=Prismatic
+1688: H=15177.0 | I=4.0 | J=72.0 | K=665.0 | L=665.0 | M=COYOTE | N=Sweetheart | O=Soaked
+1689: H=15178.0 | I=4.0 | J=72.0 | K=755.0 | L=755.0 | M=COYOTE | N=Sweetheart | O=Frost
+1690: H=15179.0 | I=4.0 | J=72.0 | K=730.0 | L=730.0 | M=COYOTE | N=Sweetheart | O=Gale
+1691: H=15180.0 | I=4.0 | J=72.0 | K=820.0 | L=820.0 | M=COYOTE | N=Sweetheart | O=Thundered
+1692: H=15181.0 | I=4.0 | J=72.0 | K=970.0 | L=970.0 | M=COYOTE | N=Sweetheart | O=Eclipse
+1693: H=15182.0 | I=4.0 | J=72.0 | K=940.0 | L=940.0 | M=COYOTE | N=Sweetheart | O=Prismatic
+1694: H=15183.0 | I=4.0 | J=72.0 | K=685.0 | L=685.0 | M=COYOTE | N=Crystalline | O=Soaked
+1695: H=15184.0 | I=4.0 | J=72.0 | K=775.0 | L=775.0 | M=COYOTE | N=Crystalline | O=Frost
+1696: H=15185.0 | I=4.0 | J=72.0 | K=755.0 | L=755.0 | M=COYOTE | N=Crystalline | O=Gale
+1697: H=15186.0 | I=4.0 | J=72.0 | K=845.0 | L=845.0 | M=COYOTE | N=Crystalline | O=Thundered
+1698: H=15187.0 | I=4.0 | J=72.0 | K=970.0 | L=970.0 | M=COYOTE | N=Crystalline | O=Prismatic
+1699: H=15188.0 | I=4.0 | J=72.0 | K=695.0 | L=695.0 | M=COYOTE | N=Webbed | O=Soaked
+1700: H=15189.0 | I=4.0 | J=72.0 | K=785.0 | L=785.0 | M=COYOTE | N=Webbed | O=Frost
+1701: H=15190.0 | I=4.0 | J=72.0 | K=765.0 | L=765.0 | M=COYOTE | N=Webbed | O=Gale
+1702: H=15191.0 | I=4.0 | J=72.0 | K=855.0 | L=855.0 | M=COYOTE | N=Webbed | O=Thundered
+1703: H=15192.0 | I=4.0 | J=72.0 | K=980.0 | L=980.0 | M=COYOTE | N=Webbed | O=Prismatic
+1704: H=15193.0 | I=4.0 | J=73.0 | K=385.0 | L=385.0 | M=CATFISH | N=Golden | O=Soaked
+1705: H=15194.0 | I=4.0 | J=73.0 | K=435.0 | L=435.0 | M=CATFISH | N=Golden | O=Frost
+1706: H=15195.0 | I=4.0 | J=73.0 | K=425.0 | L=425.0 | M=CATFISH | N=Golden | O=Gale
+1707: H=15196.0 | I=4.0 | J=73.0 | K=475.0 | L=475.0 | M=CATFISH | N=Golden | O=Thundered
+1708: H=15197.0 | I=4.0 | J=73.0 | K=560.0 | L=560.0 | M=CATFISH | N=Golden | O=Eclipse
+1709: H=15198.0 | I=4.0 | J=73.0 | K=545.0 | L=545.0 | M=CATFISH | N=Golden | O=Prismatic
+1710: H=15199.0 | I=4.0 | J=73.0 | K=480.0 | L=480.0 | M=CATFISH | N=Frozen | O=Soaked
+1711: H=15200.0 | I=4.0 | J=73.0 | K=545.0 | L=545.0 | M=CATFISH | N=Frozen | O=Frost
+1712: H=15201.0 | I=4.0 | J=73.0 | K=530.0 | L=530.0 | M=CATFISH | N=Frozen | O=Gale
+1713: H=15202.0 | I=4.0 | J=73.0 | K=590.0 | L=590.0 | M=CATFISH | N=Frozen | O=Thundered
+1714: H=15203.0 | I=4.0 | J=73.0 | K=700.0 | L=700.0 | M=CATFISH | N=Frozen | O=Eclipse
+1715: H=15204.0 | I=4.0 | J=73.0 | K=680.0 | L=680.0 | M=CATFISH | N=Frozen | O=Prismatic
+1716: H=15205.0 | I=4.0 | J=73.0 | K=580.0 | L=580.0 | M=CATFISH | N=Magma | O=Soaked
+1717: H=15206.0 | I=4.0 | J=73.0 | K=655.0 | L=655.0 | M=CATFISH | N=Magma | O=Frost
+1718: H=15207.0 | I=4.0 | J=73.0 | K=635.0 | L=635.0 | M=CATFISH | N=Magma | O=Gale
+1719: H=15208.0 | I=4.0 | J=73.0 | K=715.0 | L=715.0 | M=CATFISH | N=Magma | O=Thundered
+1720: H=15209.0 | I=4.0 | J=73.0 | K=840.0 | L=840.0 | M=CATFISH | N=Magma | O=Eclipse
+1721: H=15210.0 | I=4.0 | J=73.0 | K=820.0 | L=820.0 | M=CATFISH | N=Magma | O=Prismatic
+1722: H=15211.0 | I=4.0 | J=73.0 | K=615.0 | L=615.0 | M=CATFISH | N=Clover | O=Soaked
+1723: H=15212.0 | I=4.0 | J=73.0 | K=700.0 | L=700.0 | M=CATFISH | N=Clover | O=Frost
+1724: H=15213.0 | I=4.0 | J=73.0 | K=675.0 | L=675.0 | M=CATFISH | N=Clover | O=Gale
+1725: H=15214.0 | I=4.0 | J=73.0 | K=760.0 | L=760.0 | M=CATFISH | N=Clover | O=Thundered
+1726: H=15215.0 | I=4.0 | J=73.0 | K=895.0 | L=895.0 | M=CATFISH | N=Clover | O=Eclipse
+1727: H=15216.0 | I=4.0 | J=73.0 | K=870.0 | L=870.0 | M=CATFISH | N=Clover | O=Prismatic
+1728: H=15217.0 | I=4.0 | J=73.0 | K=650.0 | L=650.0 | M=CATFISH | N=Fossilized | O=Soaked
+1729: H=15218.0 | I=4.0 | J=73.0 | K=735.0 | L=735.0 | M=CATFISH | N=Fossilized | O=Frost
+1730: H=15219.0 | I=4.0 | J=73.0 | K=715.0 | L=715.0 | M=CATFISH | N=Fossilized | O=Gale
+1731: H=15220.0 | I=4.0 | J=73.0 | K=800.0 | L=800.0 | M=CATFISH | N=Fossilized | O=Thundered
+1732: H=15221.0 | I=4.0 | J=73.0 | K=945.0 | L=945.0 | M=CATFISH | N=Fossilized | O=Eclipse
+1733: H=15222.0 | I=4.0 | J=73.0 | K=920.0 | L=920.0 | M=CATFISH | N=Fossilized | O=Prismatic
+1734: H=15223.0 | I=4.0 | J=73.0 | K=665.0 | L=665.0 | M=CATFISH | N=Sweetheart | O=Soaked
+1735: H=15224.0 | I=4.0 | J=73.0 | K=755.0 | L=755.0 | M=CATFISH | N=Sweetheart | O=Frost
+1736: H=15225.0 | I=4.0 | J=73.0 | K=730.0 | L=730.0 | M=CATFISH | N=Sweetheart | O=Gale
+1737: H=15226.0 | I=4.0 | J=73.0 | K=820.0 | L=820.0 | M=CATFISH | N=Sweetheart | O=Thundered
+1738: H=15227.0 | I=4.0 | J=73.0 | K=970.0 | L=970.0 | M=CATFISH | N=Sweetheart | O=Eclipse
+1739: H=15228.0 | I=4.0 | J=73.0 | K=940.0 | L=940.0 | M=CATFISH | N=Sweetheart | O=Prismatic
+1740: H=15229.0 | I=4.0 | J=73.0 | K=685.0 | L=685.0 | M=CATFISH | N=Crystalline | O=Soaked
+1741: H=15230.0 | I=4.0 | J=73.0 | K=775.0 | L=775.0 | M=CATFISH | N=Crystalline | O=Frost
+1742: H=15231.0 | I=4.0 | J=73.0 | K=755.0 | L=755.0 | M=CATFISH | N=Crystalline | O=Gale
+1743: H=15232.0 | I=4.0 | J=73.0 | K=845.0 | L=845.0 | M=CATFISH | N=Crystalline | O=Thundered
+1744: H=15233.0 | I=4.0 | J=73.0 | K=970.0 | L=970.0 | M=CATFISH | N=Crystalline | O=Prismatic
+1745: H=15234.0 | I=4.0 | J=73.0 | K=695.0 | L=695.0 | M=CATFISH | N=Webbed | O=Soaked
+1746: H=15235.0 | I=4.0 | J=73.0 | K=785.0 | L=785.0 | M=CATFISH | N=Webbed | O=Frost
+1747: H=15236.0 | I=4.0 | J=73.0 | K=765.0 | L=765.0 | M=CATFISH | N=Webbed | O=Gale
+1748: H=15237.0 | I=4.0 | J=73.0 | K=855.0 | L=855.0 | M=CATFISH | N=Webbed | O=Thundered
+1749: H=15238.0 | I=4.0 | J=73.0 | K=980.0 | L=980.0 | M=CATFISH | N=Webbed | O=Prismatic
+1750: H=15239.0 | I=4.0 | J=75.0 | K=385.0 | L=385.0 | M=MALLARD | N=Golden | O=Soaked
+1751: H=15240.0 | I=4.0 | J=75.0 | K=435.0 | L=435.0 | M=MALLARD | N=Golden | O=Frost
+1752: H=15241.0 | I=4.0 | J=75.0 | K=425.0 | L=425.0 | M=MALLARD | N=Golden | O=Gale
+1753: H=15242.0 | I=4.0 | J=75.0 | K=475.0 | L=475.0 | M=MALLARD | N=Golden | O=Thundered
+1754: H=15243.0 | I=4.0 | J=75.0 | K=560.0 | L=560.0 | M=MALLARD | N=Golden | O=Eclipse
+1755: H=15244.0 | I=4.0 | J=75.0 | K=545.0 | L=545.0 | M=MALLARD | N=Golden | O=Prismatic
+1756: H=15245.0 | I=4.0 | J=75.0 | K=480.0 | L=480.0 | M=MALLARD | N=Frozen | O=Soaked
+1757: H=15246.0 | I=4.0 | J=75.0 | K=545.0 | L=545.0 | M=MALLARD | N=Frozen | O=Frost
+1758: H=15247.0 | I=4.0 | J=75.0 | K=530.0 | L=530.0 | M=MALLARD | N=Frozen | O=Gale
+1759: H=15248.0 | I=4.0 | J=75.0 | K=590.0 | L=590.0 | M=MALLARD | N=Frozen | O=Thundered
+1760: H=15249.0 | I=4.0 | J=75.0 | K=700.0 | L=700.0 | M=MALLARD | N=Frozen | O=Eclipse
+1761: H=15250.0 | I=4.0 | J=75.0 | K=680.0 | L=680.0 | M=MALLARD | N=Frozen | O=Prismatic
+1762: H=15251.0 | I=4.0 | J=75.0 | K=580.0 | L=580.0 | M=MALLARD | N=Magma | O=Soaked
+1763: H=15252.0 | I=4.0 | J=75.0 | K=655.0 | L=655.0 | M=MALLARD | N=Magma | O=Frost
+1764: H=15253.0 | I=4.0 | J=75.0 | K=635.0 | L=635.0 | M=MALLARD | N=Magma | O=Gale
+1765: H=15254.0 | I=4.0 | J=75.0 | K=715.0 | L=715.0 | M=MALLARD | N=Magma | O=Thundered
+1766: H=15255.0 | I=4.0 | J=75.0 | K=840.0 | L=840.0 | M=MALLARD | N=Magma | O=Eclipse
+1767: H=15256.0 | I=4.0 | J=75.0 | K=820.0 | L=820.0 | M=MALLARD | N=Magma | O=Prismatic
+1768: H=15257.0 | I=4.0 | J=75.0 | K=615.0 | L=615.0 | M=MALLARD | N=Clover | O=Soaked
+1769: H=15258.0 | I=4.0 | J=75.0 | K=700.0 | L=700.0 | M=MALLARD | N=Clover | O=Frost
+1770: H=15259.0 | I=4.0 | J=75.0 | K=675.0 | L=675.0 | M=MALLARD | N=Clover | O=Gale
+1771: H=15260.0 | I=4.0 | J=75.0 | K=760.0 | L=760.0 | M=MALLARD | N=Clover | O=Thundered
+1772: H=15261.0 | I=4.0 | J=75.0 | K=895.0 | L=895.0 | M=MALLARD | N=Clover | O=Eclipse
+1773: H=15262.0 | I=4.0 | J=75.0 | K=870.0 | L=870.0 | M=MALLARD | N=Clover | O=Prismatic
+1774: H=15263.0 | I=4.0 | J=75.0 | K=650.0 | L=650.0 | M=MALLARD | N=Fossilized | O=Soaked
+1775: H=15264.0 | I=4.0 | J=75.0 | K=735.0 | L=735.0 | M=MALLARD | N=Fossilized | O=Frost
+1776: H=15265.0 | I=4.0 | J=75.0 | K=715.0 | L=715.0 | M=MALLARD | N=Fossilized | O=Gale
+1777: H=15266.0 | I=4.0 | J=75.0 | K=800.0 | L=800.0 | M=MALLARD | N=Fossilized | O=Thundered
+1778: H=15267.0 | I=4.0 | J=75.0 | K=945.0 | L=945.0 | M=MALLARD | N=Fossilized | O=Eclipse
+1779: H=15268.0 | I=4.0 | J=75.0 | K=920.0 | L=920.0 | M=MALLARD | N=Fossilized | O=Prismatic
+1780: H=15269.0 | I=4.0 | J=75.0 | K=665.0 | L=665.0 | M=MALLARD | N=Sweetheart | O=Soaked
+1781: H=15270.0 | I=4.0 | J=75.0 | K=755.0 | L=755.0 | M=MALLARD | N=Sweetheart | O=Frost
+1782: H=15271.0 | I=4.0 | J=75.0 | K=730.0 | L=730.0 | M=MALLARD | N=Sweetheart | O=Gale
+1783: H=15272.0 | I=4.0 | J=75.0 | K=820.0 | L=820.0 | M=MALLARD | N=Sweetheart | O=Thundered
+1784: H=15273.0 | I=4.0 | J=75.0 | K=970.0 | L=970.0 | M=MALLARD | N=Sweetheart | O=Eclipse
+1785: H=15274.0 | I=4.0 | J=75.0 | K=940.0 | L=940.0 | M=MALLARD | N=Sweetheart | O=Prismatic
+1786: H=15275.0 | I=4.0 | J=75.0 | K=685.0 | L=685.0 | M=MALLARD | N=Crystalline | O=Soaked
+1787: H=15276.0 | I=4.0 | J=75.0 | K=775.0 | L=775.0 | M=MALLARD | N=Crystalline | O=Frost
+1788: H=15277.0 | I=4.0 | J=75.0 | K=755.0 | L=755.0 | M=MALLARD | N=Crystalline | O=Gale
+1789: H=15278.0 | I=4.0 | J=75.0 | K=845.0 | L=845.0 | M=MALLARD | N=Crystalline | O=Thundered
+1790: H=15279.0 | I=4.0 | J=75.0 | K=970.0 | L=970.0 | M=MALLARD | N=Crystalline | O=Prismatic
+1791: H=15280.0 | I=4.0 | J=75.0 | K=695.0 | L=695.0 | M=MALLARD | N=Webbed | O=Soaked
+1792: H=15281.0 | I=4.0 | J=75.0 | K=785.0 | L=785.0 | M=MALLARD | N=Webbed | O=Frost
+1793: H=15282.0 | I=4.0 | J=75.0 | K=765.0 | L=765.0 | M=MALLARD | N=Webbed | O=Gale
+1794: H=15283.0 | I=4.0 | J=75.0 | K=855.0 | L=855.0 | M=MALLARD | N=Webbed | O=Thundered
+1795: H=15284.0 | I=4.0 | J=75.0 | K=980.0 | L=980.0 | M=MALLARD | N=Webbed | O=Prismatic
+1796: H=15285.0 | I=4.0 | J=77.0 | K=575.0 | L=575.0 | M=ARMADILLO | N=Golden | O=Soaked
+1797: H=15286.0 | I=4.0 | J=77.0 | K=655.0 | L=655.0 | M=ARMADILLO | N=Golden | O=Frost
+1798: H=15287.0 | I=4.0 | J=77.0 | K=635.0 | L=635.0 | M=ARMADILLO | N=Golden | O=Gale
+1799: H=15288.0 | I=4.0 | J=77.0 | K=710.0 | L=710.0 | M=ARMADILLO | N=Golden | O=Thundered
+1800: H=15289.0 | I=4.0 | J=77.0 | K=840.0 | L=840.0 | M=ARMADILLO | N=Golden | O=Eclipse
+1801: H=15290.0 | I=4.0 | J=77.0 | K=815.0 | L=815.0 | M=ARMADILLO | N=Golden | O=Prismatic
+1802: H=15291.0 | I=4.0 | J=77.0 | K=720.0 | L=720.0 | M=ARMADILLO | N=Frozen | O=Soaked
+1803: H=15292.0 | I=4.0 | J=77.0 | K=815.0 | L=815.0 | M=ARMADILLO | N=Frozen | O=Frost
+1804: H=15293.0 | I=4.0 | J=77.0 | K=790.0 | L=790.0 | M=ARMADILLO | N=Frozen | O=Gale
+1805: H=15294.0 | I=4.0 | J=77.0 | K=885.0 | L=885.0 | M=ARMADILLO | N=Frozen | O=Thundered
+1806: H=15295.0 | I=4.0 | J=77.0 | K=865.0 | L=865.0 | M=ARMADILLO | N=Magma | O=Soaked
+1807: H=15296.0 | I=4.0 | J=77.0 | K=980.0 | L=980.0 | M=ARMADILLO | N=Magma | O=Frost
+1808: H=15297.0 | I=4.0 | J=77.0 | K=955.0 | L=955.0 | M=ARMADILLO | N=Magma | O=Gale
+1809: H=15298.0 | I=4.0 | J=77.0 | K=925.0 | L=925.0 | M=ARMADILLO | N=Clover | O=Soaked
+1810: H=15299.0 | I=4.0 | J=77.0 | K=975.0 | L=975.0 | M=ARMADILLO | N=Fossilized | O=Soaked
+1811: H=15300.0 | I=4.0 | J=77.0 | K=995.0 | L=995.0 | M=ARMADILLO | N=Sweetheart | O=Soaked
+1812: H=15301.0 | I=4.0 | J=78.0 | K=575.0 | L=575.0 | M=AXOLOTLBLUE | N=Golden | O=Soaked
+1813: H=15302.0 | I=4.0 | J=78.0 | K=655.0 | L=655.0 | M=AXOLOTLBLUE | N=Golden | O=Frost
+1814: H=15303.0 | I=4.0 | J=78.0 | K=635.0 | L=635.0 | M=AXOLOTLBLUE | N=Golden | O=Gale
+1815: H=15304.0 | I=4.0 | J=78.0 | K=710.0 | L=710.0 | M=AXOLOTLBLUE | N=Golden | O=Thundered
+1816: H=15305.0 | I=4.0 | J=78.0 | K=840.0 | L=840.0 | M=AXOLOTLBLUE | N=Golden | O=Eclipse
+1817: H=15306.0 | I=4.0 | J=78.0 | K=815.0 | L=815.0 | M=AXOLOTLBLUE | N=Golden | O=Prismatic
+1818: H=15307.0 | I=4.0 | J=78.0 | K=720.0 | L=720.0 | M=AXOLOTLBLUE | N=Frozen | O=Soaked
+1819: H=15308.0 | I=4.0 | J=78.0 | K=815.0 | L=815.0 | M=AXOLOTLBLUE | N=Frozen | O=Frost
+1820: H=15309.0 | I=4.0 | J=78.0 | K=790.0 | L=790.0 | M=AXOLOTLBLUE | N=Frozen | O=Gale
+1821: H=15310.0 | I=4.0 | J=78.0 | K=885.0 | L=885.0 | M=AXOLOTLBLUE | N=Frozen | O=Thundered
+1822: H=15311.0 | I=4.0 | J=78.0 | K=865.0 | L=865.0 | M=AXOLOTLBLUE | N=Magma | O=Soaked
+1823: H=15312.0 | I=4.0 | J=78.0 | K=980.0 | L=980.0 | M=AXOLOTLBLUE | N=Magma | O=Frost
+1824: H=15313.0 | I=4.0 | J=78.0 | K=955.0 | L=955.0 | M=AXOLOTLBLUE | N=Magma | O=Gale
+1825: H=15314.0 | I=4.0 | J=78.0 | K=925.0 | L=925.0 | M=AXOLOTLBLUE | N=Clover | O=Soaked
+1826: H=15315.0 | I=4.0 | J=78.0 | K=975.0 | L=975.0 | M=AXOLOTLBLUE | N=Fossilized | O=Soaked
+1827: H=15316.0 | I=4.0 | J=78.0 | K=995.0 | L=995.0 | M=AXOLOTLBLUE | N=Sweetheart | O=Soaked
+1828: H=15317.0 | I=4.0 | J=79.0 | K=385.0 | L=385.0 | M=AXOLOTLPINK | N=Golden | O=Soaked
+1829: H=15318.0 | I=4.0 | J=79.0 | K=435.0 | L=435.0 | M=AXOLOTLPINK | N=Golden | O=Frost
+1830: H=15319.0 | I=4.0 | J=79.0 | K=425.0 | L=425.0 | M=AXOLOTLPINK | N=Golden | O=Gale
+1831: H=15320.0 | I=4.0 | J=79.0 | K=475.0 | L=475.0 | M=AXOLOTLPINK | N=Golden | O=Thundered
+1832: H=15321.0 | I=4.0 | J=79.0 | K=560.0 | L=560.0 | M=AXOLOTLPINK | N=Golden | O=Eclipse
+1833: H=15322.0 | I=4.0 | J=79.0 | K=545.0 | L=545.0 | M=AXOLOTLPINK | N=Golden | O=Prismatic
+1834: H=15323.0 | I=4.0 | J=79.0 | K=480.0 | L=480.0 | M=AXOLOTLPINK | N=Frozen | O=Soaked
+1835: H=15324.0 | I=4.0 | J=79.0 | K=545.0 | L=545.0 | M=AXOLOTLPINK | N=Frozen | O=Frost
+1836: H=15325.0 | I=4.0 | J=79.0 | K=530.0 | L=530.0 | M=AXOLOTLPINK | N=Frozen | O=Gale
+1837: H=15326.0 | I=4.0 | J=79.0 | K=590.0 | L=590.0 | M=AXOLOTLPINK | N=Frozen | O=Thundered
+1838: H=15327.0 | I=4.0 | J=79.0 | K=700.0 | L=700.0 | M=AXOLOTLPINK | N=Frozen | O=Eclipse
+1839: H=15328.0 | I=4.0 | J=79.0 | K=680.0 | L=680.0 | M=AXOLOTLPINK | N=Frozen | O=Prismatic
+1840: H=15329.0 | I=4.0 | J=79.0 | K=580.0 | L=580.0 | M=AXOLOTLPINK | N=Magma | O=Soaked
+1841: H=15330.0 | I=4.0 | J=79.0 | K=655.0 | L=655.0 | M=AXOLOTLPINK | N=Magma | O=Frost
+1842: H=15331.0 | I=4.0 | J=79.0 | K=635.0 | L=635.0 | M=AXOLOTLPINK | N=Magma | O=Gale
+1843: H=15332.0 | I=4.0 | J=79.0 | K=715.0 | L=715.0 | M=AXOLOTLPINK | N=Magma | O=Thundered
+1844: H=15333.0 | I=4.0 | J=79.0 | K=840.0 | L=840.0 | M=AXOLOTLPINK | N=Magma | O=Eclipse
+1845: H=15334.0 | I=4.0 | J=79.0 | K=820.0 | L=820.0 | M=AXOLOTLPINK | N=Magma | O=Prismatic
+1846: H=15335.0 | I=4.0 | J=79.0 | K=615.0 | L=615.0 | M=AXOLOTLPINK | N=Clover | O=Soaked
+1847: H=15336.0 | I=4.0 | J=79.0 | K=700.0 | L=700.0 | M=AXOLOTLPINK | N=Clover | O=Frost
+1848: H=15337.0 | I=4.0 | J=79.0 | K=675.0 | L=675.0 | M=AXOLOTLPINK | N=Clover | O=Gale
+1849: H=15338.0 | I=4.0 | J=79.0 | K=760.0 | L=760.0 | M=AXOLOTLPINK | N=Clover | O=Thundered
+1850: H=15339.0 | I=4.0 | J=79.0 | K=895.0 | L=895.0 | M=AXOLOTLPINK | N=Clover | O=Eclipse
+1851: H=15340.0 | I=4.0 | J=79.0 | K=870.0 | L=870.0 | M=AXOLOTLPINK | N=Clover | O=Prismatic
+1852: H=15341.0 | I=4.0 | J=79.0 | K=650.0 | L=650.0 | M=AXOLOTLPINK | N=Fossilized | O=Soaked
+1853: H=15342.0 | I=4.0 | J=79.0 | K=735.0 | L=735.0 | M=AXOLOTLPINK | N=Fossilized | O=Frost
+1854: H=15343.0 | I=4.0 | J=79.0 | K=715.0 | L=715.0 | M=AXOLOTLPINK | N=Fossilized | O=Gale
+1855: H=15344.0 | I=4.0 | J=79.0 | K=800.0 | L=800.0 | M=AXOLOTLPINK | N=Fossilized | O=Thundered
+1856: H=15345.0 | I=4.0 | J=79.0 | K=945.0 | L=945.0 | M=AXOLOTLPINK | N=Fossilized | O=Eclipse
+1857: H=15346.0 | I=4.0 | J=79.0 | K=920.0 | L=920.0 | M=AXOLOTLPINK | N=Fossilized | O=Prismatic
+1858: H=15347.0 | I=4.0 | J=79.0 | K=665.0 | L=665.0 | M=AXOLOTLPINK | N=Sweetheart | O=Soaked
+1859: H=15348.0 | I=4.0 | J=79.0 | K=755.0 | L=755.0 | M=AXOLOTLPINK | N=Sweetheart | O=Frost
+1860: H=15349.0 | I=4.0 | J=79.0 | K=730.0 | L=730.0 | M=AXOLOTLPINK | N=Sweetheart | O=Gale
+1861: H=15350.0 | I=4.0 | J=79.0 | K=820.0 | L=820.0 | M=AXOLOTLPINK | N=Sweetheart | O=Thundered
+1862: H=15351.0 | I=4.0 | J=79.0 | K=970.0 | L=970.0 | M=AXOLOTLPINK | N=Sweetheart | O=Eclipse
+1863: H=15352.0 | I=4.0 | J=79.0 | K=940.0 | L=940.0 | M=AXOLOTLPINK | N=Sweetheart | O=Prismatic
+1864: H=15353.0 | I=4.0 | J=79.0 | K=685.0 | L=685.0 | M=AXOLOTLPINK | N=Crystalline | O=Soaked
+1865: H=15354.0 | I=4.0 | J=79.0 | K=775.0 | L=775.0 | M=AXOLOTLPINK | N=Crystalline | O=Frost
+1866: H=15355.0 | I=4.0 | J=79.0 | K=755.0 | L=755.0 | M=AXOLOTLPINK | N=Crystalline | O=Gale
+1867: H=15356.0 | I=4.0 | J=79.0 | K=845.0 | L=845.0 | M=AXOLOTLPINK | N=Crystalline | O=Thundered
+1868: H=15357.0 | I=4.0 | J=79.0 | K=970.0 | L=970.0 | M=AXOLOTLPINK | N=Crystalline | O=Prismatic
+1869: H=15358.0 | I=4.0 | J=79.0 | K=695.0 | L=695.0 | M=AXOLOTLPINK | N=Webbed | O=Soaked
+1870: H=15359.0 | I=4.0 | J=79.0 | K=785.0 | L=785.0 | M=AXOLOTLPINK | N=Webbed | O=Frost
+1871: H=15360.0 | I=4.0 | J=79.0 | K=765.0 | L=765.0 | M=AXOLOTLPINK | N=Webbed | O=Gale
+1872: H=15361.0 | I=4.0 | J=79.0 | K=855.0 | L=855.0 | M=AXOLOTLPINK | N=Webbed | O=Thundered
+1873: H=15362.0 | I=4.0 | J=79.0 | K=980.0 | L=980.0 | M=AXOLOTLPINK | N=Webbed | O=Prismatic
+1874: H=15363.0 | I=4.0 | J=80.0 | K=575.0 | L=575.0 | M=AXOLOTLGREEN | N=Golden | O=Soaked
+1875: H=15364.0 | I=4.0 | J=80.0 | K=655.0 | L=655.0 | M=AXOLOTLGREEN | N=Golden | O=Frost
+1876: H=15365.0 | I=4.0 | J=80.0 | K=635.0 | L=635.0 | M=AXOLOTLGREEN | N=Golden | O=Gale
+1877: H=15366.0 | I=4.0 | J=80.0 | K=710.0 | L=710.0 | M=AXOLOTLGREEN | N=Golden | O=Thundered
+1878: H=15367.0 | I=4.0 | J=80.0 | K=840.0 | L=840.0 | M=AXOLOTLGREEN | N=Golden | O=Eclipse
+1879: H=15368.0 | I=4.0 | J=80.0 | K=815.0 | L=815.0 | M=AXOLOTLGREEN | N=Golden | O=Prismatic
+1880: H=15369.0 | I=4.0 | J=80.0 | K=720.0 | L=720.0 | M=AXOLOTLGREEN | N=Frozen | O=Soaked
+1881: H=15370.0 | I=4.0 | J=80.0 | K=815.0 | L=815.0 | M=AXOLOTLGREEN | N=Frozen | O=Frost
+1882: H=15371.0 | I=4.0 | J=80.0 | K=790.0 | L=790.0 | M=AXOLOTLGREEN | N=Frozen | O=Gale
+1883: H=15372.0 | I=4.0 | J=80.0 | K=885.0 | L=885.0 | M=AXOLOTLGREEN | N=Frozen | O=Thundered
+1884: H=15373.0 | I=4.0 | J=80.0 | K=865.0 | L=865.0 | M=AXOLOTLGREEN | N=Magma | O=Soaked
+1885: H=15374.0 | I=4.0 | J=80.0 | K=980.0 | L=980.0 | M=AXOLOTLGREEN | N=Magma | O=Frost
+1886: H=15375.0 | I=4.0 | J=80.0 | K=955.0 | L=955.0 | M=AXOLOTLGREEN | N=Magma | O=Gale
+1887: H=15376.0 | I=4.0 | J=80.0 | K=925.0 | L=925.0 | M=AXOLOTLGREEN | N=Clover | O=Soaked
+1888: H=15377.0 | I=4.0 | J=80.0 | K=975.0 | L=975.0 | M=AXOLOTLGREEN | N=Fossilized | O=Soaked
+1889: H=15378.0 | I=4.0 | J=80.0 | K=995.0 | L=995.0 | M=AXOLOTLGREEN | N=Sweetheart | O=Soaked
+1890: H=15379.0 | I=4.0 | J=81.0 | K=575.0 | L=575.0 | M=AXOLOTLORANGE | N=Golden | O=Soaked
+1891: H=15380.0 | I=4.0 | J=81.0 | K=655.0 | L=655.0 | M=AXOLOTLORANGE | N=Golden | O=Frost
+1892: H=15381.0 | I=4.0 | J=81.0 | K=635.0 | L=635.0 | M=AXOLOTLORANGE | N=Golden | O=Gale
+1893: H=15382.0 | I=4.0 | J=81.0 | K=710.0 | L=710.0 | M=AXOLOTLORANGE | N=Golden | O=Thundered
+1894: H=15383.0 | I=4.0 | J=81.0 | K=840.0 | L=840.0 | M=AXOLOTLORANGE | N=Golden | O=Eclipse
+1895: H=15384.0 | I=4.0 | J=81.0 | K=815.0 | L=815.0 | M=AXOLOTLORANGE | N=Golden | O=Prismatic
+1896: H=15385.0 | I=4.0 | J=81.0 | K=720.0 | L=720.0 | M=AXOLOTLORANGE | N=Frozen | O=Soaked
+1897: H=15386.0 | I=4.0 | J=81.0 | K=815.0 | L=815.0 | M=AXOLOTLORANGE | N=Frozen | O=Frost
+1898: H=15387.0 | I=4.0 | J=81.0 | K=790.0 | L=790.0 | M=AXOLOTLORANGE | N=Frozen | O=Gale
+1899: H=15388.0 | I=4.0 | J=81.0 | K=885.0 | L=885.0 | M=AXOLOTLORANGE | N=Frozen | O=Thundered
+1900: H=15389.0 | I=4.0 | J=81.0 | K=865.0 | L=865.0 | M=AXOLOTLORANGE | N=Magma | O=Soaked
+1901: H=15390.0 | I=4.0 | J=81.0 | K=980.0 | L=980.0 | M=AXOLOTLORANGE | N=Magma | O=Frost
+1902: H=15391.0 | I=4.0 | J=81.0 | K=955.0 | L=955.0 | M=AXOLOTLORANGE | N=Magma | O=Gale
+1903: H=15392.0 | I=4.0 | J=81.0 | K=925.0 | L=925.0 | M=AXOLOTLORANGE | N=Clover | O=Soaked
+1904: H=15393.0 | I=4.0 | J=81.0 | K=975.0 | L=975.0 | M=AXOLOTLORANGE | N=Fossilized | O=Soaked
+1905: H=15394.0 | I=4.0 | J=81.0 | K=995.0 | L=995.0 | M=AXOLOTLORANGE | N=Sweetheart | O=Soaked
+1906: H=15395.0 | I=4.0 | J=82.0 | K=575.0 | L=575.0 | M=AXOLOTLWHITE | N=Golden | O=Soaked
+1907: H=15396.0 | I=4.0 | J=82.0 | K=655.0 | L=655.0 | M=AXOLOTLWHITE | N=Golden | O=Frost
+1908: H=15397.0 | I=4.0 | J=82.0 | K=635.0 | L=635.0 | M=AXOLOTLWHITE | N=Golden | O=Gale
+1909: H=15398.0 | I=4.0 | J=82.0 | K=710.0 | L=710.0 | M=AXOLOTLWHITE | N=Golden | O=Thundered
+1910: H=15399.0 | I=4.0 | J=82.0 | K=840.0 | L=840.0 | M=AXOLOTLWHITE | N=Golden | O=Eclipse
+1911: H=15400.0 | I=4.0 | J=82.0 | K=815.0 | L=815.0 | M=AXOLOTLWHITE | N=Golden | O=Prismatic
+1912: H=15401.0 | I=4.0 | J=82.0 | K=720.0 | L=720.0 | M=AXOLOTLWHITE | N=Frozen | O=Soaked
+1913: H=15402.0 | I=4.0 | J=82.0 | K=815.0 | L=815.0 | M=AXOLOTLWHITE | N=Frozen | O=Frost
+1914: H=15403.0 | I=4.0 | J=82.0 | K=790.0 | L=790.0 | M=AXOLOTLWHITE | N=Frozen | O=Gale
+1915: H=15404.0 | I=4.0 | J=82.0 | K=885.0 | L=885.0 | M=AXOLOTLWHITE | N=Frozen | O=Thundered
+1916: H=15405.0 | I=4.0 | J=82.0 | K=865.0 | L=865.0 | M=AXOLOTLWHITE | N=Magma | O=Soaked
+1917: H=15406.0 | I=4.0 | J=82.0 | K=980.0 | L=980.0 | M=AXOLOTLWHITE | N=Magma | O=Frost
+1918: H=15407.0 | I=4.0 | J=82.0 | K=955.0 | L=955.0 | M=AXOLOTLWHITE | N=Magma | O=Gale
+1919: H=15408.0 | I=4.0 | J=82.0 | K=925.0 | L=925.0 | M=AXOLOTLWHITE | N=Clover | O=Soaked
+1920: H=15409.0 | I=4.0 | J=82.0 | K=975.0 | L=975.0 | M=AXOLOTLWHITE | N=Fossilized | O=Soaked
+1921: H=15410.0 | I=4.0 | J=82.0 | K=995.0 | L=995.0 | M=AXOLOTLWHITE | N=Sweetheart | O=Soaked
+1922: H=15411.0 | I=4.0 | J=84.0 | K=575.0 | L=575.0 | M=BABOON | N=Golden | O=Soaked
+1923: H=15412.0 | I=4.0 | J=84.0 | K=655.0 | L=655.0 | M=BABOON | N=Golden | O=Frost
+1924: H=15413.0 | I=4.0 | J=84.0 | K=635.0 | L=635.0 | M=BABOON | N=Golden | O=Gale
+1925: H=15414.0 | I=4.0 | J=84.0 | K=710.0 | L=710.0 | M=BABOON | N=Golden | O=Thundered
+1926: H=15415.0 | I=4.0 | J=84.0 | K=840.0 | L=840.0 | M=BABOON | N=Golden | O=Eclipse
+1927: H=15416.0 | I=4.0 | J=84.0 | K=815.0 | L=815.0 | M=BABOON | N=Golden | O=Prismatic
+1928: H=15417.0 | I=4.0 | J=84.0 | K=720.0 | L=720.0 | M=BABOON | N=Frozen | O=Soaked
+1929: H=15418.0 | I=4.0 | J=84.0 | K=815.0 | L=815.0 | M=BABOON | N=Frozen | O=Frost
+1930: H=15419.0 | I=4.0 | J=84.0 | K=790.0 | L=790.0 | M=BABOON | N=Frozen | O=Gale
+1931: H=15420.0 | I=4.0 | J=84.0 | K=885.0 | L=885.0 | M=BABOON | N=Frozen | O=Thundered
+1932: H=15421.0 | I=4.0 | J=84.0 | K=865.0 | L=865.0 | M=BABOON | N=Magma | O=Soaked
+1933: H=15422.0 | I=4.0 | J=84.0 | K=980.0 | L=980.0 | M=BABOON | N=Magma | O=Frost
+1934: H=15423.0 | I=4.0 | J=84.0 | K=955.0 | L=955.0 | M=BABOON | N=Magma | O=Gale
+1935: H=15424.0 | I=4.0 | J=84.0 | K=925.0 | L=925.0 | M=BABOON | N=Clover | O=Soaked
+1936: H=15425.0 | I=4.0 | J=84.0 | K=975.0 | L=975.0 | M=BABOON | N=Fossilized | O=Soaked
+1937: H=15426.0 | I=4.0 | J=84.0 | K=995.0 | L=995.0 | M=BABOON | N=Sweetheart | O=Soaked
+1938: H=int | I=int | J=int | K=int | L=int

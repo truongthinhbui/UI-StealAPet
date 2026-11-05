@@ -1,6 +1,6 @@
 (function(){
 'use strict';
-const colors={COMMON:'#9db4c5',RARE:'#59baff',EPIC:'#bf8cff',LEGENDARY:'#ffd45a',MYTHIC:'#ff7897',APEX:'#53ead2'},rarities=Object.keys(colors);
+const colors={COMMON:'#31c779',RARE:'#59baff',EPIC:'#bf8cff',LEGENDARY:'#f05252',MYTHIC:'#ffcc40',APEX:'#53ead2'},rarities=Object.keys(colors);
 window.FishingChart=function(host){
  host.className='fishingChart';host.hidden=true;
  host.innerHTML='<div class="chartHeading"><h3>Kết quả theo lượt câu</h3><label>Biểu đồ <select class="chartMode"><option value="pet">Pet</option><option value="gen">Gen</option><option value="combo">Pet + Gen</option></select></label><label class="chartPetLabel">Pet <select class="chartPet"></select></label><label class="chartGenLabel">Gen <select class="chartGen"></select></label></div><p class="chartRun"></p><div class="chartMetrics"></div><svg viewBox="0 0 800 280" role="img" aria-label="Số kết quả tích lũy theo lượt câu"></svg><p class="chartLegend">━━ Thực tế &nbsp; ┄┄ Lý thuyết · Trục ngang: lượt câu · Trục dọc: số kết quả tích lũy</p><div class="genTableScroll chartFirst"></div><p>Thống kê đủ mọi lượt, kể cả sau giới hạn nhật ký. Đường lý thuyết là trung bình, không bảo đảm thời điểm xuất hiện. Tap không tăng độ hiếm pet.</p>';

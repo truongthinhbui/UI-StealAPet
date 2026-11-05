@@ -1,0 +1,140 @@
+{
+  "cycleMinutes": 69.0,
+  "fishingWindows": [
+    {
+      "weather": "HighTide",
+      "start": 6.0,
+      "end": 9.0,
+      "casts": 18
+    },
+    {
+      "weather": "HighTide",
+      "start": 24.0,
+      "end": 27.0,
+      "casts": 18
+    },
+    {
+      "weather": "HeavyRain",
+      "start": 42.0,
+      "end": 44.0,
+      "casts": 12
+    },
+    {
+      "weather": "HeavyRain",
+      "start": 62.0,
+      "end": 65.0,
+      "casts": 18
+    }
+  ],
+  "castsPerCycle": 66,
+  "fishing": [
+    {
+      "band": "R1–R4",
+      "apexPerCast": 0.00011,
+      "webGivenGen": 2e-06,
+      "webPerCastGold": 1.2e-06,
+      "apexWebPerCastGold": 1.32e-10,
+      "meanCasts": 7575757575.757575,
+      "mean18CastEvents": 420875421.347643,
+      "meanActiveYears": 2402.256968467014,
+      "extraCastFactorOverApexOnly": 833333.3333333334,
+      "activeHours": 21043771.043771043,
+      "elapsedHours24h": 132001836.54729109,
+      "elapsedYears24h": 15068.702802202179,
+      "daysAt1HourPerDay": 132001836.54729109,
+      "apexOnlyElapsedHours24h": 158.4022038567493
+    },
+    {
+      "band": "R5–R8",
+      "apexPerCast": 0.000165,
+      "webGivenGen": 9e-06,
+      "webPerCastGold": 5.4e-06,
+      "apexWebPerCastGold": 8.909999999999999e-10,
+      "meanCasts": 1122334455.667789,
+      "mean18CastEvents": 62351914.67598828,
+      "meanActiveYears": 355.8899212543725,
+      "extraCastFactorOverApexOnly": 185185.1851851852,
+      "activeHours": 3117595.7101883027,
+      "elapsedHours24h": 19555827.636635717,
+      "elapsedYears24h": 2232.4004151410636,
+      "daysAt1HourPerDay": 19555827.636635717,
+      "apexOnlyElapsedHours24h": 105.60146923783287
+    },
+    {
+      "band": "R9–R13",
+      "apexPerCast": 0.00022,
+      "webGivenGen": 3.6e-05,
+      "webPerCastGold": 2.16e-05,
+      "apexWebPerCastGold": 4.752e-09,
+      "meanCasts": 210437710.43771043,
+      "mean18CastEvents": 11690984.385428363,
+      "meanActiveYears": 66.72936023519483,
+      "extraCastFactorOverApexOnly": 46296.2962962963,
+      "activeHours": 584549.1956603067,
+      "elapsedHours24h": 3666717.6818691967,
+      "elapsedYears24h": 418.5750778389494,
+      "daysAt1HourPerDay": 3666717.6818691967,
+      "apexOnlyElapsedHours24h": 79.20110192837465
+    },
+    {
+      "band": "R14–R18",
+      "apexPerCast": 0.00033,
+      "webGivenGen": 9e-05,
+      "webPerCastGold": 5.4000000000000005e-05,
+      "apexWebPerCastGold": 1.782e-08,
+      "meanCasts": 56116722.78338945,
+      "mean18CastEvents": 3117596.1824105517,
+      "meanActiveYears": 17.794496062718622,
+      "extraCastFactorOverApexOnly": 18518.51851851852,
+      "activeHours": 155879.78550941515,
+      "elapsedHours24h": 977791.3818317859,
+      "elapsedYears24h": 111.62002075705318,
+      "daysAt1HourPerDay": 977791.3818317859,
+      "apexOnlyElapsedHours24h": 52.80073461891644
+    },
+    {
+      "band": "R19+",
+      "apexPerCast": 0.0004100123003690111,
+      "webGivenGen": 0.00027,
+      "webPerCastGold": 0.000162,
+      "apexWebPerCastGold": 6.642199265977979e-08,
+      "meanCasts": 15055254.441433303,
+      "mean18CastEvents": 836403.4967463939,
+      "meanActiveYears": 4.77398986600498,
+      "extraCastFactorOverApexOnly": 6172.839506172839,
+      "activeHours": 41820.15122620362,
+      "elapsedHours24h": 262326.4031461863,
+      "elapsedYears24h": 29.945936432213053,
+      "daysAt1HourPerDay": 262326.4031461863,
+      "apexOnlyElapsedHours24h": 42.49687730968219
+    }
+  ],
+  "dig": {
+    "rebirth": "R19+",
+    "bestOfFiveRarity": [
+      7.593749999999998e-05,
+      0.010164062500000003,
+      0.15782999999999994,
+      0.49101152319999986,
+      0.34091847679999965
+    ],
+    "apexPerPaidSpotByRarity": [
+      0.0,
+      0.0,
+      0.0,
+      8.3e-05,
+      0.017607042817126852
+    ],
+    "apexPerBestScan": 0.0060433201745928615,
+    "meanDigsToApexNoPity": 165.4719543412856,
+    "digEventsPerCycle": 7,
+    "paidDigsPerEvent": 3,
+    "elapsedHoursNoPity": 9.061559404403734
+  },
+  "box": {
+    "mixedBoxApexChance": 0.0016163678092753243,
+    "meanMixedBoxes": 618.6710687144505,
+    "elapsedHoursAt3BoxesPer69min": 237.15724300720603,
+    "elapsedHoursAt2BoxesPer69min": 355.73586451080905
+  }
+}

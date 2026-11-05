@@ -1,0 +1,63 @@
+1: A=0. Changelog | B= | C= | D=
+2: A=Date | C=Description | I= 
+3: A=2026-01-08 00:00:00 | C=Initial Design
+4: A=Oct 8, 2026 | C=Approved900s Stars config; fixed700 featured price; shared100/day cap. Predictor v8.
+6: K= 
+7: A=1. Overview
+8: A=SUPERSEDED — Use Event Frame (gid526357732) for approved event rules and future updates. The following Meteor-only content is kept as a historical reference; implementation and balance predictions are consolidated in Event Frame sections5,13 and14. | H=            
+9: A=Goal | B=Low-maintenance14-day event. One daily login,5 catches and5 digs give20 Stars. Meteor participation earns the rest. Featured pet costs700, limit1/account/event. | H= 
+10: A=Core Loop | B=Wait for Meteor → deal valid damage → complete hit threshold → earn10 Stars → repeat until100/day → buy event rewards.
+11: M= 
+12: A=2. Event Flow
+13: A=Rule Name | B=Rules
+14: A=Spawn | B=Every900 seconds (15 minutes). Use server room timer; no extra spawn on login. One Meteor per scheduled spawn. | F=3.0
+15: A=Meteor HP | B=HP =min(40×room occupants at spawn,240), minimum40. Snapshot once; do not change HP on join/leave. Reuse existing event entity.
+16: A=Damage | B=4 HP per accepted player/clone hit. Count only server-accepted damage. Misses, dead targets and repeated hit IDs give no counter progress.
+17: A=Currency | B=Stars / Sao. Event-only wallet keyed by EventID. Shard stack size does not multiply Stars. Old shard balance is not converted.
+18: A=Owner | B=Player and owned clone hits use one owner counter and wallet. Clone has no separate cap or wallet. Idle clones give no hit progress.
+19: A=Counter start | B=At each new Meteor, set owner HitCount=0 and pick Threshold uniformly from integers4,5,6,7,8,9. Unfinished progress expires with that Meteor.
+20: A=Counter payout | B=Each accepted owner hit adds1. At HitCount≥Threshold: emit one payout result, grant10 Stars subject to cap, reset HitCount=0 and pick a new4–9 Threshold. Repeat on the same Meteor.
+21: A=One-hit contributor | B=A fresh single hit gives no threshold reward. Progress and payouts use the player's own accepted hits, not total room damage.
+22: A=Break / other drops | B=No extra Star reward on break and no separate random Star roll. Existing non-currency drops stay unchanged. Meteor Stars are granted only through counter payouts.
+23: A=Daily cap | B=100 earned Stars/account/day, shared with activities. Grant=min(10,max(0,100−EarnedToday)). Spending does not reopen the cap. No wallet-balance cap.
+24: A=After cap | B=Keep gameplay and existing non-Star drops. Payout counter may continue; credited Stars remain0 until daily reset. Do not bank missed Stars.
+25: A=Reward retry | B=Use EventID + MeteorInstanceID + OwnerID + PayoutIndex as result key. Serialize counter update, completion key and wallet grant; retries do not pay twice.
+26: A=Counter reconnect | B=Save current MeteorInstanceID, HitCount, Threshold and PayoutIndex. Reconnect to the same instance resumes saved state; another Meteor starts a fresh counter.
+27: A=Daily reset | B=UTC midnight: DayKey=floor(ServerUnixSec/86400). Reset EarnedToday and activity counters/claims. Keep wallet and shop purchase counts. Meteor counter follows MeteorInstanceID, not daily reset.
+28: A=Duration | B=Earning14 days; shop stays open3 more days. EndUnix=StartUnix+14×86400. ShopCloseUnix=EndUnix+3×86400. Start at UTC reset boundary. | F= 
+29: A=Event end | B=EndUnix stops earning. ShopCloseUnix stops purchases and expires remaining Stars. Use Event Frame transaction/retry rules.
+31: A=3. Daily Activities
+32: A=Task | B=Completion / reward / daily limit
+33: A=Login | B=First login each earning day →10 Stars, once/day.
+34: A=Fish | B=5 successful catches →5 Stars, once/day. Failed catches do not count.
+35: A=Dig | B=5 successful digs →5 Stars, once/day. Failed digs do not count.
+36: A=Activity total | B=20/day maximum. Auto-grant once when complete, clipped by the same100 cap. Stop each count at5; reset at UTC midnight.
+38: A=4. Event Shop
+39: A=Item | B=Price / account limit per event / reward
+40: A=Dust pack | B=20 Stars; limit10;50 Dust.
+41: A=MoneyTime | B=40 Stars; limit5;1h MoneyTime.
+42: A=Common Weather Charm | B=100 Stars; limit2;1 Common Weather Charm.
+43: A=Rare Pet | B=150 Stars; limit2;1 pet from configured Rare pool.
+44: A=Featured Pet | B=700 Stars; limit1;1 fixed FeaturedPetID. No price escalation. No daily stock refresh.
+45: A=Purchase | B=Check shop interval, wallet and stock. Deduct price, increment stock count and record reward delivery in one commit. A purchase ID charges/delivers once.
+46: A=Economy ceiling | B=At most1,400 earned in14 days. Full shop stock costs1,600; player cannot buy all maxima. A700 purchase leaves at most700 for other offers.
+48: A=5. Balance Reference — Prediction
+49: A=Parameter | B=Selected model setting; behavior inputs are assumptions
+50: A=Casual | B=2 sessions×20 minutes/day =40 minutes; expected2.67 Meteor appearances/day.
+51: A=Active | B=1 session×60 minutes/day; expected4 appearances/day.
+52: A=Attendance / variation | B=100% daily attendance; ±20% activity variation; all3 daily tasks complete. No earlier shop spending.
+53: A=Room weights | B=Occupants1/2/3/4/5/6: weights10/20/25/20/15/10. Assumed player-weighted room mix; not live telemetry.
+54: A=Clone model | B=0% clone-assisted mains in baseline. Comparison:1 idle clone; main hit rate1× each real hitter. Idle clones occupy room HP slots but do not hit.
+55: A=Clear / hits | B=Model assumes every Meteor fully clears and damage is shared proportionally by real hitters. No fight duration, session phase or extra fragment model.
+56: A=Legacy shards | B=Values1/2/3/4 with weights50/30/15/5 are comparison inputs only. They do not change10 Stars per counter payout.
+57: A=Simulation | B=8,000 players/cohort; seed20260909;14 earning days; repeating uniform4–9 counter; reset each Meteor.
+58: A=Casual result | B=End Stars P10/P50/P90:680/720/760. Mean credited51.14/day.74.28% can afford700 by day14.
+59: A=Active result | B=End Stars P10/P50/P90:880/930/980. Mean credited66.64/day.100% can afford700 by day14.
+60: A=Earliest ceiling | B=Even at100/day, need7 earning days to save700 from zero. Prediction results are not guaranteed player rewards.
+61: A=Pricing rule | B=Keep featured price700. Predictor percentile suggestions are analysis only and do not replace approved shop prices.
+63: A=6. Acceptance
+64: A=Check | B=Expected result
+65: A=Counter | B=Threshold4: first3 accepted hits grant0; fourth grants10. New threshold permits another payout before break.
+66: A=Cap | B=EarnedToday95 → next payout credits5. At100 it credits0. Spending Stars leaves EarnedToday unchanged.
+67: A=Expiry / retry | B=New Meteor resets unfinished hit progress. Replayed payout ID gives0. Event end stops all Star grants.
+68: A=Activities | B=Login10, fifth successful catch5, fifth successful dig5. Each task pays once/day and shares the cap.
