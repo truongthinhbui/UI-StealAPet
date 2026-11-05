@@ -1,0 +1,1759 @@
+{
+  "schemaVersion": 3,
+  "updatedAt": "2026-11-05",
+  "rollOrder": [
+    "fish",
+    "genCount",
+    "genTypes"
+  ],
+  "rollTiming": "after-third-scored-tap",
+  "fishing": {
+    "version": "fishing-legacy-fish-first-v3",
+    "source": {
+      "workbook": "[Craftland] Steal A Pet Master Data.xlsx",
+      "sheet": "Fishing",
+      "range": "A1:Q37",
+      "notes": "Use original 35 fish rows; normalize actual weights. Above RB25 reuse the last source band. Claim price follows SpawnPrice*ClaimK, not stale cached Q."
+    },
+    "bands": [
+      {
+        "min": 1,
+        "max": 5,
+        "label": "R1–R5"
+      },
+      {
+        "min": 6,
+        "max": 10,
+        "label": "R6–R10"
+      },
+      {
+        "min": 11,
+        "max": 15,
+        "label": "R11–R15"
+      },
+      {
+        "min": 16,
+        "max": 20,
+        "label": "R16–R20"
+      },
+      {
+        "min": 21,
+        "max": null,
+        "label": "R21+"
+      }
+    ],
+    "allowedWeather": [
+      "HighTide",
+      "HeavyRain"
+    ],
+    "castCost": 0,
+    "mechanic": {
+      "mode": 7,
+      "taps": 3,
+      "greenMutation": 20,
+      "goldMutation": 40,
+      "missMutation": 0,
+      "cooldown": 0
+    },
+    "chests": {
+      "enabled": false,
+      "reason": "Chest contents, purchase prices and approved per-counter ramp are not supplied."
+    },
+    "pets": [
+      {
+        "id": 52,
+        "name": "SHRIMP",
+        "rank": 9,
+        "rarity": "COMMON",
+        "tier": null,
+        "weights": [
+          403323,
+          173318,
+          73313,
+          39970,
+          19960
+        ],
+        "spawnPrice": "550.0",
+        "claimK": "1.1",
+        "claimPrice": "605.00",
+        "claimCents": "60500"
+      },
+      {
+        "id": 1012,
+        "name": "MUDSKIPPER",
+        "rank": 12,
+        "rarity": "COMMON",
+        "tier": null,
+        "weights": [
+          201667,
+          86667,
+          36667,
+          20000,
+          10000
+        ],
+        "spawnPrice": "22222.0",
+        "claimK": "1.1",
+        "claimPrice": "24444.20",
+        "claimCents": "2444420"
+      },
+      {
+        "id": 12,
+        "name": "CRAB",
+        "rank": 24,
+        "rarity": "RARE",
+        "tier": null,
+        "weights": [
+          71429,
+          128572,
+          57143,
+          42857,
+          22857
+        ],
+        "spawnPrice": "5600.0",
+        "claimK": "1.1",
+        "claimPrice": "6160.00",
+        "claimCents": "616000"
+      },
+      {
+        "id": 13,
+        "name": "CLOWNFISH",
+        "rank": 25,
+        "rarity": "RARE",
+        "tier": null,
+        "weights": [
+          71429,
+          128571,
+          57143,
+          42857,
+          22857
+        ],
+        "spawnPrice": "9600.0",
+        "claimK": "1.1",
+        "claimPrice": "10560.00",
+        "claimCents": "1056000"
+      },
+      {
+        "id": 17,
+        "name": "TURTLE",
+        "rank": 29,
+        "rarity": "RARE",
+        "tier": null,
+        "weights": [
+          71428,
+          128571,
+          57143,
+          42857,
+          22857
+        ],
+        "spawnPrice": "42400.0",
+        "claimK": "1.1",
+        "claimPrice": "46640.00",
+        "claimCents": "4664000"
+      },
+      {
+        "id": 1002,
+        "name": "SQUID",
+        "rank": 31,
+        "rarity": "RARE",
+        "tier": null,
+        "weights": [
+          35714,
+          64286,
+          28571,
+          21429,
+          11429
+        ],
+        "spawnPrice": "326592.0",
+        "claimK": "1.1",
+        "claimPrice": "359251.20",
+        "claimCents": "35925120"
+      },
+      {
+        "id": 23,
+        "name": "OCTOPUS",
+        "rank": 46,
+        "rarity": "EPIC",
+        "tier": null,
+        "weights": [
+          13334,
+          25000,
+          75000,
+          33334,
+          25000
+        ],
+        "spawnPrice": "1520000.0",
+        "claimK": "1.1",
+        "claimPrice": "1672000.00",
+        "claimCents": "167200000"
+      },
+      {
+        "id": 24,
+        "name": "JELLYFISH",
+        "rank": 47,
+        "rarity": "EPIC",
+        "tier": null,
+        "weights": [
+          13334,
+          25000,
+          75000,
+          33334,
+          25000
+        ],
+        "spawnPrice": "2320000.0",
+        "claimK": "1.1",
+        "claimPrice": "2552000.00",
+        "claimCents": "255200000"
+      },
+      {
+        "id": 25,
+        "name": "DOLPHIN",
+        "rank": 48,
+        "rarity": "EPIC",
+        "tier": null,
+        "weights": [
+          13333,
+          25000,
+          75000,
+          33333,
+          25000
+        ],
+        "spawnPrice": "3280000.0",
+        "claimK": "1.1",
+        "claimPrice": "3608000.00",
+        "claimCents": "360800000"
+      },
+      {
+        "id": 26,
+        "name": "SEALION",
+        "rank": 49,
+        "rarity": "EPIC",
+        "tier": null,
+        "weights": [
+          13333,
+          25000,
+          75000,
+          33333,
+          25000
+        ],
+        "spawnPrice": "4240000.0",
+        "claimK": "1.1",
+        "claimPrice": "4664000.00",
+        "claimCents": "466400000"
+      },
+      {
+        "id": 27,
+        "name": "WALRUS",
+        "rank": 50,
+        "rarity": "EPIC",
+        "tier": null,
+        "weights": [
+          13333,
+          25000,
+          75000,
+          33333,
+          25000
+        ],
+        "spawnPrice": "5120000.0",
+        "claimK": "1.1",
+        "claimPrice": "5632000.00",
+        "claimCents": "563200000"
+      },
+      {
+        "id": 57,
+        "name": "LOBSTER",
+        "rank": 52,
+        "rarity": "EPIC",
+        "tier": null,
+        "weights": [
+          13333,
+          25000,
+          75000,
+          33333,
+          25000
+        ],
+        "spawnPrice": "6880000.0",
+        "claimK": "1.1",
+        "claimPrice": "7568000.00",
+        "claimCents": "756800000"
+      },
+      {
+        "id": 37,
+        "name": "ORCA",
+        "rank": 80,
+        "rarity": "LEGENDARY",
+        "tier": null,
+        "weights": [
+          20000,
+          40000,
+          75000,
+          100000,
+          75000
+        ],
+        "spawnPrice": "142500000.0",
+        "claimK": "1.1",
+        "claimPrice": "156750000.00",
+        "claimCents": "15675000000"
+      },
+      {
+        "id": 33,
+        "name": "ALIGATOR",
+        "rank": 82,
+        "rarity": "LEGENDARY",
+        "tier": null,
+        "weights": [
+          20000,
+          40000,
+          75000,
+          100000,
+          75000
+        ],
+        "spawnPrice": "480000000.0",
+        "claimK": "1.1",
+        "claimPrice": "528000000.00",
+        "claimCents": "52800000000"
+      },
+      {
+        "id": 47,
+        "name": "MANATEE",
+        "rank": 127,
+        "rarity": "MYTHIC",
+        "tier": null,
+        "weights": [
+          2295,
+          5624,
+          8477,
+          37039,
+          56077
+        ],
+        "spawnPrice": "175000000000.0",
+        "claimK": "1.1",
+        "claimPrice": "192500000000.00",
+        "claimCents": "19250000000000"
+      },
+      {
+        "id": 44,
+        "name": "SMALLWHALE",
+        "rank": 129,
+        "rarity": "MYTHIC",
+        "tier": null,
+        "weights": [
+          2295,
+          5624,
+          8477,
+          37038,
+          56077
+        ],
+        "spawnPrice": "1229200000000.0",
+        "claimK": "1.1",
+        "claimPrice": "1352120000000.00",
+        "claimCents": "135212000000000"
+      },
+      {
+        "id": 50,
+        "name": "BELUGA",
+        "rank": 131,
+        "rarity": "MYTHIC",
+        "tier": null,
+        "weights": [
+          2295,
+          5624,
+          8476,
+          37038,
+          56076
+        ],
+        "spawnPrice": "9979200000000.0",
+        "claimK": "1.1",
+        "claimPrice": "10977120000000.00",
+        "claimCents": "1097712000000000"
+      },
+      {
+        "id": 51,
+        "name": "NARWHAL",
+        "rank": 132,
+        "rarity": "MYTHIC",
+        "tier": null,
+        "weights": [
+          2295,
+          5624,
+          8476,
+          37038,
+          56076
+        ],
+        "spawnPrice": "31104000000000.0",
+        "claimK": "1.1",
+        "claimPrice": "34214400000000.00",
+        "claimCents": "3421440000000000"
+      },
+      {
+        "id": 60,
+        "name": "PLATYPUS",
+        "rank": 134,
+        "rarity": "MYTHIC",
+        "tier": null,
+        "weights": [
+          2295,
+          5624,
+          8476,
+          37038,
+          56076
+        ],
+        "spawnPrice": "3359230000000000.0",
+        "claimK": "1.1",
+        "claimPrice": "3695153000000000.00",
+        "claimCents": "369515300000000000"
+      },
+      {
+        "id": 69,
+        "name": "TORTOISE",
+        "rank": 141,
+        "rarity": "MYTHIC",
+        "tier": null,
+        "weights": [
+          2295,
+          5624,
+          8476,
+          37038,
+          56076
+        ],
+        "spawnPrice": "6.62796E+17",
+        "claimK": "1.1",
+        "claimPrice": "7.290756E+17",
+        "claimCents": "72907560000000000000"
+      },
+      {
+        "id": 70,
+        "name": "SEAHORSE",
+        "rank": 142,
+        "rarity": "MYTHIC",
+        "tier": null,
+        "weights": [
+          2295,
+          5623,
+          8476,
+          37038,
+          56076
+        ],
+        "spawnPrice": "6.92797E+17",
+        "claimK": "1.1",
+        "claimPrice": "7.620767E+17",
+        "claimCents": "76207670000000000000"
+      },
+      {
+        "id": 73,
+        "name": "CATFISH",
+        "rank": 146,
+        "rarity": "MYTHIC",
+        "tier": null,
+        "weights": [
+          2295,
+          5623,
+          8476,
+          37038,
+          56076
+        ],
+        "spawnPrice": "7.0368E+17",
+        "claimK": "1.1",
+        "claimPrice": "7.74048E+17",
+        "claimCents": "77404800000000000000"
+      },
+      {
+        "id": 78,
+        "name": "AXOLOTLBLUE",
+        "rank": 150,
+        "rarity": "MYTHIC",
+        "tier": null,
+        "weights": [
+          1148,
+          2812,
+          4238,
+          18519,
+          28038
+        ],
+        "spawnPrice": "1.54726E+18",
+        "claimK": "1.1",
+        "claimPrice": "1.701986E+18",
+        "claimCents": "170198600000000000000"
+      },
+      {
+        "id": 79,
+        "name": "AXOLOTLPINK",
+        "rank": 151,
+        "rarity": "MYTHIC",
+        "tier": null,
+        "weights": [
+          1148,
+          2812,
+          4238,
+          18519,
+          28038
+        ],
+        "spawnPrice": "8.50262E+17",
+        "claimK": "1.1",
+        "claimPrice": "9.352882E+17",
+        "claimCents": "93528820000000000000"
+      },
+      {
+        "id": 80,
+        "name": "AXOLOTLGREEN",
+        "rank": 152,
+        "rarity": "MYTHIC",
+        "tier": null,
+        "weights": [
+          1148,
+          2812,
+          4238,
+          18519,
+          28038
+        ],
+        "spawnPrice": "1.65026E+18",
+        "claimK": "1.1",
+        "claimPrice": "1.815286E+18",
+        "claimCents": "181528600000000000000"
+      },
+      {
+        "id": 81,
+        "name": "AXOLOTLORANGE",
+        "rank": 153,
+        "rarity": "MYTHIC",
+        "tier": null,
+        "weights": [
+          1148,
+          2812,
+          4238,
+          18519,
+          28038
+        ],
+        "spawnPrice": "1.65026E+18",
+        "claimK": "1.1",
+        "claimPrice": "1.815286E+18",
+        "claimCents": "181528600000000000000"
+      },
+      {
+        "id": 82,
+        "name": "AXOLOTLWHITE",
+        "rank": 154,
+        "rarity": "MYTHIC",
+        "tier": null,
+        "weights": [
+          1148,
+          2812,
+          4238,
+          18519,
+          28038
+        ],
+        "spawnPrice": "1.65026E+18",
+        "claimK": "1.1",
+        "claimPrice": "1.815286E+18",
+        "claimCents": "181528600000000000000"
+      },
+      {
+        "id": 1011,
+        "name": "PENGUIN",
+        "rank": 202,
+        "rarity": "MYTHIC",
+        "tier": null,
+        "weights": [
+          400,
+          400,
+          400,
+          400,
+          400
+        ],
+        "spawnPrice": "9.49105E+16",
+        "claimK": "1.1",
+        "claimPrice": "1.0440155E+17",
+        "claimCents": "10440155000000000000"
+      },
+      {
+        "id": 1023,
+        "name": "SHARK",
+        "rank": 206,
+        "rarity": "MYTHIC",
+        "tier": null,
+        "weights": [
+          400,
+          400,
+          400,
+          400,
+          400
+        ],
+        "spawnPrice": "6.76768E+17",
+        "claimK": "1.1",
+        "claimPrice": "7.444448E+17",
+        "claimCents": "74444480000000000000"
+      },
+      {
+        "id": 1034,
+        "name": "CARP",
+        "rank": 505,
+        "rarity": "APEX",
+        "tier": null,
+        "weights": [
+          20,
+          30,
+          40,
+          60,
+          80
+        ],
+        "spawnPrice": "4.80495E+18",
+        "claimK": "1.1",
+        "claimPrice": "5.285445E+18",
+        "claimCents": "528544500000000000000"
+      },
+      {
+        "id": 107,
+        "name": "GOLDFISH",
+        "rank": 425,
+        "rarity": "APEX",
+        "tier": null,
+        "weights": [
+          20,
+          30,
+          40,
+          60,
+          80
+        ],
+        "spawnPrice": "6.23164E+18",
+        "claimK": "1.1",
+        "claimPrice": "6.854804E+18",
+        "claimCents": "685480400000000000000"
+      },
+      {
+        "id": 108,
+        "name": "BASS",
+        "rank": 426,
+        "rarity": "APEX",
+        "tier": null,
+        "weights": [
+          20,
+          30,
+          40,
+          60,
+          80
+        ],
+        "spawnPrice": "6.50779E+18",
+        "claimK": "1.1",
+        "claimPrice": "7.158569E+18",
+        "claimCents": "715856900000000000000"
+      },
+      {
+        "id": 109,
+        "name": "TUNA",
+        "rank": 427,
+        "rarity": "APEX",
+        "tier": null,
+        "weights": [
+          20,
+          30,
+          40,
+          60,
+          80
+        ],
+        "spawnPrice": "6.79621E+18",
+        "claimK": "1.1",
+        "claimPrice": "7.475831E+18",
+        "claimCents": "747583100000000000000"
+      },
+      {
+        "id": 101,
+        "name": "PIRANHA",
+        "rank": 419,
+        "rarity": "APEX",
+        "tier": null,
+        "weights": [
+          20,
+          30,
+          40,
+          60,
+          80
+        ],
+        "spawnPrice": "4.10497E+18",
+        "claimK": "1.1",
+        "claimPrice": "4.515467E+18",
+        "claimCents": "451546700000000000000"
+      },
+      {
+        "id": 117,
+        "name": "SALMON",
+        "rank": 515,
+        "rarity": "APEX",
+        "tier": null,
+        "weights": [
+          10,
+          15,
+          20,
+          30,
+          10
+        ],
+        "spawnPrice": "1.79E+19",
+        "claimK": "1.1",
+        "claimPrice": "1.969E+19",
+        "claimCents": "1969000000000000000000"
+      }
+    ],
+    "rollOrder": [
+      "fish",
+      "genCount",
+      "genTypes"
+    ],
+    "rollTiming": "after-third-scored-tap"
+  },
+  "gen": {
+    "version": "merged-gen-3-fish-first",
+    "source": "[Craftland] Steal A Pet Master Data.xlsx",
+    "rules": {
+      "green": 20,
+      "gold": 40,
+      "red": 0,
+      "taps": 3,
+      "maxGen": 2,
+      "carry": false,
+      "distinct": true,
+      "fishRarityBoost": false,
+      "familySelection": "single-merged-weighted-pool",
+      "repeatSameGen": false
+    },
+    "rebirthProfiles": [
+      {
+        "min": 1,
+        "max": 5,
+        "label": "R1–R5",
+        "weights": {
+          "gold": 550000,
+          "soaked": 300000,
+          "frost": 100000,
+          "ice": 45000,
+          "wind": 5000
+        }
+      },
+      {
+        "min": 6,
+        "max": 10,
+        "label": "R6–R10",
+        "weights": {
+          "gold": 500000,
+          "soaked": 320000,
+          "frost": 120000,
+          "ice": 52500,
+          "wind": 7500
+        }
+      },
+      {
+        "min": 11,
+        "max": 15,
+        "label": "R11–R15",
+        "weights": {
+          "gold": 450000,
+          "soaked": 340000,
+          "frost": 140000,
+          "ice": 60000,
+          "wind": 10000
+        }
+      },
+      {
+        "min": 16,
+        "max": 20,
+        "label": "R16–R20",
+        "weights": {
+          "gold": 400000,
+          "soaked": 360000,
+          "frost": 160000,
+          "ice": 67500,
+          "wind": 12500
+        }
+      },
+      {
+        "min": 21,
+        "max": null,
+        "label": "R21+",
+        "weights": {
+          "gold": 350000,
+          "soaked": 380000,
+          "frost": 180000,
+          "ice": 75000,
+          "wind": 15000
+        }
+      }
+    ],
+    "catalog": [
+      {
+        "id": "gold",
+        "name": "Golden",
+        "family": "MutaGen",
+        "tier": "basic",
+        "fishingEnabled": true,
+        "fishingWeight": 550000,
+        "icon": {
+          "file": "assets/mutations/gold.png"
+        },
+        "source": {
+          "sheet": "MutaGen Config",
+          "grades": [
+            {
+              "row": 24,
+              "grade": "S",
+              "petCoinCost": 20,
+              "baseChance": 0.6
+            },
+            {
+              "row": 25,
+              "grade": "SS",
+              "petCoinCost": 25,
+              "baseChance": 0.72
+            },
+            {
+              "row": 26,
+              "grade": "SSS",
+              "petCoinCost": 30,
+              "baseChance": 0.8
+            }
+          ]
+        },
+        "configured": true,
+        "effectSource": {
+          "sheet": "Mutation 2.0",
+          "sourceName": "Golden",
+          "sourceId": 2,
+          "materialKey": "GoldenMat",
+          "effectKey": "goldenEffect",
+          "valueField": "Multiplier",
+          "value": 1.33,
+          "levelCostMultiplier": 1.15,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "soaked",
+        "name": "Soaked",
+        "family": "WeatherGen",
+        "tier": "basic",
+        "fishingEnabled": true,
+        "fishingWeight": 300000,
+        "icon": {
+          "atlas": 0
+        },
+        "source": {
+          "sheet": "WeatherGen Config",
+          "grades": [
+            {
+              "row": 24,
+              "grade": "S",
+              "petCoinCost": 15,
+              "baseChance": 0.45
+            },
+            {
+              "row": 25,
+              "grade": "SS",
+              "petCoinCost": 20,
+              "baseChance": 0.55
+            },
+            {
+              "row": 26,
+              "grade": "SSS",
+              "petCoinCost": 25,
+              "baseChance": 0.65
+            }
+          ]
+        },
+        "configured": true,
+        "effectSource": {
+          "sheet": "Weather Effects",
+          "sourceName": "Soaked",
+          "sourceId": 1,
+          "materialKey": null,
+          "effectKey": "Soaked",
+          "valueField": "MultiplierPrice",
+          "value": 0.05,
+          "levelCostMultiplier": 1.03,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "frost",
+        "name": "Frozen",
+        "family": "MutaGen",
+        "tier": "uncommon",
+        "fishingEnabled": true,
+        "fishingWeight": 100000,
+        "icon": {
+          "file": "assets/mutations/frost.png"
+        },
+        "source": {
+          "sheet": "MutaGen Config",
+          "grades": [
+            {
+              "row": 27,
+              "grade": "S",
+              "petCoinCost": 35,
+              "baseChance": 0.55
+            },
+            {
+              "row": 28,
+              "grade": "SS",
+              "petCoinCost": 40,
+              "baseChance": 0.67
+            },
+            {
+              "row": 29,
+              "grade": "SSS",
+              "petCoinCost": 50,
+              "baseChance": 0.75
+            }
+          ]
+        },
+        "configured": true,
+        "effectSource": {
+          "sheet": "Mutation 2.0",
+          "sourceName": "Frozen",
+          "sourceId": 3,
+          "materialKey": "IceMat",
+          "effectKey": "frozenEffect",
+          "valueField": "Multiplier",
+          "value": 1.66,
+          "levelCostMultiplier": 1.3,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "ice",
+        "name": "Frost",
+        "family": "WeatherGen",
+        "tier": "uncommon",
+        "fishingEnabled": true,
+        "fishingWeight": 45000,
+        "icon": {
+          "atlas": 1
+        },
+        "source": {
+          "sheet": "WeatherGen Config",
+          "grades": [
+            {
+              "row": 27,
+              "grade": "S",
+              "petCoinCost": 30,
+              "baseChance": 0.35
+            },
+            {
+              "row": 28,
+              "grade": "SS",
+              "petCoinCost": 40,
+              "baseChance": 0.45
+            },
+            {
+              "row": 29,
+              "grade": "SSS",
+              "petCoinCost": 50,
+              "baseChance": 0.55
+            }
+          ]
+        },
+        "configured": true,
+        "effectSource": {
+          "sheet": "Weather Effects",
+          "sourceName": "Frost",
+          "sourceId": 2,
+          "materialKey": null,
+          "effectKey": "Frost",
+          "valueField": "MultiplierPrice",
+          "value": 0.09,
+          "levelCostMultiplier": 1.05,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "wind",
+        "name": "Gale",
+        "family": "WeatherGen",
+        "tier": "uncommon",
+        "fishingEnabled": true,
+        "fishingWeight": 5000,
+        "icon": {
+          "file": "assets/mutations/wind.png"
+        },
+        "source": {
+          "sheet": "WeatherGen Config",
+          "grades": [
+            {
+              "row": 30,
+              "grade": "S",
+              "petCoinCost": 60,
+              "baseChance": 0.4
+            },
+            {
+              "row": 31,
+              "grade": "SS",
+              "petCoinCost": 40,
+              "baseChance": 0.5
+            },
+            {
+              "row": 32,
+              "grade": "SSS",
+              "petCoinCost": 70,
+              "baseChance": 0.6
+            }
+          ]
+        },
+        "configured": true,
+        "effectSource": {
+          "sheet": "Weather Effects",
+          "sourceName": "Gale",
+          "sourceId": 3,
+          "materialKey": null,
+          "effectKey": "Gale",
+          "valueField": "MultiplierPrice",
+          "value": 0.08,
+          "levelCostMultiplier": 1.05,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "coral",
+        "name": "Magma",
+        "family": "MutaGen",
+        "tier": "advanced",
+        "fishingEnabled": false,
+        "fishingWeight": 0,
+        "icon": {
+          "file": "assets/mutations/coral.png"
+        },
+        "source": {
+          "sheet": "MutaGen Config",
+          "grades": [
+            {
+              "row": 30,
+              "grade": "S",
+              "petCoinCost": 60,
+              "baseChance": 0.5
+            },
+            {
+              "row": 31,
+              "grade": "SS",
+              "petCoinCost": 80,
+              "baseChance": 0.62
+            },
+            {
+              "row": 32,
+              "grade": "SSS",
+              "petCoinCost": 100,
+              "baseChance": 0.7
+            }
+          ]
+        },
+        "configured": true,
+        "effectSource": {
+          "sheet": "Mutation 2.0",
+          "sourceName": "Magma",
+          "sourceId": 4,
+          "materialKey": "MagmaMat",
+          "effectKey": "magmaEffect",
+          "valueField": "Multiplier",
+          "value": 2,
+          "levelCostMultiplier": 1.45,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "thundered",
+        "name": "Thundered",
+        "family": "WeatherGen",
+        "tier": "advanced",
+        "fishingEnabled": false,
+        "fishingWeight": 0,
+        "icon": {
+          "atlas": 2
+        },
+        "source": {
+          "sheet": "WeatherGen Config",
+          "grades": [
+            {
+              "row": 33,
+              "grade": "S",
+              "petCoinCost": 90,
+              "baseChance": 0.3
+            },
+            {
+              "row": 34,
+              "grade": "SS",
+              "petCoinCost": 100,
+              "baseChance": 0.4
+            },
+            {
+              "row": 35,
+              "grade": "SSS",
+              "petCoinCost": 120,
+              "baseChance": 0.5
+            }
+          ]
+        },
+        "configured": true,
+        "effectSource": {
+          "sheet": "Weather Effects",
+          "sourceName": "Thundered",
+          "sourceId": 4,
+          "materialKey": null,
+          "effectKey": "Thundered",
+          "valueField": "MultiplierPrice",
+          "value": 0.12,
+          "levelCostMultiplier": 1.07,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "clover",
+        "name": "Clover",
+        "family": "MutaGen",
+        "tier": "advanced",
+        "fishingEnabled": false,
+        "fishingWeight": 0,
+        "icon": {
+          "file": "assets/mutations/clover.png"
+        },
+        "source": {
+          "sheet": "MutaGen Config",
+          "grades": [
+            {
+              "row": 33,
+              "grade": "S",
+              "petCoinCost": 125,
+              "baseChance": 0.45
+            },
+            {
+              "row": 34,
+              "grade": "SS",
+              "petCoinCost": 150,
+              "baseChance": 0.57
+            },
+            {
+              "row": 35,
+              "grade": "SSS",
+              "petCoinCost": 180,
+              "baseChance": 0.65
+            }
+          ]
+        },
+        "configured": true,
+        "effectSource": {
+          "sheet": "Mutation 2.0",
+          "sourceName": "Clover",
+          "sourceId": 5,
+          "materialKey": "CloverMat",
+          "effectKey": "cloverEffect",
+          "valueField": "Multiplier",
+          "value": 2.13,
+          "levelCostMultiplier": 1.5,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "lunar",
+        "name": "Eclipse",
+        "family": "WeatherGen",
+        "tier": "advanced",
+        "fishingEnabled": false,
+        "fishingWeight": 0,
+        "icon": {
+          "file": "assets/mutations/lunar.png"
+        },
+        "source": {
+          "sheet": "WeatherGen Config",
+          "grades": [
+            {
+              "row": 36,
+              "grade": "S",
+              "petCoinCost": 130,
+              "baseChance": 0.2
+            },
+            {
+              "row": 37,
+              "grade": "SS",
+              "petCoinCost": 160,
+              "baseChance": 0.3
+            },
+            {
+              "row": 38,
+              "grade": "SSS",
+              "petCoinCost": 180,
+              "baseChance": 0.4
+            }
+          ]
+        },
+        "configured": true,
+        "effectSource": {
+          "sheet": "Weather Effects",
+          "sourceName": "Eclipse",
+          "sourceId": 5,
+          "materialKey": null,
+          "effectKey": "Eclipse",
+          "valueField": "MultiplierPrice",
+          "value": 0.15,
+          "levelCostMultiplier": 1.08,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "fossilized",
+        "name": "Fossilized",
+        "family": "MutaGen",
+        "tier": "rare",
+        "fishingEnabled": false,
+        "fishingWeight": 0,
+        "icon": {
+          "atlas": 8
+        },
+        "source": {
+          "sheet": "MutaGen Config",
+          "grades": [
+            {
+              "row": 36,
+              "grade": "S",
+              "petCoinCost": 200,
+              "baseChance": 0.35
+            },
+            {
+              "row": 37,
+              "grade": "SS",
+              "petCoinCost": 240,
+              "baseChance": 0.47
+            },
+            {
+              "row": 38,
+              "grade": "SSS",
+              "petCoinCost": 275,
+              "baseChance": 0.55
+            }
+          ]
+        },
+        "configured": true,
+        "effectSource": {
+          "sheet": "Mutation 2.0",
+          "sourceName": "Fossilized",
+          "sourceId": 6,
+          "materialKey": "FossilizedMat",
+          "effectKey": "fossilizedEffect",
+          "valueField": "Multiplier",
+          "value": 2.25,
+          "levelCostMultiplier": 1.6,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "rainbow",
+        "name": "Prismatic",
+        "family": "WeatherGen",
+        "tier": "rare",
+        "fishingEnabled": false,
+        "fishingWeight": 0,
+        "icon": {
+          "file": "assets/mutations/rainbow.png"
+        },
+        "source": {
+          "sheet": "WeatherGen Config",
+          "grades": [
+            {
+              "row": 39,
+              "grade": "S",
+              "petCoinCost": 200,
+              "baseChance": 0.2
+            },
+            {
+              "row": 40,
+              "grade": "SS",
+              "petCoinCost": 230,
+              "baseChance": 0.3
+            },
+            {
+              "row": 41,
+              "grade": "SSS",
+              "petCoinCost": 250,
+              "baseChance": 0.4
+            }
+          ]
+        },
+        "configured": true,
+        "effectSource": {
+          "sheet": "Weather Effects",
+          "sourceName": "Prismatic",
+          "sourceId": 6,
+          "materialKey": null,
+          "effectKey": "Prismatic",
+          "valueField": "MultiplierPrice",
+          "value": 0.14,
+          "levelCostMultiplier": 1.08,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "vortex",
+        "name": "Vortex",
+        "family": "WeatherGen",
+        "tier": "rare",
+        "fishingEnabled": false,
+        "fishingWeight": 0,
+        "icon": {
+          "atlas": 3
+        },
+        "source": {
+          "sheet": "WeatherGen Config",
+          "grades": [
+            {
+              "row": 42,
+              "grade": "S",
+              "petCoinCost": 260,
+              "baseChance": 0.15
+            },
+            {
+              "row": 43,
+              "grade": "SS",
+              "petCoinCost": 290,
+              "baseChance": 0.25
+            },
+            {
+              "row": 44,
+              "grade": "SSS",
+              "petCoinCost": 320,
+              "baseChance": 0.35
+            }
+          ]
+        },
+        "configured": true,
+        "effectSource": {
+          "sheet": "Weather Effects",
+          "sourceName": "Vortex",
+          "sourceId": 7,
+          "materialKey": null,
+          "effectKey": "Vortex",
+          "valueField": "MultiplierPrice",
+          "value": 0.16,
+          "levelCostMultiplier": 1.09,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "sequin",
+        "name": "Sequin",
+        "family": "WeatherGen",
+        "tier": "rare",
+        "fishingEnabled": false,
+        "fishingWeight": 0,
+        "icon": {
+          "atlas": 4
+        },
+        "source": {
+          "sheet": "WeatherGen Config",
+          "grades": [
+            {
+              "row": 45,
+              "grade": "S",
+              "petCoinCost": 330,
+              "baseChance": 0.05
+            },
+            {
+              "row": 46,
+              "grade": "SS",
+              "petCoinCost": 360,
+              "baseChance": 0.15
+            },
+            {
+              "row": 47,
+              "grade": "SSS",
+              "petCoinCost": 390,
+              "baseChance": 0.25
+            }
+          ]
+        },
+        "configured": true,
+        "effectSource": {
+          "sheet": "Weather Effects",
+          "sourceName": "Sequin",
+          "sourceId": 8,
+          "materialKey": null,
+          "effectKey": "Sequin",
+          "valueField": "MultiplierPrice",
+          "value": 0.17,
+          "levelCostMultiplier": 1.1,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "sweetheart",
+        "name": "Sweetheart",
+        "family": "MutaGen",
+        "tier": "rare",
+        "fishingEnabled": false,
+        "fishingWeight": 0,
+        "icon": {
+          "atlas": 9
+        },
+        "source": {
+          "sheet": "MutaGen Config",
+          "grades": [
+            {
+              "row": 39,
+              "grade": "S",
+              "petCoinCost": 300,
+              "baseChance": 0.3
+            },
+            {
+              "row": 40,
+              "grade": "SS",
+              "petCoinCost": 350,
+              "baseChance": 0.42
+            },
+            {
+              "row": 41,
+              "grade": "SSS",
+              "petCoinCost": 375,
+              "baseChance": 0.5
+            }
+          ]
+        },
+        "configured": true,
+        "effectSource": {
+          "sheet": "Mutation 2.0",
+          "sourceName": "Sweetheart",
+          "sourceId": 7,
+          "materialKey": "SweetheartMat",
+          "effectKey": "sweetheartEffect",
+          "valueField": "Multiplier",
+          "value": 2.3,
+          "levelCostMultiplier": 1.65,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "diamond",
+        "name": "Crystalline",
+        "family": "MutaGen",
+        "tier": "epic",
+        "fishingEnabled": false,
+        "fishingWeight": 0,
+        "icon": {
+          "file": "assets/mutations/diamond.png"
+        },
+        "source": {
+          "sheet": "MutaGen Config",
+          "grades": [
+            {
+              "row": 42,
+              "grade": "S",
+              "petCoinCost": 400,
+              "baseChance": 0.25
+            },
+            {
+              "row": 43,
+              "grade": "SS",
+              "petCoinCost": 440,
+              "baseChance": 0.37
+            },
+            {
+              "row": 44,
+              "grade": "SSS",
+              "petCoinCost": 480,
+              "baseChance": 0.45
+            }
+          ]
+        },
+        "configured": true,
+        "effectSource": {
+          "sheet": "Mutation 2.0",
+          "sourceName": "Crystalline",
+          "sourceId": 8,
+          "materialKey": "CrystallineMat",
+          "effectKey": "crystallineEffect",
+          "valueField": "Multiplier",
+          "value": 2.37,
+          "levelCostMultiplier": 1.85,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "radioactive",
+        "name": "Radioactive",
+        "family": "MutaGen",
+        "tier": "epic",
+        "fishingEnabled": false,
+        "fishingWeight": 0,
+        "icon": {
+          "atlas": 10
+        },
+        "source": {
+          "sheet": "MutaGen Config",
+          "grades": [
+            {
+              "row": 45,
+              "grade": "S",
+              "petCoinCost": 500,
+              "baseChance": 0.25
+            },
+            {
+              "row": 46,
+              "grade": "SS",
+              "petCoinCost": 550,
+              "baseChance": 0.37
+            },
+            {
+              "row": 47,
+              "grade": "SSS",
+              "petCoinCost": 600,
+              "baseChance": 0.45
+            }
+          ]
+        },
+        "configured": true,
+        "effectSource": {
+          "sheet": "Mutation 2.0",
+          "sourceName": "Radioactive",
+          "sourceId": 11,
+          "materialKey": "RadioactiveMat",
+          "effectKey": "RadioactiveEffect",
+          "valueField": "Multiplier",
+          "value": 2.5,
+          "levelCostMultiplier": 2.15,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "webbed",
+        "name": "Webbed",
+        "family": "MutaGen",
+        "tier": "epic",
+        "fishingEnabled": false,
+        "fishingWeight": 0,
+        "icon": {
+          "atlas": 11
+        },
+        "source": {
+          "sheet": "MutaGen Config",
+          "grades": [
+            {
+              "row": 48,
+              "grade": "S",
+              "petCoinCost": 500,
+              "baseChance": 0.2
+            },
+            {
+              "row": 49,
+              "grade": "SS",
+              "petCoinCost": 550,
+              "baseChance": 0.32
+            },
+            {
+              "row": 50,
+              "grade": "SSS",
+              "petCoinCost": 600,
+              "baseChance": 0.4
+            }
+          ]
+        },
+        "configured": true,
+        "effectSource": {
+          "sheet": "Mutation 2.0",
+          "sourceName": "Webbed",
+          "sourceId": 9,
+          "materialKey": "WebbedMat",
+          "effectKey": "webbedEffect",
+          "valueField": "Multiplier",
+          "value": 2.4,
+          "levelCostMultiplier": 2.05,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "bling",
+        "name": "Bling Bling",
+        "family": "WeatherGen",
+        "tier": "epic",
+        "fishingEnabled": false,
+        "fishingWeight": 0,
+        "icon": {
+          "atlas": 5
+        },
+        "source": {
+          "sheet": "WeatherGen Config",
+          "grades": [
+            {
+              "row": 48,
+              "grade": "S",
+              "petCoinCost": 420,
+              "baseChance": 0.05
+            },
+            {
+              "row": 49,
+              "grade": "SS",
+              "petCoinCost": 450,
+              "baseChance": 0.15
+            },
+            {
+              "row": 50,
+              "grade": "SSS",
+              "petCoinCost": 480,
+              "baseChance": 0.25
+            }
+          ]
+        },
+        "configured": true,
+        "effectSource": {
+          "sheet": "Weather Effects",
+          "sourceName": "Sparkle",
+          "sourceId": 9,
+          "materialKey": null,
+          "effectKey": "Sparkle",
+          "valueField": "MultiplierPrice",
+          "value": 0.2,
+          "levelCostMultiplier": 1.3,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "stormspark",
+        "name": "Stormspark",
+        "family": "WeatherGen",
+        "tier": "epic",
+        "fishingEnabled": false,
+        "fishingWeight": 0,
+        "icon": {
+          "atlas": 6
+        },
+        "source": {
+          "sheet": "WeatherGen Config",
+          "grades": [
+            {
+              "row": 51,
+              "grade": "S",
+              "petCoinCost": 450,
+              "baseChance": 0.05
+            },
+            {
+              "row": 52,
+              "grade": "SS",
+              "petCoinCost": 480,
+              "baseChance": 0.15
+            },
+            {
+              "row": 53,
+              "grade": "SSS",
+              "petCoinCost": 510,
+              "baseChance": 0.25
+            }
+          ]
+        },
+        "configured": true,
+        "effectSource": {
+          "sheet": "Weather Effects",
+          "sourceName": "Stormspark",
+          "sourceId": 11,
+          "materialKey": null,
+          "effectKey": "Stormspark",
+          "valueField": "MultiplierPrice",
+          "value": 0.2,
+          "levelCostMultiplier": 1.3,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "cosmic",
+        "name": "Galaxy",
+        "family": "MutaGen",
+        "tier": "exclusive",
+        "fishingEnabled": false,
+        "fishingWeight": 0,
+        "icon": {
+          "file": "assets/mutations/cosmic.png"
+        },
+        "source": {
+          "sheet": "MutaGen Config",
+          "grades": [
+            {
+              "row": 51,
+              "grade": "S",
+              "petCoinCost": null,
+              "baseChance": null
+            },
+            {
+              "row": 52,
+              "grade": "SS",
+              "petCoinCost": null,
+              "baseChance": null
+            },
+            {
+              "row": 53,
+              "grade": "SSS",
+              "petCoinCost": null,
+              "baseChance": null
+            }
+          ]
+        },
+        "configured": false,
+        "effectSource": {
+          "sheet": "Mutation 2.0",
+          "sourceName": "Galaxy",
+          "sourceId": 12,
+          "materialKey": "GalaxyMat",
+          "effectKey": "GalaxyEffect",
+          "valueField": "Multiplier",
+          "value": null,
+          "levelCostMultiplier": null,
+          "mergedStackingRule": null
+        }
+      },
+      {
+        "id": "aurora",
+        "name": "Aurora",
+        "family": "WeatherGen",
+        "tier": "exclusive",
+        "fishingEnabled": false,
+        "fishingWeight": 0,
+        "icon": {
+          "atlas": 7
+        },
+        "source": {
+          "sheet": "WeatherGen Config",
+          "grades": [
+            {
+              "row": 54,
+              "grade": "S",
+              "petCoinCost": null,
+              "baseChance": null
+            },
+            {
+              "row": 55,
+              "grade": "SS",
+              "petCoinCost": null,
+              "baseChance": null
+            },
+            {
+              "row": 56,
+              "grade": "SSS",
+              "petCoinCost": null,
+              "baseChance": null
+            }
+          ]
+        },
+        "configured": false,
+        "effectSource": {
+          "sheet": "Weather Effects",
+          "sourceName": "Aurora",
+          "sourceId": 10,
+          "materialKey": null,
+          "effectKey": "Aurora",
+          "valueField": "MultiplierPrice",
+          "value": 0.18,
+          "levelCostMultiplier": 1.15,
+          "mergedStackingRule": null
+        }
+      }
+    ],
+    "notes": [
+      "Fishing weights are a new conservative balance, not MutaGen application chances.",
+      "Advanced and higher Gen are hard-locked from Fishing.",
+      "MutaGen and WeatherGen grade prices/chances remain source metadata; no grade changes from Fishing.",
+      "Frost and Frozen are distinct entries. Galaxy and Aurora have incomplete source prices/chances and remain disabled."
+    ],
+    "rollOrder": [
+      "fish",
+      "genCount",
+      "genTypes"
+    ]
+  },
+  "applicationStatus": "Source effect metadata retained; merged stacking/income formula not yet defined."
+}

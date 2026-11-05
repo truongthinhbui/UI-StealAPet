@@ -147,6 +147,8 @@
   debugPanel.innerHTML = '<summary>Debug · tùy chỉnh cơ chế</summary><div class="fishingDebugTools"><label>Tốc độ mô phỏng <select class="debugSpeed"><option value=".5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label><label class="debugModeLabel"><span></span><select class="debugModeValue"></select></label><button type="button" data-debug="restart">Chơi lại</button><button type="button" data-debug="pause" aria-pressed="false">Tạm dừng</button><button type="button" data-debug="step">Bước +1/30s</button><button type="button" data-debug="shuffle">Đổi mục tiêu</button><button type="button" data-debug="win">Thử bắt cá</button><button type="button" data-debug="lose">Thử thất bại</button><button type="button" data-debug="defaults">Mặc định</button></div><output class="fishingDebugReadout" aria-live="off"></output>';
   debugControls.before(debugPanel);
   debugPanel.appendChild(debugControls);
+  window.initFishingRewards();
+  const rewards=window.FishingRewards;
   const debugReadout = debugPanel.querySelector('output');
   const debugModeValue = debugPanel.querySelector('.debugModeValue');
   const debugPauseButton = debugPanel.querySelector('[data-debug="pause"]');
@@ -170,7 +172,31 @@
   const circularSpeed = () => debugSettings.values[2] || .75 + Math.random() * .5;
   const qtePips = Array.from(root.querySelectorAll('.qtePips i'));
   const qteLuckChip=root.querySelector('.qteLuckChip');
-  let qteLuckMultiplier=1;
+  const mutationPool=window.GenConfig.catalog;
+  mutationPool.forEach(({id,name})=>{
+    const token=document.createElement('span');token.className='mutationToken';token.dataset.mutation=id;token.title=name;
+    token.appendChild(window.GenCore.icon(mutationPool.find(gen=>gen.id===id)));
+    qteLuckChip.querySelector('.mutationPool').appendChild(token);
+  });
+  function chooseMutations(count){return window.GenCore.choose(count,Math.random,rewards.castRebirth).map(({id,name})=>({id,name}));}
+  function renderMutation(result=false){
+    const points=game?.mutationPoints||0;
+    qteLuckChip.hidden=false;
+    qteLuckChip.querySelector('.mutationPercent').textContent=points+'%';
+    qteLuckChip.dataset.result=result?'true':'false';
+    qteLuckChip.querySelectorAll('.mutationToken').forEach(token=>{
+      const won=!!(result&&game.mutationRewards?.some(reward=>reward.id===token.dataset.mutation));
+      token.classList.toggle('is-won',won);token.hidden=!won;
+    });
+    qteLuckChip.dataset.guaranteed=points>=100?'true':'false';
+    qteLuckChip.querySelector('.mutationPool').hidden=!result||!game.mutations;
+    const hint=qteLuckChip.querySelector('.mutationHint');
+    hint.hidden=!result&&points<100;
+    hint.textContent=result
+      ? game.mutations===0?'Cá thường':game.mutationRewards.map(reward=>reward.name).join(' + ')
+      : 'Tối đa 1 Gen';
+  }
+  function rollMutations(points){return window.GenCore.count(points);}
   function qteHitPoint(){
     const angle=game.marker*Math.PI*2;
     const radius=root.querySelector('.fishingRing').clientWidth*.432;
@@ -508,7 +534,7 @@
     'Tap when the fish enters either green zone. Reel the distance down to 0 m before 40 seconds run out.',
     'Hold to lift the green zone. Release to lower it. Keep the fish inside.',
     'Hold to reel, then release before tension reaches its limit.',
-    'Tap green for a hit. Gold raises Luck to x2, x3, then x4. Land 3 hits to catch the fish.'
+    'Bấm 3 lần để nhận cá. Xanh +5%, vàng +20%, đỏ +0%. Mỗi cá tối đa 1 Gen; full xanh 15%, full vàng 60%.'
   ];
   const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(max, value));
   let mode = 0, state = 'idle', held = false, frame, timer, game;
@@ -549,8 +575,13 @@
   }
 
   function finish(caught, reason) {
+    if(state!=='active')return;
     if(caught&&mode===6){
-      qteLuckMultiplier=1;game.qteLuck=1;qteLuckChip.textContent='x1 LUCK';qteLuckChip.hidden=true;
+      const pending=rewards.resolve({mutationPoints:game.mutationPoints,results:game.qteResults});
+      game.mutationPoints=pending.mutationPoints;game.mutationRewards=pending.mutationRewards;game.mutations=pending.mutationRewards.length;
+      renderMutation(true);
+      const detail={mode:7,mutationPoints:game.mutationPoints,mutations:game.mutations,mutationRewards:game.mutationRewards.map(reward=>({...reward})),results:[...game.qteResults]};
+      root.dispatchEvent(new CustomEvent('fishingcatch',{bubbles:true,detail:{...detail,catch:pending}}));
     }
     haptic(caught ? 'catch' : mode===6 ? 'fail' : reason === 'LINE BROKE' ? 'break' : 'miss');
     state = 'result';
@@ -571,11 +602,12 @@
     status.textContent = caught ? 'ĐÃ BẮT ĐƯỢC CÁ!' : reason || 'FISH ESCAPED';
     if(caught)impactPunch(status,true);
     if (mode === 2) updateCircular();
-    timer = setTimeout(reset, caught ? 2800 : 1500);
+    if(!rewards.pending)timer = setTimeout(reset, caught ? 2800 : 1500);
     updateDebugReadout();
   }
 
   function reset() {
+    rewards.cancelCast();
     window.RevivalAudio?.stop();
     stopFireworks();
     clearTimeout(timer);
@@ -609,7 +641,7 @@
     sharedEffects.clear();
     impactMotions.forEach(motion=>motion.cancel());impactMotions.clear();
     root.querySelectorAll('.gameJuice').forEach(burst => burst.remove());
-    qtePips.forEach(pip => pip.classList.remove('is-filled'));
+    qtePips.forEach(pip => {pip.classList.remove('is-filled');delete pip.dataset.result;});
     catchPercent.textContent = '0%';
     scene.style.setProperty('--catch-progress', '0%');
     root.querySelectorAll('.circularSpark').forEach(spark => spark.remove());
@@ -621,12 +653,27 @@
     button.setAttribute('aria-label', 'Tap to fish');
     updateCircular();
     scene.style.setProperty('--timing-scale', '1.65');
+    if(game){game.mutationPoints=0;game.mutations=0;}
+    renderMutation();
     renderPreview();
     syncDebug();
+    restorePendingCatch();
   }
 
+  function restorePendingCatch(){
+    const pending=rewards.pending;
+    if(!pending)return;
+    state='result';game={mutationPoints:pending.mutationPoints,mutationRewards:pending.mutationRewards,mutations:pending.mutationRewards.length,qteResults:pending.results};
+    qtePips.forEach((pip,index)=>{pip.dataset.result=pending.results[index];pip.classList.add('is-filled');});
+    renderMutation(true);status.textContent='KẾT QUẢ ĐANG CHỜ';scene.dataset.caught='';rewards.render();
+    updateDebugReadout();
+  }
+  root.addEventListener('fishingofferresolved',()=>{haptic('tap');reset();});
+
   function startChallenge() {
-    if (![2,4,6].includes(mode)) return;
+    if (mode !== 6) return;
+    const error=rewards.begin();
+    if(error){status.textContent=error;return;}
     state = 'active';
     delete scene.dataset.preview;
     scene.dataset.active = '';
@@ -636,10 +683,11 @@
     game = {age:0, last:performance.now(), phase:0, tapping:false, phaseTime:0, progress:0, idleTime:0,
       position:.42, tension:0, distance:mode === 3 ? 35 : 25, zone:.60, fish:.48, marker:0, hits:0, misses:0, combo:0,
       roundAge:0, roundPause:0, timingScale:1.65, roundSpeed:circularSpeed(), distancePhase:0, distanceFreezeUntil:0,
-      qteArcStart:Math.random(), qteLuck:qteLuckMultiplier, knots:[], bonusScore:0};
+      qteArcStart:Math.random(), mutationPoints:0, mutations:0, qteResults:[], knots:[], bonusScore:0};
     if (mode === 3) [0, 1].forEach(spawnDistanceKnot);
     if (mode === 3 || mode === 6) status.textContent='';
     if (mode === 6) {
+      renderMutation();
       scene.style.setProperty('--ring-start', game.qteArcStart * 360 + 'deg');
       scene.style.setProperty('--angle', '0deg');
     }
@@ -737,19 +785,22 @@
     }
     if (mode === 6) {
       scene.dataset.qteHit = gold ? 'gold' : hit ? 'hit' : 'miss';
+      game.qteResults.push(gold ? 'gold' : hit ? 'green' : 'red');
+      game.mutationPoints=window.GenCore.points(game.qteResults);
+      renderMutation();
       game.qteFeedbackUntil=game.age+(gold? .85 : hit? .45 : .65);
-      if(gold){
-        qteLuckMultiplier=Math.min(4,qteLuckMultiplier+1);game.qteLuck=qteLuckMultiplier;
-        qteLuckChip.hidden=false;
-        qteLuckChip.textContent='x'+qteLuckMultiplier+' LUCK';
-        status.textContent='GOLD!';impactPunch(qteLuckChip,true);
-        if(game.hits<3)luckMotes(qteHitPoint());impactPunch(status,true);
+      if(hit){
+        status.textContent=gold?'EXCELLENT!':'GOOD!';impactPunch(qteLuckChip,gold);
+        if(gold&&game.qteResults.length<3)luckMotes(qteHitPoint());impactPunch(status,gold);
       }
-      qtePips.forEach((pip, index) => pip.classList.toggle('is-filled', index < game.hits));
+      qtePips.forEach((pip, index) => {
+        pip.classList.toggle('is-filled', index < game.qteResults.length);
+        if(game.qteResults[index])pip.dataset.result=game.qteResults[index];
+      });
+      impactPunch(qtePips[game.qteResults.length-1],gold);
       haptic(gold ? 'bonus' : hit ? 'good' : 'fail');
       if (hit) {
         const point=qteHitPoint();hitJuice(point.x,point.y,gold);
-        impactPunch(qtePips[Math.max(0,game.hits-1)],gold);
       }
       if(hit)impactPunch(root.querySelector('.fishingRing'),gold);
       if(hit&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
@@ -768,12 +819,16 @@
         qteMotion?.cancel();
         qteMotion = root.querySelector('.qteCenter').animate([{scale:.97},{scale:gold?1.10:1.025,offset:.3},{scale:1}],{duration:gold?320:180,easing:'cubic-bezier(.16,1,.3,1)'});
       }
-      if (hit && game.hits < 3) {
+      if (hit && game.qteResults.length < 3) {
         game.qteArcStart = (game.qteArcStart + .25 + Math.random() * .5) % 1;
         scene.style.setProperty('--ring-start', game.qteArcStart * 360 + 'deg');
       }
     }
-    if ((mode === 3 && game.distance === 0) || (mode !== 3 && game.hits >= (mode === 6 ? 3 : 5))) finish(true);
+    if (mode === 6) {
+      if(game.qteResults.length===3)finish(true);
+      return;
+    }
+    if ((mode === 3 && game.distance === 0) || (mode !== 3 && game.hits >= 5)) finish(true);
     else if (mode !== 3 && game.misses >= 4) finish(false);
   }
 
@@ -795,7 +850,7 @@
     game.last = now;
     game.age += dt;
     game.phaseTime += dt;
-    if (game.age >= (mode === 3 ? 40 : 22)) { finish(false, mode === 3 ? 'TIME UP' : undefined); return; }
+    if (mode !== 6 && game.age >= (mode === 3 ? 40 : 22)) { finish(false, mode === 3 ? 'TIME UP' : undefined); return; }
     switch (mode) {
       case 0: {
         const stop = stops[game.phase];
@@ -860,7 +915,7 @@
       case 6: {
         if(game.qteFeedbackUntil&&game.age>game.qteFeedbackUntil){delete scene.dataset.qteHit;status.textContent='';game.qteFeedbackUntil=0;}
         game.marker = (game.age / debugSettings.values[6]) % 1;
-        draw(game.hits + ' / 3 hits', 'Tap in the green arc', game.hits / 3, 0, 0, .20, game.qteArcStart * 360);
+        draw(game.qteResults.length + ' / 3 taps', 'Green: Good · Gold: Excellent · Red: Miss', game.qteResults.length / 3, 0, 0, .20, game.qteArcStart * 360);
         break;
       }
       case 3:
@@ -912,7 +967,7 @@
   }
 
   function select(index) {
-    if (![2,4,6].includes(index) || !debugModes[index]) return;
+    if (index !== 6 || !debugModes[index]) return;
     reset();
     mode = index;
     debugControls.hidden = index !== 0;
@@ -929,7 +984,7 @@
 
   modes.forEach(item => item.addEventListener('click', () => select(Number(item.dataset.fishingMode))));
   modes.forEach(item=>{
-    if(![2,4,6].includes(Number(item.dataset.fishingMode))){
+    if(Number(item.dataset.fishingMode)!==6){
       item.disabled=true;
       item.setAttribute('aria-disabled','true');
       item.textContent+=' · 🔒';
@@ -950,7 +1005,7 @@
     if(!action)return;
     if(action==='restart'){reset();startChallenge();}
     if(action==='defaults'){
-      qteLuckMultiplier=1;qteLuckChip.textContent='x1 LUCK';qteLuckChip.hidden=true;
+      if(game){game.mutationPoints=0;game.mutations=0;}renderMutation();
       debugSettings.speed=1;
       Object.assign(debugSettings.values,{0:5,2:0,3:2.3,4:.30,6:2.25});
       tapsPerJoint=5;jointCount.value='3';jointThickness.value='mixed';buildJoints();
@@ -959,6 +1014,7 @@
     if(action==='pause'){
       if(state==='result')return;
       if(state==='idle')startChallenge();
+      if(state!=='active')return;
       debugPaused=!debugPaused;held=false;holdPress=false;stopHaptic();cancelAnimationFrame(frame);
       if(!debugPaused){game.last=performance.now();frame=requestAnimationFrame(tick);}
     }
@@ -967,16 +1023,18 @@
     }
     if(action==='win'||action==='lose'){
       if(state!=='active'){reset();startChallenge();}
+      if(state!=='active')return;
       if(action==='win'){
         if(mode===2)game.combo=3;
         if(mode===3){game.distance=0;title.textContent='0 m';scene.style.setProperty('--distance-left','0%');}
         if(mode===4){game.progress=1;title.textContent='100% caught';catchPercent.textContent='100%';scene.style.setProperty('--catch-progress','100%');}
-        if(mode===6){game.hits=3;qtePips.forEach(pip=>pip.classList.add('is-filled'));}
+        if(mode===6){game.hits=3;game.mutationPoints=window.GenConfig.rules.green*3;game.qteResults=['green','green','green'];qtePips.forEach(pip=>{pip.classList.add('is-filled');pip.dataset.result='green';});}
       }
       finish(action==='win',action==='lose'?'DEBUG · FISH ESCAPED':undefined);
     }
     if(action==='shuffle'){
       if(state!=='active'){reset();startChallenge();}
+      if(state!=='active')return;
       if(mode===3)[0,1].forEach(spawnDistanceKnot);
       if(mode===2){game.roundAge=0;game.roundPause=0;game.roundSpeed=circularSpeed();game.timingScale=1.65;scene.style.setProperty('--timing-scale','1.65');delete scene.dataset.judgement;status.textContent='';}
       if(mode===6){game.qteArcStart=Math.random();scene.style.setProperty('--ring-start',game.qteArcStart*360+'deg');delete scene.dataset.qteHit;}
@@ -1034,5 +1092,6 @@
     });
   });
   buildJoints();
-  select(2);
+  select(6);
+  restorePendingCatch();
 })();

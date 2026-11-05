@@ -1,0 +1,44 @@
+import fs from 'node:fs/promises';
+import vm from 'node:vm';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import {Workbook,SpreadsheetFile} from '@oai/artifact-tool';
+const root='D:/revival-prototype-ui-update',out=path.join(root,'outputs/fishing-v3');
+const ctx={window:{}};vm.createContext(ctx);vm.runInContext(await fs.readFile(path.join(root,'assets/gen-config.js'),'utf8'),ctx);
+const config=ctx.window.GenConfig,book=Workbook.create(),s=book.worksheets.add('GenPool');
+s.showGridLines=false;s.tabColor='#285B83';
+const bandNames=['R1-R4','R5-R8','R9-R13','R14-R18','R19+'];
+const headers=['ID',...bandNames.map(label=>'Weight_'+label),'Name','Rarity group','Family',...bandNames.map(label=>'Rate_'+label),'Enabled'];
+const tiers={basic:'Phổ thông',uncommon:'Ít gặp',advanced:'Nâng cao',rare:'Hiếm',epic:'Cao cấp',exclusive:'Cực hiếm'};
+const rows=config.catalog.map(g=>[g.id,...config.rebirthProfiles.map(p=>p.weights[g.id]||0),g.name,tiers[g.tier],g.family,...Array(5).fill(null),g.fishingEnabled?1:0]);
+s.getRange('A1:O22').format.font={name:'Arial',size:10,color:'#243C50'};
+const widths=[135,125,125,125,125,125,160,125,135,115,115,115,115,115,95];
+widths.forEach((w,i)=>s.getRangeByIndexes(0,i,27,1).format.columnWidthPx=w);
+s.getRange('A1:O1').values=[headers];s.getRange('A1:O1').format={fill:'#285B83',font:{name:'Arial',size:10,color:'#FFFFFF',bold:true},horizontalAlignment:'center',verticalAlignment:'center',wrapText:true,rowHeight:40};
+s.getRange('A2:O22').values=rows;s.getRange('A2:O22').format.rowHeight=29;s.getRange('A2:O22').format.verticalAlignment='center';
+s.tables.add('A1:O22',true,'UnifiedGenPool');s.freezePanes.freezeRows(1);s.freezePanes.freezeColumns(1);
+for(let i=0;i<21;i++){
+ const row=i+2;
+ for(let b=0;b<5;b++){const w=String.fromCharCode(66+b);s.getCell(row-1,9+b).formulas=[[`=IF($O${row}=1,${w}${row}/SUMIFS(${w}$2:${w}$22,$O$2:$O$22,1),0)`]];}
+ if(config.catalog[i].fishingEnabled)s.getRange(`B${row}:F${row}`).format.fill='#FFF2CC';
+}
+s.getRange('B2:F22').setNumberFormat('#,##0');s.getRange('J2:N22').setNumberFormat('0.0000%');s.getRange('J2:N22').format.font.color='#17694D';
+s.getRange('O2:O22').dataValidation={rule:{type:'list',values:['1','0']}};
+s.getRange('A24').values=[['POOL_TOTAL']];for(let b=0;b<5;b++){const w=String.fromCharCode(66+b),p=String.fromCharCode(74+b);s.getCell(23,1+b).formulas=[[`=SUMIFS(${w}2:${w}22,$O$2:$O$22,1)`]];s.getCell(23,9+b).formulas=[[`=SUM(${p}2:${p}22)`]];}
+s.getRange('A24:O24').format={fill:'#E3EDF5',font:{name:'Arial',size:10,bold:true,color:'#285B83'},rowHeight:30};s.getRange('B24:F24').setNumberFormat('#,##0');s.getRange('J24:N24').setNumberFormat('0.0000%');
+const notes=[
+ 'Tỉ lệ là lượt chọn Gen đầu tiên sau khi đã roll được cá và được nhận Gen; không phải tỉ lệ trên mọi lượt câu.',
+ 'Enabled: 1 = được rơi khi câu, 0 = khóa. Cả 21 Gen được mở; Gen hiếm có weight nhỏ khác 0. Gen thứ hai loại ID đầu tiên và chuẩn hóa lại.',
+ 'Weight và nhóm hiếm là cân bằng Fishing hiện tại. Không dùng grade S/SS/SSS hoặc base apply chance của item làm drop rate.',
+ 'Source: gen-config.js ('+config.version+'); danh mục đối chiếu Master Data → MutaGen Config và WeatherGen Config.'
+];
+notes.forEach((text,i)=>{s.getRange('A'+(27+i)).values=[[text]];s.getRange('A'+(27+i)).format.font={name:'Arial',size:10,italic:true,color:'#617B90'};s.getRange('A'+(27+i)).format.rowHeight=23;});
+// Check normalization and linked updates before restoring exported values.
+s.getRange('B2').values=[[0]];assert.equal(s.getRange('J2').values[0][0],0);s.getRange('B2').values=[[config.rebirthProfiles[0].weights[config.catalog[0].id]]];
+book.recalculate();
+for(let b=0;b<5;b++){assert.equal(s.getCell(23,1+b).values[0][0],1000000);assert(Math.abs(s.getCell(23,9+b).values[0][0]-1)<1e-9);}
+assert.equal(rows.length,21);
+console.log((await book.inspect({kind:'match',searchTerm:'#REF!|#DIV/0!|#VALUE!|#NAME\\?|#N/A',options:{useRegex:true,maxResults:10},summary:'Formula error check',maxChars:700})).ndjson);
+await fs.mkdir(out,{recursive:true});const preview=await book.render({sheetName:'GenPool',range:'A1:O24',scale:1,format:'png'});await fs.writeFile(path.join(out,'previews/GenPool-simple.png'),new Uint8Array(await preview.arrayBuffer()));
+await (await SpreadsheetFile.exportXlsx(book)).save(path.join(out,'Muta_Weather_Gen_Pool.xlsx'));
+console.log('Created single-sheet GenPool: 21 rows, 5 weight columns, 5 calculated rate columns, totals and enabled flag.');

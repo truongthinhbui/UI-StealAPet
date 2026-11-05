@@ -147,3 +147,163 @@
 .fishingScene[data-mode="6"][data-qte-hit="gold"] .fishingTap::before{border-color:#ffe59e;box-shadow:0 0 1cqw #ffd55f88}
 @keyframes qteButtonCue{from{scale:.9;opacity:.9}to{scale:1.2;opacity:0}}
 @media(prefers-reduced-motion:reduce){.qteLuckMote,.fishingScene[data-mode="6"] .fishingTap::before{display:none}.fishingScene[data-mode="6"] .qtePips i{transition:none}}
+
+/* Keep all three tap outcomes visible until the next catch. */
+.fishingScene[data-mode="6"] .qtePips i[data-result="green"]{background:#27e695;border-color:#bdffe2;box-shadow:0 0 .6cqw #27e69599}
+.fishingScene[data-mode="6"] .qtePips i[data-result="gold"]{background:#ffd65a;border-color:#fff3c4;box-shadow:0 0 .6cqw #ffe296}
+.fishingScene[data-mode="6"] .qtePips i[data-result="red"]{background:#ff5268;border-color:#ffd1d8;box-shadow:0 0 .6cqw #ff526899}
+
+/* Mutation chance stays below the reel; results remain visible until the next cast. */
+.fishingScene[data-mode="6"] .qteLuckChip{display:flex;align-items:center;gap:.7cqw;top:70%;width:29%;box-sizing:border-box;padding:.7cqw 1cqw;white-space:normal;background:linear-gradient(#f1fff6,#dcf5e6);border:1px solid #92d7ae;border-radius:1cqw;letter-spacing:0;box-shadow:0 .2cqw .6cqw #184b4533;text-align:left}
+.qteLuckChip img{width:4.6cqw;height:4.6cqw;object-fit:contain;flex:none;filter:drop-shadow(0 2px 2px #305a6633)}
+.mutationInfo{flex:1;min-width:0}.mutationHeading{display:flex;align-items:center;justify-content:space-between;gap:.8cqw;font-size:clamp(9px,1.15cqw,15px)}
+.mutationHeading strong{font-size:clamp(13px,2cqw,25px);color:#137440;font-variant-numeric:tabular-nums}
+.mutationMeter{height:.55cqw;min-height:3px;background:#b6dbc7;border-radius:10px;overflow:hidden;margin:.3cqw 0 .4cqw}
+.mutationMeter i{display:block;height:100%;width:var(--mutation-fill,0%);background:linear-gradient(90deg,#22be7c,#6ee6a1);border-radius:inherit;transition:width .25s ease-out}
+.mutationHint{display:block;font-size:clamp(8px,1cqw,13px);font-weight:600;line-height:1.3;color:#286b4a}
+.qteLuckChip[data-guaranteed="true"] .mutationMeter i{background:linear-gradient(90deg,#edb62c,#ffe386)}
+@media(prefers-reduced-motion:reduce){.mutationMeter i{transition:none}}
+
+/* Two reward chances and an eight-token mutation collection. */
+.fishingScene[data-mode="6"] .qteLuckChip{display:block;top:70%;width:35%;padding:.7cqw 1cqw .65cqw;background:linear-gradient(150deg,#f6fcff,#e4f1ff);border:1px solid #c2e2f7;border-radius:1.1cqw;box-shadow:0 .25cqw .65cqw #183c6440,inset 0 1px #fff;color:#285b8a}
+.qteLuckChip .mutationHeading{font-size:clamp(9px,1.25cqw,16px);letter-spacing:.06em;color:#285b8a}
+.mutationHeading>span>small{font-size:.72em;font-weight:600;opacity:.7;letter-spacing:.05em;margin-left:.4em}
+.qteLuckChip .mutationHeading strong{color:#1a996a;font-size:clamp(14px,2.15cqw,28px);letter-spacing:0}
+.mutationChances{display:grid;grid-template-columns:1fr 1fr;gap:1.1cqw;margin:.25cqw 0 .55cqw}
+.mutationChances>div>span{display:flex;justify-content:space-between;font-size:clamp(8px,.95cqw,12px);font-weight:600;color:#567592}
+.mutationChances b{color:#237d60;font-variant-numeric:tabular-nums}
+.mutationChances .mutationMeter{height:.4cqw;min-height:3px;background:#c7dced;margin:.25cqw 0 0}
+.mutationMeterSecond i{width:var(--mutation-second,0%);background:linear-gradient(90deg,#edb62c,#ffe386)}
+.mutationPool{display:grid;grid-template-columns:repeat(8,1fr);gap:.35cqw;padding:.45cqw 0;border-top:1px solid #c8deee}
+.mutationToken{position:relative;display:grid;place-items:center;aspect-ratio:1;border:1px solid #b9d4eb;border-radius:.65cqw;background:linear-gradient(#f8fcff,#d5e7f7);transition:opacity .2s,box-shadow .2s,scale .2s}
+.qteLuckChip .mutationToken img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 1px 1px #305a6633)}
+.qteLuckChip[data-result="true"] .mutationToken:not(.is-won){opacity:.35}
+.qteLuckChip .mutationToken.is-won{border-color:#eabc42;background:linear-gradient(#fff7d3,#ffe6a2);box-shadow:0 0 .65cqw #ffd86b99;scale:1.08}
+.mutationToken.is-won::after{content:'✓';position:absolute;right:-.15cqw;bottom:-.1cqw;border-radius:50%;background:#16885c;color:white;font:700 clamp(7px,.8cqw,11px)/1.2 Arial;padding:.08em .22em}
+.qteLuckChip .mutationHint{text-align:center;color:#47708d;font-size:clamp(8px,1cqw,13px);line-height:1.4;margin-top:.2cqw}
+.qteLuckChip[data-result="true"] .mutationHint{color:#237d60;font-weight:800}
+@media(max-width:600px){.fishingScene[data-mode="6"] .qteLuckChip{width:44%;top:70%;padding:.8cqw 1cqw}.mutationHeading>span>small{display:none}.mutationChances{gap:1.5cqw}.mutationPool{gap:.4cqw}}
+@media(prefers-reduced-motion:reduce){.mutationToken{transition:none}}
+@media(max-width:600px){
+ .fishingScene[data-mode="6"] .qteLuckChip{width:48%;top:68%;padding:.5cqw .8cqw}
+ .qteLuckChip .mutationHeading{font-size:8px;line-height:1}.qteLuckChip .mutationHeading strong{font-size:13px}
+ .mutationChances{margin:.3cqw 0}.mutationChances>div>span{font-size:7px;line-height:1.1}
+ .mutationPool{padding:.3cqw 0;gap:.3cqw}.qteLuckChip .mutationHint{font-size:7px;line-height:1.15;margin-top:.2cqw}
+}
+.mutationPool{grid-template-columns:repeat(8,minmax(0,1fr))}
+.mutationToken{min-width:0;min-height:0;line-height:0}
+.qteLuckChip .mutationToken img{display:block;min-width:0;min-height:0;aspect-ratio:1}
+
+/* Compact chance badge; reveal only the mutations actually awarded. */
+.fishingScene[data-mode="6"] .qteLuckChip{width:max-content;min-width:16%;max-width:32%;padding:.55cqw 1cqw;border-radius:1cqw;top:71%;background:linear-gradient(#f3fbff,#e4f2fb)}
+.qteLuckChip .mutationHeading{gap:1.5cqw;font-size:clamp(10px,1.25cqw,16px);line-height:1.2}
+.qteLuckChip .mutationHeading strong{font-size:clamp(15px,2cqw,26px);line-height:1.1}
+.qteLuckChip .mutationPool{display:flex;justify-content:center;gap:.65cqw;border:0;padding:.65cqw 0 .2cqw}
+.qteLuckChip .mutationToken{width:3.4cqw;height:3.4cqw}
+.qteLuckChip [hidden]{display:none!important}
+.qteLuckChip .mutationHint{margin-top:.35cqw;line-height:1.2}
+@media(max-width:600px){.fishingScene[data-mode="6"] .qteLuckChip{min-width:27%;max-width:48%;top:71%;padding:.8cqw 1.4cqw}.qteLuckChip .mutationHeading{font-size:8px;gap:2cqw}.qteLuckChip .mutationHeading strong{font-size:13px}.qteLuckChip .mutationToken{width:5cqw;height:5cqw}.qteLuckChip .mutationHint{font-size:7px}}
+
+.fishingRewardDebug{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:12px;border-top:1px solid #426782}
+.fishingRewardDebug>strong,.fishingRewardDebug>output{flex-basis:100%}.fishingRewardDebug label{display:flex;align-items:center;gap:6px;font-size:12px}
+.fishingRewardDebug input:not([type="checkbox"]){width:95px;min-height:36px}.fishingRewardDebug select,.fishingRewardDebug button{min-height:40px}.fishingRewardDebug input,.fishingRewardDebug select{background:#173c59;color:#f1f8ff;border:1px solid #79aacd;border-radius:6px;padding:5px}.fishingRewardDebug input[type="checkbox"]{width:20px;height:20px}
+.fishingOffer{position:absolute;z-index:10;left:50%;top:32%;translate:-50% 0;width:35%;box-sizing:border-box;border:2px solid #f6fcff;border-radius:1.3cqw;background:linear-gradient(#eef8ff,#d8eafd);box-shadow:0 .35cqw 1cqw #1a46675c;padding:1.25cqw;text-align:center;color:#285b8a;display:grid;gap:.6cqw;font-family:'GFF Latin',Arial,sans-serif}
+.fishingOffer[hidden]{display:none}.offerRarity{color:#5684a9;font-size:clamp(8px,1.2cqw,16px);letter-spacing:.1em}.offerName{font-size:clamp(12px,2.5cqw,30px);line-height:1.15}.offerPrice{font-size:clamp(10px,1.7cqw,22px);font-weight:800;color:#946522;overflow-wrap:anywhere}.offerDestination{font-size:clamp(7px,1cqw,13px);overflow-wrap:anywhere}.offerError{color:#a94739;font-size:clamp(7px,1cqw,13px);margin:0}.offerError:empty{display:none}
+.offerActions{display:flex;gap:1cqw;margin-top:.3cqw}.offerActions button{flex:1;border:1px solid #90b8d9;border-radius:.7cqw;padding:.55cqw;font:700 clamp(10px,1.4cqw,18px) 'GFF Latin',Arial,sans-serif;background:#eff7ff;color:#285b8a;cursor:pointer}.offerActions [data-offer="buy"]{background:linear-gradient(#ffe78c,#ffce49);border-color:#e7b447;color:#755318}.offerActions button:disabled{opacity:.5;cursor:default}
+.fishingScene[data-offer] .fishingRing,.fishingScene[data-offer] .qteCenter{display:none!important}
+.fishingScene[data-offer] .fishingTap{pointer-events:none}
+@media(max-width:600px){.fishingOffer{top:24%;width:57%;padding:1.2cqw;gap:.6cqw}.offerActions button{min-height:32px}.fishingScene[data-offer] .qteLuckChip{top:75%}}
+@media(max-width:600px){.fishingScene[data-offer] .qteLuckChip{top:72%}}
+
+/* One catch card: headline, pet, mutations, price and decision. */
+.fishingScene[data-offer] .fishingFeedback,.fishingScene[data-offer] .qteLuckChip{display:none!important}
+.fishingOffer{top:50%;translate:-50% -50%;width:36%;gap:.65cqw;padding:1.2cqw 1.4cqw;border-radius:1.25cqw}
+.offerHeading{margin:-1.2cqw -1.4cqw .4cqw;padding:.85cqw 1cqw;background:linear-gradient(#fff0ad,#ffde76);border-radius:1.1cqw 1.1cqw 0 0;border-bottom:1px solid #e9cb77;color:#795720;font-size:clamp(11px,1.65cqw,22px);font-weight:800;letter-spacing:.02em;line-height:1.2}
+.offerRarity{font-size:clamp(8px,1cqw,13px);letter-spacing:.1em}.offerName{font-size:clamp(14px,2.6cqw,32px)}
+.offerMutations{display:flex;justify-content:center;flex-wrap:wrap;gap:.7cqw;color:#588097;font-size:clamp(8px,1.1cqw,14px);line-height:1.3;margin:.1cqw 0 .6cqw}
+.offerMutation{display:inline-flex;align-items:center;gap:.35cqw;padding:.15cqw .55cqw .15cqw .2cqw;border:1px solid #b6d9d3;border-radius:2cqw;background:#f2fcf8;color:#327659;font-weight:700}
+.offerMutation img{display:block;width:2.6cqw;height:2.6cqw;object-fit:contain}
+.offerPrice{border-top:1px solid #c2d9eb;padding-top:.65cqw}.offerActions{margin-top:.45cqw}
+@media(max-width:600px){.fishingOffer{top:50%;width:65%;padding:1.2cqw 1.6cqw;gap:.6cqw}.offerHeading{margin:-1.2cqw -1.6cqw .4cqw;padding:1cqw;font-size:11px}.offerMutations{font-size:8px;margin:.2cqw 0 .6cqw}.offerMutation{padding:.2cqw .9cqw .2cqw .3cqw;gap:.5cqw}.offerMutation img{width:4.5cqw;height:4.5cqw}.offerActions button{min-height:36px}}
+
+/* Compact catch offer. */
+.fishingOffer{width:31%;padding:.8cqw 1cqw;gap:.4cqw;border-radius:1cqw}
+.offerHeading{margin:-.8cqw -1cqw .25cqw;padding:.65cqw .8cqw;border-radius:.85cqw .85cqw 0 0;font-size:clamp(11px,1.45cqw,19px)}
+.offerName{font-size:clamp(14px,2.3cqw,28px)}
+.offerMutations{margin:0 0 .25cqw;gap:.5cqw}
+.offerMutation img{width:2.3cqw;height:2.3cqw}
+.offerPrice{padding-top:.4cqw;font-size:clamp(10px,1.5cqw,20px)}
+.offerActions{margin-top:.2cqw;gap:.7cqw}.offerActions button{padding:.4cqw}
+@media(max-width:600px){.fishingOffer{width:59%;padding:.8cqw 1.2cqw;gap:.45cqw}.offerHeading{margin:-.8cqw -1.2cqw .25cqw;padding:.8cqw;font-size:11px}.offerMutation img{width:4.5cqw;height:4.5cqw}.offerActions button{min-height:36px}}
+
+.genAtlasIcon{display:inline-block;flex:none;width:32px;height:32px;aspect-ratio:1;background-image:url('mutations/gen-atlas.png');background-size:400% 300%;background-repeat:no-repeat;vertical-align:middle}
+.qteLuckChip .mutationToken>.genAtlasIcon{width:100%;height:100%}
+.offerMutation>.genAtlasIcon{width:2.3cqw;height:2.3cqw}
+.genDebug{padding:12px;border-top:1px solid #426782;font-family:Arial,sans-serif;font-size:12px;line-height:1.5;color:#d4e9f8}
+.genDebug h3{font-size:15px;margin:0 0 6px}.genDebug p{margin:6px 0 12px;color:#b5d2e7}.genSimControls{display:flex;flex-wrap:wrap;gap:8px;align-items:end}
+.genSimControls label,.genDetailLabel{display:flex;flex-direction:column;gap:4px}.genSimControls input,.genSimControls select,.genDetailLabel select{background:#173c59;color:#f1f8ff;border:1px solid #79aacd;border-radius:6px;padding:6px;min-height:40px;max-width:210px;box-sizing:border-box}.genSimControls input{width:105px}.genSimControls button{min-height:42px}
+.genDebug .genSimStatus{display:block;margin:12px 0;color:#bceacc}.genTableScroll{max-width:100%;overflow-x:auto}.genDebug table{border-collapse:collapse;width:100%;font-size:12px;font-variant-numeric:tabular-nums}.genDebug th,.genDebug td{padding:7px 9px;border-bottom:1px solid #3d5d75;text-align:right;white-space:nowrap}.genDebug th:first-child,.genDebug td:first-child{text-align:left}.genDebug thead{background:#254c69;color:#eff9ff}.genDebug tbody tr:nth-child(even){background:#203d5344}.genDetailLabel{margin:12px 0;max-width:240px}.genCatalog{margin-top:16px}.genCatalog>summary{cursor:pointer;padding:8px 0}.genCatalogLabel{display:inline-flex;align-items:center;gap:7px}.genCatalogLabel img{width:30px;height:30px;object-fit:contain}.genCatalogLabel .genAtlasIcon{width:30px;height:30px}
+@media(max-width:600px){.offerMutation>.genAtlasIcon{width:4.5cqw;height:4.5cqw}.genSimControls label{flex:1 1 90px}.genSimControls input,.genSimControls select{width:100%}.genDebug th,.genDebug td{padding:6px;font-size:11px}}
+.genRebirthControls{margin:10px 0}.genRebirthControls label:last-child{flex-direction:row;align-items:center;min-height:40px}.genRebirthControls input[type="checkbox"]{width:20px;height:20px;min-height:20px}
+.fishingSimDetail>details{margin:12px 0}.fishingSimDetail>details>summary{cursor:pointer;padding:7px 0;font-weight:700}.fishingSimDetail .genLogCaption{display:block;margin:8px 0;color:#bfdce8}.genLogPages{display:flex;align-items:center;justify-content:center;gap:14px;margin:10px 0}.genLogPages button{min-height:40px}
+.genLogTable{max-height:480px;overflow:auto}.genLogTable thead{position:sticky;top:0}
+
+/* Debug workspace: one activity and one result view at a time. */
+.debugOrganized [hidden]{display:none!important}
+.debugOrganized>summary{font-size:14px;padding:12px 14px}
+.debugOrganized .genDebug{padding:0;border:0;font:13px/1.45 Arial,sans-serif}
+.debugMainNav,.debugResultNav{display:flex;gap:5px;padding:10px 12px;background:#18374f;border-bottom:1px solid #3a5c76;flex-wrap:wrap}
+.debugMainNav button,.debugResultNav button{background:transparent;border:1px solid transparent;color:#acc8df;border-radius:7px;min-height:40px;padding:8px 16px;font:600 13px Arial,sans-serif;cursor:pointer}
+.debugMainNav button[aria-selected="true"],.debugResultNav button[aria-selected="true"]{background:#376c96;color:#fff;border-color:#80b3d9;box-shadow:inset 0 1px #ffffff22}
+.debugPage{padding:16px;min-width:0}.debugSectionTitle,.debugOrganized .debugPage>h3{margin:0 0 8px;font-size:16px;color:#eff7ff;font-weight:700}
+.debugOrganized .debugPage>p{margin:0 0 14px;color:#a7c5da;font-size:12px}
+.debugSimSetup{display:grid;grid-template-columns:1fr 1.5fr 1fr;gap:12px;padding:14px;border:1px solid #45647a;background:#19374e;border-radius:10px}
+.debugSimSetup label,.debugFieldGrid label,.debugMixFields label{display:flex;flex-direction:column;gap:6px;color:#bfd9eb;font-size:12px}
+.debugSimSetup input,.debugSimSetup select,.debugFieldGrid input,.debugFieldGrid select{width:100%;box-sizing:border-box;background:#102b40;border:1px solid #628aa8;color:#f4faff;border-radius:6px;padding:9px;min-height:40px;font:13px Arial,sans-serif}
+.debugSimSetup .debugCompare{grid-column:1/-1;display:flex;flex-direction:row;align-items:center;gap:8px}.debugSimSetup input[type="checkbox"]{width:18px;min-height:18px;height:18px;margin:0}
+.debugOrganized input:focus-visible,.debugOrganized select:focus-visible,.debugOrganized button:focus-visible{outline:2px solid #a2daff;outline-offset:2px}
+.debugPresets{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:12px 0}.debugPresets>span{font-size:11px;color:#8fadc5;margin-right:3px}.debugPresets button{font:12px Arial,sans-serif;min-height:34px;border-radius:20px;padding:6px 13px;background:#17364d;border:1px solid #456882;color:#bdd5e7}.debugPresets button[aria-pressed="true"]{background:#245541;border-color:#6ab795;color:#d7ffe9}
+.debugAdvanced{border:1px solid #3a5d77;border-radius:8px;margin:12px 0;background:#153146}.debugAdvanced>summary{cursor:pointer;font-size:12px;color:#b6d1e5;padding:10px 12px}.debugFieldGrid{padding:12px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.debugMixFields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;grid-column:span 2}.debugMixHelp{grid-column:1/-1;color:#8eafc7;font-size:11px}
+.debugRunBar{display:flex;align-items:center;gap:8px;margin:16px 0 8px;flex-wrap:wrap}.debugRunBar .genSimRun{background:#ffe086;color:#6d501a;border:1px solid #ffeab0;font:700 13px Arial,sans-serif;min-height:44px;padding:10px 20px}.debugRunEstimate{margin-left:auto;font-size:12px;color:#97bbd5}.debugOrganized .genSimStatus{margin:8px 0 16px;padding:10px 12px;background:#153a36;color:#bee4d2;border-radius:7px;font-size:12px}
+.debugResultArea{border-top:1px solid #3d5e77;margin-top:18px;padding-top:14px}.debugResultHeader{display:flex;align-items:center;justify-content:space-between;gap:12px}.debugResultHeader button{font:12px Arial,sans-serif;min-height:36px}.debugOrganized .genDetailLabel{max-width:none;display:flex;flex-direction:row;align-items:center;gap:10px;margin:12px 0;color:#a9c6dc;font-size:12px}.debugOrganized .genDetailLabel select{max-width:none;flex:1;min-width:0}
+.debugMetrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0}.debugMetric{background:#1a3a51;border:1px solid #42637b;border-radius:8px;padding:10px 12px;display:flex;flex-direction:column;gap:3px}.debugMetric strong{font-size:21px;color:#f2f9ff;font-variant-numeric:tabular-nums}.debugMetric span{font-size:11px;color:#a8c4d9}
+.debugResultNav{padding:5px 0;background:transparent;gap:3px}.debugResultNav button{min-height:36px;padding:7px 12px;font-size:12px}.debugResultPane{padding:10px 0}.debugResultPane>details{margin:0}.debugResultPane .genTableScroll,.debugPage .genCatalog>.genTableScroll{max-height:420px;overflow:auto;border:1px solid #3c5d74;border-radius:6px}.debugOrganized thead{position:sticky;top:0;z-index:1}.debugOrganized th{font-weight:600}.debugOrganized td,.debugOrganized th{font-size:12px;padding:8px 10px}.debugOrganized tbody tr.is-selected{background:#2b526e}
+.debugSelectRun{background:transparent!important;border:0!important;text-align:left;color:#b8deff!important;text-decoration:underline;text-underline-offset:3px;padding:0!important;min-height:24px!important;font:12px Arial,sans-serif!important;cursor:pointer}.debugResultArea>p{font-size:11px!important;color:#8eafc7!important;margin:10px 0 0!important}
+.debugOrganized .fishingDebugTools{margin:10px 0;padding:12px;border:1px solid #45647a;border-radius:9px;background:#19374e;gap:8px}.debugOrganized .fishingDebugTools label{flex:1 1 160px;font:12px Arial,sans-serif}.debugOrganized .fishingDebugReadout{display:block;border:0;padding:8px 0;color:#a4c4d9}.debugOrganized .fishingRewardDebug{padding:14px 0 0;border-top:1px solid #3d5e77;gap:12px}.debugOrganized .fishingRewardDebug>strong{font:700 14px Arial,sans-serif;color:#e5f4ff}.debugOrganized .fishingRewardDebug>.debugAdvanced{width:100%;margin:0}.debugOrganized .debugFieldGrid label{flex:initial}.debugOrganized .debugFieldGrid input:not([type="checkbox"]){width:100%}.debugOrganized .rewardDebugStatus{font:12px Arial,sans-serif;color:#9ec0d9;padding:7px 0}
+@media(max-width:600px){.debugMainNav{padding:8px;gap:4px}.debugMainNav button{flex:1;padding:8px 6px;font-size:12px}.debugPage{padding:12px}.debugSimSetup{grid-template-columns:1fr 1fr;padding:11px;gap:10px}.debugSimSetup label:nth-child(2){grid-column:1/-1;grid-row:2}.debugFieldGrid{grid-template-columns:1fr}.debugMixFields{grid-column:auto}.debugRunEstimate{width:100%;margin:2px 0 0}.debugMetrics{grid-template-columns:repeat(2,minmax(0,1fr))}.debugMetric strong{font-size:18px}.debugResultNav{gap:2px}.debugResultNav button{flex:1;padding:7px 8px;white-space:nowrap}.debugOrganized .genDetailLabel{flex-direction:column;align-items:stretch;gap:5px}.debugOrganized .genDetailLabel select{width:100%;box-sizing:border-box}.debugResultHeader{gap:6px}.debugResultHeader .debugSectionTitle{font-size:14px;margin:0}.debugOrganized .genLogTable{max-height:330px}}
+.debugOrganized .genSummary th:nth-child(4),.debugOrganized .genSummary td:nth-child(4),.debugOrganized .genSummary th:nth-child(5),.debugOrganized .genSummary td:nth-child(5){display:none}
+
+.fishingPoolLinks{display:flex;gap:8px;margin:10px 0;flex-wrap:wrap}.fishingPoolLinks button{min-height:40px;background:#204763;color:#d7ecfc;border:1px solid #5c8fb4;border-radius:7px;padding:8px 14px;font:600 12px Arial,sans-serif;cursor:pointer}
+.poolTabs{display:flex;gap:6px;margin:12px 0}.poolTabs button{min-height:42px;border:1px solid #4e7692;background:#16364d;color:#afcfe4;border-radius:7px;padding:8px 14px;font:600 13px Arial,sans-serif;cursor:pointer}.poolTabs button[aria-selected="true"]{background:#376c96;color:#fff;border-color:#8bbbdc}.poolTabs small{margin-left:5px;opacity:.7}
+.poolFilters{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:10px;margin:14px 0}.poolFilters label{display:flex;flex-direction:column;gap:5px;font-size:12px;color:#b8d3e6}.poolFilters input,.poolFilters select{min-width:0;width:100%;box-sizing:border-box;background:#102c40;border:1px solid #628aa8;color:#f1f8ff;border-radius:6px;padding:9px;min-height:40px;font:13px Arial,sans-serif}
+.poolToolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.poolToolbar label{display:flex;align-items:center;gap:6px;font-size:12px;margin-right:auto}.poolToolbar input{width:18px;height:18px}.poolToolbar button{font:12px Arial,sans-serif;min-height:38px}
+.poolBrowser .poolNote,.poolBrowser .poolVersion{font-size:11px;color:#98b9d0;line-height:1.5;margin:12px 0}.poolBrowser .poolStats{display:block;color:#c3e7d3;font:12px Arial,sans-serif;margin:12px 0}
+.poolFishTable,.poolGenTable{max-height:520px;overflow:auto;border:1px solid #42647d;border-radius:7px}.debugOrganized .poolBrowser table td:first-child,.debugOrganized .poolBrowser table td:nth-child(2){text-align:left}.debugOrganized .poolBrowser table td,.debugOrganized .poolBrowser table th{font-variant-numeric:tabular-nums}.poolBrowser .genCatalogLabel{min-width:140px}
+@media(max-width:600px){.poolFilters{grid-template-columns:1fr 1fr}.poolFilters label:first-child{grid-column:1/-1}.poolTabs button{flex:1;padding:8px;font-size:12px}.poolToolbar label{width:100%;margin-bottom:4px}.poolToolbar button{flex:1;font-size:11px}.poolFishTable,.poolGenTable{max-height:380px}.fishingPoolLinks button{flex:1;font-size:11px;min-height:42px}}
+
+/* Reward colors: readable dark text on a matching pale rarity tint. */
+.fishingOffer{--rarity-ink:#576b7d;--rarity-bg:#edf2f6;--rarity-edge:#bccbd6}
+.fishingOffer[data-rarity="rare"]{--rarity-ink:#1766af;--rarity-bg:#e2f1ff;--rarity-edge:#8fbfe7}
+.fishingOffer[data-rarity="epic"]{--rarity-ink:#8140af;--rarity-bg:#f2e7ff;--rarity-edge:#c3a0e2}
+.fishingOffer[data-rarity="legendary"]{--rarity-ink:#93600a;--rarity-bg:#fff1c8;--rarity-edge:#e8c25c}
+.fishingOffer[data-rarity="mythic"]{--rarity-ink:#b12e52;--rarity-bg:#ffe7ed;--rarity-edge:#e998ae}
+.fishingOffer[data-rarity="apex"]{--rarity-ink:#087a89;--rarity-bg:#d9f8fa;--rarity-edge:#72c6d2}
+.fishingOffer .offerRarity{justify-self:center;color:var(--rarity-ink);background:var(--rarity-bg);border:1px solid var(--rarity-edge);border-radius:999px;padding:.2em .7em;font-weight:800;letter-spacing:.08em;line-height:1.2}
+.fishingOffer .offerName{color:var(--rarity-ink)}
+.offerMutation{--gen-ink:#536b7b;--gen-bg:#edf3f7;--gen-edge:#bdced9;color:var(--gen-ink);background:var(--gen-bg);border-color:var(--gen-edge)}
+.offerMutation[data-tier="uncommon"]{--gen-ink:#23734c;--gen-bg:#e5f7eb;--gen-edge:#9ed1af}
+.offerMutation[data-tier="advanced"]{--gen-ink:#2266a6;--gen-bg:#e6f2ff;--gen-edge:#9bc4e8}
+.offerMutation[data-tier="rare"]{--gen-ink:#7d3dae;--gen-bg:#f2e7fd;--gen-edge:#c2a0df}
+.offerMutation[data-tier="epic"]{--gen-ink:#99520c;--gen-bg:#fff0db;--gen-edge:#e4b87e}
+.offerMutation[data-tier="exclusive"]{--gen-ink:#ac286d;--gen-bg:#ffe5f4;--gen-edge:#e89fc8}
+.offerMutation[data-gen="gold"]{--gen-ink:#956009;--gen-bg:#fff2cb;--gen-edge:#e4c16a}
+.offerMutation[data-gen="soaked"]{--gen-ink:#087887;--gen-bg:#e0f6fa;--gen-edge:#8bcbd8}
+.offerMutation>span:last-child{color:inherit;font-weight:800}
+
+/* Expanded pool mode uses page scrolling instead of clipping rows inside the table. */
+.debugOrganized .poolBrowser.poolExpanded .poolFishTable,.debugOrganized .poolBrowser.poolExpanded .poolGenTable{max-height:none;overflow-y:visible}
+.poolToolbar label:has(.poolFullRows){margin-right:0}
+
+.poolHorizontalControls{margin:10px 0 7px;color:#a9cfe7;font:11px Arial,sans-serif}.poolHorizontalControls>span{display:block;margin-bottom:6px}.poolHorizontalBar{display:flex;align-items:center;gap:8px}.poolHorizontalBar button{padding:3px 10px;min-height:30px;font-size:16px;line-height:1}.poolScrollTrack{flex:1;min-width:0;height:20px;overflow-x:scroll;overflow-y:hidden;background:#102b3e;border:1px solid #50748e;border-radius:5px;scrollbar-color:#8eb7d5 #18384f;scrollbar-width:auto}.poolScrollTrack>div{height:1px}
+.poolAllColumns .poolFishTable table,.poolAllColumns .poolGenTable table{min-width:1650px}.poolAllColumns table th:nth-child(n+5),.poolAllColumns table td:nth-child(n+5){min-width:110px}.poolAllColumns table th:nth-child(2),.poolAllColumns table td:nth-child(2){position:sticky;left:0;min-width:165px;z-index:2;background:#19364b}.poolAllColumns table th:nth-child(2){z-index:4;background:#254c69}.poolAllColumns table tbody tr:nth-child(even) td:nth-child(2){background:#1b384f}
+.fishingChart{margin:16px 0;padding:16px;border:1px solid #466a82;border-radius:12px;background:#142e42;color:#dcebf6;font:12px Arial,sans-serif}.fishingChart[hidden]{display:none}.chartHeading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.chartHeading h3{margin:0}.chartHeading label{display:flex;gap:8px;align-items:center}.chartRun,.chartLegend{color:#a8c6dc}.chartMetrics{font-weight:bold;margin:12px 0;color:#f1df9b}.fishingChart svg{display:block;width:100%;height:auto;min-height:180px}.fishingChart svg text{fill:#bfdaed;font:12px Arial,sans-serif}.chartFirst{max-height:280px}.fishingChart>p:last-child{color:#a8c6dc;line-height:1.5;margin-bottom:0}
