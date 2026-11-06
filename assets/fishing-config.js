@@ -41,8 +41,8 @@ window.FishingConfig = {
   "mechanic": {
     "mode": 7,
     "taps": 3,
-    "greenMutation": 8.288100828,
-    "goldMutation": 16.576201656,
+    "greenMutation": 10,
+    "goldMutation": 34,
     "missMutation": 0,
     "cooldown": 0,
     "rarityTiming": {

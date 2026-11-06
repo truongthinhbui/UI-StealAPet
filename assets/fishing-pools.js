@@ -57,14 +57,14 @@
   function render(){
     const index=Number($('.poolBand').value),all=$('.poolAllBands').checked,items=list(),band=bands()[index];
     shell.classList.toggle('poolAllColumns',all);$('.poolBand').disabled=all;
-    const headers=['ID',kind==='fish'?'Cá':'Gen','Nhóm',kind==='fish'?'Rank':'Family',...(all?[...bands().map(b=>'Weight '+b.label),...bands().map(b=>'Rate '+b.label)]:['Weight '+band.label,'Rate '+band.label])];
+    const headers=['ID',kind==='fish'?'Cá':'Gen','Nhóm',kind==='fish'?'Rank':'Family',...(kind==='gen'?['Giá SSS · Pet Coin']:[]),...(all?[...bands().map(b=>'Weight '+b.label),...bands().map(b=>'Rate '+b.label)]:['Weight '+band.label,'Rate '+band.label])];
     const rows=items.map(item=>{
       let label=item.name;if(kind==='gen'){label=document.createElement('span');label.className='genCatalogLabel';label.append(window.GenCore.icon(item),document.createTextNode(item.name));}
-      return [item.id,label,kind==='fish'?item.rarity:tiers[item.tier],kind==='fish'?item.rank:item.family,...(all?[...bands().map((_,b)=>number(weight(item,b))),...bands().map((_,b)=>percent(weight(item,b)/total(b)))]:[number(weight(item,index)),percent(weight(item,index)/total(index))])];
+      return [item.id,label,kind==='fish'?item.rarity:tiers[item.tier],kind==='fish'?item.rank:item.family,...(kind==='gen'?[number(item.rarityBasis.value)]:[]),...(all?[...bands().map((_,b)=>number(weight(item,b))),...bands().map((_,b)=>percent(weight(item,b)/total(b)))]:[number(weight(item,index)),percent(weight(item,index)/total(index))])];
     });
     $(kind==='fish'?'.poolFishTable':'.poolGenTable').replaceChildren(table(headers,rows));
     $('.poolStats').textContent='Hiện '+items.length+' / '+(kind==='fish'?window.FishingConfig.pets.length:window.GenConfig.catalog.length)+' loại · '+(all?'Đủ 5 mốc · 5 cột Weight + 5 cột Rate':band.label+' · Tổng weight pool trước lọc: '+number(total(index)));
-    $('.poolNote').textContent=kind==='fish'?'Roll pet trước theo fishing 1.0.1. Có 44 loại, 42 loại có weight dương; TUNA và SALMON không rơi. Tỉ lệ tính trên toàn pool; tìm kiếm và bộ lọc không thay đổi xác suất.':'Roll Gen sau khi có cá; mỗi cá tối đa 1 Gen. Xanh +'+window.GenConfig.rules.green.toFixed(2)+'%, vàng +'+window.GenConfig.rules.gold.toFixed(2)+'%, đỏ +0%. Tỉ lệ trong bảng là loại Gen, có điều kiện được nhận Gen. Nhóm Golden–Eclipse tổng 96%; Fossilized và Prismatic mỗi loại 2% (tổng 4%). Đây là tỉ lệ sau khi đã nhận Gen.';
+    $('.poolNote').textContent=kind==='fish'?'Roll pet trước theo fishing 1.0.1. Có 44 loại, 42 loại có weight dương; TUNA và SALMON không rơi. Tỉ lệ tính trên toàn pool; tìm kiếm và bộ lọc không thay đổi xác suất.':'Roll Gen sau khi có cá; mỗi cá tối đa 1 Gen. Xanh +'+window.GenConfig.rules.green.toFixed(2)+'%, vàng +'+window.GenConfig.rules.gold.toFixed(2)+'%, đỏ +0%. Tỉ lệ trong bảng là loại Gen, có điều kiện được nhận Gen. Rarity theo giá mua Gen grade SSS, không theo hệ số giá pet. Fossilized và Prismatic là APEX, tăng 0,5% đến 2,5% mỗi loại theo Rebirth. Đây là tỉ lệ sau khi đã nhận Gen.';
     $('.poolVersion').textContent='Config: '+(kind==='fish'?window.FishingConfig.version:window.GenConfig.version)+' · Bảng chỉ để xem, không đổi cấu hình đang chơi.';
     activeTable().scrollLeft=0;requestAnimationFrame(refreshScroll);
   }

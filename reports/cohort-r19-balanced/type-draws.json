@@ -1,0 +1,82 @@
+[
+  {
+    "band": "R9–R10",
+    "counts": {
+      "gold": 52838,
+      "thundered": 9493,
+      "wind": 18135,
+      "soaked": 53101,
+      "frost": 18039,
+      "clover": 9471,
+      "coral": 9543,
+      "lunar": 9414,
+      "ice": 17985,
+      "rainbow": 1000,
+      "fossilized": 981
+    }
+  },
+  {
+    "band": "R11–R12",
+    "counts": {
+      "ice": 19065,
+      "lunar": 11124,
+      "wind": 19650,
+      "gold": 46290,
+      "soaked": 46560,
+      "clover": 11283,
+      "thundered": 11120,
+      "frost": 19615,
+      "coral": 11206,
+      "fossilized": 1971,
+      "rainbow": 2116
+    }
+  },
+  {
+    "band": "R13–R15",
+    "counts": {
+      "soaked": 39894,
+      "lunar": 12763,
+      "thundered": 12717,
+      "frost": 21152,
+      "wind": 21095,
+      "ice": 20843,
+      "gold": 39901,
+      "clover": 12802,
+      "rainbow": 3074,
+      "coral": 12734,
+      "fossilized": 3025
+    }
+  },
+  {
+    "band": "R16–R18",
+    "counts": {
+      "wind": 22407,
+      "soaked": 33617,
+      "coral": 14705,
+      "frost": 22434,
+      "thundered": 14452,
+      "gold": 33335,
+      "lunar": 14166,
+      "ice": 22404,
+      "clover": 14385,
+      "fossilized": 4037,
+      "rainbow": 4058
+    }
+  },
+  {
+    "band": "R19+",
+    "counts": {
+      "ice": 23871,
+      "thundered": 16004,
+      "frost": 24143,
+      "gold": 26922,
+      "soaked": 26874,
+      "lunar": 16151,
+      "wind": 23769,
+      "coral": 16219,
+      "clover": 16061,
+      "fossilized": 5022,
+      "rainbow": 4964
+    }
+  }
+]

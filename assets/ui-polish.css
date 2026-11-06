@@ -66,6 +66,7 @@ main>.prototypeTabs{border:0;background:#102636;border:1px solid #2f4d65;padding
 .fishingDebugPanel .chartPlotFrame{overflow-x:auto;scrollbar-width:thin}.fishingDebugPanel .chartPlotFrame svg{min-width:570px}
 .fishingDebugPanel .chartLegend{padding:10px 0;color:#a9c5da;font:11px/1.7 system-ui}
 .uiRarity{font-weight:700!important;color:var(--rarity-color)!important;letter-spacing:.4px}
+.offerMutation[data-tier="exclusive"]{--gen-ink:#087f79;--gen-bg:#dbfff8;--gen-edge:#66d8c3}
 .fishingOffer{border-radius:16px!important;box-shadow:0 16px 45px #06192f44,0 0 0 1px #ffffff55;overflow:hidden}
 .fishingOffer .offerHeading{letter-spacing:1px;font-weight:700}.fishingOffer .offerName{letter-spacing:.5px}
 .fishingOffer .offerActions{gap:10px}.fishingOffer .offerActions button{border-radius:9px;min-height:40px;font-weight:700;box-shadow:inset 0 1px #ffffff88}

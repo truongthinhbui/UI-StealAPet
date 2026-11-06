@@ -1,9 +1,9 @@
 window.GenConfig = {
-  "version": "merged-gen-22-weekly75-80",
+  "version": "merged-gen-25-price-rarity",
   "source": "[Craftland] Steal A Pet Master Data.xlsx",
   "rules": {
-    "green": 40,
-    "gold": 60,
+    "green": 10,
+    "gold": 34,
     "red": 0,
     "taps": 3,
     "maxGen": 1,
@@ -16,92 +16,92 @@ window.GenConfig = {
   "rebirthProfiles": [
     {
       "min": 9,
-      "max": 12,
-      "label": "R9–R12",
+      "max": 10,
+      "label": "R9–R10",
       "weights": {
-        "gold": 250000,
-        "soaked": 250000,
+        "gold": 322500,
+        "soaked": 322500,
         "frost": 90000,
         "ice": 90000,
-        "wind": 90000,
+        "wind": 47500,
         "coral": 47500,
-        "thundered": 47500,
-        "clover": 47500,
-        "lunar": 47500,
-        "fossilized": 20000,
-        "rainbow": 20000
+        "thundered": 30000,
+        "clover": 20000,
+        "lunar": 20000,
+        "fossilized": 5000,
+        "rainbow": 5000
+      }
+    },
+    {
+      "min": 11,
+      "max": 12,
+      "label": "R11–R12",
+      "weights": {
+        "gold": 293125,
+        "soaked": 293125,
+        "frost": 97500,
+        "ice": 97500,
+        "wind": 55625,
+        "coral": 55625,
+        "thundered": 37500,
+        "clover": 25000,
+        "lunar": 25000,
+        "fossilized": 10000,
+        "rainbow": 10000
       }
     },
     {
       "min": 13,
-      "max": 16,
-      "label": "R13–R16",
+      "max": 15,
+      "label": "R13–R15",
       "weights": {
-        "gold": 222500,
-        "soaked": 222500,
-        "frost": 97500,
-        "ice": 97500,
-        "wind": 97500,
-        "coral": 55625,
-        "thundered": 55625,
-        "clover": 55625,
-        "lunar": 55625,
-        "fossilized": 20000,
-        "rainbow": 20000
-      }
-    },
-    {
-      "min": 17,
-      "max": 20,
-      "label": "R17–R20",
-      "weights": {
-        "gold": 195000,
-        "soaked": 195000,
+        "gold": 263750,
+        "soaked": 263750,
         "frost": 105000,
         "ice": 105000,
-        "wind": 105000,
+        "wind": 63750,
         "coral": 63750,
-        "thundered": 63750,
-        "clover": 63750,
-        "lunar": 63750,
-        "fossilized": 20000,
-        "rainbow": 20000
+        "thundered": 45000,
+        "clover": 30000,
+        "lunar": 30000,
+        "fossilized": 15000,
+        "rainbow": 15000
       }
     },
     {
-      "min": 21,
-      "max": 24,
-      "label": "R21–R24",
+      "min": 16,
+      "max": 18,
+      "label": "R16–R18",
       "weights": {
-        "gold": 167500,
-        "soaked": 167500,
+        "gold": 234375,
+        "soaked": 234375,
         "frost": 112500,
         "ice": 112500,
-        "wind": 112500,
+        "wind": 71875,
         "coral": 71875,
-        "thundered": 71875,
-        "clover": 71875,
-        "lunar": 71875,
+        "thundered": 52500,
+        "clover": 35000,
+        "lunar": 35000,
         "fossilized": 20000,
         "rainbow": 20000
       }
     },
     {
-      "min": 25,
+      "min": 19,
       "max": null,
-      "label": "R25+",
+      "label": "R19+",
       "weights": {
-        "gold": 140000,
-        "soaked": 140000,
+        "gold": 205000,
+        "soaked": 205000,
         "frost": 120000,
         "ice": 120000,
-        "wind": 120000,
+        "wind": 80000,
         "coral": 80000,
-        "thundered": 80000,
-        "clover": 80000,
-        "lunar": 80000,
-        "fossilized": 20000,
-        "rainbow": 20000
+        "thundered": 60000,
+        "clover": 40000,
+        "lunar": 40000,
+        "fossilized": 25000,
+        "rainbow": 25000
       }
     }
   ],
@@ -112,7 +112,7 @@ window.GenConfig = {
       "family": "MutaGen",
       "tier": "basic",
       "fishingEnabled": true,
-      "fishingWeight": 250000,
+      "fishingWeight": 322500,
       "icon": {
         "file": "assets/mutations/gold.png"
       },
@@ -150,6 +150,11 @@ window.GenConfig = {
         "value": 1.33,
         "levelCostMultiplier": 1.15,
         "mergedStackingRule": null
+      },
+      "rarityBasis": {
+        "field": "BuyCostPetCoin",
+        "grade": "SSS",
+        "value": 30
       }
     },
     {
@@ -158,7 +163,7 @@ window.GenConfig = {
       "family": "WeatherGen",
       "tier": "basic",
       "fishingEnabled": true,
-      "fishingWeight": 250000,
+      "fishingWeight": 322500,
       "icon": {
         "atlas": 0
       },
@@ -196,6 +201,11 @@ window.GenConfig = {
         "value": 0.05,
         "levelCostMultiplier": 1.03,
         "mergedStackingRule": null
+      },
+      "rarityBasis": {
+        "field": "BuyCostPetCoin",
+        "grade": "SSS",
+        "value": 25
       }
     },
     {
@@ -242,6 +252,11 @@ window.GenConfig = {
         "value": 1.66,
         "levelCostMultiplier": 1.3,
         "mergedStackingRule": null
+      },
+      "rarityBasis": {
+        "field": "BuyCostPetCoin",
+        "grade": "SSS",
+        "value": 50
       }
     },
     {
@@ -288,15 +303,20 @@ window.GenConfig = {
         "value": 0.09,
         "levelCostMultiplier": 1.05,
         "mergedStackingRule": null
+      },
+      "rarityBasis": {
+        "field": "BuyCostPetCoin",
+        "grade": "SSS",
+        "value": 50
       }
     },
     {
       "id": "wind",
       "name": "Gale",
       "family": "WeatherGen",
-      "tier": "uncommon",
+      "tier": "advanced",
       "fishingEnabled": true,
-      "fishingWeight": 90000,
+      "fishingWeight": 47500,
       "icon": {
         "file": "assets/mutations/wind.png"
       },
@@ -334,6 +354,11 @@ window.GenConfig = {
         "value": 0.08,
         "levelCostMultiplier": 1.05,
         "mergedStackingRule": null
+      },
+      "rarityBasis": {
+        "field": "BuyCostPetCoin",
+        "grade": "SSS",
+        "value": 70
       }
     },
     {
@@ -380,15 +405,20 @@ window.GenConfig = {
         "value": 2,
         "levelCostMultiplier": 1.45,
         "mergedStackingRule": null
+      },
+      "rarityBasis": {
+        "field": "BuyCostPetCoin",
+        "grade": "SSS",
+        "value": 100
       }
     },
     {
       "id": "thundered",
       "name": "Thundered",
       "family": "WeatherGen",
-      "tier": "advanced",
+      "tier": "rare",
       "fishingEnabled": true,
-      "fishingWeight": 47500,
+      "fishingWeight": 30000,
       "icon": {
         "atlas": 2
       },
@@ -426,15 +456,20 @@ window.GenConfig = {
         "value": 0.12,
         "levelCostMultiplier": 1.07,
         "mergedStackingRule": null
+      },
+      "rarityBasis": {
+        "field": "BuyCostPetCoin",
+        "grade": "SSS",
+        "value": 120
       }
     },
     {
       "id": "clover",
       "name": "Clover",
       "family": "MutaGen",
-      "tier": "advanced",
+      "tier": "epic",
       "fishingEnabled": true,
-      "fishingWeight": 47500,
+      "fishingWeight": 20000,
       "icon": {
         "file": "assets/mutations/clover.png"
       },
@@ -472,15 +507,20 @@ window.GenConfig = {
         "value": 2.13,
         "levelCostMultiplier": 1.5,
         "mergedStackingRule": null
+      },
+      "rarityBasis": {
+        "field": "BuyCostPetCoin",
+        "grade": "SSS",
+        "value": 180
       }
     },
     {
       "id": "lunar",
       "name": "Eclipse",
       "family": "WeatherGen",
-      "tier": "advanced",
+      "tier": "epic",
       "fishingEnabled": true,
-      "fishingWeight": 47500,
+      "fishingWeight": 20000,
       "icon": {
         "file": "assets/mutations/lunar.png"
       },
@@ -518,15 +558,20 @@ window.GenConfig = {
         "value": 0.15,
         "levelCostMultiplier": 1.08,
         "mergedStackingRule": null
+      },
+      "rarityBasis": {
+        "field": "BuyCostPetCoin",
+        "grade": "SSS",
+        "value": 180
       }
     },
     {
       "id": "fossilized",
       "name": "Fossilized",
       "family": "MutaGen",
-      "tier": "rare",
+      "tier": "exclusive",
       "fishingEnabled": true,
-      "fishingWeight": 20000,
+      "fishingWeight": 5000,
       "icon": {
         "atlas": 8
       },
@@ -564,15 +609,20 @@ window.GenConfig = {
         "value": 2.25,
         "levelCostMultiplier": 1.6,
         "mergedStackingRule": null
+      },
+      "rarityBasis": {
+        "field": "BuyCostPetCoin",
+        "grade": "SSS",
+        "value": 275
       }
     },
     {
       "id": "rainbow",
       "name": "Prismatic",
       "family": "WeatherGen",
-      "tier": "rare",
+      "tier": "exclusive",
       "fishingEnabled": true,
-      "fishingWeight": 20000,
+      "fishingWeight": 5000,
       "icon": {
         "file": "assets/mutations/rainbow.png"
       },
@@ -610,14 +660,19 @@ window.GenConfig = {
         "value": 0.14,
         "levelCostMultiplier": 1.08,
         "mergedStackingRule": null
+      },
+      "rarityBasis": {
+        "field": "BuyCostPetCoin",
+        "grade": "SSS",
+        "value": 250
       }
     }
   ],
   "notes": [
-    "Weights are authored Fishing balance, not item application chances.",
-    "Item prices and effect stacking gaps remain source metadata; they do not disable authored Fishing drops.",
-    "Fishing unlocks R9. Gen bands: R9-12, R13-16, R17-20, R21-24, R25+. Fish source weights/bands unchanged.",
-    "v21: Fossilized and Prismatic each 2%; 96% other types. EPIC 4.75/5.5625/6.375/7.1875/8% per type. Type changes do not affect chance of receiving ANY Gen or pet rarity."
+    "Merged Muta/Weather pool, active 11 Gen only; no retired Gen reintroduced.",
+    "Rarity based on SSS item purchase Pet Coin cost. Soaked 25 / Golden 30: COMMON; Frozen/Frost 50: RARE; Gale 70/Magma 100: EPIC; Thundered 120: LEGENDARY; Clover/Eclipse 180: MYTHIC; Prismatic 250/Fossilized 275: APEX.",
+    "Five Gen bands R9-10, R11-12, R13-15, R16-18, R19+. Fish pool unchanged.",
+    "Gameplay green +10, gold +34, red 0, cap 100%, maximum one Gen."
   ],
   "rollOrder": [
     "fish",
@@ -626,49 +681,49 @@ window.GenConfig = {
   ],
   "rarityBudgetByBand": [
     {
-      "basic": 500000,
-      "uncommon": 270000,
-      "advanced": 190000,
-      "rare": 40000,
-      "epic": 0,
-      "exclusive": 0
+      "basic": 645000,
+      "uncommon": 180000,
+      "advanced": 95000,
+      "rare": 30000,
+      "epic": 40000,
+      "exclusive": 10000
     },
     {
-      "basic": 445000,
-      "uncommon": 292500,
-      "advanced": 222500,
-      "rare": 40000,
-      "epic": 0,
-      "exclusive": 0
+      "basic": 586250,
+      "uncommon": 195000,
+      "advanced": 111250,
+      "rare": 37500,
+      "epic": 50000,
+      "exclusive": 20000
     },
     {
-      "basic": 390000,
-      "uncommon": 315000,
-      "advanced": 255000,
-      "rare": 40000,
-      "epic": 0,
-      "exclusive": 0
+      "basic": 527500,
+      "uncommon": 210000,
+      "advanced": 127500,
+      "rare": 45000,
+      "epic": 60000,
+      "exclusive": 30000
     },
     {
-      "basic": 335000,
-      "uncommon": 337500,
-      "advanced": 287500,
-      "rare": 40000,
-      "epic": 0,
-      "exclusive": 0
+      "basic": 468750,
+      "uncommon": 225000,
+      "advanced": 143750,
+      "rare": 52500,
+      "epic": 70000,
+      "exclusive": 40000
     },
     {
-      "basic": 280000,
-      "uncommon": 360000,
-      "advanced": 320000,
-      "rare": 40000,
-      "epic": 0,
-      "exclusive": 0
+      "basic": 410000,
+      "uncommon": 240000,
+      "advanced": 160000,
+      "rare": 60000,
+      "epic": 80000,
+      "exclusive": 50000
     }
   ],
   "timeBalance": {
-    "reference": "Seven-day cohort: 20/60/20% players at 20/40/60 min/day; R19–30; original pet weights. Max one Gen, score capped at 100%.",
-    "defaultPreset": "weekly",
+    "reference": "Gameplay aligned with saved simulation: green +10 points, gold +34, red 0; 3 taps capped at 100%; max 1 Gen. Seven-day cohort snapshot 601/1000, not guaranteed.",
+    "defaultPreset": "saved",
     "secondsPerCast": 10,
     "weatherCycleMinutes": 69,
     "fishingMinutesPerCycle": 11,
@@ -684,9 +739,7 @@ window.GenConfig = {
       "diamond",
       "radioactive",
       "webbed"
-    ],
-    "targetShareMin": 0.75,
-    "targetShareMax": 0.8
+    ]
   },
   "balancePresets": {
     "online": {
@@ -717,14 +770,14 @@ window.GenConfig = {
       "red": 0
     },
     "saved": {
-      "label": "Mặc định đã lưu · xanh 10% / vàng 34%",
+      "label": "Gameplay mặc định · xanh 10% / vàng 34%",
       "timeBasis": "seven-day-cohort",
       "green": 10,
       "gold": 34,
       "red": 0
     }
   },
-  "activeBalancePreset": "weekly",
+  "activeBalancePreset": "saved",
   "retiredCatalog": [
     {
       "id": "vortex",
@@ -1004,31 +1057,28 @@ window.GenConfig = {
     }
   ],
   "typeGroups": {
-    "main": {
-      "ids": [
-        "gold",
-        "soaked",
-        "frost",
-        "ice",
-        "wind",
-        "coral",
-        "thundered",
-        "clover",
-        "lunar"
-      ],
-      "weightBudget": 960000,
-      "rate": 0.96
-    },
-    "legendary": {
+    "rarityOrder": [
+      "COMMON",
+      "RARE",
+      "EPIC",
+      "LEGENDARY",
+      "MYTHIC",
+      "APEX"
+    ],
+    "basis": "BuyCostPetCoin at SSS grade, active 11 Gen only. Not pet price multiplier or item application chance.",
+    "apex": {
       "ids": [
         "fossilized",
         "rainbow"
       ],
-      "weightBudget": 40000,
-      "rate": 0.04,
-      "eachRate": 0.02
+      "eachRateByBand": [
+        0.005,
+        0.01,
+        0.015,
+        0.02,
+        0.025
+      ]
     },
-    "appliesTo": "All five Gen Rebirth bands; conditional on receiving a Gen",
-    "method": "96/4; Fossilized and Prismatic 2% each. Freed 1% split equally across four EPIC (+0.25 percentage point each). Equal rarity weights and linear Rebirth progression preserved."
+    "method": "One merged pool. Equal weight within rarity, higher rarity less frequent at every band, normalize to 1000000."
   }
 };
