@@ -1,9 +1,9 @@
 window.GenConfig = {
-  "version": "merged-gen-16-two-time-presets",
+  "version": "merged-gen-22-weekly75-80",
   "source": "[Craftland] Steal A Pet Master Data.xlsx",
   "rules": {
-    "green": 8.288100828,
-    "gold": 16.576201656,
+    "green": 40,
+    "gold": 60,
     "red": 0,
     "taps": 3,
     "maxGen": 1,
@@ -19,23 +19,17 @@ window.GenConfig = {
       "max": 12,
       "label": "R9–R12",
       "weights": {
-        "gold": 370000,
-        "soaked": 370000,
-        "frost": 68000,
-        "ice": 68000,
-        "wind": 68000,
-        "coral": 10000,
-        "thundered": 10000,
-        "clover": 10000,
-        "lunar": 10000,
-        "fossilized": 2600,
-        "rainbow": 2600,
-        "vortex": 2600,
-        "sequin": 2600,
-        "sweetheart": 2600,
-        "diamond": 1000,
-        "radioactive": 1000,
-        "webbed": 1000
+        "gold": 250000,
+        "soaked": 250000,
+        "frost": 90000,
+        "ice": 90000,
+        "wind": 90000,
+        "coral": 47500,
+        "thundered": 47500,
+        "clover": 47500,
+        "lunar": 47500,
+        "fossilized": 20000,
+        "rainbow": 20000
       }
     },
     {
@@ -43,23 +37,17 @@ window.GenConfig = {
       "max": 16,
       "label": "R13–R16",
       "weights": {
-        "gold": 300000,
-        "soaked": 300000,
-        "frost": 85000,
-        "ice": 85000,
-        "wind": 85000,
-        "coral": 22000,
-        "thundered": 22000,
-        "clover": 22000,
-        "lunar": 22000,
-        "fossilized": 9600,
-        "rainbow": 9600,
-        "vortex": 9600,
-        "sequin": 9600,
-        "sweetheart": 9600,
-        "diamond": 3000,
-        "radioactive": 3000,
-        "webbed": 3000
+        "gold": 222500,
+        "soaked": 222500,
+        "frost": 97500,
+        "ice": 97500,
+        "wind": 97500,
+        "coral": 55625,
+        "thundered": 55625,
+        "clover": 55625,
+        "lunar": 55625,
+        "fossilized": 20000,
+        "rainbow": 20000
       }
     },
     {
@@ -67,23 +55,17 @@ window.GenConfig = {
       "max": 20,
       "label": "R17–R20",
       "weights": {
-        "gold": 225000,
-        "soaked": 225000,
-        "frost": 95000,
-        "ice": 95000,
-        "wind": 95000,
-        "coral": 40000,
-        "thundered": 40000,
-        "clover": 40000,
-        "lunar": 40000,
-        "fossilized": 16800,
-        "rainbow": 16800,
-        "vortex": 16800,
-        "sequin": 16800,
-        "sweetheart": 16800,
-        "diamond": 7000,
-        "radioactive": 7000,
-        "webbed": 7000
+        "gold": 195000,
+        "soaked": 195000,
+        "frost": 105000,
+        "ice": 105000,
+        "wind": 105000,
+        "coral": 63750,
+        "thundered": 63750,
+        "clover": 63750,
+        "lunar": 63750,
+        "fossilized": 20000,
+        "rainbow": 20000
       }
     },
     {
@@ -91,23 +73,17 @@ window.GenConfig = {
       "max": 24,
       "label": "R21–R24",
       "weights": {
-        "gold": 160000,
-        "soaked": 160000,
-        "frost": 95000,
-        "ice": 95000,
-        "wind": 95000,
-        "coral": 52000,
-        "thundered": 52000,
-        "clover": 52000,
-        "lunar": 52000,
-        "fossilized": 28400,
-        "rainbow": 28400,
-        "vortex": 28400,
-        "sequin": 28400,
-        "sweetheart": 28400,
-        "diamond": 15000,
-        "radioactive": 15000,
-        "webbed": 15000
+        "gold": 167500,
+        "soaked": 167500,
+        "frost": 112500,
+        "ice": 112500,
+        "wind": 112500,
+        "coral": 71875,
+        "thundered": 71875,
+        "clover": 71875,
+        "lunar": 71875,
+        "fossilized": 20000,
+        "rainbow": 20000
       }
     },
     {
@@ -115,23 +91,17 @@ window.GenConfig = {
       "max": null,
       "label": "R25+",
       "weights": {
-        "gold": 100003,
-        "soaked": 100003,
-        "frost": 80000,
-        "ice": 80000,
-        "wind": 80000,
-        "coral": 60000,
-        "thundered": 60000,
-        "clover": 60000,
-        "lunar": 60000,
-        "fossilized": 41416,
-        "rainbow": 41416,
-        "vortex": 41416,
-        "sequin": 41416,
-        "sweetheart": 41416,
-        "diamond": 37638,
-        "radioactive": 37638,
-        "webbed": 37638
+        "gold": 140000,
+        "soaked": 140000,
+        "frost": 120000,
+        "ice": 120000,
+        "wind": 120000,
+        "coral": 80000,
+        "thundered": 80000,
+        "clover": 80000,
+        "lunar": 80000,
+        "fossilized": 20000,
+        "rainbow": 20000
       }
     }
   ],
@@ -142,7 +112,7 @@ window.GenConfig = {
       "family": "MutaGen",
       "tier": "basic",
       "fishingEnabled": true,
-      "fishingWeight": 370000,
+      "fishingWeight": 250000,
       "icon": {
         "file": "assets/mutations/gold.png"
       },
@@ -188,7 +158,7 @@ window.GenConfig = {
       "family": "WeatherGen",
       "tier": "basic",
       "fishingEnabled": true,
-      "fishingWeight": 370000,
+      "fishingWeight": 250000,
       "icon": {
         "atlas": 0
       },
@@ -234,7 +204,7 @@ window.GenConfig = {
       "family": "MutaGen",
       "tier": "uncommon",
       "fishingEnabled": true,
-      "fishingWeight": 68000,
+      "fishingWeight": 90000,
       "icon": {
         "file": "assets/mutations/frost.png"
       },
@@ -280,7 +250,7 @@ window.GenConfig = {
       "family": "WeatherGen",
       "tier": "uncommon",
       "fishingEnabled": true,
-      "fishingWeight": 68000,
+      "fishingWeight": 90000,
       "icon": {
         "atlas": 1
       },
@@ -326,7 +296,7 @@ window.GenConfig = {
       "family": "WeatherGen",
       "tier": "uncommon",
       "fishingEnabled": true,
-      "fishingWeight": 68000,
+      "fishingWeight": 90000,
       "icon": {
         "file": "assets/mutations/wind.png"
       },
@@ -372,7 +342,7 @@ window.GenConfig = {
       "family": "MutaGen",
       "tier": "advanced",
       "fishingEnabled": true,
-      "fishingWeight": 10000,
+      "fishingWeight": 47500,
       "icon": {
         "file": "assets/mutations/coral.png"
       },
@@ -418,7 +388,7 @@ window.GenConfig = {
       "family": "WeatherGen",
       "tier": "advanced",
       "fishingEnabled": true,
-      "fishingWeight": 10000,
+      "fishingWeight": 47500,
       "icon": {
         "atlas": 2
       },
@@ -464,7 +434,7 @@ window.GenConfig = {
       "family": "MutaGen",
       "tier": "advanced",
       "fishingEnabled": true,
-      "fishingWeight": 10000,
+      "fishingWeight": 47500,
       "icon": {
         "file": "assets/mutations/clover.png"
       },
@@ -510,7 +480,7 @@ window.GenConfig = {
       "family": "WeatherGen",
       "tier": "advanced",
       "fishingEnabled": true,
-      "fishingWeight": 10000,
+      "fishingWeight": 47500,
       "icon": {
         "file": "assets/mutations/lunar.png"
       },
@@ -556,7 +526,7 @@ window.GenConfig = {
       "family": "MutaGen",
       "tier": "rare",
       "fishingEnabled": true,
-      "fishingWeight": 2600,
+      "fishingWeight": 20000,
       "icon": {
         "atlas": 8
       },
@@ -602,7 +572,7 @@ window.GenConfig = {
       "family": "WeatherGen",
       "tier": "rare",
       "fishingEnabled": true,
-      "fishingWeight": 2600,
+      "fishingWeight": 20000,
       "icon": {
         "file": "assets/mutations/rainbow.png"
       },
@@ -641,7 +611,121 @@ window.GenConfig = {
         "levelCostMultiplier": 1.08,
         "mergedStackingRule": null
       }
+    }
+  ],
+  "notes": [
+    "Weights are authored Fishing balance, not item application chances.",
+    "Item prices and effect stacking gaps remain source metadata; they do not disable authored Fishing drops.",
+    "Fishing unlocks R9. Gen bands: R9-12, R13-16, R17-20, R21-24, R25+. Fish source weights/bands unchanged.",
+    "v21: Fossilized and Prismatic each 2%; 96% other types. EPIC 4.75/5.5625/6.375/7.1875/8% per type. Type changes do not affect chance of receiving ANY Gen or pet rarity."
+  ],
+  "rollOrder": [
+    "fish",
+    "genCount",
+    "genTypes"
+  ],
+  "rarityBudgetByBand": [
+    {
+      "basic": 500000,
+      "uncommon": 270000,
+      "advanced": 190000,
+      "rare": 40000,
+      "epic": 0,
+      "exclusive": 0
     },
+    {
+      "basic": 445000,
+      "uncommon": 292500,
+      "advanced": 222500,
+      "rare": 40000,
+      "epic": 0,
+      "exclusive": 0
+    },
+    {
+      "basic": 390000,
+      "uncommon": 315000,
+      "advanced": 255000,
+      "rare": 40000,
+      "epic": 0,
+      "exclusive": 0
+    },
+    {
+      "basic": 335000,
+      "uncommon": 337500,
+      "advanced": 287500,
+      "rare": 40000,
+      "epic": 0,
+      "exclusive": 0
+    },
+    {
+      "basic": 280000,
+      "uncommon": 360000,
+      "advanced": 320000,
+      "rare": 40000,
+      "epic": 0,
+      "exclusive": 0
+    }
+  ],
+  "timeBalance": {
+    "reference": "Seven-day cohort: 20/60/20% players at 20/40/60 min/day; R19–30; original pet weights. Max one Gen, score capped at 100%.",
+    "defaultPreset": "weekly",
+    "secondsPerCast": 10,
+    "weatherCycleMinutes": 69,
+    "fishingMinutesPerCycle": 11,
+    "castsPerCycle": 66,
+    "targetDays": 7,
+    "hoursPerDay": 0.6666666666666666,
+    "target": "any-apex-any-gen",
+    "fishPoolChanged": false,
+    "removedGenIds": [
+      "vortex",
+      "sequin",
+      "sweetheart",
+      "diamond",
+      "radioactive",
+      "webbed"
+    ],
+    "targetShareMin": 0.75,
+    "targetShareMax": 0.8
+  },
+  "balancePresets": {
+    "online": {
+      "label": "4–5 ngày · 1 giờ online/ngày",
+      "timeBasis": "online-with-weather-wait",
+      "targetDays": 4.5,
+      "hoursPerDay": 1,
+      "green": 8.288100828,
+      "gold": 16.576201656,
+      "red": 0
+    },
+    "active": {
+      "label": "4–5 ngày · 1 giờ thực sự câu/ngày",
+      "timeBasis": "active-fishing",
+      "targetDays": 4.5,
+      "hoursPerDay": 1,
+      "green": 1.321291436,
+      "gold": 2.642582873,
+      "red": 0
+    },
+    "weekly": {
+      "label": "7 ngày · mục tiêu 75–80% có Apex + Gen",
+      "timeBasis": "seven-day-cohort",
+      "targetShareMin": 0.75,
+      "targetShareMax": 0.8,
+      "green": 40,
+      "gold": 60,
+      "red": 0
+    },
+    "saved": {
+      "label": "Mặc định đã lưu · xanh 10% / vàng 34%",
+      "timeBasis": "seven-day-cohort",
+      "green": 10,
+      "gold": 34,
+      "red": 0
+    }
+  },
+  "activeBalancePreset": "weekly",
+  "retiredCatalog": [
     {
       "id": "vortex",
       "name": "Vortex",
@@ -919,92 +1003,32 @@ window.GenConfig = {
       }
     }
   ],
-  "notes": [
-    "Weights are authored Fishing balance, not item application chances.",
-    "Rebirth changes type weights, not tap score or guaranteed rarity.",
-    "Item prices and effect stacking gaps remain source metadata; they do not disable authored Fishing drops.",
-    "Fishing excludes Bling Bling, Stormspark, Galaxy and Aurora. Remaining 17 weights proportionally normalized to 1,000,000 per band. Fish data unchanged.",
-    "Fishing unlocks R9. Gen bands: R9-12, R13-16, R17-20, R21-24, R25+. Fish source weights/bands unchanged.",
-    "v16 provides two alternative balance presets targeting ANY Apex + ANY Gen after a mean 4.5 days at 1h/day. Online full-gold chance 49.7286%; active-time full-gold chance 7.92775%. Tap contributions differ by preset; type weights and fish pool unchanged. Expected timing is not a guarantee."
-  ],
-  "rollOrder": [
-    "fish",
-    "genCount",
-    "genTypes"
-  ],
-  "rarityBudgetByBand": [
-    {
-      "basic": 740000,
-      "uncommon": 204000,
-      "advanced": 40000,
-      "rare": 13000,
-      "epic": 3000,
-      "exclusive": 0
+  "typeGroups": {
+    "main": {
+      "ids": [
+        "gold",
+        "soaked",
+        "frost",
+        "ice",
+        "wind",
+        "coral",
+        "thundered",
+        "clover",
+        "lunar"
+      ],
+      "weightBudget": 960000,
+      "rate": 0.96
     },
-    {
-      "basic": 600000,
-      "uncommon": 255000,
-      "advanced": 88000,
-      "rare": 48000,
-      "epic": 9000,
-      "exclusive": 0
+    "legendary": {
+      "ids": [
+        "fossilized",
+        "rainbow"
+      ],
+      "weightBudget": 40000,
+      "rate": 0.04,
+      "eachRate": 0.02
     },
-    {
-      "basic": 450000,
-      "uncommon": 285000,
-      "advanced": 160000,
-      "rare": 84000,
-      "epic": 21000,
-      "exclusive": 0
-    },
-    {
-      "basic": 320000,
-      "uncommon": 285000,
-      "advanced": 208000,
-      "rare": 142000,
-      "epic": 45000,
-      "exclusive": 0
-    },
-    {
-      "basic": 200006,
-      "uncommon": 240000,
-      "advanced": 240000,
-      "rare": 207080,
-      "epic": 112914,
-      "exclusive": 0
-    }
-  ],
-  "timeBalance": {
-    "reference": "Any Apex + any Gen; two alternative time bases. Full gold, 10 seconds per cast, fishing 1.0.1, from R9.",
-    "defaultPreset": "online",
-    "secondsPerCast": 10,
-    "weatherCycleMinutes": 69,
-    "fishingMinutesPerCycle": 11,
-    "castsPerCycle": 66,
-    "targetDays": 4.5,
-    "hoursPerDay": 1,
-    "target": "any-apex-any-gen",
-    "fishPoolChanged": false
-  },
-  "balancePresets": {
-    "online": {
-      "label": "4–5 ngày · 1 giờ online/ngày",
-      "timeBasis": "online-with-weather-wait",
-      "targetDays": 4.5,
-      "hoursPerDay": 1,
-      "green": 8.288100828,
-      "gold": 16.576201656,
-      "red": 0
-    },
-    "active": {
-      "label": "4–5 ngày · 1 giờ thực sự câu/ngày",
-      "timeBasis": "active-fishing",
-      "targetDays": 4.5,
-      "hoursPerDay": 1,
-      "green": 1.321291436,
-      "gold": 2.642582873,
-      "red": 0
-    }
-  },
-  "activeBalancePreset": "online"
+    "appliesTo": "All five Gen Rebirth bands; conditional on receiving a Gen",
+    "method": "96/4; Fossilized and Prismatic 2% each. Freed 1% split equally across four EPIC (+0.25 percentage point each). Equal rarity weights and linear Rebirth progression preserved."
+  }
 };

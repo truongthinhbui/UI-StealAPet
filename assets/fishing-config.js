@@ -899,13 +899,7 @@ window.FishingConfig = {
       "clover": "2.13",
       "lunar": "1.15",
       "fossilized": "2.25",
-      "rainbow": "1.14",
-      "vortex": "1.16",
-      "sequin": "1.17",
-      "sweetheart": "2.3",
-      "diamond": "2.37",
-      "radioactive": "2.5",
-      "webbed": "2.4"
+      "rainbow": "1.14"
     }
   }
 };

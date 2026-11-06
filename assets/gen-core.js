@@ -39,7 +39,7 @@
     const rewards=roll(score,random,rebirth);
     return {pet,rewards};
   }
-  function points(pattern){return pattern.slice(0,config.rules.taps).reduce((sum,result)=>sum+(config.rules[result]||0),0);}
+  function points(pattern){return Math.min(100,pattern.slice(0,config.rules.taps).reduce((sum,result)=>sum+(config.rules[result]||0),0));}
   function expected(score,rebirth=9){
     const current=profile(rebirth),active=current.pool,total=current.total;
     const maximum=config.rules.taps*Math.max(config.rules.green,config.rules.gold,config.rules.red);
@@ -82,6 +82,7 @@
       for(let i=0;i<amount;i++){
         let score=fixed,pattern=scenario.pattern;
         if(score===null){score=0;pattern=[];for(let tap=0;tap<3;tap++){const x=random(),d=scenario.distribution,type=x<d.red?'red':x<d.red+d.green?'green':'gold';score+=config.rules[type];pattern.push(type);}}
+        score=Math.min(100,score);
         const outcome=full?catchRoll(score,rebirth,random):null;
         const rewards=outcome?outcome.rewards:roll(score,random,rebirth);
         result[rewards.length===0?'none':rewards.length===1?'one':'two']++;

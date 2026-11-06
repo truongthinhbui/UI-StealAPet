@@ -9,7 +9,7 @@
   const nav=make('div','debugMainNav');nav.setAttribute('role','tablist');nav.setAttribute('aria-label','Mục debug');
   host.querySelector(':scope>summary').after(nav);
   const pages={simulation:make('section','debugPage'),live:make('section','debugPage'),catalog:make('section','debugPage')};
-  const titles={simulation:'Mô phỏng',live:'Chơi thử',catalog:'Pool cá & Gen'};
+  const titles={simulation:'Mô phỏng lượt',live:'Chơi thử',catalog:'Pool cá & Gen'};
   for(const [key,page] of Object.entries(pages)){
     const button=make('button','debugMainTab',titles[key]);button.type='button';button.dataset.debugPage=key;button.id='debug-tab-'+key;button.setAttribute('role','tab');button.setAttribute('aria-controls','debug-page-'+key);
     page.id='debug-page-'+key;page.setAttribute('role','tabpanel');page.setAttribute('aria-labelledby',button.id);nav.appendChild(button);sim.appendChild(page);

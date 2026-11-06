@@ -1,0 +1,4168 @@
+{
+  "version": "cohort-v1",
+  "settings": {
+    "players": 100000,
+    "days": 7,
+    "seed": 20261106,
+    "rebirthMin": 19,
+    "rebirthMax": 30,
+    "rebirthPerDay": 0,
+    "castSeconds": 10,
+    "handlingSeconds": 0,
+    "travelSeconds": 10,
+    "efficiency": 90,
+    "attendance": 100,
+    "timeVariance": 20,
+    "loginJitterMinutes": 10,
+    "preset": "online",
+    "groups": [
+      {
+        "id": "casual",
+        "name": "Casual",
+        "share": 20,
+        "minutes": 20,
+        "red": 0,
+        "green": 0,
+        "gold": 100
+      },
+      {
+        "id": "regular",
+        "name": "Thường",
+        "share": 60,
+        "minutes": 40,
+        "red": 0,
+        "green": 0,
+        "gold": 100
+      },
+      {
+        "id": "hardcore",
+        "name": "Hardcore",
+        "share": 20,
+        "minutes": 60,
+        "red": 0,
+        "green": 0,
+        "gold": 100
+      }
+    ]
+  },
+  "genVersion": "merged-gen-21-smooth96-4",
+  "fishVersion": "fishing-1.0.1-source-v5",
+  "tapValues": {
+    "red": 0,
+    "green": 8.288100828,
+    "gold": 16.576201656
+  },
+  "completed": 100000,
+  "casts": 21767220,
+  "onlineMinutes": 27998724.090727337,
+  "genCatches": 10825215,
+  "apex": 169813,
+  "apexGen": 84466,
+  "playersApex": 78682,
+  "playersApexGen": 55169,
+  "playersGen": 100000,
+  "firstApexGenDays": [
+    11270,
+    9810,
+    8470,
+    7644,
+    6651,
+    6020,
+    5304
+  ],
+  "daily": [
+    {
+      "day": 1,
+      "casts": 3112388,
+      "apex": 24387,
+      "apexGen": 12029,
+      "gen": 1547518,
+      "playersApexGen": 11270
+    },
+    {
+      "day": 2,
+      "casts": 3107224,
+      "apex": 24278,
+      "apexGen": 12006,
+      "gen": 1544751,
+      "playersApexGen": 21080
+    },
+    {
+      "day": 3,
+      "casts": 3108399,
+      "apex": 23862,
+      "apexGen": 11773,
+      "gen": 1545116,
+      "playersApexGen": 29550
+    },
+    {
+      "day": 4,
+      "casts": 3107770,
+      "apex": 24207,
+      "apexGen": 12095,
+      "gen": 1545154,
+      "playersApexGen": 37194
+    },
+    {
+      "day": 5,
+      "casts": 3110820,
+      "apex": 24479,
+      "apexGen": 12150,
+      "gen": 1546460,
+      "playersApexGen": 43845
+    },
+    {
+      "day": 6,
+      "casts": 3113760,
+      "apex": 24361,
+      "apexGen": 12170,
+      "gen": 1549674,
+      "playersApexGen": 49865
+    },
+    {
+      "day": 7,
+      "casts": 3106859,
+      "apex": 24239,
+      "apexGen": 12243,
+      "gen": 1546542,
+      "playersApexGen": 55169
+    }
+  ],
+  "groups": [
+    {
+      "id": "casual",
+      "name": "Casual",
+      "share": 20,
+      "minutes": 20,
+      "red": 0,
+      "green": 0,
+      "gold": 100,
+      "players": 20000,
+      "casts": 2158706,
+      "onlineMinutes": 2799414.721448479,
+      "genCatches": 1073345,
+      "apex": 16782,
+      "apexGen": 8332,
+      "playersApex": 11336,
+      "playersApexGen": 6802,
+      "playersGen": 20000
+    },
+    {
+      "id": "regular",
+      "name": "Thường",
+      "share": 60,
+      "minutes": 40,
+      "red": 0,
+      "green": 0,
+      "gold": 100,
+      "players": 60000,
+      "casts": 13061890,
+      "onlineMinutes": 16798932.75337291,
+      "genCatches": 6496586,
+      "apex": 101856,
+      "apexGen": 50535,
+      "playersApex": 48932,
+      "playersApexGen": 34009,
+      "playersGen": 60000
+    },
+    {
+      "id": "hardcore",
+      "name": "Hardcore",
+      "share": 20,
+      "minutes": 60,
+      "red": 0,
+      "green": 0,
+      "gold": 100,
+      "players": 20000,
+      "casts": 6546624,
+      "onlineMinutes": 8400376.615906153,
+      "genCatches": 3255284,
+      "apex": 51175,
+      "apexGen": 25599,
+      "playersApex": 18414,
+      "playersApexGen": 14358,
+      "playersGen": 20000
+    }
+  ],
+  "petCounts": {
+    "4": {
+      "id": 4,
+      "name": "PIG",
+      "rarity": "COMMON",
+      "count": 1234812,
+      "withGen": 614262,
+      "players": 99949
+    },
+    "7": {
+      "id": 7,
+      "name": "GOOSE",
+      "rarity": "COMMON",
+      "count": 1232094,
+      "withGen": 612626,
+      "players": 99948
+    },
+    "8": {
+      "id": 8,
+      "name": "DOG",
+      "rarity": "COMMON",
+      "count": 1233112,
+      "withGen": 613844,
+      "players": 99957
+    },
+    "12": {
+      "id": 12,
+      "name": "CRAB",
+      "rarity": "RARE",
+      "count": 2010229,
+      "withGen": 999713,
+      "players": 99999
+    },
+    "13": {
+      "id": 13,
+      "name": "CLOWNFISH",
+      "rarity": "RARE",
+      "count": 2012224,
+      "withGen": 1001383,
+      "players": 100000
+    },
+    "17": {
+      "id": 17,
+      "name": "TURTLE",
+      "rarity": "RARE",
+      "count": 2009654,
+      "withGen": 999775,
+      "players": 99998
+    },
+    "23": {
+      "id": 23,
+      "name": "OCTOPUS",
+      "rarity": "EPIC",
+      "count": 802065,
+      "withGen": 399338,
+      "players": 99567
+    },
+    "24": {
+      "id": 24,
+      "name": "JELLYFISH",
+      "rarity": "EPIC",
+      "count": 798566,
+      "withGen": 397667,
+      "players": 99558
+    },
+    "25": {
+      "id": 25,
+      "name": "DOLPHIN",
+      "rarity": "EPIC",
+      "count": 799401,
+      "withGen": 397003,
+      "players": 99574
+    },
+    "26": {
+      "id": 26,
+      "name": "SEALION",
+      "rarity": "EPIC",
+      "count": 798541,
+      "withGen": 397264,
+      "players": 99552
+    },
+    "27": {
+      "id": 27,
+      "name": "WALRUS",
+      "rarity": "EPIC",
+      "count": 801058,
+      "withGen": 398450,
+      "players": 99580
+    },
+    "33": {
+      "id": 33,
+      "name": "ALIGATOR",
+      "rarity": "LEGENDARY",
+      "count": 873050,
+      "withGen": 433550,
+      "players": 99688
+    },
+    "37": {
+      "id": 37,
+      "name": "ORCA",
+      "rarity": "LEGENDARY",
+      "count": 874093,
+      "withGen": 435156,
+      "players": 99716
+    },
+    "44": {
+      "id": 44,
+      "name": "SMALLWHALE",
+      "rarity": "MYTHIC",
+      "count": 183077,
+      "withGen": 90755,
+      "players": 80916
+    },
+    "47": {
+      "id": 47,
+      "name": "MANATEE",
+      "rarity": "MYTHIC",
+      "count": 182621,
+      "withGen": 90725,
+      "players": 81023
+    },
+    "50": {
+      "id": 50,
+      "name": "BELUGA",
+      "rarity": "MYTHIC",
+      "count": 183033,
+      "withGen": 91019,
+      "players": 81016
+    },
+    "51": {
+      "id": 51,
+      "name": "NARWHAL",
+      "rarity": "MYTHIC",
+      "count": 182445,
+      "withGen": 90733,
+      "players": 80821
+    },
+    "52": {
+      "id": 52,
+      "name": "SHRIMP",
+      "rarity": "COMMON",
+      "count": 1232290,
+      "withGen": 612853,
+      "players": 99938
+    },
+    "55": {
+      "id": 55,
+      "name": "SHOEBILL",
+      "rarity": "LEGENDARY",
+      "count": 871488,
+      "withGen": 433297,
+      "players": 99708
+    },
+    "57": {
+      "id": 57,
+      "name": "LOBSTER",
+      "rarity": "EPIC",
+      "count": 798862,
+      "withGen": 396589,
+      "players": 99618
+    },
+    "58": {
+      "id": 58,
+      "name": "SWAN",
+      "rarity": "LEGENDARY",
+      "count": 872022,
+      "withGen": 432640,
+      "players": 99695
+    },
+    "60": {
+      "id": 60,
+      "name": "PLATYPUS",
+      "rarity": "MYTHIC",
+      "count": 183519,
+      "withGen": 91137,
+      "players": 81122
+    },
+    "69": {
+      "id": 69,
+      "name": "TORTOISE",
+      "rarity": "MYTHIC",
+      "count": 183490,
+      "withGen": 91339,
+      "players": 80914
+    },
+    "70": {
+      "id": 70,
+      "name": "SEAHORSE",
+      "rarity": "MYTHIC",
+      "count": 182906,
+      "withGen": 90938,
+      "players": 81065
+    },
+    "73": {
+      "id": 73,
+      "name": "CATFISH",
+      "rarity": "MYTHIC",
+      "count": 183848,
+      "withGen": 91854,
+      "players": 81062
+    },
+    "78": {
+      "id": 78,
+      "name": "AXOLOTLBLUE",
+      "rarity": "MYTHIC",
+      "count": 183473,
+      "withGen": 91371,
+      "players": 81012
+    },
+    "79": {
+      "id": 79,
+      "name": "AXOLOTLPINK",
+      "rarity": "MYTHIC",
+      "count": 182252,
+      "withGen": 90635,
+      "players": 80831
+    },
+    "80": {
+      "id": 80,
+      "name": "AXOLOTLGREEN",
+      "rarity": "MYTHIC",
+      "count": 182480,
+      "withGen": 90719,
+      "players": 80819
+    },
+    "81": {
+      "id": 81,
+      "name": "AXOLOTLORANGE",
+      "rarity": "MYTHIC",
+      "count": 182773,
+      "withGen": 90677,
+      "players": 81006
+    },
+    "82": {
+      "id": 82,
+      "name": "AXOLOTLWHITE",
+      "rarity": "MYTHIC",
+      "count": 13656,
+      "withGen": 6788,
+      "players": 12640
+    },
+    "101": {
+      "id": 101,
+      "name": "PIRANHA",
+      "rarity": "APEX",
+      "count": 48842,
+      "withGen": 24368,
+      "players": 37943
+    },
+    "107": {
+      "id": 107,
+      "name": "GOLDFISH",
+      "rarity": "APEX",
+      "count": 49332,
+      "withGen": 24334,
+      "players": 38090
+    },
+    "108": {
+      "id": 108,
+      "name": "BASS",
+      "rarity": "APEX",
+      "count": 48157,
+      "withGen": 24203,
+      "players": 37433
+    },
+    "1002": {
+      "id": 1002,
+      "name": "SQUID",
+      "rarity": "RARE",
+      "count": 74970,
+      "withGen": 37223,
+      "players": 51514
+    },
+    "1011": {
+      "id": 1011,
+      "name": "PENGUIN",
+      "rarity": "MYTHIC",
+      "count": 6803,
+      "withGen": 3355,
+      "players": 6558
+    },
+    "1012": {
+      "id": 1012,
+      "name": "MUDSKIPPER",
+      "rarity": "COMMON",
+      "count": 45531,
+      "withGen": 22592,
+      "players": 35903
+    },
+    "1023": {
+      "id": 1023,
+      "name": "SHARK",
+      "rarity": "MYTHIC",
+      "count": 6969,
+      "withGen": 3479,
+      "players": 6728
+    },
+    "1034": {
+      "id": 1034,
+      "name": "CARP",
+      "rarity": "APEX",
+      "count": 1876,
+      "withGen": 897,
+      "players": 1852
+    },
+    "1050": {
+      "id": 1050,
+      "name": "SQUID_PUMPKIN",
+      "rarity": "APEX",
+      "count": 5483,
+      "withGen": 2677,
+      "players": 5335
+    },
+    "1051": {
+      "id": 1051,
+      "name": "JELLYFISH_PUMPKIN",
+      "rarity": "APEX",
+      "count": 5337,
+      "withGen": 2598,
+      "players": 5167
+    },
+    "1058": {
+      "id": 1058,
+      "name": "OCTOPUS_SPIDERLEGS",
+      "rarity": "APEX",
+      "count": 5301,
+      "withGen": 2681,
+      "players": 5140
+    },
+    "1059": {
+      "id": 1059,
+      "name": "ALIGATOR_SPIDERLEGS",
+      "rarity": "APEX",
+      "count": 5485,
+      "withGen": 2708,
+      "players": 5313
+    }
+  },
+  "genCounts": {
+    "lunar": {
+      "id": "lunar",
+      "name": "Eclipse",
+      "count": 808742,
+      "players": 99541,
+      "apex": 6489,
+      "apexPlayers": 6272
+    },
+    "soaked": {
+      "id": "soaked",
+      "name": "Soaked",
+      "count": 1710796,
+      "players": 99988,
+      "apex": 13414,
+      "apexPlayers": 12509
+    },
+    "clover": {
+      "id": "clover",
+      "name": "Clover",
+      "count": 808519,
+      "players": 99557,
+      "apex": 6223,
+      "apexPlayers": 6023
+    },
+    "ice": {
+      "id": "ice",
+      "name": "Frost",
+      "count": 1245959,
+      "players": 99960,
+      "apex": 9718,
+      "apexPlayers": 9214
+    },
+    "thundered": {
+      "id": "thundered",
+      "name": "Thundered",
+      "count": 806666,
+      "players": 99566,
+      "apex": 6265,
+      "apexPlayers": 6050
+    },
+    "coral": {
+      "id": "coral",
+      "name": "Magma",
+      "count": 808304,
+      "players": 99569,
+      "apex": 6369,
+      "apexPlayers": 6120
+    },
+    "rainbow": {
+      "id": "rainbow",
+      "name": "Prismatic",
+      "count": 216514,
+      "players": 85419,
+      "apex": 1677,
+      "apexPlayers": 1660
+    },
+    "wind": {
+      "id": "wind",
+      "name": "Gale",
+      "count": 1245339,
+      "players": 99947,
+      "apex": 9682,
+      "apexPlayers": 9135
+    },
+    "frost": {
+      "id": "frost",
+      "name": "Frozen",
+      "count": 1245019,
+      "players": 99953,
+      "apex": 9699,
+      "apexPlayers": 9214
+    },
+    "gold": {
+      "id": "gold",
+      "name": "Golden",
+      "count": 1712870,
+      "players": 99991,
+      "apex": 13223,
+      "apexPlayers": 12286
+    },
+    "fossilized": {
+      "id": "fossilized",
+      "name": "Fossilized",
+      "count": 216487,
+      "players": 85599,
+      "apex": 1707,
+      "apexPlayers": 1691
+    }
+  },
+  "combos": {
+    "51|lunar": {
+      "pet": "NARWHAL",
+      "rarity": "MYTHIC",
+      "gen": "Eclipse",
+      "count": 6716,
+      "players": 6490
+    },
+    "37|none": {
+      "pet": "ORCA",
+      "rarity": "LEGENDARY",
+      "gen": "Không Gen",
+      "count": 438937,
+      "players": 96928
+    },
+    "24|soaked": {
+      "pet": "JELLYFISH",
+      "rarity": "EPIC",
+      "gen": "Soaked",
+      "count": 63185,
+      "players": 45563
+    },
+    "69|none": {
+      "pet": "TORTOISE",
+      "rarity": "MYTHIC",
+      "gen": "Không Gen",
+      "count": 92151,
+      "players": 58472
+    },
+    "13|clover": {
+      "pet": "CLOWNFISH",
+      "rarity": "RARE",
+      "gen": "Clover",
+      "count": 74596,
+      "players": 51047
+    },
+    "78|none": {
+      "pet": "AXOLOTLBLUE",
+      "rarity": "MYTHIC",
+      "gen": "Không Gen",
+      "count": 92102,
+      "players": 58259
+    },
+    "57|none": {
+      "pet": "LOBSTER",
+      "rarity": "EPIC",
+      "gen": "Không Gen",
+      "count": 402273,
+      "players": 96173
+    },
+    "12|none": {
+      "pet": "CRAB",
+      "rarity": "RARE",
+      "gen": "Không Gen",
+      "count": 1010516,
+      "players": 99849
+    },
+    "13|none": {
+      "pet": "CLOWNFISH",
+      "rarity": "RARE",
+      "gen": "Không Gen",
+      "count": 1010841,
+      "players": 99861
+    },
+    "26|ice": {
+      "pet": "SEALION",
+      "rarity": "EPIC",
+      "gen": "Frost",
+      "count": 45784,
+      "players": 36101
+    },
+    "17|soaked": {
+      "pet": "TURTLE",
+      "rarity": "RARE",
+      "gen": "Soaked",
+      "count": 157877,
+      "players": 76270
+    },
+    "17|thundered": {
+      "pet": "TURTLE",
+      "rarity": "RARE",
+      "gen": "Thundered",
+      "count": 74523,
+      "players": 50889
+    },
+    "26|coral": {
+      "pet": "SEALION",
+      "rarity": "EPIC",
+      "gen": "Magma",
+      "count": 29913,
+      "players": 25433
+    },
+    "12|thundered": {
+      "pet": "CRAB",
+      "rarity": "RARE",
+      "gen": "Thundered",
+      "count": 74884,
+      "players": 51142
+    },
+    "23|none": {
+      "pet": "OCTOPUS",
+      "rarity": "EPIC",
+      "gen": "Không Gen",
+      "count": 402727,
+      "players": 96236
+    },
+    "13|coral": {
+      "pet": "CLOWNFISH",
+      "rarity": "RARE",
+      "gen": "Magma",
+      "count": 74989,
+      "players": 51079
+    },
+    "1051|none": {
+      "pet": "JELLYFISH_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Không Gen",
+      "count": 2739,
+      "players": 2696
+    },
+    "23|rainbow": {
+      "pet": "OCTOPUS",
+      "rarity": "EPIC",
+      "gen": "Prismatic",
+      "count": 7880,
+      "players": 7540
+    },
+    "25|none": {
+      "pet": "DOLPHIN",
+      "rarity": "EPIC",
+      "gen": "Không Gen",
+      "count": 402398,
+      "players": 96091
+    },
+    "4|clover": {
+      "pet": "PIG",
+      "rarity": "COMMON",
+      "gen": "Clover",
+      "count": 46028,
+      "players": 36105
+    },
+    "13|wind": {
+      "pet": "CLOWNFISH",
+      "rarity": "RARE",
+      "gen": "Gale",
+      "count": 115205,
+      "players": 65960
+    },
+    "17|none": {
+      "pet": "TURTLE",
+      "rarity": "RARE",
+      "gen": "Không Gen",
+      "count": 1009879,
+      "players": 99859
+    },
+    "47|ice": {
+      "pet": "MANATEE",
+      "rarity": "MYTHIC",
+      "gen": "Frost",
+      "count": 10381,
+      "players": 9834
+    },
+    "24|lunar": {
+      "pet": "JELLYFISH",
+      "rarity": "EPIC",
+      "gen": "Eclipse",
+      "count": 29659,
+      "players": 25308
+    },
+    "7|frost": {
+      "pet": "GOOSE",
+      "rarity": "COMMON",
+      "gen": "Frozen",
+      "count": 70343,
+      "players": 49236
+    },
+    "27|thundered": {
+      "pet": "WALRUS",
+      "rarity": "EPIC",
+      "gen": "Thundered",
+      "count": 29676,
+      "players": 25357
+    },
+    "17|gold": {
+      "pet": "TURTLE",
+      "rarity": "RARE",
+      "gen": "Golden",
+      "count": 158675,
+      "players": 76310
+    },
+    "27|wind": {
+      "pet": "WALRUS",
+      "rarity": "EPIC",
+      "gen": "Gale",
+      "count": 45727,
+      "players": 35991
+    },
+    "7|gold": {
+      "pet": "GOOSE",
+      "rarity": "COMMON",
+      "gen": "Golden",
+      "count": 97394,
+      "players": 59983
+    },
+    "33|none": {
+      "pet": "ALIGATOR",
+      "rarity": "LEGENDARY",
+      "gen": "Không Gen",
+      "count": 439500,
+      "players": 96783
+    },
+    "69|ice": {
+      "pet": "TORTOISE",
+      "rarity": "MYTHIC",
+      "gen": "Frost",
+      "count": 10515,
+      "players": 9923
+    },
+    "7|none": {
+      "pet": "GOOSE",
+      "rarity": "COMMON",
+      "gen": "Không Gen",
+      "count": 619468,
+      "players": 98945
+    },
+    "23|frost": {
+      "pet": "OCTOPUS",
+      "rarity": "EPIC",
+      "gen": "Frozen",
+      "count": 45903,
+      "players": 36094
+    },
+    "50|soaked": {
+      "pet": "BELUGA",
+      "rarity": "MYTHIC",
+      "gen": "Soaked",
+      "count": 14324,
+      "players": 13251
+    },
+    "50|none": {
+      "pet": "BELUGA",
+      "rarity": "MYTHIC",
+      "gen": "Không Gen",
+      "count": 92014,
+      "players": 58383
+    },
+    "13|frost": {
+      "pet": "CLOWNFISH",
+      "rarity": "RARE",
+      "gen": "Frozen",
+      "count": 114685,
+      "players": 65878
+    },
+    "4|ice": {
+      "pet": "PIG",
+      "rarity": "COMMON",
+      "gen": "Frost",
+      "count": 70603,
+      "players": 49354
+    },
+    "24|none": {
+      "pet": "JELLYFISH",
+      "rarity": "EPIC",
+      "gen": "Không Gen",
+      "count": 400899,
+      "players": 96023
+    },
+    "55|wind": {
+      "pet": "SHOEBILL",
+      "rarity": "LEGENDARY",
+      "gen": "Gale",
+      "count": 49588,
+      "players": 38410
+    },
+    "55|none": {
+      "pet": "SHOEBILL",
+      "rarity": "LEGENDARY",
+      "gen": "Không Gen",
+      "count": 438191,
+      "players": 96910
+    },
+    "7|thundered": {
+      "pet": "GOOSE",
+      "rarity": "COMMON",
+      "gen": "Thundered",
+      "count": 45651,
+      "players": 36025
+    },
+    "4|none": {
+      "pet": "PIG",
+      "rarity": "COMMON",
+      "gen": "Không Gen",
+      "count": 620550,
+      "players": 98945
+    },
+    "57|frost": {
+      "pet": "LOBSTER",
+      "rarity": "EPIC",
+      "gen": "Frozen",
+      "count": 45675,
+      "players": 36010
+    },
+    "101|soaked": {
+      "pet": "PIRANHA",
+      "rarity": "APEX",
+      "gen": "Soaked",
+      "count": 3889,
+      "players": 3805
+    },
+    "13|ice": {
+      "pet": "CLOWNFISH",
+      "rarity": "RARE",
+      "gen": "Frost",
+      "count": 115281,
+      "players": 66086
+    },
+    "7|wind": {
+      "pet": "GOOSE",
+      "rarity": "COMMON",
+      "gen": "Gale",
+      "count": 70043,
+      "players": 49141
+    },
+    "58|none": {
+      "pet": "SWAN",
+      "rarity": "LEGENDARY",
+      "gen": "Không Gen",
+      "count": 439382,
+      "players": 96916
+    },
+    "26|soaked": {
+      "pet": "SEALION",
+      "rarity": "EPIC",
+      "gen": "Soaked",
+      "count": 62679,
+      "players": 45259
+    },
+    "4|coral": {
+      "pet": "PIG",
+      "rarity": "COMMON",
+      "gen": "Magma",
+      "count": 45793,
+      "players": 35962
+    },
+    "12|rainbow": {
+      "pet": "CRAB",
+      "rarity": "RARE",
+      "gen": "Prismatic",
+      "count": 19870,
+      "players": 17803
+    },
+    "51|soaked": {
+      "pet": "NARWHAL",
+      "rarity": "MYTHIC",
+      "gen": "Soaked",
+      "count": 14247,
+      "players": 13178
+    },
+    "17|fossilized": {
+      "pet": "TURTLE",
+      "rarity": "RARE",
+      "gen": "Fossilized",
+      "count": 19761,
+      "players": 17750
+    },
+    "13|soaked": {
+      "pet": "CLOWNFISH",
+      "rarity": "RARE",
+      "gen": "Soaked",
+      "count": 158029,
+      "players": 76067
+    },
+    "17|frost": {
+      "pet": "TURTLE",
+      "rarity": "RARE",
+      "gen": "Frozen",
+      "count": 115481,
+      "players": 66138
+    },
+    "12|ice": {
+      "pet": "CRAB",
+      "rarity": "RARE",
+      "gen": "Frost",
+      "count": 115066,
+      "players": 66206
+    },
+    "55|clover": {
+      "pet": "SHOEBILL",
+      "rarity": "LEGENDARY",
+      "gen": "Clover",
+      "count": 32382,
+      "players": 27279
+    },
+    "24|wind": {
+      "pet": "JELLYFISH",
+      "rarity": "EPIC",
+      "gen": "Gale",
+      "count": 45238,
+      "players": 35643
+    },
+    "23|wind": {
+      "pet": "OCTOPUS",
+      "rarity": "EPIC",
+      "gen": "Gale",
+      "count": 46072,
+      "players": 36179
+    },
+    "8|frost": {
+      "pet": "DOG",
+      "rarity": "COMMON",
+      "gen": "Frozen",
+      "count": 70593,
+      "players": 49270
+    },
+    "52|frost": {
+      "pet": "SHRIMP",
+      "rarity": "COMMON",
+      "gen": "Frozen",
+      "count": 70929,
+      "players": 49584
+    },
+    "24|thundered": {
+      "pet": "JELLYFISH",
+      "rarity": "EPIC",
+      "gen": "Thundered",
+      "count": 29838,
+      "players": 25448
+    },
+    "26|none": {
+      "pet": "SEALION",
+      "rarity": "EPIC",
+      "gen": "Không Gen",
+      "count": 401277,
+      "players": 96032
+    },
+    "17|wind": {
+      "pet": "TURTLE",
+      "rarity": "RARE",
+      "gen": "Gale",
+      "count": 115256,
+      "players": 66128
+    },
+    "13|lunar": {
+      "pet": "CLOWNFISH",
+      "rarity": "RARE",
+      "gen": "Eclipse",
+      "count": 75223,
+      "players": 51433
+    },
+    "4|frost": {
+      "pet": "PIG",
+      "rarity": "COMMON",
+      "gen": "Frozen",
+      "count": 70861,
+      "players": 49643
+    },
+    "55|soaked": {
+      "pet": "SHOEBILL",
+      "rarity": "LEGENDARY",
+      "gen": "Soaked",
+      "count": 68314,
+      "players": 48131
+    },
+    "33|lunar": {
+      "pet": "ALIGATOR",
+      "rarity": "LEGENDARY",
+      "gen": "Eclipse",
+      "count": 32286,
+      "players": 27079
+    },
+    "52|gold": {
+      "pet": "SHRIMP",
+      "rarity": "COMMON",
+      "gen": "Golden",
+      "count": 97087,
+      "players": 59995
+    },
+    "51|wind": {
+      "pet": "NARWHAL",
+      "rarity": "MYTHIC",
+      "gen": "Gale",
+      "count": 10437,
+      "players": 9853
+    },
+    "57|wind": {
+      "pet": "LOBSTER",
+      "rarity": "EPIC",
+      "gen": "Gale",
+      "count": 45663,
+      "players": 35897
+    },
+    "4|rainbow": {
+      "pet": "PIG",
+      "rarity": "COMMON",
+      "gen": "Prismatic",
+      "count": 12295,
+      "players": 11480
+    },
+    "69|clover": {
+      "pet": "TORTOISE",
+      "rarity": "MYTHIC",
+      "gen": "Clover",
+      "count": 6821,
+      "players": 6588
+    },
+    "13|gold": {
+      "pet": "CLOWNFISH",
+      "rarity": "RARE",
+      "gen": "Golden",
+      "count": 158730,
+      "players": 76442
+    },
+    "27|none": {
+      "pet": "WALRUS",
+      "rarity": "EPIC",
+      "gen": "Không Gen",
+      "count": 402608,
+      "players": 96178
+    },
+    "33|coral": {
+      "pet": "ALIGATOR",
+      "rarity": "LEGENDARY",
+      "gen": "Magma",
+      "count": 32342,
+      "players": 27275
+    },
+    "26|gold": {
+      "pet": "SEALION",
+      "rarity": "EPIC",
+      "gen": "Golden",
+      "count": 62748,
+      "players": 45307
+    },
+    "33|fossilized": {
+      "pet": "ALIGATOR",
+      "rarity": "LEGENDARY",
+      "gen": "Fossilized",
+      "count": 8579,
+      "players": 8200
+    },
+    "60|soaked": {
+      "pet": "PLATYPUS",
+      "rarity": "MYTHIC",
+      "gen": "Soaked",
+      "count": 14326,
+      "players": 13220
+    },
+    "8|none": {
+      "pet": "DOG",
+      "rarity": "COMMON",
+      "gen": "Không Gen",
+      "count": 619268,
+      "players": 98927
+    },
+    "17|coral": {
+      "pet": "TURTLE",
+      "rarity": "RARE",
+      "gen": "Magma",
+      "count": 73985,
+      "players": 50842
+    },
+    "27|soaked": {
+      "pet": "WALRUS",
+      "rarity": "EPIC",
+      "gen": "Soaked",
+      "count": 63068,
+      "players": 45476
+    },
+    "12|fossilized": {
+      "pet": "CRAB",
+      "rarity": "RARE",
+      "gen": "Fossilized",
+      "count": 20093,
+      "players": 18008
+    },
+    "52|thundered": {
+      "pet": "SHRIMP",
+      "rarity": "COMMON",
+      "gen": "Thundered",
+      "count": 45553,
+      "players": 35933
+    },
+    "79|none": {
+      "pet": "AXOLOTLPINK",
+      "rarity": "MYTHIC",
+      "gen": "Không Gen",
+      "count": 91617,
+      "players": 58274
+    },
+    "52|none": {
+      "pet": "SHRIMP",
+      "rarity": "COMMON",
+      "gen": "Không Gen",
+      "count": 619437,
+      "players": 98905
+    },
+    "24|coral": {
+      "pet": "JELLYFISH",
+      "rarity": "EPIC",
+      "gen": "Magma",
+      "count": 29738,
+      "players": 25354
+    },
+    "57|soaked": {
+      "pet": "LOBSTER",
+      "rarity": "EPIC",
+      "gen": "Soaked",
+      "count": 62644,
+      "players": 45293
+    },
+    "12|coral": {
+      "pet": "CRAB",
+      "rarity": "RARE",
+      "gen": "Magma",
+      "count": 74806,
+      "players": 51145
+    },
+    "107|gold": {
+      "pet": "GOLDFISH",
+      "rarity": "APEX",
+      "gen": "Golden",
+      "count": 3784,
+      "players": 3714
+    },
+    "51|none": {
+      "pet": "NARWHAL",
+      "rarity": "MYTHIC",
+      "gen": "Không Gen",
+      "count": 91712,
+      "players": 58154
+    },
+    "47|lunar": {
+      "pet": "MANATEE",
+      "rarity": "MYTHIC",
+      "gen": "Eclipse",
+      "count": 6860,
+      "players": 6613
+    },
+    "37|gold": {
+      "pet": "ORCA",
+      "rarity": "LEGENDARY",
+      "gen": "Golden",
+      "count": 68891,
+      "players": 48358
+    },
+    "23|coral": {
+      "pet": "OCTOPUS",
+      "rarity": "EPIC",
+      "gen": "Magma",
+      "count": 29871,
+      "players": 25482
+    },
+    "79|frost": {
+      "pet": "AXOLOTLPINK",
+      "rarity": "MYTHIC",
+      "gen": "Frozen",
+      "count": 10480,
+      "players": 9927
+    },
+    "33|wind": {
+      "pet": "ALIGATOR",
+      "rarity": "LEGENDARY",
+      "gen": "Gale",
+      "count": 50359,
+      "players": 38681
+    },
+    "12|gold": {
+      "pet": "CRAB",
+      "rarity": "RARE",
+      "gen": "Golden",
+      "count": 157868,
+      "players": 76174
+    },
+    "47|none": {
+      "pet": "MANATEE",
+      "rarity": "MYTHIC",
+      "gen": "Không Gen",
+      "count": 91896,
+      "players": 58273
+    },
+    "37|clover": {
+      "pet": "ORCA",
+      "rarity": "LEGENDARY",
+      "gen": "Clover",
+      "count": 32826,
+      "players": 27558
+    },
+    "23|lunar": {
+      "pet": "OCTOPUS",
+      "rarity": "EPIC",
+      "gen": "Eclipse",
+      "count": 29961,
+      "players": 25527
+    },
+    "47|wind": {
+      "pet": "MANATEE",
+      "rarity": "MYTHIC",
+      "gen": "Gale",
+      "count": 10363,
+      "players": 9796
+    },
+    "57|gold": {
+      "pet": "LOBSTER",
+      "rarity": "EPIC",
+      "gen": "Golden",
+      "count": 62813,
+      "players": 45301
+    },
+    "8|gold": {
+      "pet": "DOG",
+      "rarity": "COMMON",
+      "gen": "Golden",
+      "count": 97136,
+      "players": 59975
+    },
+    "12|soaked": {
+      "pet": "CRAB",
+      "rarity": "RARE",
+      "gen": "Soaked",
+      "count": 157869,
+      "players": 76208
+    },
+    "52|soaked": {
+      "pet": "SHRIMP",
+      "rarity": "COMMON",
+      "gen": "Soaked",
+      "count": 96797,
+      "players": 60013
+    },
+    "55|gold": {
+      "pet": "SHOEBILL",
+      "rarity": "LEGENDARY",
+      "gen": "Golden",
+      "count": 68703,
+      "players": 48339
+    },
+    "25|fossilized": {
+      "pet": "DOLPHIN",
+      "rarity": "EPIC",
+      "gen": "Fossilized",
+      "count": 7927,
+      "players": 7559
+    },
+    "1050|gold": {
+      "pet": "SQUID_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Golden",
+      "count": 402,
+      "players": 401
+    },
+    "23|ice": {
+      "pet": "OCTOPUS",
+      "rarity": "EPIC",
+      "gen": "Frost",
+      "count": 45919,
+      "players": 36250
+    },
+    "1023|none": {
+      "pet": "SHARK",
+      "rarity": "MYTHIC",
+      "gen": "Không Gen",
+      "count": 3490,
+      "players": 3428
+    },
+    "24|frost": {
+      "pet": "JELLYFISH",
+      "rarity": "EPIC",
+      "gen": "Frozen",
+      "count": 45642,
+      "players": 36008
+    },
+    "7|clover": {
+      "pet": "GOOSE",
+      "rarity": "COMMON",
+      "gen": "Clover",
+      "count": 45780,
+      "players": 35925
+    },
+    "26|lunar": {
+      "pet": "SEALION",
+      "rarity": "EPIC",
+      "gen": "Eclipse",
+      "count": 29456,
+      "players": 25232
+    },
+    "81|frost": {
+      "pet": "AXOLOTLORANGE",
+      "rarity": "MYTHIC",
+      "gen": "Frozen",
+      "count": 10528,
+      "players": 9904
+    },
+    "55|ice": {
+      "pet": "SHOEBILL",
+      "rarity": "LEGENDARY",
+      "gen": "Frost",
+      "count": 49936,
+      "players": 38575
+    },
+    "37|soaked": {
+      "pet": "ORCA",
+      "rarity": "LEGENDARY",
+      "gen": "Soaked",
+      "count": 68422,
+      "players": 48178
+    },
+    "70|frost": {
+      "pet": "SEAHORSE",
+      "rarity": "MYTHIC",
+      "gen": "Frozen",
+      "count": 10474,
+      "players": 9896
+    },
+    "13|fossilized": {
+      "pet": "CLOWNFISH",
+      "rarity": "RARE",
+      "gen": "Fossilized",
+      "count": 20095,
+      "players": 18003
+    },
+    "25|gold": {
+      "pet": "DOLPHIN",
+      "rarity": "EPIC",
+      "gen": "Golden",
+      "count": 62829,
+      "players": 45461
+    },
+    "25|wind": {
+      "pet": "DOLPHIN",
+      "rarity": "EPIC",
+      "gen": "Gale",
+      "count": 45571,
+      "players": 35879
+    },
+    "25|clover": {
+      "pet": "DOLPHIN",
+      "rarity": "EPIC",
+      "gen": "Clover",
+      "count": 29719,
+      "players": 25223
+    },
+    "81|none": {
+      "pet": "AXOLOTLORANGE",
+      "rarity": "MYTHIC",
+      "gen": "Không Gen",
+      "count": 92096,
+      "players": 58463
+    },
+    "52|wind": {
+      "pet": "SHRIMP",
+      "rarity": "COMMON",
+      "gen": "Gale",
+      "count": 70832,
+      "players": 49185
+    },
+    "101|lunar": {
+      "pet": "PIRANHA",
+      "rarity": "APEX",
+      "gen": "Eclipse",
+      "count": 1826,
+      "players": 1797
+    },
+    "73|none": {
+      "pet": "CATFISH",
+      "rarity": "MYTHIC",
+      "gen": "Không Gen",
+      "count": 91994,
+      "players": 58307
+    },
+    "81|ice": {
+      "pet": "AXOLOTLORANGE",
+      "rarity": "MYTHIC",
+      "gen": "Frost",
+      "count": 10644,
+      "players": 10047
+    },
+    "4|wind": {
+      "pet": "PIG",
+      "rarity": "COMMON",
+      "gen": "Gale",
+      "count": 70898,
+      "players": 49416
+    },
+    "81|gold": {
+      "pet": "AXOLOTLORANGE",
+      "rarity": "MYTHIC",
+      "gen": "Golden",
+      "count": 13940,
+      "players": 12943
+    },
+    "44|coral": {
+      "pet": "SMALLWHALE",
+      "rarity": "MYTHIC",
+      "gen": "Magma",
+      "count": 6738,
+      "players": 6514
+    },
+    "8|soaked": {
+      "pet": "DOG",
+      "rarity": "COMMON",
+      "gen": "Soaked",
+      "count": 96821,
+      "players": 59831
+    },
+    "58|rainbow": {
+      "pet": "SWAN",
+      "rarity": "LEGENDARY",
+      "gen": "Prismatic",
+      "count": 8664,
+      "players": 8269
+    },
+    "12|frost": {
+      "pet": "CRAB",
+      "rarity": "RARE",
+      "gen": "Frozen",
+      "count": 115150,
+      "players": 66090
+    },
+    "8|thundered": {
+      "pet": "DOG",
+      "rarity": "COMMON",
+      "gen": "Thundered",
+      "count": 46184,
+      "players": 36276
+    },
+    "17|clover": {
+      "pet": "TURTLE",
+      "rarity": "RARE",
+      "gen": "Clover",
+      "count": 74775,
+      "players": 51251
+    },
+    "1002|none": {
+      "pet": "SQUID",
+      "rarity": "RARE",
+      "gen": "Không Gen",
+      "count": 37747,
+      "players": 31011
+    },
+    "37|coral": {
+      "pet": "ORCA",
+      "rarity": "LEGENDARY",
+      "gen": "Magma",
+      "count": 32672,
+      "players": 27541
+    },
+    "4|soaked": {
+      "pet": "PIG",
+      "rarity": "COMMON",
+      "gen": "Soaked",
+      "count": 97281,
+      "players": 59920
+    },
+    "8|ice": {
+      "pet": "DOG",
+      "rarity": "COMMON",
+      "gen": "Frost",
+      "count": 70421,
+      "players": 49219
+    },
+    "23|soaked": {
+      "pet": "OCTOPUS",
+      "rarity": "EPIC",
+      "gen": "Soaked",
+      "count": 62916,
+      "players": 45338
+    },
+    "7|fossilized": {
+      "pet": "GOOSE",
+      "rarity": "COMMON",
+      "gen": "Fossilized",
+      "count": 12248,
+      "players": 11481
+    },
+    "12|wind": {
+      "pet": "CRAB",
+      "rarity": "RARE",
+      "gen": "Gale",
+      "count": 115019,
+      "players": 65988
+    },
+    "25|rainbow": {
+      "pet": "DOLPHIN",
+      "rarity": "EPIC",
+      "gen": "Prismatic",
+      "count": 7898,
+      "players": 7538
+    },
+    "101|ice": {
+      "pet": "PIRANHA",
+      "rarity": "APEX",
+      "gen": "Frost",
+      "count": 2813,
+      "players": 2767
+    },
+    "17|ice": {
+      "pet": "TURTLE",
+      "rarity": "RARE",
+      "gen": "Frost",
+      "count": 114672,
+      "players": 65871
+    },
+    "80|none": {
+      "pet": "AXOLOTLGREEN",
+      "rarity": "MYTHIC",
+      "gen": "Không Gen",
+      "count": 91761,
+      "players": 58169
+    },
+    "7|coral": {
+      "pet": "GOOSE",
+      "rarity": "COMMON",
+      "gen": "Magma",
+      "count": 45749,
+      "players": 35981
+    },
+    "55|fossilized": {
+      "pet": "SHOEBILL",
+      "rarity": "LEGENDARY",
+      "gen": "Fossilized",
+      "count": 8676,
+      "players": 8285
+    },
+    "4|thundered": {
+      "pet": "PIG",
+      "rarity": "COMMON",
+      "gen": "Thundered",
+      "count": 45733,
+      "players": 36068
+    },
+    "60|none": {
+      "pet": "PLATYPUS",
+      "rarity": "MYTHIC",
+      "gen": "Không Gen",
+      "count": 92382,
+      "players": 58382
+    },
+    "26|clover": {
+      "pet": "SEALION",
+      "rarity": "EPIC",
+      "gen": "Clover",
+      "count": 29461,
+      "players": 25255
+    },
+    "8|wind": {
+      "pet": "DOG",
+      "rarity": "COMMON",
+      "gen": "Gale",
+      "count": 70481,
+      "players": 49228
+    },
+    "33|soaked": {
+      "pet": "ALIGATOR",
+      "rarity": "LEGENDARY",
+      "gen": "Soaked",
+      "count": 68760,
+      "players": 48218
+    },
+    "79|clover": {
+      "pet": "AXOLOTLPINK",
+      "rarity": "MYTHIC",
+      "gen": "Clover",
+      "count": 6790,
+      "players": 6566
+    },
+    "101|none": {
+      "pet": "PIRANHA",
+      "rarity": "APEX",
+      "gen": "Không Gen",
+      "count": 24474,
+      "players": 21474
+    },
+    "17|lunar": {
+      "pet": "TURTLE",
+      "rarity": "RARE",
+      "gen": "Eclipse",
+      "count": 74654,
+      "players": 51242
+    },
+    "37|fossilized": {
+      "pet": "ORCA",
+      "rarity": "LEGENDARY",
+      "gen": "Fossilized",
+      "count": 8553,
+      "players": 8180
+    },
+    "7|soaked": {
+      "pet": "GOOSE",
+      "rarity": "COMMON",
+      "gen": "Soaked",
+      "count": 96584,
+      "players": 59611
+    },
+    "73|lunar": {
+      "pet": "CATFISH",
+      "rarity": "MYTHIC",
+      "gen": "Eclipse",
+      "count": 6823,
+      "players": 6579
+    },
+    "8|lunar": {
+      "pet": "DOG",
+      "rarity": "COMMON",
+      "gen": "Eclipse",
+      "count": 45580,
+      "players": 35751
+    },
+    "57|lunar": {
+      "pet": "LOBSTER",
+      "rarity": "EPIC",
+      "gen": "Eclipse",
+      "count": 29634,
+      "players": 25249
+    },
+    "52|coral": {
+      "pet": "SHRIMP",
+      "rarity": "COMMON",
+      "gen": "Magma",
+      "count": 45487,
+      "players": 35853
+    },
+    "108|none": {
+      "pet": "BASS",
+      "rarity": "APEX",
+      "gen": "Không Gen",
+      "count": 23954,
+      "players": 21094
+    },
+    "78|ice": {
+      "pet": "AXOLOTLBLUE",
+      "rarity": "MYTHIC",
+      "gen": "Frost",
+      "count": 10486,
+      "players": 9918
+    },
+    "7|lunar": {
+      "pet": "GOOSE",
+      "rarity": "COMMON",
+      "gen": "Eclipse",
+      "count": 45859,
+      "players": 35886
+    },
+    "4|lunar": {
+      "pet": "PIG",
+      "rarity": "COMMON",
+      "gen": "Eclipse",
+      "count": 45779,
+      "players": 35964
+    },
+    "70|none": {
+      "pet": "SEAHORSE",
+      "rarity": "MYTHIC",
+      "gen": "Không Gen",
+      "count": 91968,
+      "players": 58382
+    },
+    "80|coral": {
+      "pet": "AXOLOTLGREEN",
+      "rarity": "MYTHIC",
+      "gen": "Magma",
+      "count": 6877,
+      "players": 6619
+    },
+    "107|none": {
+      "pet": "GOLDFISH",
+      "rarity": "APEX",
+      "gen": "Không Gen",
+      "count": 24998,
+      "players": 21847
+    },
+    "17|rainbow": {
+      "pet": "TURTLE",
+      "rarity": "RARE",
+      "gen": "Prismatic",
+      "count": 20116,
+      "players": 18003
+    },
+    "52|ice": {
+      "pet": "SHRIMP",
+      "rarity": "COMMON",
+      "gen": "Frost",
+      "count": 70283,
+      "players": 49107
+    },
+    "27|ice": {
+      "pet": "WALRUS",
+      "rarity": "EPIC",
+      "gen": "Frost",
+      "count": 45968,
+      "players": 36172
+    },
+    "27|coral": {
+      "pet": "WALRUS",
+      "rarity": "EPIC",
+      "gen": "Magma",
+      "count": 29856,
+      "players": 25444
+    },
+    "60|fossilized": {
+      "pet": "PLATYPUS",
+      "rarity": "MYTHIC",
+      "gen": "Fossilized",
+      "count": 1799,
+      "players": 1776
+    },
+    "55|frost": {
+      "pet": "SHOEBILL",
+      "rarity": "LEGENDARY",
+      "gen": "Frozen",
+      "count": 49790,
+      "players": 38470
+    },
+    "58|thundered": {
+      "pet": "SWAN",
+      "rarity": "LEGENDARY",
+      "gen": "Thundered",
+      "count": 31962,
+      "players": 27009
+    },
+    "44|none": {
+      "pet": "SMALLWHALE",
+      "rarity": "MYTHIC",
+      "gen": "Không Gen",
+      "count": 92322,
+      "players": 58459
+    },
+    "50|frost": {
+      "pet": "BELUGA",
+      "rarity": "MYTHIC",
+      "gen": "Frozen",
+      "count": 10393,
+      "players": 9863
+    },
+    "58|ice": {
+      "pet": "SWAN",
+      "rarity": "LEGENDARY",
+      "gen": "Frost",
+      "count": 49589,
+      "players": 38427
+    },
+    "25|ice": {
+      "pet": "DOLPHIN",
+      "rarity": "EPIC",
+      "gen": "Frost",
+      "count": 46082,
+      "players": 36328
+    },
+    "25|frost": {
+      "pet": "DOLPHIN",
+      "rarity": "EPIC",
+      "gen": "Frozen",
+      "count": 45541,
+      "players": 36016
+    },
+    "37|frost": {
+      "pet": "ORCA",
+      "rarity": "LEGENDARY",
+      "gen": "Frozen",
+      "count": 49996,
+      "players": 38608
+    },
+    "26|wind": {
+      "pet": "SEALION",
+      "rarity": "EPIC",
+      "gen": "Gale",
+      "count": 45897,
+      "players": 35996
+    },
+    "4|fossilized": {
+      "pet": "PIG",
+      "rarity": "COMMON",
+      "gen": "Fossilized",
+      "count": 12102,
+      "players": 11342
+    },
+    "12|clover": {
+      "pet": "CRAB",
+      "rarity": "RARE",
+      "gen": "Clover",
+      "count": 74534,
+      "players": 51115
+    },
+    "26|fossilized": {
+      "pet": "SEALION",
+      "rarity": "EPIC",
+      "gen": "Fossilized",
+      "count": 8020,
+      "players": 7668
+    },
+    "73|ice": {
+      "pet": "CATFISH",
+      "rarity": "MYTHIC",
+      "gen": "Frost",
+      "count": 10754,
+      "players": 10131
+    },
+    "58|frost": {
+      "pet": "SWAN",
+      "rarity": "LEGENDARY",
+      "gen": "Frozen",
+      "count": 49597,
+      "players": 38370
+    },
+    "58|gold": {
+      "pet": "SWAN",
+      "rarity": "LEGENDARY",
+      "gen": "Golden",
+      "count": 68773,
+      "players": 48168
+    },
+    "33|thundered": {
+      "pet": "ALIGATOR",
+      "rarity": "LEGENDARY",
+      "gen": "Thundered",
+      "count": 32172,
+      "players": 27092
+    },
+    "1012|none": {
+      "pet": "MUDSKIPPER",
+      "rarity": "COMMON",
+      "gen": "Không Gen",
+      "count": 22939,
+      "players": 20291
+    },
+    "79|lunar": {
+      "pet": "AXOLOTLPINK",
+      "rarity": "MYTHIC",
+      "gen": "Eclipse",
+      "count": 6817,
+      "players": 6546
+    },
+    "73|wind": {
+      "pet": "CATFISH",
+      "rarity": "MYTHIC",
+      "gen": "Gale",
+      "count": 10569,
+      "players": 9954
+    },
+    "73|soaked": {
+      "pet": "CATFISH",
+      "rarity": "MYTHIC",
+      "gen": "Soaked",
+      "count": 14326,
+      "players": 13242
+    },
+    "24|rainbow": {
+      "pet": "JELLYFISH",
+      "rarity": "EPIC",
+      "gen": "Prismatic",
+      "count": 8037,
+      "players": 7689
+    },
+    "37|lunar": {
+      "pet": "ORCA",
+      "rarity": "LEGENDARY",
+      "gen": "Eclipse",
+      "count": 32416,
+      "players": 27346
+    },
+    "7|ice": {
+      "pet": "GOOSE",
+      "rarity": "COMMON",
+      "gen": "Frost",
+      "count": 70645,
+      "players": 49473
+    },
+    "69|frost": {
+      "pet": "TORTOISE",
+      "rarity": "MYTHIC",
+      "gen": "Frozen",
+      "count": 10457,
+      "players": 9869
+    },
+    "80|soaked": {
+      "pet": "AXOLOTLGREEN",
+      "rarity": "MYTHIC",
+      "gen": "Soaked",
+      "count": 14375,
+      "players": 13285
+    },
+    "69|soaked": {
+      "pet": "TORTOISE",
+      "rarity": "MYTHIC",
+      "gen": "Soaked",
+      "count": 14489,
+      "players": 13366
+    },
+    "70|soaked": {
+      "pet": "SEAHORSE",
+      "rarity": "MYTHIC",
+      "gen": "Soaked",
+      "count": 14364,
+      "players": 13298
+    },
+    "70|lunar": {
+      "pet": "SEAHORSE",
+      "rarity": "MYTHIC",
+      "gen": "Eclipse",
+      "count": 6756,
+      "players": 6528
+    },
+    "1012|soaked": {
+      "pet": "MUDSKIPPER",
+      "rarity": "COMMON",
+      "gen": "Soaked",
+      "count": 3541,
+      "players": 3457
+    },
+    "12|lunar": {
+      "pet": "CRAB",
+      "rarity": "RARE",
+      "gen": "Eclipse",
+      "count": 74554,
+      "players": 51166
+    },
+    "13|thundered": {
+      "pet": "CLOWNFISH",
+      "rarity": "RARE",
+      "gen": "Thundered",
+      "count": 74618,
+      "players": 51148
+    },
+    "24|gold": {
+      "pet": "JELLYFISH",
+      "rarity": "EPIC",
+      "gen": "Golden",
+      "count": 62830,
+      "players": 45315
+    },
+    "57|ice": {
+      "pet": "LOBSTER",
+      "rarity": "EPIC",
+      "gen": "Frost",
+      "count": 45738,
+      "players": 36007
+    },
+    "80|thundered": {
+      "pet": "AXOLOTLGREEN",
+      "rarity": "MYTHIC",
+      "gen": "Thundered",
+      "count": 6757,
+      "players": 6521
+    },
+    "69|rainbow": {
+      "pet": "TORTOISE",
+      "rarity": "MYTHIC",
+      "gen": "Prismatic",
+      "count": 1871,
+      "players": 1851
+    },
+    "8|rainbow": {
+      "pet": "DOG",
+      "rarity": "COMMON",
+      "gen": "Prismatic",
+      "count": 12388,
+      "players": 11622
+    },
+    "81|lunar": {
+      "pet": "AXOLOTLORANGE",
+      "rarity": "MYTHIC",
+      "gen": "Eclipse",
+      "count": 6621,
+      "players": 6375
+    },
+    "78|lunar": {
+      "pet": "AXOLOTLBLUE",
+      "rarity": "MYTHIC",
+      "gen": "Eclipse",
+      "count": 6786,
+      "players": 6575
+    },
+    "8|coral": {
+      "pet": "DOG",
+      "rarity": "COMMON",
+      "gen": "Magma",
+      "count": 45883,
+      "players": 36173
+    },
+    "27|frost": {
+      "pet": "WALRUS",
+      "rarity": "EPIC",
+      "gen": "Frozen",
+      "count": 45847,
+      "players": 36028
+    },
+    "50|clover": {
+      "pet": "BELUGA",
+      "rarity": "MYTHIC",
+      "gen": "Clover",
+      "count": 6883,
+      "players": 6636
+    },
+    "73|rainbow": {
+      "pet": "CATFISH",
+      "rarity": "MYTHIC",
+      "gen": "Prismatic",
+      "count": 1858,
+      "players": 1836
+    },
+    "58|coral": {
+      "pet": "SWAN",
+      "rarity": "LEGENDARY",
+      "gen": "Magma",
+      "count": 32313,
+      "players": 27219
+    },
+    "44|frost": {
+      "pet": "SMALLWHALE",
+      "rarity": "MYTHIC",
+      "gen": "Frozen",
+      "count": 10304,
+      "players": 9703
+    },
+    "60|gold": {
+      "pet": "PLATYPUS",
+      "rarity": "MYTHIC",
+      "gen": "Golden",
+      "count": 14370,
+      "players": 13263
+    },
+    "24|ice": {
+      "pet": "JELLYFISH",
+      "rarity": "EPIC",
+      "gen": "Frost",
+      "count": 46009,
+      "players": 36216
+    },
+    "37|thundered": {
+      "pet": "ORCA",
+      "rarity": "LEGENDARY",
+      "gen": "Thundered",
+      "count": 32200,
+      "players": 27049
+    },
+    "79|thundered": {
+      "pet": "AXOLOTLPINK",
+      "rarity": "MYTHIC",
+      "gen": "Thundered",
+      "count": 6813,
+      "players": 6583
+    },
+    "51|gold": {
+      "pet": "NARWHAL",
+      "rarity": "MYTHIC",
+      "gen": "Golden",
+      "count": 14505,
+      "players": 13417
+    },
+    "37|wind": {
+      "pet": "ORCA",
+      "rarity": "LEGENDARY",
+      "gen": "Gale",
+      "count": 50288,
+      "players": 38758
+    },
+    "33|gold": {
+      "pet": "ALIGATOR",
+      "rarity": "LEGENDARY",
+      "gen": "Golden",
+      "count": 68413,
+      "players": 48010
+    },
+    "23|clover": {
+      "pet": "OCTOPUS",
+      "rarity": "EPIC",
+      "gen": "Clover",
+      "count": 30129,
+      "players": 25679
+    },
+    "82|none": {
+      "pet": "AXOLOTLWHITE",
+      "rarity": "MYTHIC",
+      "gen": "Không Gen",
+      "count": 6868,
+      "players": 6583
+    },
+    "26|thundered": {
+      "pet": "SEALION",
+      "rarity": "EPIC",
+      "gen": "Thundered",
+      "count": 29745,
+      "players": 25372
+    },
+    "58|clover": {
+      "pet": "SWAN",
+      "rarity": "LEGENDARY",
+      "gen": "Clover",
+      "count": 32005,
+      "players": 26910
+    },
+    "1012|coral": {
+      "pet": "MUDSKIPPER",
+      "rarity": "COMMON",
+      "gen": "Magma",
+      "count": 1691,
+      "players": 1684
+    },
+    "47|frost": {
+      "pet": "MANATEE",
+      "rarity": "MYTHIC",
+      "gen": "Frozen",
+      "count": 10350,
+      "players": 9790
+    },
+    "57|clover": {
+      "pet": "LOBSTER",
+      "rarity": "EPIC",
+      "gen": "Clover",
+      "count": 29599,
+      "players": 25270
+    },
+    "58|soaked": {
+      "pet": "SWAN",
+      "rarity": "LEGENDARY",
+      "gen": "Soaked",
+      "count": 69054,
+      "players": 48449
+    },
+    "73|gold": {
+      "pet": "CATFISH",
+      "rarity": "MYTHIC",
+      "gen": "Golden",
+      "count": 14496,
+      "players": 13372
+    },
+    "25|coral": {
+      "pet": "DOLPHIN",
+      "rarity": "EPIC",
+      "gen": "Magma",
+      "count": 29486,
+      "players": 25123
+    },
+    "8|clover": {
+      "pet": "DOG",
+      "rarity": "COMMON",
+      "gen": "Clover",
+      "count": 46075,
+      "players": 36247
+    },
+    "60|lunar": {
+      "pet": "PLATYPUS",
+      "rarity": "MYTHIC",
+      "gen": "Eclipse",
+      "count": 6844,
+      "players": 6603
+    },
+    "27|gold": {
+      "pet": "WALRUS",
+      "rarity": "EPIC",
+      "gen": "Golden",
+      "count": 62940,
+      "players": 45355
+    },
+    "50|thundered": {
+      "pet": "BELUGA",
+      "rarity": "MYTHIC",
+      "gen": "Thundered",
+      "count": 6786,
+      "players": 6548
+    },
+    "50|gold": {
+      "pet": "BELUGA",
+      "rarity": "MYTHIC",
+      "gen": "Golden",
+      "count": 14236,
+      "players": 13182
+    },
+    "1058|wind": {
+      "pet": "OCTOPUS_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Gale",
+      "count": 316,
+      "players": 315
+    },
+    "79|wind": {
+      "pet": "AXOLOTLPINK",
+      "rarity": "MYTHIC",
+      "gen": "Gale",
+      "count": 10442,
+      "players": 9859
+    },
+    "33|ice": {
+      "pet": "ALIGATOR",
+      "rarity": "LEGENDARY",
+      "gen": "Frost",
+      "count": 49770,
+      "players": 38307
+    },
+    "4|gold": {
+      "pet": "PIG",
+      "rarity": "COMMON",
+      "gen": "Golden",
+      "count": 96889,
+      "players": 59714
+    },
+    "70|clover": {
+      "pet": "SEAHORSE",
+      "rarity": "MYTHIC",
+      "gen": "Clover",
+      "count": 6877,
+      "players": 6607
+    },
+    "23|fossilized": {
+      "pet": "OCTOPUS",
+      "rarity": "EPIC",
+      "gen": "Fossilized",
+      "count": 7955,
+      "players": 7618
+    },
+    "73|thundered": {
+      "pet": "CATFISH",
+      "rarity": "MYTHIC",
+      "gen": "Thundered",
+      "count": 6803,
+      "players": 6554
+    },
+    "79|soaked": {
+      "pet": "AXOLOTLPINK",
+      "rarity": "MYTHIC",
+      "gen": "Soaked",
+      "count": 14324,
+      "players": 13246
+    },
+    "26|frost": {
+      "pet": "SEALION",
+      "rarity": "EPIC",
+      "gen": "Frozen",
+      "count": 45510,
+      "players": 35883
+    },
+    "51|frost": {
+      "pet": "NARWHAL",
+      "rarity": "MYTHIC",
+      "gen": "Frozen",
+      "count": 10556,
+      "players": 9997
+    },
+    "37|rainbow": {
+      "pet": "ORCA",
+      "rarity": "LEGENDARY",
+      "gen": "Prismatic",
+      "count": 8625,
+      "players": 8234
+    },
+    "81|coral": {
+      "pet": "AXOLOTLORANGE",
+      "rarity": "MYTHIC",
+      "gen": "Magma",
+      "count": 6855,
+      "players": 6591
+    },
+    "101|frost": {
+      "pet": "PIRANHA",
+      "rarity": "APEX",
+      "gen": "Frozen",
+      "count": 2820,
+      "players": 2778
+    },
+    "78|thundered": {
+      "pet": "AXOLOTLBLUE",
+      "rarity": "MYTHIC",
+      "gen": "Thundered",
+      "count": 6791,
+      "players": 6531
+    },
+    "108|lunar": {
+      "pet": "BASS",
+      "rarity": "APEX",
+      "gen": "Eclipse",
+      "count": 1878,
+      "players": 1855
+    },
+    "58|wind": {
+      "pet": "SWAN",
+      "rarity": "LEGENDARY",
+      "gen": "Gale",
+      "count": 49814,
+      "players": 38581
+    },
+    "50|lunar": {
+      "pet": "BELUGA",
+      "rarity": "MYTHIC",
+      "gen": "Eclipse",
+      "count": 6984,
+      "players": 6699
+    },
+    "58|lunar": {
+      "pet": "SWAN",
+      "rarity": "LEGENDARY",
+      "gen": "Eclipse",
+      "count": 32204,
+      "players": 27144
+    },
+    "47|soaked": {
+      "pet": "MANATEE",
+      "rarity": "MYTHIC",
+      "gen": "Soaked",
+      "count": 14379,
+      "players": 13231
+    },
+    "25|thundered": {
+      "pet": "DOLPHIN",
+      "rarity": "EPIC",
+      "gen": "Thundered",
+      "count": 29572,
+      "players": 25232
+    },
+    "55|thundered": {
+      "pet": "SHOEBILL",
+      "rarity": "LEGENDARY",
+      "gen": "Thundered",
+      "count": 32260,
+      "players": 27072
+    },
+    "13|rainbow": {
+      "pet": "CLOWNFISH",
+      "rarity": "RARE",
+      "gen": "Prismatic",
+      "count": 19932,
+      "players": 17889
+    },
+    "24|clover": {
+      "pet": "JELLYFISH",
+      "rarity": "EPIC",
+      "gen": "Clover",
+      "count": 29590,
+      "players": 25227
+    },
+    "52|lunar": {
+      "pet": "SHRIMP",
+      "rarity": "COMMON",
+      "gen": "Eclipse",
+      "count": 45922,
+      "players": 36146
+    },
+    "55|rainbow": {
+      "pet": "SHOEBILL",
+      "rarity": "LEGENDARY",
+      "gen": "Prismatic",
+      "count": 8690,
+      "players": 8256
+    },
+    "70|wind": {
+      "pet": "SEAHORSE",
+      "rarity": "MYTHIC",
+      "gen": "Gale",
+      "count": 10336,
+      "players": 9729
+    },
+    "1002|gold": {
+      "pet": "SQUID",
+      "rarity": "RARE",
+      "gen": "Golden",
+      "count": 5931,
+      "players": 5719
+    },
+    "25|soaked": {
+      "pet": "DOLPHIN",
+      "rarity": "EPIC",
+      "gen": "Soaked",
+      "count": 62782,
+      "players": 45165
+    },
+    "78|soaked": {
+      "pet": "AXOLOTLBLUE",
+      "rarity": "MYTHIC",
+      "gen": "Soaked",
+      "count": 14532,
+      "players": 13414
+    },
+    "57|fossilized": {
+      "pet": "LOBSTER",
+      "rarity": "EPIC",
+      "gen": "Fossilized",
+      "count": 7968,
+      "players": 7625
+    },
+    "33|frost": {
+      "pet": "ALIGATOR",
+      "rarity": "LEGENDARY",
+      "gen": "Frozen",
+      "count": 49766,
+      "players": 38433
+    },
+    "107|ice": {
+      "pet": "GOLDFISH",
+      "rarity": "APEX",
+      "gen": "Frost",
+      "count": 2813,
+      "players": 2781
+    },
+    "33|clover": {
+      "pet": "ALIGATOR",
+      "rarity": "LEGENDARY",
+      "gen": "Clover",
+      "count": 32410,
+      "players": 27308
+    },
+    "44|lunar": {
+      "pet": "SMALLWHALE",
+      "rarity": "MYTHIC",
+      "gen": "Eclipse",
+      "count": 6709,
+      "players": 6458
+    },
+    "23|gold": {
+      "pet": "OCTOPUS",
+      "rarity": "EPIC",
+      "gen": "Golden",
+      "count": 63017,
+      "players": 45372
+    },
+    "8|fossilized": {
+      "pet": "DOG",
+      "rarity": "COMMON",
+      "gen": "Fossilized",
+      "count": 12282,
+      "players": 11509
+    },
+    "44|clover": {
+      "pet": "SMALLWHALE",
+      "rarity": "MYTHIC",
+      "gen": "Clover",
+      "count": 6859,
+      "players": 6615
+    },
+    "55|coral": {
+      "pet": "SHOEBILL",
+      "rarity": "LEGENDARY",
+      "gen": "Magma",
+      "count": 32323,
+      "players": 27224
+    },
+    "80|wind": {
+      "pet": "AXOLOTLGREEN",
+      "rarity": "MYTHIC",
+      "gen": "Gale",
+      "count": 10511,
+      "players": 9910
+    },
+    "50|wind": {
+      "pet": "BELUGA",
+      "rarity": "MYTHIC",
+      "gen": "Gale",
+      "count": 10518,
+      "players": 9916
+    },
+    "47|clover": {
+      "pet": "MANATEE",
+      "rarity": "MYTHIC",
+      "gen": "Clover",
+      "count": 6908,
+      "players": 6637
+    },
+    "47|thundered": {
+      "pet": "MANATEE",
+      "rarity": "MYTHIC",
+      "gen": "Thundered",
+      "count": 6772,
+      "players": 6531
+    },
+    "27|lunar": {
+      "pet": "WALRUS",
+      "rarity": "EPIC",
+      "gen": "Eclipse",
+      "count": 29858,
+      "players": 25437
+    },
+    "60|thundered": {
+      "pet": "PLATYPUS",
+      "rarity": "MYTHIC",
+      "gen": "Thundered",
+      "count": 6837,
+      "players": 6580
+    },
+    "70|coral": {
+      "pet": "SEAHORSE",
+      "rarity": "MYTHIC",
+      "gen": "Magma",
+      "count": 6797,
+      "players": 6550
+    },
+    "57|thundered": {
+      "pet": "LOBSTER",
+      "rarity": "EPIC",
+      "gen": "Thundered",
+      "count": 29541,
+      "players": 25264
+    },
+    "27|rainbow": {
+      "pet": "WALRUS",
+      "rarity": "EPIC",
+      "gen": "Prismatic",
+      "count": 7910,
+      "players": 7588
+    },
+    "50|coral": {
+      "pet": "BELUGA",
+      "rarity": "MYTHIC",
+      "gen": "Magma",
+      "count": 6836,
+      "players": 6572
+    },
+    "44|soaked": {
+      "pet": "SMALLWHALE",
+      "rarity": "MYTHIC",
+      "gen": "Soaked",
+      "count": 14577,
+      "players": 13469
+    },
+    "60|ice": {
+      "pet": "PLATYPUS",
+      "rarity": "MYTHIC",
+      "gen": "Frost",
+      "count": 10507,
+      "players": 9933
+    },
+    "69|thundered": {
+      "pet": "TORTOISE",
+      "rarity": "MYTHIC",
+      "gen": "Thundered",
+      "count": 6834,
+      "players": 6571
+    },
+    "80|gold": {
+      "pet": "AXOLOTLGREEN",
+      "rarity": "MYTHIC",
+      "gen": "Golden",
+      "count": 14210,
+      "players": 13129
+    },
+    "1002|soaked": {
+      "pet": "SQUID",
+      "rarity": "RARE",
+      "gen": "Soaked",
+      "count": 5893,
+      "players": 5697
+    },
+    "81|soaked": {
+      "pet": "AXOLOTLORANGE",
+      "rarity": "MYTHIC",
+      "gen": "Soaked",
+      "count": 14464,
+      "players": 13328
+    },
+    "7|rainbow": {
+      "pet": "GOOSE",
+      "rarity": "COMMON",
+      "gen": "Prismatic",
+      "count": 12330,
+      "players": 11514
+    },
+    "25|lunar": {
+      "pet": "DOLPHIN",
+      "rarity": "EPIC",
+      "gen": "Eclipse",
+      "count": 29596,
+      "players": 25282
+    },
+    "52|clover": {
+      "pet": "SHRIMP",
+      "rarity": "COMMON",
+      "gen": "Clover",
+      "count": 45416,
+      "players": 35749
+    },
+    "47|gold": {
+      "pet": "MANATEE",
+      "rarity": "MYTHIC",
+      "gen": "Golden",
+      "count": 14227,
+      "players": 13174
+    },
+    "52|rainbow": {
+      "pet": "SHRIMP",
+      "rarity": "COMMON",
+      "gen": "Prismatic",
+      "count": 12216,
+      "players": 11426
+    },
+    "1002|clover": {
+      "pet": "SQUID",
+      "rarity": "RARE",
+      "gen": "Clover",
+      "count": 2777,
+      "players": 2732
+    },
+    "107|lunar": {
+      "pet": "GOLDFISH",
+      "rarity": "APEX",
+      "gen": "Eclipse",
+      "count": 1920,
+      "players": 1899
+    },
+    "78|gold": {
+      "pet": "AXOLOTLBLUE",
+      "rarity": "MYTHIC",
+      "gen": "Golden",
+      "count": 14537,
+      "players": 13486
+    },
+    "79|gold": {
+      "pet": "AXOLOTLPINK",
+      "rarity": "MYTHIC",
+      "gen": "Golden",
+      "count": 14380,
+      "players": 13282
+    },
+    "60|wind": {
+      "pet": "PLATYPUS",
+      "rarity": "MYTHIC",
+      "gen": "Gale",
+      "count": 10485,
+      "players": 9893
+    },
+    "80|ice": {
+      "pet": "AXOLOTLGREEN",
+      "rarity": "MYTHIC",
+      "gen": "Frost",
+      "count": 10412,
+      "players": 9794
+    },
+    "108|thundered": {
+      "pet": "BASS",
+      "rarity": "APEX",
+      "gen": "Thundered",
+      "count": 1799,
+      "players": 1783
+    },
+    "79|coral": {
+      "pet": "AXOLOTLPINK",
+      "rarity": "MYTHIC",
+      "gen": "Magma",
+      "count": 6619,
+      "players": 6379
+    },
+    "50|ice": {
+      "pet": "BELUGA",
+      "rarity": "MYTHIC",
+      "gen": "Frost",
+      "count": 10442,
+      "players": 9836
+    },
+    "37|ice": {
+      "pet": "ORCA",
+      "rarity": "LEGENDARY",
+      "gen": "Frost",
+      "count": 50267,
+      "players": 38671
+    },
+    "73|frost": {
+      "pet": "CATFISH",
+      "rarity": "MYTHIC",
+      "gen": "Frozen",
+      "count": 10657,
+      "players": 10071
+    },
+    "81|wind": {
+      "pet": "AXOLOTLORANGE",
+      "rarity": "MYTHIC",
+      "gen": "Gale",
+      "count": 10359,
+      "players": 9768
+    },
+    "60|frost": {
+      "pet": "PLATYPUS",
+      "rarity": "MYTHIC",
+      "gen": "Frozen",
+      "count": 10536,
+      "players": 9943
+    },
+    "80|fossilized": {
+      "pet": "AXOLOTLGREEN",
+      "rarity": "MYTHIC",
+      "gen": "Fossilized",
+      "count": 1823,
+      "players": 1807
+    },
+    "1002|ice": {
+      "pet": "SQUID",
+      "rarity": "RARE",
+      "gen": "Frost",
+      "count": 4309,
+      "players": 4211
+    },
+    "80|frost": {
+      "pet": "AXOLOTLGREEN",
+      "rarity": "MYTHIC",
+      "gen": "Frozen",
+      "count": 10339,
+      "players": 9803
+    },
+    "1002|frost": {
+      "pet": "SQUID",
+      "rarity": "RARE",
+      "gen": "Frozen",
+      "count": 4254,
+      "players": 4160
+    },
+    "70|gold": {
+      "pet": "SEAHORSE",
+      "rarity": "MYTHIC",
+      "gen": "Golden",
+      "count": 14433,
+      "players": 13340
+    },
+    "78|frost": {
+      "pet": "AXOLOTLBLUE",
+      "rarity": "MYTHIC",
+      "gen": "Frozen",
+      "count": 10477,
+      "players": 9925
+    },
+    "23|thundered": {
+      "pet": "OCTOPUS",
+      "rarity": "EPIC",
+      "gen": "Thundered",
+      "count": 29715,
+      "players": 25434
+    },
+    "81|thundered": {
+      "pet": "AXOLOTLORANGE",
+      "rarity": "MYTHIC",
+      "gen": "Thundered",
+      "count": 6731,
+      "players": 6494
+    },
+    "80|lunar": {
+      "pet": "AXOLOTLGREEN",
+      "rarity": "MYTHIC",
+      "gen": "Eclipse",
+      "count": 6820,
+      "players": 6562
+    },
+    "81|clover": {
+      "pet": "AXOLOTLORANGE",
+      "rarity": "MYTHIC",
+      "gen": "Clover",
+      "count": 6816,
+      "players": 6574
+    },
+    "44|wind": {
+      "pet": "SMALLWHALE",
+      "rarity": "MYTHIC",
+      "gen": "Gale",
+      "count": 10287,
+      "players": 9751
+    },
+    "58|fossilized": {
+      "pet": "SWAN",
+      "rarity": "LEGENDARY",
+      "gen": "Fossilized",
+      "count": 8665,
+      "players": 8239
+    },
+    "51|thundered": {
+      "pet": "NARWHAL",
+      "rarity": "MYTHIC",
+      "gen": "Thundered",
+      "count": 6640,
+      "players": 6391
+    },
+    "44|ice": {
+      "pet": "SMALLWHALE",
+      "rarity": "MYTHIC",
+      "gen": "Frost",
+      "count": 10464,
+      "players": 9877
+    },
+    "69|gold": {
+      "pet": "TORTOISE",
+      "rarity": "MYTHIC",
+      "gen": "Golden",
+      "count": 14401,
+      "players": 13274
+    },
+    "82|lunar": {
+      "pet": "AXOLOTLWHITE",
+      "rarity": "MYTHIC",
+      "gen": "Eclipse",
+      "count": 506,
+      "players": 503
+    },
+    "1051|soaked": {
+      "pet": "JELLYFISH_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Soaked",
+      "count": 407,
+      "players": 407
+    },
+    "1011|none": {
+      "pet": "PENGUIN",
+      "rarity": "MYTHIC",
+      "gen": "Không Gen",
+      "count": 3448,
+      "players": 3382
+    },
+    "55|lunar": {
+      "pet": "SHOEBILL",
+      "rarity": "LEGENDARY",
+      "gen": "Eclipse",
+      "count": 32635,
+      "players": 27420
+    },
+    "1050|none": {
+      "pet": "SQUID_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Không Gen",
+      "count": 2806,
+      "players": 2775
+    },
+    "1002|thundered": {
+      "pet": "SQUID",
+      "rarity": "RARE",
+      "gen": "Thundered",
+      "count": 2707,
+      "players": 2666
+    },
+    "27|clover": {
+      "pet": "WALRUS",
+      "rarity": "EPIC",
+      "gen": "Clover",
+      "count": 29549,
+      "players": 25321
+    },
+    "33|rainbow": {
+      "pet": "ALIGATOR",
+      "rarity": "LEGENDARY",
+      "gen": "Prismatic",
+      "count": 8693,
+      "players": 8293
+    },
+    "78|wind": {
+      "pet": "AXOLOTLBLUE",
+      "rarity": "MYTHIC",
+      "gen": "Gale",
+      "count": 10439,
+      "players": 9874
+    },
+    "24|fossilized": {
+      "pet": "JELLYFISH",
+      "rarity": "EPIC",
+      "gen": "Fossilized",
+      "count": 7901,
+      "players": 7558
+    },
+    "60|clover": {
+      "pet": "PLATYPUS",
+      "rarity": "MYTHIC",
+      "gen": "Clover",
+      "count": 6751,
+      "players": 6523
+    },
+    "44|gold": {
+      "pet": "SMALLWHALE",
+      "rarity": "MYTHIC",
+      "gen": "Golden",
+      "count": 14489,
+      "players": 13383
+    },
+    "47|coral": {
+      "pet": "MANATEE",
+      "rarity": "MYTHIC",
+      "gen": "Magma",
+      "count": 6783,
+      "players": 6547
+    },
+    "81|fossilized": {
+      "pet": "AXOLOTLORANGE",
+      "rarity": "MYTHIC",
+      "gen": "Fossilized",
+      "count": 1870,
+      "players": 1848
+    },
+    "80|clover": {
+      "pet": "AXOLOTLGREEN",
+      "rarity": "MYTHIC",
+      "gen": "Clover",
+      "count": 6721,
+      "players": 6486
+    },
+    "51|fossilized": {
+      "pet": "NARWHAL",
+      "rarity": "MYTHIC",
+      "gen": "Fossilized",
+      "count": 1781,
+      "players": 1767
+    },
+    "82|soaked": {
+      "pet": "AXOLOTLWHITE",
+      "rarity": "MYTHIC",
+      "gen": "Soaked",
+      "count": 1056,
+      "players": 1053
+    },
+    "78|coral": {
+      "pet": "AXOLOTLBLUE",
+      "rarity": "MYTHIC",
+      "gen": "Magma",
+      "count": 6752,
+      "players": 6499
+    },
+    "69|coral": {
+      "pet": "TORTOISE",
+      "rarity": "MYTHIC",
+      "gen": "Magma",
+      "count": 6957,
+      "players": 6690
+    },
+    "69|wind": {
+      "pet": "TORTOISE",
+      "rarity": "MYTHIC",
+      "gen": "Gale",
+      "count": 10490,
+      "players": 9900
+    },
+    "51|coral": {
+      "pet": "NARWHAL",
+      "rarity": "MYTHIC",
+      "gen": "Magma",
+      "count": 6907,
+      "players": 6650
+    },
+    "47|fossilized": {
+      "pet": "MANATEE",
+      "rarity": "MYTHIC",
+      "gen": "Fossilized",
+      "count": 1839,
+      "players": 1819
+    },
+    "79|ice": {
+      "pet": "AXOLOTLPINK",
+      "rarity": "MYTHIC",
+      "gen": "Frost",
+      "count": 10265,
+      "players": 9695
+    },
+    "51|ice": {
+      "pet": "NARWHAL",
+      "rarity": "MYTHIC",
+      "gen": "Frost",
+      "count": 10414,
+      "players": 9841
+    },
+    "101|thundered": {
+      "pet": "PIRANHA",
+      "rarity": "APEX",
+      "gen": "Thundered",
+      "count": 1813,
+      "players": 1798
+    },
+    "57|coral": {
+      "pet": "LOBSTER",
+      "rarity": "EPIC",
+      "gen": "Magma",
+      "count": 29542,
+      "players": 25237
+    },
+    "101|wind": {
+      "pet": "PIRANHA",
+      "rarity": "APEX",
+      "gen": "Gale",
+      "count": 2792,
+      "players": 2739
+    },
+    "60|coral": {
+      "pet": "PLATYPUS",
+      "rarity": "MYTHIC",
+      "gen": "Magma",
+      "count": 6835,
+      "players": 6591
+    },
+    "73|fossilized": {
+      "pet": "CATFISH",
+      "rarity": "MYTHIC",
+      "gen": "Fossilized",
+      "count": 1914,
+      "players": 1891
+    },
+    "108|soaked": {
+      "pet": "BASS",
+      "rarity": "APEX",
+      "gen": "Soaked",
+      "count": 3914,
+      "players": 3833
+    },
+    "51|clover": {
+      "pet": "NARWHAL",
+      "rarity": "MYTHIC",
+      "gen": "Clover",
+      "count": 6747,
+      "players": 6504
+    },
+    "70|fossilized": {
+      "pet": "SEAHORSE",
+      "rarity": "MYTHIC",
+      "gen": "Fossilized",
+      "count": 1877,
+      "players": 1856
+    },
+    "27|fossilized": {
+      "pet": "WALRUS",
+      "rarity": "EPIC",
+      "gen": "Fossilized",
+      "count": 8051,
+      "players": 7682
+    },
+    "57|rainbow": {
+      "pet": "LOBSTER",
+      "rarity": "EPIC",
+      "gen": "Prismatic",
+      "count": 7772,
+      "players": 7437
+    },
+    "70|ice": {
+      "pet": "SEAHORSE",
+      "rarity": "MYTHIC",
+      "gen": "Frost",
+      "count": 10516,
+      "players": 9956
+    },
+    "79|fossilized": {
+      "pet": "AXOLOTLPINK",
+      "rarity": "MYTHIC",
+      "gen": "Fossilized",
+      "count": 1875,
+      "players": 1857
+    },
+    "78|clover": {
+      "pet": "AXOLOTLBLUE",
+      "rarity": "MYTHIC",
+      "gen": "Clover",
+      "count": 6930,
+      "players": 6662
+    },
+    "108|wind": {
+      "pet": "BASS",
+      "rarity": "APEX",
+      "gen": "Gale",
+      "count": 2787,
+      "players": 2748
+    },
+    "70|thundered": {
+      "pet": "SEAHORSE",
+      "rarity": "MYTHIC",
+      "gen": "Thundered",
+      "count": 6684,
+      "players": 6483
+    },
+    "1050|ice": {
+      "pet": "SQUID_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Frost",
+      "count": 273,
+      "players": 273
+    },
+    "60|rainbow": {
+      "pet": "PLATYPUS",
+      "rarity": "MYTHIC",
+      "gen": "Prismatic",
+      "count": 1847,
+      "players": 1825
+    },
+    "44|thundered": {
+      "pet": "SMALLWHALE",
+      "rarity": "MYTHIC",
+      "gen": "Thundered",
+      "count": 6710,
+      "players": 6481
+    },
+    "50|rainbow": {
+      "pet": "BELUGA",
+      "rarity": "MYTHIC",
+      "gen": "Prismatic",
+      "count": 1794,
+      "players": 1766
+    },
+    "47|rainbow": {
+      "pet": "MANATEE",
+      "rarity": "MYTHIC",
+      "gen": "Prismatic",
+      "count": 1863,
+      "players": 1843
+    },
+    "52|fossilized": {
+      "pet": "SHRIMP",
+      "rarity": "COMMON",
+      "gen": "Fossilized",
+      "count": 12331,
+      "players": 11589
+    },
+    "82|ice": {
+      "pet": "AXOLOTLWHITE",
+      "rarity": "MYTHIC",
+      "gen": "Frost",
+      "count": 803,
+      "players": 800
+    },
+    "101|gold": {
+      "pet": "PIRANHA",
+      "rarity": "APEX",
+      "gen": "Golden",
+      "count": 3869,
+      "players": 3787
+    },
+    "1023|clover": {
+      "pet": "SHARK",
+      "rarity": "MYTHIC",
+      "gen": "Clover",
+      "count": 255,
+      "players": 254
+    },
+    "73|clover": {
+      "pet": "CATFISH",
+      "rarity": "MYTHIC",
+      "gen": "Clover",
+      "count": 6872,
+      "players": 6633
+    },
+    "1034|soaked": {
+      "pet": "CARP",
+      "rarity": "APEX",
+      "gen": "Soaked",
+      "count": 150,
+      "players": 150
+    },
+    "1012|wind": {
+      "pet": "MUDSKIPPER",
+      "rarity": "COMMON",
+      "gen": "Gale",
+      "count": 2560,
+      "players": 2521
+    },
+    "69|fossilized": {
+      "pet": "TORTOISE",
+      "rarity": "MYTHIC",
+      "gen": "Fossilized",
+      "count": 1876,
+      "players": 1857
+    },
+    "1002|wind": {
+      "pet": "SQUID",
+      "rarity": "RARE",
+      "gen": "Gale",
+      "count": 4339,
+      "players": 4218
+    },
+    "1012|lunar": {
+      "pet": "MUDSKIPPER",
+      "rarity": "COMMON",
+      "gen": "Eclipse",
+      "count": 1752,
+      "players": 1733
+    },
+    "1012|thundered": {
+      "pet": "MUDSKIPPER",
+      "rarity": "COMMON",
+      "gen": "Thundered",
+      "count": 1665,
+      "players": 1650
+    },
+    "80|rainbow": {
+      "pet": "AXOLOTLGREEN",
+      "rarity": "MYTHIC",
+      "gen": "Prismatic",
+      "count": 1874,
+      "players": 1856
+    },
+    "73|coral": {
+      "pet": "CATFISH",
+      "rarity": "MYTHIC",
+      "gen": "Magma",
+      "count": 6782,
+      "players": 6519
+    },
+    "82|clover": {
+      "pet": "AXOLOTLWHITE",
+      "rarity": "MYTHIC",
+      "gen": "Clover",
+      "count": 526,
+      "players": 524
+    },
+    "108|gold": {
+      "pet": "BASS",
+      "rarity": "APEX",
+      "gen": "Golden",
+      "count": 3771,
+      "players": 3666
+    },
+    "1059|rainbow": {
+      "pet": "ALIGATOR_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Prismatic",
+      "count": 58,
+      "players": 58
+    },
+    "101|fossilized": {
+      "pet": "PIRANHA",
+      "rarity": "APEX",
+      "gen": "Fossilized",
+      "count": 496,
+      "players": 495
+    },
+    "1011|thundered": {
+      "pet": "PENGUIN",
+      "rarity": "MYTHIC",
+      "gen": "Thundered",
+      "count": 265,
+      "players": 265
+    },
+    "1058|thundered": {
+      "pet": "OCTOPUS_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Thundered",
+      "count": 219,
+      "players": 219
+    },
+    "1012|gold": {
+      "pet": "MUDSKIPPER",
+      "rarity": "COMMON",
+      "gen": "Golden",
+      "count": 3625,
+      "players": 3556
+    },
+    "1058|none": {
+      "pet": "OCTOPUS_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Không Gen",
+      "count": 2620,
+      "players": 2579
+    },
+    "108|frost": {
+      "pet": "BASS",
+      "rarity": "APEX",
+      "gen": "Frozen",
+      "count": 2730,
+      "players": 2689
+    },
+    "51|rainbow": {
+      "pet": "NARWHAL",
+      "rarity": "MYTHIC",
+      "gen": "Prismatic",
+      "count": 1783,
+      "players": 1760
+    },
+    "107|wind": {
+      "pet": "GOLDFISH",
+      "rarity": "APEX",
+      "gen": "Gale",
+      "count": 2779,
+      "players": 2735
+    },
+    "26|rainbow": {
+      "pet": "SEALION",
+      "rarity": "EPIC",
+      "gen": "Prismatic",
+      "count": 8051,
+      "players": 7719
+    },
+    "69|lunar": {
+      "pet": "TORTOISE",
+      "rarity": "MYTHIC",
+      "gen": "Eclipse",
+      "count": 6628,
+      "players": 6358
+    },
+    "1011|soaked": {
+      "pet": "PENGUIN",
+      "rarity": "MYTHIC",
+      "gen": "Soaked",
+      "count": 529,
+      "players": 528
+    },
+    "1002|coral": {
+      "pet": "SQUID",
+      "rarity": "RARE",
+      "gen": "Magma",
+      "count": 2716,
+      "players": 2673
+    },
+    "101|clover": {
+      "pet": "PIRANHA",
+      "rarity": "APEX",
+      "gen": "Clover",
+      "count": 1750,
+      "players": 1738
+    },
+    "78|rainbow": {
+      "pet": "AXOLOTLBLUE",
+      "rarity": "MYTHIC",
+      "gen": "Prismatic",
+      "count": 1838,
+      "players": 1826
+    },
+    "107|soaked": {
+      "pet": "GOLDFISH",
+      "rarity": "APEX",
+      "gen": "Soaked",
+      "count": 3808,
+      "players": 3746
+    },
+    "107|clover": {
+      "pet": "GOLDFISH",
+      "rarity": "APEX",
+      "gen": "Clover",
+      "count": 1830,
+      "players": 1818
+    },
+    "1012|ice": {
+      "pet": "MUDSKIPPER",
+      "rarity": "COMMON",
+      "gen": "Frost",
+      "count": 2540,
+      "players": 2496
+    },
+    "108|clover": {
+      "pet": "BASS",
+      "rarity": "APEX",
+      "gen": "Clover",
+      "count": 1766,
+      "players": 1751
+    },
+    "107|rainbow": {
+      "pet": "GOLDFISH",
+      "rarity": "APEX",
+      "gen": "Prismatic",
+      "count": 473,
+      "players": 472
+    },
+    "1059|frost": {
+      "pet": "ALIGATOR_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Frozen",
+      "count": 303,
+      "players": 303
+    },
+    "70|rainbow": {
+      "pet": "SEAHORSE",
+      "rarity": "MYTHIC",
+      "gen": "Prismatic",
+      "count": 1824,
+      "players": 1805
+    },
+    "1058|frost": {
+      "pet": "OCTOPUS_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Frozen",
+      "count": 322,
+      "players": 322
+    },
+    "1002|lunar": {
+      "pet": "SQUID",
+      "rarity": "RARE",
+      "gen": "Eclipse",
+      "count": 2840,
+      "players": 2795
+    },
+    "81|rainbow": {
+      "pet": "AXOLOTLORANGE",
+      "rarity": "MYTHIC",
+      "gen": "Prismatic",
+      "count": 1849,
+      "players": 1837
+    },
+    "1050|soaked": {
+      "pet": "SQUID_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Soaked",
+      "count": 404,
+      "players": 404
+    },
+    "107|coral": {
+      "pet": "GOLDFISH",
+      "rarity": "APEX",
+      "gen": "Magma",
+      "count": 1855,
+      "players": 1830
+    },
+    "101|coral": {
+      "pet": "PIRANHA",
+      "rarity": "APEX",
+      "gen": "Magma",
+      "count": 1841,
+      "players": 1816
+    },
+    "1059|none": {
+      "pet": "ALIGATOR_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Không Gen",
+      "count": 2777,
+      "players": 2737
+    },
+    "1011|wind": {
+      "pet": "PENGUIN",
+      "rarity": "MYTHIC",
+      "gen": "Gale",
+      "count": 411,
+      "players": 410
+    },
+    "107|fossilized": {
+      "pet": "GOLDFISH",
+      "rarity": "APEX",
+      "gen": "Fossilized",
+      "count": 493,
+      "players": 493
+    },
+    "1051|ice": {
+      "pet": "JELLYFISH_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Frost",
+      "count": 326,
+      "players": 326
+    },
+    "1012|clover": {
+      "pet": "MUDSKIPPER",
+      "rarity": "COMMON",
+      "gen": "Clover",
+      "count": 1661,
+      "players": 1645
+    },
+    "44|fossilized": {
+      "pet": "SMALLWHALE",
+      "rarity": "MYTHIC",
+      "gen": "Fossilized",
+      "count": 1794,
+      "players": 1783
+    },
+    "1011|frost": {
+      "pet": "PENGUIN",
+      "rarity": "MYTHIC",
+      "gen": "Frozen",
+      "count": 390,
+      "players": 388
+    },
+    "50|fossilized": {
+      "pet": "BELUGA",
+      "rarity": "MYTHIC",
+      "gen": "Fossilized",
+      "count": 1823,
+      "players": 1804
+    },
+    "108|coral": {
+      "pet": "BASS",
+      "rarity": "APEX",
+      "gen": "Magma",
+      "count": 1795,
+      "players": 1769
+    },
+    "1002|fossilized": {
+      "pet": "SQUID",
+      "rarity": "RARE",
+      "gen": "Fossilized",
+      "count": 745,
+      "players": 743
+    },
+    "82|wind": {
+      "pet": "AXOLOTLWHITE",
+      "rarity": "MYTHIC",
+      "gen": "Gale",
+      "count": 769,
+      "players": 765
+    },
+    "1051|gold": {
+      "pet": "JELLYFISH_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Golden",
+      "count": 400,
+      "players": 399
+    },
+    "78|fossilized": {
+      "pet": "AXOLOTLBLUE",
+      "rarity": "MYTHIC",
+      "gen": "Fossilized",
+      "count": 1803,
+      "players": 1792
+    },
+    "1023|gold": {
+      "pet": "SHARK",
+      "rarity": "MYTHIC",
+      "gen": "Golden",
+      "count": 566,
+      "players": 563
+    },
+    "108|ice": {
+      "pet": "BASS",
+      "rarity": "APEX",
+      "gen": "Frost",
+      "count": 2749,
+      "players": 2697
+    },
+    "1051|clover": {
+      "pet": "JELLYFISH_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Clover",
+      "count": 210,
+      "players": 210
+    },
+    "82|gold": {
+      "pet": "AXOLOTLWHITE",
+      "rarity": "MYTHIC",
+      "gen": "Golden",
+      "count": 1034,
+      "players": 1026
+    },
+    "44|rainbow": {
+      "pet": "SMALLWHALE",
+      "rarity": "MYTHIC",
+      "gen": "Prismatic",
+      "count": 1824,
+      "players": 1798
+    },
+    "1058|ice": {
+      "pet": "OCTOPUS_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Frost",
+      "count": 316,
+      "players": 316
+    },
+    "107|frost": {
+      "pet": "GOLDFISH",
+      "rarity": "APEX",
+      "gen": "Frozen",
+      "count": 2789,
+      "players": 2752
+    },
+    "1012|frost": {
+      "pet": "MUDSKIPPER",
+      "rarity": "COMMON",
+      "gen": "Frozen",
+      "count": 2624,
+      "players": 2583
+    },
+    "1050|wind": {
+      "pet": "SQUID_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Gale",
+      "count": 320,
+      "players": 319
+    },
+    "1051|lunar": {
+      "pet": "JELLYFISH_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Eclipse",
+      "count": 201,
+      "players": 201
+    },
+    "1050|coral": {
+      "pet": "SQUID_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Magma",
+      "count": 209,
+      "players": 209
+    },
+    "1058|soaked": {
+      "pet": "OCTOPUS_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Soaked",
+      "count": 407,
+      "players": 407
+    },
+    "1059|gold": {
+      "pet": "ALIGATOR_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Golden",
+      "count": 440,
+      "players": 438
+    },
+    "101|rainbow": {
+      "pet": "PIRANHA",
+      "rarity": "APEX",
+      "gen": "Prismatic",
+      "count": 459,
+      "players": 459
+    },
+    "1002|rainbow": {
+      "pet": "SQUID",
+      "rarity": "RARE",
+      "gen": "Prismatic",
+      "count": 712,
+      "players": 710
+    },
+    "1023|ice": {
+      "pet": "SHARK",
+      "rarity": "MYTHIC",
+      "gen": "Frost",
+      "count": 398,
+      "players": 398
+    },
+    "1011|rainbow": {
+      "pet": "PENGUIN",
+      "rarity": "MYTHIC",
+      "gen": "Prismatic",
+      "count": 57,
+      "players": 57
+    },
+    "1059|lunar": {
+      "pet": "ALIGATOR_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Eclipse",
+      "count": 199,
+      "players": 199
+    },
+    "82|fossilized": {
+      "pet": "AXOLOTLWHITE",
+      "rarity": "MYTHIC",
+      "gen": "Fossilized",
+      "count": 123,
+      "players": 123
+    },
+    "1011|clover": {
+      "pet": "PENGUIN",
+      "rarity": "MYTHIC",
+      "gen": "Clover",
+      "count": 228,
+      "players": 227
+    },
+    "1059|coral": {
+      "pet": "ALIGATOR_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Magma",
+      "count": 202,
+      "players": 202
+    },
+    "1059|soaked": {
+      "pet": "ALIGATOR_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Soaked",
+      "count": 435,
+      "players": 433
+    },
+    "1023|lunar": {
+      "pet": "SHARK",
+      "rarity": "MYTHIC",
+      "gen": "Eclipse",
+      "count": 262,
+      "players": 262
+    },
+    "82|thundered": {
+      "pet": "AXOLOTLWHITE",
+      "rarity": "MYTHIC",
+      "gen": "Thundered",
+      "count": 507,
+      "players": 505
+    },
+    "1034|none": {
+      "pet": "CARP",
+      "rarity": "APEX",
+      "gen": "Không Gen",
+      "count": 979,
+      "players": 975
+    },
+    "1034|clover": {
+      "pet": "CARP",
+      "rarity": "APEX",
+      "gen": "Clover",
+      "count": 75,
+      "players": 75
+    },
+    "1023|frost": {
+      "pet": "SHARK",
+      "rarity": "MYTHIC",
+      "gen": "Frozen",
+      "count": 381,
+      "players": 381
+    },
+    "79|rainbow": {
+      "pet": "AXOLOTLPINK",
+      "rarity": "MYTHIC",
+      "gen": "Prismatic",
+      "count": 1830,
+      "players": 1811
+    },
+    "1050|frost": {
+      "pet": "SQUID_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Frozen",
+      "count": 338,
+      "players": 338
+    },
+    "107|thundered": {
+      "pet": "GOLDFISH",
+      "rarity": "APEX",
+      "gen": "Thundered",
+      "count": 1790,
+      "players": 1772
+    },
+    "82|frost": {
+      "pet": "AXOLOTLWHITE",
+      "rarity": "MYTHIC",
+      "gen": "Frozen",
+      "count": 811,
+      "players": 807
+    },
+    "1058|coral": {
+      "pet": "OCTOPUS_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Magma",
+      "count": 209,
+      "players": 209
+    },
+    "1059|ice": {
+      "pet": "ALIGATOR_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Frost",
+      "count": 325,
+      "players": 325
+    },
+    "1023|wind": {
+      "pet": "SHARK",
+      "rarity": "MYTHIC",
+      "gen": "Gale",
+      "count": 391,
+      "players": 390
+    },
+    "1050|thundered": {
+      "pet": "SQUID_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Thundered",
+      "count": 220,
+      "players": 220
+    },
+    "1012|rainbow": {
+      "pet": "MUDSKIPPER",
+      "rarity": "COMMON",
+      "gen": "Prismatic",
+      "count": 456,
+      "players": 456
+    },
+    "82|coral": {
+      "pet": "AXOLOTLWHITE",
+      "rarity": "MYTHIC",
+      "gen": "Magma",
+      "count": 520,
+      "players": 520
+    },
+    "1023|soaked": {
+      "pet": "SHARK",
+      "rarity": "MYTHIC",
+      "gen": "Soaked",
+      "count": 554,
+      "players": 552
+    },
+    "1050|rainbow": {
+      "pet": "SQUID_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Prismatic",
+      "count": 47,
+      "players": 47
+    },
+    "1023|thundered": {
+      "pet": "SHARK",
+      "rarity": "MYTHIC",
+      "gen": "Thundered",
+      "count": 272,
+      "players": 272
+    },
+    "108|rainbow": {
+      "pet": "BASS",
+      "rarity": "APEX",
+      "gen": "Prismatic",
+      "count": 514,
+      "players": 514
+    },
+    "1058|fossilized": {
+      "pet": "OCTOPUS_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Fossilized",
+      "count": 56,
+      "players": 56
+    },
+    "1011|lunar": {
+      "pet": "PENGUIN",
+      "rarity": "MYTHIC",
+      "gen": "Eclipse",
+      "count": 253,
+      "players": 253
+    },
+    "1011|coral": {
+      "pet": "PENGUIN",
+      "rarity": "MYTHIC",
+      "gen": "Magma",
+      "count": 256,
+      "players": 256
+    },
+    "1050|clover": {
+      "pet": "SQUID_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Clover",
+      "count": 197,
+      "players": 197
+    },
+    "1059|wind": {
+      "pet": "ALIGATOR_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Gale",
+      "count": 305,
+      "players": 305
+    },
+    "1011|ice": {
+      "pet": "PENGUIN",
+      "rarity": "MYTHIC",
+      "gen": "Frost",
+      "count": 358,
+      "players": 356
+    },
+    "82|rainbow": {
+      "pet": "AXOLOTLWHITE",
+      "rarity": "MYTHIC",
+      "gen": "Prismatic",
+      "count": 133,
+      "players": 133
+    },
+    "1012|fossilized": {
+      "pet": "MUDSKIPPER",
+      "rarity": "COMMON",
+      "gen": "Fossilized",
+      "count": 477,
+      "players": 474
+    },
+    "1059|thundered": {
+      "pet": "ALIGATOR_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Thundered",
+      "count": 187,
+      "players": 187
+    },
+    "1011|gold": {
+      "pet": "PENGUIN",
+      "rarity": "MYTHIC",
+      "gen": "Golden",
+      "count": 531,
+      "players": 530
+    },
+    "1058|lunar": {
+      "pet": "OCTOPUS_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Eclipse",
+      "count": 178,
+      "players": 178
+    },
+    "1051|thundered": {
+      "pet": "JELLYFISH_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Thundered",
+      "count": 170,
+      "players": 170
+    },
+    "1058|gold": {
+      "pet": "OCTOPUS_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Golden",
+      "count": 427,
+      "players": 426
+    },
+    "1058|clover": {
+      "pet": "OCTOPUS_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Clover",
+      "count": 181,
+      "players": 180
+    },
+    "1034|ice": {
+      "pet": "CARP",
+      "rarity": "APEX",
+      "gen": "Frost",
+      "count": 103,
+      "players": 103
+    },
+    "1051|frost": {
+      "pet": "JELLYFISH_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Frozen",
+      "count": 295,
+      "players": 294
+    },
+    "1050|lunar": {
+      "pet": "SQUID_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Eclipse",
+      "count": 214,
+      "players": 214
+    },
+    "1023|coral": {
+      "pet": "SHARK",
+      "rarity": "MYTHIC",
+      "gen": "Magma",
+      "count": 266,
+      "players": 266
+    },
+    "1051|wind": {
+      "pet": "JELLYFISH_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Gale",
+      "count": 284,
+      "players": 284
+    },
+    "1034|frost": {
+      "pet": "CARP",
+      "rarity": "APEX",
+      "gen": "Frozen",
+      "count": 102,
+      "players": 102
+    },
+    "1050|fossilized": {
+      "pet": "SQUID_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Fossilized",
+      "count": 53,
+      "players": 53
+    },
+    "1034|coral": {
+      "pet": "CARP",
+      "rarity": "APEX",
+      "gen": "Magma",
+      "count": 64,
+      "players": 64
+    },
+    "1011|fossilized": {
+      "pet": "PENGUIN",
+      "rarity": "MYTHIC",
+      "gen": "Fossilized",
+      "count": 77,
+      "players": 77
+    },
+    "1034|wind": {
+      "pet": "CARP",
+      "rarity": "APEX",
+      "gen": "Gale",
+      "count": 99,
+      "players": 99
+    },
+    "1034|lunar": {
+      "pet": "CARP",
+      "rarity": "APEX",
+      "gen": "Eclipse",
+      "count": 73,
+      "players": 73
+    },
+    "108|fossilized": {
+      "pet": "BASS",
+      "rarity": "APEX",
+      "gen": "Fossilized",
+      "count": 500,
+      "players": 498
+    },
+    "1023|rainbow": {
+      "pet": "SHARK",
+      "rarity": "MYTHIC",
+      "gen": "Prismatic",
+      "count": 57,
+      "players": 57
+    },
+    "1059|clover": {
+      "pet": "ALIGATOR_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Clover",
+      "count": 214,
+      "players": 214
+    },
+    "1034|fossilized": {
+      "pet": "CARP",
+      "rarity": "APEX",
+      "gen": "Fossilized",
+      "count": 14,
+      "players": 14
+    },
+    "1051|coral": {
+      "pet": "JELLYFISH_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Magma",
+      "count": 194,
+      "players": 194
+    },
+    "1059|fossilized": {
+      "pet": "ALIGATOR_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Fossilized",
+      "count": 40,
+      "players": 40
+    },
+    "1051|fossilized": {
+      "pet": "JELLYFISH_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Fossilized",
+      "count": 55,
+      "players": 55
+    },
+    "1023|fossilized": {
+      "pet": "SHARK",
+      "rarity": "MYTHIC",
+      "gen": "Fossilized",
+      "count": 77,
+      "players": 77
+    },
+    "1034|gold": {
+      "pet": "CARP",
+      "rarity": "APEX",
+      "gen": "Golden",
+      "count": 130,
+      "players": 130
+    },
+    "1058|rainbow": {
+      "pet": "OCTOPUS_SPIDERLEGS",
+      "rarity": "APEX",
+      "gen": "Prismatic",
+      "count": 50,
+      "players": 50
+    },
+    "1051|rainbow": {
+      "pet": "JELLYFISH_PUMPKIN",
+      "rarity": "APEX",
+      "gen": "Prismatic",
+      "count": 56,
+      "players": 56
+    },
+    "1034|thundered": {
+      "pet": "CARP",
+      "rarity": "APEX",
+      "gen": "Thundered",
+      "count": 67,
+      "players": 67
+    },
+    "1034|rainbow": {
+      "pet": "CARP",
+      "rarity": "APEX",
+      "gen": "Prismatic",
+      "count": 20,
+      "players": 20
+    }
+  },
+  "expected": {
+    "casts": 21767220,
+    "gen": 10824534.846315097,
+    "apex": 169487.65914755486,
+    "apexGen": 84283.84848699444,
+    "playersApex": 78740.48700550753,
+    "playersApexGen": 55348.76822793402,
+    "variancePlayersApexGen": 23170.711970786284,
+    "genTypes": {
+      "gold": 1712259.2983304653,
+      "soaked": 1712259.2983304653,
+      "frost": 1245264.7943270314,
+      "ice": 1245264.7943270314,
+      "wind": 1245264.7943270314,
+      "coral": 807810.1182051756,
+      "thundered": 807810.1182051756,
+      "clover": 807810.1182051756,
+      "lunar": 807810.1182051756,
+      "fossilized": 216490.69692630722,
+      "rainbow": 216490.69692630722
+    },
+    "zScorePlayersApexGen": -1.1809819176649499
+  }
+}

@@ -41,7 +41,7 @@
       mutations.replaceChildren();
       for(const reward of pending.mutationRewards){
         const badge=document.createElement('span');badge.className='offerMutation';
-        const gen=window.GenConfig.catalog.find(gen=>gen.id===reward.id);
+        const gen=window.GenConfig.catalog.find(gen=>gen.id===reward.id)||window.GenConfig.retiredCatalog?.find(gen=>gen.id===reward.id);
         badge.dataset.tier=gen?.tier||'basic';badge.dataset.gen=reward.id;
         const icon=gen?window.GenCore.icon(gen):document.createElement('img');
         if(!gen){icon.src='assets/mutations/'+reward.id+'.png';icon.alt='';}

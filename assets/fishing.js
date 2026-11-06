@@ -181,7 +181,7 @@
   function chooseMutations(count){return window.GenCore.choose(count,Math.random,rewards.castRebirth).map(({id,name})=>({id,name}));}
   root.addEventListener('fishingbalancechange',()=>{if(!rewards.isCasting&&!rewards.pending)renderMutation();});
   function renderMutation(result=false){
-    const points=game?.mutationPoints||0;
+    const points=Math.min(100,game?.mutationPoints||0);
     qteLuckChip.hidden=false;
     qteLuckChip.querySelector('.mutationPercent').textContent=points.toLocaleString('vi-VN',{maximumFractionDigits:2})+'%';
     qteLuckChip.dataset.result=result?'true':'false';

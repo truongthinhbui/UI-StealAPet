@@ -1,0 +1,28 @@
+#debug-page-population .debugFieldGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+#debug-page-population label{display:flex;flex-direction:column;gap:5px}
+#debug-page-population input,#debug-page-population select{box-sizing:border-box;width:100%;min-width:0;padding:9px;border:1px solid #50738c;border-radius:7px;background:#19394e;color:#edf7ff;font:inherit}
+#debug-page-population .cohortGroups input{min-width:75px}
+#debug-page-population .debugRunBar{flex-wrap:wrap;margin:18px 0}
+#debug-page-population output{display:block;margin:12px 0}
+#debug-page-population .cohortResults details{margin:16px 0}
+#debug-page-population .cohortBars{display:grid;gap:8px;margin:20px 0}
+#debug-page-population .cohortBars>div{position:relative;min-height:32px;background:#173448;border-radius:5px;overflow:hidden}
+#debug-page-population .cohortBars span{position:relative;z-index:1;padding:7px 10px;display:block;color:#fff}
+#debug-page-population .cohortBars i{position:absolute;left:0;top:0;bottom:0;background:#287c63}
+#debug-page-population{padding:18px;background:#142a3a;border:1px solid #3d627b;border-radius:12px;color:#e6f2fc}
+#debug-page-population .cohortTarget{padding:15px;background:#4d3c1e;border:1px solid #d7ac52;border-radius:8px;font-size:17px}
+#debug-page-population .cohortTarget[data-met="true"]{background:#164936;border-color:#4ac798}
+#debug-page-population .cohortChartGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:20px 0}
+#debug-page-population .cohortChartCard{min-width:0;background:#102330;border:1px solid #31526a;border-radius:10px;padding:14px}
+#debug-page-population .cohortChartCard h4{margin:0 0 16px}
+#debug-page-population svg{width:100%;height:auto}
+#debug-page-population .cohortLegend{display:flex;gap:15px;flex-wrap:wrap;font-size:12px}
+#debug-page-population .cohortDistribution{display:grid;grid-template-columns:minmax(90px,1fr) 1fr 60px;gap:8px;align-items:center;font-size:12px;margin:10px 0}
+#debug-page-population .cohortDistribution>div{height:12px;background:#203e50;border-radius:4px;overflow:hidden}
+#debug-page-population .cohortDistribution i{display:block;height:100%}
+#debug-page-population .cohortDistribution strong{text-align:right}
+@media(max-width:700px){#debug-page-population{padding:12px}#debug-page-population .cohortChartGrid{grid-template-columns:1fr}}
+.fishingSubtabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px;padding:10px;background:#152c40;border-radius:10px}
+.fishingSubtabs button{background:#19364c;color:#bcd5e9;border-color:#3d627c}
+.fishingSubtabs button[aria-selected="true"]{background:#2a648c;color:white;border-color:#83ccf0}
+#fishing-play-view[hidden],#tab-fishing-lab[hidden]{display:none!important}

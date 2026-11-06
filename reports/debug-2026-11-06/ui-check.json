@@ -1,0 +1,22 @@
+{
+  "casts": 600000,
+  "results": [
+    {
+      "preset": "online",
+      "status": "Hoàn tất · 300.000 lượt · Seed 20261105 · Gen ngoài pool: 0",
+      "summary": "Kịch bản\tRebirth\tLượt\tCó Gen thực tế\tCó Gen lý thuyết\nFull đỏ · online\tR9–R12\t10.000\t0,00%\t0,00%\nFull xanh · online\tR9–R12\t10.000\t24,86%\t24,8643%\n2 xanh + 1 vàng · online\tR9–R12\t10.000\t32,46%\t33,1524%\n1 xanh + 2 vàng · online\tR9–R12\t10.000\t41,02%\t41,4405%\nFull vàng · online\tR9–R12\t10.000\t49,54%\t49,7286%\nNgẫu nhiên theo tỉ lệ tap · online\tR9–R12\t10.000\t21,38%\t22,3779%\nFull đỏ · online\tR13–R16\t10.000\t0,00%\t0,00%\nFull xanh · online\tR13–R16\t10.000\t24,86%\t24,8643%\n2 xanh + 1 vàng · online\tR13–R16\t10.000\t32,46%\t33,1524%\n1 xanh + 2 vàng · online\tR13–R16\t10.000\t41,02%\t41,4405%\nFull vàng · online\tR13–R16\t10.000\t49,54%\t49,7286%\nNgẫu nhiên theo tỉ lệ tap · online\tR13–R16\t10.000\t21,38%\t22,3779%\nFull đỏ · online\tR17–R20\t10.000\t0,00%\t0,00%\nFull xanh · online\tR17–R20\t10.000\t24,86%\t24,8643%\n2 xanh + 1 vàng · online\tR17–R20\t10.000\t32,46%\t33,1524%\n1 xanh + 2 vàng · online\tR17–R20\t10.000\t41,02%\t41,4405%\nFull vàng · online\tR17–R20\t10.000\t49,54%\t49,7286%\nNgẫu nhiên theo tỉ lệ tap · online\tR17–R20\t10.000\t21,38%\t22,3779%\nFull đỏ · online\tR21–R24\t10.000\t0,00%\t0,00%\nFull xanh · online\tR21–R24\t10.000\t24,86%\t24,8643%\n2 xanh + 1 vàng · online\tR21–R24\t10.000\t32,46%\t33,1524%\n1 xanh + 2 vàng · online\tR21–R24\t10.000\t41,02%\t41,4405%\nFull vàng · online\tR21–R24\t10.000\t49,54%\t49,7286%\nNgẫu nhiên theo tỉ lệ tap · online\tR21–R24\t10.000\t21,38%\t22,3779%\nFull đỏ · online\tR25+\t10.000\t0,00%\t0,00%\nFull xanh · online\tR25+\t10.000\t24,86%\t24,8643%\n2 xanh + 1 vàng · online\tR25+\t10.000\t32,46%\t33,1524%\n1 xanh + 2 vàng · online\tR25+\t10.000\t41,02%\t41,4405%\nFull vàng · online\tR25+\t10.000\t49,54%\t49,7286%\nNgẫu nhiên theo tỉ lệ tap · online\tR25+\t10.000\t21,38%\t22,3779%"
+    },
+    {
+      "preset": "active",
+      "status": "Hoàn tất · 300.000 lượt · Seed 20261105 · Gen ngoài pool: 0",
+      "summary": "Kịch bản\tRebirth\tLượt\tCó Gen thực tế\tCó Gen lý thuyết\nFull đỏ · active\tR9–R12\t10.000\t0,00%\t0,00%\nFull xanh · active\tR9–R12\t10.000\t3,86%\t3,9639%\n2 xanh + 1 vàng · active\tR9–R12\t10.000\t5,25%\t5,2852%\n1 xanh + 2 vàng · active\tR9–R12\t10.000\t6,62%\t6,6065%\nFull vàng · active\tR9–R12\t10.000\t8,12%\t7,9277%\nNgẫu nhiên theo tỉ lệ tap · active\tR9–R12\t10.000\t3,62%\t3,5675%\nFull đỏ · active\tR13–R16\t10.000\t0,00%\t0,00%\nFull xanh · active\tR13–R16\t10.000\t3,86%\t3,9639%\n2 xanh + 1 vàng · active\tR13–R16\t10.000\t5,25%\t5,2852%\n1 xanh + 2 vàng · active\tR13–R16\t10.000\t6,62%\t6,6065%\nFull vàng · active\tR13–R16\t10.000\t8,12%\t7,9277%\nNgẫu nhiên theo tỉ lệ tap · active\tR13–R16\t10.000\t3,62%\t3,5675%\nFull đỏ · active\tR17–R20\t10.000\t0,00%\t0,00%\nFull xanh · active\tR17–R20\t10.000\t3,86%\t3,9639%\n2 xanh + 1 vàng · active\tR17–R20\t10.000\t5,25%\t5,2852%\n1 xanh + 2 vàng · active\tR17–R20\t10.000\t6,62%\t6,6065%\nFull vàng · active\tR17–R20\t10.000\t8,12%\t7,9277%\nNgẫu nhiên theo tỉ lệ tap · active\tR17–R20\t10.000\t3,62%\t3,5675%\nFull đỏ · active\tR21–R24\t10.000\t0,00%\t0,00%\nFull xanh · active\tR21–R24\t10.000\t3,86%\t3,9639%\n2 xanh + 1 vàng · active\tR21–R24\t10.000\t5,25%\t5,2852%\n1 xanh + 2 vàng · active\tR21–R24\t10.000\t6,62%\t6,6065%\nFull vàng · active\tR21–R24\t10.000\t8,12%\t7,9277%\nNgẫu nhiên theo tỉ lệ tap · active\tR21–R24\t10.000\t3,62%\t3,5675%\nFull đỏ · active\tR25+\t10.000\t0,00%\t0,00%\nFull xanh · active\tR25+\t10.000\t3,86%\t3,9639%\n2 xanh + 1 vàng · active\tR25+\t10.000\t5,25%\t5,2852%\n1 xanh + 2 vàng · active\tR25+\t10.000\t6,62%\t6,6065%\nFull vàng · active\tR25+\t10.000\t8,12%\t7,9277%\nNgẫu nhiên theo tỉ lệ tap · active\tR25+\t10.000\t3,62%\t3,5675%"
+    }
+  ],
+  "pageErrors": [],
+  "mobile": true,
+  "charts": [
+    "pet",
+    "gen",
+    "combo"
+  ]
+}
