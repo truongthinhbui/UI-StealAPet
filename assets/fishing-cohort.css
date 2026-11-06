@@ -26,3 +26,53 @@
 .fishingSubtabs button{background:#19364c;color:#bcd5e9;border-color:#3d627c}
 .fishingSubtabs button[aria-selected="true"]{background:#2a648c;color:white;border-color:#83ccf0}
 #fishing-play-view[hidden],#tab-fishing-lab[hidden]{display:none!important}
+#debug-page-population .cohortDashboard{margin-top:24px;font-family:system-ui,sans-serif}
+#debug-page-population .cohortDashboardHeading>span{font-size:11px;letter-spacing:2px;color:#7edec4;font-weight:750}
+#debug-page-population .cohortDashboardHeading h3{font-size:27px;line-height:1.25;margin:8px 0}
+#debug-page-population .cohortDashboardHeading p{font-size:13px;color:#a8c1d3;margin:0 0 20px}
+#debug-page-population .cohortKpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+#debug-page-population .cohortKpi{--accent:#56e1b4;padding:20px 18px;border:1px solid #345365;border-top:3px solid var(--accent);border-radius:12px;background:linear-gradient(145deg,#193b47,#102331);display:flex;flex-direction:column;gap:10px}
+#debug-page-population .cohortKpi[data-color=blue]{--accent:#69baff}
+#debug-page-population .cohortKpi[data-color=amber]{--accent:#ffd46c}
+#debug-page-population .cohortKpi[data-color=purple]{--accent:#c69aff}
+#debug-page-population .cohortKpi>span{color:#c6d9e6;font-size:11px;letter-spacing:.7px;font-weight:650}
+#debug-page-population .cohortKpi strong{font-size:clamp(24px,3vw,36px);color:var(--accent);font-variant-numeric:tabular-nums;line-height:1.1}
+#debug-page-population .cohortKpi small{font-size:12px;color:#aec5d7;line-height:1.5}
+#debug-page-population .cohortGoalStrip{display:flex;align-items:center;gap:12px 24px;flex-wrap:wrap;margin:16px 0;padding:16px 20px;border:1px solid #806d3e;border-radius:10px;background:#302f25}
+#debug-page-population .cohortGoalStrip>span{font-size:11px;letter-spacing:1px;color:#ffdb7d}
+#debug-page-population .cohortGoalStrip strong{font-size:15px;color:#fff0cb}
+#debug-page-population .cohortGoalStrip small{color:#d0c5a7;font-size:12px}
+#debug-page-population .cohortChartGrid{gap:18px;align-items:start}
+#debug-page-population .cohortChartCard{padding:24px;background:linear-gradient(140deg,#152f40,#102230);border-color:#345469;border-radius:15px;box-shadow:0 8px 28px #06121c22}
+#debug-page-population .cohortChartWide{grid-column:1/-1}
+#debug-page-population .cohortChartHeader{display:flex;justify-content:space-between;align-items:start;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+#debug-page-population .cohortChartHeader h4{font-size:18px;line-height:1.4;margin:0 0 6px;color:#f1f7ff}
+#debug-page-population .cohortChartHeader p{font-size:12px;line-height:1.6;color:#a8c0d3;margin:0;max-width:470px}
+#debug-page-population .cohortChartControls{display:flex;gap:10px;flex-wrap:wrap}
+#debug-page-population .cohortChartSelect{font-size:11px!important;color:#aac5d9;min-width:120px}
+#debug-page-population .cohortChartSelect select{font-size:12px;padding:9px 10px;max-width:245px;border-color:#3b5e78;background:#102334;border-radius:8px}
+#debug-page-population .cohortLegend{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+#debug-page-population .cohortLegendButton{padding:8px 12px;border:1px solid #406078;background:#193247;border-radius:8px;color:var(--series-color);font:600 12px system-ui;min-height:36px}
+#debug-page-population .cohortLegendButton:before{content:'';display:inline-block;width:8px;height:8px;background:var(--series-color);border-radius:50%;margin-right:8px}
+#debug-page-population .cohortLegendButton[aria-pressed=false]{opacity:.45;background:transparent}
+#debug-page-population .cohortPlot{overflow-x:auto;scrollbar-width:thin}
+#debug-page-population .cohortPlot svg{display:block;min-width:580px}
+#debug-page-population .cohortPlot circle:focus,#debug-page-population .cohortPlot rect:focus{outline:2px solid #fff;stroke:white;stroke-width:3px}
+#debug-page-population .cohortChartReadout{display:flex;gap:10px 20px;flex-wrap:wrap;background:#0c202d;border:1px solid #29475c;border-radius:10px;padding:14px 16px;font-size:12px;line-height:1.6;margin-top:14px}
+#debug-page-population .cohortChartReadout strong{color:white}
+#debug-page-population .cohortRankRow{margin:0 0 18px;break-inside:avoid}
+#debug-page-population .cohortRankHead{display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:13px;line-height:1.5;margin-bottom:7px}
+#debug-page-population .cohortRankHead>span{color:#e1edf6;overflow-wrap:anywhere}
+#debug-page-population .cohortRankHead strong{font-size:16px;color:#f5faff;font-variant-numeric:tabular-nums;white-space:nowrap}
+#debug-page-population .cohortRankTrack{height:10px;background:#233f52;border-radius:6px;overflow:hidden}
+#debug-page-population .cohortRankTrack i{height:100%;display:block;border-radius:6px;min-width:0}
+#debug-page-population .cohortRankRow small{font-size:11px;color:#a9c1d2;display:block;margin-top:5px}
+#debug-page-population .cohortComboGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 36px}
+#debug-page-population .cohortEmpty{color:#b5cbda;font-size:14px;padding:20px 0}
+#debug-page-population .cohortResults>.cohortTarget,#debug-page-population .cohortResults>.cohortBars{display:none}
+#debug-page-population .cohortSettings{margin:20px 0;padding:16px;border:1px solid #3c5d72;border-radius:10px;background:#102a3b}
+#debug-page-population .cohortSettings>summary{cursor:pointer;font-weight:650;color:#cce6fa;font-size:14px}
+#debug-page-population .cohortSettings[open]>summary{margin-bottom:20px}
+@media(max-width:850px){#debug-page-population .cohortKpis{grid-template-columns:repeat(2,minmax(0,1fr))}#debug-page-population .cohortChartGrid{grid-template-columns:1fr}}
+@media(max-width:500px){#debug-page-population .cohortChartCard{padding:16px}#debug-page-population .cohortKpi{padding:15px 12px}#debug-page-population .cohortKpi>span{font-size:10px}#debug-page-population .cohortComboGrid{grid-template-columns:1fr}#debug-page-population .cohortChartControls{width:100%}#debug-page-population .cohortChartSelect{flex:1;min-width:110px}#debug-page-population .cohortChartSelect select{max-width:100%}#debug-page-population .cohortGoalStrip{padding:14px}#debug-page-population .cohortDashboardHeading h3{font-size:23px}}
+@media(max-width:650px){#debug-page-population .cohortPlot svg{min-width:0}}

@@ -1,0 +1,77 @@
+/* Shared presentation for controls and analysis; game artwork keeps its own palette. */
+:root{--ui-bg:#0d1b29;--ui-panel:#142d3f;--ui-panel-deep:#102333;--ui-edge:#35556d;--ui-ink:#eaf4fe;--ui-muted:#a7c1d5;--ui-mint:#55e3b4;--ui-blue:#70bbff;--ui-gold:#ffd46c;--ui-radius:14px}
+body{background:radial-gradient(ellipse at 15% 0%,#1b3548 0,transparent 55%),var(--ui-bg);color:var(--ui-ink);font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+main{max-width:1844px;padding:clamp(12px,2vw,28px);margin:auto}
+main>h1{font:700 clamp(19px,2.5vw,28px)/1.3 system-ui;letter-spacing:-.6px;margin:5px 0 20px;color:#f0f7ff}
+main button,main select,main input{font-variant-numeric:tabular-nums}
+main>.prototypeTabs{border:0;background:#102636;border:1px solid #2f4d65;padding:6px;border-radius:12px;gap:6px;margin:0 0 16px}
+.prototypeTabs li{min-width:0}.prototypeTabs button{border:1px solid transparent;border-radius:8px;padding:11px 16px;min-height:44px;background:transparent;color:#a9c5d9;font:600 13px system-ui;transition:background .15s,color .15s}
+.prototypeTabs button.active{background:#254c65;border-color:#5387a7;color:#effaff;box-shadow:0 2px 9px #04131e44}
+.prototypeTabs button:not(:disabled):not(.active):hover{background:#1b3b50;color:#fff}
+.prototypeTabs button:not(.active){background:transparent;border-color:transparent;color:#a9c5d9}
+.prototypeTabs button:disabled{opacity:.38}
+.previewControls{padding:10px 0;gap:8px}.previewControls button{background:#163348;border-color:#3c617b;color:#d9eafa;border-radius:9px;font-size:12px}
+.previewNotice{color:var(--ui-muted);font:12px/1.6 system-ui}
+.fishingSubtabs{background:transparent;padding:0;margin-bottom:16px;border-radius:0;gap:8px}
+.fishingSubtabs button{font:600 13px system-ui;border-radius:9px;min-height:44px;padding:10px 20px;background:#132d40;border:1px solid #36556d}
+.fishingSubtabs button[aria-selected=true]{background:#1d4a48;border-color:#4b9b87;color:#a5f6db}
+.fishingViewport{border:1px solid #3e5d73;border-radius:16px;overflow:hidden;box-shadow:0 14px 40px #03101e55}
+.fishingViewControls{gap:8px;padding:10px 12px;background:#112b3c}
+.fishingViewControls button{border:1px solid #48718d;border-radius:8px;background:#1b3d54;color:#e3f1fd;min-height:38px;font:600 12px system-ui;padding:8px 14px}
+.fishingViewControls button[aria-pressed=true]{background:#286654;border-color:#71c3a5;color:#dcfff1}
+.fishingDebugPanel{border:1px solid var(--ui-edge);border-radius:var(--ui-radius);background:var(--ui-panel-deep);color:var(--ui-ink);box-shadow:0 8px 26px #06152022;overflow:hidden;font-family:system-ui,sans-serif;margin-top:20px}
+.fishingDebugPanel>summary{padding:17px 20px;background:linear-gradient(110deg,#1d3e52,#152d3f);color:#e4f3ff;font:700 15px system-ui;cursor:pointer}
+.fishingDebugPanel .debugMainNav,.fishingDebugPanel .debugResultNav{background:#112a3b;padding:10px 14px;border-color:#31516a;gap:7px}
+.fishingDebugPanel .debugMainNav button,.fishingDebugPanel .debugResultNav button{border:1px solid #2e5068;border-radius:8px;background:#142f42;color:#b8d1e3;font:600 12px system-ui;min-height:40px;padding:9px 15px}
+.fishingDebugPanel .debugMainNav button[aria-selected=true],.fishingDebugPanel .debugResultNav button[aria-selected=true]{background:#244e68;border-color:#5e98bd;color:#fff;box-shadow:none}
+.fishingDebugPanel .debugPage{padding:22px}
+.fishingDebugPanel :is(h3,.debugSectionTitle){color:#f0f7ff;font-family:system-ui;font-size:18px;letter-spacing:-.25px}
+.fishingDebugPanel p{color:#abc4d7;font:12px/1.75 system-ui}
+.fishingDebugPanel :is(.debugSimSetup,.debugAdvanced,.fishingRewardDebug,.fishingDebugTools){background:#142f42;border:1px solid #36566e;border-radius:12px;padding:16px;gap:12px}
+.fishingDebugPanel :is(label,small){font-family:system-ui}
+.fishingDebugPanel label{font-size:12px;color:#b7cede;line-height:1.6}
+.fishingDebugPanel :is(input:not([type=checkbox]):not([type=range]),select){min-height:42px;padding:9px 11px;background:#102638;border:1px solid #436680;border-radius:8px;color:#edf7ff;font:13px system-ui;box-sizing:border-box;max-width:100%}
+.fishingDebugPanel input[type=checkbox]{accent-color:#68daba;width:16px;height:16px;vertical-align:middle}
+.fishingDebugPanel :is(button,.poolTabs button){border-radius:8px;min-height:38px;padding:8px 13px;font:600 12px system-ui;background:#20445e;border:1px solid #4c799a;color:#e9f6ff;box-shadow:none}
+.fishingDebugPanel button:hover:not(:disabled){background:#2b5875;border-color:#7cafcc}
+.fishingDebugPanel button:disabled{opacity:.42}
+.fishingDebugPanel .genSimRun,#debug-page-population .cohortRun{background:#246a55;border-color:#62be9c;color:#edfff8}
+.fishingDebugPanel .debugRunBar{gap:10px;padding:10px 0;align-items:center}
+.fishingDebugPanel .debugRunEstimate{color:#a8c6d9;font:12px system-ui}
+.fishingDebugPanel :is(.genSimStatus,.rewardDebugStatus,.fishingDebugReadout){display:block;padding:13px 15px;background:#0f2637;border:1px solid #345269;border-radius:9px;color:#c7dfed;font:12px/1.65 system-ui;margin:12px 0}
+.fishingDebugPanel .debugMetric{padding:18px;background:linear-gradient(130deg,#193a49,#102737);border:1px solid #3c6072;border-top:3px solid #55d5ac;border-radius:11px;gap:9px}
+.fishingDebugPanel .debugMetric:nth-child(2){border-top-color:#70baff}.fishingDebugPanel .debugMetric:nth-child(3){border-top-color:#c197ff}.fishingDebugPanel .debugMetric:nth-child(4){border-top-color:#ffce6a}
+.fishingDebugPanel .debugMetric strong{font:700 clamp(22px,3vw,32px)/1.15 system-ui;color:#e3f7ff;letter-spacing:-.5px}
+.fishingDebugPanel .debugMetric span{font:12px system-ui;color:#afc9da}
+.fishingDebugPanel :is(.genTableScroll,.poolScrollTrack),#debug-page-population .genTableScroll{border-radius:10px;border:1px solid #35576f;scrollbar-width:thin;scrollbar-color:#5b819d #122a3c}
+.fishingDebugPanel table,#debug-page-population table{font-family:system-ui;font-size:12px;border-collapse:separate;border-spacing:0;width:100%;font-variant-numeric:tabular-nums}
+.fishingDebugPanel table th,#debug-page-population table th{padding:13px 12px;background:#21465f;color:#e3f2ff;border-bottom:1px solid #53768e;font-size:11px;font-weight:650;line-height:1.5}
+.fishingDebugPanel table td,#debug-page-population table td{padding:12px;background:#132b3d;color:#d4e5f2;border-bottom:1px solid #2a465b;font-size:12px;line-height:1.5}
+.fishingDebugPanel table tbody tr:nth-child(even)>td,#debug-page-population table tbody tr:nth-child(even)>td{background:#183347}
+.fishingDebugPanel table tbody tr:hover>td,#debug-page-population table tbody tr:hover>td{background:#24475d}
+.fishingDebugPanel table tbody tr.is-selected>td{background:#204a57}
+.fishingDebugPanel .debugSelectRun{background:transparent;border-color:transparent;color:#91ddf6;text-align:left;padding:4px 0;min-height:28px}
+.fishingDebugPanel .poolFilters{padding:18px;background:#142e40;border:1px solid #35566c;border-radius:12px;gap:14px}
+.fishingDebugPanel .poolToolbar{gap:10px;padding:10px 0}
+.fishingDebugPanel .poolTabs button[aria-selected=true]{background:#245947;border-color:#64ad92;color:#caffec}
+.fishingDebugPanel .poolTabs small{padding:2px 7px;border-radius:5px;background:#ffffff15;margin-left:7px;color:inherit}
+.fishingDebugPanel .poolStats{display:block;background:#142f41;color:#a8e7cc;padding:12px 15px;border-radius:9px;border:1px solid #35596c;font:12px/1.7 system-ui;margin:12px 0}
+.fishingDebugPanel :is(.poolNote,.poolVersion,.poolHorizontalControls){color:#a8c4d8;font:11px/1.7 system-ui}
+.fishingDebugPanel .fishingChart{padding:22px;border:1px solid #3b5e75;border-radius:14px;background:linear-gradient(130deg,#183547,#112634);font-family:system-ui}
+.fishingDebugPanel .chartHeading{gap:14px;margin-bottom:12px}.fishingDebugPanel .chartHeading h3{font-size:19px;margin:0}
+.fishingDebugPanel .chartHeading label{display:flex;flex-direction:column;align-items:stretch;gap:5px}
+.fishingDebugPanel .chartStatGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:18px 0}
+.fishingDebugPanel .chartStat{padding:15px;background:#0f2636;border:1px solid #34566c;border-radius:10px;display:flex;flex-direction:column;gap:9px}
+.fishingDebugPanel .chartStat span{font:11px system-ui;color:#aec8db}.fishingDebugPanel .chartStat strong{font:700 21px system-ui;color:#72e7c1}
+.fishingDebugPanel .chartPlotFrame{overflow-x:auto;scrollbar-width:thin}.fishingDebugPanel .chartPlotFrame svg{min-width:570px}
+.fishingDebugPanel .chartLegend{padding:10px 0;color:#a9c5da;font:11px/1.7 system-ui}
+.uiRarity{font-weight:700!important;color:var(--rarity-color)!important;letter-spacing:.4px}
+.fishingOffer{border-radius:16px!important;box-shadow:0 16px 45px #06192f44,0 0 0 1px #ffffff55;overflow:hidden}
+.fishingOffer .offerHeading{letter-spacing:1px;font-weight:700}.fishingOffer .offerName{letter-spacing:.5px}
+.fishingOffer .offerActions{gap:10px}.fishingOffer .offerActions button{border-radius:9px;min-height:40px;font-weight:700;box-shadow:inset 0 1px #ffffff88}
+.fishingOffer .offerMutation{border-radius:8px;padding:4px 7px;gap:5px}
+#scene .taskpanel,#scene .activitymodal,#scene .rewardbox{box-shadow:0 12px 32px #17335b28}
+#scene .taskpanel,#scene .loginpanel,#scene .rewardbox{border-radius:12px}
+#scene button:focus-visible{outline:3px solid #ffc644;outline-offset:3px}
+@media(max-width:700px){main{padding:10px}main>h1{margin-bottom:14px}.prototypeTabs{gap:4px}.prototypeTabs button{font-size:11px;padding:10px}.fishingDebugPanel .debugPage{padding:14px}.fishingDebugPanel .debugMainNav button{padding:8px 10px;font-size:11px;min-width:0}.fishingDebugPanel .debugSimSetup{grid-template-columns:1fr 1fr;padding:13px}.fishingDebugPanel .debugFieldGrid{grid-template-columns:1fr}.fishingDebugPanel .fishingChart{padding:14px}.fishingDebugPanel .chartStatGrid{grid-template-columns:1fr}.fishingDebugPanel .chartStat{flex-direction:row;align-items:center;justify-content:space-between;padding:12px}.fishingDebugPanel .chartStat strong{font-size:18px}.fishingDebugPanel .chartHeading label{flex:1;min-width:110px}.fishingDebugPanel .chartHeading h3{width:100%}.fishingDebugPanel .debugResultNav{overflow-x:auto;flex-wrap:nowrap}.fishingDebugPanel .debugResultNav button{flex:0 0 auto}.fishingDebugPanel table td,.fishingDebugPanel table th{padding:10px;font-size:11px}.fishingDebugPanel .debugResultHeader{gap:10px}}
+@media(prefers-reduced-motion:reduce){.prototypeTabs button{transition:none}}

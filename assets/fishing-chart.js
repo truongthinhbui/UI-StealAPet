@@ -9,6 +9,8 @@ window.FishingChart=function(host){
  option(pet,'all','Tất cả pet');for(const k of rarities.slice(1))option(pet,'rarity:'+k,k+' trở lên');for(const p of FishingConfig.pets)option(pet,String(p.id),p.name);pet.value='rarity:LEGENDARY';
  function genOptions(){const prev=gen.value;gen.replaceChildren();option(gen,'all','Bất kỳ Gen');if(mode.value==='combo')option(gen,'none','Không Gen');for(const g of GenConfig.catalog)option(gen,g.id,g.name);gen.value=[...gen.options].some(o=>o.value===prev)?prev:'all';}
  genOptions();
+ const plot=document.createElement('div');plot.className='chartPlotFrame';const svgNode=$('svg');svgNode.before(plot);plot.append(svgNode);
+ const styleLabel=document.createElement('label');styleLabel.textContent='Kiểu xem';const styleSelect=document.createElement('select');styleSelect.className='chartStyle';option(styleSelect,'area','Vùng');option(styleSelect,'line','Đường');styleLabel.append(styleSelect);$('.chartHeading').append(styleLabel);
  function render(r){
   if(!r?.iterations)return;report=r;host.hidden=false;
   $('.chartPetLabel').hidden=mode.value==='gen';$('.chartGenLabel').hidden=mode.value==='pet';
@@ -22,14 +24,16 @@ window.FishingChart=function(host){
   const endpoint={cast:r.iterations,pets:Object.fromEntries(Object.entries(r.petCounts).map(([k,v])=>[k,v.count])),gens:r.counts,combos:Object.fromEntries(Object.entries(r.combinations).map(([k,v])=>[k,v.count]))},count=sum(endpoint);
   const firsts=mode.value==='pet'?pets.map(p=>r.petCounts[p.id]?.firstCast):mode.value==='gen'?(gen.value==='all'?Object.values(r.genFirst):[r.genFirst[gen.value]]):combos.map(([,c])=>c.firstCast),first=Math.min(...firsts.filter(Boolean));
   $('.chartRun').textContent=r.name+' · '+r.band+' · '+fmt(r.iterations)+' lượt';
-  $('.chartMetrics').textContent='Đã gặp: '+fmt(count)+' · Lần đầu: '+(Number.isFinite(first)?'lượt '+fmt(first):'chưa xuất hiện')+' · Lý thuyết / lượt: '+(chance*100).toLocaleString('vi-VN',{maximumFractionDigits:6})+'%';
+  $('.chartMetrics').replaceChildren();$('.chartMetrics').classList.add('chartStatGrid');for(const [title,value] of [['Số lần xuất hiện',fmt(count)],['Lần đầu xuất hiện',Number.isFinite(first)?'Lượt '+fmt(first):'Chưa gặp'],['Xác suất lý thuyết / lượt',(chance*100).toLocaleString('vi-VN',{maximumFractionDigits:6})+'%']]){const card=document.createElement('div');card.className='chartStat';const label=document.createElement('span'),number=document.createElement('strong');label.textContent=title;number.textContent=value;card.append(label,number);$('.chartMetrics').append(card);}
   const points=[...r.timeline];if(points.at(-1).cast!==r.iterations)points.push(endpoint);
   const max=Math.max(1,count,r.iterations*chance),x=n=>58+n/r.iterations*720,y=n=>230-n/max*205;let svg='';
   for(let i=0;i<=4;i++){const v=max*i/4,n=Math.round(r.iterations*i/4);svg+='<line x1="58" y1="'+y(v)+'" x2="778" y2="'+y(v)+'" stroke="#315066"/><text x="48" y="'+(y(v)+4)+'" text-anchor="end">'+fmt(Math.round(v*10)/10)+'</text><text x="'+x(n)+'" y="255" text-anchor="middle">'+fmt(n)+'</text>';}
-  svg+='<path d="M58 230 L778 '+y(r.iterations*chance)+'" fill="none" stroke="#afc6da" stroke-dasharray="7 5" stroke-width="2"/><polyline points="'+points.map(p=>x(p.cast)+','+y(sum(p))).join(' ')+'" fill="none" stroke="'+(mode.value==='pet'?colors[pet.value.slice(7)]||'#59baff':mode.value==='gen'?'#bf8cff':'#53ead2')+'" stroke-width="3"/>'; $('svg').innerHTML=svg;
+  const lineColor=mode.value==='pet'?colors[pet.value.slice(7)]||'#59baff':mode.value==='gen'?'#bf8cff':'#53ead2',coords=points.map(p=>x(p.cast)+','+y(sum(p))).join(' ');
+  if(styleSelect.value==='area')svg+='<polygon points="58,230 '+coords+' 778,230" fill="'+lineColor+'" opacity="0.13"/>';
+  svg+='<path d="M58 230 L778 '+y(r.iterations*chance)+'" fill="none" stroke="#afc6da" stroke-dasharray="7 5" stroke-width="2"/><polyline points="'+coords+'" fill="none" stroke="'+lineColor+'" stroke-width="3"/>'; $('svg').innerHTML=svg;
   const rows=mode.value==='pet'?pets.map(p=>[p.name,p.rarity,r.petCounts[p.id]?.count||0,r.petCounts[p.id]?.firstCast]):mode.value==='gen'?GenConfig.catalog.filter(g=>gen.value==='all'||g.id===gen.value).map(g=>[g.name,({basic:'COMMON',uncommon:'RARE',advanced:'EPIC',rare:'LEGENDARY',epic:'MYTHIC',exclusive:'APEX'})[g.tier],r.counts[g.id]||0,r.genFirst[g.id]]):combos.map(([,c])=>[c.pet,c.genIds.map(id=>GenConfig.catalog.find(g=>g.id===id)?.name||id).join(' + ')||'Không Gen',c.count,c.firstCast]);
   rows.sort((a,b)=>b[2]-a[2]);const table=document.createElement('table');table.innerHTML='<thead><tr><th>'+(mode.value==='gen'?'Gen':'Pet')+'</th><th>'+(mode.value==='combo'?'Gen':'Độ hiếm')+'</th><th>Số lần</th><th>Lượt đầu tiên</th></tr></thead>';const body=table.createTBody();for(const data of rows){const row=body.insertRow();for(const v of [data[0],data[1],fmt(data[2]),data[3]?fmt(data[3]):'Chưa gặp'])row.insertCell().textContent=v;}$('.chartFirst').replaceChildren(table);
  }
- mode.addEventListener('change',()=>{genOptions();render(report);});pet.addEventListener('change',()=>render(report));gen.addEventListener('change',()=>render(report));return {render,reset(){host.hidden=true;report=null;}};
+ styleSelect.addEventListener('change',()=>render(report));mode.addEventListener('change',()=>{genOptions();render(report);});pet.addEventListener('change',()=>render(report));gen.addEventListener('change',()=>render(report));return {render,reset(){host.hidden=true;report=null;}};
 };
 })();

@@ -179,7 +179,7 @@
     qteLuckChip.querySelector('.mutationPool').appendChild(token);
   });
   function chooseMutations(count){return window.GenCore.choose(count,Math.random,rewards.castRebirth).map(({id,name})=>({id,name}));}
-  root.addEventListener('fishingbalancechange',()=>{if(!rewards.isCasting&&!rewards.pending)renderMutation();});
+  root.addEventListener('fishingbalancechange',()=>{instructions[6]=qteInstruction();if(mode===6)root.querySelector('.fishingInstructions').textContent=instructions[6];if(!rewards.isCasting&&!rewards.pending)renderMutation();});
   function renderMutation(result=false){
     const points=Math.min(100,game?.mutationPoints||0);
     qteLuckChip.hidden=false;
@@ -528,6 +528,7 @@
     });
   }
   const modes = Array.from(root.querySelectorAll('[data-fishing-mode]'));
+  function qteInstruction(){const r=window.GenConfig.rules,p=n=>n.toLocaleString('vi-VN',{maximumFractionDigits:2})+'%';return 'Bấm 3 lần để nhận cá. Xanh +'+p(r.green)+', vàng +'+p(r.gold)+', đỏ +'+p(r.red)+'. Tổng tối đa 100% · tối đa 1 Gen.';}
   const instructions = [
     'Hold to the next joint, then tap to break it. Hold again after breaking a joint to keep the bar from draining.',
     'Hold to pull toward Catch. Release to cool the line.',
@@ -535,7 +536,7 @@
     'Tap when the fish enters either green zone. Reel the distance down to 0 m before 40 seconds run out.',
     'Hold to lift the green zone. Release to lower it. Keep the fish inside.',
     'Hold to reel, then release before tension reaches its limit.',
-    'Bấm 3 lần để nhận cá. Xanh +5%, vàng +20%, đỏ +0%. Mỗi cá tối đa 1 Gen; full xanh 15%, full vàng 60%.'
+    qteInstruction()
   ];
   const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(max, value));
   let mode = 0, state = 'idle', held = false, frame, timer, game;
