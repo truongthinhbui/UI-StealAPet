@@ -1,11 +1,10 @@
 window.FishingConfig = {
-  "version": "fishing-legacy-fish-first-v3-rb14",
+  "version": "fishing-1.0.1-source-v5",
   "source": {
     "workbook": "[Craftland] Steal A Pet Master Data.xlsx",
-    "sheet": "Fishing",
-    "range": "A1:Q37",
-    "notes": "Use original 35 fish rows; normalize actual weights. Above RB25 reuse the last source band. Claim price follows SpawnPrice*ClaimK, not stale cached Q.",
-    "bandOverride": "User reference: R1–4 / R5–8 / R9–13 / R14–18 / R19+. Original 35 fish weights retained in column order."
+    "sheet": "fishing 1.0.1",
+    "range": "A1:R45",
+    "notes": "All 44 source entries retained; 42 have positive weights. TUNA and SALMON are zero-weight CHASE. Normalize actual column totals. Base price = SpawnPrice * ClaimK, stored to cents; no rounding to whole Money for base offers."
   },
   "bands": [
     {
@@ -42,8 +41,8 @@ window.FishingConfig = {
   "mechanic": {
     "mode": 7,
     "taps": 3,
-    "greenMutation": 5,
-    "goldMutation": 20,
+    "greenMutation": 8.288100828,
+    "goldMutation": 16.576201656,
     "missMutation": 0,
     "cooldown": 0,
     "rarityTiming": {
@@ -64,13 +63,13 @@ window.FishingConfig = {
       },
       "LEGENDARY": {
         "secondsPerRevolution": 2,
-        "color": "#f05252",
-        "finColor": "#ffc0b6"
+        "color": "#ffcc40",
+        "finColor": "#fff1a6"
       },
       "MYTHIC": {
         "secondsPerRevolution": 1.8,
-        "color": "#ffcc40",
-        "finColor": "#fff1a6"
+        "color": "#f05252",
+        "finColor": "#ffc0b6"
       },
       "APEX": {
         "secondsPerRevolution": 1.6,
@@ -86,17 +85,71 @@ window.FishingConfig = {
   },
   "pets": [
     {
+      "id": 4,
+      "name": "PIG",
+      "rank": 4,
+      "rarity": "COMMON",
+      "tier": null,
+      "weights": [
+        110229,
+        99033,
+        85459,
+        70101,
+        56477
+      ],
+      "spawnPrice": "110.0",
+      "claimK": "1.1",
+      "claimPrice": "121.00",
+      "claimCents": "12100"
+    },
+    {
+      "id": 7,
+      "name": "GOOSE",
+      "rank": 7,
+      "rarity": "COMMON",
+      "tier": null,
+      "weights": [
+        110229,
+        99033,
+        85459,
+        70101,
+        56477
+      ],
+      "spawnPrice": "380.0",
+      "claimK": "1.1",
+      "claimPrice": "418.00",
+      "claimCents": "41800"
+    },
+    {
+      "id": 8,
+      "name": "DOG",
+      "rank": 8,
+      "rarity": "COMMON",
+      "tier": null,
+      "weights": [
+        110229,
+        99033,
+        85458,
+        70101,
+        56477
+      ],
+      "spawnPrice": "460.0",
+      "claimK": "1.1",
+      "claimPrice": "506.00",
+      "claimCents": "50600"
+    },
+    {
       "id": 52,
       "name": "SHRIMP",
       "rank": 9,
       "rarity": "COMMON",
       "tier": null,
       "weights": [
-        403323,
-        173318,
-        73313,
-        39970,
-        19960
+        110230,
+        99033,
+        85459,
+        70101,
+        56477
       ],
       "spawnPrice": "550.0",
       "claimK": "1.1",
@@ -110,11 +163,11 @@ window.FishingConfig = {
       "rarity": "COMMON",
       "tier": null,
       "weights": [
-        201667,
-        86667,
-        36667,
-        20000,
-        10000
+        4083,
+        3668,
+        3165,
+        2596,
+        2092
       ],
       "spawnPrice": "22222.0",
       "claimK": "1.1",
@@ -128,11 +181,11 @@ window.FishingConfig = {
       "rarity": "RARE",
       "tier": null,
       "weights": [
-        71429,
-        128572,
-        57143,
-        42857,
-        22857
+        98781,
+        98781,
+        97134,
+        95488,
+        92195
       ],
       "spawnPrice": "5600.0",
       "claimK": "1.1",
@@ -146,11 +199,11 @@ window.FishingConfig = {
       "rarity": "RARE",
       "tier": null,
       "weights": [
-        71429,
-        128571,
-        57143,
-        42857,
-        22857
+        98780,
+        98780,
+        97134,
+        95488,
+        92195
       ],
       "spawnPrice": "9600.0",
       "claimK": "1.1",
@@ -164,11 +217,11 @@ window.FishingConfig = {
       "rarity": "RARE",
       "tier": null,
       "weights": [
-        71428,
-        128571,
-        57143,
-        42857,
-        22857
+        98780,
+        98780,
+        97134,
+        95488,
+        92195
       ],
       "spawnPrice": "42400.0",
       "claimK": "1.1",
@@ -182,11 +235,11 @@ window.FishingConfig = {
       "rarity": "RARE",
       "tier": null,
       "weights": [
-        35714,
-        64286,
-        28571,
-        21429,
-        11429
+        3659,
+        3659,
+        3598,
+        3536,
+        3415
       ],
       "spawnPrice": "326592.0",
       "claimK": "1.1",
@@ -200,11 +253,11 @@ window.FishingConfig = {
       "rarity": "EPIC",
       "tier": null,
       "weights": [
-        13334,
         25000,
-        75000,
+        28334,
+        30834,
         33334,
-        25000
+        36667
       ],
       "spawnPrice": "1520000.0",
       "claimK": "1.1",
@@ -218,11 +271,11 @@ window.FishingConfig = {
       "rarity": "EPIC",
       "tier": null,
       "weights": [
-        13334,
         25000,
-        75000,
+        28334,
+        30834,
         33334,
-        25000
+        36667
       ],
       "spawnPrice": "2320000.0",
       "claimK": "1.1",
@@ -236,11 +289,11 @@ window.FishingConfig = {
       "rarity": "EPIC",
       "tier": null,
       "weights": [
-        13333,
         25000,
-        75000,
+        28333,
+        30833,
         33333,
-        25000
+        36667
       ],
       "spawnPrice": "3280000.0",
       "claimK": "1.1",
@@ -254,11 +307,11 @@ window.FishingConfig = {
       "rarity": "EPIC",
       "tier": null,
       "weights": [
-        13333,
         25000,
-        75000,
+        28333,
+        30833,
         33333,
-        25000
+        36667
       ],
       "spawnPrice": "4240000.0",
       "claimK": "1.1",
@@ -272,11 +325,11 @@ window.FishingConfig = {
       "rarity": "EPIC",
       "tier": null,
       "weights": [
-        13333,
         25000,
-        75000,
+        28333,
+        30833,
         33333,
-        25000
+        36666
       ],
       "spawnPrice": "5120000.0",
       "claimK": "1.1",
@@ -290,11 +343,11 @@ window.FishingConfig = {
       "rarity": "EPIC",
       "tier": null,
       "weights": [
-        13333,
         25000,
-        75000,
+        28333,
+        30833,
         33333,
-        25000
+        36666
       ],
       "spawnPrice": "6880000.0",
       "claimK": "1.1",
@@ -308,16 +361,16 @@ window.FishingConfig = {
       "rarity": "LEGENDARY",
       "tier": null,
       "weights": [
-        20000,
-        40000,
-        75000,
-        100000,
-        75000
+        18750,
+        22500,
+        26250,
+        32500,
+        40000
       ],
-      "spawnPrice": "142500000.0",
+      "spawnPrice": "480000000.0",
       "claimK": "1.1",
-      "claimPrice": "156750000.00",
-      "claimCents": "15675000000"
+      "claimPrice": "528000000.00",
+      "claimCents": "52800000000"
     },
     {
       "id": 33,
@@ -326,16 +379,52 @@ window.FishingConfig = {
       "rarity": "LEGENDARY",
       "tier": null,
       "weights": [
-        20000,
-        40000,
-        75000,
-        100000,
-        75000
+        18750,
+        22500,
+        26250,
+        32500,
+        40000
       ],
-      "spawnPrice": "480000000.0",
+      "spawnPrice": "142500000.0",
       "claimK": "1.1",
-      "claimPrice": "528000000.00",
-      "claimCents": "52800000000"
+      "claimPrice": "156750000.00",
+      "claimCents": "15675000000"
+    },
+    {
+      "id": 55,
+      "name": "SHOEBILL",
+      "rank": 83,
+      "rarity": "LEGENDARY",
+      "tier": null,
+      "weights": [
+        18750,
+        22500,
+        26250,
+        32500,
+        40000
+      ],
+      "spawnPrice": "825000000.0",
+      "claimK": "1.1",
+      "claimPrice": "907500000.00",
+      "claimCents": "90750000000"
+    },
+    {
+      "id": 58,
+      "name": "SWAN",
+      "rank": 84,
+      "rarity": "LEGENDARY",
+      "tier": null,
+      "weights": [
+        18750,
+        22500,
+        26250,
+        32500,
+        40000
+      ],
+      "spawnPrice": "990000000.0",
+      "claimK": "1.1",
+      "claimPrice": "1089000000.00",
+      "claimCents": "108900000000"
     },
     {
       "id": 47,
@@ -344,11 +433,11 @@ window.FishingConfig = {
       "rarity": "MYTHIC",
       "tier": null,
       "weights": [
-        2295,
-        5624,
-        8477,
-        37039,
-        56077
+        2388,
+        3128,
+        4939,
+        7162,
+        8397
       ],
       "spawnPrice": "175000000000.0",
       "claimK": "1.1",
@@ -362,11 +451,11 @@ window.FishingConfig = {
       "rarity": "MYTHIC",
       "tier": null,
       "weights": [
-        2295,
-        5624,
-        8477,
-        37038,
-        56077
+        2387,
+        3128,
+        4939,
+        7162,
+        8397
       ],
       "spawnPrice": "1229200000000.0",
       "claimK": "1.1",
@@ -380,11 +469,11 @@ window.FishingConfig = {
       "rarity": "MYTHIC",
       "tier": null,
       "weights": [
-        2295,
-        5624,
-        8476,
-        37038,
-        56076
+        2387,
+        3128,
+        4939,
+        7162,
+        8397
       ],
       "spawnPrice": "9979200000000.0",
       "claimK": "1.1",
@@ -398,11 +487,11 @@ window.FishingConfig = {
       "rarity": "MYTHIC",
       "tier": null,
       "weights": [
-        2295,
-        5624,
-        8476,
-        37038,
-        56076
+        2387,
+        3128,
+        4939,
+        7162,
+        8397
       ],
       "spawnPrice": "31104000000000.0",
       "claimK": "1.1",
@@ -416,11 +505,11 @@ window.FishingConfig = {
       "rarity": "MYTHIC",
       "tier": null,
       "weights": [
-        2295,
-        5624,
-        8476,
-        37038,
-        56076
+        2387,
+        3128,
+        4939,
+        7162,
+        8396
       ],
       "spawnPrice": "3359230000000000.0",
       "claimK": "1.1",
@@ -434,16 +523,16 @@ window.FishingConfig = {
       "rarity": "MYTHIC",
       "tier": null,
       "weights": [
-        2295,
-        5624,
-        8476,
-        37038,
-        56076
+        2387,
+        3128,
+        4939,
+        7162,
+        8396
       ],
-      "spawnPrice": "6.62796E+17",
+      "spawnPrice": "6.627960070005E+17",
       "claimK": "1.1",
-      "claimPrice": "7.290756E+17",
-      "claimCents": "72907560000000000000"
+      "claimPrice": "7.2907560770055E+17",
+      "claimCents": "72907560770055000000"
     },
     {
       "id": 70,
@@ -452,16 +541,16 @@ window.FishingConfig = {
       "rarity": "MYTHIC",
       "tier": null,
       "weights": [
-        2295,
-        5623,
-        8476,
-        37038,
-        56076
+        2387,
+        3128,
+        4939,
+        7162,
+        8396
       ],
-      "spawnPrice": "6.92797E+17",
+      "spawnPrice": "6.927968000005E+17",
       "claimK": "1.1",
-      "claimPrice": "7.620767E+17",
-      "claimCents": "76207670000000000000"
+      "claimPrice": "7.6207648000055E+17",
+      "claimCents": "76207648000055000000"
     },
     {
       "id": 73,
@@ -470,16 +559,16 @@ window.FishingConfig = {
       "rarity": "MYTHIC",
       "tier": null,
       "weights": [
-        2295,
-        5623,
-        8476,
-        37038,
-        56076
+        2387,
+        3128,
+        4939,
+        7162,
+        8396
       ],
-      "spawnPrice": "7.0368E+17",
+      "spawnPrice": "7.0367967483005E+17",
       "claimK": "1.1",
-      "claimPrice": "7.74048E+17",
-      "claimCents": "77404800000000000000"
+      "claimPrice": "7.74047642313055E+17",
+      "claimCents": "77404764231305500000"
     },
     {
       "id": 78,
@@ -488,16 +577,16 @@ window.FishingConfig = {
       "rarity": "MYTHIC",
       "tier": null,
       "weights": [
-        1148,
-        2812,
-        4238,
-        18519,
-        28038
+        2387,
+        3128,
+        4939,
+        7161,
+        8396
       ],
-      "spawnPrice": "1.54726E+18",
+      "spawnPrice": "1.54726169536832E+18",
       "claimK": "1.1",
-      "claimPrice": "1.701986E+18",
-      "claimCents": "170198600000000000000"
+      "claimPrice": "1.701987864905152E+18",
+      "claimCents": "170198786490515200000"
     },
     {
       "id": 79,
@@ -506,16 +595,16 @@ window.FishingConfig = {
       "rarity": "MYTHIC",
       "tier": null,
       "weights": [
-        1148,
-        2812,
-        4238,
-        18519,
-        28038
+        2387,
+        3128,
+        4939,
+        7161,
+        8396
       ],
-      "spawnPrice": "8.50262E+17",
+      "spawnPrice": "8.5026169526152E+17",
       "claimK": "1.1",
-      "claimPrice": "9.352882E+17",
-      "claimCents": "93528820000000000000"
+      "claimPrice": "9.35287864787672E+17",
+      "claimCents": "93528786478767200000"
     },
     {
       "id": 80,
@@ -524,16 +613,16 @@ window.FishingConfig = {
       "rarity": "MYTHIC",
       "tier": null,
       "weights": [
-        1148,
-        2812,
-        4238,
-        18519,
-        28038
+        2387,
+        3128,
+        4939,
+        7161,
+        8396
       ],
-      "spawnPrice": "1.65026E+18",
+      "spawnPrice": "1.65026169526152E+18",
       "claimK": "1.1",
-      "claimPrice": "1.815286E+18",
-      "claimCents": "181528600000000000000"
+      "claimPrice": "1.815287864787672E+18",
+      "claimCents": "181528786478767200000"
     },
     {
       "id": 81,
@@ -542,16 +631,16 @@ window.FishingConfig = {
       "rarity": "MYTHIC",
       "tier": null,
       "weights": [
-        1148,
-        2812,
-        4238,
-        18519,
-        28038
+        2387,
+        3128,
+        4939,
+        7161,
+        8396
       ],
-      "spawnPrice": "1.65026E+18",
+      "spawnPrice": "1.65026169526152E+18",
       "claimK": "1.1",
-      "claimPrice": "1.815286E+18",
-      "claimCents": "181528600000000000000"
+      "claimPrice": "1.815287864787672E+18",
+      "claimCents": "181528786478767200000"
     },
     {
       "id": 82,
@@ -560,16 +649,16 @@ window.FishingConfig = {
       "rarity": "MYTHIC",
       "tier": null,
       "weights": [
-        1148,
-        2812,
-        4238,
-        18519,
-        28038
+        177,
+        232,
+        366,
+        530,
+        622
       ],
-      "spawnPrice": "1.65026E+18",
+      "spawnPrice": "1.65026169526152E+18",
       "claimK": "1.1",
-      "claimPrice": "1.815286E+18",
-      "claimCents": "181528600000000000000"
+      "claimPrice": "1.815287864787672E+18",
+      "claimCents": "181528786478767200000"
     },
     {
       "id": 1011,
@@ -578,11 +667,11 @@ window.FishingConfig = {
       "rarity": "MYTHIC",
       "tier": null,
       "weights": [
-        400,
-        400,
-        400,
-        400,
-        400
+        89,
+        116,
+        183,
+        265,
+        311
       ],
       "spawnPrice": "9.49105E+16",
       "claimK": "1.1",
@@ -596,88 +685,16 @@ window.FishingConfig = {
       "rarity": "MYTHIC",
       "tier": null,
       "weights": [
-        400,
-        400,
-        400,
-        400,
-        400
+        89,
+        116,
+        183,
+        265,
+        311
       ],
-      "spawnPrice": "6.76768E+17",
+      "spawnPrice": "6.767676767E+17",
       "claimK": "1.1",
-      "claimPrice": "7.444448E+17",
-      "claimCents": "74444480000000000000"
-    },
-    {
-      "id": 1034,
-      "name": "CARP",
-      "rank": 505,
-      "rarity": "APEX",
-      "tier": null,
-      "weights": [
-        20,
-        30,
-        40,
-        60,
-        80
-      ],
-      "spawnPrice": "4.80495E+18",
-      "claimK": "1.1",
-      "claimPrice": "5.285445E+18",
-      "claimCents": "528544500000000000000"
-    },
-    {
-      "id": 107,
-      "name": "GOLDFISH",
-      "rank": 425,
-      "rarity": "APEX",
-      "tier": null,
-      "weights": [
-        20,
-        30,
-        40,
-        60,
-        80
-      ],
-      "spawnPrice": "6.23164E+18",
-      "claimK": "1.1",
-      "claimPrice": "6.854804E+18",
-      "claimCents": "685480400000000000000"
-    },
-    {
-      "id": 108,
-      "name": "BASS",
-      "rank": 426,
-      "rarity": "APEX",
-      "tier": null,
-      "weights": [
-        20,
-        30,
-        40,
-        60,
-        80
-      ],
-      "spawnPrice": "6.50779E+18",
-      "claimK": "1.1",
-      "claimPrice": "7.158569E+18",
-      "claimCents": "715856900000000000000"
-    },
-    {
-      "id": 109,
-      "name": "TUNA",
-      "rank": 427,
-      "rarity": "APEX",
-      "tier": null,
-      "weights": [
-        20,
-        30,
-        40,
-        60,
-        80
-      ],
-      "spawnPrice": "6.79621E+18",
-      "claimK": "1.1",
-      "claimPrice": "7.475831E+18",
-      "claimCents": "747583100000000000000"
+      "claimPrice": "7.4444444437E+17",
+      "claimCents": "74444444437000000000"
     },
     {
       "id": 101,
@@ -686,29 +703,173 @@ window.FishingConfig = {
       "rarity": "APEX",
       "tier": null,
       "weights": [
-        20,
-        30,
-        40,
-        60,
-        80
+        223,
+        491,
+        2232,
+        2232,
+        2232
       ],
-      "spawnPrice": "4.10497E+18",
+      "spawnPrice": "4.80495071284338E+18",
       "claimK": "1.1",
-      "claimPrice": "4.515467E+18",
-      "claimCents": "451546700000000000000"
+      "claimPrice": "5.285445784127718E+18",
+      "claimCents": "528544578412771800000"
+    },
+    {
+      "id": 107,
+      "name": "GOLDFISH",
+      "rank": 425,
+      "rarity": "APEX",
+      "tier": null,
+      "weights": [
+        223,
+        491,
+        2231,
+        2231,
+        2231
+      ],
+      "spawnPrice": "6.23164006080233E+18",
+      "claimK": "1.1",
+      "claimPrice": "6.854804066882563E+18",
+      "claimCents": "685480406688256300000"
+    },
+    {
+      "id": 108,
+      "name": "BASS",
+      "rank": 426,
+      "rarity": "APEX",
+      "tier": null,
+      "weights": [
+        223,
+        491,
+        2231,
+        2231,
+        2231
+      ],
+      "spawnPrice": "6.50778862712698E+18",
+      "claimK": "1.1",
+      "claimPrice": "7.158567489839678E+18",
+      "claimCents": "715856748983967800000"
+    },
+    {
+      "id": 109,
+      "name": "TUNA",
+      "rank": 427,
+      "rarity": "APEX",
+      "tier": "CHASE",
+      "weights": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "spawnPrice": "6.79621408238092E+18",
+      "claimK": "1.1",
+      "claimPrice": "7.475835490619012E+18",
+      "claimCents": "747583549061901200000"
+    },
+    {
+      "id": 1050,
+      "name": "SQUID_PUMPKIN",
+      "rank": 442,
+      "rarity": "APEX",
+      "tier": null,
+      "weights": [
+        25,
+        55,
+        248,
+        248,
+        248
+      ],
+      "spawnPrice": "2.55E+19",
+      "claimK": "1.1",
+      "claimPrice": "2.805E+19",
+      "claimCents": "2805000000000000000000"
+    },
+    {
+      "id": 1051,
+      "name": "JELLYFISH_PUMPKIN",
+      "rank": 443,
+      "rarity": "APEX",
+      "tier": null,
+      "weights": [
+        25,
+        55,
+        248,
+        248,
+        248
+      ],
+      "spawnPrice": "2.5E+19",
+      "claimK": "1.1",
+      "claimPrice": "2.75E+19",
+      "claimCents": "2750000000000000000000"
+    },
+    {
+      "id": 1058,
+      "name": "OCTOPUS_SPIDERLEGS",
+      "rank": 449,
+      "rarity": "APEX",
+      "tier": null,
+      "weights": [
+        25,
+        54,
+        248,
+        248,
+        248
+      ],
+      "spawnPrice": "2.78E+19",
+      "claimK": "1.1",
+      "claimPrice": "3.058E+19",
+      "claimCents": "3058000000000000000000"
+    },
+    {
+      "id": 1059,
+      "name": "ALIGATOR_SPIDERLEGS",
+      "rank": 450,
+      "rarity": "APEX",
+      "tier": null,
+      "weights": [
+        25,
+        54,
+        248,
+        248,
+        248
+      ],
+      "spawnPrice": "2.87E+19",
+      "claimK": "1.1",
+      "claimPrice": "3.157E+19",
+      "claimCents": "3157000000000000000000"
+    },
+    {
+      "id": 1034,
+      "name": "CARP",
+      "rank": 505,
+      "rarity": "APEX",
+      "tier": null,
+      "weights": [
+        8,
+        18,
+        83,
+        83,
+        83
+      ],
+      "spawnPrice": "4.10497336335E+18",
+      "claimK": "1.1",
+      "claimPrice": "4.515470699685E+18",
+      "claimCents": "451547069968500000000"
     },
     {
       "id": 117,
       "name": "SALMON",
       "rank": 515,
       "rarity": "APEX",
-      "tier": null,
+      "tier": "CHASE",
       "weights": [
-        10,
-        15,
-        20,
-        30,
-        10
+        0,
+        0,
+        0,
+        0,
+        0
       ],
       "spawnPrice": "1.79E+19",
       "claimK": "1.1",
@@ -721,5 +882,30 @@ window.FishingConfig = {
     "genCount",
     "genTypes"
   ],
-  "rollTiming": "after-third-scored-tap"
+  "rollTiming": "after-third-scored-tap",
+  "pricing": {
+    "version": "fish-gen-price-v1",
+    "rule": "No Gen: source SpawnPrice * ClaimK to cents. With Gen: ROUND(SpawnPrice * GenPriceMultiplier * ClaimK, 0).",
+    "sourceNote": "Authored Fishing purchase policy using Mutation 2.0 Multiplier and Weather Effects MultiplierPrice; base GDD defines SpawnPrice * ClaimK only.",
+    "maxGens": 1,
+    "genMultiplierById": {
+      "gold": "1.33",
+      "soaked": "1.05",
+      "frost": "1.66",
+      "ice": "1.09",
+      "wind": "1.08",
+      "coral": "2",
+      "thundered": "1.12",
+      "clover": "2.13",
+      "lunar": "1.15",
+      "fossilized": "2.25",
+      "rainbow": "1.14",
+      "vortex": "1.16",
+      "sequin": "1.17",
+      "sweetheart": "2.3",
+      "diamond": "2.37",
+      "radioactive": "2.5",
+      "webbed": "2.4"
+    }
+  }
 };

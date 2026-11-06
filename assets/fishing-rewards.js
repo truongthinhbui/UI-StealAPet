@@ -90,6 +90,7 @@
   window.FishingRewards={
     config,settings,pick,money,
     get pending(){return account.pending;},
+    get isCasting(){return !!cast;},
     get castRebirth(){return cast?.rebirth??settings.rebirth;},
     get castRarity(){return cast?.pet.rarity??null;},
     begin(){const error=eligibility();if(error)return error;if(cast)return 'Đang câu.';cast={id:crypto.randomUUID(),rebirth:settings.rebirth,version:config.version,pet:pick(settings.rebirth)};return '';},
@@ -99,7 +100,8 @@
       if(!cast)return null;
       const mutationPoints=window.GenCore.points(detail.results);
       const pet=cast.pet,rewards=window.GenCore.roll(mutationPoints,Math.random,cast.rebirth);
-      account.pending={catchId:cast.id,petId:pet.id,name:pet.name,rarity:pet.rarity,price:pet.claimCents,rebirth:cast.rebirth,poolVersion:cast.version,genVersion:window.GenConfig.version,mutationPoints,mutationRewards:rewards.map(({id,name})=>({id,name})),results:detail.results.slice(0,window.GenConfig.rules.taps)};
+      const priceQuote=window.FishingPool.quote(pet,rewards);
+      account.pending={catchId:cast.id,petId:pet.id,name:pet.name,rarity:pet.rarity,...priceQuote,rebirth:cast.rebirth,poolVersion:cast.version,genVersion:window.GenConfig.version,balancePreset:window.GenConfig.activeBalancePreset,mutationPoints,mutationRewards:rewards.map(({id,name})=>({id,name})),results:detail.results.slice(0,window.GenConfig.rules.taps)};
       cast=null;save();render();return account.pending;
     },
     render

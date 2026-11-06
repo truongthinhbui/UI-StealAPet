@@ -10,6 +10,11 @@
   });
   function profile(rebirth=9){return profiles.find(p=>rebirth>=p.min&&(p.max===null||rebirth<=p.max))||profiles[0];}
   function seeded(seed){let value=Number(seed)>>>0;return ()=>{value=(value+0x6D2B79F5)>>>0;let x=value;x=Math.imul(x^x>>>15,x|1);x^=x+Math.imul(x^x>>>7,x|61);return ((x^x>>>14)>>>0)/4294967296;};}
+  function setBalancePreset(id){
+    const preset=config.balancePresets[id];if(!preset)throw new Error('Unknown Gen balance preset');
+    config.activeBalancePreset=id;for(const key of ['green','gold','red'])config.rules[key]=preset[key];
+    if(global.FishingConfig){global.FishingConfig.mechanic.greenMutation=preset.green;global.FishingConfig.mechanic.goldMutation=preset.gold;}
+  }
   function count(points,random=Math.random){
     const maximum=config.rules.taps*Math.max(config.rules.green,config.rules.gold,config.rules.red);
     const chance=Math.max(0,Math.min(config.rules.maxGen*100,maximum,Number(points)||0));
@@ -69,7 +74,7 @@
   function simulation(scenario,seed,options={}){
     const rebirth=options.rebirth||9,full=!!options.fishing,logLimit=options.logLimit??10000;
     const random=seeded(seed),counts=Object.fromEntries(config.catalog.map(gen=>[gen.id,0]));
-    const result={scenario:scenario.id,runId:scenario.id+'-r'+rebirth,name:scenario.name,seed,rebirth,band:profile(rebirth).label,configVersion:config.version,fishConfigVersion:global.FishingPool?.config.version||null,iterations:0,none:0,one:0,two:0,counts,expected:expectation(scenario,rebirth),petCounts:{},combinations:{},records:[],logLimit};
+    const result={scenario:scenario.id,runId:scenario.id+'-r'+rebirth,name:scenario.name+' · '+config.activeBalancePreset,balancePreset:config.activeBalancePreset,seed,rebirth,band:profile(rebirth).label,configVersion:config.version,fishConfigVersion:global.FishingPool?.config.version||null,iterations:0,none:0,one:0,two:0,counts,expected:expectation(scenario,rebirth),petCounts:{},combinations:{},records:[],logLimit};
     result.rarityCounts={};result.rarityFirst={};result.genFirst={};result.timeline=[{cast:0,counts:{},pets:{},gens:{},combos:{}}];
     const chartEvery=Math.max(1,options.chartEvery||1000);
     const fixed=scenario.pattern?points(scenario.pattern):null;
@@ -92,7 +97,7 @@
           const ids=rewards.map(g=>g.id).sort(),key=pet.id+'|'+ids.join('+');
           const combo=result.combinations[key]||(result.combinations[key]={petId:pet.id,pet:pet.name,rarity:pet.rarity,genIds:ids,firstCast:cast,count:0});combo.count++;
           if(cast%chartEvery===0)result.timeline.push({cast,counts:{...result.rarityCounts},pets:Object.fromEntries(Object.entries(result.petCounts).map(([k,v])=>[k,v.count])),gens:{...counts},combos:Object.fromEntries(Object.entries(result.combinations).map(([k,v])=>[k,v.count]))});
-          if(result.records.length<logLimit)result.records.push({cast:result.iterations+i+1,rebirth,pattern:[...pattern],points:score,petId:pet.id,pet:pet.name,rarity:pet.rarity,genIds:rewards.map(g=>g.id),claimCents:pet.claimCents});
+          if(result.records.length<logLimit)result.records.push({cast:result.iterations+i+1,rebirth,pattern:[...pattern],points:score,petId:pet.id,pet:pet.name,rarity:pet.rarity,genIds:rewards.map(g=>g.id),claimCents:global.FishingPool.quote(pet,rewards).price});
         }
       }
       result.iterations+=amount;return result;
@@ -104,5 +109,6 @@
     element.style.backgroundPosition=(gen.icon.atlas%4*100/3)+'% '+(Math.floor(gen.icon.atlas/4)*50)+'%';
     element.setAttribute('aria-hidden','true');return element;
   }
-  global.GenCore={config,pool,total,profile,seeded,count,choose,roll,catchRoll,points,expected,scenarios,expectation,simulation,icon};
+  setBalancePreset(config.activeBalancePreset);
+  global.GenCore={config,pool,total,profile,seeded,count,choose,roll,catchRoll,points,expected,scenarios,expectation,simulation,icon,setBalancePreset};
 })(typeof window!=='undefined'?window:globalThis);

@@ -36,7 +36,7 @@
   const intro=sim.querySelector(':scope>h3');intro.textContent='Mô phỏng lượt câu';pages.simulation.appendChild(intro);
   const explanation=sim.querySelector(':scope>p');explanation.textContent='Chọn cấu hình → chạy thử → xem pet và Gen. Không thay đổi tiền hoặc túi đang chơi.';pages.simulation.appendChild(explanation);
   const setup=make('div','debugSimSetup');pages.simulation.appendChild(setup);
-  for(const selector of ['.genSimCount','.genSimScenario','.genSimRebirth'])setup.appendChild($(selector).closest('label'));
+  for(const selector of ['.genBalancePreset','.genSimCount','.genSimScenario','.genSimRebirth'])setup.appendChild($(selector).closest('label'));
   const compare=$('.genCompareRebirth').closest('label');compare.classList.add('debugCompare');compare.lastChild.textContent=' So sánh cả 5 mốc Rebirth';setup.appendChild(compare);
   const presets=make('div','debugPresets');presets.appendChild(make('span','','Chọn nhanh'));
   for(const [id,label] of [['red','Full đỏ'],['green','Full xanh'],['gold','Full vàng'],['all','6 kịch bản']]){const button=make('button','',label);button.type='button';button.dataset.simPreset=id;presets.appendChild(button);}setup.after(presets);

@@ -317,3 +317,7 @@
 .offerMutation[data-tier="advanced"]{--gen-ink:#8140af;--gen-bg:#f2e7ff;--gen-edge:#c3a0e2}
 .offerMutation[data-tier="rare"]{--gen-ink:#ba3030;--gen-bg:#ffe8e4;--gen-edge:#ec9e93}
 .offerMutation[data-tier="epic"]{--gen-ink:#93600a;--gen-bg:#fff1c8;--gen-edge:#e8c25c}
+.fishingOffer[data-rarity="legendary"]{--rarity-ink:#93600a;--rarity-bg:#fff1c8;--rarity-edge:#e8c25c}
+.fishingOffer[data-rarity="mythic"]{--rarity-ink:#ba3030;--rarity-bg:#ffe8e4;--rarity-edge:#ec9e93}
+.offerMutation[data-tier="rare"]{--gen-ink:#93600a;--gen-bg:#fff1c8;--gen-edge:#e8c25c}
+.offerMutation[data-tier="epic"]{--gen-ink:#ba3030;--gen-bg:#ffe8e4;--gen-edge:#ec9e93}

@@ -12,5 +12,21 @@
     for(const pet of current.pets){roll-=pet.weights[current.index];if(roll<0)return pet;}
     return current.pets[current.pets.length-1];
   }
-  global.FishingPool={profile,pick,bandIndex,config};
+  function decimalRatio(value){
+    const match=String(value).match(/^(\d+)(?:\.(\d+))?(?:e([+-]?\d+))?$/i);
+    if(!match)throw new Error('Invalid Fishing price input');
+    const fraction=match[2]||'',scale=fraction.length-Number(match[3]||0),digits=BigInt(match[1]+fraction);
+    return scale>=0?[digits,10n**BigInt(scale)]:[digits*10n**BigInt(-scale),1n];
+  }
+  function quote(pet,gens=[]){
+    if(!gens.length)return {price:pet.claimCents,basePrice:pet.claimCents,genPriceMultiplier:'1',pricingVersion:config.pricing.version};
+    if(gens.length>config.pricing.maxGens)throw new Error('Fishing supports at most one Gen');
+    const multiplier=gens.length?config.pricing.genMultiplierById[gens[0].id]:'1';
+    if(multiplier===undefined)throw new Error('Missing Fishing Gen price multiplier');
+    let numerator=1n,denominator=1n;
+    for(const value of [pet.spawnPrice,pet.claimK,multiplier]){const [n,d]=decimalRatio(value);numerator*=n;denominator*=d;}
+    const whole=(2n*numerator+denominator)/(2n*denominator);
+    return {price:(whole*100n).toString(),basePrice:pet.claimCents,genPriceMultiplier:multiplier,pricingVersion:config.pricing.version};
+  }
+  global.FishingPool={profile,pick,bandIndex,config,quote};
 })(typeof window!=='undefined'?window:globalThis);

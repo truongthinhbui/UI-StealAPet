@@ -28,7 +28,7 @@ s.getRange('A20').values=[['POOL_TOTAL']];for(let b=0;b<5;b++){const w=String.fr
 s.getRange('A20:O20').format={fill:'#E3EDF5',font:{name:'Arial',size:10,bold:true,color:'#285B83'},rowHeight:30};s.getRange('B20:F20').setNumberFormat('#,##0');s.getRange('J20:N20').setNumberFormat('0.0000%');
 const notes=[
  'GIẢI THÍCH POOL MUTA / WEATHER GEN',
- 'Mở khóa từ R9. Roll pet theo data gốc, tính cơ hội nhận Gen từ 3 tap, sau đó chọn 1 Gen theo Rebirth. Pet không bị chỉnh sửa.',
+ 'Mở khóa từ R9. Roll pet theo fishing 1.0.1, tính cơ hội nhận Gen từ 3 tap, sau đó chọn 1 Gen theo Rebirth. Pet không bị chỉnh sửa.',
  'Pool còn 17 Gen. Đã bỏ Bling Bling, Stormspark, Galaxy, Aurora; weight còn lại được chuẩn hóa theo cùng tỉ lệ.',
  'ID là mã Gen; Name là tên; Family là MutaGen hoặc WeatherGen. Hai nguồn dùng chung một pool.',
  'Rarity group: COMMON, RARE, EPIC, LEGENDARY, MYTHIC, APEX. Gen rarity cao hơn có Rate thấp hơn; pool chưa có APEX Gen.',
@@ -37,12 +37,14 @@ const notes=[
  'Enabled = 1: có thể rơi; 0: bỏ khỏi pool. Sửa Weight màu vàng hoặc Enabled thì Rate tự tính lại.',
  'Rebirth dùng đúng một cột R9–12 / R13–16 / R17–20 / R21–24 / R25+. Trong cùng mốc, pool không đổi.',
  'Rebirth cao tăng chất lượng Gen; không cộng thêm cơ hội nhận Gen và không sửa tỉ lệ pet.',
- 'Mỗi tap: đỏ +0%, xanh +5%, vàng +20%. Tổng 3 tap: full đỏ 0%, full xanh 15%, full vàng 60%. Tối đa 1 Gen.',
+ 'Có 2 preset trong Debug áp dụng cả chơi thật và mô phỏng. Mặc định: 1 giờ online/ngày, tính cả chờ event.',
  'Xác suất Gen X / lượt câu = cơ hội có Gen từ tap × Rate Gen X. Full đỏ vẫn câu được pet, không có Gen.',
  'Xác suất pet + Gen X = xác suất pet theo data gốc × cơ hội có Gen từ tap × Rate Gen X theo Rebirth.',
  'Webbed theo Rebirth: 0,1% / 0,3% / 0,7% / 1,5% / 3,7638% khi đã nhận Gen.',
- 'R25+ full vàng: Apex + Webbed kỳ vọng 300 giờ thực sự câu (108.000 lượt), không tính chờ event.',
- 'Nếu tham gia đủ weather: khoảng 1.882 giờ gồm chờ. Các Gen cùng rarity có Rate bằng nhau trong mỗi mốc Rebirth.',
+ 'Preset online: xanh +8,2881%, vàng +16,5762%; full vàng 49,7286% có Gen. Apex + Gen bất kỳ kỳ vọng 4,5 giờ online.',
+ 'Preset thực sự câu: xanh +1,3213%, vàng +2,6426%; full vàng 7,9277% có Gen. Apex + Gen bất kỳ kỳ vọng 4,5 giờ câu.',
+ 'Mỗi preset tương ứng 4,5 ngày × 1 giờ/ngày theo đúng cách đo. Full đỏ 0 Gen; tối đa 1 Gen; weight loại Gen không đổi.',
+ 'Webbed cụ thể ở R25+ kỳ vọng khoảng 119,6 ngày theo cách đo của preset, không phải mục tiêu 4–5 ngày.',
  'Kỳ vọng không phải bảo đảm. Các lượt roll độc lập, không pity. Chỉnh Excel không tự cập nhật website.',
  'Source: gen-config.js ('+config.version+'); danh mục đối chiếu Master Data, MutaGen Config và WeatherGen Config.'
 ];
@@ -53,6 +55,6 @@ book.recalculate();
 for(let b=0;b<5;b++){assert.equal(s.getCell(19,1+b).values[0][0],1000000);assert(Math.abs(s.getCell(19,9+b).values[0][0]-1)<1e-9);}
 assert.equal(rows.length,17);
 console.log((await book.inspect({kind:'match',searchTerm:'#REF!|#DIV/0!|#VALUE!|#NAME\\?|#N/A',options:{useRegex:true,maxResults:10},summary:'Formula error check',maxChars:700})).ndjson);
-await fs.mkdir(path.join(out,'previews'),{recursive:true});console.log((await book.inspect({kind:'table',range:'GenPool!A1:O3',include:'values,formulas',tableMaxRows:3,tableMaxCols:15,maxChars:2500})).ndjson);const preview=await book.render({sheetName:'GenPool',range:'A1:O40',scale:1,format:'png'});await fs.writeFile(path.join(out,'previews/GenPool-simple.png'),new Uint8Array(await preview.arrayBuffer()));
+await fs.mkdir(path.join(out,'previews'),{recursive:true});console.log((await book.inspect({kind:'table',range:'GenPool!A1:O3',include:'values,formulas',tableMaxRows:3,tableMaxCols:15,maxChars:2500})).ndjson);const preview=await book.render({sheetName:'GenPool',range:'A1:O44',scale:1,format:'png'});await fs.writeFile(path.join(out,'previews/GenPool-simple.png'),new Uint8Array(await preview.arrayBuffer()));
 await (await SpreadsheetFile.exportXlsx(book)).save(path.join(out,'Muta_Weather_Gen_Pool.xlsx'));
 console.log('Created single-sheet GenPool: 17 rows, 5 weight columns, 5 calculated rate columns, totals and enabled flag.');

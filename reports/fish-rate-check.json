@@ -1,0 +1,149 @@
+[
+  {
+    "rb": 9,
+    "band": "R9–R13",
+    "expected": {
+      "COMMON": 0.10998,
+      "RARE": 0.2,
+      "EPIC": 0.45,
+      "LEGENDARY": 0.15,
+      "MYTHIC": 0.0898,
+      "APEX": 0.00022
+    },
+    "observed": {
+      "COMMON": 0.10985,
+      "RARE": 0.20038,
+      "EPIC": 0.44905,
+      "LEGENDARY": 0.15123,
+      "MYTHIC": 0.08927,
+      "APEX": 0.00022
+    },
+    "threeMythics": 0.0007241507920000001
+  },
+  {
+    "rb": 13,
+    "band": "R9–R13",
+    "expected": {
+      "COMMON": 0.10998,
+      "RARE": 0.2,
+      "EPIC": 0.45,
+      "LEGENDARY": 0.15,
+      "MYTHIC": 0.0898,
+      "APEX": 0.00022
+    },
+    "observed": {
+      "COMMON": 0.10985,
+      "RARE": 0.20038,
+      "EPIC": 0.44905,
+      "LEGENDARY": 0.15123,
+      "MYTHIC": 0.08927,
+      "APEX": 0.00022
+    },
+    "threeMythics": 0.0007241507920000001
+  },
+  {
+    "rb": 14,
+    "band": "R14–R18",
+    "expected": {
+      "COMMON": 0.05997,
+      "RARE": 0.15,
+      "EPIC": 0.2,
+      "LEGENDARY": 0.2,
+      "MYTHIC": 0.3897,
+      "APEX": 0.00033
+    },
+    "observed": {
+      "COMMON": 0.06077,
+      "RARE": 0.14777,
+      "EPIC": 0.2033,
+      "LEGENDARY": 0.19877,
+      "MYTHIC": 0.38907,
+      "APEX": 0.00032
+    },
+    "threeMythics": 0.059182215272999994
+  },
+  {
+    "rb": 17,
+    "band": "R14–R18",
+    "expected": {
+      "COMMON": 0.05997,
+      "RARE": 0.15,
+      "EPIC": 0.2,
+      "LEGENDARY": 0.2,
+      "MYTHIC": 0.3897,
+      "APEX": 0.00033
+    },
+    "observed": {
+      "COMMON": 0.06077,
+      "RARE": 0.14777,
+      "EPIC": 0.2033,
+      "LEGENDARY": 0.19877,
+      "MYTHIC": 0.38907,
+      "APEX": 0.00032
+    },
+    "threeMythics": 0.059182215272999994
+  },
+  {
+    "rb": 19,
+    "band": "R19+",
+    "expected": {
+      "COMMON": 0.02996089882696481,
+      "RARE": 0.08000240007200216,
+      "EPIC": 0.15000450013500405,
+      "LEGENDARY": 0.15000450013500405,
+      "MYTHIC": 0.5896176885306559,
+      "APEX": 0.0004100123003690111
+    },
+    "observed": {
+      "COMMON": 0.02984,
+      "RARE": 0.08,
+      "EPIC": 0.14995,
+      "LEGENDARY": 0.15205,
+      "MYTHIC": 0.58773,
+      "APEX": 0.00043
+    },
+    "threeMythics": 0.20498001078352998
+  },
+  {
+    "rb": 21,
+    "band": "R19+",
+    "expected": {
+      "COMMON": 0.02996089882696481,
+      "RARE": 0.08000240007200216,
+      "EPIC": 0.15000450013500405,
+      "LEGENDARY": 0.15000450013500405,
+      "MYTHIC": 0.5896176885306559,
+      "APEX": 0.0004100123003690111
+    },
+    "observed": {
+      "COMMON": 0.02984,
+      "RARE": 0.08,
+      "EPIC": 0.14995,
+      "LEGENDARY": 0.15205,
+      "MYTHIC": 0.58773,
+      "APEX": 0.00043
+    },
+    "threeMythics": 0.20498001078352998
+  },
+  {
+    "rb": 25,
+    "band": "R19+",
+    "expected": {
+      "COMMON": 0.02996089882696481,
+      "RARE": 0.08000240007200216,
+      "EPIC": 0.15000450013500405,
+      "LEGENDARY": 0.15000450013500405,
+      "MYTHIC": 0.5896176885306559,
+      "APEX": 0.0004100123003690111
+    },
+    "observed": {
+      "COMMON": 0.02984,
+      "RARE": 0.08,
+      "EPIC": 0.14995,
+      "LEGENDARY": 0.15205,
+      "MYTHIC": 0.58773,
+      "APEX": 0.00043
+    },
+    "threeMythics": 0.20498001078352998
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "online",
+    "fullGoldChance": 0.49728604968,
+    "activeHours": 0.7173913043295171,
+    "onlineHours": 4.499999999885153,
+    "webbedDays": 119.56001912960306,
+    "observedGenChance": 0.49811
+  },
+  {
+    "id": "active",
+    "fullGoldChance": 0.07927748619,
+    "activeHours": 4.499999999366885,
+    "onlineHours": 28.227272723301372,
+    "webbedDays": 119.56001912960306,
+    "observedGenChance": 0.079755
+  }
+]

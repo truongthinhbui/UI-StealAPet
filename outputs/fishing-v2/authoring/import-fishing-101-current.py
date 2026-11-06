@@ -1,0 +1,14 @@
+import openpyxl,warnings,json,sys
+from pathlib import Path
+from decimal import Decimal,ROUND_HALF_UP
+sys.stdout.reconfigure(encoding='utf-8');warnings.filterwarnings('ignore');s=openpyxl.load_workbook('C:/Users/truongthinh.bui_ctv/Downloads/[Craftland] Steal A Pet Master Data.xlsx',data_only=True)['fishing 1.0.1'];p=Path('assets/fishing-config.js');f=json.loads(p.read_text(encoding='utf-8').split('=',1)[1].strip().rstrip(';'));pets=[]
+for row in s.iter_rows(min_row=2,max_row=45,values_only=True):
+ if not isinstance(row[0],(int,float)):continue
+ price=Decimal(str(row[15]));k=Decimal(str(row[16]));claim=price*k;cents=str(int((claim*100).to_integral_value(rounding=ROUND_HALF_UP)))
+ pets.append(dict(id=int(row[0]),name=row[1],rank=int(row[2]),rarity=row[3],tier=row[4],weights=[int(x or 0) for x in row[5:10]],spawnPrice=str(price),claimK=str(k),claimPrice=str(claim),claimCents=cents))
+f['pets']=pets;f['bands']=[{'min':a,'max':b,'label':f'R{a}–R{b}' if b else 'R19+'} for a,b in [(1,4),(5,8),(9,13),(14,18),(19,None)]];f['version']='fishing-1.0.1-source-v5';f['source']={'workbook':'[Craftland] Steal A Pet Master Data.xlsx','sheet':'fishing 1.0.1','range':'A1:R45','notes':'All 44 source entries retained; 42 have positive weights. TUNA and SALMON are zero-weight CHASE. Normalize actual column totals. Base price = SpawnPrice * ClaimK, stored to cents; no rounding to whole Money for base offers.'};f['pricing']['rule']='No Gen: source SpawnPrice * ClaimK to cents. With Gen: ROUND(SpawnPrice * GenPriceMultiplier * ClaimK, 0).';p.write_text('window.FishingConfig = '+json.dumps(f,ensure_ascii=False,indent=2)+';\n',encoding='utf-8')
+rows=[]
+for i,b in enumerate(f['bands']):
+ total=sum(x['weights'][i] for x in pets);mythic=sum(x['weights'][i] for x in pets if x['rarity']=='MYTHIC')/total;apex=sum(x['weights'][i] for x in pets if x['rarity']=='APEX')/total;rows.append({'band':b['label'],'total':total,'mythic':mythic,'apex':apex})
+print('ROWS',len(pets),'ACTIVE',sum(any(p['weights']) for p in pets));print(json.dumps(rows,ensure_ascii=False));Path('reports/fishing-1.0.1-import-check.json').write_text(json.dumps({'rows':pets,'bands':rows},ensure_ascii=False,indent=2),encoding='utf-8')
+gp=Path('assets/gen-config.js');g=json.loads(gp.read_text(encoding='utf-8').split('=',1)[1].strip().rstrip(';'));apex=rows[-1]['apex'];chance=g['rules']['gold']*3/100;web=g['rebirthProfiles'][-1]['weights']['webbed']/1e6;hours=10/(3600*apex*chance*web);g['timeBalance'].update({'actualActiveHours':hours,'actualElapsedHours':hours*69/11,'referenceTapChance':chance,'reference':'Recomputed for fishing 1.0.1 source pool; Gen weights unchanged; R25+ full gold 30%.'});gp.write_text('window.GenConfig = '+json.dumps(g,ensure_ascii=False,indent=2)+';\n',encoding='utf-8');print('UPDATED APEX WEB ACTIVE HOURS',hours)

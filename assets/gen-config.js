@@ -1,9 +1,9 @@
 window.GenConfig = {
-  "version": "merged-gen-14-r9-five-bands",
+  "version": "merged-gen-16-two-time-presets",
   "source": "[Craftland] Steal A Pet Master Data.xlsx",
   "rules": {
-    "green": 5,
-    "gold": 20,
+    "green": 8.288100828,
+    "gold": 16.576201656,
     "red": 0,
     "taps": 3,
     "maxGen": 1,
@@ -924,8 +924,8 @@ window.GenConfig = {
     "Rebirth changes type weights, not tap score or guaranteed rarity.",
     "Item prices and effect stacking gaps remain source metadata; they do not disable authored Fishing drops.",
     "Fishing excludes Bling Bling, Stormspark, Galaxy and Aurora. Remaining 17 weights proportionally normalized to 1,000,000 per band. Fish data unchanged.",
-    "v13: all Gen of a rarity have exactly equal probabilities per Rebirth band. COMMON > RARE > EPIC > LEGENDARY > MYTHIC per Gen. R19+ full-gold Apex + any specific MYTHIC Gen takes ~300 active fishing hours at 10s/cast. Original fish pool and tap rules unchanged.",
-    "Fishing unlocks R9. Gen bands: R9-12, R13-16, R17-20, R21-24, R25+. Fish source weights/bands unchanged."
+    "Fishing unlocks R9. Gen bands: R9-12, R13-16, R17-20, R21-24, R25+. Fish source weights/bands unchanged.",
+    "v16 provides two alternative balance presets targeting ANY Apex + ANY Gen after a mean 4.5 days at 1h/day. Online full-gold chance 49.7286%; active-time full-gold chance 7.92775%. Tap contributions differ by preset; type weights and fish pool unchanged. Expected timing is not a guarantee."
   ],
   "rollOrder": [
     "fish",
@@ -975,26 +975,36 @@ window.GenConfig = {
     }
   ],
   "timeBalance": {
-    "reference": "300 active fishing hours for Apex + Webbed, full gold, final Gen band R25+; fish weights and original fish bands retained.",
+    "reference": "Any Apex + any Gen; two alternative time bases. Full gold, 10 seconds per cast, fishing 1.0.1, from R9.",
+    "defaultPreset": "online",
     "secondsPerCast": 10,
     "weatherCycleMinutes": 69,
     "fishingMinutesPerCycle": 11,
     "castsPerCycle": 66,
-    "referenceTapChance": 0.6,
-    "webbedConditionalByBand": [
-      0.001,
-      0.003,
-      0.007,
-      0.015,
-      0.037638
-    ],
-    "method": "Equal per-Gen weight within each rarity; strictly decreasing probability by rarity; R19+ MYTHIC 37638 each preserves active 300h Apex + Webbed target.",
-    "baselineVersion": "merged-gen-12-webbed-active300h",
-    "fishPoolChanged": false,
-    "targetElapsedHours": null,
-    "actualElapsedHours": 1881.8249867014797,
-    "rarityOrderException": null,
-    "targetActiveHours": 300,
-    "actualActiveHours": 300.0010848364678
-  }
+    "targetDays": 4.5,
+    "hoursPerDay": 1,
+    "target": "any-apex-any-gen",
+    "fishPoolChanged": false
+  },
+  "balancePresets": {
+    "online": {
+      "label": "4–5 ngày · 1 giờ online/ngày",
+      "timeBasis": "online-with-weather-wait",
+      "targetDays": 4.5,
+      "hoursPerDay": 1,
+      "green": 8.288100828,
+      "gold": 16.576201656,
+      "red": 0
+    },
+    "active": {
+      "label": "4–5 ngày · 1 giờ thực sự câu/ngày",
+      "timeBasis": "active-fishing",
+      "targetDays": 4.5,
+      "hoursPerDay": 1,
+      "green": 1.321291436,
+      "gold": 2.642582873,
+      "red": 0
+    }
+  },
+  "activeBalancePreset": "online"
 };

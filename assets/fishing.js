@@ -179,10 +179,11 @@
     qteLuckChip.querySelector('.mutationPool').appendChild(token);
   });
   function chooseMutations(count){return window.GenCore.choose(count,Math.random,rewards.castRebirth).map(({id,name})=>({id,name}));}
+  root.addEventListener('fishingbalancechange',()=>{if(!rewards.isCasting&&!rewards.pending)renderMutation();});
   function renderMutation(result=false){
     const points=game?.mutationPoints||0;
     qteLuckChip.hidden=false;
-    qteLuckChip.querySelector('.mutationPercent').textContent=points+'%';
+    qteLuckChip.querySelector('.mutationPercent').textContent=points.toLocaleString('vi-VN',{maximumFractionDigits:2})+'%';
     qteLuckChip.dataset.result=result?'true':'false';
     qteLuckChip.querySelectorAll('.mutationToken').forEach(token=>{
       const won=!!(result&&game.mutationRewards?.some(reward=>reward.id===token.dataset.mutation));
