@@ -1,0 +1,214 @@
+SHEET Dinosaur List
+1: A=STT | B=Tên khủng long | C=Đặc trưng hình ảnh | D=Nhóm | E=Rarity | F=Index | G=Select | H=Reference Image | K=Design Note
+2: A=1.0 | B=Tyrannosaurus rex | C=To lớn, đầu to, răng khổng lồ | D=Săn mồi | E=MYTHIC | F=1.0 | G=True | K=T-rex
+Thân to, đầu to, hàm to, đuôi vừa
+Chi sau phát triển, chi trước ngắn
+Trọng tâm chéo-ngang
+3: A=2.0 | B=Velociraptor | C=Nhỏ, nhanh, có lông vũ | D=Săn mồi | E=MYTHIC | F=15.0 | G=False | K=Thon gọn, kích thước nhỏ
+Tứ chi, đuôi vừa vặn, vuốt sắc
+Trọng tâm chéo-thẳng
+4: A=3.0 | B=Allosaurus | C=Mảnh hơn T-rex, sừng nhỏ trên mắt | D=Săn mồi | E=MYTHIC | F=16.0 | G=False | K=Thân to, đầu vừa, cổ vừa, đuôi vừa
+Chi sau vừa, chi trước nhỏ
+Trọng tâm ngang
+Trên 2 mắt có sừng bè
+5: A=4.0 | B=Carnotaurus | C=Hai sừng ngắn, da sần | D=Săn mồi | E=MYTHIC | F=14.0 | G=False | K=Thân to, đầu vừa, cổ vừa, đuôi vừa
+Chi sau lớn, chi trước rất nhỏ
+Trọng tâm chéo-ngang
+Trên 2 mắt có sừng bè vừa
+6: A=5.0 | B=Spinosaurus | C=Mào lưng cao như buồm | D=Săn mồi | E=MYTHIC | F=2.0 | G=True | K=Thân dài, đầu dài nhọn, cổ nhỏ, đuôi to
+Tứ chi nhỏ gọn, chi trước nhiều vuốt sắc
+Trọng tâm ngang
+Lưng có mào như buồm kéo dài đến đuôi
+7: A=6.0 | B=Giganotosaurus | C=Dài hơn T-rex, cơ bắp | D=Săn mồi | E=MYTHIC | F=4.0 | G=False | K=Thân to, đầu to, cổ to, đuôi vừa
+Chi sau lớn, chi trước nhỏ
+Trọng tâm ngang
+8: A=7.0 | B=Dilophosaurus | C=Mào kép trên đầu | D=Săn mồi | E=LEGENDARY | F=21.0 | G=True | K=Thon gọn, kích thước nhỏ, mắt cao trên đầu
+Đuôi dài, đầu có mào hai bên xòe ngang
+Chi trước nhỏ chi sau vừa
+Trọng tâm chéo-thẳng
+9: A=8.0 | B=Ceratosaurus | C=Sừng mũi rõ | D=Săn mồi | E=LEGENDARY | F=22.0 | G=False | K=Kích thước nhỏ, vừa vặn thân, đầu, đuôi, cổ
+Chi sau vừa, chi trước nhỏ
+Trọng tâm ngang
+Trên mũi có sừng
+10: A=9.0 | B=Baryonyx | C=Miệng dài, săn cá | D=Săn mồi | E=LEGENDARY | F=23.0 | G=False | K=Thân to, đầu nhỏ dài nhọn, cổ vừa nhỏ dần về thân, đuôi vừa
+Chi sau vừa chi trước nhỏ
+Trọng tâm ngang
+11: A=10.0 | B=Megalosaurus | C=Răng dài, dáng cổ điển | D=Săn mồi | E=LEGENDARY | F=24.0 | G=False | K=Thân to, đầu to, cổ to, đuôi to
+Chi sau to chi trước nhỏ
+Trọng tâm ngang
+12: A=11.0 | B=Monolophosaurus | C=Mào giữa đầu | D=Săn mồi | E=LEGENDARY | F=25.0 | G=False | K=Thon gọn, kích thước nhỏ
+Các chi vừa vặn trừ cổ nhỏ, đầu tương đối dài
+Trọng tâm thẳng
+Có mào dạng khối cứng giữa đầu
+13: A=12.0 | B=Cryolophosaurus | C=Mào cong ra sau | D=Săn mồi | E=LEGENDARY | F=26.0 | G=False | K=Kích thước nhỏ
+Tứ chi vừa vặn thân to đầu to đuôi vừa
+Trọng tâm ngang
+Có mào giữa đỉnh đầu uốn cong
+14: A=13.0 | B=Albertosaurus | C=Họ hàng nhỏ hơn của T-rex | D=Săn mồi | E=MYTHIC | F=18.0 | G=False | K=Thân to, đầu vừa, cổ vừa, đuôi nhỏ
+Chi sau phát triển, chi trước ngắn
+Trọng tâm ngang-chéo
+15: A=14.0 | B=Daspletosaurus | C=Cơ bắp, hung dữ | D=Săn mồi | E=MYTHIC | F=13.0 | G=False | K=Thân to, cổ vừa, đầu vừa, đuôi vừa
+Chi sau thon gọn có đùi lớn, chi trước ngắn
+Trọng tâm ngang
+16: A=15.0 | B=Torvosaurus | C=Săn mồi cổ lớn | D=Săn mồi | E=MYTHIC | F=17.0 | G=False | K=Thân vừa, cổ vừa, đầu vừa, đuôi dài
+Chi sau lớn, chi trước ngắn
+Trọng tâm ngang
+17: A=16.0 | B=Megaraptor | C=Móng vuốt cực lớn ở tay | D=Săn mồi | E=MYTHIC | F=12.0 | G=False | K=Thân to, đầu nhỏ, cổ vừa, đuôi nhỏ
+Chi sau vừa, cơ bắp, chi trước ngắn
+Trọng tâm ngang
+Vuốt chi trước rất lớn
+18: A=17.0 | B=Deinonychus | C=Móng vuốt cong, linh hoạt | D=Săn mồi | E=MYTHIC | F=19.0 | G=False | K=Nhỏ gọn có lông vũ
+Thân vừa, đầu nhỏ cổ vừa, tứ chi cân đối
+Trọng tâm ngang
+Chi trước và đuôi có lớp lông vũ dày
+19: A=18.0 | B=Utahraptor | C=Raptor to nhất, lông dày | D=Săn mồi | E=MYTHIC | F=11.0 | G=True | K=Thân to đầu cổ vừa đuôi nhỏ ngắn
+Tứ chi vừa nhỏ
+Trọng tâm ngang
+20: A=19.0 | B=Troodon | C=Thông minh, mắt to | D=Săn mồi | E=MYTHIC | F=20.0 | G=False | K=Kích thước nhỏ
+Thân hình vừa vặn trừ chi trước nhỏ
+Trọng tâm ngang
+Mắt to
+21: A=20.0 | B=Ornitholestes | C=Nhỏ, nhanh nhẹn | D=Săn mồi | E=LEGENDARY | F=27.0 | G=True | K=Kích thước nhỏ, thân mình vừa vặn đuôi dài
+Cả người phủ lớp lông vũ, chi trước dạng cánh
+trọng tâm ngang
+22: A=21.0 | B=Brachiosaurus | C=Cổ dựng đứng, chân trước dài | D=Cổ dài | E=MYTHIC | F=7.0 | G=True | K=Thể hình cực lớn
+Thân to, đầu đuôi nhỏ cổ vừa dài
+Tứ chi trụ vừa, chắc chắn
+Trọng tâm chéo
+Chi trước dài hơn chi sau
+23: A=22.0 | B=Diplodocus | C=Cổ dài, đuôi roi | D=Cổ dài | E=MYTHIC | F=8.0 | G=False | K=Thể hình lớn
+thân to, đầu nhỏ, cổ vừa dài
+Tứ chi trụ vừa, cơ bắp
+Trọng tâm ngang
+đuôi roi rất dài - có thể cho quấn nhau
+24: A=23.0 | B=Apatosaurus | C=Thân đồ sộ, đuôi nặng | D=Cổ dài | E=MYTHIC | F=9.0 | G=False | K=Thể hình lớn
+thân to, đầu nhỏ, cổ dài nhỏ, đuôi dài
+Tứ chi trụ vừa, cân đối
+Trọng tâm ngang
+25: A=24.0 | B=Brontosaurus | C=Cổ to, thân chắc | D=Cổ dài | E=LEGENDARY | F=28.0 | G=False | K=Thể hình lớn
+thân to, đầu nhỏ, cổ dài to và to dần về thân
+Tứ chi trụ vừa, cân đối
+Trọng tâm ngang
+đuôi roi dài - có thể cho quấn nhau
+26: A=25.0 | B=Argentinosaurus | C=Khổng lồ nhất hành tinh | D=Cổ dài | E=MYTHIC | F=3.0 | G=False | K=Thể hình cực lớn
+thân vừa, đầu nhỏ, đuôi dài nhỏ
+Tứ chi trụ vừa, cân đối
+Trọng tâm chéo
+Cổ vừa ở đầu và trở nên lớn khi về thân, kích thước cổ tăng hơn gấp đôi
+27: A=26.0 | B=Dreadnoughtus | C=Cực nặng | D=Cổ dài | E=MYTHIC | F=6.0 | G=False | K=Thể hình cực lớn
+Thân vừa, đầu nhỏ, đuôi dài nhỏ, cổ dài to vừa
+Trọng tâm chéo
+Tứ chi trụ vững, rất to
+28: A=27.0 | B=Supersaurus | C=Cực dài, thanh mảnh | D=Cổ dài | E=MYTHIC | F=10.0 | G=False | K=Thể hình lớn
+thân to, đầu, cổ đuôi nhỏ nhưng cổ đuôi rất dài, tứ chi trụ
+Trọng tâm ngang-chéo
+29: A=28.0 | B=Alamosaurus | C=Có giáp nhẹ ở lưng | D=Cổ dài | E=LEGENDARY | F=29.0 | G=False | K=Thể hình cực lớn
+Thân to, đầu nhỏ, đuôi vừa to vừa
+Trọng tâm chéo
+Tứ chi trụ vững, to
+Sông lưng có lớp vảy nhọn kích thước vừa phải
+30: A=29.0 | B=Camarasaurus | C=Đầu ngắn, mũi phồng | D=Cổ dài | E=LEGENDARY | F=30.0 | G=False | K=Thể hình lớn
+Thân vừa, đầu nhỏ, cổ, tứ chi trụ, đuôi vừa
+Trọng tâm chéo ngang
+Trên mũi phồng lên rõ rệt
+31: A=30.0 | B=Amargasaurus | C=Gai kép trên cổ | D=Cổ dài | E=LEGENDARY | F=31.0 | G=True | K=Thân to, đầu nhỏ cổ vừa to dần về thân, đuôi vừa dài
+Tứ chi trụ vừa vặn, cân đối
+Trọng tâm chéo-ngang
+Trên cổ có lớn vảy nhọn kép dài, dọc lưng đuôi có lớp vảy nhọn rất nhỏ
+32: A=31.0 | B=Nigersaurus | C=Miệng ngang, răng phẳng | D=Cổ dài | E=LEGENDARY | F=35.0 | G=False | K=Thân to, tứ chi trụ vừa, cân đối
+cổ vừa và dài, đuôi rất dài
+Trọng tâm ngang
+Miệng ngang bè
+33: A=32.0 | B=Euhelopus | C=Cổ dài, đầu nhỏ | D=Cổ dài | E=LEGENDARY | F=33.0 | G=False
+34: A=33.0 | B=Mamenchisaurus | C=Cổ chiếm nửa cơ thể | D=Cổ dài | E=LEGENDARY | F=32.0 | G=False
+35: A=34.0 | B=Patagotitan | C=Siêu khổng lồ Nam Mỹ | D=Cổ dài | E=MYTHIC | F=5.0 | G=False
+36: A=35.0 | B=Shunosaurus | C=Có chùy ở đuôi | D=Cổ dài | E=LEGENDARY | F=34.0 | G=False
+37: A=36.0 | B=Parasaurolophus | C=Mào dài cong ra sau đầu | D=Mỏ vịt | E=LEGENDARY | F=37.0 | G=True
+38: A=37.0 | B=Corythosaurus | C=Mào trống, giống mũ lính | D=Mỏ vịt | E=LEGENDARY | F=38.0 | G=True
+39: A=38.0 | B=Lambeosaurus | C=Mào hình lưỡi rìu | D=Mỏ vịt | E=LEGENDARY | F=39.0 | G=False
+40: A=39.0 | B=Edmontosaurus | C=To, không mào | D=Mỏ vịt | E=LEGENDARY | F=40.0 | G=False
+41: A=40.0 | B=Hypacrosaurus | C=Mào cao, cổ dài | D=Mỏ vịt | E=LEGENDARY | F=36.0 | G=False
+42: A=41.0 | B=Maiasaura | C=“Mẹ hiền”, chăm sóc con | D=Mỏ vịt | E=EPIC | F=41.0 | G=True
+43: A=42.0 | B=Gryposaurus | C=Mũi cong lên | D=Mỏ vịt | E=EPIC | F=42.0 | G=False
+44: A=43.0 | B=Brachylophosaurus | C=Mào phẳng ngang | D=Mỏ vịt | E=EPIC | F=43.0 | G=False
+45: A=44.0 | B=Tsintaosaurus | C=Mào nhọn như sừng | D=Mỏ vịt | E=EPIC | F=44.0 | G=False
+46: A=45.0 | B=Saurolophus | C=Mào nhỏ gọn | D=Mỏ vịt | E=EPIC | F=45.0 | G=False
+47: A=46.0 | B=Ankylosaurus | C=Toàn thân giáp, chùy đuôi | D=Bọc giáp | E=EPIC | F=46.0 | G=True
+48: A=47.0 | B=Euoplocephalus | C=Giáp dày, sừng đầu | D=Bọc giáp | E=EPIC | F=47.0 | G=True
+49: A=48.0 | B=Saichania | C=Cực chắc chắn | D=Bọc giáp | E=EPIC | F=48.0 | G=False
+50: A=49.0 | B=Tarchia | C=Đầu tròn, giáp dày | D=Bọc giáp | E=EPIC | F=49.0 | G=False
+51: A=50.0 | B=Pinacosaurus | C=Giáp nhẹ, nhanh hơn | D=Bọc giáp | E=EPIC | F=50.0 | G=False
+52: A=51.0 | B=Nodosaurus | C=Không chùy đuôi, giáp nhọn | D=Bọc giáp | E=EPIC | F=51.0 | G=False
+53: A=52.0 | B=Borealopelta | C=Giáp ngụy trang | D=Bọc giáp | E=EPIC | F=52.0 | G=False
+54: A=53.0 | B=Gastonia | C=Gai vai lớn | D=Bọc giáp | E=EPIC | F=53.0 | G=False
+55: A=54.0 | B=Polacanthus | C=Gai lưng to | D=Bọc giáp | E=EPIC | F=54.0 | G=False
+56: A=55.0 | B=Edmontonia | C=Giáp vai nhọn | D=Bọc giáp | E=EPIC | F=55.0 | G=False
+57: A=56.0 | B=Triceratops | C=3 sừng, tấm cổ to | D=Sừng | E=EPIC | F=56.0 | G=False
+58: A=57.0 | B=Styracosaurus | C=Sừng dài sau cổ | D=Sừng | E=EPIC | F=57.0 | G=False
+59: A=58.0 | B=Centrosaurus | C=Sừng mũi to | D=Sừng | E=EPIC | F=58.0 | G=False
+60: A=59.0 | B=Pachyrhinosaurus | C=Mũi có u xương | D=Sừng | E=EPIC | F=59.0 | G=False
+61: A=60.0 | B=Torosaurus | C=Tấm cổ dài | D=Sừng | E=EPIC | F=60.0 | G=False
+62: A=61.0 | B=Chasmosaurus | C=Tấm cổ rộng | D=Sừng | E=RARE | F=61.0 | G=True
+63: A=62.0 | B=Einiosaurus | C=Sừng cong như lưỡi liềm | D=Sừng | E=RARE | F=62.0 | G=False
+64: A=63.0 | B=Pentaceratops | C=5 sừng, cổ khổng lồ | D=Sừng | E=RARE | F=63.0 | G=True
+65: A=64.0 | B=Nasutoceratops | C=Sừng trâu, mũi tròn | D=Sừng | E=RARE | F=64.0 | G=False
+66: A=65.0 | B=Diabloceratops | C=Hai sừng nhọn như quỷ | D=Sừng | E=RARE | F=65.0 | G=False
+67: A=66.0 | B=Gallimimus | C=Giống đà điểu, rất nhanh | D=Chim-like | E=RARE | F=66.0 | G=True
+68: A=67.0 | B=Struthiomimus | C=Cổ dài, mỏ nhỏ | D=Chim-like | E=RARE | F=67.0 | G=False
+69: A=68.0 | B=Ornithomimus | C=Có lông, nhanh | D=Chim-like | E=RARE | F=68.0 | G=False
+70: A=69.0 | B=Oviraptor | C=Mỏ cong, trứng trong ổ | D=Chim-like | E=RARE | F=69.0 | G=False
+71: A=70.0 | B=Citipati | C=Có mào, ấp trứng | D=Chim-like | E=RARE | F=70.0 | G=False
+72: A=71.0 | B=Therizinosaurus | C=Tay khổng lồ, móng dài | D=Chim-like | E=RARE | F=71.0 | G=False
+73: A=72.0 | B=Beipiaosaurus | C=Lông dày, cánh thô sơ | D=Chim-like | E=RARE | F=72.0 | G=False
+74: A=73.0 | B=Caudipteryx | C=Lông quạt ở đuôi | D=Chim-like | E=RARE | F=73.0 | G=False
+75: A=74.0 | B=Anzu | C=Có lông và mào | D=Chim-like | E=RARE | F=74.0 | G=False
+76: A=75.0 | B=Gigantoraptor | C=Oviraptor khổng lồ | D=Chim-like | E=RARE | F=75.0 | G=False
+77: A=76.0 | B=Suchomimus | C=Săn cá, mũi dài | D=Dị hình | E=RARE | F=76.0 | G=True
+78: A=77.0 | B=Herrerasaurus | C=Cổ xưa, nhỏ | D=Dị hình | E=RARE | F=77.0 | G=False
+79: A=78.0 | B=Eoraptor | C=Cổ đại, dáng mảnh | D=Dị hình | E=RARE | F=78.0 | G=False
+80: A=79.0 | B=Coelophysis | C=Thân mảnh, cổ dài | D=Dị hình | E=RARE | F=79.0 | G=False
+81: A=80.0 | B=Proceratosaurus | C=Sừng nhỏ mũi | D=Dị hình | E=RARE | F=80.0 | G=False
+82: A=81.0 | B=Sinraptor | C=Săn bầy | D=Dị hình | E=COMMON | F=81.0 | G=False
+83: A=82.0 | B=Yutyrannus | C=T-rex có lông | D=Dị hình | E=COMMON | F=82.0 | G=False
+84: A=83.0 | B=Stegosaurus | C=Tấm giáp lưng, chùy đuôi | D=Giáp lưng | E=COMMON | F=83.0 | G=True
+85: A=84.0 | B=Kentrosaurus | C=Gai dọc lưng | D=Giáp lưng | E=COMMON | F=84.0 | G=True
+86: A=85.0 | B=Huayangosaurus | C=Nhỏ, giáp pha gai | D=Giáp lưng | E=COMMON | F=85.0 | G=False
+87: A=86.0 | B=Tuojiangosaurus | C=Tấm giáp hình chữ V | D=Giáp lưng | E=COMMON | F=86.0 | G=False
+88: A=87.0 | B=Miragaia | C=Cổ dài, tấm giáp | D=Giáp lưng | E=COMMON | F=87.0 | G=False
+89: A=88.0 | B=Dryosaurus | C=Nhỏ, nhanh | D=Ăn cỏ | E=COMMON | F=88.0 | G=False
+90: A=89.0 | B=Camptosaurus | C=Trung gian giữa stego & iguano | D=Ăn cỏ | E=COMMON | F=89.0 | G=False
+91: A=90.0 | B=Iguanodon | C=Ngón cái nhọn như dao | D=Ăn cỏ | E=COMMON | F=90.0 | G=False
+92: A=91.0 | B=Ouranosaurus | C=“Buồm” sau lưng | D=Ăn cỏ | E=COMMON | F=91.0 | G=False
+93: A=92.0 | B=Tenontosaurus | C=Đuôi dài, cơ bắp | D=Ăn cỏ | E=COMMON | F=92.0 | G=False
+94: A=93.0 | B=Rhabdodon | C=Mỏ vịt nhỏ | D=Ăn cỏ | E=COMMON | F=93.0 | G=False
+95: A=94.0 | B=Leaellynasaura | C=Mắt lớn, sống nơi lạnh | D=Ăn cỏ | E=COMMON | F=94.0 | G=True
+96: A=95.0 | B=Heterodontosaurus | C=Răng khác nhau | D=Ăn cỏ | E=COMMON | F=95.0 | G=False
+97: A=96.0 | B=Hypsilophodon | C=Nhanh, nhỏ gọn | D=Ăn cỏ | E=COMMON | F=96.0 | G=False
+98: A=97.0 | B=Thescelosaurus | C=Dáng khỏe, đuôi dày | D=Ăn cỏ | E=COMMON | F=97.0 | G=False
+99: A=98.0 | C=Gai cổ kép | D=Cổ dài | F=Existed above | G=False
+100: A=99.0 | C=Cực nặng, siêu khổng lồ | D=Cổ dài | F=Existed above | G=False
+101: A=100.0 | C=Lớn nhất thời đại | D=Cổ dài | F=Existed above | G=False
+102: G=False
+103: G=False
+104: G=False
+105: G=False
+106: G=False
+107: G=False
+108: G=False
+109: G=False
+110: G=False
+111: G=False
+112: G=False
+113: G=False
+114: G=False
+115: G=False
+116: G=False
+117: G=False
+118: G=False
+119: G=False
+120: G=False
+121: G=False
+122: G=False
+123: G=False
+124: G=False
+125: G=False

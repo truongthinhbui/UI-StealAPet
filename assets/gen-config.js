@@ -2,10 +2,10 @@ window.GenConfig = {
   "version": "merged-gen-25-price-rarity",
   "source": "[Craftland] Steal A Pet Master Data.xlsx",
   "rules": {
-    "green": 10,
-    "gold": 34,
+    "green": 50,
+    "gold": 100,
     "red": 0,
-    "taps": 3,
+    "taps": 1,
     "maxGen": 1,
     "carry": false,
     "distinct": true,
@@ -770,10 +770,10 @@ window.GenConfig = {
       "red": 0
     },
     "saved": {
-      "label": "Gameplay mặc định · xanh 10% / vàng 34%",
+      "label": "Gameplay mặc định · xanh 50% / vàng 100%",
       "timeBasis": "seven-day-cohort",
-      "green": 10,
-      "gold": 34,
+      "green": 50,
+      "gold": 100,
       "red": 0
     }
   },

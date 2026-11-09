@@ -1,0 +1,55 @@
+SHEET Brand Giftcode Flow
+1: A=Status | B=IN REVIEW
+2: A=Author | B=Tran Gia Bao
+3: A=Date | B=2026-02-13 00:00:00
+4: A=Issue | B=Brand Giftcode Flow
+5: A=Content | B=1. OBJECTIVES
+2. BACKGROUND
+3. DESIGN PROPOSAL
+4. ACTION PLAN
+8: A=1. OBJECTIVES
+9: A=• Distribute brand partner gift codes to players through a controlled and validated system.
+10: A=• Ensure the gift code distribution is secure, non-duplicated, and resistant to exploits.
+11: A=• Players receive brand gift codes via the in-game system mail (update/notification section).
+14: A=2. BACKGROUND
+15: A=Database Constraints | C=• The current system does not support a global database for shared values.
+• The database API only provides concurrency protection on DataStore entries, where each write operation must be tied to a unique UID.
+• The current database system does not provide sufficient tracking capabilities, making it difficult to monitor how many giftcodes have been bypassed or remain unused.
+16: A=Giftcode Storage Limitations | C=• The database does not support storing large volumes of giftcodes efficiently. As a workaround, giftcodes must be stored in CSV files.
+• However, approximately 10,000 giftcodes equal ~1MB, which requires the client to download the entire file. As a result, storing 4 million giftcodes would require users to download an additional ~35MB.
+17: A=How Users claim Giftcodes | C=The system supports two giftcode claim methods:
+      1. Auto-Grant on Player Join: Giftcodes are automatically granted when a player joins the game. This method has a potential abuse risk, as users may create and spam cloned accounts to receive giftcodes.
+      2. Claim via Event Milestone Completion: Giftcodes are granted after the player completes a specific event milestone.
+20: A=3. DESIGN PROPOSAL
+21: A=Overview
+22: A=• The system uses a single DataStore UID as a global counter (referred to as UID AAA) to control giftcode distribution order and prevent duplication.
+23: A=• Each giftcode is assigned sequentially based on the global counter value.
+24: A=• Failure Handling:
+      • If any read or write operation fails at any step, the process is immediately aborted.
+      • No partial state is retained.
+      • The user must rejoin the match to retry receiving a giftcode.
+25: A=• This approach ensures:
+      • No duplicate giftcodes are assigned.
+      • Sequential and controlled distribution.
+      • Safe recovery from failure without inconsistent data states.
+27: A=Overall Flow
+30: A=Details
+31: A=Step | B=Explain | I=Note
+32: A=[1] | B=When a user joins a match, he reads saved giftcode from his database.
+33: A=[1.1] | B=In case user has received giftcode before, the system show the giftcode in his database. | I=Avoid one user receives many giftcodes.
+34: A=[2] | B=In case user hasn't received giftcode, the server reads the Global Count from UID AAA. | I=Can be changed if editor support the csv streaming through database.
+35: A=[3] | B=If the read is successful, the system obtains the current value X.
+36: A=[4] | B=The server increments the Global Count to X + 1 and updates to UID AAA.
+37: A=[4.1] | B=If the write operation is failed, the system will break and no giftcode will be given to user.
+38: A=[5] | B=If the write operation is successful, the system retrieves the giftcode at row X from the CSV file.
+39: A=[6] | B=The giftcode is saved to the user’s database record.
+40: A=[6.1] | B=If the write operation is failed, the system will track the giftcode index (X). | I=Need discuss more about how to track these indexes correctly.
+41: A=[6.2] | B=At this time, system won't show read giftcode for user. | I=Avoid one user receives many giftcodes.
+42: A=[7] | B=Upon successful save, the giftcode is displayed to the user via system mail.
+44: A=Optimize Flow
+45: A=TODO
+48: A=4. ACTION PLAN
+49: A=Action | F=Related Ticket | H=Responsible | I=Due Date | J=Release Date | K=Release Version
+50: A=Save Player's first login timestamp | H=Zuto
+51: A=Implement the flow using the current giftcode system for initial testing. | H=Zuto
+52: A=Implement Flow with Giftcode from Brand | H=Zuto

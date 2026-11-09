@@ -1,0 +1,222 @@
+SHEET QA Checklist
+1: A=ID | B=Case | C=Reviewer | D=21/10 | E=Note | F=30/10 | G=Note | H=31/10 | I=Note | J=2025-11-06 00:00:00 | K=Note | L=2025-11-12 00:00:00 | M=Note | N=2025-11-19 00:00:00 | O=Note | P=2025-11-26 00:00:00 | Q=Note | R=2025-12-08 00:00:00 | S=Note | T=24/02 | U=Note | W=Note | Y=Note
+2: A=A | B=Pet Interact - Zuto
+3: B=Pet's cost/value (ref: sheet Mob + Mutation) | C=Codex | D=True | F=True | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+4: B=Offline income = Pet's value * offline time (seconds) / 5 | C=Codex | D=True | F=True | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+6: A=B | B=Buy Pet - Zuto
+7: B=Buy pet on line and wallet decrease by pet's cost | C=Codex | D=False | E=   | F=True | H=True | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+8: B=Show prompt "Pet will travel to your base, watch out for snatchers!" after buying a pet | C=Codex | D=False | E=   | F=True | H=True | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+9: B=Show prompt "Your new pet arrived at your base safely!" when purchased pet returned base | C=Codex | D=False | E=   | F=True | H=True | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+10: B=Buy other's purchased pet and wallet decrease by pet's cost | C=Codex | D=False | E=   | F=True | H=True | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+11: B=Show prompt "Your pet got snatched by another buyer!" when other player buy own's purchased pet | C=Codex | D=False | E=   | F=True | H=True | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+12: B=Show prompt "Your base is full!" when base is full of pets | C=Codex | D=False | E=   | F=True | H=True | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+13: B=Quit and Rejoin after buying new pet | C=Codex | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+14: B=Buy Pet at the end of lines | C=Codex | D=False | E=   | F=False | G=Will be fixed in version 1.4.0 | H=False | J=True | K=Can not buy pet - will make a slot error with not empty | L=False | N=True | P=False | R=False | T=False | V=False | X=False
+16: A=C | B=Sell Pet - Zuto
+17: B=Wallet increase by a half of pet's cost | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+18: B=Quit and Rejoin after selling pet | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+20: A=D | B=Steal Pet - Zuto
+21: B=Pet becomes red while being stolen | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+22: B=Slow down when stealing pet | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+23: B=Lose pet when snatcher returns base | C=Zuto | D=False | E=   | F=True | G=There was a case of duplication match start, not too sure of replication steps due to inconsistent activation requirement. 
+ | H=False | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+24: B=Return pet when hit snatcher | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+25: B=Show prompt "Your base is full!" when base is full of pets | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+26: B=Show prompt "Cannot teleport while stealing!" while stealing | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+27: B=Show prompt "Cannot steal while teleporting!" while teleporting | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+28: B=Show prompt "Your pet has been stolen by {0}!" when own's pet is stolen | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+29: B=Show prompt "You are stealing a pet from {0}" when start stealing pet from another player | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+30: B=Show prompt "You stole a pet from {0}!" when stole pet from another player | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+31: B=Show prompt "Your pet is being stolen!" when pets are being stolen | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+32: B=Show prompt "You have been caught, failed to steal!" when be hit while stealing | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+33: B=Steal pet from own base. Steps:
+      - Stand on own base's grass
+      - Turn off wifi
+      - Go to other's base (without laser walls on)
+      - Stand on a pet
+      - Turn on wifi
+      - Spam on where button Steal will show | C=Zuto | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+34: B=Steal pet from other's base. Steps:
+      - Go inside other's base
+      - Stand on a pet
+      - Turn off wifi
+      - Go back home
+      - Turn on wifi
+      - Spam on where button Steal will show | C=Zuto | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+35: B=Steal pet by teleporting. Steps:
+      - Stand on a pet
+      - Press teleport
+      - Spam Steal button | C=Zuto | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+36: B=Steal pet by teleporting with off wifi. Steps:
+      - Go inside other's base
+      - Stand on a pet
+      - Press Teleport
+      - Turn off wifi
+      - Wait for 5+ seconds
+      - Turn on wifi
+      - Spam Steal button | C=Zuto | D=False | F=True | G=The steal button does not even show up to test this case.  | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+37: B=Steal pet and make duplicate when quit game. Steps:
+      - A steal pet B, then A quit
+      - B turn off wifi then quit
+      - When B back to lobby, turn on wifi. There will be 2 cases occur:
+            - B immediately join the old match -> turn off wifi to quit again until case 2 occurs
+            - B will be requested to join the old match or not -> select NO
+      - A and B join new match -> A has stolen pet from B and B doesn't lose pet | D=False | F=False | H=False | J=True | L=False | R=False | T=False | V=False | X=False
+38: B=Steal first slot when first join the game can make the pet duplicated | C=Zuto | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+39: B=Steal pet and make duplicate when quit game. Steps:
+      - A pick up pet B.
+      - B turn off wifi until disconnected
+      - A success steal pet B.
+      - B turn on wifi. Pet re appeared visible on B House but not true data | C=Zuto | J=True | K=Still occur if the match has 3+ players | L=False | N=True | P=True | R=False | T=False | V=False | X=False
+40: B=A steal B. B spam to sell the pet. A get pet and B still get money | C=Zuto | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+41: B=Steal pet and make duplicate when quit game. Steps:
+      - A steal pet B.
+      - B turn off wifi and quit immediately.
+      - A steal successfully immediately when B start to quit then A quit immediately.
+      - When B back to lobby, turn on wifi. There will be 2 cases occur:
+            - B immediately join the old match then be kicked out back to room
+            - B join back room without join the old match
+      - A and B both has stolen pet | C=Zuto | J=False | L=False | N=True | P=True | R=False | T=False | V=False | X=False
+43: A=E | B=Swap Pets - Zuto
+44: B=Render Blue when picking up pet | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+45: B=Show prompt "You are selecting <Pet> - <Mutation>" when picking up pet | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+46: B=Can not attack while picking up pet | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+47: B=Only show swap button on interactive slot (except original slot) | C=Codex | D=False | F=True | H=False | J=False | K=Failed when spam to no-interactive slot (P1) | L=False | N=True | P=True | R=True | T=False | V=False | X=False
+48: B=After swapping by Select, show other interact button on slot (if slot has pet) | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+49: B=Swap Pets success after press Swap Button (interact button) | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+50: B=Swap Mutations success after press Swap Button (interact button) | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+51: B=Being hit returns picking up pet to original slot | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=True | T=False | V=False | X=False
+52: B=Being stolen returns picking up pet to original slot | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+53: B=Can not open Swap HUD when being stolen or picking up pet | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+54: B=Show prompt "Bring your Pet back home!" when open Swap HUD while picking up pet  | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+55: B=After swapping by HUD, show interact buttons on slot (if slot has pet)  | C=Codex | D=False | F=False | G=Not show | H=False | J=False | K=Not show (P2) | L=False | N=False | O=No button appear | P=False | R=False | T=False | V=False | X=False
+56: B=After swapping by HUD, hide interact buttons on slot (if slot doesn't have pet)  | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+57: B=Show correct unlocked slots in HUD | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+58: B=Hide locked slots in HUD | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+59: B=Can only select 2 slots in HUD | C=Codex | D=False | F=True | H=False | J=True | L=True | N=False | O=Still can choosing many pet slot in HUD when spam | P=True | R=False | T=False | V=False | X=False
+60: B=Can deselect pet slot when press selected slot | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+61: B=Swap Pets success after press Swap Button (HUD) | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+62: B=Swap Mutations success after press Swap Button (HUD) | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+63: B=Close HUD when laser walls are off | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | O=Negative surprise feeling | P=True | R=False | T=False | V=False | X=False
+64: B=Close HUD when being stolen | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+65: B=Show prompt "You must select 2 Pets to swap!" when select only one pet and press swap button  | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+66: B=Swap Pets using wifi trick. Steps:
+      - Turn on swap HUD
+      - Select 2 pets
+      - Turn off wifi
+      - Other player steals selected pet
+      - Turn on wifi
+      - Spam swap button | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+67: B=Pick up pet then quit game and rejoin, pet won't be lost | C=Codex | D=False | F=True | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+69: A=F | B=Fusion Pets - Zuto
+70: B=Only show Fuse button on interactive slot (except original slot) | C=Zuto | P=True | R=False | T=False | V=False | X=False
+71: B=After confirm fuse, show timer on Fusion Egg | C=Zuto | P=True | R=False | T=False | V=False | X=False
+72: B=Remove Pets success after press Fusion Button and place an Egg on the second slot | C=Zuto | P=True | R=False | T=False | V=False | X=False
+73: B=Hatch -> Quit  -> Still have same pet | C=Zuto | P=True | R=False | T=False | V=False | X=False
+74: B=Fuse -> Quit -> Still have egg | C=Zuto | P=True | R=False | T=False | V=False | X=False
+75: B=Fusion Pets using wifi trick. Steps:
+      - Turn on fusion HUD
+      - Select 2 pets
+      - Turn off wifi
+      - Other player steals selected pet
+      - Turn on wifi
+      - Spam fusion button | C=Zuto | P=True | R=False | T=False | V=False | X=False
+76: B=Over but pet:
+ - Fullbase -> fusion 2 pet
+ - Buy new 2 pet -> lost 2nd pet | C=Zuto | P=False | R=False | T=False | V=False | X=False
+77: C=Zuto | P=False | R=False | T=False | V=False | X=False
+78: C=Zuto | P=False | R=False | T=False | V=False | X=False
+79: C=Zuto | P=False | R=False | T=False | V=False | X=False
+80: C=Zuto | P=False | R=False | T=False | V=False | X=False
+81: C=Zuto | P=False | R=False | T=False | V=False | X=False
+82: C=Zuto | P=False | R=False | T=False | V=False | X=False
+83: C=Zuto | P=False | R=False | T=False | V=False | X=False
+84: C=Zuto | P=False | R=False | T=False | V=False | X=False
+85: C=Zuto | P=False | R=False | T=False | V=False | X=False
+87: A=G | B=Base - Zuto
+88: B=Unlock doors of other player's base | C=Codex | D=True | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+89: B=Cost of unlocking base (equals 3 times of highest pet's price in base) | C=Codex | D=True | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+90: B=Hit fly when interacting with laser walls | C=Codex | D=True | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+91: B=Go through laser wall. Steps:
+      - Turn off wifi
+      - Go to laser walls (need check 3 walls) | C=Codex | D=False | F=True | H=True | J=True | K=Can not go over laser wall | L=False | N=True | P=True | R=False | T=False | V=False | X=False
+92: B=Show prompt "Your base is already locked!" when go through lock door button while closing door | C=Codex | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+93: B=Show prompt "You unlocked this player's base!" when unlock other's base's door | C=Codex | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+94: B=Show prompt "Your base has been unlocked by another player!" when other player unlocked own's base | C=Codex | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+96: A=H | B=Player - Zuto
+97: B=New user has initial value: rebirth lv1, wallet 500, no pet | C=Codex | D=False | F=False | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+98: B=New user first time joins room, buy pet and can earn income from pets | C=Codex | D=False | F=False | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+99: B=Read data failed -> kick. (Fields: Wallet, Rebirth Level, Base's Pets, Base's Pets' Mutation) | D=False | F=False | H=False | J=False | L=False | N=False | P=False | R=False | T=False | V=False | X=False
+100: B=Check wallet when join game | C=Codex | D=True | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+101: B=Teleport to base | C=Codex | D=True | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+102: B=Teleport others (in own base) back to their base when player join | C=Zuto | D=False | F=False | H=False | J=False | L=False | N=False | P=True | R=False | T=False | V=False | X=False
+103: B=Hit fly other player | C=Codex | D=True | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+104: B=Can turn on mic | C=Codex | D=True | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+105: B=Can add friend | C=Codex | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+107: A=I | B=Match - Zuto
+108: B=Private room must starts at least 2 players | C=Codex | D=True | F=True | H=True | J=True | L=True | N=True | P=False | R=False | T=False | V=False | X=False
+109: B=Can mid join | D=False | F=True | H=True | J=False | L=False | N=False | P=False | R=False | T=False | V=False | X=False
+111: A=J | B=Rebirth - Zuto
+112: B=Rebirth shows correct rewards and conditions | C=Zuto | D=True | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+113: B=Rebirth shows owned requirement pets | C=Zuto | D=True | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+114: B=Alert on rebirth button when all conditions are met | C=Zuto | D=False | F=True | H=True | I=Alert icon not hide after reach requirement then not | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+115: B=Show prompt "Not enough cash!" when rebirth without enough money | C=Zuto | D=True | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+116: B=Show prompt "Bring your Pet back home!" when confirm rebirth while picking up pet  | C=Zuto | D=True | F=True | H=False | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+117: B=Show prompt "You have successfully rebirthed!" when rebirth success | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+118: B=Show prompt "You don't have the required pet: {0}!" when lack of pet | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+119: B=Show prompt "Your pet is being stolen!" while pet being stealing | C=Zuto | D=False | F=True | H=True | I=DUPLICATED | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+120: B=Show prompt "Cannot rebirth while stealing!" while stealing pet | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+121: B=Show prompt "Cannot rebirth while your pet is still on its way back!" while waiting for purchased pets return base | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+123: A=K | B=Collection - Zuto/Tom
+124: B=Show pet details on the left side | C=Zuto | D=True | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+125: B=Show correct pets count | C=Zuto | D=True | E=Dont see the steal button when turn off wifi to spam | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+126: B=Show correct mutations count | C=Zuto | D=False | E=Can steal by this hack  | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+127: B=Show owned pets on the right side | C=Zuto | D=False | E=Can steal by this hack  | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+128: B=Show mutations count of owned pets on the right side | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+129: B=Can switch tabs | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+130: B=Can switch pages | C=Zuto | D=False | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+132: A=L | B=Shop - Tom
+133: B=Show correct pet coins in shop | C=Codex | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+134: B=Decrease correct amount after buying item | C=Codex | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+135: B=Show item details when select an item | C=Codex | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+136: B=Show cooldown after buying an item | C=Codex | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+137: B=Increase speed and has effect after buying item Rise Speed | C=Codex | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+138: B=Change to super weapon after buying item Super Weapon | C=Codex | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+139: B=Increase unlocked base cost after buying item Double Cost | C=Codex | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+140: B=Spawn a Normal pet after buying item Summon Pet Normal | C=Codex | F=True | H=True | J=True | L=False | N=True | P=True | R=False | T=False | V=False | X=False
+141: B=Spawn a Rare pet after buying item Summon Pet Rare | C=Codex | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+142: B=Spawn a Epic pet after buying item Summon Pet Epic | C=Codex | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+143: B=Spawn a Legendary pet after buying item Summon Pet Legendary | C=Codex | F=False | H=False | J=False | L=False | N=False | P=True | R=False | T=False | V=False | X=False
+144: B=Show prompt "You don’t have enough coin to buy the item" when buy item without enough money | C=Codex | F=False | H=False | J=False | L=False | N=False | P=True | R=False | T=False | V=False | X=False
+145: B=Show prompt "Wait for the item to cooldown before purchasing again" when select item in cooldown time | C=Codex | F=False | H=False | J=False | L=False | N=False | P=True | R=False | T=False | V=False | X=False
+146: B=Show prompt "Please select an item before purchasing" when press Buy button without select any item | C=Codex | F=False | H=False | J=False | L=False | N=False | P=True | R=False | T=False | V=False | X=False
+148: A=M | B=Leaderboards - Zuto
+149: B=Leaderboards are correct (internal and external) | C=Codex | F=True | H=True | J=True | L=True | N=True | P=False | R=False | T=False | V=False | X=False
+150: B=Ranking updates once per 10 seconds | C=Codex | F=True | H=True | J=True | L=True | N=True | P=False | R=False | T=False | V=False | X=False
+151: B=Leaderboard rank won't update if score is not updated | F=False | H=False | J=False | L=False | N=False | P=False | R=False | T=False | V=False | X=False
+153: A=N | B=Events - Tom
+154: B=Outlook is fine | C=Codex | F=True | H=True | J=True | L=True | N=True | P=False | R=False | T=False | V=False | X=False
+155: B=Put blank pet/ wrong pet shows "Please place the correct pet" | C=Codex | F=True | H=True | J=True | L=True | N=True | P=False | R=False | T=False | V=False | X=False
+156: B=Put right pet shows "Success! The pet has been stored" | C=Codex | F=False | H=False | J=False | L=False | N=False | P=False | R=False | T=False | V=False | X=False
+157: B=Can't put pet when reach target progress | C=Codex | F=True | H=True | J=True | L=True | N=True | P=False | R=False | T=False | V=False | X=False
+158: B=Can open Collector Event and read tutorial | C=Codex | F=True | H=True | J=True | L=True | N=True | P=False | R=False | T=False | V=False | X=False
+159: B=Pet show at rotating list are true as config | C=Codex | F=False | H=False | J=False | L=False | N=False | P=False | R=False | T=False | V=False | X=False
+160: B=Can claim progress reward | C=Codex | F=False | H=False | J=False | L=False | N=False | P=False | R=False | T=False | V=False | X=False
+161: B=Milestone go up when claim progress reward | C=Codex | F=False | H=False | J=False | L=False | N=False | P=False | R=False | T=False | V=False | X=False
+162: B=Can claim extra reward when reach milestone target | C=Codex | F=True | H=True | J=True | L=True | N=True | P=False | R=False | T=False | V=False | X=False
+163: B=Can open tooltips | C=Codex | F=True | H=True | J=True | L=True | N=True | P=False | R=False | T=False | V=False | X=False
+164: B=Can't claim when not reach target/ claimed already | C=Codex | F=False | H=False | J=False | L=False | N=False | P=False | R=False | T=False | V=False | X=False
+165: B=Spam claim and connection on/off can't bug rewards | C=Codex | F=False | H=False | J=False | L=False | N=False | P=False | R=False | T=False | V=False | X=False
+167: A=L | B=Others - Zuto/Tom
+168: B=News alert new notification | C=Codex | F=True | H=True | J=True | L=True | N=True | P=False | R=False | T=False | V=False | X=False
+169: B=News turn off alert after being read (both in current match and matches later) | C=Codex | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+170: B=News details have included the new update content | C=Codex | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+171: B=News show correct next update date | C=Codex | F=True | G=Correct date: November 13th | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+172: B=Version increase | C=Codex | F=True | G=Correct version: 1.3.0 | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+173: B=Show prompt "Teleport cooldown" when try to teleport again while it's cooldown | C=Codex | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+174: B=Show prompt "Teleporting..." when press teleport button while teleporting | C=Codex | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+175: B=Show prompt "This map will end in 30 seconds! Get ready for a new match!" when the map has only 30 seconds left | F=True | H=True | J=True | L=False | N=False | P=True | R=False | T=False | V=False | X=False
+177: A=O | B=Publishing smoke - Codex
+178: B=Solo matchmaking/solo room creation functions work normally | C=Codex | F=True | H=True | J=True | L=True | N=True | P=False | R=False | T=False | V=False | X=False
+179: B=Cover image, map name, map description, out-of-game leaderboard, tag type and localization | C=Codex | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False
+180: B=Play map 1 hour, check gameplay flow, display result, data read write, localization and new changes | C=Codex | F=True | H=True | J=True | L=True | N=True | P=True | R=False | T=False | V=False | X=False

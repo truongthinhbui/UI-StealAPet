@@ -1,0 +1,38 @@
+SHEET Shop System
+1: A=1. New Currency
+3: A=Section | C=Details
+4: A=Currency Name (Working) | C=Pet Coin
+5: A=Type | C=Premium Gameplay Currency – earned through playtime (non-tradable).
+6: A=Acquisition Rule | C=+1 unit per 1 minute of active playtime in this game mode.
+7: A=Offline Accumulation | C=❌ No gain while offline, only during active playtime.
+8: A=Conversion Option (Future) | C=Players can purchase with Diamonds (main FF premium currency) if needed for monetization balance.
+12: A=2. Usage
+13: J=150.0 | K=100.0 | L=200.0
+14: A=Feature | C=Description | D=Example Cost | J=75.0 | K==K13*J14/J13 | L==L13*K14/K13
+15: A=Buff Purchase | C=Buy temporary buffs for pets or player stats (e.g., +10% damage, +10% defense for 10 mins). | D=20 Fusion Cores
+16: A=FF Snow ball | C=Freeze other players using FF snow ball | D=10 Fusion Cores
+17: A=Fusion Success Boost | C=Increase fusion High Rate by +5-10% for one attempt. | D=30 Fusion Cores
+18: A=Fusion Time Reduction | C=Reduce egg incubation by up to 50%. | D=15 Fusion Cores
+19: A=Special Shop Access (TBD) | C=Trade for exclusive seasonal items, secret pet fragments, or mutation catalysts. (TBD) | D=Variable (TBD)
+23: A=3. Shop List
+26: A=ID | B=Item | C=Effect | D=Cost | E=RebirthRequirement | F=Version | G=Priority
+27: A=1.0 | B=Rise Speed | C=Increase speed for a short duration (30s) | D=10.0 | E=0.0 | F=1.3.0
+28: A=2.0 | B=Super Weapon | C=Hit other players farther away (30s) | D=10.0 | E=0.0 | F=1.3.0
+29: A=3.0 | B=Double Cost | C=Double the base unlock cost for a short duration | D=5.0 | E=0.0 | F=1.3.0
+30: A=4.0 | B=Summon COMMON | C=Randomly spawn a COMMON pet on the road | D=5.0 | E=0.0 | F=1.5.0
+31: A=5.0 | B=Summon RARE | C=Randomly spawn a RARE pet on the road | D=10.0 | E=4.0 | F=1.5.0
+32: A=6.0 | B=Summon EPIC | C=Randomly spawn a EPIC pet on the road | D=15.0 | E=7.0 | F=1.5.0
+33: A=7.0 | B=Summon LEGENDARY | C=Randomly spawn a LEGENDARY pet on the road | D=30.0 | E=11.0 | F=1.5.0
+34: A=8.0 | B=Summon MYTHIC | C=Randomly spawn a MYTHIC  pet on the road | D=60.0 | E=13.0 | F=1.7.0
+35: A=9.0 | B=Decoy Pet | C=Fake your lowest value pet into MOODENG (180s) | D=70.0 | E=7.0 | F=PENDING
+36: A=10.0 | B=Chicken (?) | C=Fake all your pets into CHICK (180s) | D=70.0 | E=7.0 | F=PENDING
+37: A=11.0 | B=Trap | C=Immobilize players enter base (one time) | D=20.0 | E=2.0 | F=PENDING
+38: A=12.0 | B=Master Key | C=Unlock every house (including your own) | D=30.0 | E=0.0 | F=OB52
+39: A=13.0 | B=Helper Robot | C=Automatically collects money from pets (60s) | D=10.0 | E=0.0 | F=PENDING
+40: A=14.0 | B=Muscle UP | C=Make your pets heavier and slow down stealers (180s) | D=70.0 | E=7.0 | F=PENDING
+41: A=15.0 | B=Under Protection | C=Protect your base for 24 hours | D=240.0 | E=7.0 | F=PENDING
+42: A=16.0 | C=Weather change | F=PENDING
+43: A=17.0 | F=PENDING
+44: A=18.0 | F=PENDING
+45: A=19.0 | F=PENDING
+46: A=20.0 | F=PENDING

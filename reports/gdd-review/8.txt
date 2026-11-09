@@ -1,0 +1,4 @@
+SHEET GlobalCofig
+1: A=ConfigName | B=MobSpawnInterval | C=PlayerMoveSpeed | D=PlayerStealSpeed | E=PlayerHitInvulnerableTime
+2: A=Datatype | B=int | C=string | D=string | E=int
+3: A=value | B=6000.0 | C=1.0 | D=0.65 | E=3000.0

@@ -1,0 +1,152 @@
+SHEET Database
+1: A=Index | B=Data | C=Manager | D=Current Type | E=Sheet | F=Key | G=Read when join | H=Read when need | I=Write when quit | J=Write real time | K=Write after being read
+2: A==Row()-1 | B=Cash balance | C=WalletManager | D=string | E=PlayerSave | F=pBalance | G=True | H=False | I=True | J=True | K=False
+3: A==Row()-1 | B=Pet Coins | C=WalletManager | D=string | E=PlayerSave | F=pPetCoins | G=True | H=False | I=True | J=True | K=False
+4: A==Row()-1 | B=IAP Pet Coins | C=WalletManager | D=string | E=PlayerSave | F=pIapPetCoins | G=True | H=False | I=True | J=True | K=False
+5: A==Row()-1 | B=Dust | C=WalletManager | D=string | E=PlayerSave | F=pDust | G=True | H=False | I=True | J=True | K=False
+6: A==Row()-1 | B=Pet IDs | C=PetsManager | D=string | E=PlayerSave | F=pMobListID | G=True | H=False | I=True | J=True | K=False
+7: A==Row()-1 | B=Pet mutations | C=PetsManager | D=string | E=PlayerSave | F=pMobMutationList | G=True | H=False | I=True | J=True | K=False
+8: A==Row()-1 | B=Pet weather IDs | C=PetsManager | D=string | E=PlayerSave | F=pMobWeathersList | G=True | H=False | I=True | J=True | K=False
+9: A==Row()-1 | B=Pet levels | C=PetsManager | D=string | E=PlayerSave | F=pMobLevelList | G=True | H=False | I=True | J=True | K=False
+10: A==Row()-1 | B=Pet balances | C=PetsManager | D=string | E=PlayerSave | F=pMobBalanceList | G=True | H=False | I=True | J=True | K=False
+11: A==Row()-1 | B=Pet indexes | C=PetsManager | D=string | E=PlayerSave | F=pMobIndex | G=True | H=False | I=True | J=True | K=False
+12: A==Row()-1 | B=Pet passives | C=PetsManager | D=string | E=PlayerSave | F=pMobPassives | G=True | H=False | I=False | J=False | K=False
+13: A==Row()-1 | B=Storage pets | C=StorageManager | D=string | E=PlayerSave | F=pStoragePets | G=True | H=False | I=True | J=True | K=False
+14: A==Row()-1 | B=Storage balance | C=StorageManager | D=string | E=PlayerSave | F=pStorageBalance | G=True | H=False | I=True | J=True | K=False
+15: A==Row()-1 | B=Rebirth level | C=RebirthManager | D=int | E=PlayerSave | F=pRebirthLevel | G=True | H=False | I=True | J=False | K=False
+16: A==Row()-1 | B=Activities | C=ActivitiesManager | D=string | E=PlayerSave | F=pActivities | G=True | H=False | I=True | J=False | K=False
+17: A==Row()-1 | B=Daily reward state | C=DailyRewardManager | D=string | E=PlayerSave | F=pDailyReward | G=True | H=False | I=True | J=False | K=False
+18: A==Row()-1 | B=Duplicate eggs | C=DuplicateManager | D=string | E=PlayerSave | F=pDuplicateEggs | G=True | H=False | I=True | J=False | K=False
+19: A==Row()-1 | B=Duplicate tickets | C=DuplicateManager | D=int | E=PlayerSave | F=pDuplicateTicket | G=True | H=False | I=True | J=False | K=False
+20: A==Row()-1 | B=Fusion eggs | C=FusionManager | D=string | E=PlayerSave | F=pEggs | G=True | H=False | I=True | J=True | K=False
+21: A==Row()-1 | B=Fusion egg indexes | C=FusionManager | D=string | E=PlayerSave | F=pEggsIndex | G=True | H=False | I=True | J=True | K=False
+22: A==Row()-1 | B=Mutagens | C=InventoryManager | D=string | E=PlayerSave | F=pMutagens | G=True | H=False | I=True | J=False | K=False
+23: A==Row()-1 | B=Weather generators | C=InventoryManager | D=string | E=PlayerSave | F=pWeatherGens | G=True | H=False | I=True | J=False | K=False
+24: A==Row()-1 | B=Event pets inventory | C=InventoryManager | D=string | E=PlayerSave | F=pEventPets | G=True | H=False | I=True | J=False | K=False
+25: A==Row()-1 | B=Current mails | C=MailsManager | D=string | E=PlayerSave | F=CurrentMails | G=True | H=False | I=True | J=False | K=False
+26: A==Row()-1 | B=Pending mails | C=MailsManager | D=string | E=PlayerSave | F=PendingMails | G=True | H=False | I=True | J=True | K=False
+27: A==Row()-1 | B=Followed pet | C=PetFollowingManager | D=string | E=PlayerSave | F=pPetFollowing | G=True | H=False | I=True | J=True | K=False
+28: A==Row()-1 | B=Lifecycle/player progression | C=PlayersManager | D=string | E=PlayerSave | F=pLifecycle | G=True | H=False | I=True | J=False | K=False
+29: A==Row()-1 | B=Last log time | C=PlayersManager | D=int | E=PlayerSave | F=lastLogTime | G=True | H=False | I=True | J=False | K=False
+30: A==Row()-1 | B=In-match status | C=PlayersManager | D=string | E=PlayerSave | F=pIsInMatch | G=True | H=False | I=True | J=True | K=False
+31: A==Row()-1 | B=Ban status | C=PlayersManager | D=string | E=PlayerSave | F=pIsBan | G=True | H=False | I=False | J=False | K=True
+32: A==Row()-1 | B=Profile info | C=ProfileManager | D=string | E=Profile | F=Info | G=True | H=False | I=True | J=False | K=True
+33: A==Row()-1 | B=Used gift codes | C=MailsManager | D=List<int> | E=GiftCodeHasUse | F=OwnGiftCodeHasUse | G=True | H=False | I=True | J=False | K=True
+34: A==Row()-1 | B=Collection pets | C=CollectionManager | D=string | E=PetsCollection | F=OwnPets | G=True | H=False | I=True | J=False | K=True
+35: A==Row()-1 | B=Collection mutations | C=CollectionManager | D=string | E=PetsCollection | F=OwnMutations | G=True | H=False | I=True | J=False | K=False
+36: A==Row()-1 | B=Collection secret mutations | C=CollectionManager | D=string | E=PetsCollection | F=OwnSecretMutations | G=True | H=False | I=True | J=False | K=False
+37: A==Row()-1 | B=Collection weathers | C=CollectionManager | D=string | E=PetsCollection | F=OwnWeatherMutations | G=True | H=False | I=True | J=False | K=False
+38: A==Row()-1 | B=Collection secret weathers | C=CollectionManager | D=string | E=PetsCollection | F=OwnSecretWeatherMutations | G=True | H=False | I=True | J=False | K=False
+39: A==Row()-1 | B=Collection pet milestones | C=CollectionManager | D=string | E=PetsCollection | F=OwnPetMilestone | G=True | H=False | I=True | J=False | K=False
+40: A==Row()-1 | B=Collection secret pet milestones | C=CollectionManager | D=string | E=PetsCollection | F=OwnSecretPetMilestone | G=True | H=False | I=True | J=False | K=False
+41: A==Row()-1 | B=Collection rarity milestones | C=CollectionManager | D=string | E=PetsCollection | F=OwnRarityMilestone | G=True | H=False | I=True | J=False | K=False
+42: A==Row()-1 | B=Event Collector state | C=EventsManager | D=string | E=Event | F=eCollector | G=True | H=False | I=True | J=False | K=False
+43: A==Row()-1 | B=Event Fuse Contract state | C=EventsManager | D=string | E=Event | F=eEventFuseContract | G=True | H=False | I=True | J=False | K=False
+44: A==Row()-1 | B=Event Meteorite/Dig state | C=EventsManager | D=string | E=Event | F=eDigMeteorite | G=True | H=False | I=True | J=False | K=False
+45: A==Row()-1 | B=Event Whack-a-Mole state | C=EventsManager | D=string | E=Event | F=eEventWhackAMole | G=True | H=False | I=True | J=False | K=False
+46: A==Row()-1 | B=Event Steal-a-Ball state | C=EventsManager | D=string | E=Event | F=eStealABall | G=True | H=False | I=True | J=False | K=False
+47: A==Row()-1 | B=Event Kick Ball state | C=EventsManager | D=string | E=Event | F=eKickBall | G=True | H=False | I=True | J=False | K=False
+48: A==Row()-1 | B=Event Rarity Contract state | C=EventsManager | D=string | E=Event | F=eRarityContract | G=True | H=False | I=True | J=False | K=False
+49: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+50: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+51: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+52: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+53: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+54: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+55: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+56: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+57: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+58: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+59: A==Row()-1 | B=Player tracking info | C=PlayerDataTracking | D=string | E=DataTracking | F=NormalInfo | G=True | H=False | I=False | J=False | K=False
+60: A==Row()-1 | B=Player interaction IDs | C=PlayerDataTracking | D=string | E=DataTracking | F=InteractPlayer | G=True | H=False | I=True | J=False | K=False
+61: A==Row()-1 | B=Pet transaction records | C=PetTransactionsManager | D=string | E=DataTracking | F={UUID}_{ActionKind}_{entrySeq} | G=False | H=False | I=True | J=False | K=False
+62: A==Row()-1 | B=Meteorite tracking state | C=TrackingManager | D=string | E=DataTracking | G=False | H=True | I=True | J=False | K=False
+63: A==Row()-1 | B=Buy-pet tracking state | C=TrackingManager | D=string | E=DataTracking | G=False | H=True | I=True | J=False | K=False
+64: A==Row()-1 | B=Event action counters | C=TrackingManager | D=int | E=EventTracking2 | G=False | H=False | I=False | J=True | K=False
+65: A==Row()-1 | B=Meteorite aggregate counters | C=TrackingManager | D=int | E=EventTracking2 | G=False | H=False | I=True | J=True | K=False
+66: A==Row()-1 | B=Pet leaderboard | C=TrackingManager | D=int | E=PetCount | G=False | H=False | I=True | J=False | K=False
+67: A==Row()-1 | B=Milestone leaderboard | C=TrackingManager | D=int | E=Milestone | G=False | H=False | I=True | J=False | K=False
+68: A==Row()-1 | B=Mail leaderboard | C=TrackingManager | D=int | E=Mails | G=False | H=False | I=True | J=False | K=False
+69: A==Row()-1 | B=Duplicate-pet leaderboard | C=TrackingManager | D=int | E=DuplicatePets | G=False | H=False | I=True | J=False | K=False
+70: A==Row()-1 | B=Onboarding counters | C=TrackingManager | D=int | E=OnboardSteps | F={trackingType}{onboardStep} | G=False | H=False | I=False | J=True | K=False
+71: A==Row()-1 | B=Revival mission counters | C=TrackingManager | D=int | E=RevivalMissions | F={trackingType}{step}_R{rebirthLevel} | G=False | H=False | I=False | J=True | K=False
+72: A==Row()-1 | B=Permanent-event counters | C=TrackingManager | D=int | E=PermanentEvent | F=Dig_Scan_{rarity}, Dig_Dig, Fish_Cast, Fish_Claim, Fish_Skip | G=False | H=False | I=False | J=False | K=False
+73: A==Row()-1 | B=Pet/server duplicate deltas | C=TrackingManager | D=int | E=OtherTracking | F=Player7th, server_{petId}, user_{petId} | G=False | H=False | I=True | J=True | K=False
+74: A==Row()-1 | B=Gift-code usage limit | C=MailsManager | D=int | E=GiftCodeLimit | F={giftcode} | G=False | H=False | I=False | J=True | K=False
+75: A==Row()-1 | B=Compensation sent count | C=MailsManager | D=int | E=CompensateSent | F={region} | G=False | H=False | I=False | J=True | K=False
+76: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+77: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+78: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+79: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+80: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+81: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+82: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+83: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+84: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+85: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+86: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+87: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+88: A==Row()-1 | G=False | H=False | I=False | J=False | K=False
+90: G==countif(G2:G89,true) | H==countif(H2:H89,true) | I==countif(I2:I89,true) | J==countif(J2:J89,true) | K==countif(K2:K89,true)
+92: B=Flow
+93: B=BatchRead: Wallet + Rebirth Level + Base's Pets + Base Pets' Mutations + Base's Pet's Balance + LastLogTime
+95: D=Data | E=Actions | G=result != nil | I=result == nil
+96: B=Status Code = NoError | D=Wallet | E=InitBalance(...) | G=result[0] | I=DEFAULT_BALANCE
+97: D=Rebirth Level | E=LoadRebirthData(...) | G=result[1] | I=DEFAULT_REBIRTH_LEVEL
+98: D=Base's Pets | E=InitMobIDList(...) | G=(false, result[2], ..., ...) | I=(true, nil, ..., ...)
+99: D=Base's Pets' Mutations | E=InitPetsMutations(petIds) | G=result[3] | I={-1, -1, -1, ...}
+100: D=Base's Pet's Balance | E=InitPetsBalance(petIds) | G=result[4] | I={0, 0, 0, ...}
+101: D=LastLogTime | E=UpdateMoneyOffline(...) | G=result[5] | I=0.0
+103: B=Status Code = DataStorageTimeout | E=Wait for 1 second and retry
+104: E=Max loop = 5
+106: B=Status Code = DataStorageLimitExceeded | E=Wait for 10 seconds to retry
+108: B=Status Code = Other | E=Kick player
+110: B=Have not had all data:
+      - Mark do not save data
+      - Wait and retry
+      - Showing UI loading data: how many percent, allow rematch
+112: B=Had all data:
+      - Mark allow save data
+      - Hide UI loading data
+      - Load player's data to wallet and base
+114: B=Maxium Read/Write per minute:
+- 400 / 6 = 66 (times)
+116: B=Format Data
+117: B=Fusion Egg Data:
+- Slot
+- Pet1Id
+- Pet1Mutation
+- Pet1Weather
+- Pet2Id
+- Pet2Mutation
+- Pet2Weather
+- UsedDust
+- ResultId
+- ResultMutation
+- ResultWeather
+- ResultDust
+- Duration
+
+Slot:11;Pet1Id:1000;Pet1Mutation:10;Pet1Weather:10,10,10,10,10;Pet2Id:1000;Pet2Mutation:10;Pet2Weather:10,10,10,10,10;UsedDust:10000;ResultId:1000;ResultMutation:10;ResultWeather:10,10,10,10,10;ResultDust:1000;Duration:100
+-> 222 char
+144: B=StageIndex, | D=2.0 | E=1.0
+145: B=StageEndFlag, | D=1.0 | E=1.0
+146: B=StageTime, | D=10.0 | E=1.0
+147: B=StageCondAllTime, | D=10.0 | E=1.0
+148: B=StageCondCurrencyTime, | D=10.0 | E=1.0
+149: B=StageCondPetTime, | D=10.0 | E=1.0
+150: B=StageCurrencyIndex, // Enum: 0 - K, 1 - M, 2 - B, 3 - T, 4 - Q | D=10.0 | E=1.0
+151: B=StageCurrencyTime, // StageCurrencyKTime, StageCurrencyMTime, StageCurrencyBTime, StageCurrencyTTime, StageCurrencyQTime, ... | D=10.0 | E=1.0
+152: B=StagePetStealCnt, | D=10.0 | E=1.0
+153: B=StagePetStealSuccessValueList, | D==5*1000 | E=1.0
+154: B=StageBaseLockCnt, | D=10.0 | E=1.0
+155: B=StageBaseLockWaitTimeList, | D==2*1000 | E=1.0
+156: B=StagePetStolenCount, | D=10.0 | E=1.0
+157: B=StagePetStolenSuccessValueList, | D==5*1000 | E=1.0
+158: B=StageIdleCurrencyGain, | D=10.0 | E=1.0
+159: B=StagePetStayCurrencyGain, | D=10.0 | E=1.0
+160: B=StageSellPetCurrencyGain, | D=10.0 | E=1.0
+161: B=StageBuyPetCurrencyCost, | D=10.0 | E=1.0
+162: B=StageRebirthCurrencyCost, | D=10.0 | E=1.0
+163: B=StageUnlockBaseCurrencyCost, | D=10.0 | E=1.0
+164: E==sum(D144:D163)+Sum(E144:E163)

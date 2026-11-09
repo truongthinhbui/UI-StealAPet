@@ -1,0 +1,93 @@
+SHEET Weather System
+1: A=dddd
+2: A=Date | C=Description
+3: A=2025-12-03 00:00:00 | C=Wave 1 Design
+4: A=2026-01-13 00:00:00 | C=Adjust Section 4 - Fusion rule
+5: A=2026-01-23 00:00:00 | C=Rebalance formula - section 4
+7: A=1. System Overview
+8: A=Field | C=Description
+9: A=System type | C=One global weather for the entire game at any given time. Weather cycles over real time.
+10: A=Scope | C=Attach weather-based effect tags to pets at capture, and allow stacking via Fusion only
+11: A=Stacking Method | C=Weather Effects are accumulated only through Fusion; a pet on line never has more than 1 weather effect.
+12: A=Purpose | C=Increase pet sale value and collection depth without blocking core progression.
+14: A=2. Weather Rules
+15: A=Type | C=Description
+16: A=UI | C=Show: weather icon + text + timer. e.g. RAINY – 06:42 left.
+17: A=Schedule | C=Weather follows a fixed 7-step global loop (Wave 1) that repeats every ~82 minutes based on server time.
+18: A=Room Behavior | C=Creating/joining/leaving rooms does not change GlobalWeatherType. No weather rerolls via room spam.
+19: A=When weather is active | C=Pets spawned during that period have a chance to be tagged with that weather effect.
+21: A=3. Weather Effects Assignment
+22: A=Step | C=Description
+23: A=1.0 | C=Spawn pet using existing rarity / mutation pipeline.
+24: A=2.0 | C=Query current WeatherType from server.
+25: A=3.0 | C=Map WeatherType → WeatherEffectID using config (see section 6). If no mapping, skip.
+26: A=4.0 | C=Roll WeatherEffectChance
+27: A=5.0 | C=On success: assign weatherEffect = [WeatherEffectId] to the pet.
+28: A=6.0 | C=On failure: assign weatherEffects = [] (no weather tag).
+29: A=7.0 | C=Weather effect is locked on that pet instance permanently (cannot reroll or change via weather).
+31: A=4. Weather Effects & Fusion Rules
+32: A=Element | C=Details
+33: A=Input Pets | C=Each pet has weatherEffect[] (0–1 elements for weather pets; 0–N for fused pets).
+34: A=Fusion Rule | C=The transfer chance is determined by the Rarity Gap between Pet A and B:
+Chance=0.7/(1.7^(Slot-1) + 0.7*RarityGap)
+
+Safety Net: Guaranteed transfer slot = Total pool - 6
+35: A=Result Rule | C=After Fusion, fused pet’s weatherEffect[] = set union of all input pets’ weatherEffect[].
+36: A=Duplicates | C=If multiple input pets share the same weatherEffectID, it appears once in the fused result.
+37: A=Max Stack | C=The hard limit for weather effects is 5 per pet. If the number of effects surviving fusion rule exceeds 5: Random 5
+38: A=Tag Bonus | C=Each weatherEffectID has a AddPrice (see config). Bonuses are additive per distinct Effects, and added to Pet's Price
+39: A=Acquisition | C=The only way to have multiple weather effects on a single pet is through Fusion
+41: A=Rarity | B=Rarity Values 
+42: A=Common | B=1.0
+43: A=Rare | B=2.0
+44: A=Epic | B=3.0
+45: A=Legendary | B=4.0
+46: A=Mythic | B=5.0
+48: B=Weather Effects | D=Normal Mutation
+49: A=Can be stacked | B=Yes
+Can be stacked to apply multiple effects.
+Max = 5 | D=No
+Normal mutations are limited to one per pet
+50: A=Display | B=Stackable effects | D=Model texture
+51: A=Affect | B=Price of the pet | D=Pet Value
+52: A=How to get | B=- Weather: Rain, thunder, etc.
+- Fusion for multiple | D=- Normal way
+- Fusion normal pet with mutation pet
+- Fusion same normal pets
+54: A=5. Weather Effects & Sale Value
+55: A=Element | C=Details
+56: A=Formula | C=Pet Value = Price + Price * Sum(MultiplierPrice)
+58: A=6. Weather Effects Config Wave 1 | D=Master data
+59: A=WaveID | B=OrderIndex | C=WeatherType | D=DurationMinutes | F=WaveID | G=OrderIndex | H=WeatherType | I=DurationMinutes
+60: A=1.0 | B=1.0 | C=NORMAL | D=15.0 | F=1.0 | G=1.0 | H=NORMAL | I=15.0
+61: A=1.0 | B=2.0 | C=RAINY | D=8.0 | F=1.0 | G=2.0 | H=ECLIPE | I=6.0
+62: A=1.0 | B=3.0 | C=NORMAL | D=12.0 | F=1.0 | G=3.0 | H=RAINY | I=8.0
+63: A=1.0 | B=4.0 | C=ECLIPE | D=5.0 | F=1.0 | G=4.0 | H=NORMAL | I=12.0
+64: A=1.0 | B=5.0 | C=NORMAL | D=8.0 | F=1.0 | G=5.0 | H=SNOWY | I=6.0
+65: A=1.0 | B=7.0 | C=WINDY | D=5.0 | F=1.0 | G=6.0 | H=NORMAL | I=10.0
+66: A=1.0 | B=8.0 | C=NORMAL | D=10.0 | F=1.0 | G=7.0 | H=STORMY | I=4.0
+67: A=1.0 | B=9.0 | C=SNOWY | D=6.0 | F=1.0 | G=8.0 | H=NORMAL | I=15.0
+68: F=1.0 | G=9.0 | H=WINDY | I=6.0
+71: A=7. Math
+72: A=Weather | B=Duration (min) | C=Window % | D=Spawns/Cycle (pet per min) | E=Rate | F=Expected Pets per Cycle | M=10141.0
+73: C=55.0 | D=10.0 | K=Common | L=4210.0 | M=0.4151
+74: A=Rainy | B=8.0 | C==B74/$C$73 | D==B74*$D$73 | E=0.06 | F==D74*E74 | K=rare | L=2372.0 | M=0.2339
+75: A=Windy | B=5.0 | C==B75/$C$73 | D==B75*$D$73 | E=0.07 | F==D75*E75 | K=epic | L=2482.0 | M=0.2447
+76: A=Shadowfall | B=5.0 | C==B76/$C$73 | D==B76*$D$73 | E=0.03 | F==D76*E76 | K=legendary | L=844.0 | M=0.0832
+77: K=mythic | L=233.0 | M=0.023
+78: A=Mythic (Soaked, Eclipsed, Thundered) + Mythic (Frost, Gale)
+79: A=Slot | B=Success Rate | C=Cumulative Success | D=Fusions Needed
+80: A=1.0 | B==0.7/(1.68^(A80-1)+0.7*0) | C==B80 | D==1/C80
+81: A=2.0 | B==0.7/(1.68^(A81-1)+0.7*0) | C==B81*C80 | D==1/C81
+82: A=3.0 | B==0.7/(1.68^(A82-1)+0.7*0) | C==B82*C81 | D==1/C82
+83: A=4.0 | B==0.7/(1.68^(A83-1)+0.7*0) | C==B83*C82 | D==1/C83
+84: A=5.0 | B==0.7/(1.68^(A84-1)+0.7*0) | C==B84*C83 | D==1/C84
+85: A=Cumulative Odds | B==B80*B81*B82*B83*B84
+87: A=Mythic (Soaked, Eclipsed, Thundered) + Epic (Frost, Gale)
+88: A=Slot | B=Success Rate | C=Cumulative Success | D=Fusions Needed
+89: A=1.0 | B==0.7/(1.68^(A89-1)+0.7*2) | C==B89 | D==1/C89
+90: A=2.0 | B==0.7/(1.68^(A90-1)+0.7*2) | C==B90*C89 | D==1/C90
+91: A=3.0 | B==0.7/(1.68^(A91-1)+0.7*2) | C==B91*C90 | D==1/C91
+92: A=4.0 | B==0.7/(1.68^(A92-1)+0.7*2) | C==B92*C91 | D==1/C92
+93: A=5.0 | B==0.7/(1.68^(A93-1)+0.7*2) | C==B93*C92 | D==1/C93
+94: A=Cumulative Odds | B==B89*B90*B91*B92*B93

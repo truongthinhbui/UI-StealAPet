@@ -1,0 +1,38 @@
+SHEET EventWhackAMole
+1: A=0. Changelog
+2: A=Date | C=Description | I= 
+3: A=2026-01-08 00:00:00 | C=Initial Design
+6: K= 
+7: A=1. Overview
+8: A=Whack-a-Mole is a timed co-op event where players in a room whack moles as they pop up from underground. Every 10 minutes, a Mole surfaces. Its HP scales with the number of active players in the room — 40 HP per player, capped at 240 HP. | H=            
+9: A=Goal | B=- Introduce Limited Time Pet (3/account).
+- Swapable with other events for event duration (ex: 14 days).
+- Create a predictable multiplayer moment that encourages players to stay active together.
+- Reward room participation instead of solo farming.
+- Add a simple recurring event loop with clear short-term rewards and a longer-term exchange goal. | H= 
+10: A=Core Loop
+11: M= 
+12: A=2. Event Flow
+13: A=Rule Name | B=Rules
+14: A=Drop rate | B=Every 10 minutes (600s underground → active until destroyed) | F=3.0
+15: A=Meteor HP | B=Calculated from active players in the room before drop:
+- 1 player = 40 HP
+- 2 players = 80 HP
+- 3 players = 120 HP
+- 4 players = 160 HP
+- 5 players = 200 HP
+- 6 players = 240 HP
+16: A=Players activities | B=Players whack the Mole together. On hit and on break, players receive Gems + other event rewards.
+17: A=Shard | B=- Gems are event currency only.
+- Gems can be exchanged in the event reward shop.
+18: A=Reward  | B=Players use Gems in the event exchange to claim gifts.
+20: A=3. Reward Shop
+21: A=Players can spend Shards in the event reward shop. The shop contains 3 exchange items:
+22: A=Item | B=Cost | C=Limit | D=Target Day
+23: A=Random Item | B=5 Gems | C=— | D=anytime
+24: A=Rare Pet Pool | B=80 Gems | C=5/account | D=Day ~2
+25: A=Random Pet | B=20 Gems | C=— | D=anytime
+26: A=Featured Ultra-Rare Pet | B=280 Gems | C=1/account | D=Day ~7
+27: A=Divine Pet — 1st | B=200 Gems | C=1/account | D=Day ~5 ✓
+28: A=Divine Pet — 2nd | C=1/account | D=Day ~13 (stretch) | F= 
+29: A=Divine Pet — 3rd | C=1/account | D=Day ~25 (hardcore)

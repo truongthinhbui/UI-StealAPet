@@ -1,0 +1,160 @@
+SHEET Refactor Flow Proposal
+1: A=Status | B=IN REVIEW
+2: A=Author | B=Tran Gia Bao
+3: A=Date | B=2026-02-12 00:00:00
+4: A=Issue | B=Refactor Flow
+5: A=Content | B=1. OBJECTIVES
+2. BACKGROUND
+3. DESIGN PROPOSAL
+4. ACTION PLAN
+8: A=1. OBJECTIVES
+9: A=• Reorganize and standardize the in-game flow architecture to address inconsistencies in the current implementation.
+10: A=• Eliminate common logic bugs caused by flow inconsistency and UI bouncing tricks (rapid clicking, back-and-forth navigation, repeated actions).
+11: A=• Ensure data state and UI state remain synchronized at all times.
+12: A=• Establish a clear architectural foundation that:
+      • Separates UI rendering from game logic
+      • Centralizes flow control and validation
+      • Improves maintainability, debuggability, and scalability
+15: A=2. BACKGROUND
+16: A=Current Issues
+17: A=The current in-game flow | C=• Is implemented without a unified architectural pattern
+• Has business logic:
+     • Scattered across UI components, gameplay scripts, and services
+     • Sometimes triggered directly from UI elements without centralized validation
+18: A=As a result | C=• UI and data states can easily become out of sync
+• Rapid player interactions (bouncing, spamming, fast navigation) can:
+     • Trigger invalid or duplicated logic calls
+     • Update data in an unintended order
+• Bugs are often:
+     • Hard to reproduce
+     • Difficult to trace to their root cause
+20: A=Root Cause Analysis
+21: A=The core problems stem from | C=• Lack of a single authority responsible for controlling the flow
+• UI components that:
+     • Both display information and make logic decisions
+     • Directly manipulate game data or states
+• Absence of:
+     • State validation before executing actions
+     • A mechanism to serialize or lock critical flows
+24: A=3. DESIGN PROPOSAL
+25: A=Overall
+28: A=Details
+29: A=No | B=Step | D=Explain
+30: A=[1] | B=Input on UI | D=In this step, we use two files: CustomUIUtils (to route button events) and HudXXX (to handle UI updates).
+At this stage, there is no data-processing or game logic involved; the responsibility is strictly limited to UI presentation and interaction handling.
+
+For UI flows that involve transactions (such as Swap Pets, Fuse Pets, etc.), the UI layer only stores display-related information required to build a Request.
+The actual request is created and sent only when the player confirms the transaction.
+31: A=[2] | B=Call RequestAction() | D=At this step, when the PLAYER confirms a transaction, the UI layer creates a Request using the parameters stored in the HudXXX file.
+This request is then sent to the VALIDATION GATE.
+
+Within the VALIDATION GATE, the system always performs the following checks in order:
+      1. Validate the current state of the Player and/or Pet, if the action is state-dependent.
+      2. Re-validate the request data against the current authoritative data, to prevent cases where the UI state differs from the actual game data.
+      3. Validate action-specific rules, ensuring the request satisfies all constraints required for the specific action.
+
+The system does not trust the UI; all requests must be verified to ensure consistency and correctness before any further processing.
+32: A=[2.1] | B=Notify Error | D=In case validation fails, the VALIDATION GATE will notify an error back to the UI layer, and the request will be terminated without proceeding to execution.
+33: A=[2.2] | B=Call DoAction() | D=If the validation passes, the VALIDATION GATE forwards the request to the ACTION MANAGER for logic execution.
+
+Depending on the type of action, the Action Manager may be:
+• an XXXManager at the global entity level, or
+• a PlayerXXX component within the Player entity,
+based on where the logic is most appropriately handled.
+34: A=[3] & [4] | B=UpdateData() & Return UpdateStatus | D=At these steps, data updates may occur on either normal data (data that is persisted when the player quits) or core data (data that is updated in real time).
+
+To ensure proper synchronization, all data update actions must return a status code indicating whether the update was completed successfully.
+If the action fails or returns an invalid status, a rollback mechanism must be triggered to prevent any unintended impact on the user’s data.
+35: A=[5] | B=Refresh UI | D=At this step, after the transaction is completed and the player data has been successfully updated, the UI must be refreshed to reflect the current authoritative data state.
+37: A=How the New System Addresses Current Issues
+38: A=Issues | D=How the New System Fixes It
+39: A=UI–Data Desynchronization | D=• UI only prepares and forwards requests; it never mutates data.
+• The Validation Gate re-validates all request data against the current authoritative data.
+• The system explicitly does not trust the UI, ensuring that only valid and up-to-date data is processed.
+40: A=Bouncing / Rapid Input Exploits | D=• All UI actions must pass through a single entry point (Validation Gate → Action Manager).
+• The system can:
+      • Reject repeated or invalid requests
+      • Lock the flow while a transaction is being processed
+• Invalid actions are ignored or rejected before execution.
+41: A=Invalid Transactions | D=• Validation is performed in layers:
+      • Player/Pet state validation
+      • Request–data consistency validation
+      • Action-specific rule validation
+• Transactions only proceed if all validation layers pass.
+42: A=Partial Data Updates & Data Corruption | D=• All data-modifying actions must return a status code.
+• If any step fails:
+      • The transaction is considered unsuccessful
+      • A rollback is triggered to restore previous data
+• This applies to both normal data and core data.
+43: A=UI Not Reflecting Final Data State | D=• UI refresh is triggered only after data update success is confirmed.
+• UI is refreshed using the current authoritative data, not cached UI state.
+45: A=Example
+46: A=Case: Fusion Confirm
+47: A=No | B=Step | D=Explain
+48: A=[1] | B=Input on UI | D=PLAYER input Pets and Dust on UI
+HudFusionConfirm stores Material Pets and Dust
+49: A=[2] | B=Call RequestAction() | D=When PLAYER presses confirm Fuse, HudFusionConfirm creates a Request include stored params and call to VALIDATION GATE:
+
+• RequestFusion(slot1, petId1, mutation1, weather1, slot2, petId2, mutation2, weather2, dust)
+
+When VALIDATION GATE receives Request, it will process these steps:
+      1. Validate Player and Pet state.
+      2. Validate all Pet data in request against current authoritative data.
+      3. Validate Player's Wallet has enough Money and Dust.
+50: A=[2.1] | B=Notify Error | D=In case validation fails, the VALIDATION GATE will notify an error back to the UI layer, and the request will be terminated without proceeding to execution.
+51: A=[2.2] | B=Call DoAction() | D=If the validation passes, the VALIDATION GATE forwards the request to the FusionManager (ACTION MANAGER) for logic execution:
+
+• DoFusion(slot1, petId1, mutation1, weather1, slot2, petId2, mutation2, weather2, dust)
+
+The function will be process like these steps:
+      • FusionManager will calculate the results (include petId, mutation, weather, dust)
+52: A=[3] & [4] | B=UpdateData() & Return UpdateStatus | D=After calculating the results, FusionManager will update both visual and data:
+      • Call PetsManager to remove 2 material Pets.
+      • Decrease Player's Wallet.
+      • Create Egg at current slot.
+      • Store Egg's data by data calculated above.
+      • Return status after finishing transaction.
+53: A=[5] | B=Refresh UI | D=Close UI Fusion Confirm
+55: A=Case: Fusion Result
+56: A=No | B=Step | D=Explain
+57: A=[1] | B=Input on UI | D=PLAYER hatch Egg -> UI pop up
+HudFusionResult stores material/result Pets and Dust
+
+PLAYER select Pet to claim on UI
+HudFusionResult store selected slot (retrieveMaterial1, retrieveMaterial2, result)
+58: A=[2] | B=Call RequestAction() | D=When PLAYER presses Retrieve/Claim, HudFusionResult creates a Request include stored params and call to VALIDATION GATE:
+
+• RequestClaimFusion(slot, petId, mutation, weather, dust)
+
+When VALIDATION GATE receives Request, it will process these steps:
+      1. Validate Player and Egg state.
+      2. Validate all Pet data in request against current authoritative data.
+      3. Validate Player's Wallet has enough Pet Coins (in case retrieve pet).
+59: A=[2.1] | B=Notify Error | D=In case validation fails, the VALIDATION GATE will notify an error back to the UI layer, and the request will be terminated without proceeding to execution.
+60: A=[2.2] | B=Call DoAction() | D=If the validation passes, the VALIDATION GATE forwards the request to the PetsManager (ACTION MANAGER) for logic execution:
+
+• DoClaimPet(slot, petId, mutation, weather, dust)
+
+The function will be process like these steps:
+      • PetsManager will update data without calculating anything.
+61: A=[3] & [4] | B=UpdateData() & Return UpdateStatus | D=PetsManager will update both visual and data:
+      • Remove Egg.
+      • Decrease Player's Pet Coins (if need).
+      • Create Pet at current slot.
+      • Increase Player's Dust.
+      • Return status after finishing transaction.
+62: A=[5] | B=Refresh UI | D=Close UI Fusion Confirm
+65: A=4. ACTION PLAN
+66: A=Action | F=Related Ticket | H=Responsible | I=Due Date | J=Release Date | K=Release Version
+67: A=Build Player/Pet State Machine | H=Zuto
+68: A=Build VALIDATION GATE | H=Zuto
+69: A=Apply & Refactor flow for UI Fusion Pets | H=Zuto
+70: A=Apply & Refactor flow for UI Swap Pets | H=Zuto
+71: A=Apply & Refactor flow for UI Event Collector | H=Tom
+72: A=Apply & Refactor flow for UI Event Fuse Contract | H=Tom
+73: A=Apply & Refactor flow for UI Giftcode | H=Tom
+74: A=Apply & Refactor flow for UI Mails | H=Tom
+75: A=Apply & Refactor flow for UI Exchange Pet Coins to Dust | H=Zuto
+76: A=Apply & Refactor flow for UI Exchange Craftland Token to Pet Coins | H=Tom
+77: A=Apply & Refactor flow for UI Sell Pet | H=Zuto
+78: A=Apply & Refactor flow for UI Rebirth | H=Zuto

@@ -1,0 +1,53 @@
+SHEET Tailor Shop
+1: A=TAILOR SHOP — REBIRTH PET PURCHASE GDD
+2: A=Direct Money purchase for the current rebirth requirement. Normal pets use 2.0× markup; Secret pets use 3.0×. Rebirth is the only rotation.
+3: A= | B= | C=
+4: A=1. Price Rule
+5: A=Rule | B=Value | C=Notes
+6: A=Currency | B=Money | C=Use the same cash currency as the pet price.
+7: A=Base Price | B=Mob (Master).Price | C=Exact live price of the required pet.
+8: A=Normal Markup Multiplier | B=2.0× | C=Standard direct purchase.
+9: A=Secret Markup Multiplier | B=3.0× | C=Higher price keeps Secret pets above normal pets.
+10: A=Final Price | B=Normal: ROUNDUP(Base Price × 2.0); Secret: ROUNDUP(Base Price × 3.0) | C=No Pet Coin cost.
+11: A=Pet Grant | B=Base pet, Level 1 | C=No Mutation and no Weather.
+12: A=Scope | B=Normal + Secret; Limited excluded | C=Secret uses the higher 3.0× markup.
+13: A=2. Rebirth Rotation Rule
+14: A=When | B=Action | C=Result
+15: A=Open Tailor Shop | B=Read current rebirth and missing requirement. | C=Show only current RB pet(s).
+16: A=Player rebirths | B=Invalidate the current offer. | C=Old offer is removed.
+17: A=Open after rebirth | B=Read the new current RB requirement. | C=Show new RB pet(s).
+18: A=Multiple self-rebirths | B=Use latest RB only. | C=No old offer or backfill.
+19: A=Multiple required IDs | B=Use the existing rebirth checker. | C=Show only missing eligible pet(s).
+20: A= | B= | C=
+21: A=RB6 → RB7 Example
+22: A=State | B=Pet shown | C=Result
+23: A=At RB6 | B=Use RB6 requirement: IDs 26 / 28. | C=Current offer.
+24: A=Player self-rebirths to RB7 | B=Invalidate the RB6 offer. | C=RB6 pets can no longer be bought.
+25: A=Next Tailor Shop open | B=Use RB7 requirement: ID 30. | C=Show RB7 pet only.
+26: A= | B= | C=
+27: A=3. Config
+28: A=Field | B=Value | C=
+29: A=Type | B=RebirthRequiredPet | C=
+30: A=Currency | B=Money | C=
+31: A=Price Formula | B=Normal: ROUNDUP(MobPrice × 2.0); Secret: ROUNDUP(MobPrice × 3.0) | C=
+32: A=Requirement Source | B=Existing Rebirth Checker / NextLevelMobList | C=
+33: A=Rotation Trigger | B=OnSuccessfulRebirth | C=
+34: A=Offer Rebirth ID | B=Player.CurrentRebirthID | C=
+35: A=Purchase Limit | B=1 per missing pet requirement | C=
+36: A=Pet Grant | B=Base pet, Level 1; no Mutation / Weather | C=
+37: A=Secret Multiplier | B=3.0× | C=
+38: A=Limited | B=Disabled in v1 | C=
+39: A=4. Scope / Guardrails
+40: A=Player | B=Outcome | C=
+41: A=New / Mid (Primary) | B=A paid fallback when stuck on a rebirth pet. | C=
+42: A=Late (Secondary) | B=Same rule; never sees an old rebirth offer. | C=
+43: A=Protected / not served | B=Limited pets stay on their normal path. Secret pets cost 3.0× and remain stealable. | C=
+44: A=Trade-off | B=Direct Secret purchase is possible, but its 3.0× cost and normal stealing preserve its value. | C=
+45: A= | B= | C=
+46: A=Acceptance
+47: A=Missing rebirth pet appears in the Tailor Shop. | B= | C=
+48: A=Final price is 2.0× for normal pets and 3.0× for Secret pets, rounded up. | B= | C=
+49: A=Purchase grants the correct Level 1 base pet with normal ownership rules. | B= | C=
+50: A=A successful rebirth invalidates the old offer and loads the current RB target. | B= | C=
+51: A=An RB6 offer cannot be bought after the player has reached RB7. | B= | C=
+52: A=Secret pets use the 3.0× markup; Limited pets are not listed in v1. | B= | C=

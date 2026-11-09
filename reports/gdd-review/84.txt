@@ -1,0 +1,53 @@
+SHEET Collection Milestones
+1: A=PET COLLECTION
+2: A=Draft v3 • 28 Sep 2026 | B=Species discovery + independent mutation/weather checklists. Replaces v2 reward proposal. Retrieve excluded. Reward tuning and availability validation pending.
+3: A=0. Changelogs
+4: A=Date | B=Description
+5: A=2026-09-11 00:00:00 | B=v2: fixed 5× cash + rarity Pet Coin cost; remove Retrieve discounts and repeat-price escalation; retain earned milestones across roster updates; define delivery, persistence and Rebirth behavior.
+6: A=2026-09-28 00:00:00 | B=v3: milestones by mutation instead of rarity. Same reward shape as v2. Retrieve moved to its own sheet.
+7: A=2026-10-29 00:00:00 | B=v4: count all types for pets, mutations, weathers (no limit)
+9: A=1. Overview
+10: A=Rule | B=Details
+11: A=Collection | B=Every pet is listed by rarity. A pet is dark until you own it once. Each rarity has milestone steps at fixed pet counts. Reach a step, claim a reward.
+12: A=Pet milestones | B=Every pet has 3: own it, own it in every mutation, own it with every weather.
+13: A=Unlock | B=Collection screen at RB1.
+15: A=2. What counts
+16: A=Rule | B=Details
+17: A=Pets | B=Every released pet with CanFuse=1, Secret included. Not Limited, not event containers.
+18: A=Owned once | B=A pet counts the moment it is yours: buy, finished steal, Fusion result, reward, Retrieve, MutaGen or Charm success.
+19: A=Permanent | B=Sell, fuse, robbed, Rebirth — it still counts.
+20: A=One pet = one count | B=Level, size, copies, mutation, weather do not add to the count.
+22: A=3. Collection milestones
+23: A=Rule | B=Details
+24: A=Count | B=Pets owned once, per rarity.
+25: A=Steps | B=Fixed ladder: 5 / 10 / 20 / 40 / 50. A rarity shows a step only when it has at least that many pets.
+26: A=New pets | B=Steps never move. A new step appears when the rarity reaches the next count.
+27: A=Claim | B=Reached = claimable forever. Claim once.
+29: A=Rarity | B=Pets | C=Steps
+30: A=COMMON | B=13.0 | C=5 / 10
+31: A=RARE | B=14.0 | C=5 / 10
+32: A=EPIC | B=16.0 | C=5 / 10
+33: A=LEGENDARY | B=21.0 | C=5 / 10 / 20
+34: A=MYTHIC | B=45.0 | C=5 / 10 / 20 / 40
+35: A=APEX | B=57.0 | C=5 / 10 / 20 / 40
+37: A=4. Pet milestones
+38: A=Rule | B=Details
+39: A=Mutation ladder | B=Number of different mutations this pet has been owned in. Golden, Frozen, Magma, Clover, Fossilized, Crystalline, Webbed, Radioactive. Normal and event mutations do not count. Max 8.
+40: A=Weather ladder | B=Number of different weather effects this pet has been owned with. Soaked, Thundered, Frost, Gale, Eclipse, Prismatic, Vortex, Sequin. Max 8. One pet with 3 effects counts 3.
+41: A=Steps | B=4 / 8 on each ladder.
+42: A=Any copies, any time | B=Owned once with it = counts forever. Same as Collection.
+43: A=Order | B=Ladders are independent.
+44: A=New mutation / weather added | B=Max goes up.
+47: A=5. Rewards
+48: A=5.1 Collection rewards
+49: A=Rarity | B=5.0 | C=10.0 | D=20.0 | E=40.0
+50: A=COMMON | B=5m pet money | C=50 Dust | D=— | E=—
+51: A=RARE | B=10m pet money | C=100 Dust | D=— | E=—
+52: A=EPIC | B=250m pet money | C=100 Dust | D=— | E=—
+53: A=LEGENDARY | B=1B pet money | C=150 Dust | D=Pet Coin ×10 | E=—
+54: A=MYTHIC | B=1Q pet money | C=200 Dust | D=Pet Coin ×15 | E=Sparkle SS WeatherGen ×15
+55: A=APEX | B=1Qi pet money | C=250 Dust | D=Pet Coin ×20 | E=Sparkle SS WeatherGen ×25
+57: A=5.2 Pet milestone rewards (every rarity)
+58: A=Step | B=Mutation ladder | C=Weather ladder
+59: A=5.0 | B=50 Dust | C=50 Dust
+60: A=10.0 | B=Pet Coin ×10 | C=Pet Coin ×10

@@ -1,0 +1,25 @@
+SHEET Personalize System
+1: A=1. System Overview
+3: A=Field | C=Description
+4: A=System Name | C=Personalize System
+5: A=Purpose | C=Allows players to customize and display their personal identity in-game, based on their pets and activity.
+6: A=Access Location | C=Personal Zone (in front of player’s base)
+7: A=Primary Features | C=Pet Avatar, Player Info (Name, Description, Likes, UID Display), and Social Interaction (Like System).
+11: A=2. Personalize Components
+13: A=Component | C=Description
+14: A=Avatar Selection | C=Player can choose any pet they have owned as their profile avatar.
+Pet avatar uses the pet’s current artwork.
+Changes are saved instantly and visible globally.
+15: A=Display Name | C=Player FF name
+16: A=Description | C=Short player bio (max 100 characters).
+17: A=Likes Counter | C=Displays total number of likes received from other players. Updates in real time.
+18: A=UID Display Toggle | C=User can choose to show or hide their UID via toggle switch.
+19: A=Preview Area | C=Shows the player’s avatar, name, description, UID (if enabled), and total likes. Located in front of the player’s base.
+20: A=Pet Area              | C=Please select a pet that you already own. It will be displayed on top of your house in a large size for decoration.
+22: A=3. Interaction Rules
+24: A=Action | C=Details
+25: A=Interact With Player’s Board | C=Other players can walk up and interact with the profile board displayed at the player’s base.
+26: A=Like Option | C=Displays a “❤️ Like” button that adds +1 like to the owner.
+27: A=Cooldown | C=5 seconds per player → prevents spam or like buffing.
+28: A=Notification | C=Optional toast popup: “You liked [PlayerName]!”
+29: A=Like Persistence | C=Likes are permanent (cannot unlike). All stored server-side.

@@ -1,0 +1,49 @@
+SHEET Revival Event
+1: A=Revival Event
+3: A=v0.5 · 28/10/2026 · Fixed return-RB rows
+5: A=0. Changelog
+6: A=Rule Name | B=Rules
+7: A=28/10/2026 | B=Split rebirth support: 75-point cash for the second step; fixed D6 cash for the third step.
+9: A=1. Rule
+10: A=Rule Name | B=Rules
+11: A=Who | B=Inactive for 7+ days, RB6+. Once per account per event.
+12: A=Duration | B=7 days. Keep current Revival day rules. Missed days do not extend the event.
+13: A=Goal | B=Target: first rebirth on D1 for at least 90%; two total by D4 for about 75%; three total by D7 for about 50%.
+14: A=Reward row | B=On event entry, save the current RB and select its configured reward row once. Use that row for all seven login rewards and five milestones.
+15: A=Fixed rewards | B=Existing pets, purchases and later rebirths do not change rewards. Give the configured pet even if already owned.
+16: A=Rebirth | B=Deduct only the fee and required pet copies. Keep other money and pets.
+17: A=Replace | B=Replace old Revival Login and Revival Playtime rewards for this event.
+19: A=2. Daily Login
+20: A=Rule Name | B=Rules
+21: A=D1 | B=Give the fixed D1 pet in the selected row. It supports the first rebirth.
+22: A=D2 | B=Give the fixed D2 pet in the selected row. It supports the second rebirth. Reveal the already configured D7 pet.
+23: A=D3–D6 | B=D3: Spins. D4: Dust. D5: MutaGen. D6: CashD6 from the saved row to help the third rebirth; use the configured item near max RB.
+24: A=D7 | B=Give the fixed Apex from the selected row. Its identity stays the same after reveal or rebirth.
+25: A=Near max RB | B=Use the literal item rewards in the return-RB row when a rebirth-support reward has no remaining step.
+26: A=Pet state | B=All event pets are Lv1, Normal, no Weather.
+28: A=3. Activity Milestones
+29: A=Rule Name | B=Rules
+30: A=Points | B=Log in for 4 points automatically. Seven activity tasks supply up to 26 more. Maximum 30 per UTC day.
+31: A=Task variants | B=Choose each task using RB when the daily board opens; keep it until reset.
+32: A=Count | B=Count completed actions and paid upgrades. Failed steals, free upgrades and reward pets do not count. Online playtime only.
+33: A=Shared progress | B=Tailor Shop purchases count toward Buy 3 / Buy 5. Buying 5 pets completes both tasks. Each paid level counts as one upgrade.
+34: A=15 points | B=Give Cash15 from the saved return-RB row.
+35: A=40 points | B=Give the configured Clover SS MutaGen reward.
+36: A=60 points | B=Give 4h MoneyTime. Money is based on the player’s income when claimed.
+37: A=75 points | B=Give Cash75 from the saved return-RB row to help the second rebirth.
+38: A=90 points | B=Give Thundered SS WeatherGen ×5 as the final milestone reward.
+39: A=Completion | B=Five rewards total. Points accumulate and are not spent. Each milestone pays once. No extra rewards after 90 points.
+40: A=Pace | B=About 20–22 points daily: first milestone on D1, second on D2, all five around D5.
+41: A=Reset | B=00:00 UTC. Reset daily tasks and login points. Keep total event points, the selected row and claimed rewards.
+43: A=4. Money & Shop
+44: A=Rule Name | B=Rules
+45: A=Flat money | B=Cash15, Cash75 and CashD6 are literal amounts from the saved row. Do not recalculate from the player's roster, wallet, income or current RB.
+46: A=Shop | B=Use the existing Tailor Shop to buy remaining current rebirth requirements at its normal prices.
+47: A=Shop access | B=Show “Buy missing rebirth pets” beside the rebirth requirements, linking to the existing shop.
+48: A=Money cap | B=Use the normal money cap when claiming. MoneyTime gives at most the configured 4h in one claim.
+50: A=5. Claim
+51: A=Rule Name | B=Rules
+52: A=One reward | B=Each claim gives one pet or one item type. Seven login rewards + five milestones = 12 claims.
+53: A=Manual claim | B=Login gifts and milestone rewards are manual; points are automatic. Unclaimed rewards may be held until expiry.
+54: A=Full base | B=Make room before claiming a pet. Keep its unclaimed reward.
+55: A=Reconnect | B=Keep the saved reward row, progress and reveal state. Each claim pays once.

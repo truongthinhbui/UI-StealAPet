@@ -1,0 +1,691 @@
+SHEET Change Logs
+1: A=Release Date | B=QA Date | C=Regions | D=Version | E=Type | F=Change Logs - Release | G=Change Logs - Dev | H=Status | I=Content Update (Planned) | J=Dev Logs(Thứ 3) | K=Giftcode(Thứ 7 + CN) | L=Note
+2: A=2025-10-02 00:00:00 | C=US, SG, IND | D=1.0.0 | E=Release | F=Release game:
+- 44 pets
+- Have steal, rebirth
+- Don't have collection | H=True
+3: A=2025-10-03 00:00:00 | C=US, SG, IND | D=1.0.1 | E=Minor Update | F=Update:
+- Voice chat
+- Message chat. | H=True
+4: A=2025-10-09 00:00:00 | C=US, SG | D=1.1.0 | E=Big Update | F=- Add Pets Collection
+- Add News
+- Update all HUDs
+- Fix big number multiply -> Increase max cap of pet's generate money and open base fee | H=True
+5: A=2025-10-10 00:00:00 | C=US, SG, IND | D=1.1.1 | E=Minor Update | F=- Fix rebirth: should show next level instead of current level
+- Apply mutation multiply
+- Adjust Pets Collection: Show page buttons when can use
+- Prevent save rebirth level higher than max level
+- Update Indonesia Localization | H=True
+6: A=2025-10-14 00:00:00 | C=US | D=1.1.2 | E=Minor Update | F=- Apply loop read data with max loop is 5 (only with lastLogTime, pBalance, pRebirthLevel, pMobListID, pMobMutationList, pMobBalanceList)
+- Read rebirth level and reset it if it's higher than max level
+- Prevent write nil data for case log in/out continously or crash
+- Handle read pets in house data (for key pMobListID, pMobMutationList, pMobBalanceList) to not reset all player's data when read one field failed
+- Add anti hack system for cases:
+      - Stand on own house -> Turn off wifi -> Go to other house and stand on a pet -> Turn on wifi -> Spam steal button
+      - Go to other house and stand on a pet -> Turn off wifi -> Go the own house -> Turn on wifi -> Spam steal button
+- Adjust Pets Collection: hide background of un-collected pets
+- Update English Localization | H=True
+7: A=2025-10-16 00:00:00 | C=US, SG, IND | D=1.2.0 | E=Big Update | F=- Polish Pets Collection: add pets count, adjust show/hide own pets
+- Add global leaderboard inside and outside game:
+      + Outside: house value (order by rebirth and base's pets value)
+      + Inside: More leaderboard types: house value (like outside leaderboard), collection value (without mutation),  wealth value (player money)
+- Add version mark for tracking data
+- Add max cap of player money up to 100Q | H=True
+8: A=2025-10-17 00:00:00 | C=US, SG, IND | D=1.2.1 | E=Minor Update | F=- Add user event log for tracking data
+- Kick player whenever read failed in one of these data: rebirth level, wallet, base's pets, base's pets' mutation, pet's collection
+- Add shadow for version mark label
+- Fixed lock new users | H=True
+9: A=2025-10-18 00:00:00 | C=US, SG, IND | D=1.2.3 | E=Minor Update | F=- Fixed offline can not get pet's money | H=True
+10: A=2025-10-23 00:00:00 | C=US, SG, IND | D=1.2.4 | E=Minor Update | F=- Handle read/write data
+- Fixed issue with calculating big numbers multiplied by a float
+- Delay reading data of collection and leaderboard | H=True
+11: A=2025-10-30 00:00:00 | C=US, SG, IND | D=1.3.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D11)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Add friend feature
+- Rearrange pet feature: Can swap pets position using UI
+- Display mutation to pet collection feature
+- Add shop function: Using a new currency, which increases based on playtime. Items: ...
+- Add new mutation: Grass
+- Re-calculate to"&"p house and collection ranking (include mutations)") | H=True
+12: A=2025-10-30 00:00:00 | C=US, SG, IND | D=1.3.1 | E=Minor Update | F=- Fix spam swap pets lead to nil | H=True
+13: A=2025-10-30 00:00:00 | C=US, SG, IND | D=1.3.2 | E=Minor Update | F=- Fix duplicate pets by select after being stolen | H=True
+14: A=2025-10-31 00:00:00 | C=US, SG, IND | D=1.3.3 | E=Minor Update | F=- Fix spam steal pet lead to stuck and no one can interact that pet | H=True
+15: A=2025-11-06 00:00:00 | C=US, SG, IND | D=1.3.5 | E=Minor Update | F=- Enable Swap function | H=True
+16: A=2025-11-06 00:00:00 | C=US, SG, IND | D=1.3.1 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D16)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Refactor Steal/Swap Pet functions") | H=True
+17: A=2025-11-13 00:00:00 | C=US, SG, IND | D=1.4.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D17)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Add new normal pets
+- Personalize System: Decoration
+- Personalize System: Like function
+- New Leaderboard: Like numbers
+- Increase max cap money to 200Q") | H=True
+18: A=2025-11-15 00:00:00 | C=US, SG, IND | D=1.4.1 | E=Minor Update | F=- Disable swap function | H=True
+19: A=2025-11-20 00:00:00 | C=US, SG, IND | D=1.4.2 | E=Minor Update | F=- Enable Swap function
+- Fix pet transaction | H=True
+20: A=2025-11-27 00:00:00 | C=US, SG, IND | D=1.5.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D20)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Add new fusion pets
+- Add fusion feature
+- Add new pets
+- Winterland Decoration & Pet") | H=True
+21: A=2025-12-11 00:00:00 | C=US, SG, IND | D=1.6.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D21)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Apply better UI/UX
+- Out game Leaderboard: split pet own + rebirth level
+- Add cooldown when unlock other home: 30s & Unlock door using pet coin
+- Quick chat system: Add some common messages like “ask for 1 pet,” “agree,” “decline,” and “add friend.”
+- "&"Gift code system
+- Mail & Reward System
+- Add more shop items: Mythic random pet
+- GM Tools v1
+- Add new pets & secret pet") | H=True
+22: A=2025-12-13 00:00:00 | C=SG | D=1.6.1 | E=Minor Update | F=- Prevent load data for banned users | H=True
+23: A=2025-12-15 00:00:00 | C=SG | D=1.6.2 | E=Minor Update | F=- Fix one giftcode can be used many times | H=True
+24: A=2025-12-17 00:00:00 | C=SG | D=1.6.3 | E=Minor Update | F=- Remove logic QuitGameAtNextFrame() to prevent duplicate pet
+- Rebirth lock: newbie can't steal or be stolen | H=True
+25: A=2025-12-18 00:00:00 | C=US, SG, IND | D=1.6.4 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D25)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- New Giftcodes
+- (Test only) monetization: Convert Craftland token -> Pet Token
+- Onboarding Flow
+- Rebirth 1 protection: New player's pet cannot steal or be stolen
+- Unlock allow rarity can steal by rebirth
+- Auto translate quick messages
+- Report syste"&"m
+- Daily Reward
+- New Giftcodes") | H=True
+26: A=2025-12-24 00:00:00 | C=US, SG, IND | D=1.7.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D26)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Fusion 2.0
+- Xmas Event: Lucky Pet Collection") | H=True
+27: A=2025-12-25 00:00:00 | C=US, SG, IND | D=1.7.1 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D27)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Roll event Pet before receive mail
+- Balance fusion result dust and fusion mutation") | H=True
+28: A=2025-12-26 00:00:00 | C=US, SG | D=1.7.2 | E=Minor Update | F=- Fix spam dust | H=True
+29: A=2025-12-26 00:00:00 | C=US, SG, IND | D=1.7.3 | E=Minor Update | F=- Fix claim pet through event reward email let players buy pet although full base | H=True
+30: A=2026-01-05 00:00:00 | C=US, SG, IND | D=1.7.4 | E=Minor Update | F=- Fix steal/select pets outside base and go underground | H=True
+31: A=2026-01-06 00:00:00 | C=US, SG, IND | D=1.7.5 | E=Minor Update | F=- Delay read data when join match
+- Set interval write data each 30 seconds for pet's data only | H=True
+32: A=2026-01-08 00:00:00 | C=US, SG, IND | D=2.0.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D32)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Add rebirth level 14
+- Giftcodes Gate
+- New Base Model
+- Tool tips
+- Allow buy Dust in Fusion Confirm
+- Use Pet Coin to skip hatch duration in Fusion Confirm
+- Allow other players to hatch eggs when stealing") | H=True
+33: A=2026-01-09 00:00:00 | C=US, SG, IND | D=2.0.1 | E=Minor Update | F=- Locked rebirth for the action: "Thief can hatch other player's eggs" at Level 2.
+- Now prevents egg hatching if base data hasn't fully loaded.
+- Adjusted balance for Rattle Snake and Peacock. | H=True
+34: A=2026-01-13 00:00:00 | C=US, SG, IND | D=2.0.2 | E=Minor Update | F=- Hatch other's eggs must spend 10 pet coins
+- Switch default camera
+- Adjust base to avoid not fully loaded | H=True
+35: A=2026-01-14 00:00:00 | C=SG | D=2.0.3 | E=Minor Update | F=- Disable feature hatch other player's egg | H=True
+36: A=2026-01-15 00:00:00 | C=US, SG, IND | D=2.0.4 | E=Minor Update | F=- Enable feature hatch other player's egg
+- Fix spam dust by skip hatch
+- Fix duplicate by feature hatch other player's egg | H=True
+37: A=2026-01-16 00:00:00 | C=US, SG, IND | D=2.0.5 | E=Minor Update | F=- Fix drop down when jump while moving on stairs (OB update bug - Merge Child Nodes)
+- Fix steal pet ouside base on second floor (OB update bug - Merge Child Nodes) | H=True
+38: A=2026-01-19 00:00:00 | C=US, SG, IND | D=2.0.6 | E=Minor Update | F=- Apply verify data before writing to database
+- Fix not destroy hidden laser walls (OB update bug - Event OnPlayerQuit() return player entity instead of nil like before)
+- Remove cache when updating fusion result UI
+- Not show fusion result UI when moving to another slot
+- Refactor flow hatch egg | H=True
+39: A=2026-01-22 00:00:00 | C=US, SG, IND | D=2.1.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D39)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Weather System
+- Add Weather Mutations
+- Event Improvements: milestones
+- Daily login: 7 days milestones") | H=True
+40: A=2026-01-23 00:00:00 | C=US, SG, IND | D=2.1.1 | E=Minor Update | F=- Fix weather display
+- Rebalance weather | H=True
+41: A=2026-01-26 00:00:00 | C=US, SG, IND | D=2.1.2 | E=Minor Update | F=- Prevent interact pet when not fully load data
+- Prevent 1 player can exist in 2 matches | H=True
+42: A=2026-01-27 00:00:00 | C=US, SG, IND | D=2.1.3 | E=Minor Update | F=- Fix: teleport while stealing | H=True
+43: A=2026-01-29 00:00:00 | C=US, SG, IND | D=2.1.4 | E=Minor Update | F=- Release 4 pets on road
+- Set up pending mails (to allow GMT sending mail without knowing player is online or not) | H=True
+44: A=2026-01-30 00:00:00 | C=US, SG, IND | D=2.1.5 | E=Minor Update | F=- Fix: not check interactive pets when saving data | H=True
+45: A=2026-01-31 00:00:00 | C=US, SG | D=2.1.6 | E=Minor Update | F=- Fix: can not save data due to lack UID when quit and process steal at the same time | H=True
+46: A=2026-02-02 00:00:00 | C=US, SG, IND | D=2.2.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D46)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- VN Tet Holiday decoration & Pet
+- EventFuseMachine 
+- Set up pending mails (to allow GMT sending mail without knowing player is online or not)
+- Show Weather in Collection
+- Collection Leaderboard
+- New weather: SNOWY
+- New weather effects: Frost and Th"&"undered. Thundered will appear during Rainy weather
+- New Mutation: Fossilized") | H=True
+47: A=2026-02-02 00:00:00 | C=US, SG, IND | D=2.2.1 | E=Minor Update | F=- Fix: spam milestone | H=True
+48: A=2026-02-03 00:00:00 | C=US, SG, IND | D=2.2.2 | E=Minor Update | F=- Fix: can not receive reward in event's sub missions | H=True
+49: A=2026-02-05 00:00:00 | C=US, SG, IND | D=2.2.3 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D49)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Apply monetization: Convert Craftland token -> Pet Token
+- GMTool send mail to players
+- Count down for next weather
+- Count down in event UI") | H=True
+50: A=2026-02-06 00:00:00 | C=US, SG, IND | D=2.2.4 | E=Minor Update | F=- Fix weather display
+- Fix egg result not save after hatching
+- Fix can not interact egg | H=True
+51: A=2026-02-09 00:00:00 | C=US, SG, IND | D=2.2.5 | E=Minor Update | F=- Fix rotten egg when thief hatches egg and move to next egg | H=True
+52: A=2026-02-26 00:00:00 | C=US, SG, IND | D=2.3.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D52)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Rebalance Mob Data
+- Refactor code
+- Ramadan Decoration
+- Pets: KOMODO, CATFISH, SLOTH, MALLARD, PORCUPINE
+- Rebirth 15: Max cap money 50Qi
+- Ramadan Event") | H=True
+53: A=2026-03-05 00:00:00 | C=US, SG, IND | D=2.3.1 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D53)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- 2 NEW MYTHIC: AXOLOTL + ARMADILLO
+- 2 NEW MUTATIONS") | H=True
+54: A=2026-03-12 00:00:00 | C=US, SG, IND | D=2.4.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D54)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- 2 Mythic + 2 Divine
+- Add 1 more Weathers
+- Onboarding Mission") | H=True
+55: A=2026-03-19 00:00:00 | C=US, SG, IND | D=2.4.1 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D55)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- New Shop Items: Weather change
+- 2 NEW MYTHIC: MOUSE & DINGO") | H=True
+56: A==A55+7 | C=US, SG, IND | D=2.5.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D56)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Base Decoration (Profile - Shop item)
+- Event Hit Together
+- Music/Sound effects
+- NEW Pet: Javelina + Gemsbok
+- Max cap prompt + UI
+- Adjust money cap / rebirth") | H=True
+57: A=2026-03-27 00:00:00 | C=US, SG, IND | D=2.5.0.44 | E=Minor Update | F=- Fix duplicate mail by force join
+- Show event countdown when mid join | H=True
+58: A==A56+7 | C=US, SG, IND | D=2.5.1 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D58)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Rebirth 16,17
+- New Pets: MEERKAT, REDPANDA
+- x4 Dust Yeild weekend
+- Weather now affect money yeild
+- Change base door color for own base") | H=True
+59: A==A58+7 | C=US, SG, IND | D=2.5.2 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D59)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- OB53 Update
+- New Pets: MARTEN, PYTHON
+- Filler event") | H=True
+60: A==A59+7 | C=US, SG, IND | D=2.6.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D60)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- New Mutation: Spider
+- Pet Following Player
+- Protection slot
+- New Pet: OranUtan
+- In-game Event: Meteor with final BANG
+- New base decoration: Underwater
+- New Random pet System") | H=Done
+61: A==A60+7 | C=US, SG, IND | D=2.6.1 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D61)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Craftland Token change for OB53
+- Refactor database
+- New Craftland token + Reopen
+- New Pet") | H=Done
+62: A=2026-04-25 00:00:00 | C=US, SG, IND | E=Hotfix | F=- Prevent Force Join | H=Done
+63: A=2026-04-27 00:00:00 | C=US, SG, IND | E=Hotfix | F=- Lock Monetization, allow only VN players have UID end by 1 | H=Done
+64: A=2026-04-27 00:00:00 | C=US, SG, IND | E=Hotfix | F=- Egg data not save | H=Done
+65: A==A61+7 | C=US, SG, IND | D=2.7.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D65)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Mystery Merchant (Shop Rotation)
+- Friend together
+- Spawn coundown pet
+- Tease Event Whack a Mole
+- Event Collector
+- Base: Metal Decoration") | H=Done
+66: A=2026-05-01 00:00:00 | C=US, SG, IND | E=Hotfix | F=- Disable switch weapons to avoid anti-hack system kick players | H=Done
+67: A=2026-05-01 00:00:00 | C=US, SG, IND | E=Hotfix | F=- Add config for new pets: CARP | H=Done
+68: A=2026-05-01 00:00:00 | C=US, SG, IND | E=Hotfix | F=- Swap out pet TASMANIAN DEVIL, replace CARP
+- Reset event data & send compensation rewards | H=Done
+69: A==A65+7 | C=US, SG, IND | D=2.7.1 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D69)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Mystery Merchant (Discount with friends) 
+- Change DIVINE to APEX
+- 2 NEW COSMIC PET: HYENA & JERBOA
+- Owner unlock laser wall
+- Lock steal while laser wall on") | H=Done | L=First anti-hack
+70: A=2026-05-11 00:00:00 | C=SG | D=2.7.2 | E=Hotfix | F=- Apply Data Validity Check | H=Done
+71: A=2026-05-12 00:00:00 | C=US, IND | D=2.7.2 | E=Hotfix | F=- Apply Data Validity Check | H=Done
+72: A==A69+7 | C=US, SG, IND | D=2.8.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D72)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Event Whack a Mole
+- Rebirth without losing all pet
+- Rebirth 19 & 20") | H=Done
+73: A==A72+7 | C=US, SG, IND | D=2.8.1 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D73)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- New Weather Effects
+- New Onboarding Gifts
+- Prepare giftcode") | H=Done | L=Second anti-hack
+74: A=2026-05-21 00:00:00 | C=US, SG, IND | E=Hotfix | F=- Fix reset cash
+- Config compensate gifts | H=Done
+75: A=2026-05-25 00:00:00 | C=US, SG, IND | E=Hotfix | F=- Update anti wall hack: return pet to owner when exit base through windows | H=Done | L=Third anti-hack
+76: A=2026-05-26 00:00:00 | C=US, SG, IND | E=Hotfix | F=- Fix: pet following flow
+- Rework anti wall hack: only allow steal pet if user go through the laser walls when they are off | H=Done | L=Fourth anti-hack
+77: A=2026-05-27 00:00:00 | C=US, SG, IND | E=Hotfix | F=- Compensate cash | H=Done
+78: A==A73+7 | C=US, SG, IND | D=2.8.2 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D78)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Tease Event WC
+- Clean Leaderboard
+- Pop out players offline 7 days from leaderboard
+- Filler event
+- Monetization Available to players on the SG server") | H=Done | L=13/6: weekend event: spawn from legendary & within hour 
+79: A=2026-05-29 00:00:00 | C=US, SG, IND | E=Hotfix | F=- Fix duplicate visual | H=Done
+80: A==A78+7 | B=2026-05-29 00:00:00 | C=US, SG, IND | D=2.9.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D80)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- reavamp spin / daily login ui
+- Revival Mission
+- Collab Event (WC):
+ + New Decoration
+ + New Event Mechanics
+- Mystery merchant: Mutation Gacha (has chance to apply, not 100%)
+- Mutation Football
+- New Daily activity
+- Decor football
+- base decor: 1 ev"&"ent exclusive
+- Menu action pet
+- Monetization  Available to players on the IND server") | H=Done | L=new user focus
+81: A=2026-06-08 00:00:00 | C=US, SG, IND | E=Hotfix | F=- Fix leaderboard Wealth
+- Adjust random reward weight | H=Done
+82: A=2026-06-09 00:00:00 | C=US, SG, IND | E=Hotfix | F=- Random item in shop event | H=Done
+83: A==A80+7 | B=2026-06-08 00:00:00 | C=US, SG, IND | D=2.9.1 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D83)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Weekend Event
+- Monetization  Available to players on the US server (excluding NA)
+- Daily Missions
+- Split 2 pool for each lane
+- Refactor Items UI") | H=Done | J=- Poll: 
+  + Inventory
+  + Level Up Pet | K=PET7KQ2M9 | L=New event: relate FF ani 13/6
+Weekend Event:  | N=Reminder Admin abuse
+BD
+14:30 – 16:30
+23:00 – 01:00
+BR
+08:00 – 10:00
+23:30 – 01:30
+ID/SG/TH
+12:00 – 14:00
+20:00 – 22:00
+IND
+17:00 – 19:00
+23:30 – 01:30
+ME/EU/RU
+18:00 – 22:00
+NA
+10:30 – 12:30
+00:30 – 02:30
+SAC
+09:00 – 11:00
+01:30 – 03:30
+US
+10:30 – 12:30
+13:30 – 15:30
+VN
+12:30 – 14:30
+21:00 – 23:00
+
+all are GMT+8
+84: A==A83+7 | B=2026-06-12 00:00:00 | C=US, SG, IND | D=2.9.2 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D84)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- New Mutation: Radioactive
+- Tease event
+- Pet index system") | H=Done | J=- Event mới(image + video)
+- Pet mới: Dragon | K=PET4X8RZ1 | N=9th anniversary - allign with capaign, release 24
+85: A=2026-06-22 00:00:00 | B=2026-06-17 00:00:00 | C=US, SG, IND | D=2.10.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D85)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- base decor: 1 event exclusive
+- Event Football: kick a ball start 24/6
+- Level up Pet.
+- New rebirth
+- Shop event rotate pets
+- LIMITED Dragon
+- 3 APEX pets unlock weekly in shop
+- Decoration 9th Ani
+- Refactor Action") | H=Done | J=- Change log của update thứ 2 + Giftcode | K=PETN6C3A0 | L=new + revival
+86: A=2026-06-25 00:00:00 | B=2026-06-22 00:00:00 | C=US, SG, IND | D=2.10.0 - refactor | E=Minor Update | F=- Refactor Mails System
+- Compensate Pet Coins
+- Fix bug stuck pet on hand | H=Done | N=27-29 weekend
+87: A=2026-07-02 00:00:00 | B=2026-06-26 00:00:00 | C=US, SG, IND | D=2.10.1 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D87)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Fusion recipe
+- Login 3 special days rewards
+- Combine Lucky Spin UI to Activities UI") | H=Done | K=PETW2J9LT | N=04 - 06/7 login in game
+x3 legend+
+3 days log in
+88: A==A87+7 | B=2026-07-03 00:00:00 | C=US, SG, IND | D=2.10.2 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D88)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Rerun meteor event
+- New Pets") | H=Done | K=PET5MZ8QP
+89: A==A88+7 | B=2026-07-09 00:00:00 | C=US, SG, IND | D=2.11.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D89)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Inventory system
+- Dust on road - hit and gain
+- Fuse contract with new mechanic
+- New Apex Pets") | H=Done | K=PETZ5C9PA | N=- cooldown cho pet storage action
+90: A=2026-07-17 00:00:00 | C=US, SG, IND | E=Hotfix | F=- Pet Storage Lost when crash | H=Done
+91: A==A89+7 | B=2026-07-14 00:00:00 | C=US, SG, IND | D=2.11.1 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D91)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- New mutation/weather from Plant vs Pets
+- Swap cho phép đặt xuống
+- Mở khóa nhà chỉ bằng pet coin.") | H=Done
+92: A=2026-07-27 00:00:00 | C=US, SG, IND | D=2.11.2 | E=Hotfix | F=- Fix: duplicate by steal pet while loading base | H=Done
+93: A==A91+7 | B=2026-07-24 00:00:00 | C=US, SG, IND | D=2.12.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D93)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Trade pet
+- Rerun Whack a mole
+- Improve Boss Fight") | H=Done
+94: A==A92+7 | C=US, SG, IND | D=2.12.0.116 | E=Hotfix | F=- Fix pets' income
+- Fix event shop claim pets without limit | H=Done
+95: A=2026-08-04 00:00:00 | C=US, SG, IND | D=2.12.0.117 | E=Hotfix | F=- Fix deselect lose pet -> lead to duplicate with trading system | H=Done
+96: A==A93+7 | B=2026-07-29 00:00:00 | C=US, SG, IND | D=2.12.1 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D96)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Shop pet coin cho mua thẳng - rotation new pets 
+- Refactor base/pets client side (to prepare for optimize performance)") | H=Done
+97: A==A96+7 | B=2026-08-06 00:00:00 | C=US, SG, IND | D=2.13.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D97)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Fishing
+- New Rebirth 23 24 25") | H=Done
+98: A=2026-08-14 00:00:00 | C=US, SG, IND | D=2.13.1 | E=Hotfix | F=- Parade Pets Pool | H=Done
+99: A=2026-08-27 00:00:00 | B=2026-08-20 00:00:00 | C=US, SG, IND | D=2.14.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D99)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Refactor code base to improve server/client performance
+- Dig Event: new way to get pets, has seperate pool (Dig Pool)
+- Weather Gen: obtain from new Boss
+- Pet Transactions Event Logs
+- New Boss (ORC)
+- New Weather (for Dig Event): GROUND SHAKE
+- New P"&"ets (Dig Pool): ECHIDNA, CHIPMUNK, GOLDEN MOLE, JACKRABBIT, COBRA") | H=Done
+100: A=2026-08-27 00:00:00 | C=US, SG, IND | D=2.14.0.129 | E=Hotfix | F=- Pet levels shifting
+- Rebirth consuming pets and cash for the next level, which did not match the UI display
+- Incorrect database-key usage | H=Done
+101: A=2026-08-28 00:00:00 | C=US, SG, IND | D=2.14.0.130 | E=Hotfix | F=- Pet Loss when loading base | H=Done
+102: A=2026-09-10 00:00:00 | B=2026-09-07 00:00:00 | C=US, SG, IND | D=2.15.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D102)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Daily log in & activity có unique weather gen
+- Play X times - Give X rewards
+- Shorter Onboarding
+- Shop pet rebirth
+- Earn offline -> 8h
+- Fix the mutagen/weathergen chance") | G=- Lucky box (show ticket but with 0%)
+- Windy Weather: Spawn Bird Pool (Spawn Trees and having some eggs on trees, steal eggs return base and hatch by money to earn Bird Pet) | H=Done
+103: A=2026-09-11 00:00:00 | C=US, SG, IND | E=Hotfix | F=- Fix join game not having base
+- Fix config mutagen/weathergen | H=Done
+104: A==A102+14 | B=2026-09-14 00:00:00 | C=US, SG, IND | D=3.0.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D104)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Adjust Unlocking rule
+- Lucky box (show ticket but with 0%)
+- New LIMITED Pets: UNICORN, KIRIN
+- Rework pool pet daily
+- Dig & Fish Swap pet improvement
+- Track Burn Content
+- Rerun Meteor
+- Level 26->27
+- Slot 19 (lv26)
+- improve màn hình trade: có coo"&"l down nếu thay đổi sau khi xác nhận
+- Revival Log In by segment") | G=- Revival Log In by segment
+- Play x time = x rewards for revival
+- Collection Pet EXP
+- Collection Pet Retrieve | H=Done | L=1 year anniversary
+maybe target revival?
+
+- replace dup = live ops
+- 4th floor
+105: A==A104+14 | B=2026-10-05 00:00:00 | C=US, SG, IND | D=3.1.0 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("TEXTJOIN(CHAR(10),TRUE,IF(D105="""","""",IFNA(""- ""&TEXTJOIN(CHAR(10)&""- "",TRUE,SORT(FILTER('Detail Planning'!$D$4:$D1060,('Detail Planning'!$B$4:$B1060=D105)*(('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))*('"&"Detail Planning'!$D$4:$D1060<>"""")),1,TRUE)),"""")),IF(I105="""","""",""- Contents: ""&I105))"),"- [P0] New UI/UX
+- [P0] Play x time = x rewards for revival
+- [P0] Pop up sau rebirth
+- [P0] Two new Pets: HOG & TAPIR
+- [P1] Pop up guide to shop to buy rebirth pet for new user
+- [P1] Weather spawn guaranteed adjustment (not on 1st pets)
+- Contents: 2 p"&"ets (1 Secret)") | G=- New Weather: Meteorite
+- Meteorite Weather: Spawn Meteorite Pool
+- Split room experience for new / revival players
+- Decor Halloween
+- [GD] Flow Pet Passive
+- [GD] Pets in NPC's base
+- [GD] Structure live ops events | H=Done | I=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFA35A00> | L=Focus Revival
+106: A=2026-10-13 00:00:00 | B=2026-09-29 00:00:00 | C=US, SG, IND | D=3.1.1 | E=Minor Update | F=- Pets State Event Logs | H=Done | I=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFA36D50>
+107: A==A105+14 | B=2026-10-08 00:00:00 | C=US, SG, IND | D=3.2.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("TEXTJOIN(CHAR(10),TRUE,IF(D107="""","""",IFNA(""- ""&TEXTJOIN(CHAR(10)&""- "",TRUE,SORT(FILTER('Detail Planning'!$D$4:$D1060,('Detail Planning'!$B$4:$B1060=D107)*(('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))*('"&"Detail Planning'!$D$4:$D1060<>"""")),1,TRUE)),"""")),IF(I107="""","""",""- Contents: ""&I107))"),"- [P0] Apply saving realtime data
+- [P0] Optimize Permanent Event (Dig/Fish) UX
+- [P0] Optimize Server Performance
+- [P0] Rerun Rarity Contract Event
+- [P1] Refactor/Clean Rotate Events
+- [P1] Switch Chat Module FF
+- [P2] Clean UI
+- [P2] Collection Pet ha"&"ve direct link to collection to show how to obtain 
+- [P2] Haloween Decoration
+- [P2] Rebirth Pets have direct link to collection to show how to obtain
+- Contents: 2 pets (1 Secret) | 1 weather | RB25 | 1 decor") | G=- Pet Passive
+- Items Revamp
+- Event riêng cho Revival
+- [Check] Battle Pass | H=Done | I=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFA36390> | L=Focus Revival, New
+108: A==A107+14 | B=2026-10-23 00:00:00 | C=US, SG, IND | D=3.3.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("TEXTJOIN(CHAR(10),TRUE,IF(D108="""","""",IFNA(""- ""&TEXTJOIN(CHAR(10)&""- "",TRUE,SORT(FILTER('Detail Planning'!$D$4:$D1060,('Detail Planning'!$B$4:$B1060=D108)*(('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))*('"&"Detail Planning'!$D$4:$D1060<>"""")),1,TRUE)),"""")),IF(I108="""","""",""- Contents: ""&I108))"),"- [P0] Collection Pet Index
+- [P0] Rerun Event: Meteorite
+- [P0] Review Trade Flow
+- [P1] Digging improvement
+- [P1] Fix Client receive signal from Server when first join (to fix visual loss on weak device)
+- [P1] Free Scan action in Dig Event
+- [P1] Incr"&"ease rate Dig/Fish Top Prize with played times
+- [P1] Shift the Permanent Event scene to the client side so players can view and access their unlocks.
+- [P2] Revamp Permanent Event (in code, for consitent, prepare for other events)
+- [P2] Tracking Boss: J"&"oin Turns, Complete Turns
+- Contents: 2 pets | Night pool | RB27 | Boss: reward refresh") | G=- cây kim tiền
+- boss revamp???
+- Move weather change effect to client for permanent event Dig/Fish
+- UX nạp pét
+- Focus Core | H=WIP | I=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BE940140>
+109: A==A108+14 | B=2026-11-06 00:00:00 | C=US, SG, IND | D=3.4.0 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("TEXTJOIN(CHAR(10),TRUE,IF(D109="""","""",IFNA(""- ""&TEXTJOIN(CHAR(10)&""- "",TRUE,SORT(FILTER('Detail Planning'!$D$4:$D1060,('Detail Planning'!$B$4:$B1060=D109)*(('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))*('"&"Detail Planning'!$D$4:$D1060<>"""")),1,TRUE)),"""")),IF(I109="""","""",""- Contents: ""&I109))"),"- [P0] Apply Item configs for all logic for consistent
+- [P0] Global luck rate
+- [P0] Rerun Event: Collector
+- [P1] Add Claim All button in Mails and Daily Missions
+- [P1] Improve Lucky Box experience
+- [P1] Meteorite Weather: Spawn Meteorite Pool
+- [P1] "&"UI Button Consistent (one API update button claimable/none interact along with cash label update)
+- [P2] Revamp UI receive rewards
+- Contents: 2 pets (1 Secret) | Top Value +10% | RB27 | Shop: reshuffle | 1 mutation | 1 boss") | G=- Focus Revival: 1 event riêng cho revival 7 ngày. aim r2 | H=WIP | I=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A08B78D880>
+110: A==A109+14 | C=US, SG, IND | D=3.5.0 | E=Big Update | F==IFERROR(__xludf.DUMMYFUNCTION("TEXTJOIN(CHAR(10),TRUE,IF(D110="""","""",IFNA(""- ""&TEXTJOIN(CHAR(10)&""- "",TRUE,SORT(FILTER('Detail Planning'!$D$4:$D1060,('Detail Planning'!$B$4:$B1060=D110)*(('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))*('"&"Detail Planning'!$D$4:$D1060<>"""")),1,TRUE)),"""")),IF(I110="""","""",""- Contents: ""&I110))"),"- [P0] Refactor Tooltip
+- [P0] Rerun Event: Kick A Ball
+- [P0] Twist Flow Fishing
+- [P2] Apply new Decoration UI flow
+- [P2] Apply Prompt within screen:
+      - Fusion
+      - Swap
+      - Rebirth
+      - Exchange Dust
+      - Pet Menu
+      - Trade
+     "&" - Storage
+      - Shop/Shop Event
+- [P2] Refactor Prompt system
+- Contents: 2 pets | RB27 | Shop: new Gen item") | G=- Focus New
+- Noti vibrate container screen when error | H=Confirmed | I=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BE4DE630>
+111: A==A110+14 | D=3.6.0 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("TEXTJOIN(CHAR(10),TRUE,IF(D111="""","""",IFNA(""- ""&TEXTJOIN(CHAR(10)&""- "",TRUE,SORT(FILTER('Detail Planning'!$D$4:$D1060,('Detail Planning'!$B$4:$B1060=D111)*(('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))*('"&"Detail Planning'!$D$4:$D1060<>"""")),1,TRUE)),"""")),IF(I111="""","""",""Contents:""&CHAR(10)&I111))"),"- Review Localization Sheet: Fix localization mistakes, Rearrange rows, Remove no use rows
+Contents:
+3 pets (1 Secret + 1 Limited) | RB28 | 1 mutation + 1 decor | 1 boss variant") | H=Planning | I=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BE4DDA00> | L=NOEL
+112: A==A111+14 | D=3.7.0 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("TEXTJOIN(CHAR(10),TRUE,IF(D112="""","""",IFNA(""- ""&TEXTJOIN(CHAR(10)&""- "",TRUE,SORT(FILTER('Detail Planning'!$D$4:$D1060,('Detail Planning'!$B$4:$B1060=D112)*(('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))*('"&"Detail Planning'!$D$4:$D1060<>"""")),1,TRUE)),"""")),IF(I112="""","""",""Contents:""&CHAR(10)&I112))"),"Contents:
+2 pets | MRFOOTBALL rerun (6+ months) | RB28 | Shop: reshuffle") | H=Planning | I=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BE940650>
+113: A==A112+14 | D=3.8.0 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("TEXTJOIN(CHAR(10),TRUE,IF(D113="""","""",IFNA(""- ""&TEXTJOIN(CHAR(10)&""- "",TRUE,SORT(FILTER('Detail Planning'!$D$4:$D1060,('Detail Planning'!$B$4:$B1060=D113)*(('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))*('"&"Detail Planning'!$D$4:$D1060<>"""")),1,TRUE)),"""")),IF(I113="""","""",""Contents:""&CHAR(10)&I113))"),"- [P0] Passive (Trait) System
+- [P0] Split room experience for new / revival players
+- Cash Stack on pet slot in base
+- FF Bundle switch in game
+Contents:
+2 pets (1 Secret) | Top Value +10% | RB28") | H=Planning | I=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BE6E1640>
+114: A==A113+14 | D=3.9.0 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("TEXTJOIN(CHAR(10),TRUE,IF(D114="""","""",IFNA(""- ""&TEXTJOIN(CHAR(10)&""- "",TRUE,SORT(FILTER('Detail Planning'!$D$4:$D1060,('Detail Planning'!$B$4:$B1060=D114)*(('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))*('"&"Detail Planning'!$D$4:$D1060<>"""")),1,TRUE)),"""")),IF(I114="""","""",""Contents:""&CHAR(10)&I114))"),"Contents:
+3 pets (1 Limited) | RB30 | 1 mutation | Shop: new Gen item | 1 boss") | H=Planning | I=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFA36AE0> | L=TẾT
+115: A=2027-02-25 00:00:00 | D=3.10.0 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("TEXTJOIN(CHAR(10),TRUE,IF(D115="""","""",IFNA(""- ""&TEXTJOIN(CHAR(10)&""- "",TRUE,SORT(FILTER('Detail Planning'!$D$4:$D1060,('Detail Planning'!$B$4:$B1060=D115)*(('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))*('"&"Detail Planning'!$D$4:$D1060<>"""")),1,TRUE)),"""")),IF(I115="""","""",""Contents:""&CHAR(10)&I115))"),"- [P0] Windy Weather: Spawn Bird Pool (Spawn Trees and having some eggs on trees, steal eggs return base and hatch by money to earn Bird Pet)
+- [P1] Send pets do Missions (to earn Weather Gen, Cash, Dust...)
+- [P1] Transmog System: Use new item to change "&"pet visual
+Contents:
+2 pets | RB30 | 1 decor | 1 boss variant") | H=Planning | I=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFA378C0>
+116: A==A115+14 | D=3.11.0 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("TEXTJOIN(CHAR(10),TRUE,IF(D116="""","""",IFNA(""- ""&TEXTJOIN(CHAR(10)&""- "",TRUE,SORT(FILTER('Detail Planning'!$D$4:$D1060,('Detail Planning'!$B$4:$B1060=D116)*(('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))*('"&"Detail Planning'!$D$4:$D1060<>"""")),1,TRUE)),"""")),IF(I116="""","""",""Contents:""&CHAR(10)&I116))"),"Contents:
+3 pets (1 Secret + 1 Limited) | Top Value +10% | RB31 | 1 mutation") | H=Planning | I=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFC11190>
+117: A==A116+14 | D=3.12.0 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("TEXTJOIN(CHAR(10),TRUE,IF(D117="""","""",IFNA(""- ""&TEXTJOIN(CHAR(10)&""- "",TRUE,SORT(FILTER('Detail Planning'!$D$4:$D1060,('Detail Planning'!$B$4:$B1060=D117)*(('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))*('"&"Detail Planning'!$D$4:$D1060<>"""")),1,TRUE)),"""")),IF(I117="""","""",""Contents:""&CHAR(10)&I117))"),"- Battle Pass
+- Invite new friend, old friend
+Contents:
+2 pets | 1 weather | RB31 | Shop: reshuffle + new Gen item") | H=Planning | I=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFC13950>
+118: A==A117+14 | D=3.13.0 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("TEXTJOIN(CHAR(10),TRUE,IF(D118="""","""",IFNA(""- ""&TEXTJOIN(CHAR(10)&""- "",TRUE,SORT(FILTER('Detail Planning'!$D$4:$D1060,('Detail Planning'!$B$4:$B1060=D118)*(('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))*('"&"Detail Planning'!$D$4:$D1060<>"""")),1,TRUE)),"""")),IF(I118="""","""",""Contents:""&CHAR(10)&I118))"),"") | H=Planning | I=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFC13620>
+119: A==A118+14 | D=3.14.0 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("TEXTJOIN(CHAR(10),TRUE,IF(D119="""","""",IFNA(""- ""&TEXTJOIN(CHAR(10)&""- "",TRUE,SORT(FILTER('Detail Planning'!$D$4:$D1060,('Detail Planning'!$B$4:$B1060=D119)*(('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))*('"&"Detail Planning'!$D$4:$D1060<>"""")),1,TRUE)),"""")),IF(I119="""","""",""Contents:""&CHAR(10)&I119))"),"") | H=Planning | I=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFC10E90>
+120: A==A119+14 | D=3.15.0 | E=Minor Update | F==IFERROR(__xludf.DUMMYFUNCTION("TEXTJOIN(CHAR(10),TRUE,IF(D120="""","""",IFNA(""- ""&TEXTJOIN(CHAR(10)&""- "",TRUE,SORT(FILTER('Detail Planning'!$D$4:$D1060,('Detail Planning'!$B$4:$B1060=D120)*(('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))*('"&"Detail Planning'!$D$4:$D1060<>"""")),1,TRUE)),"""")),IF(I120="""","""",""Contents:""&CHAR(10)&I120))"),"- Pet Streaks") | H=Planning | I=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFC10680>
+121: D=Pending | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D121)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Collection Pet Retrieve by Cash & Dust
+- New Shop Items: DIVINE PET
+- Duplicate Machine: Combine pet by materials rarity, mutation, weathers
+- LOD Pet Description on road")
+122: D=Backlogs | F==IFERROR(__xludf.DUMMYFUNCTION("""- ""&TEXTJOIN(CHAR(10)&""- "", TRUE, 
+FILTER(
+  'Detail Planning'!$D$4:$D1060, 
+  ('Detail Planning'!$B$4:$B1060=D122)*
+  (('Detail Planning'!$C$4:$C1060=""Implement"")+('Detail Planning'!$C$4:$C1060=""Config""))
+))"),"- Free Island features: scale (P0)
+- Racing (and Betting)?
+- Unlucky' Event?
+(A random player get -50% income. if successfully steal from other player -> transfer the curse)
+- Mutation Evolution System?
+- Pet+1 System? (Raise Pet value)
+- Lucky' Event?
+(A"&" random player get +50% income. Other player can steal from the blessed player to get the blessing)
+- Pet Care System (Feeding)
+- Achievement System
+- Market: place pets on market, define price, have tax... (like DF's black market)
+- Combine Pets: 1 pet p"&"refab has 2+ meshes (can make it like a robot)
+- Shop item: Split pets (can be used on combined pets)
+- Sesonal Pets
+- Mua random pet trên line 
+- Mua trứng trên line
+- Solo Steal
+- Pets do missions
+- Chase pet on road to catch back base
+- Split pet SECRE"&"T
+- Pet Mint (rate D, C, B, A, S... random), no value
+- Secret Mutations")

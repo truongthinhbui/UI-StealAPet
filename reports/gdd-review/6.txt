@@ -1,0 +1,57 @@
+SHEET DustHunt
+1: A=0. Changelog
+2: A=Date | C=Description
+3: A=2026-07-08 00:00:00 | C=Concept
+4: A=2026-07-15 00:00:00
+5: A=2026-08-04 00:00:00 | C=Added boss tiers + kill-drop layer for Instinct items (Charms / Anchor Stone / Instinct Selector). Continuous Dust-per-damage reward unchanged.
+7: A=1. System Overview
+8: A=A shared boss spawns on the open map (not at the player's own base) at a fixed interval. Players deal melee damage directly; their equipped combat pet auto-attacks alongside them. Damage converts to Dust. 
+9: A=Boss reward scales with the combined Rebirth of everyone fighting it. Dust is earned continuously as damage lands
+11: A=2. Core Loop
+12: A=Type | C=Description
+13: A=Moment-to-moment | C=Player melees boss → pet auto-attacks on its own timer → shared damage pool → Dust ticks up visibly
+14: A=Session | C=Boss spawns (room-wide ping) → player leaves base to fight (base now exposed) → fight until boss dies or despawns → collect Dust
+16: A=3. Boss Spawn & Behavior
+17: A=Parameter | C=Value
+18: A=Spawn Interval | C=30 min
+19: A=Active Window | C=2 min, then despawns or die
+20: A=Spawn Location | C=Random, left or right side of map
+22: A=4. Combat Stats
+23: A=Stat | C=Value
+24: A=PlayerAttackInterval | C=Fixed. 1s
+25: A=PlayerDamagePerAttack | C=Fixed. 10 Dust
+26: A=PetAttackInterval | C=Fixed. 2s
+27: A=PetDamagePerAttack | C=PetDustValue(pet) (see §5)
+28: A=Pity / hit-landing: attacks aren't guaranteed to land. Each attack stream (player, pet — tracked independently) is guaranteed a landed hit within a bounded window; the rest can whiff for 0 damage.
+29: A=Min Hit | B=Max Hit
+30: A=2.0 | B=5.0
+32: A=5. Dust Value Formula | C=r=1.2
+33: A=PetDustValue(pet) = ROUND(r^tier_index × Level^PetPower Level Exponent) | J=1.2
+34: A=Rarity | B=tier_index | D=1.0 | E=25.0 | F=50.0 | G=100.0 | H=200.0 | J=0.4
+35: A=COMMON | B=0.0 | D==round($J$33^B35*$D$34^C54,0) | E==round($J$33^B35*$E$34^C54,0) | F==round($J$33^B35*$F$34^C54,0) | G==round($J$33^B35*$G$34^C54,0) | H==round($J$33^B35*$H$34^C54,0)
+36: A=RARE | B=1.0 | D==round($J$33^B36*$D$34^C54,0) | E==round($J$33^B36*$E$34^C54,0) | F==round($J$33^B36*$F$34^C54,0) | G==round($J$33^B36*$G$34^C54,0) | H==round($J$33^B36*$H$34^C54,0)
+37: A=EPIC | B=2.0 | D==round($J$33^B37*$D$34^C54,0) | E==round($J$33^B37*$E$34^C54,0) | F==round($J$33^B37*$F$34^C54,0) | G==round($J$33^B37*$G$34^C54,0) | H==round($J$33^B37*$H$34^C54,0)
+38: A=LEGENDARY | B=3.0 | D==round($J$33^B38*$D$34^C54,0) | E==round($J$33^B38*$E$34^C54,0) | F==round($J$33^B38*$F$34^C54,0) | G==round($J$33^B38*$G$34^C54,0) | H==round($J$33^B38*$H$34^C54,0)
+39: A=MYTHIC | B=4.0 | D==round($J$33^B39*$D$34^C54,0) | E==round($J$33^B39*$E$34^C54,0) | F==round($J$33^B39*$F$34^C54,0) | G==round($J$33^B39*$G$34^C54,0) | H==round($J$33^B39*$H$34^C54,0)
+40: A=APEX | B=5.0 | D==round($J$33^B40*$D$34^C54,0) | E==round($J$33^B40*$E$34^C54,0) | F==round($J$33^B40*$F$34^C54,0) | G==round($J$33^B40*$G$34^C54,0) | H==round($J$33^B40*$H$34^C54,0)
+41: A=LIMITED | B=6.0 | D==round($J$33^B41*$D$34^C54,0) | E==round($J$33^B41*$E$34^C54,0) | F==round($J$33^B41*$F$34^C54,0) | G==round($J$33^B41*$G$34^C54,0) | H==round($J$33^B41*$H$34^C54,0)
+43: A=6. Dust HP Mechanic
+44: A=Pool Ceiling = Min(HP per Rebirth point * total rebirth, Max HP Cap)
+45: A=Knob | C=Value | J=BOSSHP = 3500
+46: A=Spawn Interval | C=30 min
+47: A=Active Window | C=120 sec
+48: A=HP per Rebirth point | C=15.0
+49: A=Max HP Cap | C=1250.0
+50: A=Pity — Min attempts to guarantee | C=2.0
+51: A=Pity — Max attempts to guarantee | C=5.0
+52: A=Player Attack Interval / Power | C=1.0s / 10
+53: A=Pet Attack Interval | C=2.0s
+54: A=PetPower Level Exponent | C=0.4
+55: A=Rebirth range supported | C=1–22
+56: A=Pet Level range supported | C=1–220
+58: A=7. Boss Tiers (new)
+59: A=Rarity | B=Total room RB | D=HP | E=Visual | F=Drop table
+60: A=T1 | B=0.0 | D==round($J$33^B60*$D$34^C79,0) | E==round($J$33^B60*$E$34^C79,0)
+61: A=T2 | B=1.0 | D==round($J$33^B61*$D$34^C79,0) | E==round($J$33^B61*$E$34^C79,0)
+62: A=T3 | B=2.0 | D==round($J$33^B62*$D$34^C79,0) | E==round($J$33^B62*$E$34^C79,0)
+64: A=Boss | B=HP | D=Pool

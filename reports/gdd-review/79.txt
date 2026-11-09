@@ -1,0 +1,17 @@
+SHEET User suggestion
+1: A=Id | B=Description | C=Priority | D=Source
+2: A=1.0 | B=Add pet machine allow fusion 3, 4 or more pet for higher chance. | D=Page inbox
+3: A=2.0 | B=Add event specific for a day of week like Saturday or Sunday with higher chance of rare pets
+4: A=3.0
+5: A=4.0
+6: A=5.0
+7: A=6.0
+8: A=7.0
+9: A=8.0
+10: A=9.0
+11: A=10.0
+12: A=11.0
+13: A=12.0
+14: A=13.0
+15: A=14.0
+16: A=15.0

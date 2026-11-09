@@ -1,0 +1,41 @@
+SHEET RewardData
+1: A=ID | B=TypeReward | C=Value | D=Quantity | E=Description
+2: A=int | B=int | C=string | D=int | E==IFERROR(VLOOKUP(B2,$H$10:$K$16,4,FALSE),"") | G==IFERROR(VLOOKUP(B2,$H$10:$K$16,4,FALSE),"")
+3: A=20001.0 | B=6.0 | C=1;1 | D=1.0 | E==IFERROR(VLOOKUP(B3,$H$10:$K$16,4,FALSE),"") | G==IFERROR(VLOOKUP(B3,$H$10:$K$16,4,FALSE),"") | H==IFERROR(VLOOKUP(C3,$H$10:$K$16,4,FALSE),"") | S=No | T=10.0
+4: A=20002.0 | B=1.0 | C=1007;1 | D=1.0 | E=6.0 | G==IFERROR(VLOOKUP(B4,$H$10:$K$16,4,FALSE),"")
+5: A=20003.0 | B=1.0 | C=1008;1 | D=1.0 | E=6.0 | G==IFERROR(VLOOKUP(B5,$H$10:$K$16,4,FALSE),"")
+6: A=20004.0 | B=1.0 | C=1009;1 | D=1.0 | E=6.0 | G==IFERROR(VLOOKUP(B6,$H$10:$K$16,4,FALSE),"")
+7: A=20005.0 | B=1.0 | C=1010;1 | D=1.0 | E=6.0 | G==IFERROR(VLOOKUP(B7,$H$10:$K$16,4,FALSE),"")
+8: A=20006.0 | B=1.0 | C=1005;1 | D=1.0 | E=6.0 | G==IFERROR(VLOOKUP(B8,$H$10:$K$16,4,FALSE),"")
+9: A=20007.0 | B=1.0 | C=1006;1 | D=1.0 | E=6.0 | G==IFERROR(VLOOKUP(B9,$H$10:$K$16,4,FALSE),"")
+10: A=1.0 | B=1.0 | C=58;5 | D=1.0 | E=1.0 | G==IFERROR(VLOOKUP(B10,$H$10:$K$16,4,FALSE),"") | H=TypeReward | I=Desc | J=Value | K=Description | L=Note
+11: A=2.0 | B=2.0 | C=50100 | D=1.0 | E=2.0 | G==IFERROR(VLOOKUP(B11,$H$10:$K$16,4,FALSE),"") | H=1.0 | I=Pet | J=IdPet;Mutation | K=HUD_REWARD_DETAILS_PET
+12: A=3.0 | B=3.0 | C=10 | D=1.0 | E=3.0 | G==IFERROR(VLOOKUP(B12,$H$10:$K$16,4,FALSE),"") | H=2.0 | I=Money | J=money Rank Value | K=HUD_REWARD_DETAILS_MONEY
+13: A=4.0 | B=2.0 | C=50100 | D=1.0 | E=2.0 | G==IFERROR(VLOOKUP(B13,$H$10:$K$16,4,FALSE),"") | H=3.0 | I=Pet Coin | J=int value | K=HUD_REWARD_DETAILS_PET_COIN
+14: A=5.0 | B=3.0 | C=20 | D=1.0 | E=3.0 | G==IFERROR(VLOOKUP(B14,$H$10:$K$16,4,FALSE),"") | H=4.0 | I=RandomPet | J=Rarity;Mutation | K=HUD_REWARD_DETAILS_RANDOM_PET
+15: A=6.0 | B=1.0 | C=48;1 | D=1.0 | E=1.0 | G==IFERROR(VLOOKUP(B15,$H$10:$K$16,4,FALSE),"") | H=5.0 | I=MoneyTime | J=int value: 4h | K=HUD_REWARD_DETAILS_MONEY_TIME | L=Give user money = SUM(PET) * n h | N=Max: 60020
+16: A=7.0 | B=1.0 | C=44;1 | D=1.0 | E=1.0 | G==IFERROR(VLOOKUP(B16,$H$10:$K$16,4,FALSE),"") | H=6.0 | I=RandomSecretPool | J=IdPool;Mutation | K=HUD_REWARD_DETAILS_RANDOM_PET_SECRET
+17: A=8.0 | B=4.0 | C=MYTHIC;5 | D=1.0 | E=4.0 | G==IFERROR(VLOOKUP(B17,$H$10:$K$16,4,FALSE),"") | K=Money Rank Value | L=Money | M=Suffix | N=Display
+18: A=9.0 | B=2.0 | C=50100 | D=1.0 | E=2.0 | G==IFERROR(VLOOKUP(B18,$H$10:$K$16,4,FALSE),"") | K=60020.0 | L==MOD(K18, 10000)/10 | M=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BE93F440> | N==CONCATENATE("$", L18,M18)
+19: A=10.0 | B=3.0 | C=200 | D=1.0 | E=3.0 | G==IFERROR(VLOOKUP(B19,$H$10:$K$16,4,FALSE),"")
+20: A=11.0 | B=5.0 | C=1 | D=1.0 | E=5.0 | G==IFERROR(VLOOKUP(B20,$H$10:$K$16,4,FALSE),"")
+21: A=12.0 | B=5.0 | C=4 | D=1.0 | E=5.0 | G==IFERROR(VLOOKUP(B21,$H$10:$K$16,4,FALSE),"")
+22: A=13.0 | B=5.0 | C=8 | D=1.0 | E=5.0 | G==IFERROR(VLOOKUP(B22,$H$10:$K$16,4,FALSE),"")
+23: A=14.0 | B=5.0 | C=24 | D=1.0 | E=5.0 | G==IFERROR(VLOOKUP(B23,$H$10:$K$16,4,FALSE),"") | S=k | T=1.0
+24: A=15.0 | B=4.0 | C=MYTHIC;1 | D=1.0 | E=4.0 | G==IFERROR(VLOOKUP(B24,$H$10:$K$16,4,FALSE),"") | S=m | T=2.0
+25: A=16.0 | B=5.0 | C=0.5 | D=1.0 | E=5.0 | G==IFERROR(VLOOKUP(B25,$H$10:$K$16,4,FALSE),"") | S=B | T=3.0
+26: A=17.0 | B=5.0 | C=2 | D=1.0 | E=5.0 | G==IFERROR(VLOOKUP(B26,$H$10:$K$16,4,FALSE),"") | S=T | T=4.0
+27: A=18.0 | B=4.0 | C=LEGENDARY;1 | D=1.0 | E=4.0 | G==IFERROR(VLOOKUP(B27,$H$10:$K$16,4,FALSE),"") | S=Q | T=5.0
+28: A=19.0 | B=4.0 | C=EPIC;1 | D=1.0 | E=4.0 | G==IFERROR(VLOOKUP(B28,$H$10:$K$16,4,FALSE),"") | S=Qi | T=6.0
+29: A=20.0 | B=1.0 | C=40;3 | D=1.0 | E=1.0 | G==IFERROR(VLOOKUP(B29,$H$10:$K$16,4,FALSE),"") | S=Sx | T=7.0
+30: A=21.0 | B=3.0 | C=24 | D=1.0 | E=2.0 | G==IFERROR(VLOOKUP(B30,$H$10:$K$16,4,FALSE),"") | S=Sp | T=8.0
+31: A=22.0 | B=5.0 | C=2 | D=1.0 | E=5.0 | G==IFERROR(VLOOKUP(B31,$H$10:$K$16,4,FALSE),"") | I=Dấu chấm phẩy nha anh ";" | S=Oc | T=9.0
+32: A=23.0 | B=3.0 | C=999 | D=1.0 | E=2.0 | G==IFERROR(VLOOKUP(B32,$H$10:$K$16,4,FALSE),"")
+33: A=24.0 | B=4.0 | C=MYTHIC;1 | D=1.0 | E=4.0 | G==IFERROR(VLOOKUP(B33,$H$10:$K$16,4,FALSE),"")
+34: A=25.0 | B=4.0 | C=MYTHIC;1 | D=4.0 | E=4.0 | G==IFERROR(VLOOKUP(B34,$H$10:$K$16,4,FALSE),"")
+35: A=26.0 | G==IFERROR(VLOOKUP(B35,$H$10:$K$16,4,FALSE),"")
+36: A=27.0 | G==IFERROR(VLOOKUP(B36,$H$10:$K$16,4,FALSE),"")
+37: A=28.0 | G==IFERROR(VLOOKUP(B37,$H$10:$K$16,4,FALSE),"")
+38: A=29.0 | G==IFERROR(VLOOKUP(B38,$H$10:$K$16,4,FALSE),"")
+39: A=30.0 | G==IFERROR(VLOOKUP(B39,$H$10:$K$16,4,FALSE),"")
+40: A=31.0 | G==IFERROR(VLOOKUP(B40,$H$10:$K$16,4,FALSE),"")

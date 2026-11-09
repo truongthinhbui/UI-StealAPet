@@ -1,0 +1,59 @@
+SHEET Survey Result(3010
+1: A=Num | B=Question&Options | C=Option Proportion
+7: A=Q1 | B=Please rate the recent update:
+8: B=1 - I really hate it | C=0.0791 | E=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFC67D70> | F=0.2938
+9: B=2 - I don't like it | C=0.0936 | E=3 - It's okay / Neutral | F=0.272
+10: B=3 - It's okay / Neutral | C=0.272 | E=4 - I like it | F=0.2615
+11: B=4 - I like it | C=0.2615 | E=2 - I don't like it | F=0.0936
+12: B=5 - I really like it | C=0.2938 | E=1 - I really hate it | F=0.0791
+13: A=Q2 | B=Which of the following in-game features are you UNAWARE OF?
+14: B=Stealing Pets from other players' houses | C=0.1928 | E=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFC67740> | F=0.6576
+15: B=Snatching a Pet right after a player bought it on the conveyor belt | C=0.1657 | E=Stealing Pets from other players' houses | F=0.1928
+16: B=Pets with special effects yield more money than normal Pets | C=0.1775 | E=Pets with special effects yield more money than normal Pets | F=0.1775
+17: B=Upgrade your house to increase income | C=0.1657 | E=Snatching a Pet right after a player bought it on the conveyor belt | F=0.1657
+18: B=Unlocking other players' houses | C=0.1377 | E=Upgrade your house to increase income | F=0.1657
+19: B=I know all of them | C=0.6576 | E=Unlocking other players' houses | F=0.1377
+20: A=Q3 | B=The game will soon have an Item Shop! 
+ Please choose up to 3 items that you want to appear in the game:
+21: B=Boost movement speed for a short period | C=0.1648 | E=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFC2F9E0> | F=0.4329
+22: B=Super powerful weapon: hit others to send them flying farther | C=0.23 | E=Set traps to hold other players back | F=0.3953
+23: B=High-bounce weapon: hit others to send them higher | C=0.1425 | E=Lucky Pet blind box | F=0.3717
+24: B=Set traps to hold other players back | C=0.3953 | E=Super powerful weapon: hit others to send them flying farther | F=0.23
+25: B=Lucky Pet blind box | C=0.3717 | E=Increase your Pet earning speed for a short period of time | F=0.2051
+26: B=Increase your Pet earning speed for a short period of time | C=0.2051 | E=Boost movement speed for a short period | F=0.1648
+27: B=Discount for the next Pet purchase | C=0.1115 | E=Teleport all players back to their houses | F=0.153
+28: B=Universal key: unlock all houses for everyone (including yourself) | C=0.077 | E=High-bounce weapon: hit others to send them higher | F=0.1425
+29: B=Helper Robot, automatically collects money from Pets | C=0.4329 | E=Double the money required to unlock a house for a short period | F=0.1281
+30: B=Teleport all players back to their houses | C=0.153 | E=Discount for the next Pet purchase | F=0.1115
+31: B=Double the money required to unlock a house for a short period | C=0.1281 | E=Universal key: unlock all houses for everyone (including yourself) | F=0.077
+32: A=Q4 | B=The game will soon have more Pet features! 
+ Please select up to 3 features that you would like to see added to the game:
+33: B=Buying and selling Pets | C=0.2401 | E=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFC2E630> | F=0.5409
+34: B=Pet exchange (giving/asking for pets from others) | C=0.5155 | E=Pet exchange (giving/asking for pets from others) | F=0.5155
+35: B=Combine pets to create new pets | C=0.5409 | E=Upgrading Pets | F=0.4101
+36: B=Upgrading Pets | C=0.4101 | E=Riding Pets around | F=0.3918
+37: B=Having Pets fight each other | C=0.2667 | E=Having Pets fight each other | F=0.2667
+38: B=Riding Pets around | C=0.3918 | E=Buying and selling Pets | F=0.2401
+39: A=Q5 | B=An upcoming event will be held at specific times! During the event, rare pets or pets with the same element (lava, frost, etc.) will appear more often! Which time slots would you like this event to take place? (Choose up to 2)
+40: B=06:00:00 | C=0.1622 | E=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFC2C590> | F=0.3214
+41: B=09:00:00 | C=0.1246 | E=12 PM (noon) | F=0.2908
+42: B=12 PM (noon) | C=0.2908 | E=20:00:00 | F=0.2361
+43: B=15:00:00 | C=0.1823 | E=15:00:00 | F=0.1823
+44: B=18:00:00 | C=0.1552 | E=06:00:00 | F=0.1622
+45: B=19:00:00 | C=0.1605 | E=19:00:00 | F=0.1605
+46: B=20:00:00 | C=0.2361 | E=18:00:00 | F=0.1552
+47: B=21:00:00 | C=0.3214 | E=09:00:00 | F=0.1246
+48: A=Q6 | B=Did you encounter any of the following errors while playing the game?
+49: B=Wall-phasing/Clipping bug | C=0.4093 | E=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFD55430> | F=0.4631
+50: B=Missing Pet bug | C=0.4631 | E=Wall-phasing/Clipping bug | F=0.4093
+51: B=Missing Money bug | C=0.1364 | E=None of the above | F=0.2401
+52: B=Home reset to level 1 error | C=0.1482 | E=Home reset to level 1 error | F=0.1482
+53: B=None of the above | C=0.2401 | E=Missing Money bug | F=0.1364
+54: A=Q7 | B=Among the following features, which one would you like to prioritize to be added to the game first? (Select up to 2)
+55: B=House decoration | C=0.6021 | E=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFD57470> | F=0.6021
+56: B=Pet Fusion | C=0.5488 | E=Pet Fusion | F=0.5488
+57: B=Liking' (Heart reaction) other players' houses | C=0.188 | E=Displaying player profiles in front of houses (name, avatar, number of likes...) | F=0.3004
+58: B=Displaying player profiles in front of houses (name, avatar, number of likes...) | C=0.3004 | E=Liking' (Heart reaction) other players' houses | F=0.188
+59: A=Q8 | B=Which interface design do you prefer?
+60: B=Old design | C=0.1946 | E=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFD56780> | F=0.8054
+61: B=New design | C=0.8054 | E=Old design | F=0.1946

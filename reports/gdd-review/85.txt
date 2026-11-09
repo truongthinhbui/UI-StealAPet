@@ -1,0 +1,209 @@
+SHEET Event Frame
+1: A=0. Changelog
+2: A=Date | B=Description
+3: A=2026-10-08 00:00:00 | B=v12. Consolidated event spec: Collector, approved 900s Meteor, shared Gems economy and shop.
+4: A=2026-10-13 00:00:00 | B=v13. Mole = Meteor (900s, same counter/payout, skin swap). Meteor threshold 4–8. Collector: Rare 6, Epic 15, slots 7–9 rarity-only. Easy route 56/day (784/14d). Featured 700 Limited / 400 normal or Secret. Predictor rerun at 4–8 pending.
+5: A=2026-10-14 00:00:00 | B=v14. Plain rewrite. Section 8 = daily pet selection formula. Slots 7–9 back to exact PetID from Legendary / Mythic / Apex pools.
+6: A=2026-10-14 00:00:00 | B=v15. Easy / hard days. Even day = every slot any pet of its rarity. Odd day = every slot exact PetID. Formula and board rules updated.
+7: A=2026-10-21 00:00:00 | B=v16. Full board = 80 Gems (4/4/4/6/6/12/12/14/18), + activities 20 = cap. Slots 7–9 no longer optional. Exact / Any rolled per slot per day (section 8 formula), easy/hard days removed. Star → Gem wording.
+9: A=1. Overview
+10: A=Rule Name | B=Rules
+11: A=Feature | B=One event spec for Meteor, Mole, Collector. Gems wallet, daily cap, activities, shop defined once.
+12: A=Core Loop | B=Play the module → earn Gems → buy from shop. Collector = hand in pets. Meteor / Mole = hit it.
+13: A=Currency | B=Gems (VN: Sao). Star icon.
+14: A=Duration | B=14 days earning + 3 days shop-only. Same rules all 14 days.
+15: A=Rotation | B=Meteor → Collector → Mole → Collector. One module per event.
+16: A=Source of truth | B=This tab. Pet IDs / rarity from Mob (V3.0.0). Other event tabs are history.
+18: A=2. Event State / Daily Reset
+19: A=Rule Name | B=Rules
+20: A=Event config | B=EventID, Module, StartUnix, EndUnix, ShopCloseUnix, PoolVersion, FeaturedPetID, FeaturedPrice (700 Limited / 400 normal), reward IDs.
+21: A=Time | B=Server Unix. Earning: Start ≤ now < End. Shop: Start ≤ now < ShopClose.
+22: A=Dates | B=End = Start + 14 days. ShopClose = End + 3 days. Start on a reset boundary.
+23: A=Reset | B=00:00 UTC.
+24: A=Daily cap | B=100 Gems / account / day. All sources share one counter. Spending doesn't refund it.
+25: A=Wallet | B=Carries between days. Expires at ShopClose.
+26: A=Overlapping events | B=Separate wallet and purchase counts per EventID. Old event stays shop-only for 3 days.
+27: A=Day change | B=Before any action, check the day. New day → reset EarnedToday, activity counters, completed slots. Keep wallet, purchases, current Meteor counter.
+28: A=Reconnect | B=Load saved state, apply day reset, then grant / show anything.
+30: A=3. Daily Activities
+31: A=Task | B=Completion | C=Gems | D=Daily limit
+32: A=Login | B=First login | C=10.0 | D=1.0
+33: A=Fish | B=5 catches | C=5.0 | D=1.0
+34: A=Dig | B=5 digs | C=5.0 | D=1.0
+35: A=Total | C=20.0
+36: A=Count | B=Only successful catches / digs. Only during earning days.
+37: A=Auto claim | B=Grant on completion. Mark claimed even if cap clips it to 0.
+38: A=Task state | B=Counters stop at 5. Reset daily. No carry-over.
+40: A=4. Gem Grant
+41: A=Step | B=Rules
+42: A=1. Validate | B=Event active, earning window open, source eligible. Refresh day.
+43: A=2. Deduplicate | B=Each source result pays once (same result ID → no double pay, including reconnect).
+44: A=3. Calculate | B=Grant = min(SourceGems, 100 − EarnedToday).
+45: A=4. Commit | B=Write wallet + EarnedToday + source flag together.
+46: A=5. Show | B=Show amount. At 100 show Daily limit reached.
+47: A=Example | B=Earned 95, source gives 20 → grant 5.
+49: A=5. Meteor / Mole
+50: A=Rule Name | B=Rules
+51: A=Spawn | B=Every 900s. Reuse current entities and countdown.
+52: A=HP | B=40 × players in room at spawn. Min 40, max 240. No recalc on join / leave.
+53: A=Hit | B=4 damage per valid hit.
+54: A=Payout | B=Each player has own hit counter. Threshold random 4–8, re-rolled after each payout. Reach threshold → 10 Gems, counter 0. New spawn → counter 0.
+55: A=Mole | B=Same as Meteor. Skin swap.
+56: A=Break | B=No break bonus. One-hit player gets nothing extra.
+57: A=Clone | B=Clone hit counts for its owner. One counter per owner.
+58: A=Valid hit | B=Only server-accepted damage. Miss, dead target, duplicate hit = 0.
+59: A=Other drops | B=Money / Dust drops unchanged. Old event shard / gem currency drops removed.
+60: A=After cap | B=Gameplay and non-Gem drops continue. Gem grant = 0.
+61: A=Old currency | B=Old event shards / gems from past events don't convert to Gems.
+63: A=6. Daily Contract Board
+64: A=Rule Name | B=Rules
+65: A=Board | B=9 requests / day / account. 1 pet each. Same board in every room.
+66: A=Open | B=Collector NPC → Daily Contracts. All 9 shown, including done and unaffordable.
+67: A=Slots 1–6 | B=3 Common (4 Gems), 2 Rare (6), 1 Epic (12). Six pets = 36.
+68: A=Slots 7–9 | B=1 Legendary (12), 1 Mythic (14), 1 Apex (18). Three pets = 44. Not optional: all 9 slots are the board.
+69: A=Order | B=Any order. No unlocks, no finish-the-board bonus.
+70: A=Rarities | B=Fixed every day: 3C / 2R / 1E / 1L / 1M / 1A.
+71: A=Match | B=Each slot is either an exact PetID or Any <rarity>. Rolled per slot per day from the day seed (section 8), so a board can mix both. Same roll in every room.
+72: A=Quality | B=Any level / mutation / weather. No bonus. Consumes 1 chosen instance.
+73: A=Once | B=Each slot once per day. No reroll, no replacement.
+74: A=Expire | B=Unfilled slots reset at midnight. Pets never consumed until confirmed.
+75: A=Ready | B=Slot lights up when you own a matching pet. Owning it doesn't complete it.
+76: A=Pick | B=Existing pet picker. Player picks the instance. Never auto-pick the best one.
+77: A=Done | B=Card shows Completed until reset.
+78: A=Cancel | B=Nothing consumed, nothing paid.
+79: A=Midnight | B=Open preview discarded. New board. Pets from old preview still owned.
+80: A=Fuse Contract | B=Same board, same rules. It's a turn-in, not a fuse.
+81: A=Slot | B=Rarity | C=Pet quantity | D=Gems
+82: A=1–3 | B=COMMON | C=1.0 | D=4 each
+83: A=4–5 | B=RARE | C=1.0 | D=6 each
+84: A=6.0 | B=EPIC | C=1.0 | D=12.0
+85: A=7.0 | B=LEGENDARY | C=1.0 | D=12.0
+86: A=8.0 | B=MYTHIC | C=1.0 | D=14.0
+87: A=9.0 | B=APEX | C=1.0 | D=18.0
+88: A=Raw board total | B=All 9 = 80. + activities 20 = 100. Full board + all activities = cap exactly, no overflow.
+89: A=Easy daily route | B=Slots 1–6 = 36 + activities 20 = 56 / day.
+90: A=Easy event route | B=56 × 14 = 784. 700 on day 13. +1 Legendary / day = 68 → day 11. Assumes daily play, no spending. Any-rarity rolls on 7–9 let players with spare L / M / A pets fill them, so real pace is faster than this.
+91: A=Blocked at cap | B=At 100, Submit disabled. Never eat a pet for 0.
+93: A=7. Contract Submission
+94: A=Step | B=Rules
+95: A=1. Select | B=Player opens a slot, picks 1 owned pet.
+96: A=2. Validate | B=Still today's board, slot not done, right pet, still owned, not locked elsewhere.
+97: A=3. Preview | B=Pet, sell value, Gems you'll get, This consumes the pet. Confirm off if 0 Gems.
+98: A=4. Confirm | B=Re-check everything. Anything changed → back to preview.
+99: A=5. Commit | B=Consume pet, mark slot, pay Gems, all at once. Fail = nothing changes.
+100: A=6. Retry | B=Retry of a done slot pays nothing, consumes nothing.
+101: A=Partial payout | B=At 90 earned, Apex slot (18) previews 10. Player can cancel.
+103: A=8. Daily Pet Selection
+104: A=Rule Name | B=Rules
+105: A=Layout | B=Column A = day number. One cell per day outputs 9 tokens, slot order 1–9 = 3C / 2R / 1E / 1L / 1M / 1A. Number = exact PetID. Word = any pet of that rarity. Same board in every room.
+106: A=Formula | B==LET(
+    _daySeed, IF(ISNUMBER($A3), INT($A3), 1),
+
+    _pC, {1,2,3,4,5,6,7,8,52,1001,1007},
+    _pR, {9,10,11,12,13,14,15,16,17,53,1002,1008},
+    _pE, {18,19,20,21,22,23,24,25,26,27,54,57,1003,1009},
+    _pL, {28,29,30,31,32,33,34,35,36,37,38,39,55,58,59,65},
+    _pM, {40,41,42,43,44,45,46,47,48,49,50,51,56,60,61,62,63,64,66,67,68,69,70,71,72,73,74,75,77,78,79,80,81,82,83,84},
+    _pA, {76,85,86,87,88,89,91,92,93,94,95,96,97,98,99,100,102,104,105,106,115,116,119},
+
+    _rand, LAMBDA(k, MOD((_daySeed * 48271 + k * 7919) * 16807, 2147483647)),
+    _get,  LAMBDA(pool, shift, INDEX(pool, MOD(_daySeed + shift, COUNT(pool)) + 1)),
+    _pick, LAMBDA(pool, shift, word, k, exactPct,
+               IF(MOD(_rand(k), 100) < exactPct, _get(pool, shift), word)),
+
+    TEXTJOIN(";", TRUE,
+        _pick(_pC,0,"COMMON",1,50), _pick(_pC,1,"COMMON",2,50), _pick(_pC,2,"COMMON",3,50),
+        _pick(_pR,0,"RARE",4,50), _pick(_pR,1,"RARE",5,50),
+        _pick(_pE,0,"EPIC",6,50),
+        _pick(_pL,0,"LEGENDARY",7,50),
+        _pick(_pM,0,"MYTHIC",8,50),
+        _pick(_pA,0,"APEX",9,50))
+)
+107: A=Pools | B=V3.0.0 pets of that rarity that can spawn or fuse, plus the 6 early Secrets (1001, 1007 / 1002, 1008 / 1003, 1009). Secrets pay as their rarity. No Limiteds, no Lucky Boxes.
+108: A=Easy / Hard day | B=Each slot rolls on its own from the day seed. Last number in each _pick = % chance that slot asks for an exact PetID; otherwise it shows Any <rarity>. All 50 now; tune per slot. Any-rarity slots accept the same ID more than once (3 CHICK for slots 1–3 is fine).
+109: A=Gems per slot | B=4;4;4;6;6;12;12;14;18
+111: A=9. Event Shop
+112: A=Item | B=Gems | C=Limit / account / event | D=Reward
+113: A=Dust pack | B=20.0 | C=10.0 | D=50 Dust
+114: A=MoneyTime | B=40.0 | C=5.0 | D=1h MoneyTime
+115: A=Weather Charm | B=100.0 | C=2.0 | D=1 Common Weather Charm
+116: A=Rare Pet | B=150.0 | C=2.0 | D=1 pet from configured Rare pool
+117: A=Featured Pet | B=700 / 400 | C=1.0 | D=700 = Limited. 400 = normal or Secret.
+118: A=Pricing | B=Fixed. No escalation, no restock.
+119: A=Featured rarity | B=Limited only when Update Freq Rules allow. Else normal / Secret at 400 (FeaturedPrice in config).
+120: A=No extra track | B=No milestone rewards. Featured pet = shop purchase only.
+121: A=Purchase | B=Check window, Gems, limit. Charge + grant together. Unique purchase ID; retry returns same result. Fail = no charge.
+122: A=Random pet | B=Roll once per purchase ID.
+123: A=Reward references | B=Config must have DustRewardID, MoneyTimeRewardID, CommonCharmRewardID, RarePetPoolID, FeaturedPetID.
+125: A=10. Earning Milestones
+126: A=Daily route | B=Gems / day | C=Day to save 700 | D=14-day earning
+127: A=Activities only | B=20.0 | C=Not reachable | D=280.0
+128: A=6 easy pets; no activities | B=36.0 | C=Not reachable | D=504.0
+129: A=6 easy pets + activities | B=56.0 | C=13.0 | D=784.0
+130: A=Easy + Legendary + activities | B=68.0 | C=11.0 | D=952.0
+131: A=Full board + activities | B=100.0 | C=7.0 | D=1400.0
+132: A=Saved target | B=At 56 / day | C=At 68 / day | D=At 100 / day
+133: A=100.0 | B=2.0 | C=2.0 | D=1.0
+134: A=250.0 | B=5.0 | C=4.0 | D=3.0
+135: A=400.0 | B=8.0 | C=6.0 | D=4.0
+136: A=550.0 | B=10.0 | C=9.0 | D=6.0
+137: A=700.0 | B=13.0 | C=11.0 | D=7.0
+138: A=Calculation | B=Daily = min(100, activities + pets). Days = ceil(target / daily). Assumes daily play, no spending.
+139: A=Spending | B=Buying a 100-Gem item first = +1 day at cap.
+140: A=Late start | B=Fewer than 7 earning days left = 700 unreachable from zero.
+142: A=11. UI
+143: A=Element | B=Display / behavior
+144: A=Event widget | B=Today x/100. Wallet. Countdown to reset.
+145: A=Contract board | B=9 cards: slot, rarity, pet name (exact) or Any <rarity>, owned count, Gems, done.
+146: A=Slot order | B=C1 C2 C3 → R4 R5 → E6 → L7 → M8 → A9. Keep order after completion.
+147: A=Submit preview | B=Pick pet → see payout and consumes → Confirm / Cancel.
+148: A=Shop | B=Featured pinned first. Price, wallet, buys left, countdown.
+149: A=Shortfall | B=FeaturedPrice − wallet. Update after every grant / buy.
+150: A=Daily cap | B=At 100: Daily limit reached. Submit off. Shop stays on.
+152: A=12. Saved Data / Acceptance
+153: A=Field | B=Scope / value
+154: A=WalletGems / EarnedTotal | B=Per EventID. Wallet drops on purchase; EarnedTotal doesn't.
+155: A=DayKey / EarnedToday | B=Per EventID / account. EarnedToday 0–100.
+156: A=Activities | B=LoginClaimed; FishCount 0–5 / FishClaimed; DigCount 0–5 / DigClaimed.
+157: A=CompletedSlots | B=9-slot done bits. Reset daily.
+158: A=PurchaseCounts | B=5 item counts per EventID. Keep through shop-only window.
+159: A=Reward ledger | B=Done source IDs + pending / committed submissions and purchases. Enough to block replay and lost delivery.
+160: A=Check | B=Expected result
+161: A=Daily board | B=9 slots, 9 pets: 3C / 2R / 1E / 1L / 1M / 1A. Each once / day. All 9 = 80.
+162: A=Easy route | B=784 ≥ 700, day 13.
+163: A=Per-pet reward | B=4 / 6 / 12 / 12 / 14 / 18. Secrets pay as their rarity. All 9 = 80.
+164: A=One instance | B=One pet in, one slot done, one payment.
+165: A=Unix boundary | B=23:59:59 old board, 00:00:00 new board. Wallet stays.
+166: A=Determinism | B=Same EventID + day + PoolVersion = same targets everywhere.
+167: A=Target eligibility | B=Exact slots: target spawnable or fusable; Secrets only the 6 early ones, slots 1–6. Any-rarity slots: any owned pet of that rarity. Limiteds and Lucky Boxes never, either way.
+168: A=Cap concurrency | B=Two 20-Gem sources at 95 → 5 total.
+169: A=Task retry | B=Repeated catch / dig / login pays once.
+170: A=Submission retry | B=Reconnect mid-submit → still one pet, one pay.
+171: A=Cap submission | B=At 100 Submit off. At 95 an 18-Gem slot previews 5.
+172: A=Inventory validation | B=Wrong pet / stale board / not owned → reject, nothing consumed.
+173: A=Clone reward | B=Clone results credit owner once.
+174: A=Shop retry | B=One charge, one reward per purchase ID. Limit holds under spam.
+175: A=Event boundary | B=End disables earning. ShopClose disables buying, wallet expires.
+176: A=Economy ceiling | B=Max 1,400 earned. All stock 1,600. Can't buy everything.
+178: A=13. Meteor — Implementation
+179: A=Rule Name | B=Rules
+180: A=Scope | B=900s, 4 dmg / hit, HP 40 per player cap 240, threshold 4–8, 10 Gems / payout.
+181: A=Spawn | B=One per 900s room timer. Login doesn't spawn one. Snapshot room + HP at spawn.
+182: A=Counter start | B=New spawn → HitCount 0, Threshold random 4–8. Old progress gone.
+183: A=Valid hit | B=Server accepts damage → +1 to that owner. Miss / dead / duplicate → +0.
+184: A=Payout | B=HitCount reaches Threshold → 10 Gems, HitCount 0, new Threshold. Repeat on same spawn.
+185: A=Break | B=No bonus. Non-Gem drops stay.
+186: A=Result key | B=EventID + MeteorInstanceID + OwnerID + PayoutIndex. Commit reset + key + Gems together.
+187: A=Reconnect | B=Save MeteorInstanceID, HitCount, Threshold, PayoutIndex. Same spawn → resume. New spawn → fresh.
+188: A=UTC reset | B=Resets EarnedToday and activities. Wallet, purchases, current counter stay.
+189: A=After cap | B=Counter runs, Gems = 0. Nothing banked.
+190: A=At event end | B=End disables Meteor Gems even mid-spawn. ShopClose expires wallet.
+191: A=Acceptance | B=Threshold 4: hits 1–3 pay 0, hit 4 pays 10. At 95 next payout = 5, at 100 = 0.
+193: A=14. Meteor — Balance Reference
+194: A=Parameter | B=Prediction settings / results
+195: A=Status | B=Sim was run at threshold 4–9. Rerun at 4–8 before approval. Target: casual ~60 / day with activities, hardcore cap ~70 min.
+196: A=Casual | B=2 × 20 min / day. ~2.7 spawns.
+197: A=Active | B=1 × 60 min / day. 4 spawns.
+198: A=Attendance / variance | B=100% attendance, ±20% play variance, all activities done, no spending.
+199: A=Room mix | B=1–6 players weighted 10 / 20 / 25 / 20 / 15 / 10. Model, not telemetry.
+200: A=Clones | B=Baseline 0%. Idle clones add HP, never hit, never paid.

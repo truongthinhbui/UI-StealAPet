@@ -1,0 +1,178 @@
+SHEET EventCollectorData
+1: A=IDPOOL | B=PoolPet | C=Weight | D=Gift | E=Date | F=Pool
+2: A=ID | B=Pool | C=Weight | D=IDGift | E=Date | F=Pool | I=2025-12-23 00:00:00 | J=2025-12-24 00:00:00 | K=2025-12-25 00:00:00 | L=2025-12-26 00:00:00 | M=2025-12-27 00:00:00 | N=2025-12-28 00:00:00 | O=2025-12-29 00:00:00 | P=2025-12-30 00:00:00 | Q=2025-12-31 00:00:00 | R=2026-01-01 00:00:00 | S=2026-01-02 00:00:00 | T=2026-01-03 00:00:00 | U=2026-01-04 00:00:00
+3: A=int | B=string | C=string | D=string | E=string | F=string | I==(I2 - DATE(1970,1,1)) * 86400 | J==(J2 - DATE(1970,1,1)) * 86400 | K==(K2 - DATE(1970,1,1)) * 86400 | L==(L2 - DATE(1970,1,1)) * 86400 | M==(M2 - DATE(1970,1,1)) * 86400 | N==(N2 - DATE(1970,1,1)) * 86400 | O==(O2 - DATE(1970,1,1)) * 86400 | P==(P2 - DATE(1970,1,1)) * 86400 | Q==(Q2 - DATE(1970,1,1)) * 86400 | R==(R2 - DATE(1970,1,1)) * 86400 | S==(S2 - DATE(1970,1,1)) * 86400 | T==(T2 - DATE(1970,1,1)) * 86400 | U==(U2 - DATE(1970,1,1)) * 86400
+4: A=1.0 | B=1007;1008;1009;1010;1005;1006 | C=50;400;900;750;75;1 | D=20002;20003;20004;20005;20006;20007 | E=1766448000.0 | F==HLOOKUP(E4,$I$3:$U$4,2, false) | I==LET(
+    daySeed, INT(I2),
+    pool, {1,2,3,4,5,6,7,8,52,9,10,11,12,13,14,15,16,17,53},
+    poolSize, 19,
+    
+    getPet, LAMBDA(offset, 
+        LET(
+            idx, MOD(daySeed + offset, poolSize) + 1,
+            INDEX(pool, idx)
+        )
+    ),
+    
+    _pet1, getPet(0),
+    _pet2, getPet(9),
+    _pet3, getPet(18),
+    
+    TEXTJOIN(";", TRUE, _pet1, _pet2, _pet3)
+) | J==LET(
+daySeed, INT(J2),
+pool, {1,2,3,4,5,6,7,8,52,9,10,11,12,13,14,15,16,17,53},
+poolSize, 19,
+getPet, LAMBDA(offset, LET(
+idx, MOD(daySeed + offset, poolSize) + 1,
+INDEX(pool, idx)
+)
+),
+_pet1, getPet(0),
+_pet2, getPet(9),
+_pet3, getPet(18),
+TEXTJOIN(";", TRUE, _pet1, _pet2, _pet3)
+) | K==LET(
+daySeed, INT(K2),
+pool, {1,2,3,4,5,6,7,8,52,9,10,11,12,13,14,15,16,17,53},
+poolSize, 19,
+getPet, LAMBDA(offset, LET(
+idx, MOD(daySeed + offset, poolSize) + 1,
+INDEX(pool, idx)
+)
+),
+_pet1, getPet(0),
+_pet2, getPet(9),
+_pet3, getPet(18),
+TEXTJOIN(";", TRUE, _pet1, _pet2, _pet3)
+) | L==LET(
+daySeed, INT(L2),
+pool, {1,2,3,4,5,6,7,8,52,9,10,11,12,13,14,15,16,17,53},
+poolSize, 19,
+getPet, LAMBDA(offset, LET(
+idx, MOD(daySeed + offset, poolSize) + 1,
+INDEX(pool, idx)
+)
+),
+_pet1, getPet(0),
+_pet2, getPet(9),
+_pet3, getPet(18),
+TEXTJOIN(";", TRUE, _pet1, _pet2, _pet3)
+) | M==LET(
+daySeed, INT(M2),
+pool, {1,2,3,4,5,6,7,8,52,9,10,11,12,13,14,15,16,17,53},
+poolSize, 19,
+getPet, LAMBDA(offset, LET(
+idx, MOD(daySeed + offset, poolSize) + 1,
+INDEX(pool, idx)
+)
+),
+_pet1, getPet(0),
+_pet2, getPet(9),
+_pet3, getPet(18),
+TEXTJOIN(";", TRUE, _pet1, _pet2, _pet3)
+) | N==LET(
+daySeed, INT(N2),
+pool, {1,2,3,4,5,6,7,8,52,9,10,11,12,13,14,15,16,17,53},
+poolSize, 19,
+getPet, LAMBDA(offset, LET(
+idx, MOD(daySeed + offset, poolSize) + 1,
+INDEX(pool, idx)
+)
+),
+_pet1, getPet(0),
+_pet2, getPet(9),
+_pet3, getPet(18),
+TEXTJOIN(";", TRUE, _pet1, _pet2, _pet3)
+) | O==LET(
+daySeed, INT(O2),
+pool, {1,2,3,4,5,6,7,8,52,9,10,11,12,13,14,15,16,17,53},
+poolSize, 19,
+getPet, LAMBDA(offset, LET(
+idx, MOD(daySeed + offset, poolSize) + 1,
+INDEX(pool, idx)
+)
+),
+_pet1, getPet(0),
+_pet2, getPet(9),
+_pet3, getPet(18),
+TEXTJOIN(";", TRUE, _pet1, _pet2, _pet3)
+) | P==LET(
+daySeed, INT(P2),
+pool, {1,2,3,4,5,6,7,8,52,9,10,11,12,13,14,15,16,17,53},
+poolSize, 19,
+getPet, LAMBDA(offset, LET(
+idx, MOD(daySeed + offset, poolSize) + 1,
+INDEX(pool, idx)
+)
+),
+_pet1, getPet(0),
+_pet2, getPet(9),
+_pet3, getPet(18),
+TEXTJOIN(";", TRUE, _pet1, _pet2, _pet3)
+) | Q==LET(
+daySeed, INT(Q2),
+pool, {1,2,3,4,5,6,7,8,52,9,10,11,12,13,14,15,16,17,53},
+poolSize, 19,
+getPet, LAMBDA(offset, LET(
+idx, MOD(daySeed + offset, poolSize) + 1,
+INDEX(pool, idx)
+)
+),
+_pet1, getPet(0),
+_pet2, getPet(9),
+_pet3, getPet(18),
+TEXTJOIN(";", TRUE, _pet1, _pet2, _pet3)
+) | R==LET(
+daySeed, INT(R2),
+pool, {1,2,3,4,5,6,7,8,52,9,10,11,12,13,14,15,16,17,53},
+poolSize, 19,
+getPet, LAMBDA(offset, LET(
+idx, MOD(daySeed + offset, poolSize) + 1,
+INDEX(pool, idx)
+)
+),
+_pet1, getPet(0),
+_pet2, getPet(9),
+_pet3, getPet(18),
+TEXTJOIN(";", TRUE, _pet1, _pet2, _pet3)
+) | S==LET(
+daySeed, INT(S2),
+pool, {1,2,3,4,5,6,7,8,52,9,10,11,12,13,14,15,16,17,53},
+poolSize, 19,
+getPet, LAMBDA(offset, LET(
+idx, MOD(daySeed + offset, poolSize) + 1,
+INDEX(pool, idx)
+)
+),
+_pet1, getPet(0),
+_pet2, getPet(9),
+_pet3, getPet(18),
+TEXTJOIN(";", TRUE, _pet1, _pet2, _pet3)
+) | T==LET(
+daySeed, INT(T2),
+pool, {1,2,3,4,5,6,7,8,52,9,10,11,12,13,14,15,16,17,53},
+poolSize, 19,
+getPet, LAMBDA(offset, LET(
+idx, MOD(daySeed + offset, poolSize) + 1,
+INDEX(pool, idx)
+)
+),
+_pet1, getPet(0),
+_pet2, getPet(9),
+_pet3, getPet(18),
+TEXTJOIN(";", TRUE, _pet1, _pet2, _pet3)
+)
+5: E=1766534400.0 | F==HLOOKUP(E5,$I$3:$U$4,2, false) | G=Oc | H=9.0
+6: E=1766620800.0 | F==HLOOKUP(E6,$I$3:$U$4,2, false) | G=No | H=10.0
+7: E=1766707200.0 | F==HLOOKUP(E7,$I$3:$U$4,2, false) | G=De | H=11.0 | K=1007.0 | L=SNOWRABBIT | M=50.0 | N==M7/sum($M$7:$M$12)
+8: E=1766793600.0 | F==HLOOKUP(E8,$I$3:$U$4,2, false) | H=12.0 | K=1008.0 | L=POSSUM | M=400.0 | N==M8/sum($M$7:$M$12)
+9: E=1766880000.0 | F==HLOOKUP(E9,$I$3:$U$4,2, false) | K=1009.0 | L=SNOWWEASEL | M=900.0 | N==M9/sum($M$7:$M$12)
+10: E=1766966400.0 | F==HLOOKUP(E10,$I$3:$U$4,2, false) | K=1010.0 | L=SNOWLEOPARD | M=750.0 | N==M10/sum($M$7:$M$12)
+11: E=1767052800.0 | F==HLOOKUP(E11,$I$3:$U$4,2, false) | K=1005.0 | L=SNOWMAN | M=75.0 | N==M11/sum($M$7:$M$12)
+12: E=1767139200.0 | F==HLOOKUP(E12,$I$3:$U$4,2, false) | K=1006.0 | L=MOODENG | M=1.0 | N==M12/sum($M$7:$M$12)
+13: E=1767225600.0 | F==HLOOKUP(E13,$I$3:$U$4,2, false)
+14: E=1767312000.0 | F==HLOOKUP(E14,$I$3:$U$4,2, false)
+15: E=1767398400.0 | F==HLOOKUP(E15,$I$3:$U$4,2, false)
+16: E=1767484800.0 | F==HLOOKUP(E16,$I$3:$U$4,2, false)
+19: M=60020.0

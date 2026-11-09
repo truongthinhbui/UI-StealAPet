@@ -1,0 +1,123 @@
+SHEET Update Freq Rules
+1: A=UPDATE SCHEDULE & PET VALUE RULES — updated Oct 5, 2026
+2: A=14-day periods from Oct 8, 2026; end dates included. C/L = confirmed/planned in earlier changelog review; P = proposal. Revised dates and shop picks are proposed.
+4: A=# | B=Content | C=How often | D=Rule | E=Checks / notes
+5: A=A | B=RELEASE CONTENT
+6: A=1 | B=New pets | C=Every 2 weeks; 2–3 pets | D=Serve new/mid/late players; rotate pools. First 4 weeks: Weight = 1; CanFuse = 0. | E=Check value limits and upgrade value.
+7: A=2 | B=New Limited pet | C=6+ weeks apart; 1 pet/event | D=14 days; 21 for anniversaries/collaborations. Rare collectibles; normal pets may earn more later. | E=No Limited rerun overlap. Confirmed anniversary bundle is an exception.
+8: A=3 | B=Limited pet rerun | C=Max 1/month; same pet after 6+ months | D=Keep stats and look. No overlap with new Limited. | E=Reprice using current expected reward value.
+9: A=4 | B=Activity / pool refresh | C=Every 2 updates | D=Refresh Fishing, Dig, Fusion, Merchant or Daily Pool rewards/pets/goals. See Boss column separately. | E=Keep existing activities worth returning to.
+10: A=5 | B=Returning event | C=Max 2/month | D=Alternate new/rerun events in 4-week blocks. Refresh rewards/goals. Duration: 14 days; anniversary: 21. | E=No overlap with new Limited.
+11: A=6 | B=Boss | C=Target: new every 8 weeks; variant after 4 | D=New fight or reward goal; refresh rewards between releases. Proposed dates may shift around busy updates. | E=Compare rewards with existing bosses and Pet Coin→Mythic. Flag >2× gain. Use current DustHunt rules; test HP/drops.
+12: A=7 | B=Major feature | C=Every 6 weeks; 1 system/release | D=New action, screen or lasting system. Excludes boss variants, reward refreshes and small fixes. | E=Confirmed bundles are exceptions. No feature + Rebirth release.
+13: A=8 | B=Weather | C=Every 8 weeks; target: 12 active types | D=Add gameplay or pet-collection value. Keep ~74-minute weather cycle. No weather + mutation in the same release. | E=12 is a planning target. Rotate cosmetic weather first; retain pet-pool weather. Check dry gaps.
+14: A=9 | B=New mutation | C=Same power: 4–6 weeks; higher tier: 12 | D=Max 1/release. Mutations affect income. Ship separately from weather. | E=Seasonal types can rotate out. Include 3 MutaGen versions + data rows. Higher tiers may reduce old investment value.
+15: A=10 | B=Base decoration | C=Every 8–12 weeks | D=1 themed set: colors + decorations. Cosmetic; no income boost. | E=Match events/major updates. Older sets may return.
+16: A=11.0 | B=Rerun older limited content
+17: A=B | B=PROGRESSION CAPS
+18: A=11 | B=Rebirth + resource limits | C=Every 4–6 weeks; +1–2 RB | D=Next RB cost = team income/second × 5 × 40 × 60. | E=Include all earning slots + current RB multiplier. Active saving only; no offline income. Separate from major features.
+19: A=12 | B=Dust limit | C=With RB; review every 4 weeks | D=P: RB25 17,000; +500/RB; RB31 20,000. | E=Check Dust income/spending separately from money.
+20: A=13 | B=Base pet slots | C=3.0: 19 slots; +1 per 2 RB after RB25 | D=RB25–26: 19; RB27–28: 20; RB29–30: 21; RB31: 22. Include all in RB costs. | E=Inventory: +2 per 2 RB. Slot 19: RB25, Sep 24 plan.
+21: A=14 | B=New-player help / usability | C=Every 8 weeks | D=Improve first-session guidance and usability. | E=Urgent fixes anytime. Small fixes ≠ major features.
+22: A=C | B=PET VALUE / INFLATION
+23: A=15 | B=Top-pet review | C=Every 4 weeks | D=Check top-1% base income, upgrade/RB speed and top-pet ownership. | E=Log max(Value × max-RB money multiplier) in Track Burn Content.
+24: A=16 | B=Pet value cap | C=Every 8 weeks; +5–10% max | D=Normal or Limited may set the cap. Test before release. | E=Ceiling, not quota. Normal: 1.05–1.10×; Secret: 1.02–1.10×. Update NewContentRules.
+25: A=17 | B=New-pet value test | C=Before each release | D=Compare against the weakest replaced pet in a full base. No useful upgrade → do not release. | E=Compare acquisition speed with Pet Coin→Mythic.
+26: A=22 | B=Shop cadence | C=Reshuffle: every 6 weeks; new items: every 8 weeks (P) | D=Reshuffle the rotation every 6 weeks. Release a new shop item—usually Weather Gen or MutaGen—every 8 weeks. | E=New items need design, price and RB review. Pending ≠ approved; no power increase required.
+27: A=E | B=CALENDAR | C=TWO-WEEK PLAN — OCT 8, 2026 TO APR 7, 2027
+28: A=22.0 | B=2.15.0 baseline | C=Raw Mob.Value: LIONESS 5.55T; BUFFALO 5.65T; SALMON 4.6T; EMU 5T; BIGHORN 5.75T; DRAGON 5.465252260520T. Compare at equal level/mutation/weather.
+29: A=23.0 | B=Progression baseline | C=Pre-3.0 RB25: money 50Sx; Dust 17,000; base 18; inventory 12; ×10.5. 3.0 proposal: base 19; money 28Qi. See RB targets/migration note.
+30: A=24.0 | B=Sep 24 / 3.0.0 | C=C: Pegasus + Kirin, Luckybox, Daily Pool rework, Dig/Fish swap, Track Burn, Meteor rerun. P: Pegasus 6.2T; Kirin 6.325T; Sep 24–Oct 14 (closes Oct 15). Base slot 19 at RB25+.
+31: A=25.0 | B=Inflation rule | C=P: best Value 5.75T → Sep 24: 6.325T → Nov 19: 6.9575T → Jan 14: 7.65325T → Mar 11: 8.418575T. +10% every 8 weeks. Normal may surpass Limited.
+32: A=Period (14 days) | B=New pets (base Value) | C=Limited pets / reruns | D=Max RB / money / Dust | E=Base / inventory / income × | F=Top Value | G=Features / content | H=Activity: goals + rewards | I=Shop cadence (P) | J=Boss (P) | K=Release date | L=Changelog summary
+33: A=Oct 8 – Oct 21, 2026 | B=2: normal 5.9T + top normal 6.25T | C=Pegasus + Kirin (Sep carryover); close Oct 15. | D=Hold RB25
+Money 28Qi; Dust 17000 | E=Base 19; inventory 12; ×10.5 | F=6.325T; hold | G=WINDY/Bird pool + Retrieve money/Dust (C). Collection EXP stays in changelog; no recurring milestone. | H=Fishing | I=Reshuffle + new Weather Gen/MutaGen | J=Current boss; track win rate + Dust. | K=2026-10-08 00:00:00 | L=2 pets (1 Secret)
+34: A=Oct 22 – Nov 4, 2026 | B=2: normal 6T + Secret 6.3T | C=None | D=Hold RB25
+Money 28Qi; Dust 17000 | E=Base 19; inventory 12; ×10.5 | F=6.325T; hold | G=METEORITE + pool (L); Autumn decor (P). | H=Dig | I=— | J=Current boss; track win rate + Dust. | K=2026-10-22 00:00:00 | L=2 pets (1 Secret) | 1 weather | RB25 | 1 decor
+35: A=Nov 5 – Nov 18, 2026 | B=2: normal 6.1T + top normal 6.325T | C=None | D=+2: RB26–27; max RB27
+Money 29Qi; Dust 18000 | E=Base 20; inventory 14; ×11 | F=6.325T; hold | G=NIGHT/Insect pool (L); reuse Shadowfall (P). | H=Boss | I=— | J=Reward refresh (P); same fight. | K=2026-11-05 00:00:00 | L=2 pets | Night pool | RB27 | Boss: reward refresh
+36: A=Nov 19 – Dec 2, 2026 | B=2: normal 6.15T + Secret 6.32T. Existing top normal → 6.9575T; +0 pets. | C=None | D=Hold RB27
+Money 29Qi; Dust 18000 | E=Base 20; inventory 14; ×11 | F=6.9575T; +10% (top normal) | G=Same-power mutation (P; moved from Oct 22). Test + fix. | H=Daily pool | I=Reshuffle | J=New Golem (P): draft 2,500 HP / 120s; retest scaling; expected rewards ≤ ORC. | K=2026-11-19 00:00:00 | L=2 pets (1 Secret) | Top Value +10% | RB27 | Shop: reshuffle | 1 mutation | 1 boss
+37: A=Dec 3 – Dec 16, 2026 | B=2: normal 6.65T + top normal 6.9575T | C=None | D=Hold RB27
+Money 29Qi; Dust 18000 | E=Base 20; inventory 14; ×11 | F=6.9575T; hold | G=Pet Passive Traits (L); new-player help/usability #1 (P). | H=Fusion | I=New Weather Gen/MutaGen | J=Current boss; track win rate + Dust. | K=2026-12-03 00:00:00 | L=2 pets | RB27 | Shop: new Gen item
+38: A=Dec 17 – Dec 30, 2026 | B=2: normal 6.75T + Secret 6.95T | C=1 Winter Limited: 6.9575T; Dec 17–30; closes Dec 31 | D=+1: RB28; max RB28
+Money 30Qi; Dust 18500 | E=Base 20; inventory 16; ×11.25 | F=6.9575T; hold | G=Winter same-power mutation + decor (P). | H=Merchant | I=— | J=ORC variant (P): draft 3,000 HP / 120s; retest scaling; same expected rewards. | K=2026-12-17 00:00:00 | L=3 pets (1 Secret + 1 Limited) | RB28 | 1 mutation + 1 decor | 1 boss variant
+39: A=Dec 31 – Jan 13, 2027 | B=2: normal 6.8T + top normal 6.9575T | C=MRFOOTBALL rerun: 5.2T; Dec 31–Jan 13; closes Jan 14; requires 6+ months since last close | D=Hold RB28
+Money 30Qi; Dust 18500 | E=Base 20; inventory 16; ×11.25 | F=6.9575T; hold | G=No new feature; test + fix. | H=Fishing | I=Reshuffle | J=Current boss; track win rate + Dust. | K=2026-12-31 00:00:00 | L=2 pets | MRFOOTBALL rerun (6+ months) | RB28 | Shop: reshuffle
+40: A=Jan 14 – Jan 27, 2027 | B=2: normal 6.85T + Secret 6.95T. Existing top normal → 7.65325T; +0 pets. | C=None | D=Hold RB28
+Money 30Qi; Dust 18500 | E=Base 20; inventory 16; ×11.25 | F=7.65325T; +10% (top normal) | G=Pets do Missions (P; from Dec 3). No new income multiplier. | H=Dig | I=— | J=Current boss; track win rate + Dust. | K=2027-01-14 00:00:00 | L=2 pets (1 Secret) | Top Value +10% | RB28
+41: A=Jan 28 – Feb 10, 2027 | B=2: normal 7.35T + top normal 7.65T | C=1 Tet Limited: 7.65325T; Jan 28–Feb 10; closes Feb 11 | D=+2: RB29–30; max RB30
+Money 33Qi; Dust 19500 | E=Base 21; inventory 18; ×11.75 | F=7.65325T; hold | G=New-player help/usability #2 + Tet same-power mutation (P). | H=Boss | I=New Weather Gen/MutaGen | J=New DragonBoss + reward refresh (P): draft 3,000 HP / 120s; retest; expected rewards ≤ ORC. | K=2027-01-28 00:00:00 | L=3 pets (1 Limited) | RB30 | 1 mutation | Shop: new Gen item | 1 boss
+42: A=Feb 11 – Feb 24, 2027 | B=2: normal 7.4T + Secret 7.65325T | C=DRAGON rerun: 5.465252260520T; Feb 11–24; closes Feb 25; requires 6+ months since last close | D=Hold RB30
+Money 33Qi; Dust 19500 | E=Base 21; inventory 18; ×11.75 | F=7.65325T; hold | G=No new feature; test + fix. | H=Daily pool | I=Reshuffle | J=Current boss; track win rate + Dust. | K=2027-02-11 00:00:00 | L=2 pets (1 Secret) | DRAGON rerun (6+ months) | RB30 | Shop: reshuffle
+43: A=Feb 25 – Mar 10, 2027 | B=2: normal 7.45T + top normal 7.65325T | C=None | D=Hold RB30
+Money 33Qi; Dust 19500 | E=Base 21; inventory 18; ×11.75 | F=7.65325T; hold | G=Transmog (P; from Dec 3) + Spring decor (P). Boss variant in a separate patch. | H=Fusion | I=— | J=Golem variant (P): draft 2,500 HP / 120s; retest; same expected rewards. | K=2027-02-25 00:00:00 | L=2 pets | RB30 | 1 decor | 1 boss variant
+44: A=Mar 11 – Mar 24, 2027 | B=2: normal 7.5T + Secret 7.65T | C=1 Spring Limited: 8.418575T; Mar 11–24; closes Mar 25 | D=+1: RB31; max RB31
+Money 36Qi; Dust 20000 | E=Base 22; inventory 18; ×12 | F=8.418575T; +10%; Spring Limited | G=Spring same-power mutation (P). | H=Merchant | I=— | J=Current boss; track win rate + Dust. | K=2027-03-11 00:00:00 | L=3 pets (1 Secret + 1 Limited) | Top Value +10% | RB31 | 1 mutation
+45: A=Mar 25 – Apr 7, 2027 | B=2: normal 8.1T + top normal 8.418575T | C=None | D=Hold RB31
+Money 36Qi; Dust 20000 | E=Base 22; inventory 18; ×12 | F=8.418575T; hold | G=SolarStorm + pool; usability #3 (P). Same reward limits; no stronger mutation. | H=Fishing | I=Reshuffle + new Weather Gen/MutaGen | J=Current boss; track win rate + Dust. | K=2027-03-25 00:00:00 | L=2 pets | 1 weather | RB31 | Shop: reshuffle + new Gen item
+46: A= | B= | C= | D= | E= | F= | G= | H= | I= | J=
+47: A= | B= | C= | D= | E= | F= | G= | H= | I= | J=
+48: A= | B= | C= | D= | E= | F= | G= | H= | I= | J=
+49: A= | B= | C= | D= | E= | F= | G= | H= | I= | J=
+50: A= | B= | C= | D= | E= | F= | G= | H= | I= | J=
+51: A= | B= | C= | D= | E= | F= | G= | H= | I= | J=
+52: A= | B= | C= | D= | E= | F= | G= | H= | I= | J=
+53: A= | B= | C= | D= | E= | F= | G= | H= | I= | J=
+54: A= | B= | C= | D= | E= | F= | G= | H= | I= | J=
+55: A= | B= | C= | D= | E= | F= | G= | H= | I= | J=
+56: A= | B= | C= | D= | E= | F= | G= | H= | I= | J=
+57: A= | B= | C= | D= | E= | F= | G= | H= | I= | J=
+58: A= | B= | C= | D= | E= | F= | G= | H= | I= | J=
+59: A= | B= | C= | D= | E= | F= | G= | H= | I=
+60: A= | B=RB TARGETS | C=REBIRTH TARGETS (P) — verify unfinished RB26+ data
+61: A=RB | B=Release | C=Cost to NEXT RB | D=MaxMoney display | E=MaxMoney packed | F=MaxDust | G=Base / inv | H=Money multiplier | I=Required pets for NEXT RB
+62: A=25 | B=3.0 / Sep 24 | C=12.6567Qi | D=28Qi | E=70280 | F=17000 | G=19 / 12 | H=10.5 | I=115 LIONESS; 116 BUFFALO; 119 BIGHORN (4+ weeks old by Nov 5)
+63: A=26 | B=Nov 05, 2026 (P) | C=13.1064Qi | D=28Qi | E=70280 | F=17500 | G=19 / 14 | H=10.75 | I=115 LIONESS, 116 BUFFALO, 119 BIGHORN
+64: A=27 | B=Nov 05, 2026 (P) | C=14.322Qi | D=29Qi | E=70290 | F=18000 | G=20 / 14 | H=11 | I=115 LIONESS, 116 BUFFALO, 119 BIGHORN
+65: A=28 | B=Dec 17, 2026 (P) | C=14.80275Qi | D=30Qi | E=70300 | F=18500 | G=20 / 16 | H=11.25 | I=115 LIONESS, 116 BUFFALO, 119 BIGHORN
+66: A=29 | B=Jan 28, 2027 (P) | C=16.0839Qi | D=33Qi | E=70330 | F=19000 | G=21 / 16 | H=11.5 | I=115 LIONESS, 116 BUFFALO, 119 BIGHORN
+67: A=30 | B=Jan 28, 2027 (P) | C=16.43355Qi | D=33Qi | E=70330 | F=19500 | G=21 / 18 | H=11.75 | I=115 LIONESS, 116 BUFFALO, 119 BIGHORN
+68: A=31 | B=Mar 11, 2027 (P) | C=17.6112Qi (RB32 preview) | D=36Qi | E=70360 | F=20000 | G=22 / 18 | H=12 | I=RB32 not scheduled
+69: A= | B=Cost meaning | C=NEXT: RB25 pays for RB26. Cost = SUM(pet Value × count) × current RB multiplier × 12,000 sec. RB32: preview only. Money cap = MAX(2× next cost, 27.3Qi Bighorn price), rounded up to whole Qi. Packed = 70000 + 10×Qi.
+70: A= | B=Validation | C=Model: 5 × 40 active minutes; zero starting cash; full owned team; Lv1/Normal; neutral weather/size. No offline income, boosts, theft, purchases or upgrades. Planning example, not player data; pet acquisition may take extra time.
+71: A= | B=Power accounting | C=Includes extra slots. Lv1/Normal team: RB25 1.054725Q/s → RB31 1.4676Q/s (+39.1453%). Stronger pets shorten saving time. Validate live costs with real teams.
+72: A= | B=6M total | C=P: 13 periods; 26 pets (6 Secret); 3 new Limited + 2 Sep carryovers; 2 possible reruns; +6 RB; 2 bosses + 2 variants; 5 shop reshuffles + 4 new Gen-item releases; 4 same-power mutations; 3 usability passes; 3 decoration sets. Nov 19/Jan 14 value increases add no pets.
+73: A= | B=Weather count | C=Windy: existing. NIGHT: Shadowfall pool (P). METEORITE: Oct 22 plan. SolarStorm: new, Mar 25. 12-weather target is proposed, not an engine limit.
+74: A= | B=Sources | C=Mob (V2.15.0): https://docs.google.com/spreadsheets/d/1k0iYk7cTZl2v4rwV2Jp75NCah3kvTCwKlHksj9g08Lg/edit#gid=2000230763
+75: A= | B=Sources | C=Review: Sep 9, 2026; C/L labels refer to that review. Rebirth 2.1: same Master Data, gid=581146172. Change Logs: rows 95–120. Shop System: rows 27–34. Boss: DustHunt. Regrouped into two-week periods Oct 5; releases not rechecked.
+76: A= | B=Tradeoff | C=Proposed money caps are below old 50Sx/earlier-RB caps. Check RB1–24 progression; preserve saved money before use. Dust: start 17,000; +500/RB.
+78: A=RB | B=Pet counts: Lioness / Buffalo / Emu / Salmon / Bighorn | C=Base Value/s (T) | D=RB × | E=Team income/s (Q) | F=5-day income / next RB (Qi) | G=Cash: days 1–5 (Qi) | H=Days at 40 min | I=Money / Dust caps
+79: A=25 | B=4 / 4 / 4 / 4 / 3 | C=100.45 | D=10.5 | E=1.054725 | F=12.6567 | G=2.53134 / 5.06268 / 7.59402 / 10.12536 / 12.6567 | H=5.00 | I=28Qi; dust 17000
+80: A=26 | B=4 / 4 / 4 / 3 / 4 | C=101.6 | D=10.75 | E=1.0922 | F=13.1064 | G=2.62128 / 5.24256 / 7.86384 / 10.48512 / 13.1064 | H=5.00 | I=28Qi; dust 17500
+81: A=27 | B=4 / 4 / 4 / 2 / 6 | C=108.5 | D=11 | E=1.1935 | F=14.322 | G=2.8644 / 5.7288 / 8.5932 / 11.4576 / 14.322 | H=5.00 | I=29Qi; dust 18000
+82: A=28 | B=4 / 4 / 4 / 1 / 7 | C=109.65 | D=11.25 | E=1.2335625 | F=14.80275 | G=2.96055 / 5.9211 / 8.88165 / 11.8422 / 14.80275 | H=5.00 | I=30Qi; dust 18500
+83: A=29 | B=4 / 4 / 4 / 0 / 9 | C=116.55 | D=11.5 | E=1.340325 | F=16.0839 | G=3.21678 / 6.43356 / 9.65034 / 12.86712 / 16.0839 | H=5.00 | I=33Qi; dust 19000
+84: A=30 | B=4 / 4 / 4 / 0 / 9 | C=116.55 | D=11.75 | E=1.3694625 | F=16.43355 | G=3.28671 / 6.57342 / 9.86013 / 13.14684 / 16.43355 | H=5.00 | I=33Qi; dust 19500
+85: A=31 | B=4 / 4 / 4 / 0 / 10 | C=122.3 | D=12 | E=1.4676 | F=17.6112 | G=3.52224 / 7.04448 / 10.56672 / 14.08896 / 17.6112 | H=5.00 | I=36Qi; dust 20000
+86: A= | B=Team source | C=V2.15.0 team: Lioness, Buffalo, Emu, Salmon, Bighorn; no Limited. Replace 1 Salmon with Bighorn per RB until none remain; fill new slots with Bighorn.
+87: A= | B=Sensitivity | C=Same cost: 80% net income → 6.25 days; baseline → 5; Golden (1.33×) → 3.76; 2× → 2.5. Spending 20% → 6.25 days. Offline money shortens the wait.
+88: A= | B=Formula conflict | C=Level exponent conflict: UpgradePet 0.770; skill 0.7; calculator errors. Lv1 avoids it. Verify runtime formula before using real teams.
+89: A= | B=Slot dates | C=Base slots (P): Sep 24, 2026: 19/RB25; Nov 5: 20/RB27; Jan 28, 2027: 21/RB29; Mar 11: 22/RB31. Inventory separate.
+91: C=PROGRESSION AT A GLANCE
+93: C=Model: full owned team; Lv1/Normal; 40 min/day; no spending/offline income. RB32: preview.
+94: C=TWO-WEEK CONTENT SCHEDULE
+95: C=14-day periods: Oct 8, 2026–Apr 7, 2027. Matches calendar; separate patches allowed.
+96: A=Content | B=How often | C=Oct 8 | D=Oct 22 | E=Nov 5 | F=Nov 19 | G=Dec 3 | H=Dec 17 | I=Dec 31 | J=Jan 14 | K=Jan 28 | L=Feb 11 | M=Feb 25 | N=Mar 11 | O=Mar 25
+97: A=New pets | B=Every 2 weeks | C=● | D=● | E=● | F=● | G=● | H=● | I=● | J=● | K=● | L=● | M=● | N=● | O=●
+98: A=Activity / reward refresh | B=Every 2 weeks | C=● | D=● | E=● | F=● | G=● | H=● | I=● | J=● | K=● | L=● | M=● | N=● | O=●
+99: A=Secret pet | B=Every 4 weeks | C=— | D=● | E=— | F=● | G=— | H=● | I=— | J=● | K=— | L=● | M=— | N=● | O=—
+100: A=New Limited | B=6+ weeks apart | C=— | D=— | E=— | F=— | G=— | H=● | I=— | J=— | K=● | L=— | M=— | N=● | O=—
+101: A=Limited rerun | B=Max monthly; 6+ months per pet | C=— | D=— | E=— | F=— | G=— | H=— | I=◇ | J=— | K=— | L=◇ | M=— | N=— | O=—
+102: A=Returning event | B=Max monthly; none planned | C=— | D=— | E=— | F=— | G=— | H=— | I=— | J=— | K=— | L=— | M=— | N=— | O=—
+103: A=Major feature | B=Target: every 6 weeks | C=● | D=— | E=— | F=— | G=● | H=— | I=— | J=● | K=— | L=— | M=● | N=— | O=—
+104: A=Boss | B=Plan: 2 new + 2 variants | C=— | D=— | E=R | F=NEW | G=— | H=V | I=— | J=— | K=NEW | L=— | M=V | N=— | O=—
+105: A=Weather / pet pool | B=See calendar | C=● | D=● | E=● | F=— | G=— | H=— | I=— | J=— | K=— | L=— | M=— | N=— | O=●
+106: A=Same-power mutation | B=Target: every 4–6 weeks | C=— | D=— | E=— | F=● | G=— | H=● | I=— | J=— | K=● | L=— | M=— | N=● | O=—
+107: A=Higher-power mutation | B=Optional; none planned | C=— | D=— | E=— | F=— | G=— | H=— | I=— | J=— | K=— | L=— | M=— | N=— | O=—
+108: A=New-player help / usability | B=Every 8 weeks | C=— | D=— | E=— | F=— | G=● | H=— | I=— | J=— | K=● | L=— | M=— | N=— | O=●
+109: A=Pet value limit | B=Review: 4 weeks; raise: 8 | C=— | D=R | E=— | F=↑ | G=— | H=R | I=— | J=↑ | K=— | L=R | M=— | N=↑ | O=—
+110: A=Base decoration | B=Every 8–12 weeks | C=— | D=● | E=— | F=— | G=— | H=● | I=— | J=— | K=— | L=— | M=● | N=— | O=—
+111: A=Shop | B=Reshuffle: 6 wk; new Gen item: 8 wk (P) | C=S+I | D=— | E=— | F=S | G=I | H=— | I=S | J=— | K=I | L=S | M=— | N=— | O=S+I
+112: C=● Release/refresh  NEW New boss  V Variant  ◇ Conditional rerun  R Review/reward refresh  ↑ Proposed value rise  S Shop reshuffle  I New Gen item  — None
+113: C=Shop: reshuffle every 6 weeks; new Weather Gen/MutaGen item every 8 weeks. Boss dates flexible; HP/drops need approval and DustHunt retesting.

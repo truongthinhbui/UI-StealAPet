@@ -1,0 +1,9 @@
+SHEET Mutation V1.1
+1: A=ID | B=Name | C=MaterialKey | D=EffectKey | E=Multiplier | F=Weight | H=Updated  | I=25/09/2025
+2: A=int | B=string | C=string | D=string | E=string | F=float
+3: A=1.0 | B=Normal | C=None | D=None | E=1.0 | F=1350.0
+4: A=2.0 | B=Golden | C=GoldenMat | D=goldenEffect | E=1.33 | F=100.0
+5: A=3.0 | B=Frozen | C=IceMat | D=frozenEffect | E=1.66 | F=40.0
+6: A=4.0 | B=Magma | C=MagmaMat | D=magmaEffect | E=2.0 | F=10.0
+7: A=5.0 | B=Bigest | C=Bigest | D=BigestEffect | E=2.33 | F=4.0
+10: F=192000000000.0

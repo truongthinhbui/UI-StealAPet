@@ -1,0 +1,52 @@
+SHEET Daily Pool GDD
+1: A=DAILY MOB WEIGHT ROTATION — GDD
+2: A=Static 7-day ID groups use direct UP / NORMAL / DOWN modifiers. Existing Mob (Master) Weight 1–5 values are read only; no daily total is preserved.
+4: A=1. Modifiers
+5: A=State | B=Modifier / meaning
+6: A=UP | B=1.30 — Direct +30% weight today.
+7: A=NORMAL | B=1.00 — Base weight today.
+8: A=DOWN | B=0.70 — Direct −30% weight today.
+9: A=SKIP | B=1.00 — Do not rotate this ID; base configured weight remains.
+11: A=2. Static 7-Day Config
+12: A=Rule | B=Detail
+13: A=One row per ID | B=Daily Pool Config contains one row for every eligible normal Mob ID.
+14: A=Day columns | B=Day 1–Day 7 are explicit UP / NORMAL / DOWN values. No random selection.
+15: A=Progression IDs | B=Copy every ID from Rebirth 2.1 → NextLevelMobList. Mark ProgressionSkip = TRUE and set all seven days to SKIP.
+16: A=Excluded IDs | B=Do not create rows for Lucky Box, Fishing, Digging, Windy Tree, Secret, Limited, or fusion-only pets.
+17: A=Weekly fairness | B=For each non-progression ID: 2 UP, 3 NORMAL, 2 DOWN. With 1.30 / 1.00 / 0.70, its 7-day multiplier total is exactly 7.00.
+18: A=New normal pet | B=Add immediately to the standard 2 UP / 3 NORMAL / 2 DOWN pattern. If it is a rebirth requirement, set all seven days to SKIP.
+20: A=3. Weight Calculation
+21: A=Step | B=Formula
+22: A=1. Read state | B=Read today’s state for PetID from Daily Pool Config: UP / NORMAL / DOWN / SKIP.
+23: A=2. Read weight | B=Read the existing Weight 1–5 value from Mob (Master).
+24: A=3. Final weight | B=FinalWeight = CurrentWeight × Modifier(state). SKIP = CurrentWeight × 1.00.
+25: A=4. No normalization | B=Do not calculate CandidateTotal, RawTotal, or Scale. Do not scale weights back to an old total.
+26: A=5. Progression IDs | B=SKIP keeps the configured weight unchanged. Its actual spawn probability can still move when other pets’ weights move.
+27: A=6. Blank / zero | B=Blank or 0 stays 0. Daily rotation never creates new pool access.
+28: A=7. Runtime selection | B=Feed FinalWeight into the existing normal pool selection. Do not write back to Mob (Master).
+29: A=Result | B=UP and DOWN change real daily spawn probabilities. Rarity × Weight totals may change by day; this is intentional.
+31: A=4. Worked Example — Weight 5 / Apex
+32: A=State | B=Current W5 | C=Modifier | D=Daily W5 | E=Final W5
+33: A=A — UP | B=4.0 | C=1.3 | D==B33*C33 | E==D33
+34: A=B — NORMAL | B=2.0 | C=1.0 | D==B34*C34 | E==D34
+35: A=C — SKIP progression | B=1.0 | C=1.0 | D==B35*C35 | E==D35
+36: A=D — DOWN | B=3.0 | C=0.7 | D==B36*C36 | E==D36
+37: A=Base pool total | B==SUM(B33:B36) | C=Daily pool total | D==SUM(E33:E36) | E=Difference | F==D37-B37
+38: A=Result | B=UP A = 5.2, NORMAL B = 2, SKIP C = 1, DOWN D = 2.1. Total changes from 10 to 10.3; no scaling is applied.
+41: A=5. Static Config Example
+42: A=PetID | B=Day 1 | C=Day 2 | D=Day 3 | E=Day 4 | F=Day 5 | G=Day 6 | H=Day 7
+43: A=A | B=UP | C=UP | D=NORMAL | E=NORMAL | F=NORMAL | G=DOWN | H=DOWN
+44: A=B | B=DOWN | C=DOWN | D=UP | E=UP | F=NORMAL | G=NORMAL | H=NORMAL
+45: A=C — Progression | B=SKIP | C=SKIP | D=SKIP | E=SKIP | F=SKIP | G=SKIP | H=SKIP
+47: A=6. Rotation Scope
+48: A=Pet group | B=Rule
+49: A=Eligible normal pets | B=Every 7-day config uses 2 UP / 3 NORMAL / 2 DOWN.
+50: A=Not rotated | B=Rebirth requirement IDs = SKIP. Fishing, Digging, Windy, Secret, Limited, and fusion-only pets never enter Daily Pool Config.
+52: A=7. Acceptance Checklist
+53: A=✓ | B=Daily Pool Config explicitly shows every eligible ID and all seven daily states.
+54: A=✓ | B=Progression IDs are SKIP on all seven days and keep their configured Weight 1–5 values unchanged.
+55: A=✓ | B=Each non-progression ID has 2 UP / 3 NORMAL / 2 DOWN states; its 7-day multiplier total is 7.00.
+56: A=✓ | B=No normalization or scaling is applied: daily totals and real spawn probabilities may vary.
+57: A=✓ | B=Blank / 0 weights stay 0. No new pool access is created.
+58: A=✓ | B=Lucky Box and separate acquisition systems are unchanged.
+60: A=Config location | B=Master Data → Daily Pool Config. Keep Mob (Master) columns unchanged.

@@ -1,0 +1,30 @@
+SHEET Mystery Merchant
+1: A=1. System Overview
+3: A=Field | C=Description
+4: A=Summary | C=Mystery Merchant is a rotating shop that refreshes every 4 minutes and offers a small set of limited-time items.
+5: A=The system is meant to | C=create session-to-session excitement
+6: C=give players a reason to check the shop regularly
+7: C=offer controlled value without flooding the economy
+8: C=support social bonuses like Friend Discount
+10: A=2. Rules
+11: A=Type | C=Description
+12: A=Rotation Rule | C=- Mystery Merchant refreshes every X minutes
+- each rotation generates a new item lineup
+- all players in the same server/section see the same rotation
+13: A=Slot Rule | C=- each rotation contains a fixed number of slots
+- 1 premium slot
+- 2 standard slots
+- 1 wildcard slot
+- item quality can vary by slot type
+14: A=Friend Discount Rule | C=- some items in a rotation may be tagged as Friend Discount
+- discount applies only to tagged items, not the full shop
+16: A=3. Sample config
+17: A=ID | B=Item | C=Effect | D=Pool | E=BasePrice | F=FinalPrice | G=Tag | H=Amount | I=Weight | J=RebirthRequirement
+18: A=1.0 | B=Summon EPIC | C=Randomly spawn a EPIC pet on the road | D=standard | E=15.0 | F=5.0 | G=Sale | H=∞ | J=0.0
+19: A=2.0 | B=Summon LEGENDARY | C=Randomly spawn a LEGENDARY pet on the road | D=standard | E=30.0 | F=10.0 | G=Sale | H=∞ | J=0.0 | M=Friend Discount
+20: A=3.0 | B=Summon MYTHIC | C=Randomly spawn a MYTHIC pet on the road | D=standard | E=60.0 | F=20.0 | G=Sale | H=∞ | J=0.0
+21: A=4.0 | B=Summon DIVINE | C=Randomly spawn a DIVINE pet on the road | D=premium | E=150.0 | F=150.0 | H=2.0 | J=10.0 | M=Sale
+22: A=5.0 | B=Summon Shadowfall | D=premium | E=75.0 | F=75.0 | G= | H=1.0 | J=7.0
+23: A=6.0 | B=Summon Rainbow | D=premium | E=45.0 | F=45.0 | G= | H=1.0 | J=7.0
+24: A=7.0 | G= | J=11.0
+25: A=8.0 | G= | J=13.0

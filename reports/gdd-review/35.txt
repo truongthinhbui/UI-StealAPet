@@ -1,0 +1,70 @@
+SHEET Chase & Limited
+1: A=0. Changelog
+2: A=Date | B=Description
+3: A=2026-10-16 00:00:00 | B=v1–v4. Chase Apex + Limited pacing for fish / dig / box. Shots, per-shot climb, reset on hit, two pools. See version history for detail.
+4: A=2026-10-19 00:00:00 | B=v5. Box Chase rotates: PENGUIN_PUMPKIN until 3.3.0, then LEMUR. Pool changes applied to Master Data (fishing 1.0.2, digging 1.0.2, LuckyBox 1.1).
+5: A=2026-10-19 00:00:00 | B=v6. Slimmed. Limited box-only for v1. Ramp days is now an input. P50 / P90 added.
+6: A=2026-10-19 00:00:00 | B=v7. Caps fish 8 / dig 8 / box 3. Steps re-solved so day 7 = 50% exactly. Box pace assumes 3 boxes a day; 1-box-a-day row added.
+7: A=2026-10-19 00:00:00 | B=v8. Past the daily cap a shot still rolls at the current chance but does not raise it. Ramp days and Chance at max removed. Limited rows left out of Settings (set in LuckyBox Config).
+8: A=2026-10-19 00:00:00 | B=v9. Chance now grows as (n − 1)^Power, Power 2.3: slow on days 1–4, steeper after. Daily player: day 3 about 4%, day 7 = 50%. Step re-solved. Pace, P50 / P90 updated.
+9: A=2026-10-19 00:00:00 | B=v10. Target is now about 80% of daily players holding the Chase pet by day 7 (was 50%). Power 3, Steps re-solved. Day 3 about 5%, P50 day 6, P90 day 8.
+10: A=2026-10-27 00:00:00 | B=v11. Dig leaves the shot system. EventDig 2.0 has no ticket; dig Chase is paced by a pity counter on paid digs (EventDig 4.3). Dig rows here point there. Fish shot wording fixed.
+12: A=1. Rule
+13: A=Rule Name | B=Rules
+14: A=What | B=Fish and box each have one Chase Apex paced by shots (this tab). Dig has one too (GOLDENMOLE), but it is paced by a pity counter, not shots: see EventDig 4.3. Chase pets are out of the normal pools.
+15: A=Shot | B=One paid action (section 2). The first N per day (N = Shots / day) raise the chance. A shot past N still rolls at the current chance but does not raise it.
+16: A=Past the cap | B=p = Step × (min(ChaseShots, MaxShot) − 1)^Power, minimum 0. ChaseShots does not advance. Right after a Chase hit ChaseShots = 0, so p = 0 until the next counted shot.
+17: A=Chance | B=Climbs per shot, not per day, and faster the further you are. n = shots since last hit. p = Step × (min(n, MaxShot) − 1)^Power. Shot 1 = 0%. Flat after MaxShot. A player doing half the cap takes twice the days.
+18: A=Hit | B=Give 1 pet from the Chase pool. n = 0. Climb starts over.
+19: A=Counter | B=Never resets by time. Missed days change nothing. Survives a Chase pet swap.
+20: A=Player sees | B=Shots today x / cap. No bar, no odds, no counter.
+21: A=Setting the cap | B=Cap = what a normal daily player actually does, rounded down. Power sets the shape: higher = slower early, steeper later. Step is solved so that about 80% of daily players hold the pet by day 7, so re-solve Step if Shots / day, MaxShot or Power change. Past the cap, extra shots roll at the current chance, so a grinder gets there sooner (section 4).
+22: A=Conveyor | B=Untouched. It is shared, so no pacing there.
+24: A=2. Channels
+25: A=Channel | B=Shot happens when | C=Shots / day | D=Chase pet
+26: A=Fish | B=A cast resolves to a pet. Chest = not a shot. | C=8.0 | D=SALMON 117
+27: A=Dig | B=Not a shot channel. Paid digs add pity points by spot rarity (E1 / L2 / M4); guaranteed at 48. EventDig 4.3. | C=8 paid digs count / day | D=GOLDENMOLE 114
+28: A=Box | B=Player buys a Mythic box | C==D32 | D=PENGUIN_PUMPKIN 1053 until 3.3.0, then LEMUR 106
+30: A=3. Settings
+31: A=Setting | B=Fish | C=Dig | D=Box
+32: A=Shots / day | B=8.0 | C=see EventDig 4.3 | D=3.0
+33: A=MaxShot | B=56.0 | C=— | D=21.0
+34: A=Power | B=3.0 | C=— | D=3.0
+35: A=Step | B=6.5641e-07 | C=— | D=3.3331e-05
+37: A=4. Pace (daily player hitting the cap. Day N = N × shots.)
+38: A=Day | B=Fish | C=Dig | D=Box
+39: A=1.0 | B=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFD57110> | C=pity: 2 Mythic digs/day → guaranteed day 6 | D=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFD569C0>
+40: A=3.0 | B=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFD55C40> | C=— | D=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFD56FC0>
+41: A=7.0 | B=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFD579E0> | C=— | D=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFD57110>
+42: A=14.0 | B=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFD57740> | C=— | D=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFD55C40>
+43: A=28.0 | B=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFD576E0> | C=— | D=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFD544A0>
+44: A=P50 (sim) | B=shot 46 · day 6 | C=— | D=shot 18 · day 6
+45: A=P90 (sim) | B=shot 62 · day 8 | C=— | D=shot 24 · day 8
+46: A=Chase pets per 28 days (sim) | B=4.4 | C=— | D=4.3
+47: A=Box, player buys 1 a day (sim) | D=same curve at 1/3 speed: P50 day 18 · P90 day 24
+48: A=Past the cap (sim, fish) | B=Taking 2× the cap a day: day 3 13% · day 7 97%. Taking 5× the cap: day 3 32% · day 7 about 100%. Dig: digs past 8/day add 0 pity points, so no fast path.
+50: A=5. Limited (box only in v1)
+51: A=Rule Name | B=Rules
+52: A=Pet | B=KIRIN 1046. Out of the box pools.
+53: A=Roll | B=Every bought Mythic box, no daily cap, rolled before Chase. Hit → Kirin, ShotsToday + 1 if under the cap, ChaseShots unchanged.
+54: A=Chance | B=Flat per box, set directly in LuckyBox Config. No ramp, no reset, no target. For reference: 1.58% per box at 1 box a day ≈ 20% own one by day 14, P50 day 44.
+55: A=Later | B=Fish and dig Limited if box-only turns out too slow. Same rule, their own flat chance.
+57: A=6. Pool changes (applied Oct 19, 2026)
+58: A=Tab | B=Change
+59: A=fishing 1.0.2 | B=SALMON → 0 (ChasePool). PIG, GOOSE, DOG added to Common. Totals = 1,000,000. Changes highlighted in the tab.
+60: A=digging 1.0.2 | B=GOLDENMOLE → 0 (ChasePool). PIG, GOAT / ZEBRA, GAZELLE / MOOSE, ELEPHANT / RHINO, WOLF, OX, FRILLNECKEDLIZARD added. EMU on as NEW. Changes highlighted.
+61: A=LuckyBox Config 1.1 | B=LEMUR, PENGUIN_PUMPKIN, KIRIN → 0 in Mythic box. KIRIN → 0 in Legendary box. AXOLOTLWHITE / BABOON 1000 → 74. Changes highlighted.
+62: A=Pet (V3.2.0) | B=Still to do: BULL_PUMPKIN on, totals to 1,000,000, Daily Pool Config rows for 115, 116, 119, 1047, 1052.
+64: A=7. Data & acceptance
+65: A=Field | B=Scope
+66: A=ShotsToday[channel] | B=Per player per channel. 0 to cap. +1 per counted shot (incl. Kirin hit) until the cap. Reset at daily reset.
+67: A=ChaseShots[channel] | B=Per player per channel. +1 per counted shot (under the cap) that missed. 0 on Chase hit. Unchanged on Kirin hit and past the cap. Never resets by time.
+68: A=Check | B=Expected
+69: A=Shot 1 / shot 2 | B=Shot 1: chance 0%. Shot 2: p = Step. Normal pool on a miss.
+70: A=Shot past MaxShot | B=Chance stays at Step × (MaxShot − 1)^Power.
+71: A=Chase hit | B=Pet from ChasePool. ChaseShots 0. Next shot rolls 0%, including a shot past the cap.
+72: A=Over daily cap | B=Still rolls at p = Step × (min(ChaseShots, MaxShot) − 1)^Power. ChaseShots does not advance. Kirin still rolls on box.
+73: A=Chest, unbought box | B=Not a shot. Nothing changes. Dig has no shots; what adds pity points is in EventDig 4.3.
+74: A=Kirin hit | B=Kirin given. ShotsToday + 1. ChaseShots unchanged.
+75: A=Reconnect mid-shot | B=One roll, one result, counters move once.
+76: A=Chase pet swap (3.3.0) | B=ChaseShots kept.

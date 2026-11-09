@@ -1,0 +1,15 @@
+SHEET PetsStorage
+1: A=1. System Overview
+3: A=Field | C=Description
+4: A=Summary | C=Pet Storage is an off-base holding space that lets players own more pets than the 18 active base slots allow. The 18-slot cap is a render/sim ceiling and is not changing. Storage solves the long-standing "I want to own more pets" complaint without adding base-render load.
+6: A=2. Rules
+7: A=Type | C=Description
+8: A=Unlock Rule | C=Favorite Pet slot unlocks at Rebirth 14 & steps up every 2 levels. Capacity is set at the unlock level and held until the next step.
+9: A=Steal | C=Storage is safe from theft by design
+10: A=Earning | C=Stored pets earn a flat fraction of what they would earn in an active slot.
+
+- StoredPetIncome(p)  = Value(p) × MoneyMultiplier(RB) × 4%
+- TotalStorageIncome  = Σ StoredPetIncome(p)
+11: A=Swap | C=Only while the player is physically in their own base
+12: A=Location | C=2nd floor
+13: A=Collection & Leaderboard | C=Stored pets count toward Collection completion and Collection Leaderboard score, identically to active pets. Ownership = collection credit, regardless of placement.

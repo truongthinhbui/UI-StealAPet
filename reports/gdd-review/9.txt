@@ -1,0 +1,29 @@
+SHEET Gift Code System
+1: A=1. System Overview
+3: A=Field | C=Description
+4: A=Purpose | C=Allows players to redeem codes to receive in-game rewards through events, campaigns, or special promotions.
+5: A=Access Location | C=“Gift Code” input window in the main lobby or event page.
+6: A=Primary Features | C=Support for Shared Codes & Unique Codes, Expiration Time, Reward Delivery via Email, Claim Limit Control, and Validation Feedback.
+10: A=2. Reward Delivery Rules
+12: A=Type | C=Description
+13: A=Shared Code | C=A single code shared among all players. Each player can claim it once only. After claiming, the code remains valid for others until it expires or reaches the global usage limit (if any).
+14: A=Unique Code | C=A one-time-use code generated for a specific player. Once redeemed by that player, the code becomes invalid and cannot be reused by anyone else.
+16: A=3. Gift Code Rules
+18: A=Rule | C=Details
+19: A=Expiration | C=Every gift code has an expiration date/time. Once expired, it cannot be redeemed.
+20: A=Redemption Limit | C=Each player can only claim a Shared Code once; Unique Codes can only be used by one player.
+21: A=Reward Delivery | C=Rewards are not added directly to the inventory — they are automatically sent to the player’s Email (via Email System).
+22: A=Reward Package | C=Each gift code can contain up to 5 reward items (mix of Pets, Currency, Pet Coins, etc.).
+23: A=Invalid Code Handling | C=If the entered code doesn’t exist, has expired, or was already used → display an appropriate error message.
+24: A=Claim Confirmation | C=Show success popup: “Rewards have been sent to your mailbox.”
+26: A=4. Interaction Rules
+28: A=Action | C=Details
+29: A=Open Gift Code Window | C=Player taps “Gift Code” button to open input UI.
+30: A=Enter Code | C=Player types or pastes the gift code string.
+31: A=Confirm Redemption | C=System checks code validity (existence, type, status, expiration, and claim eligibility).
+32: A=If Valid | C=The reward bundle (max 5 items) is generated and sent directly to the player’s Email Inbox.
+33: A=If Invalid | C=Show message: “Invalid or expired code.”
+34: A=If Already Used | C=Show message: “You have already claimed this code.”
+35: A=If Expired | C=Show message: “This code has expired.”
+36: A=Success Message | C=“Success! Rewards have been sent to your mailbox.”
+38: A=5. Gift code list

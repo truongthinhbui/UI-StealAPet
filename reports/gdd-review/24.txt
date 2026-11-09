@@ -1,0 +1,187 @@
+SHEET Duplicate
+1: A=DUPLICATE | B=
+2: A=Type | B=Description | I= 
+3: A=1. System Overview | B=
+4: A=Summary | B=Spend Tickets + Money to attempt a second copy of an owned pet.
+EN: Duplicate / VN: Nhân Bản.
+5: A=Core Logic | B=Select an Unused pet → pay Tickets + Money → roll Duplicate success.
+Success: create one Clone; original and Clone become Used.
+Failure: no Clone; original stays Unused. No donor.
+6: A=Apex Attempt | B=20 Tickets + Money per attempt. Each attempt has a 50% chance to create 1 Clone.
+7: A=2. Player Flow | B= | K= 
+8: A=1. Open Machine | B=Show Unused pets first.
+Used pets are greyed out with "Already duplicated".
+9: A=2. Select Original | B=Select one owned Unused pet from the line or inventory.
+Following pets cannot be selected.
+10: A=3. Confirm UI | B=Display original, Clone preview, success chance, Ticket cost, Money cost and hatch time.
+Show: "This pet can only be duplicated successfully once."
+11: A=4. Confirm Duplicate | B=Recheck ownership, location, Unused status, RB ≥ 20, DuplicateExclude, valid price, funds and egg space.
+If any check fails → show reason; no charge.
+12: A=5. Start Duplicate | B=Lock original → consume Tickets + Money → roll success once.
+Success: mark original Used and create Clone egg. Failure: keep original Unused; no egg.
+Save payment and result together, then unlock original. One pending Duplicate per player. | M= 
+14: A=3. Rules | B=
+15: A=Unlock Rule | B=Unlock at player Rebirth 20.
+16: A=Ownership | B=Player must own the selected pet when confirming.
+Previously owning the species does not qualify.
+17: A=Can duplicate Secret / Limited | B=Yes.
+18: A=Excluded Pets | B=Block pet IDs listed in DuplicateExclude. Default = [].
+Adding an ID does not remove existing Clones.
+19: A=Duplicate Status | B=Unused: can duplicate.
+Used: cannot duplicate.
+Save status on each pet, not the account.
+20: A=Starting Status | B=Existing pets at release = Unused.
+Newly created pets = Unused, except Clones = Used.
+21: A=Status Transfer | B=Keep status through steal, trade, storage, following, reconnect, upgrade, rebirth and room change.
+Mutation, Weather and level changes do not reset Used.
+22: A=Fusion Result | B=Input pets are consumed. The newly created Fusion result is Unused and can duplicate.
+23: A=Original After Duplicate | B=On success, keep level, mutation, weather, size, locks and other attributes. Only Duplicate status changes to Used.
+On failure, original stays unchanged and can retry.
+25: A=4. Clone Result & System Rules | B=
+26: A=Species / Rarity | B=Same as original.
+Keep Secret and Limited status.
+27: A=Level / Mutation / Weather | B=Level 1. Normal mutation. No weather.
+28: A=Size / Traits | B=Use normal spawn rolls. Do not copy the original's traits.
+29: A=Can duplicate Clone | B=No. Clone starts Used.
+30: A=Steal / Trade | B=Yes. Keep Used status.
+31: A=Fusion | B=Can be used as material.
+33: A=5. Cost & Hatch Time | B=
+34: A=Ticket Cost | B=TicketCost = DuplicateTicketCost[rarity], paid once per attempt.
+Apex: 20 Tickets for 1 attempt. Consume Tickets on success or failure.
+35: A=Money Cost | B=MoneyCost = OriginalSpeciesBaseShopPrice × 2.
+Consume Money on every attempt, whether success or failure.
+36: A=Success Chance | B=Roll once per attempt using the rarity's success chance below.
+Success: create 1 Clone. Failure: no Clone; original stays Unused.
+No pity. Each retry pays the full Ticket + Money cost.
+37: A=Rarity | B=Tickets / attempt | C=Success | D=Expected attempts | E=Expected tickets | F=Grinder 3/day | G=Normal 2/day | H=P90 attempts
+38: A=COMMON | B=2 | C=95% | D==1/C38 | E==D38*B38 | F==C38*3 | G=2.5d | H=1
+39: A=RARE | B=3 | C=90% | D==1/C39 | E==D39*B39 | F=2.5d | G=3.5d | H=2
+40: A=EPIC | B=5 | C=80% | D==1/C40 | E==D40*B40 | F=4.5d | G=7d | H=2
+41: A=LEGENDARY | B=7 | C=70% | D==1/C41 | E==D41*B41 | F=7.5d | G=11d | H=2
+42: A=MYTHIC | B=10 | C=60% | D==1/C42 | E==D42*B42 | F=12d | G=18.5d | H=3
+43: A=DIVINE | B=15 | C=55% | D==1/C43 | E==D43*B43 | F=20d | G=30d | H=4
+44: A=APEX | B=20 | C=50% | D==1/C44 | E==D44*B44 | F=30d | G=44d | H=4
+45: A=LIMITED | B=30.0 | C=30% | D==1/C45 | E==D45*B45 | F=69d | G=103d | H=7
+46: A=Hatch Duration | B=HatchDuration = 5 sec × RarityIndex.
+Common = 1 → Limited = 8.
+48: A=6. Duplicate Tickets | B=
+49: A=Source | B=Boss chests only. Each chest rolls 4 rewards independently; repeats allowed.
+Each reward roll has a 30% chance to give 1 Duplicate Ticket.
+A chest can give 0–4 Tickets. Other outcomes use the remaining 70% of the reward pool.
+50: A=Below RB20 | B=Normal chest rewards only. No Duplicate Ticket.
+51: A=Inventory | B=Tickets stack and never expire.
+Cannot trade or sell.
+52: A=Boss Interval | B=Boss spawns every 30 min. Use the existing boss chest eligibility and chest drop rules.
+53: A=7. Config | B=
+54: A=DuplicateUnlockRebirth | B=20.0
+55: A=DuplicateTicketCost | B=COMMON 2, RARE 3, EPIC 5, LEGENDARY 7, MYTHIC 10, DIVINE 15, APEX 20, LIMITED 30
+56: A=DuplicateMoneyMult | B=2.0
+57: A=DuplicateTicketAmount | B=1
+58: A=DuplicateExclude | B=[]
+59: A=DuplicateTicketChancePerRoll | B=0.30
+60: A=BossChestRewardRolls | B=4
+61: A=DuplicateSuccessChance | B=COMMON 95%, RARE 90%, EPIC 80%, LEGENDARY 70%, MYTHIC 60%, DIVINE 55%, APEX 50%, LIMITED 30%
+63: A=8. Flowcharts | B=
+64: A=Ticket flow | B=Fight boss | F=
+65: A= | B=↓ | F=
+66: A= | B=Reach the existing chest eligibility condition? | F=No → no chest reward
+67: A= | B=Yes ↓ | F=
+68: A= | B=Receive a boss chest? | F=No → no ticket
+69: A= | B=Yes ↓ | F=
+70: A= | B=Player Rebirth ≥ 20? | F=No → normal chest rewards only
+71: A= | B=Yes ↓ | F=
+72: A= | B=4 independent reward rolls
+Each roll: 30% → 1 Ticket | F=Repeats allowed → 0–4 Tickets per chest
+Each non-Ticket outcome uses the other reward pool
+73: A=Duplicate flow | B=Open machine → select Unused pet | F=
+74: A= | B=↓ | F=
+75: A= | B=Preview Clone, success chance, Ticket cost, Money cost and hatch time | F=Apex: 20 Tickets + Money for 1 attempt.
+50% success / 50% failure.
+76: A= | B=↓ | F=
+77: A= | B=Confirm: all checks pass? | F=No → show reason; no charge
+78: A= | B=Yes ↓ | F=
+79: A= | B=Lock original + reserve egg slot | F=One pending action per player
+80: A= | B=↓ | F=
+81: A= | B=Pay for 1 attempt → roll success once | F=Apex failure (50%) → no Clone; original stays Unused; costs stay spent.
+Retry: 20 Tickets + Money.
+Save error → roll back the whole attempt.
+82: A= | B=Success ↓ | F=Apex success (50%) → create 1 Clone egg; mark original Used.
+Save payment and result together. Reconnect restores the result; no reroll or second charge.
+83: A= | B=Unlock original → hatch egg | F=Original may now be stolen. Egg cannot be stolen or moved.
+84: A= | B=Timer or Pet Coin skip ↓ | F=
+85: A= | B=One Clone: Used, level 1, Normal mutation, no weather | F=Normal pet actions allowed; cannot duplicate this Clone
+86: A=Pet lifecycle | B=Unused pet | F=
+87: A= | B=Duplicate succeeds ↓ | F=
+88: A= | B=Used original + Used Clone | F=Steal / trade / changes to the same pet → keep Used
+89: A= | B=Fusion consumes inputs ↓ | F=
+90: A= | B=New Fusion pet: Unused | F=New instance can duplicate with its owner's tickets and Money
+91: A= | B= | C=
+92: A= | B= | C=
+93: A= | B= | C=
+94: A= | B= | C=
+95: A= | B= | C=
+96: A= | B= | C=
+97: A= | B= | C=
+98: A= | B= | C=
+99: A= | B= | C=
+100: A= | B= | C=
+101: A= | B= | C=
+102: A= | B= | C=
+103: A= | B= | C=
+104: A= | B= | C=
+105: A= | B= | C=
+106: A= | B= | C=
+107: A= | B= | C=
+108: A= | B= | C=
+109: A= | B= | C=
+110: A= | B= | C=
+111: A= | B= | C=
+112: A= | B= | C=
+113: A= | B= | C=
+114: A= | B= | C=
+115: A= | B= | C=
+116: A= | B= | C=
+117: A= | B= | C=
+118: A= | B= | C=
+119: A= | B= | C=
+120: A= | B= | C=
+121: A= | B= | C=
+122: A= | B= | C=
+123: A= | B= | C=
+124: A= | B= | C=
+125: A= | B= | C=
+126: A= | B= | C=
+127: A= | B= | C=
+128: A= | B= | C=
+129: A= | B= | C=
+130: A= | B= | C=
+131: A= | B= | C=
+132: A= | B= | C=
+133: A= | B= | C=
+134: A= | B= | C=
+135: A= | B= | C=
+136: A= | B= | C=
+137: A= | B= | C=
+138: A= | B= | C=
+139: A= | B= | C=
+140: A= | B= | C=
+141: A= | B= | C=
+142: A= | B= | C=
+143: A= | B= | C=
+144: A= | B= | C=
+145: A= | B= | C=
+146: A= | B= | C=
+147: A= | B= | C=
+148: A= | B= | C=
+149: A= | B= | C=
+150: A= | B= | C=
+151: A= | B= | C=
+152: A= | B= | C=
+153: A= | B= | C=
+154: A= | B= | C=
+155: A= | B= | C=
+156: A= | B= | C=
+157: A= | B= | C=
+158: A= | B= | C=
+159: A= | B= | C=
+160: A= | B= | C=

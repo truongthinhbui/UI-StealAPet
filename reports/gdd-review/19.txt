@@ -1,0 +1,16 @@
+SHEET DailyLoginData
+1: A=ID | B=Code | C=Weight | D=MinAngle | E=MaxAngle | F=Slot | G=Rate
+2: A=ID | B=Code | C=Weight | D=MinAngle | E=MaxAngle
+3: A=int | B=string | C=int | D=int | E=int | M=D1 | N=D5 | O=D10
+4: A=1.0 | B=LOGINREWARD1 | C=8.0 | D=339 | E=381.0 | F=1.0 | G==C4/sum($C$4:$C$11) | H=15.0 | I==IFERROR(VLOOKUP(H4,RewardData[#ALL],3,FALSE),"") | J==IFERROR(VLOOKUP(H4,RewardData[#ALL],5,FALSE),"") | M==1-(1-G4)^1 | N==1-(1-G4)^5 | O==1-(1-G4)^10
+5: A=2.0 | B=LOGINREWARD2 | C=12.0 | D=24 | E=65.0 | F=2.0 | G==C5/sum($C$4:$C$11) | H=3.0 | I==IFERROR(VLOOKUP(H5,RewardData[#ALL],3,FALSE),"") | J==IFERROR(VLOOKUP(H5,RewardData[#ALL],5,FALSE),"") | M==1-(1-G5)^1 | N==1-(1-G5)^5 | O==1-(1-G5)^10
+6: A=3.0 | B=LOGINREWARD3 | C=15.0 | D=68 | E=111.0 | F=3.0 | G==C6/sum($C$4:$C$11) | H=11.0 | I==IFERROR(VLOOKUP(H6,RewardData[#ALL],3,FALSE),"") | J==IFERROR(VLOOKUP(H6,RewardData[#ALL],5,FALSE),"") | M==1-(1-G6)^1 | N==1-(1-G6)^5 | O==1-(1-G6)^10
+7: A=4.0 | B=LOGINREWARD4 | C=20.0 | D=114 | E=155.0 | F=4.0 | G==C7/sum($C$4:$C$11) | H=18.0 | I==IFERROR(VLOOKUP(H7,RewardData[#ALL],3,FALSE),"") | J==IFERROR(VLOOKUP(H7,RewardData[#ALL],5,FALSE),"") | M==1-(1-G7)^1 | N==1-(1-G7)^5 | O==1-(1-G7)^10
+8: A=5.0 | B=LOGINREWARD5 | C=14.0 | D=158 | E=201.0 | F=5.0 | G==C8/sum($C$4:$C$11) | H=5.0 | I==IFERROR(VLOOKUP(H8,RewardData[#ALL],3,FALSE),"") | J==IFERROR(VLOOKUP(H8,RewardData[#ALL],5,FALSE),"") | M==1-(1-G8)^1 | N==1-(1-G8)^5 | O==1-(1-G8)^10
+9: A=6.0 | B=LOGINREWARD6 | C=15.0 | D=204 | E=245.0 | F=6.0 | G==C9/sum($C$4:$C$11) | H=17.0 | I==IFERROR(VLOOKUP(H9,RewardData[#ALL],3,FALSE),"") | J==IFERROR(VLOOKUP(H9,RewardData[#ALL],5,FALSE),"") | M==1-(1-G9)^1 | N==1-(1-G9)^5 | O==1-(1-G9)^10
+10: A=7.0 | B=LOGINREWARD7 | C=11.0 | D=248 | E=293.0 | F=7.0 | G==C10/sum($C$4:$C$11) | H=19.0 | I==IFERROR(VLOOKUP(H10,RewardData[#ALL],3,FALSE),"") | J==IFERROR(VLOOKUP(H10,RewardData[#ALL],5,FALSE),"") | M==1-(1-G10)^1 | N==1-(1-G10)^5 | O==1-(1-G10)^10
+11: A=8.0 | B=LOGINREWARD8 | C=5.0 | D=295 | E=337.0 | F=8.0 | G==C11/sum($C$4:$C$11) | H=16.0 | I==IFERROR(VLOOKUP(H11,RewardData[#ALL],3,FALSE),"") | J==IFERROR(VLOOKUP(H11,RewardData[#ALL],5,FALSE),"") | M==1-(1-G11)^1 | N==1-(1-G11)^5 | O==1-(1-G11)^10
+12: K=Oc | L=9.0
+13: K=No | L=10.0
+14: K=De | L=11.0
+15: L=12.0

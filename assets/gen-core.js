@@ -55,8 +55,6 @@
   const scenarios=[
     {id:'red',name:'Full đỏ',pattern:['red','red','red']},
     {id:'green',name:'Full xanh',pattern:['green','green','green']},
-    {id:'ggy',name:'2 xanh + 1 vàng',pattern:['green','green','gold']},
-    {id:'gyy',name:'1 xanh + 2 vàng',pattern:['green','gold','gold']},
     {id:'gold',name:'Full vàng',pattern:['gold','gold','gold']},
     {id:'mixed',name:'Ngẫu nhiên theo tỉ lệ tap',distribution:{red:.3,green:.5,gold:.2}}
   ];
@@ -64,8 +62,8 @@
     if(scenario.pattern)return expected(points(scenario.pattern),rebirth);
     const out={none:0,one:0,two:0,gen:Object.fromEntries(config.catalog.map(g=>[g.id,0]))};
     const d=scenario.distribution;
-    for(const a of ['red','green','gold'])for(const b of ['red','green','gold'])for(const c of ['red','green','gold']){
-      const probability=d[a]*d[b]*d[c],e=expected(points([a,b,c]),rebirth);
+    for(const a of ['red','green','gold']){
+      const probability=d[a],e=expected(points([a]),rebirth);
       for(const key of ['none','one','two'])out[key]+=probability*e[key];
       for(const id in out.gen)out.gen[id]+=probability*e.gen[id];
     }
@@ -81,7 +79,7 @@
     return {result,step(amount){
       for(let i=0;i<amount;i++){
         let score=fixed,pattern=scenario.pattern;
-        if(score===null){score=0;pattern=[];for(let tap=0;tap<3;tap++){const x=random(),d=scenario.distribution,type=x<d.red?'red':x<d.red+d.green?'green':'gold';score+=config.rules[type];pattern.push(type);}}
+        if(score===null){score=0;pattern=[];for(let tap=0;tap<config.rules.taps;tap++){const x=random(),d=scenario.distribution,type=x<d.red?'red':x<d.red+d.green?'green':'gold';score+=config.rules[type];pattern.push(type);}}
         score=Math.min(100,score);
         const outcome=full?catchRoll(score,rebirth,random):null;
         const rewards=outcome?outcome.rewards:roll(score,random,rebirth);

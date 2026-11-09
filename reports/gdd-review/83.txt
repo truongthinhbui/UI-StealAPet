@@ -1,0 +1,62 @@
+SHEET Unlocking Rule
+1: A=UNLOCKING RULE | C=Draft — 3.0.0. Paid force unlock.
+2: C=Stealing stays risky. Repeated paid breaks get a short block.
+4: A=1. Overview
+5: A=Summary | B=Keep stealing. Change only paid force-unlock price and repeat cooldown.
+6: A=Goal | B=Give high-RB players time to recover after a paid break. Big RB gaps cost more.
+7: A=Currency | B=Pet Coin only. No key, diamond bypass, or money cost.
+8: A=Core loop | B=Base locked → see price → pay Pet Coin → base opens → defender cooldown starts.
+9: A=Out of scope | B=Natural opening, steal rules, carrying, laser wall, storage, Favorite Pet, and normal relock stay the same.
+11: A=2. Paid Force-Unlock Price
+12: A=Rule | B=Details
+13: A=Static price | B=Read one number from the table below. That is the final Pet Coin price.
+14: A=Pet rarity | B=Use the highest rarity the attacker can steal in the target base.
+15: A=RB gap | B=Use the RB difference band: <3, 4–6, 7–9, or 10+.
+16: A=Direction | B=Same price whether the attacker has higher or lower RB.
+17: A=No valid target | B=If the attacker cannot steal any pet: block paid unlock and charge nothing. This is for lower level RB player who cannot steal higher rarity
+18: A=Confirm | B=Show the final Pet Coin price. Check target and cooldown again when the player confirms.
+19: A=Sync rule | B=Keep this GDD table and Master Data UnlockCost table the same.
+21: A=CONFIG
+22: A=Highest stealable rarity | B=Unlock cost when gap
+23: B=<3 | C=2026-04-06 00:00:00 | D=2026-07-09 00:00:00 | E=10+
+24: A=COMMON | B=4.0 | C==roundup(B24*1.25,0) | D==roundup(C24*1.35,0) | E==roundup(D24*1.55,0)
+25: A=RARE | B=6.0 | C==roundup(B25*1.25,0) | D==roundup(C25*1.35,0) | E==roundup(D25*1.55,0)
+26: A=EPIC | B=9.0 | C==roundup(B26*1.25,0) | D==roundup(C26*1.35,0) | E==roundup(D26*1.55,0)
+27: A=LEGENDARY | B=13.0 | C==roundup(B27*1.25,0) | D==roundup(C27*1.35,0) | E==roundup(D27*1.55,0)
+28: A=MYTHIC | B=19.0 | C==roundup(B28*1.25,0) | D==roundup(C28*1.35,0) | E==roundup(D28*1.55,0)
+29: A=APEX | B=28.0 | C==roundup(B29*1.25,0) | D==roundup(C29*1.35,0) | E==roundup(D29*1.55,0)
+30: A=LIMITED | B=40.0 | C==roundup(B30*1.25,0) | D==roundup(C30*1.35,0) | E==roundup(D30*1.55,0)
+32: A=3. Defender Force-Unlock Cooldown
+33: A=Defender RB | B=Cooldown (seconds)
+34: A=1–4 | B=15.0
+35: A=5–9 | B=30.0
+36: A=10–14 | B=45.0
+37: A=15–19 | B=60.0
+38: A=20–25 | B=90.0
+39: A=26–28 | B=120.0
+40: A=29–30 | B=180.0
+41: A=Session target | B=Average session = 15 minutes. Max cooldown = 3 minutes. Paid raids stay active; repeat paid breaks are stopped.
+42: A=Cooldown Rules | B=Details
+43: A=Start | B=Starts after a paid force unlock opens a locked base.
+44: A=Cooldown owner | B=Defender account only.
+45: A=Shared block | B=Everyone must wait to paid unlock this defender. Changing attacker or account does not help.
+46: A=Does not block | B=Natural entry or stealing from an already-open base.
+47: A=Relock | B=Normal relock rules still apply. Relocking does not reset cooldown.
+48: A=No charge | B=Do not charge or start cooldown if blocked, failed, no target, or base is open.
+49: A=Keep timer | B=Keep the defender timer through reconnect and server hop. It keeps counting offline.
+50: A=RB change | B=Keep an active timer. Read defender RB only when the next paid unlock starts a new timer.
+51: A=Known tradeoff | B=Friends can pay once to start protection. Accept this small issue; they cannot refresh the timer and the base is still exposed.
+53: A=4. UI / UX
+54: A=Unlock available | B=Show final Pet Coin price before confirmation.
+55: A=Cooldown active — attacker | B=Disable paid unlock. Show: Force unlock available in {time}.
+56: A=Cooldown active — owner | B=Show: Forced unlock blocked: {time}.
+57: A=Timer labels | B=Use different labels for normal lock and paid-unlock cooldown. Do not call an open base Safe.
+58: A=VN draft | B=Có thể phá khóa sau {time} / Chặn phá khóa: {time}.
+60: A=5. Pre-ship Checks
+61: A=Price table | B=Use only the four listed RB-gap bands. Keep this GDD and UnlockCost the same.
+62: A=No modifiers | B=Use the table number directly. No multiplier, extra price, or rounding.
+63: A=Group opening | B=Confirm whether one paid opening also helps other attackers.
+64: A=Atomic payment | B=At payment, check target, price, base state, and defender cooldown again. Charge only if the opening succeeds.
+65: A=Tracking | B=Log attacker RB, defender RB, rarity, gap band, price, cooldown start/end, repeat paid breaks, and theft.
+66: A=Success read | B=Check repeat paid breaks, fast repeat losses, exits by defender RB, valid raid targets, and Pet Coin spend.
+67: A=Sources | B=GDD price table is the design reference. Master implementation: UnlockCost and Rebirth 2.1.

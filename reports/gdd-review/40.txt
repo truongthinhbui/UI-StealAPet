@@ -1,0 +1,8 @@
+SHEET Mutation Const
+1: A=MutName | B=MutTier | C=MutWeight | E=RarityName | F=RarityVal
+2: A=Normal | B=0.0 | C=75.0 | E=COMMON | F=1.0
+3: A=Golden | B=1.0 | C=50.0 | E=RARE | F=2.0
+4: A=Frozen | B=2.0 | C=33.0 | E=EPIC | F=3.0
+5: A=Magma | B=3.0 | C=12.0 | E=LEGENDARY | F=4.0
+6: A=Clover | B=4.0 | C=5.0 | E=MYTHIC | F=5.0
+7: A=Fossilized | B=5.0 | C=1.0

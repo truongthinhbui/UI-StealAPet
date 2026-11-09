@@ -1,0 +1,57 @@
+SHEET EventFuseContract
+1: A=0. Changelog
+2: A=Date | C=Description | I= 
+3: A=2026-01-15 00:00:00 | C=Initial Design
+4: A=2026-06-19 00:00:00 | C=Update; replaces milestone track with token shop
+6: K= 
+7: A=1. Overview
+8: A=A recurring event where playerts submit pets to earn Collector Tokens, then spend tokens freely in the event shop. Submitting a higher-quality pet (mutation tier, weather effect) earns more tokens per contract. 
+
+The limited event pet is a purchasable shop item, not a milestone gate.
+
+ | H=            
+9: A=Goal | B=- Introduce Limited Time Pet (1/account).
+- Swapable with EventCollector7 for event duration (ex: 14 days).
+- Contracts are the hard gate (inputs), Fuse Machine is the reward outlet (semi-deterministic + RNG).
+- Contracts do NOT grant rewards directly. They only increase milestone progress. | H= 
+10: A=Core Loop | B=Check contracts → acquire/upgrade target pets → submit → earn tokens → spend in shop.
+11: M= 
+12: A=1. Daily Contracts
+13: A=Rule Name | B=Rules
+14: A=Daily Contracts | B=- Generate 6 Contracts per day.
+- Each Contract requires submitting specific pet IDs (randomized daily based on epoch).
+- Completing a Contract:
+- Consumes required pets.
+- Adds +1 Event Progress.
+- Grants no direct reward. | F=3.0
+15: A=Requirement | B=Requirements can include:
+- Any rarity (Common → Mythic)
+- Pets obtainable via Fusion 2.0 (including Secret)
+16: A=Contract per day | B=5.0
+18: A=Slot | B=Approximate rarity bracket | D=Base tokens
+19: A=1.0 | B=Common | D=5.0
+20: A=2.0 | B=Rare | D=7.0
+21: A=3.0 | B=Epic | D=12.0
+22: A=4.0 | B=Legendary | D=15.0
+23: A=5.0 | B=Mythic | D=20.0
+24: A=6.0 | B=Apex | D=25.0
+25: A=Baseline total: 84 tokens/day (all 6 slots, Normal mutation, no weather).
+27: A=2. Submission Rule
+28: A=Submit 1 pet per contract (consumes the pet).
+29: A=Any pet in the valid group satisfies the contract, regardless of mutation or weather effect.
+30: A=Contracts reset daily at server reset. Unsubmitted contracts expire — no carryover.
+31: A=Pets with mutations or weather effects are consumed normally on submission.
+33: A=3 Token yield formula
+34: A=tokens = base_slot_tokens + mutation_multiplier + weather_bonus
+36: A=mutation | B=Bonus | C=Common | D=Rare | E=Epic | F=Legendary | G=Mythic | H=Apex | I=Total
+37: A=Normal | B=0.0 | C==Roundup(B37+$D$19,0) | D==Roundup(B37+$D$20,0) | E==Roundup(B37+$D$21,0) | F==Roundup(B37+$D$22,0) | G==Roundup(B37+$D$23,0) | H==Roundup(B37+$D$24,0) | I==sum(C37:H37)
+38: A=Golden | B=5.0 | C==Roundup(B38+$D$19,0) | D==Roundup(B38+$D$20,0) | E==Roundup(B38+$D$21,0) | F==Roundup(B38+$D$22,0) | G==Roundup(B38+$D$23,0) | H==Roundup(B38+$D$24,0) | I==sum(C38:H38)
+39: A=Frozen | B=5.0 | C==Roundup(B39+$D$19,0) | D==Roundup(B39+$D$20,0) | E==Roundup(B39+$D$21,0) | F==Roundup(B39+$D$22,0) | G==Roundup(B39+$D$23,0) | H==Roundup(B39+$D$24,0) | I==sum(C39:H39)
+40: A=Magma | B=5.0 | C==Roundup(B40+$D$19,0) | D==Roundup(B40+$D$20,0) | E==Roundup(B40+$D$21,0) | F==Roundup(B40+$D$22,0) | G==Roundup(B40+$D$23,0) | H==Roundup(B40+$D$24,0) | I==sum(C40:H40)
+41: A=Clover | B=5.0 | C==Roundup(B41+$D$19,0) | D==Roundup(B41+$D$20,0) | E==Roundup(B41+$D$21,0) | F==Roundup(B41+$D$22,0) | G==Roundup(B41+$D$23,0) | H==Roundup(B41+$D$24,0) | I==sum(C41:H41)
+42: A=Fossilized | B=10.0 | C==Roundup(B42+$D$19,0) | D==Roundup(B42+$D$20,0) | E==Roundup(B42+$D$21,0) | F==Roundup(B42+$D$22,0) | G==Roundup(B42+$D$23,0) | H==Roundup(B42+$D$24,0) | I==sum(C42:H42)
+43: A=Sweetheart | B=10.0 | C==Roundup(B43+$D$19,0) | D==Roundup(B43+$D$20,0) | E==Roundup(B43+$D$21,0) | F==Roundup(B43+$D$22,0) | G==Roundup(B43+$D$23,0) | H==Roundup(B43+$D$24,0) | I==sum(C43:H43)
+44: A=Crystalline | B=10.0 | C==Roundup(B44+$D$19,0) | D=3.0 | E==Roundup(B44+$D$21,0) | F==Roundup(B44+$D$22,0) | G==Roundup(B44+$D$23,0) | H==Roundup(B44+$D$24,0) | I==sum(C44:H44)
+45: A=Webbed | B=15.0 | C==Roundup(B45+$D$19,0) | D==Roundup(B45+$D$20,0) | E==Roundup(B45+$D$21,0) | F==Roundup(B45+$D$22,0) | G==Roundup(B45+$D$23,0) | H==Roundup(B45+$D$24,0) | I==sum(C45:H45)
+46: A=Football | B=15.0 | C==Roundup(B46+$D$19,0) | D==Roundup(B46+$D$20,0) | E==Roundup(B46+$D$21,0) | F==Roundup(B46+$D$22,0) | G==Roundup(B46+$D$23,0) | H==Roundup(B46+$D$24,0) | I==sum(C46:H46)
+47: A=Radioactive | B=15.0 | C==Roundup(B47+$D$19,0) | D==Roundup(B47+$D$20,0) | E==Roundup(B47+$D$21,0) | F==Roundup(B47+$D$22,0) | G==Roundup(B47+$D$23,0) | H==Roundup(B47+$D$24,0) | I==sum(C47:H47)

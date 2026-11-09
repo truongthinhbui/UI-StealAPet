@@ -40,9 +40,9 @@ window.FishingConfig = {
   "castCost": 0,
   "mechanic": {
     "mode": 7,
-    "taps": 3,
-    "greenMutation": 10,
-    "goldMutation": 34,
+    "taps": 1,
+    "greenMutation": 50,
+    "goldMutation": 100,
     "missMutation": 0,
     "cooldown": 0,
     "rarityTiming": {

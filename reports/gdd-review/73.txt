@@ -1,0 +1,63 @@
+SHEET Survey (3010)
+1: A=ID | B=QUESTION | C=PIC | D=VIDEO | E=TYPE | F=NUM | G=Must Answer
+2: A=1.0 | B=Hãy đánh giá bản cập nhật gần đây: | E=Single Choice | G=Y
+3: B=1 - Rất ghét
+4: B=2 - Không thích
+5: B=3 - Bình thường
+6: B=4 - Thích
+7: B=5 - Rất thích
+9: A=2.0 | B=Trong các tính năng dưới đây, bạn CHƯA BIẾT tính năng nào? | E=Multi Choices | G=Y
+10: B=Trộm Thú cưng từ nhà người chơi khác
+11: B=Giật Thú cưng của người chơi khác khi họ vừa mua trên băng chuyền
+12: B=Thú cưng có hiệu ứng đặc biệt sẽ tạo ra nhiều tiền hơn Thú cưng bình thường
+13: B=Nâng cấp nhà để tăng thu nhập
+14: B=Mở khóa nhà người khác
+15: B=Mình biết hết tất cả tính năng rồi!
+17: A=3.0 | B=Sắp tới game sẽ có Cửa Hàng Vật Phẩm!
+Hãy chọn tối đa 3 vật phẩm mà bạn muốn xuất hiện trong game nha: | E=Multi Choices | F=3.0 | G=Y
+18: B=Tăng tốc độ trong một khoảng thời gian ngắn
+19: B=Vũ khí siêu mạnh: đánh người khác bay xa hơn
+20: B=Vũ khí nảy cao: đánh người khác bay cao hơn
+21: B=Đặt bẫy để giữ chân người chơi khác
+22: B=Túi mù Thú Cưng may mắn
+23: B=Tăng tốc độ kiếm tiền từ Thú Cưng trong một khoảng thời gian ngắn
+24: B=Giảm giá cho lần mua Thú cưng tiếp theo
+25: B=Chìa khóa vạn năng: mở tất cả nhà của mọi người (kể cả bạn)
+26: B=Robot giúp việc: tự động thu tiền từ Thú cưng
+27: B=Dịch chuyển toàn bộ người chơi về nhà
+28: B=Tăng gấp đôi tiền mở nhà trong thời gian ngắn
+30: A=4.0 | B=Sắp tới game sẽ có thêm nhiều tính năng về Pet!
+Hãy chọn tối đa 3 tính năng mà bạn muốn được thêm vào game nhé | E=Multi Choices | F=3.0 | G=Y
+31: B=Mua / Bán Thú cưng
+32: B=Trao đổi Thú cưng (tặng / xin Thú cưng từ người khác)
+33: B=Ghép Thú cưng để tạo ra Thú cưng mới
+34: B=Nâng cấp Thú cưng
+35: B=Cho Thú cưng đi chiến đấu với nhau
+36: B=Cưỡi Thú cưng đi dạo
+38: A=5.0 | B=Sắp tới game sẽ có thêm sự kiện theo khung giờ!
+Trong thời gian diễn ra sự kiện, Thú cưng hiếm hoặc Thú cưng cùng nguyên tố (dung nham, băng giá...) sẽ xuất hiện nhiều hơn!
+Bạn muốn sự kiện này diễn ra vào khung giờ nào? (Chọn tối đa 2) | E=Multi Choices | F=2.0 | G=Y
+39: B=6h
+40: B=9h
+41: B=12h
+42: B=15h
+43: B=18h
+44: B=19h
+45: B=20h
+46: B=21h
+48: A=6.0 | B=Bạn có gặp phải lỗi nào dưới đây khi chơi game không? | E=Multi Choices | F=2.0 | G=Y
+49: B=Lỗi đi xuyên tường
+50: B=Lỗi mất Thú cưng
+51: B=Lỗi mất tiền
+52: B=Lỗi nhà bị khôi phục về cấp 1
+53: B=Không có lỗi nào cả
+55: A=7.0 | B=Trong các tính năng sau, bạn muốn ưu tiên tính năng nào được thêm vào game trước? (Chọn tối đa 2) | E=Multi Choices | F=2.0 | G=Y
+56: B=Trang trí nhà
+57: B=Ghép Thú cưng
+58: B=Thả tim cho nhà người chơi khác
+59: B=Hiển thị hồ sơ người chơi trước nhà (tên, avatar, số tim...)
+61: A=8.0 | B=Bạn thích mẫu giao diện nào hơn? | E=Single Choice | G=Y
+62: B=Mẫu cũ | C=OldVersion.png
+63: B=Mẫu mới | C=NewVersion.png
+65: A=9.0 | B=Bạn có góp ý hay ý tưởng nào để game hay hơn không? | E=Text
+67: B=Hãy tham gia group facebook Steal A Pet (https://www.facebook.com/groups/stealapetff) để cùng thảo luận với nhau nhiều hơn nhé!

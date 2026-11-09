@@ -1,0 +1,26 @@
+SHEET NewContentRules
+1: A=1. New Pets
+2: A=For new Pet: | B=Weight | C=Value | D=Price
+3: A=If on line | B=Weight = 1
+CanFuse = 0 | C=Range: [1.05→1.4]×Baseline | D=Range: [1.1→1.3]×Baseline
+4: A=If secret | B=-- | C=Range: [1.1→1.4]×Baseline | D=Range: [1.2→1.5]×Baseline
+5: A=Previous Mythic (at least 2 weeks old) | B=Weight increases by +50%, capped at 20
+CanFuse = 1 | C=-- | D=--
+6: A=Overall Mythic | B=upto 2% total pool | C=-- | D=--
+7: A=*will need to adjust spawn rate of mythic to make it rarer
+9: A=2. Pets Timelines
+10: A=Date | B=Pets amount | C=Value Max | D=Price Max | E=Mutation | F=Weather Effects
+11: A=2026-02-05 00:00:00 | B=98.0 | C==max('Mob (Live)'!D3:D81) | D==max('Mob (Live)'!E3:E81) | E=5.0 | F=5.0
+12: A==A11+7 | B=98.0
+13: A==A12+7 | B=98.0
+14: A==A13+7 | B=102.0
+15: A==A14+7 | B=103.0 | E=7.0 | F=7.0
+16: A==A15+7 | B=105.0
+17: A==A16+7
+18: A==A17+7
+19: A==A18+7
+20: A==A19+7
+21: A==A20+7
+22: A==A21+7
+23: A==A22+7
+24: A==A23+7

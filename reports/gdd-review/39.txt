@@ -1,0 +1,299 @@
+SHEET Fusion Design
+1: A=The Fusion System allows players to combine any two pets to create a new pet.
+2: A=The resulting pet’s rarity and mutation are determined by probabilistic formulas that depend on the rarity difference between the two pets used as materials.
+3: A=This system encourages experimentation, pet collection, and progression through controlled randomness.
+5: A=1. Fusion Process
+6: A=Step | C=Description
+7: A=1. Select Base Pet (Pet 1) | C=Interact with one pet, select Fusion button, this pet will be displayed as the primary pet
+8: A=2. Select Material Pet (Pet 2) | C=select a secondary pet
+9: A=3. Confirm Fusion | C=Display fusion cost, duration, and rate breakdown.
+-> click Fusion.
+10: A=4. Fusion Cost | C=Cost = MAX(Cost(Pet1), Cost(Pet2)) × 2
+11: A=5. Hatch Duration | C=Hatch Duration = MAX(Rarity1, Rarity2) × 5 sec
+12: A=6. Start Fusion | C=Pet 1 transforms into an Egg, Pet 2 disappears.
+13: A=7. Egg Phase | C=Egg cannot be stolen, sold, or interacted with until hatch time ends.
+14: A=8. Hatch Interaction | C=After countdown, player taps the egg to reveal result UI.
+15: A=9. Select Pet Result | C=Display a UI with 3 pets, allowing the player to select 1 of the 3: Pet1, Pet2, or the fusion result.
+If players select pet1 or pet2 instead of the result, they need to pay money (pet coin = rarity * 10)
+17: A=2. Result Logic
+18: A=Result Type | C=Description | F=Formula / Condition
+19: A=High Result | C=Result = Pet with higher rarity among the two pets used. | F=Rate_High = (1 - Rate_Secret)/2 - log(diff+1,6)*0.5
+20: A=Low Result | C=Result = Pet with lower rarity among the two pets used. | F=Rate_Low = (1 - Rate_Secret)/2 + log(diff+1,6)*0.5
+21: A=Secret Result | C=Result = random pet from Secret Pool (based on lower rarity). | F=Rate_Secret = 0.01+(RARITY_COUNT-1-diff)^2*0.02
+22: F=RARITY_COUNT = 5
+23: A=3. Example
+24: A=Rarity for pet 1 | B=Rarity for pet 2 | C=Diff between 2 rarity | D=Rate for higher rarity pet | E=Rate for lower rarity pet | F=Rate for secret pet, secret pets can be obtained from the fusion pool: SecretFusionPool
+25: A=Rarity1 | B=Rarity2 | C=diff | D=rate_high | E=rate_low | F=rate_secret | G=0.01
+26: A=1.0 | B=1.0 | C==abs(B26-A26) | D==(1-F26)/2-LOG(C26+1,6)*0.5 | E==(1-F26)/2+LOG(C26+1,6)*0.5 | F==$G$25+(4-C26)^2*$G$26 | G=0.02 | H=COMMON | I=1.0
+27: A=1.0 | B=2.0 | C==abs(B27-A27) | D==(1-F27)/2-LOG(C27+1,6)*0.5 | E==(1-F27)/2+LOG(C27+1,6)*0.5 | F==$G$25+(4-C27)^2*$G$26 | H=RARE | I=2.0
+28: A=1.0 | B=3.0 | C==abs(B28-A28) | D==(1-F28)/2-LOG(C28+1,6)*0.5 | E==(1-F28)/2+LOG(C28+1,6)*0.5 | F==$G$25+(4-C28)^2*$G$26 | H=EPIC | I=3.0
+29: A=1.0 | B=4.0 | C==abs(B29-A29) | D==(1-F29)/2-LOG(C29+1,6)*0.5 | E==(1-F29)/2+LOG(C29+1,6)*0.5 | F==$G$25+(4-C29)^2*$G$26 | H=LEGENDARY | I=4.0
+30: A=1.0 | B=5.0 | C==abs(B30-A30) | D==(1-F30)/2-LOG(C30+1,6)*0.5 | E==(1-F30)/2+LOG(C30+1,6)*0.5 | F==$G$25+(4-C30)^2*$G$26 | H=MYTHIC | I=5.0
+31: A=2.0 | B=1.0 | C==abs(B31-A31) | D==(1-F31)/2-LOG(C31+1,6)*0.5 | E==(1-F31)/2+LOG(C31+1,6)*0.5 | F==$G$25+(4-C31)^2*$G$26
+32: A=2.0 | B=2.0 | C==abs(B32-A32) | D==(1-F32)/2-LOG(C32+1,6)*0.5 | E==(1-F32)/2+LOG(C32+1,6)*0.5 | F==$G$25+(4-C32)^2*$G$26 | H=MAX | I==MAX(I26:I30)
+33: A=2.0 | B=3.0 | C==abs(B33-A33) | D==(1-F33)/2-LOG(C33+1,6)*0.5 | E==(1-F33)/2+LOG(C33+1,6)*0.5 | F==$G$25+(4-C33)^2*$G$26 | H=K | I=0.5
+34: A=2.0 | B=4.0 | C==abs(B34-A34) | D==(1-F34)/2-LOG(C34+1,6)*0.5 | E==(1-F34)/2+LOG(C34+1,6)*0.5 | F==$G$25+(4-C34)^2*$G$26 | H=baseProb | I=0.05
+35: A=2.0 | B=5.0 | C==abs(B35-A35) | D==(1-F35)/2-LOG(C35+1,6)*0.5 | E==(1-F35)/2+LOG(C35+1,6)*0.5 | F==$G$25+(4-C35)^2*$G$26
+36: A=3.0 | B=1.0 | C==abs(B36-A36) | D==(1-F36)/2-LOG(C36+1,6)*0.5 | E==(1-F36)/2+LOG(C36+1,6)*0.5 | F==$G$25+(4-C36)^2*$G$26
+37: A=3.0 | B=2.0 | C==abs(B37-A37) | D==(1-F37)/2-LOG(C37+1,6)*0.5 | E==(1-F37)/2+LOG(C37+1,6)*0.5 | F==$G$25+(4-C37)^2*$G$26
+38: A=3.0 | B=3.0 | C==abs(B38-A38) | D==(1-F38)/2-LOG(C38+1,6)*0.5 | E==(1-F38)/2+LOG(C38+1,6)*0.5 | F==$G$25+(4-C38)^2*$G$26
+39: A=3.0 | B=4.0 | C==abs(B39-A39) | D==(1-F39)/2-LOG(C39+1,6)*0.5 | E==(1-F39)/2+LOG(C39+1,6)*0.5 | F==$G$25+(4-C39)^2*$G$26
+40: A=3.0 | B=5.0 | C==abs(B40-A40) | D==(1-F40)/2-LOG(C40+1,6)*0.5 | E==(1-F40)/2+LOG(C40+1,6)*0.5 | F==$G$25+(4-C40)^2*$G$26
+41: A=4.0 | B=1.0 | C==abs(B41-A41) | D==(1-F41)/2-LOG(C41+1,6)*0.5 | E==(1-F41)/2+LOG(C41+1,6)*0.5 | F==$G$25+(4-C41)^2*$G$26
+42: A=4.0 | B=2.0 | C==abs(B42-A42) | D==(1-F42)/2-LOG(C42+1,6)*0.5 | E==(1-F42)/2+LOG(C42+1,6)*0.5 | F==$G$25+(4-C42)^2*$G$26
+43: A=4.0 | B=3.0 | C==abs(B43-A43) | D==(1-F43)/2-LOG(C43+1,6)*0.5 | E==(1-F43)/2+LOG(C43+1,6)*0.5 | F==$G$25+(4-C43)^2*$G$26
+44: A=4.0 | B=4.0 | C==abs(B44-A44) | D==(1-F44)/2-LOG(C44+1,6)*0.5 | E==(1-F44)/2+LOG(C44+1,6)*0.5 | F==$G$25+(4-C44)^2*$G$26
+45: A=4.0 | B=5.0 | C==abs(B45-A45) | D==(1-F45)/2-LOG(C45+1,6)*0.5 | E==(1-F45)/2+LOG(C45+1,6)*0.5 | F==$G$25+(4-C45)^2*$G$26
+46: A=5.0 | B=1.0 | C==abs(B46-A46) | D==(1-F46)/2-LOG(C46+1,6)*0.5 | E==(1-F46)/2+LOG(C46+1,6)*0.5 | F==$G$25+(4-C46)^2*$G$26
+47: A=5.0 | B=2.0 | C==abs(B47-A47) | D==(1-F47)/2-LOG(C47+1,6)*0.5 | E==(1-F47)/2+LOG(C47+1,6)*0.5 | F==$G$25+(4-C47)^2*$G$26
+48: A=5.0 | B=3.0 | C==abs(B48-A48) | D==(1-F48)/2-LOG(C48+1,6)*0.5 | E==(1-F48)/2+LOG(C48+1,6)*0.5 | F==$G$25+(4-C48)^2*$G$26
+49: A=5.0 | B=4.0 | C==abs(B49-A49) | D==(1-F49)/2-LOG(C49+1,6)*0.5 | E==(1-F49)/2+LOG(C49+1,6)*0.5 | F==$G$25+(4-C49)^2*$G$26
+50: A=5.0 | B=5.0 | C==abs(B50-A50) | D==(1-F50)/2-LOG(C50+1,6)*0.5 | E==(1-F50)/2+LOG(C50+1,6)*0.5 | F==$G$25+(4-C50)^2*$G$26
+52: A=Example:
+53: A=Pet 1 | B=Pet 2 | C=Result
+54: A=BELUGA(MYTHIC) | B=GORILLA(MYTHIC) | C=33.5% BELUGA 
+33.5% GORILLA
+33% SECRET POOL(MYTHIC)
+55: A=BELUGA(MYTHIC) | B=CHEETAH(LEGENDARY) | C=59.84% CHEETAH
+21.16% BELUGA
+19% SECRET POOL(LEGENDARY)
+56: A=BELUGA(MYTHIC) | B=BISON(EPIC) | C=76.16% BISON
+14.84% BELUGA
+9% SECRET POOL(EPIC)
+57: A=BELUGA(MYTHIC) | B=CAPYBARA(RARE) | C=87.19% CAPYBARA
+9.81% BELUGA
+3% SECRET POOL(RARE)
+58: A=BELUGA(MYTHIC) | B=GOAT(COMMON) | C=97.41% CAPYBARA
+4.59% BELUGA
+1% SECRET POOL(COMMON)
+60: A=4. Secret Pool System | C=Data here
+61: A=Logic:
+62: A=When the Secret Rate is triggered, the player will receive a completely different pet, not Pet 1 or Pet 2 used in the fusion.
+63: A=The resulting pet is randomly selected from a Secret Pool, which depends on the minimum rarity between the two fused pets.
+65: A=Pool Composition:
+66: A=- Regular Pets:
+67: A=  + Standard pets that can also be obtained through other game methods (steal, capture, etc.).
+68: A=  + These maintain familiarity and consistency with normal gameplay.
+69: A=- Secret-Exclusive Pets:
+70: A=  + Special pets that can only be obtained via fusion.
+71: A=  + These are marked as [Fusion Exclusive] or [Secret Variant] in the collection UI.
+72: A=  + They are rarer and serve as the main incentive for players to perform fusions regularly.
+74: A=Condition | D=Selected Pool
+75: A=MIN(Rarity1, Rarity2) = 1 (COMMON) | D=Random pet from COMMON Secret Pool
+76: A=MIN(Rarity1, Rarity2) = 2 (UNCOMMON) | D=Random pet from UNCOMMON Secret Pool
+77: A=MIN(Rarity1, Rarity2) = 3 (RARE) | D=Random pet from RARE Secret Pool
+78: A=MIN(Rarity1, Rarity2) = 4 (EPIC) | D=Random pet from EPIC Secret Pool
+79: A=MIN(Rarity1, Rarity2) = 5 (LEGENDARY) | D=Random pet from LEGENDARY Secret Pool
+81: A=5. Mutation Random
+82: A=Qiwei Hu Please help input
+83: A=Step 1: Random mutation amount
+84: A=Result Pet's mutation Amount | C=0.0 | D=1.0 | E=2.0 | F=3.0 | G=4.0
+85: A=Pet1's mutation amount+Pet2's mutation amount | B=0.0 | C=1.0 | D=0.0 | E=0.0 | F=0.0 | G=0.0
+86: B=1.0 | C=0.5 | D=0.5 | E=0.0 | F=0.0 | G=0.0
+87: B=2.0 | C=0.0 | D=1.0 | E=0.0 | F=0.0 | G=0.0
+88: B=3.0 | C=0.0 | D=0.5 | E=0.433 | F=0.07 | G=0.0
+89: B=4.0 | C=0.0 | D=0.0 | E=0.75 | F=0.25 | G=0.0
+90: B=5.0 | C=0.0 | D=0.0 | E=0.66 | F=0.33 | G=0.01
+91: B=6.0 | C=0.0 | D=0.0 | E=0.0 | F=0.75 | G=0.25
+92: B=7.0 | C=0.0 | D=0.0 | E=0.0 | F=0.5 | G=0.5
+93: B=8.0 | C=0.0 | D=0.0 | E=0.0 | F=0.0 | G=1.0
+95: A=Mutation 1 | B=Mutation 2 | C=Weight 1 | D=Weight 2 | E=Rate Low | F=Rate High | H=Calculate:
+96: A=Normal | B=Normal | C=1350.0 | D=1350.0 | E==IF((C96+D96)>=1000,
+     C96/(C96+D96),
+     MIN(C96,D96)*15/(MIN(C96,D96)*15 + MAX(C96,D96))
+) | F==IF((C96+D96)>=1000,
+     D96/(C96+D96),
+     MAX(C96,D96)/(MIN(C96,D96)*15 + MAX(C96,D96))
+) | H=- A = Mutation 1's Weight
+97: A=Normal | B=Golden | C=1350.0 | D=100.0 | E==IF((C97+D97)>=1000,
+C97/(C97+D97),
+MIN(C97,D97)*15/(MIN(C97,D97)*15 + MAX(C97,D97))
+) | F==IF((C97+D97)>=1000,
+D97/(C97+D97),
+MAX(C97,D97)/(MIN(C97,D97)*15 + MAX(C97,D97))
+) | H=- B = Mutation 2's Weight
+98: A=Normal | B=Frozen | C=1350.0 | D=40.0 | E==IF((C98+D98)>=1000,
+C98/(C98+D98),
+MIN(C98,D98)*15/(MIN(C98,D98)*15 + MAX(C98,D98))
+) | F==IF((C98+D98)>=1000,
+D98/(C98+D98),
+MAX(C98,D98)/(MIN(C98,D98)*15 + MAX(C98,D98))
+) | H=- C = A + B | I=If C >= 1000:
+99: A=Normal | B=Magma | C=1350.0 | D=10.0 | E==IF((C99+D99)>=1000,
+C99/(C99+D99),
+MIN(C99,D99)*15/(MIN(C99,D99)*15 + MAX(C99,D99))
+) | F==IF((C99+D99)>=1000,
+D99/(C99+D99),
+MAX(C99,D99)/(MIN(C99,D99)*15 + MAX(C99,D99))
+) | J=Rate Low = A / (A + B)
+100: A=Normal | B=Clover | C=1350.0 | D=7.0 | E==IF((C100+D100)>=1000,
+C100/(C100+D100),
+MIN(C100,D100)*15/(MIN(C100,D100)*15 + MAX(C100,D100))
+) | F==IF((C100+D100)>=1000,
+D100/(C100+D100),
+MAX(C100,D100)/(MIN(C100,D100)*15 + MAX(C100,D100))
+) | J=Rate High = B / (A + B)
+101: A=Golden | B=Normal | C=100.0 | D=1350.0 | E==IF((C101+D101)>=1000,
+C101/(C101+D101),
+MIN(C101,D101)*15/(MIN(C101,D101)*15 + MAX(C101,D101))
+) | F==IF((C101+D101)>=1000,
+D101/(C101+D101),
+MAX(C101,D101)/(MIN(C101,D101)*15 + MAX(C101,D101))
+) | I=If C < 1000:
+102: A=Golden | B=Golden | C=100.0 | D=100.0 | E==IF((C102+D102)>=1000,
+C102/(C102+D102),
+MIN(C102,D102)*15/(MIN(C102,D102)*15 + MAX(C102,D102))
+) | F==IF((C102+D102)>=1000,
+D102/(C102+D102),
+MAX(C102,D102)/(MIN(C102,D102)*15 + MAX(C102,D102))
+) | J=- D = min(A, B) * 15
+103: A=Golden | B=Frozen | C=100.0 | D=40.0 | E==IF((C103+D103)>=1000,
+C103/(C103+D103),
+MIN(C103,D103)*15/(MIN(C103,D103)*15 + MAX(C103,D103))
+) | F==IF((C103+D103)>=1000,
+D103/(C103+D103),
+MAX(C103,D103)/(MIN(C103,D103)*15 + MAX(C103,D103))
+) | J=- E = max(A, B)
+104: A=Golden | B=Magma | C=100.0 | D=10.0 | E==IF((C104+D104)>=1000,
+C104/(C104+D104),
+MIN(C104,D104)*15/(MIN(C104,D104)*15 + MAX(C104,D104))
+) | F==IF((C104+D104)>=1000,
+D104/(C104+D104),
+MAX(C104,D104)/(MIN(C104,D104)*15 + MAX(C104,D104))
+) | J=Rate Low = D / (D + E)
+105: A=Golden | B=Clover | C=100.0 | D=7.0 | E==IF((C105+D105)>=1000,
+C105/(C105+D105),
+MIN(C105,D105)*15/(MIN(C105,D105)*15 + MAX(C105,D105))
+) | F==IF((C105+D105)>=1000,
+D105/(C105+D105),
+MAX(C105,D105)/(MIN(C105,D105)*15 + MAX(C105,D105))
+) | J=Rate High = E / (D + E)
+106: A=Frozen | B=Normal | C=40.0 | D=1350.0 | E==IF((C106+D106)>=1000,
+C106/(C106+D106),
+MIN(C106,D106)*15/(MIN(C106,D106)*15 + MAX(C106,D106))
+) | F==IF((C106+D106)>=1000,
+D106/(C106+D106),
+MAX(C106,D106)/(MIN(C106,D106)*15 + MAX(C106,D106))
+)
+107: A=Frozen | B=Golden | C=40.0 | D=100.0 | E==IF((C107+D107)>=1000,
+C107/(C107+D107),
+MIN(C107,D107)*15/(MIN(C107,D107)*15 + MAX(C107,D107))
+) | F==IF((C107+D107)>=1000,
+D107/(C107+D107),
+MAX(C107,D107)/(MIN(C107,D107)*15 + MAX(C107,D107))
+)
+108: A=Frozen | B=Frozen | C=40.0 | D=40.0 | E==IF((C108+D108)>=1000,
+C108/(C108+D108),
+MIN(C108,D108)*15/(MIN(C108,D108)*15 + MAX(C108,D108))
+) | F==IF((C108+D108)>=1000,
+D108/(C108+D108),
+MAX(C108,D108)/(MIN(C108,D108)*15 + MAX(C108,D108))
+)
+109: A=Frozen | B=Magma | C=40.0 | D=10.0 | E==IF((C109+D109)>=1000,
+C109/(C109+D109),
+MIN(C109,D109)*15/(MIN(C109,D109)*15 + MAX(C109,D109))
+) | F==IF((C109+D109)>=1000,
+D109/(C109+D109),
+MAX(C109,D109)/(MIN(C109,D109)*15 + MAX(C109,D109))
+)
+110: A=Frozen | B=Clover | C=40.0 | D=7.0 | E==IF((C110+D110)>=1000,
+C110/(C110+D110),
+MIN(C110,D110)*15/(MIN(C110,D110)*15 + MAX(C110,D110))
+) | F==IF((C110+D110)>=1000,
+D110/(C110+D110),
+MAX(C110,D110)/(MIN(C110,D110)*15 + MAX(C110,D110))
+)
+111: A=Magma | B=Normal | C=10.0 | D=1350.0 | E==IF((C111+D111)>=1000,
+C111/(C111+D111),
+MIN(C111,D111)*15/(MIN(C111,D111)*15 + MAX(C111,D111))
+) | F==IF((C111+D111)>=1000,
+D111/(C111+D111),
+MAX(C111,D111)/(MIN(C111,D111)*15 + MAX(C111,D111))
+)
+112: A=Magma | B=Golden | C=10.0 | D=100.0 | E==IF((C112+D112)>=1000,
+C112/(C112+D112),
+MIN(C112,D112)*15/(MIN(C112,D112)*15 + MAX(C112,D112))
+) | F==IF((C112+D112)>=1000,
+D112/(C112+D112),
+MAX(C112,D112)/(MIN(C112,D112)*15 + MAX(C112,D112))
+)
+113: A=Magma | B=Frozen | C=10.0 | D=40.0 | E==IF((C113+D113)>=1000,
+C113/(C113+D113),
+MIN(C113,D113)*15/(MIN(C113,D113)*15 + MAX(C113,D113))
+) | F==IF((C113+D113)>=1000,
+D113/(C113+D113),
+MAX(C113,D113)/(MIN(C113,D113)*15 + MAX(C113,D113))
+)
+114: A=Magma | B=Magma | C=10.0 | D=10.0 | E==IF((C114+D114)>=1000,
+C114/(C114+D114),
+MIN(C114,D114)*15/(MIN(C114,D114)*15 + MAX(C114,D114))
+) | F==IF((C114+D114)>=1000,
+D114/(C114+D114),
+MAX(C114,D114)/(MIN(C114,D114)*15 + MAX(C114,D114))
+)
+115: A=Magma | B=Clover | C=10.0 | D=7.0 | E==IF((C115+D115)>=1000,
+C115/(C115+D115),
+MIN(C115,D115)*15/(MIN(C115,D115)*15 + MAX(C115,D115))
+) | F==IF((C115+D115)>=1000,
+D115/(C115+D115),
+MAX(C115,D115)/(MIN(C115,D115)*15 + MAX(C115,D115))
+)
+116: A=Clover | B=Normal | C=7.0 | D=1350.0 | E==IF((C116+D116)>=1000,
+C116/(C116+D116),
+MIN(C116,D116)*15/(MIN(C116,D116)*15 + MAX(C116,D116))
+) | F==IF((C116+D116)>=1000,
+D116/(C116+D116),
+MAX(C116,D116)/(MIN(C116,D116)*15 + MAX(C116,D116))
+)
+117: A=Clover | B=Golden | C=7.0 | D=100.0 | E==IF((C117+D117)>=1000,
+C117/(C117+D117),
+MIN(C117,D117)*15/(MIN(C117,D117)*15 + MAX(C117,D117))
+) | F==IF((C117+D117)>=1000,
+D117/(C117+D117),
+MAX(C117,D117)/(MIN(C117,D117)*15 + MAX(C117,D117))
+)
+118: A=Clover | B=Frozen | C=7.0 | D=40.0 | E==IF((C118+D118)>=1000,
+C118/(C118+D118),
+MIN(C118,D118)*15/(MIN(C118,D118)*15 + MAX(C118,D118))
+) | F==IF((C118+D118)>=1000,
+D118/(C118+D118),
+MAX(C118,D118)/(MIN(C118,D118)*15 + MAX(C118,D118))
+)
+119: A=Clover | B=Magma | C=7.0 | D=10.0 | E==IF((C119+D119)>=1000,
+C119/(C119+D119),
+MIN(C119,D119)*15/(MIN(C119,D119)*15 + MAX(C119,D119))
+) | F==IF((C119+D119)>=1000,
+D119/(C119+D119),
+MAX(C119,D119)/(MIN(C119,D119)*15 + MAX(C119,D119))
+)
+120: A=Clover | B=Clover | C=7.0 | D=7.0 | E==IF((C120+D120)>=1000,
+C120/(C120+D120),
+MIN(C120,D120)*15/(MIN(C120,D120)*15 + MAX(C120,D120))
+) | F==IF((C120+D120)>=1000,
+D120/(C120+D120),
+MAX(C120,D120)/(MIN(C120,D120)*15 + MAX(C120,D120))
+)
+122: A=Step 2: Random mutation in slots
+123: C=Result Pool=Pet1's pool + Pet2's Pool
+eg:Pet1[Golden] Pet2[Golden, Frozen]   the Result Pool[Golden, Golden, Frozen]
+124: A=Result Pet | B=Slot1 | C=Random from slot1(if have), then slot2,slot3,slot4; After one mutation selected from the pool, remove it in the pool
+ -Keep the order
+ -Each slot can have same mutation
+125: B=Slot2
+126: B=Slot3
+127: B=Slot4
+135: A=0.33499999999999996 | B=<openpyxl.worksheet.formula.ArrayFormula object at 0x000002A0BFC65D90> | C=0.9441 | D=Very High | E=>>
+136: A=0.21157359638272924 | B=0.21157359638272924 | C=0.8719 | D=Very High | E=>>
+137: A=0.14842640361727077 | B=0.14842640361727077 | C=0.7616 | D=Very High | E=>>
+138: A=0.09814719276545841 | B=0.09814719276545841 | C=0.5984 | D=High | E=>
+139: A=0.04587779914803641 | B=0.04587779914803641 | C=0.335 | D=Medium | E=-
+140: A=0.33499999999999996 | B=0.5984264036172708 | C=0.33 | D=Medium | E=-
+141: A=0.5984264036172708 | B=0.7615735963827293 | C=0.2116 | D=Low | E=<
+142: A=0.7615735963827293 | B=0.8718528072345415 | C=0.19 | D=Low | E=<
+143: A=0.8718528072345415 | B=0.9441222008519636 | C=0.1484 | D=Low | E=<
+144: A=0.9441222008519636 | B=0.33 | C=0.0981 | D=Very Low | E=<<
+145: A=0.33 | B=0.19 | C=0.09 | D=Very Low | E=<<
+146: A=0.19 | B=0.09 | C=0.0459 | D=Very Low | E=<<
+147: A=0.09 | B=0.03 | C=0.03 | D=Very Low | E=<<
+148: A=0.03 | B=0.01 | C=0.01 | D=Very Low | E=<<
+149: A=0.01

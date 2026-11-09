@@ -1,0 +1,73 @@
+SHEET Monetization System
+1: A=1. System Overview
+2: A=Field | C=Description
+3: A=Core Currencies | C=Diamond, Craftland Token, Pet Coin
+4: A=Conversion Flow | C=Diamond → Craftland Token → Pet Coin → In-game Spend
+5: A=Purpose | C=Maintain a premium-to-gameplay currency chain. Diamonds are only used to acquire Tokens, while Tokens and Pet Coins function as equivalent in-game currencies.
+6: A=Monetization Focus | C=Players always interact using Pet Coin or Craftland Token; Diamond conversion is the only entry point for paid currency.
+8: A=2. Reward Delivery Rules
+9: A=Type | C=Description
+10: A=Diamond | C=Cannot be used directly.
+11: A=Craftland Token | C=Mid-tier currency. Used for all in-game purchases and interchangeable with Pet Coin. 
+1 Diamond = 1 Craftland Tokens
+12: A=Pet Coin | C=Earned through gameplay or exchange. Used for pet-related systems and events. 
+1 Craftland Token = 10 Pet Coin
+14: A=3. Economy Flow
+15: A=Step | C=Description
+16: A=1.0 | C=Player purchases Diamonds
+17: A=2.0 | C=Player converts Diamonds into Craftland Tokens (1 → 1).
+18: A=3.0 | C=Player can then spend Craftland Tokens directly, or convert them 1:10 into Pet Coins.
+19: A=4.0 | C=All gameplay systems (Pet Gacha, Fusion, Fusion Reroll, Pet Coin Shop) accept either Pet Coin or Craftland Token.
+20: A=5.0 | C=Player can earn additional Pet Coins through playtime.
+22: A=4. Pet Coin & Craftland Token Usage(v1)
+23: A=Action | C=Details
+24: A=Pet Gacha | C=Draw a random pet of any rarity from Pet Coin Shop
+25: A=Shop Purchases | C=Buy limited items from Pet Coin Shop
+26: A=Speed Up Fusion | C=Instantly complete fusion progress by spending Pet Coins. 
+Cost scales by remaining time and pet rarity.
+27: A=Fusion Reroll | C=Revert to old pets if new pet is unsatisfactory.
+29: A=5. Example: Random MYTHIC Pet Purchase
+30: A=Action | C=Details
+31: A=Option 1, Pet Coin | C=Player has 100 Pet Coins. Spend 100 Pet Coins → Receive MYTHIC Pet.
+32: A=Option 2, Craftland Token | C=Player has 100 Craftland Tokens. Spend 100 Tokens → Receive MYTHIC Pet.
+33: A=Option 3, Pet coin & Craftland Token | C=Player has 50 Pet Coins + 50 Craftland Tokens. Spend 50 Pet Coins + 50 Craftland Tokens → Receive MYTHIC Pet.
+34: A=Option 4, Conversion | C=Player only has Diamonds. Convert 10 Diamonds → 100 Tokens, then use those Tokens to buy the MYTHIC Pet.
+36: A=4. Interaction Rules
+37: A=Element | C=Details
+38: A=Currency Priority | C=Pet Coin > Craftland Token
+39: A=One-way Conversion | C=Conversion is allowed only from Craftland Token → Pet Coin, not the reverse.
+40: A=Conversion Popup | C=When player taps Pet Coin balance, show “Convert Craftland Tokens to Pet Coins.”
+41: A=Purchase Flow | C=When a system checks for currency, it treats Pet Coin and Craftland Token equally, always uses whichever is available.
+42: A=Goal | C=Ensure seamless spending flow with clear hierarchy: Diamond (premium) → Token (universal) → Pet Coin (gameplay).
+46: A=5. Timeline
+47: A=Date | C=Content | J=Promotion Plan
+48: A=2025-11-27 00:00:00 | C=Add more usage for Pet Coin:
+- Shop Items: Random Pet based on Rarity(COMMON -> LEGENDARY)
+- Revert Fusion: Select material pet
+49: A=2025-12-11 00:00:00 | C=Add monetization system for test:
+- Convert Craftland Token -> Pet Coin
+- Use Craftland Token same as Pet Coin
+
+Add more usage for Pet Coin:
+- Speed up fusion time
+- Shop Items: Random Pet based on Rarity(MYTHIC)
+50: A=2025-12-25 00:00:00 | C=Release monetization system
+
+Add more usage for Pet Coin:
+- Shop Items: Change the weather
+- Mutation evolution. | J=If testing on 1 server:
+Promotions will only be done in-game
+- Launch Overview Banner (What's new) 
+- Feature Intro Overview Banner (More informative - where to exchange the tokens/coins)
+- smaller KOL promotions on their own soc med accounts  
+
+Prepare how we can address questions from other creators regarding monetization 
+51: A=2026-01-08 00:00:00 | C=Add more usage for Pet Coin:
+- Event?
+54: A=option 1 | B=1 Diamond -> 10 Token | D=1 MYTHIC Pet = 10 diamond
+55: A=option 2 | B=1 Diamond -> 1 Token | D=1 MYTHIC Pet = 100 diamond
+56: A=Ref | D=1 gacha from FF = 9 -> 19 Diamond
+58: B=1 个 FF 抽卡 = | D=1 MYTHIC Pet = 100 diamond
+59: D=Player have 20 Pet Coin
+60: B=1 Token -> 1 pet coin | D=Player have 80 Token | G=1 step purchase | H=2 step if need convert diamond
+61: B=1 Token -> 10 pet coin | D=Convert 8 token -> 80 Pet coin -> Purchase | G=2 step purchase | H=3 step if need convert diamond

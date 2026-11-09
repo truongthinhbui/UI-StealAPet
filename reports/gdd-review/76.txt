@@ -1,0 +1,125 @@
+SHEET QA Checklist (V2)
+1: A=ID | B=Case | C=Reviewer | D=Reviewer | E=2026-04-16 00:00:00 | F=Note | G=Reviewer | H=2026-04-23 00:00:00 | I=Note | J=Reviewer | K=2026-04-30 00:00:00 | L=Note | M=Reviewer | N=2026-05-07 00:00:00 | O=Note | P=Reviewer | Q=2026-05-14 00:00:00 | R=Note | S=Reviewer | T=2026-05-21 00:00:00 | U=Note | V=Reviewer | W=2026-05-28 00:00:00 | X=Note | Y=Reviewer | Z=2026-06-04 00:00:00 | AA=Note
+2: A=A | B=Checklist before releasing
+3: B=Check balance before 3 days | C=Zuto | D=Zuto | E=False | G=Zuto | H=False | J=Zuto | K=False | M=Zuto | N=False | P=Zuto | Q=False | S=Zuto | T=False | V=Zuto | W=False | Y=Zuto | Z=False
+4: B=Version Mark | C=Zuto | D=Zuto | E=False | G=Zuto | H=False | J=Zuto | K=False | M=Zuto | N=False | P=Zuto | Q=False | S=Zuto | T=False | V=Zuto | W=False | Y=Zuto | Z=False
+5: B=Mail content (Date / Next update time) | C=Zuto | D=Zuto | E=False | G=Zuto | H=False | J=Zuto | K=False | M=Zuto | N=False | P=Zuto | Q=False | S=Zuto | T=False | V=Zuto | W=False | Y=Zuto | Z=False
+6: B=Check new giftcode (in description) rewards | C=Zuto | D=Zuto | E=False | G=Zuto | H=False | J=Zuto | K=False | M=Zuto | N=False | P=Zuto | Q=False | S=Zuto | T=False | V=Zuto | W=False | Y=Zuto | Z=False
+7: B=Description (Date / Giftcode) | C=Zuto | D=Zuto | E=False | G=Zuto | H=False | J=Zuto | K=False | M=Zuto | N=False | P=Zuto | Q=False | S=Zuto | T=False | V=Zuto | W=False | Y=Zuto | Z=False
+8: B=Remove tag "Not Allow Match Making" | C=Zuto | D=Zuto | E=False | G=Zuto | H=False | J=Zuto | K=False | M=Zuto | N=False | P=Zuto | Q=False | S=Zuto | T=False | V=Zuto | W=False | Y=Zuto | Z=False
+9: B=Cover Image | C=Zuto | D=Zuto | E=False | G=Zuto | H=False | J=Zuto | K=False | M=Zuto | N=False | P=Zuto | Q=False | S=Zuto | T=False | V=Zuto | W=False | Y=Zuto | Z=False
+10: B=Giftcode Tracking | C=Zuto | D=Zuto | E=False | G=Zuto | H=False | J=Zuto | K=False | M=Zuto | N=False | P=Zuto | Q=False | S=Zuto | T=False | V=Zuto | W=False | Y=Zuto | Z=False
+12: A=B | B=Buy Pet - Zuto
+13: B=Buy pet on line and wallet decrease by pet's cost | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+14: B=Buy other's purchased pet and wallet decrease by pet's cost | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+15: B=Quit and Rejoin after buying new pet | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+16: B=Buy Pet at the end of lines | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+18: A=C | B=Sell Pet - Zuto
+19: B=Wallet increase by a half of pet's cost | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+20: B=Quit and Rejoin after selling pet | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+22: A=D | B=Steal Pet - Zuto
+23: B=Slow down when stealing pet | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+24: B=Lose pet when snatcher returns base | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+25: B=Reclaim pet when hit snatcher | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+26: B=Pet becomes red while being stolen | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+27: B=Lose pet when being stolen and quit | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+29: A=E | B=Swap Pets - Zuto
+30: B=Only show swap button on interactive slot (except original slot) | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+31: B=Swap Pets success | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+32: B=Swap Mutations success | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+33: B=Being hit returns picking up pet to original slot | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+34: B=Being stolen returns picking up pet to original slot | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+35: B=Can not open Swap HUD when being stolen or picking up pet | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+36: B=Can only select 2 slots in HUD | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+37: B=Pick up pet then quit game and rejoin, pet won't be lost | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+39: A=F | B=Fusion Pets - Zuto
+40: B=Only show Fuse button on interactive slot (except original slot) | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+41: B=After confirm fuse, show timer on Fusion Egg | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+42: B=Remove Pets success after press Fusion Button and place an Egg on the second slot | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+43: B=Hatch -> Quit  -> Still have same pet | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+44: B=Fuse -> Quit -> Still have egg | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+45: B=Fusion Pets using wifi trick. Steps:
+      - Turn on fusion HUD
+      - Select 2 pets
+      - Turn off wifi
+      - Other player steals selected pet
+      - Turn on wifi
+      - Spam fusion button | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+46: B=Over but pet:
+ - Fullbase -> fusion 2 pet
+ - Buy new 2 pet -> lost 2nd pet | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+47: C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+48: C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+49: C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+50: C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+51: C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+52: C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+53: C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+54: C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+55: C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+57: A=G | B=Base - Zuto
+58: B=Unlock doors of other player's base | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+59: B=Cost of unlocking base (equals 3 times of highest pet's price in base) | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+60: B=Hit fly when interacting with laser walls | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+62: A=H | B=Player - Zuto
+63: B=New user has initial value: rebirth lv1, wallet 500, no pet | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+64: B=New user first time joins room, buy pet and can earn income from pets | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+65: B=Read data failed -> kick. (Fields: Wallet, Rebirth Level, Base's Pets, Base's Pets' Mutation) | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+66: B=Teleport to base | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+67: B=Teleport others (in own base) back to their base when player join | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+68: B=Can add friend | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+70: A=J | B=Rebirth - Zuto
+71: B=Rebirth shows correct rewards and conditions | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+72: B=Rebirth shows owned requirement pets | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+73: B=Alert on rebirth button when all conditions are met | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+75: A=K | B=Collection - Zuto/Tom
+76: B=Show correct pets count | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+77: B=Show correct mutations count | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+78: B=Show correct weathers count | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+80: A=L | B=Shop - Tom
+81: B=Show correct pet coins in shop | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+82: B=Decrease correct amount after buying item | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+83: B=Show item details when select an item | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+84: B=Show cooldown after buying an item | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+86: A=M | B=Leaderboards - Zuto
+87: B=Leaderboards are correct (internal and external) | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+88: B=Leaderboard rank won't update if score is not updated | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+89: B=Ranking (the right up corner one) updates once per 10 seconds | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+91: A=N | B=Events - Tom
+92: B=Outlook is fine | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+93: B=Put blank pet/ wrong pet shows "Please place the correct pet" | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+94: B=Put right pet shows "Success! The pet has been stored" | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+95: B=Can't put pet when reach target progress | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+96: B=Can open Collector Event and read tutorial | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+97: B=Pet show at rotating list are true as config | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+98: B=Can claim progress reward | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+99: B=Milestone go up when claim progress reward | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+100: B=Can claim extra reward when reach milestone target | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+101: B=Can open tooltips | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+102: B=Can't claim when not reach target/ claimed already | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+103: B=Spam claim and connection on/off can't bug rewards | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+105: A=L | B=Others - Zuto/Tom
+106: B=News alert new notification | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+107: B=News turn off alert after being read (both in current match and matches later) | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+108: B=News details have included the new update content | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+109: B=News show correct next update date | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+110: B=Version increase | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+111: C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+112: C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+113: C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+115: A=O | B=Publishing smoke - Codex
+116: B=Solo matchmaking/solo room creation functions work normally | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+117: B=Cover image, map name, map description, out-of-game leaderboard, tag type and localization | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+118: B=Play map 1 hour, check gameplay flow, display result, data read write, localization and new changes | C=Codex | D=Codex | E=False | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+123: A=O | B=Monetization
+124: B=Buy coins with diamond | C=Codex | D=Codex | E=True | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+125: B=Cancel transaction | C=Codex | D=Codex | E=True | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+126: B=Payment fail: Lost connection | C=Codex | D=Codex | E=True | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+127: B=Payment fail: Crash app | D=Codex | E=True | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+128: B=Use old token | D=Codex | E=True | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+129: B=Tokens + diamond | D=Codex | E=True | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+130: B=Conversion with diferent amount | D=Codex | E=True | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+131: B=Right price displayed | D=Codex | E=True | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+132: B=Popup transaction screen | D=Codex | E=True | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+133: B=0 token + buy | D=Codex | E=True | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False
+134: B=Spam click buy | D=Codex | E=True | G=Codex | H=False | J=Codex | K=False | M=Codex | N=False | P=Codex | Q=False | S=Codex | T=False | V=Codex | W=False | Y=Codex | Z=False

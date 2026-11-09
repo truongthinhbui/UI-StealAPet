@@ -1,0 +1,9 @@
+SHEET Mutation (Live)
+1: A=ID | B=Name | C=MaterialKey | D=EffectKey | E=Multiplier | F=Weight | G=Fusion Weight | H=Tier | I=Icon | J=Example Image | K=Column 1 | L=Updated  | M=2025-10-30 00:00:00 | N=Example pet
+2: A=int | B=string | C=string | D=string | E=string | F=float | G=float | H=int
+3: A=1.0 | B=Normal | C=None | D=None | E=1.0 | F=1350.0 | G=50.0 | H=0.0
+4: A=2.0 | B=Golden | C=GoldenMat | D=goldenEffect | E=1.33 | F=100.0 | G=17.0 | H=1.0
+5: A=3.0 | B=Frozen | C=IceMat | D=frozenEffect | E=1.66 | F=40.0 | G=13.0 | H=2.0
+6: A=4.0 | B=Magma | C=MagmaMat | D=magmaEffect | E=2.0 | F=10.0 | G=5.0 | H=3.0
+7: A=5.0 | B=Clover | C=CloverMat | D=cloverEffect | E=2.13 | F=7.0 | G=1.0 | H=4.0
+10: F=192000000000.0

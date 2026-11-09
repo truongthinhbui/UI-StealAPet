@@ -1,0 +1,40 @@
+SHEET EventKickaBall
+1: A=0. Changelog
+2: A=Date | C=Description | I= 
+3: A=2026-05-05 00:00:00 | C=Initial Design
+4: A=2026-06-11 00:00:00 | C=Rework
+6: K= 
+7: A=1. Overview
+8: A=Lucky Kick is a 21-day event built on a grab-and-kick loop. Balls spawn in the room on a 10-minute cycle. Players race to grab one and carry it home — carry is protected, no one can steal from you in transit. At home, a mini-game lets you kick the ball for Gems and other rewards. Each ball holds a finite Gems pool; once the pool empties, the ball stops earning gems. Pool size is hidden from the player.
+
+Headline prize: [Event Exclusive Pet], event-exclusive. 1 per account. | H=            
+9: A=Goal | B=- Introduce event-exclusive pet as headline reward.
+- Swappable with other events for event duration (ex: 21 days).
+- Create a predictable multiplayer moment every 10 minutes that rewards players staying in an active room.
+- Shift PvP pressure to the grab race rather than mid-carry punishment — more accessible for casual and under-14 audience.
+- Reward consistent daily play through shop price tiers unlocking over time.
+ | H= 
+10: A=Core Loop | B=Ball spawns in room → players race to grab → first interact wins → carry to own base (protected) → home mini-game: tap to kick → draws from reward pool → Gems + bonus rewards → pool empty → ball spent → cycle resets → spend Gems in shop.
+12: A=2. Ball Spawning
+13: A=Rule | B=Details
+14: A=Spawn interval | B=Every 10 minutes. Simultaneous for all active players in room.
+15: A=Spawn count | B=Scales with active players in room. Total room size -1
+16: A=Spawn position | B=Mid map
+17: A=Cooldown | B=After all balls in a cycle are grabbed, 7-minute cooldown before next spawn. Cycle length = 10 minutes total.
+18: A=Grab | B=First player to interact with a ball claims it. Standard interact key. No cooldown.
+19: A=Carry protection | B=the carrier cannot be stolen from and is immune to stun/push effects from other players. This is an event-specific override — normal SAP pet steal rules are unaffected.
+21: A=3. Home Mini-Game
+22: A=Rule | B=Details
+23: A=Activation | B=Delivery → a spot near base
+24: A=Mechanic | B=Tap the correct zone to kick. Each tap fires one kick and draws one reward from the ball's pool.
+25: A=Gem cap | B=If the gem reach daily cap, reward pool remove gems
+26: A=Duration | B=Mini-game ends when all pool slots are drawn. No time limit.
+27: A=Luck | B=When Luck happen, gem x4. Player need to play a 2nd mini game
+29: A=4. Reward Pool
+30: A=Rule | B=Details
+31: A=Under daily cap:
+32: A=Goal | B=10 Gems
+33: A=Critical Goal | B=30 Gems
+34: A=Over daily cap:
+35: A=Goal | B=2 Gems
+36: A=Critical Goal | B=5 Gems

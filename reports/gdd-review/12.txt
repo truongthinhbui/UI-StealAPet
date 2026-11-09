@@ -1,0 +1,25 @@
+SHEET Friends Bonus
+1: A=1. System Overview
+3: A=Field | C=Description
+4: A=Summary | C=Friend Bonus is a light social system that rewards players for actively playing in the same map section as friends.
+5: A=The system gives: | C=a small money gain bonus
+6: C=access to Friend Discounts in the rotating shop
+7: C=optional shop access perks tied to the current rotation window
+10: A=2. Rules
+11: A=Type | C=Description
+12: A=activates when | C=- player is in a map section with 1 or more friends
+- friends are active
+13: A=Active Check | C=A player counts as active only if they are periodically:
+- moving
+- collecting
+- buying
+- upgrading
+- interacting with tycoon systems
+
+AFK players do not contribute.
+14: A=scaling (add directly to multiplier) | C=1 friend: +0.2
+2 friends: +0.4
+3 friends: +0.6
+4 friends: +0.8
+5 friends: +1
+15: A=Shop Discount Rule | C=discount applies only to selected tagged items, not the whole shop

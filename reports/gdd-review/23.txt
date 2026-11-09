@@ -1,0 +1,115 @@
+SHEET LvUP
+1: A=Pet Upgrade System — GDD
+2: A=Date | C=Description
+3: A=2026-06-12 00:00:00 | C=Initial Design
+4: A=2026-07-10 00:00:00 | C=Updated #5 and #7
+6: A=Money sink. Players spend in-game money to raise a pet's value/s. Cheap and readable early; harder late via the level curve.
+8: A=1. Save Data
+9: A=Persist only: PetId, CurrentLevel, MutationId, Weather1–5Id, SizeId, IsSecret, Rebirth.
+Everything else (value/s, upgrade cost) is derived from config at read time.
+10: A=Global Knobs | B=config
+12: A=2. Main Rule
+13: A=Upgrade cost is based on pet price, pet value/second, upgrade level, rarity, Secret status, mutation, and weather stack. Rarity has no level cap. Secret is an overlay, not a rarity.
+14: A=Type | C=Description
+15: A=Rarity | C=Rarity only changes upgrade cost pacing. It does not cap level.
+16: A=Secret | C=a YES/NO overlay that can appear on any rarity. Example: RARE + Secret, MYTHIC + Secret, LIMITED + Secret. Secret adds cost bonus but is not listed as rarity.
+17: A=Mutation | C=Mutation has two direct config values: Value Multiplier and Upgrade Cost Multiplier. Cost is not derived from value.
+18: A=Weather Stack | C=Weather has two direct config values: Value Multiplier and Upgrade Cost Multiplier. Weather can stack up to 5 slots.
+19: A=Pet Level Cap | C=1 Base Level unlocks 10 pet levels. Example: Base Level 1 = pet max Lv10, Base Level 2 = pet max Lv20. Rarity does not cap level.
+20: A=Small-Pet Integer Gain | C=For small-value pets, each upgrade must increase actual value by at least +1. Example: Chick Lv1 = 1, Lv2 = 2, Lv3 = 3. This affects the value formula, not upgrade cost.
+21: A=Min Percent Increase | C=Every upgrade must increase actual value by at least 0.5%. This also affects the value formula, not upgrade cost.
+23: A=3. Upgrade Cost Formula
+24: A=Pet upgrade cost is calculated from 4 parts:BaseUpgradeCost , LevelCurveMultiplier, TotalCostBonus, FinalUpgradeCost                        
+25: C=Description
+26: A=BaseUpgradeCost  | C=BasePrice * BaseCostPctOfPrice + BaseValuePerSecond * ValueCostSeconds
+27: A=BaseCostPctOfPrice  | C=Direct value from rarity config table.
+28: A=ValueCostSeconds | C=Direct value from rarity config table.
+29: A=LevelCurveMultiplier  | C=1 + POWER(MAX(0, NextLevel - 2) / CurveSpan, LevelCurveExponent). 
+30: A=RarityUpgradeCostMultiplier | C=Direct value from rarity config table.
+31: A=SecretUpgradeCostMultiplier | C=IF(IsSecret = TRUE, SecretUpgradeCostMultiplierConfig, 1).
+32: A=MutationUpgradeCostMultiplier | C=Direct value from mutation config table. 
+33: A=WeatherUpgradeCostMultiplier | C=Weather1UpgradeCostMultiplier * Weather2UpgradeCostMultiplier * Weather3UpgradeCostMultiplier * Weather4UpgradeCostMultiplier * Weather5UpgradeCostMultiplier
+34: A=UpgradeCost | C=UpgradeCost = ROUNDUP(BaseUpgradeCost * LevelCurveMultiplier * RarityUpgradeCostMultiplier * SecretUpgradeCostMultiplier * MutationUpgradeCostMultiplier * WeatherUpgradeCostMultiplier, 0)
+36: A=4. Value / Second — Inputs
+37: A=BaseValueWithModifiers collapses all value multipliers into one scalar; mutation/weather/size scale the curve but never change its shape.
+38: C=Description
+39: A=BaseValueWithModifiers  | C=BaseValuePerSecond × MutationValueMultiplier × WeatherValueMultiplier × SizeValueMultiplier
+40: A=RawValueAtLevel(L)  | C=BaseValueWithModifiers × (1 + LevelValueGrowth × MAX(0, L − 1) ^ LevelValueExponent)
+42: A=5. Value / Second
+43: A=Per-upgrade gain is guaranteed ≥ MinUpgradeValueGainFlat via a per-level floor.
+44: A=Step | C=Description
+45: A=Effective base (B) | C=B = BaseValuePerSecond × MutationValueMultiplier × WeatherValueMultiplier × SizeValueMultiplier
+46: A=HandoffLevel (La)  | C=La = FLOOR( 1 + (B × LevelValueGrowth × LevelValueExponent / MinUpgradeValueGainFlat)^(1 / (1 − LevelValueExponent)) )
+     (minimum 1)
+47: A=GrowthValue(L) | C=GrowthValue(L) = B × (1 + LevelValueGrowth × MAX(0, L−1)^LevelValueExponent)
+48: A=ValueAt(L)  | C=IF  L ≤ La :   ValueAt(L) = ROUNDUP( GrowthValue(L) )
+IF  L >  La :   ValueAt(L) = ROUNDUP( GrowthValue(La) ) + MinUpgradeValueGainFlat × (L − La)
+49: A=Regimes | C=L ≤ La   growth      strong early gains, decelerating %   (big/normal pets live here)
+L >  La   flat tail   steady +MinUpgradeValueGainFlat / level, bounded, no inflation
+50: A=Guarantee. La is exactly where the growth step first equals the flat minimum, so every upgrade below La clears the minimum by construction, and every upgrade above La adds the flat gain. ROUNDUP forces small pets (including sub-1 Size) to tick in whole numbers. Large pets stay in growth across any real level cap.
+52: A=6. Tuning Guide
+53: A=Problem | C=Primary knob | E=Secondary knob
+54: A=Early upgrades too expensive | C=↓ BaseCostPctOfPrice | E=↓ ValueCostSeconds
+55: A=Late game ramps too fast | C=↑ CurveSpan | E=↓ LevelCurveExponent
+56: A=High-income pets cost too much early | C=↓ ValueCostSeconds | E=—
+57: A=Value barely moves per level | C=↑ LevelValueGrowth | E=↑ LevelValueExponent (keep < 1)
+58: A=Too many levels are pure floor | C=↑ LevelValueGrowth | E=↓ MinUpgradeValueGainPct
+59: A=Secret feels free / too punishing | C=SecretUpgradeCostMultiplier | E=—
+61: A=7. Sample
+62: A=Inputs: MYTHIC pet, Size M, no mutation, no weather, Secret = NO. BasePrice = 1,050,000, BaseValuePerSecond = 18,500. Knobs = §2 defaults.
+63: A=Inputs: | B=MYTHIC | C=No Mutation | D=No weather | E=No secret
+64: A=Base price | C=1050000.0
+65: A=BaseValuePerSecond | C=18500.0
+67: A=7.1 Value | B=if Player starts at Lv17, upgrades to Lv18.
+68: A=Step 1 — BaseValueWithModifiers
+69: A== BaseValuePerSecond × MutationValueMultiplier × WeatherValueMultiplier × SizeValueMultiplier
+= 18,500 × 1 × 1 × 1
+= 18,500
+70: A=Step 2 — HandoffLevel (La)
+71: A=La = FLOOR( 1 + (B × LevelValueGrowth × LevelValueExponent)^(1/(1−LevelValueExponent)) )
+   = FLOOR( 1 + (18,500 × 0.05 × 0.7)^(1/0.3) )
+   = FLOOR( 1 + 647.5^3.333… )
+   = astronomically large  →  La ≫ 200
+72: A=La is past the level cap, so every level here is in the growth regime
+73: A=Step 3 — ValueAt(17), current level
+74: A=GrowthValue(17) = B × (1 + LevelValueGrowth × (17−1)^LevelValueExponent)
+                = 18,500 × (1 + 0.05 × 16^0.7)
+                = 18,500 × (1 + 0.05 × 6.9644)
+                = 18,500 × (1 + 0.34822)
+                = 18,500 × 1.34822
+                = 24,942.07
+ValueAt(17)     = ROUNDUP(24,942.07) = 24,943
+75: A=Step 4 — ValueAt(18), after upgrade
+76: A=GrowthValue(18) = 18,500 × (1 + 0.05 × 17^0.7)
+                = 18,500 × (1 + 0.05 × 7.2663)
+                = 18,500 × (1 + 0.36332)
+                = 18,500 × 1.36332
+                = 25,221.35
+ValueAt(18)     = ROUNDUP(25,221.35) = 25,222
+78: A=7.2 UpgradeCost for this step
+79: A=BaseUpgradeCost      = BasePrice × BaseCostPctOfPrice + BaseValuePerSecond × ValueCostSeconds
+                     = 1,050,000 × 0.03 + 18,500 × 1.65
+                     = 31,500 + 30,525
+                     = 62,025
+
+LevelCurveMultiplier = 1 + (MAX(0, NextLevel−2) / CurveSpan)^LevelCurveExponent
+                     = 1 + (16 / 16)^4.5
+                     = 1 + 1
+                     = 2
+
+CostStack            = Rarity × Secret × Mutation × Weather
+                     = 1.75 × 1 × 1 × 1
+                     = 1.75
+
+UpgradeCost          = ROUNDUP(BaseUpgradeCost × LevelCurveMultiplier × CostStack)
+                     = ROUNDUP(62,025 × 2 × 1.75)
+                     = ROUNDUP(217,087.5)
+                     = 217,088
+81: A=7.2 Tiny pet by hand — Chick, base 1, Size S
+82: A=B  = 1 × 0.8333 = 0.833
+La = FLOOR(1 + (0.833 × 0.05 × 0.7)^(1/0.3)) = 1     → flat tail from Lv2
+
+ValueAt(1) = ROUNDUP(0.833) = 1
+ValueAt(2) = ROUNDUP(GrowthValue(1)) + MinUpgradeValueGainFlat × (2−1) = 1 + 1 = 2
+ValueAt(3) = 1 + 1×(3−1) = 3
+ValueAt(4) = 4 … → 1, 2, 3, 4, 5

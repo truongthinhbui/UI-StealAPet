@@ -1,0 +1,33 @@
+SHEET Current Plan
+1: A=Release Date | B=QA Date | C=Regions | D=Version | E=Type | F=Change Logs | G=Status
+2: A==IFERROR(__xludf.DUMMYFUNCTION("CHOOSEROWS(SORT(FILTER('Change Logs'!A:H, 'Change Logs'!H:H=""WIP""), ABS(INDEX(FILTER('Change Logs'!A:H, 'Change Logs'!H:H=""WIP""), 0, 1) - TODAY()), TRUE), 1)"),46331.0) | B==IFERROR(__xludf.DUMMYFUNCTION("""COMPUTED_VALUE"""),46318.0) | C==IFERROR(__xludf.DUMMYFUNCTION("""COMPUTED_VALUE"""),"US, SG, IND") | D==IFERROR(__xludf.DUMMYFUNCTION("""COMPUTED_VALUE"""),"3.3.0") | E==IFERROR(__xludf.DUMMYFUNCTION("""COMPUTED_VALUE"""),"Big Update") | F==IFERROR(__xludf.DUMMYFUNCTION("""COMPUTED_VALUE"""),"- [P0] Collection Pet Index
+- [P0] Rerun Event: Meteorite
+- [P0] Review Trade Flow
+- [P1] Digging improvement
+- [P1] Fix Client receive signal from Server when first join (to fix visual loss on weak device)
+- [P1] Free Scan action in Dig Event
+- [P1] Incr"&"ease rate Dig/Fish Top Prize with played times
+- [P1] Shift the Permanent Event scene to the client side so players can view and access their unlocks.
+- [P2] Revamp Permanent Event (in code, for consitent, prepare for other events)
+- [P2] Tracking Boss: J"&"oin Turns, Complete Turns
+- Contents: 2 pets | Night pool | RB27 | Boss: reward refresh") | G==IFERROR(__xludf.DUMMYFUNCTION("""COMPUTED_VALUE"""),"- cây kim tiền
+- boss revamp???
+- Move weather change effect to client for permanent event Dig/Fish
+- UX nạp pét
+- Focus Core") | H==IFERROR(__xludf.DUMMYFUNCTION("""COMPUTED_VALUE"""),"WIP")
+3: A==IFERROR(__xludf.DUMMYFUNCTION("CHOOSEROWS(SORT(FILTER('Change Logs'!A:H, 'Change Logs'!H:H=""Confirmed""), ABS(INDEX(FILTER('Change Logs'!A:H, 'Change Logs'!H:H=""Confirmed""), 0, 1) - TODAY()), TRUE), 1)"),46359.0) | C==IFERROR(__xludf.DUMMYFUNCTION("""COMPUTED_VALUE"""),"US, SG, IND") | D==IFERROR(__xludf.DUMMYFUNCTION("""COMPUTED_VALUE"""),"3.5.0") | E==IFERROR(__xludf.DUMMYFUNCTION("""COMPUTED_VALUE"""),"Big Update") | F==IFERROR(__xludf.DUMMYFUNCTION("""COMPUTED_VALUE"""),"- [P0] Refactor Tooltip
+- [P0] Rerun Event: Kick A Ball
+- [P0] Twist Flow Fishing
+- [P2] Apply new Decoration UI flow
+- [P2] Apply Prompt within screen:
+      - Fusion
+      - Swap
+      - Rebirth
+      - Exchange Dust
+      - Pet Menu
+      - Trade
+     "&" - Storage
+      - Shop/Shop Event
+- [P2] Refactor Prompt system
+- Contents: 2 pets | RB27 | Shop: new Gen item") | G==IFERROR(__xludf.DUMMYFUNCTION("""COMPUTED_VALUE"""),"- Focus New
+- Noti vibrate container screen when error") | H==IFERROR(__xludf.DUMMYFUNCTION("""COMPUTED_VALUE"""),"Confirmed")

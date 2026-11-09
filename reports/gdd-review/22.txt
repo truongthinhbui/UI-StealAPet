@@ -1,0 +1,24 @@
+SHEET OnboardingMissions
+1: A=0. Changelog
+2: A=Date | C=Description | I= 
+3: A=2026-02-24 00:00:00 | C=Initial Design
+6: K= 
+7: A=1. Overview
+8: A=Purpose | B=To smoothly bridge the early-game churn gaps (especially Rebirth 1 to 4) by giving players a highly rewarding, non-intrusive "Golden Path" to follow. | H=            
+9: A=Access Location | B=Permanent HUD element (Right side of screen) | H= 
+10: A=Core Loop | B=Read Current Target ➔ Perform Action ➔ Click Claim ➔ Receive Reward ➔ Next Target Appears.
+11: A=End Condition | B=The system hides itself permanently once the player completes the final mission (e.g., reaches Rebirth 4).
+12: M= 
+13: A=2. Core Mechanics & Rules
+14: A=Rule Name | B=Rules
+15: A=Linear Tracking | B=Missions are sequential. The player only ever sees and works on ONE mission at a time.
+16: A=Condition Types | B=1. Action-based: Player must trigger an event (e.g., "Buy a Pet", "Fuse a Pet").
+2. State-based: Player must reach a threshold (e.g., "Have 10,000 Cash", "Unlock Base Level 2").
+17: A=Retroactive Completion | B=If a player reaches a State-based mission and already meets the requirements (e.g., Mission is "Have 6 Pets" and they already have 6), the mission instantly switches to the "Claim" state.
+18: A=Action Tracking | B=Action-based missions only start listening for events after the mission becomes active. (e.g., If they buy a pet on Step 1, it does not count for the "Buy a Pet" requirement on Step 4).
+19: A=Claim Logic | B=Rewards are NOT auto-granted. The player MUST click "Claim" to receive the items. This forces interaction and provides the dopamine hit.
+20: A=Subsidized Economy | B=Rewards are heavily weighted towards Cash and specific Pet IDs to mathematically guarantee the player can afford their early Rebirths without relying on RNG.
+22: A=3. UI / UX Rules
+23: A=Component | B=Details
+24: A=HUD Widget | B=Small UI box on the right of the screen. Shows: [Mission Title], [Progress: 0/1], and [Reward Icon + Value].
+25: A=No Interruptions | B=No pop-ups. The mission UI never hijacks the camera or forces the player to stop moving.

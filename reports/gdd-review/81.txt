@@ -1,0 +1,33 @@
+SHEET Distribution_Items
+1: D=tag | E=farm | F=farm | G=farm | H=daily | I=daily | J=daily | K=daily | L=farm | M=farm | N=farm | O=farm | P=farm | Q=daily | R=Idle | S=Idle | T=daily | U=farm | V=daily | W=farm | X=daily
+2: D=RB | E=3.0 | F=0.0 | G=0.0 | H=4.0 | I=2.0 | J=1.0 | K=0.0 | L=19.0 | M=19.0 | N=6.0 | O=4.0 | P=7.0 | Q=2.0 | R=8.0 | S=0.0 | T=0.0 | U=0.0 | V=1.0 | W=3.0 | X=1.0
+3: A=gate | B=update freq | C=Item / Reward | D=Count | E=Fusion | F=Line | G=Shop | H=Rotation Shop | I=Daily Spin | J=Daily Missions | K=Daily Login | L=Boss Chest | M=Boss Hit | N=Fishing | O=Digging | P=Tree Pet | Q=Lucky Box | R=Pets Adventure | S=Idle Income | T=Callback Missions | U=Onboarding Missions | V=Event Minigames | W=Fuse Contract Event | X=Event Shop | Y=Notes
+4: A=high gate | C=Pet — fixed ID | D==COUNTIFS(E4:S4,"✓") | E=✓ | F=✓ | G=✓ | H=✓ | I=✓ | J= | K=✓ | M= | N=✓ | O=✓ | P=✓ | Q=✓ | R= | S= | T=✓ | U=✓ | V=✓ | W= | X=✓ | Y=Steal/Trade = any owned pet, universal
+5: A=high gate | C=Pet — secret pool roll | D==COUNTIFS(E5:S5,"✓") | E=✓ | F=✓ | G=✓ | H=✓ | I= | J= | K= | M= | N=✓ | O=✓ | P=✓ | Q=✓ | R= | S= | T= | U= | V= | W= | X=✓ | Y=Fusion secret roll = primary path; chest RandomSecretPool
+6: A=low gate | C=MutaGen S | D==COUNTIFS(E6:S6,"✓") | G= | H=✓ | I=✓ | J=✓ | L=✓ | M= | R= | S= | T= | U= | V=✓ | W=✓ | X= | Y=Spin slot: Magma S; minigames drop e.g. Clover S
+7: A=high gate | C=MutaGen SS | D==COUNTIFS(E7:S7,"✓") | G= | H=✓ | I=✓ | J=✓ | L=✓ | M= | R= | S= | T= | U= | V= | W=✓ | X= | Y=Spin slot: Golden SS
+8: A=high gate | C=MutaGen SSS | D==COUNTIFS(E8:S8,"✓") | G= | I= | J= | K= | M= | N= | R= | S= | T= | U= | V= | X= | Y=Top tier — paid/rotation + event milestones only
+9: A=high gate | C=Mutaion Unique SSS | D==COUNTIFS(E9:S9,"✓") | N=✓ | O=✓ | P=✓ | Q=✓
+10: A=low gate | C=Weather Summon — Common | D==COUNTIFS(E10:S10,"✓") | G=✓ | I= | J= | K= | M= | N= | R= | S= | T= | U= | V=✓ | W= | X= | Y=Rainy/Snowy/Windy/Shadowfall/Rainbow
+11: A=high gate | C=Weather Summon — Rare | D==COUNTIFS(E11:S11,"✓") | H=✓
+12: A=high gate | C=Weather Summon — Unique | D==COUNTIFS(E12:S12,"✓")
+13: A=low gate | C=WeatherGen charm — Common | D==COUNTIFS(E13:S13,"✓") | G= | J= | K= | N=✓ | O=✓ | P=✓ | R= | S= | T= | U= | V= | W= | X= | Y=Boss Drop = 2.14.0 new boss, pending
+14: A=high gate | C=WeatherGen charm — Rare | D==COUNTIFS(E14:S14,"✓") | G= | I=✓ | J= | K= | L=✓ | N= | S= | T= | U= | V= | W= | X= | Y=pending 2.14.0 boss
+15: A=high gate | C=WeatherGen charm — Unique | D==COUNTIFS(E15:S15,"✓") | G= | J=✓ | K=✓ | N= | S= | T= | U= | V= | W= | X= | Y=pending 2.14.0 boss; Prismatic/Vortex/Sequin SKUs conflict with Prism-Selector-only ruling
+16: A=low gate | C=Money (cash) | D==COUNTIFS(E16:S16,"✓") | G= | H= | I= | K=✓ | L=✓ | M=✓ | N=✓ | O=✓ | P=✓ | Q=✓ | S=✓ | T= | U= | V=✓ | W= | X= | Y=Idle income = primary faucet
+17: A=low gate | C=MoneyTime boost | D==COUNTIFS(E17:S17,"✓") | G= | H= | I=✓ | J=✓ | K=✓ | L=✓ | M= | N=✓ | O=✓ | P=✓ | Q=✓ | S= | T=✓ | U= | V= | W= | X= | Y=0.5h–4h variants
+18: A=high gate | C=Pet Coin | D==COUNTIFS(E18:S18,"✓") | G= | H= | I=✓ | J= | M= | N= | S= | T=✓ | U=✓ | V=✓ | W=✓ | X= | Y=Sinks: steal door, PC shop, rotation shop
+19: A=low gate | C=Dust | D==COUNTIFS(E19:S19,"✓") | E=✓ | G= | H= | I=✓ | J=✓ | K=✓ | L=✓ | M=✓ | N= | S=✓ | T=✓ | U=✓ | V=✓ | W= | X= | Y=Boss = Dust Hunt pool; fusion byproduct; road pickup 2.11.0
+20: A=high gate | C=Magic Stones (Traits type roll) | D==COUNTIFS(E20:S20,"✓") | G= | H= | I= | J= | K= | L=✓ | N= | S= | T= | U= | V= | W= | X= | Y=Dust Boss chests only — Copycat cap currency
+21: A=low gate | C=Traits type lock stone | D==COUNTIFS(E21:S21,"✓") | R=✓
+22: A=high gate | C=Traits number rolls | D==COUNTIFS(E22:S22,"✓") | N=✓ | O=✓ | P=✓ | Q=✓
+23: A=low gate | C=Spin ticket | D==COUNTIFS(E23:S23,"✓") | G= | H= | I= | J=✓ | K=✓ | L=✓ | M= | R= | S= | T= | U= | V= | W= | X= | Y=Feeds Daily Spin
+24: A=low gate | C=Utility items (RiseSpeed/DoubleCost/SuperWeapon) | D==COUNTIFS(E24:S24,"✓") | G=✓ | H= | I= | J= | K= | M= | N= | P= | R= | S= | T= | U= | V= | W= | X=
+25: A=high gate | C=Base Decoration - new | D==COUNTIFS(E25:S25,"✓") | X=✓
+26: A=low gate | C=Base Decoration - old | D==COUNTIFS(E26:S26,"✓") | T=✓
+27: A=high gate | C=Dust cap | D==COUNTIFS(E27:S27,"✓")
+28: A=high gate | C=Level up | D==COUNTIFS(E28:S28,"✓")
+29: A=low gate | C=Inventory -time | D==COUNTIFS(E29:S29,"✓")
+30: A=high gate | C=Inventory -slot | D==COUNTIFS(E30:S30,"✓")
+31: A=high gate | C=Lock time | D==COUNTIFS(E31:S31,"✓")
+33: E==COUNTIFS(E4:E24,"✓") | F==COUNTIFS(F4:F24,"✓") | G==COUNTIFS(G4:G24,"✓") | H==COUNTIFS(H4:H24,"✓") | I==COUNTIFS(I4:I24,"✓") | J==COUNTIFS(J4:J24,"✓") | K==COUNTIFS(K4:K24,"✓") | L==COUNTIFS(L4:L24,"✓") | M==COUNTIFS(M4:M24,"✓") | N==COUNTIFS(N4:N24,"✓") | O==COUNTIFS(O4:O24,"✓") | P==COUNTIFS(P4:P24,"✓") | Q==COUNTIFS(Q4:Q24,"✓") | R==COUNTIFS(R4:R24,"✓") | S==COUNTIFS(S4:S24,"✓")

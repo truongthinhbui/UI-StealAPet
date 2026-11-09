@@ -1,0 +1,44 @@
+SHEET EventCollectors7
+1: A=0. Changelog
+2: A=Date | C=Description | I= 
+3: A=2025-12-16 00:00:00 | C=Initial Design
+4: A=2026-06-19 00:00:00 | C=Update; replaces milestone track with token shop
+6: K= 
+7: A=1. Overview
+8: A=A recurring event where a wealthy NPC ("The Collector") visits the lobby. He has specific requests for specific pets. | H=            
+9: A=Goal | B=Create temporary, high-value demand for otherwise "trash" pets. | H= 
+10: A=Core Loop | B=Check Contract → Hunt/Fuse Specific Pet → Submit → Reward sent to Mail.
+11: M= 
+12: A=1. Core Mechanic: The Rotating Contracts
+13: A=Rule Name | B=Rules
+14: A=Pets Selection:3 Pets | B===LET(
+    daySeed, INT(TODAY()),
+    poolSize, 28,
+    
+    getPet, LAMBDA(offset, 
+        LET(
+            raw, MOD(daySeed + offset, poolSize),
+            IF(raw < 9, raw + 1, raw + 3)
+        )
+    ),
+    
+    id1, getPet(0),
+    id2, getPet(9),
+    id3, getPet(18),
+    
+    TEXTJOIN(", ", TRUE, id1, id2, id3)
+) | F=3.0
+15: A=Require Pets | B=5.0
+16: A=Reward  | B=See pool on #2
+17: A=Time in minutes per 1 roll | B==B15*15/60
+18: A=Total Time in hour for guarantee Moodeng | B==(1/C27)*B17/60
+20: A=2. Reward Pool
+21: A=Pet | B=Weight
+22: A=SNOWRABBIT | B=50.0 | C==B22/sum($B$22:$B$27)
+23: A=POSSUM | B=900.0 | C==B23/sum($B$22:$B$27)
+24: A=SNOWWEASEL | B=500.0 | C==B24/sum($B$22:$B$27)
+25: A=SNOWLEOPARD | B=400.0 | C==B25/sum($B$22:$B$27)
+26: A=SNOWMAN | B=10.0 | C==B26/sum($B$22:$B$27)
+27: A=MOODENG | B=1.0 | C==B27/sum($B$22:$B$27) | D=500.0 | E==B17*D27/60
+28: A=  | B=  | C=  | D=100.0 | E=  | F= 
+29: A=3. Interface

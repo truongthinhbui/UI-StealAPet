@@ -1,0 +1,6 @@
+SHEET Asset Package
+1: A=Name | B=Model Count | C=Price | D=Image
+2: A=Quirky Series – Animals ULTIMATE Pack | B=180.0 | C=299.0
+3: A=Quirky Series – Dinosaurs Mega Pack Vol 1 | B=36.0 | C=80.0
+4: A=Quirky Series – Fantasy Animals Vol 1 | B=9.0 | C=22.5
+5: A=Environment Mega Pack | B=150.0 | C=107.0

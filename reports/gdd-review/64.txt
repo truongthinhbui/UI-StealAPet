@@ -1,0 +1,60 @@
+SHEET Mob V1.3
+1: A=ID | B=Name | C=Rarity | D=Value | E=Price | F=Weight | G=Rank | H=Column 8 | I=Updated  | J=30/10/2025 | K=Normal | L=Golden | M=Frozen | N=Magma | O==SUM('Mutation (Live)'!F3:F6)
+2: A=int | B=string | C=string | D=string | E=string | F=float | G=int | K==SUM(F:F) | L=='Mutation (Live)'!F4/$O$1 | M=='Mutation (Live)'!F5/$O$1 | N=='Mutation (Live)'!F6/$O$1
+3: A=1.0 | B=Chick | C=COMMON | D=1.0 | E=10.0 | F=200.0 | G=1.0 | K==F3/K$2 | L==K3*L$2 | M==L3*M$2 | N==M3*N$2
+4: A=2.0 | B=Rooster | C=COMMON | D=2.0 | E=30.0 | F=200.0 | G=2.0 | K==F4/K$2 | L==K4*L$2 | M==L4*M$2 | N==M4*N$2
+5: A=3.0 | B=Rabbit | C=COMMON | D=3.0 | E=60.0 | F=200.0 | G=3.0 | K==F5/K$2 | L==K5*L$2 | M==L5*M$2 | N==M5*N$2
+6: A=4.0 | B=Pig | C=COMMON | D=4.0 | E=110.0 | F=200.0 | G=4.0 | K==F6/K$2 | L==K6*L$2 | M==L6*M$2 | N==M6*N$2
+7: A=5.0 | B=Sheep | C=COMMON | D=5.0 | E=190.0 | F=200.0 | G=5.0 | K==F7/K$2 | L==K7*L$2 | M==L7*M$2 | N==M7*N$2
+8: A=6.0 | B=Goat | C=COMMON | D=7.0 | E=290.0 | F=200.0 | G=6.0 | K==F8/K$2 | L==K8*L$2 | M==L8*M$2 | N==M8*N$2
+9: A=7.0 | B=Goose | C=COMMON | D=8.0 | E=380.0 | F=200.0 | G=7.0 | K==F9/K$2 | L==K9*L$2 | M==L9*M$2 | N==M9*N$2
+10: A=8.0 | B=Dog | C=COMMON | D=9.0 | E=460.0 | F=200.0 | G=8.0 | K==F10/K$2 | L==K10*L$2 | M==L10*M$2 | N==M10*N$2
+11: A=52.0 | B=Shrimp | C=COMMON | D=11.0 | E=550.0 | F=200.0 | G=9.0 | K==F11/K$2
+12: A=9.0 | B=Cat | C=RARE | D=13.0 | E=800.0 | F=140.0 | G=10.0 | K==F12/K$2 | L==K12*L$2 | M==L12*M$2 | N==M12*N$2
+13: A=10.0 | B=Hamster | C=RARE | D=23.0 | E=1600.0 | F=140.0 | G=11.0 | K==F13/K$2 | L==K13*L$2 | M==L13*M$2 | N==M13*N$2
+14: A=11.0 | B=Monkey | C=RARE | D=40.0 | E=3200.0 | F=140.0 | G=12.0 | K==F14/K$2 | L==K14*L$2 | M==L14*M$2 | N==M14*N$2
+15: A=12.0 | B=Crab | C=RARE | D=56.0 | E=5600.0 | F=140.0 | G=13.0 | K==F15/K$2 | L==K15*L$2 | M==L15*M$2 | N==M15*N$2
+16: A=13.0 | B=Clownfish | C=RARE | D=80.0 | E=9600.0 | F=140.0 | G=14.0 | K==F16/K$2 | L==K16*L$2 | M==L16*M$2 | N==M16*N$2
+17: A=14.0 | B=Capybara | C=RARE | D=101.0 | E=15200.0 | F=140.0 | G=15.0 | K==F17/K$2 | L==K17*L$2 | M==L17*M$2 | N==M17*N$2
+18: A=15.0 | B=Racoon | C=RARE | D=129.0 | E=23200.0 | F=140.0 | G=16.0 | K==F18/K$2 | L==K18*L$2 | M==L18*M$2 | N==M18*N$2
+19: A=16.0 | B=Squirrel | C=RARE | D=143.0 | E=32800.0 | F=140.0 | G=17.0 | K==F19/K$2 | L==K19*L$2 | M==L19*M$2 | N==M19*N$2
+20: A=17.0 | B=Turtle | C=RARE | D=151.0 | E=42400.0 | F=140.0 | G=18.0 | K==F20/K$2 | L==K20*L$2 | M==L20*M$2 | N==M20*N$2
+21: A=53.0 | B=Snake | C=RARE | D=162.0 | E=55200.0 | F=140.0 | G=19.0 | K==F21/K$2
+22: A=18.0 | B=Owl | C=EPIC | D=200.0 | E=80000.0 | F=100.0 | G=20.0 | K==F22/K$2 | L==K22*L$2 | M==L22*M$2 | N==M22*N$2
+23: A=19.0 | B=Flamingo | C=EPIC | D=320.0 | E=160000.0 | F=100.0 | G=21.0 | K==F23/K$2 | L==K23*L$2 | M==L23*M$2 | N==M23*N$2
+24: A=20.0 | B=Bison | C=EPIC | D=500.0 | E=320000.0 | F=100.0 | G=22.0 | K==F24/K$2 | L==K24*L$2 | M==L24*M$2 | N==M24*N$2
+25: A=21.0 | B=Horse | C=EPIC | D=700.0 | E=560000.0 | F=100.0 | G=23.0 | K==F25/K$2 | L==K25*L$2 | M==L25*M$2 | N==M25*N$2
+26: A=22.0 | B=Zebra | C=EPIC | D=941.0 | E=960000.0 | F=100.0 | G=24.0 | K==F26/K$2 | L==K26*L$2 | M==L26*M$2 | N==M26*N$2
+27: A=23.0 | B=Octopus | C=EPIC | D=1267.0 | E=1520000.0 | F=100.0 | G=25.0 | K==F27/K$2 | L==K27*L$2 | M==L27*M$2 | N==M27*N$2
+28: A=24.0 | B=Jellyfish | C=EPIC | D=1681.0 | E=2320000.0 | F=100.0 | G=26.0 | K==F28/K$2 | L==K28*L$2 | M==L28*M$2 | N==M28*N$2
+29: A=25.0 | B=Dolphin | C=EPIC | D=2050.0 | E=3280000.0 | F=100.0 | G=27.0 | K==F29/K$2 | L==K29*L$2 | M==L29*M$2 | N==M29*N$2
+30: A=26.0 | B=Sealion | C=EPIC | D=2280.0 | E=4240000.0 | F=100.0 | G=28.0 | K==F30/K$2 | L==K30*L$2 | M==L30*M$2 | N==M30*N$2
+31: A=27.0 | B=Walrus | C=EPIC | D=2370.0 | E=5120000.0 | F=100.0 | G=29.0 | K==F31/K$2 | L==K31*L$2 | M==L31*M$2 | N==M31*N$2
+32: A=54.0 | B=Gazelle | C=EPIC | D=2446.0 | E=5920000.0 | F=100.0 | G=30.0 | K==F32/K$2
+33: A=28.0 | B=Moose | C=LEGENDARY | D=2727.0 | E=7200000.0 | F=30.0 | G=31.0 | K==F33/K$2 | L==K33*L$2 | M==L33*M$2 | N==M33*N$2
+34: A=29.0 | B=Camel | C=LEGENDARY | D=4225.0 | E=12000000.0 | F=30.0 | G=32.0 | K==F34/K$2 | L==K34*L$2 | M==L34*M$2 | N==M34*N$2
+35: A=30.0 | B=Giraffe | C=LEGENDARY | D=7895.0 | E=24000000.0 | F=30.0 | G=33.0 | K==F35/K$2 | L==K35*L$2 | M==L35*M$2 | N==M35*N$2
+36: A=31.0 | B=Cheetah | C=LEGENDARY | D=12805.0 | E=42000000.0 | F=30.0 | G=34.0 | K==F36/K$2 | L==K36*L$2 | M==L36*M$2 | N==M36*N$2
+37: A=32.0 | B=Snowowl | C=LEGENDARY | D=21176.0 | E=72000000.0 | F=30.0 | G=35.0 | K==F37/K$2 | L==K37*L$2 | M==L37*M$2 | N==M37*N$2
+38: A=33.0 | B=Aligator | C=LEGENDARY | D=32386.0 | E=114000000.0 | F=30.0 | G=36.0 | K==F38/K$2 | L==K38*L$2 | M==L38*M$2 | N==M38*N$2
+39: A=34.0 | B=Lion | C=LEGENDARY | D=47802.0 | E=174000000.0 | F=30.0 | G=37.0 | K==F39/K$2 | L==K39*L$2 | M==L39*M$2 | N==M39*N$2
+40: A=35.0 | B=Tiger | C=LEGENDARY | D=65426.0 | E=246000000.0 | F=30.0 | G=38.0 | K==F40/K$2 | L==K40*L$2 | M==L40*M$2 | N==M40*N$2
+41: A=36.0 | B=Elephant | C=LEGENDARY | D=81959.0 | E=318000000.0 | F=30.0 | G=39.0 | K==F41/K$2 | L==K41*L$2 | M==L41*M$2 | N==M41*N$2
+42: A=37.0 | B=Orca | C=LEGENDARY | D=95050.0 | E=384000000.0 | F=30.0 | G=40.0 | K==F42/K$2 | L==K42*L$2 | M==L42*M$2 | N==M42*N$2
+43: A=38.0 | B=Panda | C=LEGENDARY | D=108173.0 | E=450000000.0 | F=30.0 | G=41.0 | K==F43/K$2 | L==K43*L$2 | M==L43*M$2 | N==M43*N$2
+44: A=39.0 | B=Eagle | C=LEGENDARY | D=120561.0 | E=516000000.0 | F=30.0 | G=42.0 | K==F44/K$2 | L==K44*L$2 | M==L44*M$2 | N==M44*N$2
+45: A=55.0 | B=Shoebill | C=LEGENDARY | D=135000.0 | E=594000000.0 | F=30.0 | G=43.0 | K==F45/K$2
+46: A=40.0 | B=Polarbear | C=MYTHIC | D=157325.0 | E=800000000.0 | F=10.0 | G=44.0 | K==F46/K$2 | L==K46*L$2 | M==L46*M$2 | N==M46*N$2
+47: A=41.0 | B=Rhino | C=MYTHIC | D=264463.0 | E=1600000000.0 | F=10.0 | G=45.0 | K==F47/K$2 | L==K47*L$2 | M==L47*M$2 | N==M47*N$2
+48: A=42.0 | B=Wolf | C=MYTHIC | D=676533.0 | E=4800000000.0 | F=10.0 | G=46.0 | K==F48/K$2 | L==K48*L$2 | M==L48*M$2 | N==M48*N$2
+49: A=45.0 | B=Hornbill | C=MYTHIC | D=1159420.0 | E=9600000000.0 | F=10.0 | G=47.0 | K==F49/K$2 | L==K49*L$2 | M==L49*M$2 | N==M49*N$2
+50: A=43.0 | B=Hippo | C=MYTHIC | D=2702703.0 | E=24000000000.0 | F=10.0 | G=48.0 | K==F50/K$2 | L==K50*L$2 | M==L50*M$2 | N==M50*N$2
+51: A=46.0 | B=Brown Bear | C=MYTHIC | D=5095541.0 | E=48000000000.0 | F=10.0 | G=49.0 | K==F51/K$2 | L==K51*L$2 | M==L51*M$2 | N==M51*N$2
+52: A=47.0 | B=Manatee | C=MYTHIC | D=9142857.0 | E=96000000000.0 | F=10.0 | G=50.0 | K==F52/K$2 | L==K52*L$2 | M==L52*M$2 | N==M52*N$2
+53: A=48.0 | B=Ostrich | C=MYTHIC | D=12371134.0 | E=144000000000.0 | F=10.0 | G=51.0 | K==F53/K$2 | L==K53*L$2 | M==L53*M$2 | N==M53*N$2
+54: A=44.0 | B=Small Whale | C=MYTHIC | D=14814815.0 | E=192000000000.0 | F=10.0 | G=52.0 | K==F54/K$2 | L==K54*L$2 | M==L54*M$2 | N==M54*N$2
+55: A=49.0 | B=Gorilla | C=MYTHIC | D=38554217.0 | E=576000000000.0 | F=4.0 | G=53.0 | K==F55/K$2 | L==K55*L$2 | M==L55*M$2 | N==M55*N$2
+56: A=50.0 | B=Beluga | C=MYTHIC | D=200000000.0 | E=3456000000000.0 | F=4.0 | G=54.0 | K==F56/K$2 | L==K56*L$2 | M==L56*M$2 | N==M56*N$2
+57: A=51.0 | B=Narwhal | C=MYTHIC | D=1552095808.0 | E=31104000000000.0 | F=4.0 | G=55.0 | K==F57/K$2 | L==K57*L$2 | M==L57*M$2 | N==M57*N$2
+58: A=56.0 | B=Husky | C=MYTHIC | D=9112500000.0 | E=279936000000000.0 | F=1.0 | G=56.0 | K==F58/K$2 | L==K58*L$2 | M==L58*M$2 | N==M58*N$2
+59: N==1000000000*N58

@@ -1,0 +1,140 @@
+SHEET EventWindyTree
+1: A=EventWindyTree_GDD
+2: A=Version | B=Date | C=Scope | D=Change
+3: A=0.2 | B=Aug 25, 2026 | C=Windnest Tree / Beanstalk fun pass | D=Revised flow: fast private nest-offer collection into a Wind Basket; route locks on first pickup; one basket purchase step; Crown Nest and Homeward Gust summit; Golden traversal variation; no contribution or leaderboard.
+5: A=1. Overview
+6: A=Windnest Tree is a short Windy-weather acquisition event. A giant tree grows in the shared map for approximately five minutes. Players leave their exposed base, choose a Low, Mid, or High branch, quickly collect private priced sealed-egg offers into a Wind Basket, purchase selected eggs in one step, then hatch them at home.
+7: A=The fun target is a visible shared ascent with frequent upward reward beats, a memorable Crown Nest summit, and an occasional Golden Tree. Traversal is shared, but offers, baskets, and purchases are private. There is no contribution system, leaderboard, top-contributor bonus, FCFS egg, or winner-take-all reward.
+8: A=Topic | B=Decision | C=Design intent | D=Status / source
+9: A=Event name | B=Windnest Tree | C=Whimsical, readable, bilingual working name. | D=Draft
+10: A=Activation | B=Windy weather wave | C=Wind creates the opportunity; no separate event timer system. | D=Weather System
+11: A=Duration | B=300 seconds target | C=One short event with no checkpoint requirement. | D=User lock
+12: A=Primary reward | B=Sealed pet eggs | C=Player sees egg type, pool/odds, and price; pet stays hidden until home hatch. | D=User direction
+13: A=Economy | B=Money sink + controlled pet faucet | C=Traversal earns purchase opportunities; eggs are not free rewards. | D=Balance TBD
+14: A=Exposure | B=Normal base exposure remains | C=Climbing never protects the player's base or stored pets. | D=SAP pillar
+15: A=Fairness | B=Global tree; private nests, baskets, and purchases | C=All six players can climb together without contribution ranking, body-blocking, or losing offers to FCFS. | D=Locked direction
+16: A=Segment | B=Role | C=Fit
+17: A=New / Low economy | B=Secondary | C=Low branch provides the clearest route, cheapest egg pool, fast feedback, and up to 5 offers.
+18: A=Mid | B=Primary | C=Mid branch provides the central wallet-versus-skill decision with up to 3 stronger offers.
+19: A=Late / High economy | B=Secondary chase | C=High branch provides mastery, the highest-priced pool, Mythic chase, and up to 2 offers.
+20: A=Parkour-averse players | B=Protected, not fully served | C=Participation is optional; Low uses broad platforms; collected and purchased value survives falls.
+22: A=2. Core Loop
+23: A=Step | B=Player action / feedback | C=Server rule | D=Result / exit
+24: A=1. Weather | B=Windy begins; the giant tree grows with wind FX and a 5-minute timer. | C=Start one room-wide TreeID from the authoritative Windy wave. | D=Tree becomes enterable after the growth animation.
+25: A=2. Choose route | B=Inspect Low, Mid, and High signs showing difficulty, egg type, exact price, odds/pool, and maximum offers. | C=Route remains changeable until the first valid nest offer is collected; that pickup locks the route for this TreeID. | D=Enter one branch appropriate to wallet and skill.
+26: A=3. Traverse | B=Climb roots, branches, leaves, wind rings, and telegraphed gust zones. There are no checkpoints. | C=Server validates route volume, order, and reachable nest progression. | D=Reach a private priced nest offer or fall.
+27: A=4. Collect offer | B=Touch/interact with the nest for a fast pickup; the floating egg tag already shows type and price. | C=Create a server-owned BasketOfferID with RouteID, NestIndex, EggType, stamped price, pool version, and expiry. Do not spend Money or roll a pet yet. | D=Offer enters the private Wind Basket without stopping the climb.
+28: A=5. Continue | B=Follow the upward reward trail toward remaining nests. | C=Collected nests resolve once and cannot reroll; total BasketOfferIDs cannot exceed Low 5 / Mid 3 / High 2. | D=Continue climbing, retry after a fall, or use the ground Homeward Gate.
+29: A=6. Crown Nest | B=Reach the visible summit landmark and complete the chosen route. | C=Mark RouteComplete, show the Wind Basket purchase panel, and enable the Homeward Gust. Crown Nest grants no extra egg or leaderboard bonus. | D=Player receives a clear climax and one purchase decision.
+30: A=7. Buy and return | B=At the Crown Nest—or the ground Homeward Gate after a fall/exit—select any or all collected offers and confirm once. | C=Validate BasketOfferIDs, Money, cap, and Egg Inventory; purchase atomically and roll each hidden ResultPetID server-side. | D=Purchased sealed eggs enter Egg Inventory; Homeward Gust returns the player to their own base.
+31: A=8. Hatch | B=Open purchased sealed eggs inside the player's own base. | C=Resolve each stored hidden ResultPetID once and route the pet to Base or Event Pet Inventory. | D=Pet becomes a normal owned, stealable SAP pet.
+33: A=3. Windy Event State
+34: A=Parameter | B=Rule | C=Notes
+35: A=Trigger | B=OnWeatherWaveStart(Windy) creates the Windnest Tree. | C=Windy is the only qualifying weather in v0.1.
+36: A=Tree growth | B=Show a short growth animation, then enable route entry. | C=Target 5–8 seconds; use static/revealed geometry if dynamic growth is too fragile.
+37: A=Active duration | B=300 seconds from captured EventStartTime. | C=UI always shows remaining time.
+38: A=Route entry cutoff | B=New route entry closes shortly before event end. | C=Provisional: 15 seconds; avoids starting an impossible final climb.
+39: A=Post-event | B=Stop route entry and new offer collection. Keep the ground Homeward Gate available for a provisional 60-second basket-purchase grace period; purchased sealed eggs remain hatchable at home. | C=Unpurchased BasketOfferIDs expire after the grace period with no charge; never delete or auto-hatch paid eggs.
+40: A=Re-entry | B=While Windy or the purchase grace period is active, restore the locked route, collected BasketOfferIDs, resolved NestIndexes, and purchased eggs; restart the player at the tree entrance. | C=No checkpoint position is restored and reconnecting cannot refresh offers.
+41: A=Duplicate wave | B=Do not create a second tree while a Windnest event state is active. | C=Resolve from Weather System state.
+42: A=Base protection | B=None. | C=Player remains exposed for the full climb and return trip.
+44: A=4. Branching Tree & Route Rules
+45: A=Route | B=Target player | C=Traversal | D=Egg offers per event run | E=Risk / reward
+46: A=Low Branch / Nhánh Thấp | B=New / low wallet | C=Broad roots and branches; basic jumps; mild gust telegraphs. Target 60–80 seconds. First nest in 10–12 seconds; later gaps 12–18 seconds. | D=Up to 5 | E=Highest access and most offer pickups; lowest egg value.
+47: A=Mid Branch / Nhánh Giữa | B=Mid | C=Narrower branches, longer gaps, moderate gust timing. Target 75–100 seconds. First nest in 15–20 seconds; later gaps 20–30 seconds. | D=Up to 3 | E=Balanced price, difficulty, and upper-rarity chance.
+48: A=High Branch / Nhánh Cao | B=Late / chase | C=Longest ascent, tighter landings, strongest telegraphed gusts. Target 90–120 seconds. First nest in 25–35 seconds; final offer near the summit. | D=Up to 2 | E=Fewest but highest-priced offers and best chase pool.
+49: A=Event run definition | B=One player's participation in one Windy TreeID. Falling and retrying do not refresh collected nests, BasketOfferIDs, or the 5/3/2 cap. | C=Prevents unlimited Low-offer farming during the 5-minute wave.
+50: A=Route lock | B=The first valid nest-offer collection locks the route for this event run. Before collecting, the player may leave and choose another route. | C=Prevents scouting or collecting all three route pools while keeping the entrance decision reversible.
+51: A=No checkpoints | B=Falling returns the player to the ground/tree entrance. No intermediate respawn point exists. | C=User lock; the event is short and collected value persists.
+52: A=Fall handling | B=Keep all collected BasketOfferIDs and purchased eggs. Uncollected nests remain available on the locked route; traversal position resets to the entrance. | C=No paid or collected-offer loss; no nest refresh.
+53: A=Nest ownership | B=Nest visuals may be shared, but BasketOfferIDs, collected state, purchase state, and egg inventory are private. | C=No FCFS, contribution rank, or winner-take-all reward.
+54: A=Player collision | B=Players should not body-block or push one another inside tree traversal volumes. | C=Requires capability confirmation; use collision suppression or wider geometry.
+55: A=Route readability | B=Use distinct color, height, icon, price, odds/pool, and offer-count signage for Low/Mid/High. | C=Do not communicate difficulty by color alone.
+56: A=Mobile and replay | B=Favor broad landing zones, predictable arcs, and telegraphed gusts. Prototype one fixed static layout in v0.1; later rotate 2–3 reusable obstacle modules per branch. | C=Avoid moving-platform precision and full procedural generation.
+58: A=4.1 Golden Tree Variant
+59: A=Parameter | B=Draft rule | C=Balance constraint
+60: A=Golden Tree chance | B=10% per Windy tree, rolled once server-side at event start. | C=Provisional; globally visible and identical for all players.
+61: A=Presentation | B=Golden leaves, warmer lighting, unique wind chime, server announcement, and clearly golden Crown Nest. | C=Must be readable on low graphics settings.
+62: A=Offer count | B=Unchanged at 5 / 3 / 2. | C=Golden Tree improves quality and climb feel, not volume.
+63: A=Price | B=Same stamped route prices as the normal tree. | C=Golden should feel lucky, not like a more expensive paywall.
+64: A=Pool improvement | B=Provisional: multiply upper-band draw weights by 1.5, then normalize within each egg pool. | C=Exact weights belong in Master Data and require simulation.
+65: A=EV ceiling | B=Golden egg EV uplift target ≤15% versus the matching normal egg. | C=Preserves rarity-axis primacy and faucet safety.
+66: A=Traversal and pet state | B=Add 2–3 Golden Wind Rings, bounce-leaf shortcuts, or an altered static module order; do not add a new pet attribute, Mutation, or Weather effect. | C=Golden must feel different during play while remaining mobile-safe; pet uses existing SAP state only.
+68: A=5. Wind Basket, Purchase & Home Hatch
+69: A=State | B=Rule | C=Failure / recovery
+70: A=Offer created | B=On a valid nest pickup, server stamps BasketOfferID, PlayerUUID, TreeID, RouteID, NestIndex, EggType, Price, PoolVersion, and Expiry. | C=Client cannot choose result, price, route, or NestIndex.
+71: A=Approach preview | B=Before pickup, show sealed egg art, possible pets/rarities, odds/pool, exact price, and remaining basket capacity. | C=Do not reveal the exact pet or open a full-screen purchase modal.
+72: A=Collect | B=Validate active TreeID, locked RouteID, reachable NestIndex, and route cap; add the offer to the Wind Basket. Spend 0 and roll no pet. | C=On failure, add nothing and consume nothing.
+73: A=Wind Basket | B=Temporary private offer list supports Low 5, Mid 3, or High 2 BasketOfferIDs. Collected offers cannot be replaced or rerolled within the same TreeID. | C=A player may collect the route cap, then purchase any or all.
+74: A=Purchase access | B=Open the same basket panel at the Crown Nest and ground Homeward Gate. A provisional 60-second grace period remains after Windy ends. | C=Unpurchased offers expire with no charge after grace.
+75: A=Purchase | B=Validate each selected BasketOfferID, total Money, cap, and Egg Inventory capacity; deduct and grant all selected eggs atomically. | C=On failure, charge 0 and keep valid offers when safe.
+76: A=Hidden result | B=Roll ResultPetID server-side only at successful purchase and store it hidden in the sealed egg. | C=Hatching, reconnecting, or config changes cannot reroll.
+77: A=Fall / death | B=Keep collected BasketOfferIDs and all purchased eggs; reset traversal to the entrance. | C=Never lose paid or collected-offer value.
+78: A=Weather end | B=Stop new collections; enable the ground basket-purchase grace period; keep purchased eggs hatchable. | C=No automatic purchase, reveal, or charge.
+79: A=Reconnect | B=Restore active/grace BasketOfferIDs and sealed eggs exactly once. | C=No duplicate offers, eggs, purchases, or pet grants.
+80: A=Home requirement | B=Open purchased sealed eggs only inside the player's own base/home hatch zone. | C=Creates the bring-it-home reveal and preserves base exposure.
+81: A=Hatch destination | B=If Base has space, place the revealed pet there; otherwise use Event Pet Inventory when valid. If both are full, keep the egg sealed. | C=Never discard, auto-sell, or silently replace a pet.
+82: A=Cancel / close | B=Player may close the basket purchase panel without buying; valid offers remain available until their server expiry. | C=Charge 0; closing cannot replace or reroll an offer.
+84: A=6. Egg Tiers & Economy Framework
+85: A=Route / Egg | B=Pool direction | C=Launch offer cap | D=Pricing intent | E=Pool safety
+86: A=Low / Sapling Egg | B=Common core; Rare upside; small Epic chase. | C=5 | D=Lowest ticket; affordable introduction. | E=No result below Common; top outcome weight capped by simulation.
+87: A=Mid / Canopy Egg | B=Rare/Epic core; Legendary upside. | C=3 | D=Meaningful Mid spend with visible odds. | E=Ratio-capped price window; avoid extreme price-span pools.
+88: A=High / Crown Egg | B=Epic/Legendary core; Mythic chase. | C=2 | D=Highest ticket; Late-player chase. | E=Mythic-equivalent band target ≤2%; Secret weights suppressed.
+89: A=Offer-count rule | B=5 / 3 / 2 is the launch target for both collected offers and maximum purchasable eggs because egg price rises with route height. | C=If a route price changes materially, re-audit count against route spend budget instead of increasing faucet volume.
+90: A=Price source | B=Dedicated Windnest Egg config; exact prices remain TBD until pools use current Mob purchase Price. | C=Do not price from passive income Value.
+91: A=Pool construction | B=Use contiguous or ratio-capped pet-price windows; target max/min price spread ≤25× inside one egg pool. | C=Avoid scam-shaped pools whose EV is driven by an unreachable top tail.
+92: A=EV target | B=Normal tree provisional EVRatio 1.08–1.12: EggEV / EggPrice. | C=Rewards weather timing, traversal, and base exposure without dominating normal acquisition.
+93: A=Outcome feel | B=Target at least 35–45% of normal-tree results worth the paid egg price or more for Low/Mid. | C=Validate under-14 sentiment; average EV alone is insufficient.
+94: A=No free egg | B=Collecting a nest stores a priced offer, not an owned egg. Money is charged only when the player confirms selected offers at the basket purchase panel. | C=The fast pickup recreates reward-trail momentum while the Money sink remains meaningful.
+95: A=No Rebirth hard gate | B=All routes are visible to all players; affordability and difficulty create soft segmentation. | C=Do not invalidate player choice.
+96: A=No pity | B=No pet-pool pity in v0.1. | C=Recurring faucet; Golden Tree is the occasional positive spike.
+97: A=Comparison gate | B=Compare pet value per active Windy minute against Fishing, Dig, Lucky Box, and Pet Coin → Mythic acquisition. | C=Do not ship an unexplained >2× efficiency advantage.
+99: A=7. UI / VFX
+100: A=Moment | B=Requirement
+101: A=Windy start | B=Wind cue, tree growth, event title, Golden announcement when applicable, and 5-minute timer.
+102: A=Route entrance | B=Three readable signs: difficulty, egg type, price, odds/pool, and maximum offers.
+103: A=Nest approach | B=Floating sealed egg art and exact price; compact odds/pool tooltip; fast collect prompt; remaining basket capacity such as 2/5.
+104: A=Wind Basket HUD | B=Small persistent counter and projected total price; no full-screen modal during traversal.
+105: A=Crown / ground purchase | B=One panel lists collected offers with exact individual and total prices, Select All / individual selection, capacity state, and one confirmation.
+106: A=Fall | B=Immediate ground return feedback; clarify that collected offers and purchased eggs are safe and nests do not refresh.
+107: A=Homeward Gust | B=At Crown Nest, route-complete banner and chime, then a readable wind launch/teleport to the player's own base.
+108: A=Hatch | B=One reveal animation per egg; pet name, rarity, and destination are readable.
+109: A=Event end | B=Tree fades/despawns; ground purchase grace remains visible; Hatch Eggs remains available at home.
+110: A=Golden Tree | B=Gold leaves, rings, light, chimes, and Crown Nest without hiding branch collision or route signage.
+112: A=8. Validation & Anti-cheat
+113: A=Check | B=Server rule | C=Failure result
+114: A=Weather / tree | B=Offer collection requires active matching TreeID and Windy collection phase. | C=Reject without adding an offer or charging.
+115: A=Route progression | B=NestIndex must be reachable in order on the locked route. | C=Reject teleport/spoof request.
+116: A=Route lock | B=First valid nest collection locks RouteID; later collection requests from another RouteID are invalid. | C=Reject without consuming a nest or offer.
+117: A=Offer ownership | B=BasketOfferID belongs to requesting PlayerUUID, matching TreeID, and is unused/unexpired. | C=Reject replay or cross-player purchase.
+118: A=Offer cap | B=Collected BasketOfferIDs and purchased eggs cannot exceed configured 5/3/2 for the event run. | C=Reject excess collection or purchase.
+119: A=Price integrity | B=Use server-stamped offer prices and current balance; ignore client price and total. | C=No negative balance or alternate price.
+120: A=Purchase transaction | B=Selected-offer validation, Money deduction, hidden-result writes, egg grants, and offer consumption are atomic. | C=Rollback fully on failure.
+121: A=Hatch transaction | B=Sealed egg consume, reveal, and inventory grant are atomic. | C=Keep egg sealed if destination write fails.
+122: A=Persistence | B=TreeID, locked RouteID, resolved NestIndexes, BasketOfferIDs, grace expiry, and purchased eggs save with unique transaction IDs. | C=Prevent reconnect refresh, rerolls, and duplication.
+123: A=Exposure | B=Tree, Crown Nest, Homeward Gate, and Gust scripts never call base protection or player invulnerability. | C=QA failure if climbing or purchasing creates a safe theft window.
+125: A=9. Beanstalk Fun Transfer Boundaries
+126: A=Fun driver | B=Transfer to Windnest | C=Explicit exclusion
+127: A=Shared spectacle | B=Automatic Windy tree growth, room announcement, and a visible landmark for all players. | C=No plant contribution meter or cooperative donation requirement.
+128: A=Upward reward trail | B=Private priced sealed-offer pickups provide fast feedback while climbing. | C=No free leaderboard-scaled reward orbs.
+129: A=Summit promise | B=Crown Nest, route-complete feedback, basket purchase, and Homeward Gust. | C=No contribution-gated portal, shop access, or summit bonus.
+130: A=Rare variation | B=10% Golden Tree changes FX, climb rhythm, and pool quality within the EV ceiling. | C=No top-contributor bonus or extra egg volume.
+131: A=Social presence | B=Up to six visible climbers with private offers and no body-blocking. | C=No FCFS nests, contribution ranking, or winner-take-all reward.
+132: A=Replay | B=Three wallet/skill branches; later rotate 2–3 static obstacle modules per branch. | C=No fragile procedural tree generation in v0.1.
+135: A=10. Pros, Cons & Largest Risk
+136: A=Aspect | B=Assessment | C=Mitigation / decision
+137: A=Pro | B=Fast nest pickups preserve parkour flow and reproduce the satisfying upward reward-trail rhythm. | C=Keep nest interaction at approximately one second; defer spending to one basket panel.
+138: A=Pro | B=Private baskets allow mixed New/Mid/Late players to share the spectacle without six-player competition. | C=All valuable state remains server-authoritative and per-player.
+139: A=Pro | B=Crown Nest gives the ascent a visible destination without adding a leaderboard or unequal bonus. | C=Place the final route offer near the summit; the Crown itself grants no extra egg.
+140: A=Con | B=Wind Basket and post-event grace add temporary persistence and UI complexity. | C=Prototype one route, two offers, fall recovery, and reconnect before building full content.
+141: A=Con | B=A fixed tree will become solved after repeated Windy waves. | C=Rotate a small set of static obstacle modules after v0.1 rather than building procedural geometry.
+142: A=Largest risk | B=If pickup opens a shop-like modal or takes too long, the event becomes a vertical store aisle instead of a playful climb. | C=No purchase modal at nests; track interaction time and abandon rate during gray-box playtests.
+143: A=11. Success Signals
+144: A=Signal | B=Provisional target | C=Purpose
+145: A=Event entry rate | B=≥50% of active players present at Windy start enter a branch. | C=Does the growth spectacle create immediate pull?
+146: A=Chosen-route completion | B=Low ≥70%; Mid 45–60%; High 25–40% after route selection. | C=Keeps difficulty differentiated without making no-checkpoint runs feel futile.
+147: A=Nest interaction time | B=Median ≤1.0 second; no full-screen purchase modal during traversal. | C=Protects movement flow.
+148: A=Basket decision time | B=Median ≤8 seconds from panel open to purchase or exit. | C=Prevents the summit from becoming menu downtime.
+149: A=First-fall retry rate | B=≥35% retry the locked branch once during the same Windy wave. | C=Checks whether preserved offers make failure feel fair.
+150: A=Room-size fairness | B=Offer access-rate difference between 1-player and 6-player rooms ≤5 percentage points. | C=Verifies private state and collision rules remove crowding advantage.
+151: A=Economy comparison | B=No unexplained >2× pet value per active minute versus Fishing, Dig, Lucky Box, or Pet Coin → Mythic. | C=Protects existing acquisition systems and rarity-axis primacy.

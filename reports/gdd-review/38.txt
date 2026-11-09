@@ -1,0 +1,74 @@
+SHEET Pet Passive
+1: A=0. Changelog
+2: A=Date | C=Description | I= 
+3: A=2026-07-20 00:00:00 | C=Initial design. Mutation converted from income multiplier to stacked base passive.
+4: A=2026-07-29 00:00:00 | C=Convert to Weather
+5: A=2026-07-29 00:00:00 | C=Weather restructured from effect tags (max 5) to fixed pet attribute with 4 slots.
+6: K= 
+7: A=1. Overview
+8: A=Every pet has 4 Instinct Slots. Each slot holds one effect or is empty. One effect type per pet, no duplicates. Effects give passive powers | H=            
+9: A=Mutation keeps its income multiplier role, exactly as live today. New items let players buy, lock, and keep exact weather effects. Three effect classes: | J= 
+10: A=Meter         | B=Account-wide | C=More pets with the effect = stronger (existing 2.0 meter design)
+11: A=Aura | B=Adjacent base slots | C=Positional | H= 
+12: A=Self | B=This pet only
+14: A=Pet
+15: A=├─ Rarity          (fixed)
+16: A=├─ Mutation        (income multiplier — unchanged)
+17: A=├─ Traits        (2 slots, each: effect or empty, lock flag)
+18: A=└─ Level / Size    (unchanged)
+20: A=2. Core Rules
+21: A=Rule Name | B=Rules
+22: A=Instinct keeps | B=MultiplierPrice (pet sale value), LvUpCostMultiplier — per effect, unchanged from Weather Effects config.
+23: A=don't count | B=Storage pets, Following pets. Favorite Slot
+24: A=Recalculate on | B=Pet placed / removed / stolen / sold / fused / moved, item used
+25: A=Acquisition | B=- Spawn roll
+- Charm item
+- Fusion transfer
+27: A=3. Passives Config
+28: A=Effect | B=Class | C=What it does | D=Cap | E=Weight | F=Effect at cap | G=Applies | H=Roll | I=Roll Weights
+29: A=Gatherer | B=Self | C=+ Dust every 120s | D=NO | E=400.0 | F=-- | G=online, in-room | H=Integer 1–3 | I=1 = 70%, 2 = 25%, 3 = 5%
+30: A=Lucky Hit | B=Metter | C=+% chance that a hit gives ×2 Dust | D=YES | E=340.0 | F=0.6 | G=passive (boss), own hits only | H=Float 0.75% – 2% | I=uniform
+31: A=Fortify | B=Metter | C=+ petcoin cost to unlock base | D=YES | E=250.0 | F=+20 Pet coin | G=passive | H=Integer 1–3 | I=1 = 70%, 2 = 25%, 3 = 5%
+32: A=Lockdown | B=Metter | C=+1s cost to lock time | D=NO | E=300.0 | F=-- | G=passive | H=Integer 1–3 | I=1 = 70%, 2 = 25%, 3 = 5%
+33: A=Prosper | B=Metter | C=+% Base income | D=NO | E=200.0 | F=-- | G=passive | H=Float 0.75% – 2% | I=uniform
+34: A=Pack Rat | B=Metter | C=+1 Storage | D=YES | E=10.0 | F=+10 Storage | G=passive | H=NO | I=NO
+35: A=Sparkplug | B=Aura | C=Each neighbor pet makes + Dust every 120s When Online | D=NO | E=70.0 | F=-- | G=online, in-room | H=Integer 1–3 | I=1 = 70%, 2 = 25%, 3 = 5%
+36: A=Radiant | B=Aura | C=Each neighbor pet earns +% income When Online | D=NO | E=50.0 | F=-- | G=online, in-room | H=Float 0.75% – 1% | I=uniform
+37: A=Heavy | B=Self | C=-% speed when carry | D=NO | E=400.0 | F=-- | G=online, in-room | H=Float 2% – 10% | I=uniform
+38: A=Fat | B=Self | C=+% income When Online | D=NO | F=-- | G=online, in-room | H=Float 1% – 5% | I=uniform
+39: A=Cheapskate | B=Self | C=This pet's own level-up cost −% | D=NO | F=-- | H=Float 2–6% | I=uniform
+40: A=Royal | B=Self | C=This pet's sell value +% | D=NO | H=Float 3–8% | I=uniform
+41: A=Loyal | B=Self | C=This pet's MutaGen use cost −% | D=NO | H=Float 3–10% | I=uniform
+42: A=Purebred | B=Self | C=This pet's Fusion money −% as input | D=NO | H=Float 3–8% | I=uniform
+44: A=Compensate | B=Self | C=If successfully stolen, owner receives Dust | D=NO | F=online, in-room
+46: A=Value Rolls: ONCE when the effect lands on the pet (spawn, charm success, fusion transfer keeps the original roll). Permanent, no reroll.
+47: A=Spawn Acquisition: Roll global TraitChance = 15%
+49: A=4. Instict Items (new)
+50: A=Weather Charm: Works like MutaGen
+51: A=Rule | B=Value
+52: A=Item line | B=One charm per effect × grade S / SS / SSS. Example: "Charm Gatherer S", "Charm Heavy SSS".
+53: A=Buy | B=Boss shard, in Rotation Shop
+54: A=Target check | B=Pet has a free weather slot (<5 effects) and does not already have this effect.
+55: A=Apply cost (money) | B=UseCost = BaseUseCostLv1 × LevelMultiplier^(PetLevel−1) — reuse the MutaGen table: LevelMultiplier = 1.04, BaseUseCostLv1 by rank group (25k Common normal → 20T Apex/Divine secret).
+56: A=Apply chance | B=FinalChance = BaseChanceByGrade × PetRarityMult × SecretMult — reuse MutaGen values: PetRarityMult COMMON 1.0 → APEX/DIVINE 0.2, SecretMult 55%, clamp MinChance 2% / MaxChance 75%. BaseChanceByGrade per grade: balance pass (MutaGen reference: SSS = 50%).
+57: A=On success | B=Effect added to the pet. Permanent, same as weather-tagged spawns.
+58: A=On fail | B=Charm consumed, money spent, no effect. Identical to MutaGen.
+59: A=Known property | B=Cost scales with level, so charm-early-then-level is cheaper — same as mutate-before-level. Accepted, consistent with MutaGen.
+61: A=5. Anchor Stone (new item)
+62: A=Rule | B=Value
+63: A=Effect | B=Locks one chosen effect on a pet. Locked effects always survive fusion (skip the transfer roll) and can't be dropped by Random-5 overflow.
+64: A=Limit | B=Max 2 locked effects per pet.
+65: A=Buy | B=Pet Coins. Consumed per lock. No apply chance — always works.
+66: A=Use | B=Boss Shard
+67: A=Steal / Copycat | B=The lock stays on the pet instance. Thief inherits it. STAT pet carries locks through Copycat.
+69: A=7. Prism Selector (new item — charm extraction)
+70: A=Delete a pet, keep one of its weather effects as a charm.
+71: A=Rule | B=Value
+72: A=Input | B=1 owned pet with at least 1 weather effect.
+73: A=Action | B=Player picks ONE effect from the pet. Pet is deleted (no sell value, no refund).
+74: A=Output | B=1 Weather Charm of the picked effect.
+75: A=Output grade | B=SSS
+76: A=Buy | B=Pet Coins. 
+77: A=Use | B=Boss Shard
+78: A=Why it exists | B=It is the only source of Prismatic / Vortex / Sequin charms (§5.1). Rare-weather pets become charm material — a real decision: keep the pet, fuse it, or break it.
+79: A=Exploit note | B=Cheap tagged Common → extract → charm a top pet. Self-limited: apply chance on Apex/Divine = base × 0.2 (≈10% for SSS-grade base 50%), plus the money UseCost at target level, plus the deleted pet. Verify vs. expected fusion cost in the balance pass anyway.

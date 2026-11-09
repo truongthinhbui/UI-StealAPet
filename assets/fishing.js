@@ -528,7 +528,7 @@
     });
   }
   const modes = Array.from(root.querySelectorAll('[data-fishing-mode]'));
-  function qteInstruction(){const r=window.GenConfig.rules,p=n=>n.toLocaleString('vi-VN',{maximumFractionDigits:2})+'%';return 'Bấm 3 lần để nhận cá. Xanh +'+p(r.green)+', vàng +'+p(r.gold)+', đỏ +'+p(r.red)+'. Tổng tối đa 100% · tối đa 1 Gen.';}
+  function qteInstruction(){const r=window.GenConfig.rules,p=n=>n.toLocaleString('vi-VN',{maximumFractionDigits:2})+'%';return 'Bấm 1 lần để nhận cá. Xanh '+p(r.green)+', vàng '+p(r.gold)+', đỏ '+p(r.red)+' nhận Gen · tối đa 1 Gen.';}
   const instructions = [
     'Hold to the next joint, then tap to break it. Hold again after breaking a joint to keep the bar from draining.',
     'Hold to pull toward Catch. Release to cool the line.',
@@ -820,7 +820,7 @@
       game.qteFeedbackUntil=game.age+(gold? .85 : hit? .45 : .65);
       if(hit){
         status.textContent=gold?'EXCELLENT!':'GOOD!';impactPunch(qteLuckChip,gold);
-        if(gold&&game.qteResults.length<3)luckMotes(qteHitPoint());impactPunch(status,gold);
+        if(gold&&game.qteResults.length<window.GenConfig.rules.taps)luckMotes(qteHitPoint());impactPunch(status,gold);
       }
       qtePips.forEach((pip, index) => {
         pip.classList.toggle('is-filled', index < game.qteResults.length);
@@ -848,13 +848,13 @@
         qteMotion?.cancel();
         qteMotion = root.querySelector('.qteCenter').animate([{scale:.97},{scale:gold?1.10:1.025,offset:.3},{scale:1}],{duration:gold?320:180,easing:'cubic-bezier(.16,1,.3,1)'});
       }
-      if (hit && game.qteResults.length < 3) {
+      if (hit && game.qteResults.length < window.GenConfig.rules.taps) {
         game.qteArcStart = (game.qteArcStart + .25 + Math.random() * .5) % 1;
         scene.style.setProperty('--ring-start', game.qteArcStart * 360 + 'deg');
       }
     }
     if (mode === 6) {
-      if(game.qteResults.length===3)finish(true);
+      if(game.qteResults.length===window.GenConfig.rules.taps)finish(true);
       return;
     }
     if ((mode === 3 && game.distance === 0) || (mode !== 3 && game.hits >= 5)) finish(true);
@@ -944,7 +944,7 @@
       case 6: {
         if(game.qteFeedbackUntil&&game.age>game.qteFeedbackUntil){delete scene.dataset.qteHit;status.textContent='';game.qteFeedbackUntil=0;}
         game.marker = (game.age / (game.qteSecondsPerRevolution * debugSettings.values[6] / 2.25)) % 1;
-        draw(game.qteResults.length + ' / 3 taps', 'Green: Good · Gold: Excellent · Red: Miss', game.qteResults.length / 3, 0, 0, .20, game.qteArcStart * 360);
+        draw(game.qteResults.length + ' / '+window.GenConfig.rules.taps+' tap', 'Green: Good · Gold: Excellent · Red: Miss', game.qteResults.length / window.GenConfig.rules.taps, 0, 0, .20, game.qteArcStart * 360);
         break;
       }
       case 3:
@@ -1057,7 +1057,7 @@
         if(mode===2)game.combo=3;
         if(mode===3){game.distance=0;title.textContent='0 m';scene.style.setProperty('--distance-left','0%');}
         if(mode===4){game.progress=1;title.textContent='100% caught';catchPercent.textContent='100%';scene.style.setProperty('--catch-progress','100%');}
-        if(mode===6){game.hits=3;game.mutationPoints=window.GenConfig.rules.green*3;game.qteResults=['green','green','green'];qtePips.forEach(pip=>{pip.classList.add('is-filled');pip.dataset.result='green';});}
+        if(mode===6){game.hits=1;game.mutationPoints=window.GenConfig.rules.green;game.qteResults=['green'];qtePips.forEach(pip=>{pip.classList.add('is-filled');pip.dataset.result='green';});}
       }
       finish(action==='win',action==='lose'?'DEBUG · FISH ESCAPED':undefined);
     }

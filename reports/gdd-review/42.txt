@@ -1,0 +1,19 @@
+SHEET Tooltips
+1: A=ID | B=Item Type | C=Name | D=Description | E=Content | F=Cách nhận | G=ID | H=How to obtain | I=Column 1
+2: A=int | B=int | C=string | D=string | G=ID | H=String
+3: A=1.0 | B=1.0 | C=HUD_REWARD_TITLE_PET | D=HUD_REWARD_DETAIL_PET | E=[Rarity] Pet name:
+- Price
+- Value | G=1 | H=HUD_OBTAIN_DAILY_REWARD
+4: A=2.0 | B=3.0 | C=HUD_REWARD_TITLE_PET_COIN | D=HUD_REWARD_DETAIL_PET_COIN | E=[Pet Coin]
+Can be use in Pet Shop to buy various items | F=Obtain by playing the game | G=2 | H=HUD_OBTAIN_GIFT_CODE
+5: A=3.0 | B=4.0 | C=HUD_REWARD_TITLE_RANDOM_PET | D=HUD_REWARD_DETAIL_RANDOM_PET | E=Receive a random [Rarity] Pet | G=3 | H=HUD_OBTAIN_GIFT_EVENT
+6: A=4.0 | B=5.0 | C=HUD_REWARD_TITLE_MONEY_TIME | D=HUD_REWARD_DETAIL_MONEY_TIME | E=Receive [Amount] of Pet Money | G=4 | H=HUD_OBTAIN_MONEY_PET
+7: A=5.0 | B=2.0 | C=HUD_TITLE_MONEY | D=HUD_REWARD_DETAIL_MONEY | E=[Pet Money]
+Can be use to buy new pets, fusion and rebirth | F=Obtain from pets | G=6 | H=HUD_OBTAIN_INCREASE_MINUTE
+8: A=6.0 | B=6.0 | C=HUD_TITLE_DUST | D=HUD_REWARD_DETAIL_DUST | E=[Dust]
+Can be use in fusion to increase chance of getting secret | F=Obtain from fusion
+20: R=1.0 | S=Pet
+21: R=2.0 | S=Money
+22: R=3.0 | S=Pet Coin
+23: R=4.0 | S=RandomPet
+24: R=5.0 | S=MoneyTime

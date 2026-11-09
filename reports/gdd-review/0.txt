@@ -1,0 +1,42 @@
+SHEET Manual
+1: A=Config Parameter
+2: B=How to use  | C=Input in corresponding sheet as explain in this fileand download CSV
+5: B=Sheet | C=Global config
+6: B=Column Name | C=Explanation | D=Datatype
+7: B=MobSpawnInterval | C=Cooldown between each mob spawn | D=int (Miliseconds)
+8: B=PlayerMoveSpeed | C=Player movement speed in normal condition (relative to Free Fire default) | D=float 
+9: B=PlayerStealSpeed | C=Player movement speed while stealing a mob | D=float 
+10: B=PlayerHitInvulnerableTime | C=Duration of invulnerability after being hit (cannot be hit again) | D=int (Miliseconds)
+13: B=Sheet | C=Mob
+14: B=Column Name | C=Explanation | D=Datatype
+15: B=ID | C=Auto-increment ID, do not change | D=int
+16: B=ModelKey | C=Prefab name for mob model. Separate from ID since filenames can’t start with numbers (avoid changing if possible). | D=string
+17: B=Name | C=Display name of the mob | D=string
+18: B=Rarity | C=Mob rarity: COMMON, RARE, EPIC, MYTHIC, LEGENDARY | D=string
+19: B=Value | C=Amount of money the mob generates per second | D=Amount of money the mob generates per second
+20: B=Price | C=Purchase price of the mob (selling returns half) | D=string
+21: B=Weight | C=Weight for random spawn generator (higher number = higher spawn chance) | D=float
+24: B=Sheet | C=Mutation
+25: B=Column Name | C=Explanation | D=Datatype
+26: B=ID | C=Auto-increment ID, do not change | D=int
+27: B=Name | C=Display name of the mutation | D=string
+28: B=MaterialKey | C=Material name for mutation effect | D=string
+29: B=EffectKey | C=Prefab name for mutation effect | D=string
+30: B=Multiplier | C=Money increase multiplier when mutation is applied | D=string
+31: B=Weight | C=Weight for random spawn (higher = higher chance) | D=float
+34: B=Sheet | C=Mutation
+35: B=Column Name | C=Explanation | D=Datatype
+36: B=ID | C=Auto-increment ID, do not change | D=int
+37: B=BaseLockTime | C=Total base lock time, in seconds. | D=int
+38: B=StartingMoney | C=The amount of starting money when rebrith | D=string
+39: B=MoneyMultiplier | C=The amount of money multiplier
+40: B=BaseLevel | C=Base level equals MobAmount/ 6. | D=int
+41: B=MobAmount | C=The max amount of the base can hold. Note: Maximum of all level is 18 | D=int
+42: B=NextLevelMoney | C=Required cash for next level up. | D=string
+43: B=NextLevelMobList | C=Required mobs for next level up | D=string
+45: C=Color | D=Color code
+46: B=COMMON | C=Green | D=#8CFF91
+47: B=RARE | C=Blue | D=#4CC8FE
+48: B=EPIC | C=Purple | D=#EA70FF
+49: B=LEGENDARY | C=Orange | D=#FED868
+50: B=MYTHIC | C=Red | D=#FF6F6F

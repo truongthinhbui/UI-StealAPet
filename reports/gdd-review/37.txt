@@ -1,0 +1,651 @@
+SHEET Fusion 2.0
+1: A=0. Changelog
+2: A=Date | C=Description | I= 
+3: A=2025-12-05 00:00:00 | C=Initial Design
+4: A=2025-12-25 00:00:00 | C=Balancing mutation transfer & add fusion rule for secret + normal (Section 5 & 7)
+5: A=2026-02-27 00:00:00 | C=Update balancing  + clean up
+6: K= 
+7: A=1. Overview
+8: A=Fusion System is a semi-deterministic mechanic that allows players to combine any two pets to create a new pet. | H=            
+9: A=Core Logic | B=A + B = C via 2-step roll
+1. Secret Check 
+2. If Secret fails → Normal Result: pet C AND/OR Dust | J= 
+10: A=Goal | B=Provide deterministic control for progression (Rank Up) while maintaining a high-stakes gambling loop via visible "Energy". | H= 
+11: M= 
+12: A=1. Fusion Process
+13: A=Step | C=Description | O= 
+14: A=1. Select Base Pet (Pet 1) | C=Interact with one pet, select Fusion button, this pet will be displayed as the primary pet
+Visual: fusion metter fills based on Pet 1's stats.
+15: A=2. Select Material Pet (Pet 2) | C=select a secondary pet
+Visual: fusion metter fills further. If Meter >100, UI show guaranteed on secret
+16: A=3. Confirm Fusion | C=Display fusion cost, duration, and rate breakdown.
+-> click Fusion.
+17: A=4. Fusion Cost | C=Cost = MAX(Cost(Pet1), Cost(Pet2)) × 2
+18: A=5. Hatch Duration | C=Hatch Duration = MAX(Rarity1, Rarity2) × 5 sec
+19: A=6. Start Fusion | C=Pet 1 transforms into an Egg, Pet 2 disappears.
+20: A=7. Egg Phase | C=Egg cannot be stolen, sold, or interacted with until hatch time ends.
+21: A=8. Hatch Interaction | C=After countdown, player taps the egg to reveal result UI.
+22: A=9. Select Pet Result | C=Display a UI with 3 pets, allowing the player to select 1 of the 3: Pet1, Pet2, or the fusion result.
+If players select pet1 or pet2 instead of the result, they need to pay money (pet coin = rarity * 10)
+23: H= 
+24: A=2. Universal Rules
+25: A=Rule Name | B=Rules
+26: A=Secret Roll | B=EVERY fusion triggers a background roll for a Secret Pet.
+Success % = Base Rate (2%) + Dust Bonus
+27: A=Dust | B=Players can add Dust to any fusion to increase this percentage.
+28: A=Secret Pool Selection | B=If the Secret Roll succeeds, the result is pulled from the Secret Pool matching the MIN(Rarity) of the input pets .
+29: A=Global Cost
+31: A=3. Fusion Rules
+32: A=Used when combining two standard pets.
+33: A=When Input has a Secret Pet: use rule #4
+34: A=Priority:
+35: A=1.0 | B=Secret Pet A + Secret Pet A
+36: A=2.0 | B=Same pet with normal mutation
+37: A=3.0 | B=Secret Pet A + Any Pet with same rarity
+38: A=4.0 | B=Secret Pet A + Any Pet with different rarity
+39: A=5.0 | B=Max Rank Pet (parade) + Fuel Pet
+40: A=6.0 | B=Base Pet (Higher Rank) + Fuel Pet (Lower Rank).
+42: A=Rank+1 Chance: R_UP = 100/(1+1.05(abs(Rank PetA - Rank PetB))
+43: A=Rule  | B=Input: | D=Standard Result | H=Secret Result | I=Dust
+44: A=1.0 | B=Base Pet (Higher Rank) + Fuel Pet (Lower Rank). | D=[1-R_UP]
+- RA = Rounddown((Rank Pet A + Rank Pet B)/2) + 1
+- From RA; look for previous possible rank number if unavailable
+- Skip Secret Pet
+- Example: Shrimp (Rank 9) + Chick (Rank 1) → Goat (Rank 6). | F=[R_UP] 
+- RB = max(Rank PetA, Rank PetB) +1:
+- From RB; look for previous possible rank if unavailable
+- Skip Secret Pet
+- Example: Shrimp (Rank 9) + Chick → Crab (Rank 11) (Skips Rank 10 Mole). | H=Entry-level Secret of the lowest rarity input | I=Follow Dust Table
+45: A=2.0 | B=Same pet (Pet A + Pet A) | D=Pet A (Guaranteed New Mutation) .
+46: A=3.0 | B=Max Rank Pet (parade) + Fuel Pet | D=[1-R_UP]
+- RA = max(Rank PetA, Rank PetB)
+- From RA; look for previous possible rank number if unavailable
+- Skip Secret Pet | F=[R_UP] 
+- RB = Rounddown((Rank Pet A + Rank Pet B)/2) + 1
+- From RB; look for previous possible rank if unavailable
+- Skip Secret Pet
+47: A=4.0 | B=Secret Pet A + Any Pet with different rarity | D=[1 - R_UP] 
+- Secret Pet A | F=[R_UP]
+- RB = Rounddown((Rank Pet A + Rank Pet B)/2) + 1
+- From RB; look for previous possible rank if unavailable
+- Skip Secret Pet
+- Example: Shrimp (Rank 9) + Chick (Rank 1) → Goat (Rank 6).
+48: A=5.0 | B=Secret Pet A + Any Pet with same rarity | D=[1 - R_UP] 
+- Secret Pet A | F=[R_UP]
+- RB = Rounddown((Rank Pet A + Rank Pet B)/2) + 1
+- From RB; look for previous possible rank if unavailable
+- Skip Secret Pet
+- Example: Shrimp (Rank 9) + Chick (Rank 1) → Goat (Rank 6). | H=Next Rank Secret
+49: A=6.0 | B=Secret Pet A + Secret Pet A | D=[1 - R_UP] 
+- Secret Pet A | F=[R_UP]
+- Secret Pet A | H=Next Rank Secret
+51: A=4. Secret Probability & Dust
+52: A=Secret_Rate = 2% + Dust
+53: A=Dust shifts the internal probability of the Result Pool toward the highest-rank outcome.
+55: A=5. Dust Table
+56: A=The Dust Cap (for 100% Luck) is determined by highest output rarity. 
+57: A=Example
+58: A=- Input | B=Snowweasel (Epic).
+59: A=- Output  | B=Kiwi (Legendary).
+61: A=Dust cap for S+0 each rarity: | C=See Mob data
+63: A=Dust value for each rarity
+64: A=Rarity | B=Yield Value
+65: A=COMMON | B=1.0
+66: A=RARE | B=2.0
+67: A=EPIC | B=4.0
+68: A=LEGENDARY | B=10.0
+69: A=MYTHIC | B=50.0
+70: A=DIVINE | B=100.0
+71: A=LIMITED | B=150.0
+73: A=Dust = ROUND(sqr(Pet A Dust * Pet B Dust))
+74: A=Yield Table
+75: A=Rarity | B=Rarity | C=Yield
+76: A=COMMON | B=COMMON | C==ROUND(SQRT(
+    SWITCH(A76, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B76, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+77: A=COMMON | B=RARE | C==ROUND(SQRT(
+SWITCH(A77, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B77, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+78: A=COMMON | B=EPIC | C==ROUND(SQRT(
+SWITCH(A78, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B78, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+79: A=COMMON | B=LEGENDARY | C==ROUND(SQRT(
+SWITCH(A79, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B79, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+80: A=COMMON | B=MYTHIC | C==ROUND(SQRT(
+SWITCH(A80, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B80, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+81: A=COMMON | B=DIVINE | C==ROUND(SQRT(
+SWITCH(A81, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B81, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+82: A=COMMON | B=LIMITED | C==ROUND(SQRT(
+SWITCH(A82, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B82, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+83: A=RARE | B=RARE | C==ROUND(SQRT(
+SWITCH(A83, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B83, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+84: A=RARE | B=EPIC | C==ROUND(SQRT(
+SWITCH(A84, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B84, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+85: A=RARE | B=LEGENDARY | C==ROUND(SQRT(
+SWITCH(A85, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B85, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+86: A=RARE | B=MYTHIC | C==ROUND(SQRT(
+SWITCH(A86, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B86, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+87: A=RARE | B=DIVINE | C==ROUND(SQRT(
+SWITCH(A87, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B87, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+88: A=RARE | B=LIMITED | C==ROUND(SQRT(
+SWITCH(A88, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B88, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+89: A=EPIC | B=EPIC | C==ROUND(SQRT(
+SWITCH(A89, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B89, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+90: A=EPIC | B=LEGENDARY | C==ROUND(SQRT(
+SWITCH(A90, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B90, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+91: A=EPIC | B=MYTHIC | C==ROUND(SQRT(
+SWITCH(A91, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B91, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+92: A=EPIC | B=DIVINE | C==ROUND(SQRT(
+SWITCH(A92, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B92, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+93: A=EPIC | B=LIMITED | C==ROUND(SQRT(
+SWITCH(A93, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B93, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+94: A=LEGENDARY | B=LEGENDARY | C==ROUND(SQRT(
+SWITCH(A94, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B94, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+95: A=LEGENDARY | B=MYTHIC | C==ROUND(SQRT(
+SWITCH(A95, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B95, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+96: A=LEGENDARY | B=DIVINE | C==ROUND(SQRT(
+SWITCH(A96, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B96, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+97: A=LEGENDARY | B=LIMITED | C==ROUND(SQRT(
+SWITCH(A97, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B97, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+98: A=MYTHIC | B=MYTHIC | C==ROUND(SQRT(
+SWITCH(A98, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B98, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+99: A=MYTHIC | B=DIVINE | C==ROUND(SQRT(
+SWITCH(A99, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B99, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+100: A=MYTHIC | B=LIMITED | C==ROUND(SQRT(
+SWITCH(A100, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B100, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+101: A=DIVINE | B=DIVINE | C==ROUND(SQRT(
+SWITCH(A101, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B101, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+102: A=DIVINE | B=LIMITED | C==ROUND(SQRT(
+SWITCH(A102, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B102, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+103: A=LIMITED | B=LIMITED | C==ROUND(SQRT(
+SWITCH(A103, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150) * SWITCH(B103, "COMMON",1, "RARE",2, "EPIC",4, "LEGENDARY",10, "MYTHIC",50, "DIVINE",100, "LIMITED",150)
+), 0)
+105: A=Prediction play time for 100% Mythic | C=Ignore Pet Money time
+106: A=Fodder Rarity | B=Require fodder | C=Total Hatch Time (Minutes) | D=Avg Spawn time (minute) | E=Avg wait time for spawn (Minutes) | F=Est Total Play Time (Hour) To get Secret+0 | G=Est Total Play Time (Hour) To get Secret+1 | H=Est Total Play Time (Hour) To get Secret+2 | I=Est Total Play Time (Hour) To get Secret+3 | J=Est Total Play Time (Hour) To get Secret+4 | K=Est Total Play Time (Hour) To get Secret+5
+107: A=COMMON | B==roundup(#REF!/B65,0) | C==roundup(B107*5/60,3) | D=0.275 | E==D107*B107 | F==roundup((C107+E107)/60,3) | G==F107+F179 | H==G107+F187 | I==H107+F195 | J==I107+F203 | K==J107+F211
+108: A=RARE | B==roundup(#REF!/B66,0) | C==roundup(B108*5/60,3) | D=0.354 | E==D108*B108 | F==roundup((C108+E108)/60,3) | G==F108+F180 | H==G108+F188 | I==H108+F196 | J==I108+F204 | K==J108+F212
+109: A=EPIC | B==roundup(#REF!/B67,0) | C==roundup(B109*5/60,3) | D=0.431 | E==D109*B109 | F==roundup((C109+E109)/60,3) | G==F109+F181 | H==G109+F189 | I==H109+F197 | J==I109+F205 | K==J109+F213
+110: A=LEGENDARY | B==roundup(#REF!/B68,0) | C==roundup(B110*5/60,3) | D=1.102 | E==D110*B110 | F==roundup((C110+E110)/60,3) | G==F110+F182 | H==G110+F190 | I==H110+F198 | J==I110+F206 | K==J110+F214
+111: A=MYTHIC | B==roundup(#REF!/B69,0) | C==roundup(B111*5/60,3) | D=4.901 | E==D111*B111 | F==roundup((C111+E111)/60,3) | G==F111+F183 | H==G111+F191 | I==H111+F199 | J==I111+F207 | K==J111+F215 | M==19*3600
+113: A=Prediction play time for 100% Legendary | C=Ignore Pet Money time
+114: A=Fodder Rarity | B=Require fodder | C=Total Hatch Time (Minutes) | D=Avg Spawn time (minute) | E=Avg wait time for spawn (Minutes) | F=Est Total Play Time (Hour)
+115: A=COMMON | B==roundup(#REF!/B65,0) | C==roundup(B115*5/60,3) | D=0.275 | E==D115*B115 | F==roundup((C115+E115+G115)/60,3)
+116: A=RARE | B==roundup(#REF!/B66,0) | C==roundup(B116*5/60,3) | D=0.354 | E==D116*B116 | F==roundup((C116+E116+G116)/60,3)
+117: A=EPIC | B==roundup(#REF!/B67,0) | C==roundup(B117*5/60,3) | D=0.431 | E==D117*B117 | F==roundup((C117+E117+G117)/60,3)
+118: A=LEGENDARY | B==roundup(#REF!/B68,0) | C==roundup(B118*5/60,3) | D=1.102 | E==D118*B118 | F==roundup((C118+E118+G118)/60,3)
+119: A=MYTHIC | B==roundup(#REF!/B69,0) | C==roundup(B119*5/60,3) | D=4.901 | E==D119*B119 | F==roundup((C119+E119+G119)/60,3)
+121: A=Prediction play time for 100% Epic | C=Ignore Pet Money time
+122: A=Fodder Rarity | B=Require fodder | C=Total Hatch Time (Minutes) | D=Avg Spawn time (minute) | E=Avg wait time for spawn (Minutes) | F=Est Total Play Time (Hour)
+123: A=COMMON | B==roundup(#REF!/B65,0) | C==roundup(B123*5/60,3) | D=0.275 | E==D123*B123 | F==roundup((C123+E123+G123)/60,3)
+124: A=RARE | B==roundup(#REF!/B66,0) | C==roundup(B124*5/60,3) | D=0.354 | E==D124*B124 | F==roundup((C124+E124+G124)/60,3)
+125: A=EPIC | B==roundup(#REF!/B67,0) | C==roundup(B125*5/60,3) | D=0.431 | E==D125*B125 | F==roundup((C125+E125+G125)/60,3)
+126: A=LEGENDARY | B==roundup(#REF!/B68,0) | C==roundup(B126*5/60,3) | D=1.102 | E==D126*B126 | F==roundup((C126+E126+G126)/60,3)
+127: A=MYTHIC | B==roundup(#REF!/B69,0) | C==roundup(B127*5/60,3) | D=4.901 | E==D127*B127 | F==roundup((C127+E127+G127)/60,3)
+129: A=Prediction play time for 100% Rare | C=Ignore Pet Money time
+130: A=Fodder Rarity | B=Require fodder | C=Total Hatch Time (Minutes) | D=Avg Spawn time (minute) | E=Avg wait time for spawn (Minutes) | F=Est Total Play Time (Hour)
+131: A=COMMON | B==roundup(#REF!/B65,0) | C==roundup(B131*5/60,3) | D=0.275 | E==D131*B131 | F==roundup((C131+E131+G131)/60,3)
+132: A=RARE | B==roundup(#REF!/B66,0) | C==roundup(B132*5/60,3) | D=0.354 | E==D132*B132 | F==roundup((C132+E132+G132)/60,3)
+133: A=EPIC | B==roundup(#REF!/B67,0) | C==roundup(B133*5/60,3) | D=0.431 | E==D133*B133 | F==roundup((C133+E133+G133)/60,3)
+134: A=LEGENDARY | B==roundup(#REF!/B68,0) | C==roundup(B134*5/60,3) | D=1.102 | E==D134*B134 | F==roundup((C134+E134+G134)/60,3)
+135: A=MYTHIC | B==roundup(#REF!/B69,0) | C==roundup(B135*5/60,3) | D=4.901 | E==D135*B135 | F==roundup((C135+E135+G135)/60,3)
+137: A=Prediction play time for 100% Common | C=Ignore Pet Money time
+138: A=Fodder Rarity | B=Require fodder | C=Total Hatch Time (Minutes) | D=Avg Spawn time (minute) | E=Avg wait time for spawn (Minutes) | F=Est Total Play Time (Hour)
+139: A=COMMON | B==roundup(#REF!/B65,0) | C==roundup(B139*5/60,3) | D=0.275 | E==D139*B139 | F==roundup((C139+E139+G139)/60,3)
+140: A=RARE | B==roundup(#REF!/B66,0) | C==roundup(B140*5/60,3) | D=0.354 | E==D140*B140 | F==roundup((C140+E140+G140)/60,3)
+141: A=EPIC | B==roundup(#REF!/B67,0) | C==roundup(B141*5/60,3) | D=0.431 | E==D141*B141 | F==roundup((C141+E141+G141)/60,3)
+142: A=LEGENDARY | B==roundup(#REF!/B68,0) | C==roundup(B142*5/60,3) | D=1.102 | E==D142*B142 | F==roundup((C142+E142+G142)/60,3)
+143: A=MYTHIC | B==roundup(#REF!/B69,0) | C==roundup(B143*5/60,3) | D=4.901 | E==D143*B143 | F==roundup((C143+E143+G143)/60,3)
+145: A=6. Secret Pool System
+146: A=Logic:
+147: A=Players must first acquire the "Base Secret" before they can attempt to evolve it into the "Advanced Secret."
+148: A=The resulting pet is randomly selected from a Secret Pool, which depends on the minimum rarity between the two fused pets.
+150: A=Pool A: The Base Hunt
+151: A=Triggered when Input A is a Standard Pet AND the Secret Roll (2% + Dust) succeeds.
+152: A=Goal | B=Acquire the entry-level Secret for that Tier.
+153: A=Pool Composition:
+154: A=Rarity | B=Pet
+155: A=COMMON | B=MOLE
+156: A=RARE | B=SQUID
+157: A=EPIC | B=FENNECFOX
+158: A=LEGENDARY | B=KIWI
+159: A=MYTHIC | B=SNOWMAN
+160: A=Dust Logic: | B=Dust increases the Secret_Rate
+162: A=Pool B: The Evolution
+163: A=Triggered when Input A is ALREADY a Secret Pet.
+164: A=Goal | B=Evolve an existing Secret into the next Rank.
+165: A=Pool Composition:
+166: A=Item | B=Rate
+167: A=Input Secret | B=1 - Secret_Rate 
+168: A=Next Secret Rank | B=Secret_Rate 
+169: A=Dust Logic: | B=Dust increases the probability of Item 2 | D=Constant | E=1.15
+170: A=Rarity | B=Dust Cap S+0 | C=Dust Cap S+1 | D=Dust Cap S+2 | E=Dust Cap S+3 | F=Dust Cap S+4 | G=Dust Cap S+5
+171: A=COMMON | B=200.0 | C==RoundUP(B171*$E$169,-2) | D==RoundUP(C171*$E$169,-2) | E==RoundUP(D171*$E$169,-2) | F==RoundUP(E171*$E$169,-2) | G==RoundUP(F171*$E$169,-2)
+172: A=RARE | B=500.0 | C==RoundUP(B172*$E$169,-2) | D==RoundUP(C172*$E$169,-2) | E==RoundUP(D172*$E$169,-2) | F==RoundUP(E172*$E$169,-2) | G==RoundUP(F172*$E$169,-2)
+173: A=EPIC | B=750.0 | C==RoundUP(B173*$E$169,-2) | D==RoundUP(C173*$E$169,-2) | E==RoundUP(D173*$E$169,-2) | F==RoundUP(E173*$E$169,-2) | G==RoundUP(F173*$E$169,-2)
+174: A=LEGENDARY | B=900.0 | C==RoundUP(B174*$E$169,-2) | D==RoundUP(C174*$E$169,-2) | E==RoundUP(D174*$E$169,-2) | F==RoundUP(E174*$E$169,-2) | G==RoundUP(F174*$E$169,-2)
+175: A=MYTHIC | B=1200.0 | C==RoundUP(B175*$E$169,-2) | D==RoundUP(C175*$E$169,-2) | E==RoundUP(D175*$E$169,-2) | F==RoundUP(E175*$E$169,-2) | G==RoundUP(F175*$E$169,-2)
+177: A=Prediction play time for 100% Mythic +1 | C=Ignore Pet Money time
+178: A=Fodder Rarity | B=Require fodder | C=Total Hatch Time (Minutes) | D=Avg Spawn time (minute) | E=Avg wait time for spawn (Minutes) | F=Est Total Play Time (Hour) To get Secret+1
+179: A=COMMON | B==roundup($C$175/B65,0) | C==roundup(B179*5/60,3) | D=0.275 | E==D179*B179 | F==roundup((C179+E179)/60,3)
+180: A=RARE | B==roundup($C$175/B66,0) | C==roundup(B180*5/60,3) | D=0.354 | E==D180*B180 | F==roundup((C180+E180)/60,3)
+181: A=EPIC | B==roundup($C$175/B67,0) | C==roundup(B181*5/60,3) | D=0.431 | E==D181*B181 | F==roundup((C181+E181)/60,3)
+182: A=LEGENDARY | B==roundup($C$175/B68,0) | C==roundup(B182*5/60,3) | D=1.102 | E==D182*B182 | F==roundup((C182+E182)/60,3)
+183: A=MYTHIC | B==roundup($C$175/B69,0) | C==roundup(B183*5/60,3) | D=4.901 | E==D183*B183 | F==roundup((C183+E183)/60,3)
+185: A=Prediction play time for 100% Mythic +2 | C=Ignore Pet Money time
+186: A=Fodder Rarity | B=Require fodder | C=Total Hatch Time (Minutes) | D=Avg Spawn time (minute) | E=Avg wait time for spawn (Minutes) | F=Est Total Play Time (Hour) To get Secret+2
+187: A=COMMON | B==roundup($D$175/B65,0) | C==roundup(B187*5/60,3) | D=0.275 | E==D187*B187 | F==roundup((C187+E187)/60,3)
+188: A=RARE | B==roundup($D$175/B66,0) | C==roundup(B188*5/60,3) | D=0.354 | E==D188*B188 | F==roundup((C188+E188)/60,3)
+189: A=EPIC | B==roundup($D$175/B67,0) | C==roundup(B189*5/60,3) | D=0.431 | E==D189*B189 | F==roundup((C189+E189)/60,3)
+190: A=LEGENDARY | B==roundup($D$175/B68,0) | C==roundup(B190*5/60,3) | D=1.102 | E==D190*B190 | F==roundup((C190+E190)/60,3)
+191: A=MYTHIC | B==roundup($D$175/B69,0) | C==roundup(B191*5/60,3) | D=4.901 | E==D191*B191 | F==roundup((C191+E191)/60,3)
+193: A=Prediction play time for 100% Mythic +3 | C=Ignore Pet Money time
+194: A=Fodder Rarity | B=Require fodder | C=Total Hatch Time (Minutes) | D=Avg Spawn time (minute) | E=Avg wait time for spawn (Minutes) | F=Est Total Play Time (Hour) To get Secret+3
+195: A=COMMON | B==roundup($E$175/B65,0) | C==roundup(B195*5/60,3) | D=0.275 | E==D195*B195 | F==roundup((C195+E195)/60,3)
+196: A=RARE | B==roundup($E$175/B66,0) | C==roundup(B196*5/60,3) | D=0.354 | E==D196*B196 | F==roundup((C196+E196)/60,3)
+197: A=EPIC | B==roundup($E$175/B67,0) | C==roundup(B197*5/60,3) | D=0.431 | E==D197*B197 | F==roundup((C197+E197)/60,3)
+198: A=LEGENDARY | B==roundup($E$175/B68,0) | C==roundup(B198*5/60,3) | D=1.102 | E==D198*B198 | F==roundup((C198+E198)/60,3)
+199: A=MYTHIC | B==roundup($E$175/B69,0) | C==roundup(B199*5/60,3) | D=4.901 | E==D199*B199 | F==roundup((C199+E199)/60,3)
+201: A=Prediction play time for 100% Mythic +4 | C=Ignore Pet Money time
+202: A=Fodder Rarity | B=Require fodder | C=Total Hatch Time (Minutes) | D=Avg Spawn time (minute) | E=Avg wait time for spawn (Minutes) | F=Est Total Play Time (Hour) To get Secret+4
+203: A=COMMON | B==roundup($F$175/B65,0) | C==roundup(B203*5/60,3) | D=0.275 | E==D203*B203 | F==roundup((C203+E203)/60,3)
+204: A=RARE | B==roundup($F$175/B66,0) | C==roundup(B204*5/60,3) | D=0.354 | E==D204*B204 | F==roundup((C204+E204)/60,3)
+205: A=EPIC | B==roundup($F$175/B67,0) | C==roundup(B205*5/60,3) | D=0.431 | E==D205*B205 | F==roundup((C205+E205)/60,3)
+206: A=LEGENDARY | B==roundup($F$175/B68,0) | C==roundup(B206*5/60,3) | D=1.102 | E==D206*B206 | F==roundup((C206+E206)/60,3)
+207: A=MYTHIC | B==roundup($F$175/B69,0) | C==roundup(B207*5/60,3) | D=4.901 | E==D207*B207 | F==roundup((C207+E207)/60,3)
+209: A=Prediction play time for 100% Mythic +5 | C=Ignore Pet Money time
+210: A=Fodder Rarity | B=Require fodder | C=Total Hatch Time (Minutes) | D=Avg Spawn time (minute) | E=Avg wait time for spawn (Minutes) | F=Est Total Play Time (Hour) To get Secret+5
+211: A=COMMON | B==roundup($G$175/B65,0) | C==roundup(B211*5/60,3) | D=0.275 | E==D211*B211 | F==roundup((C211+E211)/60,3)
+212: A=RARE | B==roundup($G$175/B66,0) | C==roundup(B212*5/60,3) | D=0.354 | E==D212*B212 | F==roundup((C212+E212)/60,3)
+213: A=EPIC | B==roundup($G$175/B67,0) | C==roundup(B213*5/60,3) | D=0.431 | E==D213*B213 | F==roundup((C213+E213)/60,3)
+214: A=LEGENDARY | B==roundup($G$175/B68,0) | C==roundup(B214*5/60,3) | D=1.102 | E==D214*B214 | F==roundup((C214+E214)/60,3)
+215: A=MYTHIC | B==roundup($G$175/B69,0) | C==roundup(B215*5/60,3) | D=4.901 | E==D215*B215 | F==roundup((C215+E215)/60,3)
+216: A=Pool Selection
+217: A=Condition | D=Selected Pool
+218: A=MIN(Rarity1, Rarity2) = 1 (COMMON) | D=Random pet from COMMON Secret Pool
+219: A=MIN(Rarity1, Rarity2) = 2 (UNCOMMON) | D=Random pet from UNCOMMON Secret Pool
+220: A=MIN(Rarity1, Rarity2) = 3 (RARE) | D=Random pet from RARE Secret Pool
+221: A=MIN(Rarity1, Rarity2) = 4 (EPIC) | D=Random pet from EPIC Secret Pool
+222: A=MIN(Rarity1, Rarity2) = 5 (LEGENDARY) | D=Random pet from LEGENDARY Secret Pool
+224: A=Entry Secret Pet
+225: A=Rarity | B=Pet | C=Rank
+226: A=COMMON | B=Mole | C=1.0
+227: A=RARE | B=Squid | C=2.0
+228: A=EPIC | B=Fennec Fox | C=3.0
+229: A=LEGENDARY | B=Kiwi | C=4.0
+230: A=MYTHIC | B=Snowman | C=5.0
+232: A=7. Mutation Fusion
+233: A=Body Mass | B=Higher rarity pets (e.g Mythic) keep their mutations better than lower rarity pets (e.g Common).
+234: A=Rarity Gap | B=If Pet Rarities do not match, the mutation with the Higher Tier suffers a massive penalty
+236: A=Mutation Weights  | C=See Mutation data
+237: A=Mutation  | B=Weights / Mutation Strength | C=Tier | D=Rd_Chance
+238: A=Normal | B=50.0 | C=0.0 | D==B238/sum($B$238:$B$242)
+239: A=Golden | B=17.0 | C=1.0 | D==B239/sum($B$238:$B$242)
+240: A=Frozen | B=13.0 | C=2.0 | D==B240/sum($B$238:$B$242)
+241: A=Magma | B=5.0 | C=3.0 | D==B241/sum($B$238:$B$242)
+242: A=Clover | B=1.0 | C=4.0 | D==B242/sum($B$238:$B$242)
+244: A=Rarity Values (Body Mass)
+245: A=Rarity | B=Rarity Values 
+246: A=Common | B=1.0
+247: A=Rare | B=2.0
+248: A=Epic | B=3.0
+249: A=Legendary | B=4.0
+250: A=Mythic | B=5.0
+251: A=Divine | B=6.0
+253: A=Inheritance Logic
+254: A=PenaltyCurve | B=0.6
+255: A=MassScalar | B=5.0
+257: A=Step | B=Description | D=Formula / Condition
+258: A=1.0 | B=Calculate Raw Scores | D=RawScore = MutationWeight+(RarityValue×MassScalar)
+259: A=2.0 | B=Calculate Gap | D=Gap = ABS(RarityA−RarityB)
+260: A=3.0 | B=Calculate Penalty if Gap>0 | D=Penalty = PenaltyCurve^Gap
+261: A=4.0 | B=Calculate FinalScore: if Gap>0
+- && MutationTierA > MutationTierB | D=FinalScoreA​ = RawScoreA * Penalty
+FinalScoreB = RawScoreB | H==SQRT(4) | I==H261/(K268+L268+H261)
+262: A=5.0 | B=Calculate FinalScore: if Gap>0
+- && MutationTierB > MutationTierA | D=FinalScoreA​ = RawScoreA 
+FinalScoreB = RawScoreB * Penalty | H==SQRT(3) | I==H262/(K276+L276+H262)
+263: A=6.0 | B=Final Probability | D=ChanceA = FinalScoreA​/(FinalScoreA + FinalScoreB) | H==SQRT(2) | I==H263/(H263+K275+L275)
+264: D=ChanceB = FinalScoreB​/(FinalScoreA + FinalScoreB) | H==SQRT(1) | I==H264/(H264+K272+L272)
+266: A=Example
+267: A=Rarity | B=Mutation A | C=Rarity | D=Mutation B | E=ChanceA | F=ChanceB | G=Gap | H=Penalty  | I=RawScoreA | J=RawScoreB | K=FinalScoreA | L=FinalScoreB
+268: A=MYTHIC | B=Clover | C=COMMON | D=Normal | E==K268/(K268+L268) | F==L268/(L268+K268) | G==LET(
+    GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+    ABS(GetRarity(A268) - GetRarity(C268))
+) | H==POWER(0.4, G268) | I==LET(
+    GetWt, LAMBDA(w, SWITCH(UPPER(TRIM(w)), "NORMAL",50, "GOLDEN",17, "FROZEN",13, "MAGMA",5, "CLOVER",1, 50)),
+    GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+    
+    Wt, GetWt(B268),
+    Body, GetRarity(A268) * $B$255,
+    
+    Wt + Body
+) | J==LET(
+    GetWt, LAMBDA(w, SWITCH(UPPER(TRIM(w)), "NORMAL",50, "GOLDEN",17, "FROZEN",13, "MAGMA",5, "CLOVER",1, 50)),
+    GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+    
+    Wt, GetWt(D268),
+    Body, GetRarity(C268) * $B$255,
+    
+    Wt + Body
+) | K==LET(
+    GetTier, LAMBDA(m, SWITCH(UPPER(TRIM(m)), "NORMAL",0, "GOLDEN",1, "FROZEN",2, "MAGMA",3, "CLOVER",4, 0)),
+    TierA, GetTier(B268),
+    TierB, GetTier(D268),
+    Gap, G268,
+    Penalty, H268,
+    RawScore, I268,
+
+
+    IF(AND(Gap > 0, TierA > TierB), RawScore * Penalty, RawScore)
+) | L==LET(
+    GetTier, LAMBDA(m, SWITCH(UPPER(TRIM(m)), "NORMAL",0, "GOLDEN",1, "FROZEN",2, "MAGMA",3, "CLOVER",4, 0)),
+    TierA, GetTier(B268),
+    TierB, GetTier(D268),
+    Gap, G268,
+    Penalty, H268,
+    RawScore, J268,
+
+    IF(AND(Gap > 0, TierB > TierA), RawScore * Penalty, RawScore)
+)
+269: A=MYTHIC | B=Normal | C=COMMON | D=Clover | E==K269/(K269+L269) | F==L269/(L269+K269) | G==LET(
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+ABS(GetRarity(A269) - GetRarity(C269))
+) | H==POWER(0.4, G269) | I==LET(
+GetWt, LAMBDA(w, SWITCH(UPPER(TRIM(w)), "NORMAL",50, "GOLDEN",17, "FROZEN",13, "MAGMA",5, "CLOVER",1, 50)),
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+Wt, GetWt(B269),
+Body, GetRarity(A269) * $B$255,
+Wt + 
+Body) | J==LET(
+GetWt, LAMBDA(w, SWITCH(UPPER(TRIM(w)), "NORMAL",50, "GOLDEN",17, "FROZEN",13, "MAGMA",5, "CLOVER",1, 50)),
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+Wt, GetWt(D269),
+Body, GetRarity(C269) * $B$255,
+Wt + 
+Body) | K==LET(
+GetTier, LAMBDA(m, SWITCH(UPPER(TRIM(m)), "NORMAL",0, "GOLDEN",1, "FROZEN",2, "MAGMA",3, "CLOVER",4, 0)),
+TierA, GetTier(B269),
+TierB, GetTier(D269),
+Gap, G269,
+Penalty, H269,
+RawScore, I269,
+IF(AND(Gap > 0, TierA > TierB), RawScore * Penalty, RawScore)
+) | L==LET(
+GetTier, LAMBDA(m, SWITCH(UPPER(TRIM(m)), "NORMAL",0, "GOLDEN",1, "FROZEN",2, "MAGMA",3, "CLOVER",4, 0)),
+TierA, GetTier(B269),
+TierB, GetTier(D269),
+Gap, G269,
+Penalty, H269,
+RawScore, J269,
+IF(AND(Gap > 0, TierB > TierA), RawScore * Penalty, RawScore)
+)
+270: A=MYTHIC | B=Normal | C=MYTHIC | D=Clover | E==K270/(K270+L270) | F==L270/(L270+K270) | G==LET(
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+ABS(GetRarity(A270) - GetRarity(C270))
+) | H==POWER(0.4, G270) | I==LET(
+GetWt, LAMBDA(w, SWITCH(UPPER(TRIM(w)), "NORMAL",50, "GOLDEN",17, "FROZEN",13, "MAGMA",5, "CLOVER",1, 50)),
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+Wt, GetWt(B270),
+Body, GetRarity(A270) * $B$255,
+Wt + 
+Body) | J==LET(
+GetWt, LAMBDA(w, SWITCH(UPPER(TRIM(w)), "NORMAL",50, "GOLDEN",17, "FROZEN",13, "MAGMA",5, "CLOVER",1, 50)),
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+Wt, GetWt(D270),
+Body, GetRarity(C270) * $B$255,
+Wt + 
+Body) | K==LET(
+GetTier, LAMBDA(m, SWITCH(UPPER(TRIM(m)), "NORMAL",0, "GOLDEN",1, "FROZEN",2, "MAGMA",3, "CLOVER",4, 0)),
+TierA, GetTier(B270),
+TierB, GetTier(D270),
+Gap, G270,
+Penalty, H270,
+RawScore, I270,
+IF(AND(Gap > 0, TierA > TierB), RawScore * Penalty, RawScore)
+) | L==LET(
+GetTier, LAMBDA(m, SWITCH(UPPER(TRIM(m)), "NORMAL",0, "GOLDEN",1, "FROZEN",2, "MAGMA",3, "CLOVER",4, 0)),
+TierA, GetTier(B270),
+TierB, GetTier(D270),
+Gap, G270,
+Penalty, H270,
+RawScore, J270,
+IF(AND(Gap > 0, TierB > TierA), RawScore * Penalty, RawScore)
+)
+271: A=COMMON | B=Frozen | C=RARE | D=Golden | E==K271/(K271+L271) | F==L271/(L271+K271) | G==LET(
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+ABS(GetRarity(A271) - GetRarity(C271))
+) | H==POWER(0.4, G271) | I==LET(
+GetWt, LAMBDA(w, SWITCH(UPPER(TRIM(w)), "NORMAL",50, "GOLDEN",17, "FROZEN",13, "MAGMA",5, "CLOVER",1, 50)),
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+Wt, GetWt(B271),
+Body, GetRarity(A271) * $B$255,
+Wt + 
+Body) | J==LET(
+GetWt, LAMBDA(w, SWITCH(UPPER(TRIM(w)), "NORMAL",50, "GOLDEN",17, "FROZEN",13, "MAGMA",5, "CLOVER",1, 50)),
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+Wt, GetWt(D271),
+Body, GetRarity(C271) * $B$255,
+Wt + 
+Body) | K==LET(
+GetTier, LAMBDA(m, SWITCH(UPPER(TRIM(m)), "NORMAL",0, "GOLDEN",1, "FROZEN",2, "MAGMA",3, "CLOVER",4, 0)),
+TierA, GetTier(B271),
+TierB, GetTier(D271),
+Gap, G271,
+Penalty, H271,
+RawScore, I271,
+IF(AND(Gap > 0, TierA > TierB), RawScore * Penalty, RawScore)
+) | L==LET(
+GetTier, LAMBDA(m, SWITCH(UPPER(TRIM(m)), "NORMAL",0, "GOLDEN",1, "FROZEN",2, "MAGMA",3, "CLOVER",4, 0)),
+TierA, GetTier(B271),
+TierB, GetTier(D271),
+Gap, G271,
+Penalty, H271,
+RawScore, J271,
+IF(AND(Gap > 0, TierB > TierA), RawScore * Penalty, RawScore)
+)
+272: A=LEGENDARY | B=Normal | C=EPIC | D=Magma | E==K272/(K272+L272) | F==L272/(L272+K272) | G==LET(
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+ABS(GetRarity(A272) - GetRarity(C272))
+) | H==POWER(0.4, G272) | I==LET(
+GetWt, LAMBDA(w, SWITCH(UPPER(TRIM(w)), "NORMAL",50, "GOLDEN",17, "FROZEN",13, "MAGMA",5, "CLOVER",1, 50)),
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+Wt, GetWt(B272),
+Body, GetRarity(A272) * $B$255,
+Wt + 
+Body) | J==LET(
+GetWt, LAMBDA(w, SWITCH(UPPER(TRIM(w)), "NORMAL",50, "GOLDEN",17, "FROZEN",13, "MAGMA",5, "CLOVER",1, 50)),
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+Wt, GetWt(D272),
+Body, GetRarity(C272) * $B$255,
+Wt + 
+Body) | K==LET(
+GetTier, LAMBDA(m, SWITCH(UPPER(TRIM(m)), "NORMAL",0, "GOLDEN",1, "FROZEN",2, "MAGMA",3, "CLOVER",4, 0)),
+TierA, GetTier(B272),
+TierB, GetTier(D272),
+Gap, G272,
+Penalty, H272,
+RawScore, I272,
+IF(AND(Gap > 0, TierA > TierB), RawScore * Penalty, RawScore)
+) | L==LET(
+GetTier, LAMBDA(m, SWITCH(UPPER(TRIM(m)), "NORMAL",0, "GOLDEN",1, "FROZEN",2, "MAGMA",3, "CLOVER",4, 0)),
+TierA, GetTier(B272),
+TierB, GetTier(D272),
+Gap, G272,
+Penalty, H272,
+RawScore, J272,
+IF(AND(Gap > 0, TierB > TierA), RawScore * Penalty, RawScore)
+)
+273: A=LEGENDARY | B=Frozen | C=LEGENDARY | D=Magma | E==K273/(K273+L273) | F==L273/(L273+K273) | G==LET(
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+ABS(GetRarity(A273) - GetRarity(C273))
+) | H==POWER(0.4, G273) | I==LET(
+GetWt, LAMBDA(w, SWITCH(UPPER(TRIM(w)), "NORMAL",50, "GOLDEN",17, "FROZEN",13, "MAGMA",5, "CLOVER",1, 50)),
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+Wt, GetWt(B273),
+Body, GetRarity(A273) * $B$255,
+Wt + 
+Body) | J==LET(
+GetWt, LAMBDA(w, SWITCH(UPPER(TRIM(w)), "NORMAL",50, "GOLDEN",17, "FROZEN",13, "MAGMA",5, "CLOVER",1, 50)),
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+Wt, GetWt(D273),
+Body, GetRarity(C273) * $B$255,
+Wt + 
+Body) | K==LET(
+GetTier, LAMBDA(m, SWITCH(UPPER(TRIM(m)), "NORMAL",0, "GOLDEN",1, "FROZEN",2, "MAGMA",3, "CLOVER",4, 0)),
+TierA, GetTier(B273),
+TierB, GetTier(D273),
+Gap, G273,
+Penalty, H273,
+RawScore, I273,
+IF(AND(Gap > 0, TierA > TierB), RawScore * Penalty, RawScore)
+) | L==LET(
+GetTier, LAMBDA(m, SWITCH(UPPER(TRIM(m)), "NORMAL",0, "GOLDEN",1, "FROZEN",2, "MAGMA",3, "CLOVER",4, 0)),
+TierA, GetTier(B273),
+TierB, GetTier(D273),
+Gap, G273,
+Penalty, H273,
+RawScore, J273,
+IF(AND(Gap > 0, TierB > TierA), RawScore * Penalty, RawScore)
+)
+274: A=LEGENDARY | B=Golden | C=COMMON | D=Magma | E==K274/(K274+L274) | F==L274/(L274+K274) | G==LET(
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+ABS(GetRarity(A274) - GetRarity(C274))
+) | H==POWER(0.4, G274) | I==LET(
+GetWt, LAMBDA(w, SWITCH(UPPER(TRIM(w)), "NORMAL",50, "GOLDEN",17, "FROZEN",13, "MAGMA",5, "CLOVER",1, 50)),
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+Wt, GetWt(B274),
+Body, GetRarity(A274) * $B$255,
+Wt + 
+Body) | J==LET(
+GetWt, LAMBDA(w, SWITCH(UPPER(TRIM(w)), "NORMAL",50, "GOLDEN",17, "FROZEN",13, "MAGMA",5, "CLOVER",1, 50)),
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+Wt, GetWt(D274),
+Body, GetRarity(C274) * $B$255,
+Wt + 
+Body) | K==LET(
+GetTier, LAMBDA(m, SWITCH(UPPER(TRIM(m)), "NORMAL",0, "GOLDEN",1, "FROZEN",2, "MAGMA",3, "CLOVER",4, 0)),
+TierA, GetTier(B274),
+TierB, GetTier(D274),
+Gap, G274,
+Penalty, H274,
+RawScore, I274,
+IF(AND(Gap > 0, TierA > TierB), RawScore * Penalty, RawScore)
+) | L==LET(
+GetTier, LAMBDA(m, SWITCH(UPPER(TRIM(m)), "NORMAL",0, "GOLDEN",1, "FROZEN",2, "MAGMA",3, "CLOVER",4, 0)),
+TierA, GetTier(B274),
+TierB, GetTier(D274),
+Gap, G274,
+Penalty, H274,
+RawScore, J274,
+IF(AND(Gap > 0, TierB > TierA), RawScore * Penalty, RawScore)
+)
+275: A=EPIC | B=Frozen | C=COMMON | D=Frozen | E==K275/(K275+L275) | F==L275/(L275+K275) | G==LET(
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+ABS(GetRarity(A275) - GetRarity(C275))
+) | H==POWER(0.4, G275) | I==LET(
+GetWt, LAMBDA(w, SWITCH(UPPER(TRIM(w)), "NORMAL",50, "GOLDEN",17, "FROZEN",13, "MAGMA",5, "CLOVER",1, 50)),
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+Wt, GetWt(B275),
+Body, GetRarity(A275) * $B$255,
+Wt + 
+Body) | J==LET(
+GetWt, LAMBDA(w, SWITCH(UPPER(TRIM(w)), "NORMAL",50, "GOLDEN",17, "FROZEN",13, "MAGMA",5, "CLOVER",1, 50)),
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+Wt, GetWt(D275),
+Body, GetRarity(C275) * $B$255,
+Wt + 
+Body) | K==LET(
+GetTier, LAMBDA(m, SWITCH(UPPER(TRIM(m)), "NORMAL",0, "GOLDEN",1, "FROZEN",2, "MAGMA",3, "CLOVER",4, 0)),
+TierA, GetTier(B275),
+TierB, GetTier(D275),
+Gap, G275,
+Penalty, H275,
+RawScore, I275,
+IF(AND(Gap > 0, TierA > TierB), RawScore * Penalty, RawScore)
+) | L==LET(
+GetTier, LAMBDA(m, SWITCH(UPPER(TRIM(m)), "NORMAL",0, "GOLDEN",1, "FROZEN",2, "MAGMA",3, "CLOVER",4, 0)),
+TierA, GetTier(B275),
+TierB, GetTier(D275),
+Gap, G275,
+Penalty, H275,
+RawScore, J275,
+IF(AND(Gap > 0, TierB > TierA), RawScore * Penalty, RawScore)
+)
+276: A=LEGENDARY | B=Magma | C=COMMON | D=Golden | E==K276/(K276+L276) | F==L276/(L276+K276) | G==LET(
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+ABS(GetRarity(A276) - GetRarity(C276))
+) | H==POWER(0.4, G276) | I==LET(
+GetWt, LAMBDA(w, SWITCH(UPPER(TRIM(w)), "NORMAL",50, "GOLDEN",17, "FROZEN",13, "MAGMA",5, "CLOVER",1, 50)),
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+Wt, GetWt(B276),
+Body, GetRarity(A276) * $B$255,
+Wt + 
+Body) | J==LET(
+GetWt, LAMBDA(w, SWITCH(UPPER(TRIM(w)), "NORMAL",50, "GOLDEN",17, "FROZEN",13, "MAGMA",5, "CLOVER",1, 50)),
+GetRarity, LAMBDA(r, SWITCH(UPPER(TRIM(r)), "COMMON",1, "RARE",2, "EPIC",3, "LEGENDARY",4, "MYTHIC",5, 1)),
+Wt, GetWt(D276),
+Body, GetRarity(C276) * $B$255,
+Wt + 
+Body) | K==LET(
+GetTier, LAMBDA(m, SWITCH(UPPER(TRIM(m)), "NORMAL",0, "GOLDEN",1, "FROZEN",2, "MAGMA",3, "CLOVER",4, 0)),
+TierA, GetTier(B276),
+TierB, GetTier(D276),
+Gap, G276,
+Penalty, H276,
+RawScore, I276,
+IF(AND(Gap > 0, TierA > TierB), RawScore * Penalty, RawScore)
+) | L==LET(
+GetTier, LAMBDA(m, SWITCH(UPPER(TRIM(m)), "NORMAL",0, "GOLDEN",1, "FROZEN",2, "MAGMA",3, "CLOVER",4, 0)),
+TierA, GetTier(B276),
+TierB, GetTier(D276),
+Gap, G276,
+Penalty, H276,
+RawScore, J276,
+IF(AND(Gap > 0, TierB > TierA), RawScore * Penalty, RawScore)
+)
+278: A=Same Pet Case:
+279: A=When Pet A + Pet A, the result will be Pet A with guaranteed mutation
+280: A=Mutation  | B=Weights
+281: A=Golden | B=100.0 | C==B281/sum($B$281:$B$284)
+282: A=Frozen | B=40.0 | C==B282/sum($B$281:$B$284)
+283: A=Magma | B=10.0 | C==B283/sum($B$281:$B$284)
+284: A=Clover | B=7.0 | C==B284/sum($B$281:$B$284)
+286: A=8. Traits Transfer
+287: A=Design line: fusion is a gamble, so trait transfer is a gamble. One roll decides the result's traits. On average fusion DESTROYS traits (EV ≈ 1 out vs 2 in per parent) — fusion is the trait sink. The jackpot rows are the reveal moment.
+288: A=8.1 Steps
+289: A=Step | B=Rule
+290: A=1. Pool | B=Merge both parents' trait lists by type. Same type on both → one entry, keep the higher value roll. Max union = 4 types (2 slots × 2 parents).
+291: A=2. Anchor first | B=Anchored traits (max 2 per pet, but result holds max 2 total) transfer guaranteed and fill result slots first, skipping the table. If 2 anchored traits arrive, the table does not roll at all. If 1 anchored trait arrives, the table rolls a one-slot version (8.4).
+292: A=3. Chaos roll | B=One d100 against the table (8.2). Column depends on whether the (unanchored) union has any traits.
+293: A=4. Fill | B=Inherited traits keep their original value rolls. New traits roll type from the standard spawn weight table and value from the standard roll tables — same tables as spawn and charm, no exceptions (source parity).
+295: A=8.2 Chaos Table (one roll per fusion)
+296: A=d100 | B=Pool HAS traits | E=Pool EMPTY
+297: A=1 - 30 | B=Blank — 0 traits | E=Blank — 0 traits
+298: A=31 - 65 | B=Inherit — 1 random trait from union | E=Blank — 0 traits
+299: A=66 - 85 | B=Twin — 2 random from union | E=Blank — 0 traits
+300: A=86 - 95 | B=Mutate! — 1 from union + 1 brand-new | E=Spark! — 1 brand-new trait
+301: A=96 - 100 | B=Wild! — 2 brand-new traits | E=Wild! — 2 brand-new traits

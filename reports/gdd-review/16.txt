@@ -1,0 +1,35 @@
+SHEET Reward & Email System
+1: A=1. System Overview
+3: A=Field | C=Description
+4: A=System Name | C=Email & Reward Delivery System
+5: A=Purpose | C=Ensures players always receive rewards from other features (Gift Code, Event, Quest…). If the player’s inventory is full, rewards are automatically sent to their mailbox for temporary storage (7 days).
+6: A=Access Location | C=“Mail” button on the main lobby screen.
+7: A=Primary Features | C=Auto reward routing, Mailbox with reward attachments, Claim reward, Inventory space check, Expiration and notifications.
+11: A=2. Reward Delivery Rules
+13: A=Component | C=Description
+14: A=Reward Source | C=Rewards can come from Gift Codes, Events, Quests, or other game systems.
+15: A=Inventory Check | C=When a player receives a reward, the system checks if there’s enough inventory space.
+16: A=If Inventory Not Full | C=Rewards are directly added to the player’s inventory.
+17: A=If Inventory Full | C=The system creates a new email containing the reward and sends it to the player’s mailbox.
+18: A=Expiration Time | C=Emails last for 7 days before being automatically deleted. Expired rewards cannot be claimed.
+19: A=Item Types Supported | C=1 Pet, 2 In-game Currency, 3 Pet Coin.
+20: A=Notification | C=A notification badge appears on the “Mail” icon when new emails arrive.
+22: A=3. Email System Components
+24: A=Component | C=Details
+25: A=Email List | C=Displays all received emails. Each email contains one reward or a reward package.
+26: A=Email Detail | C=Shows subject, short message, expiration timer, and reward attachment.
+27: A=Attachment | C=Displays item icon(s) and quantity (Pet, Currency, Pet Coin).
+28: A=Claim Button | C=“Receive” button that allows the player to collect the attached reward.
+29: A=Expiration Indicator | C=Text or bar showing “X days left” or “Expired”.
+30: A=State | C=Email states: Unread, Read, Claimed, Expired.
+31: A=Sorting | C=Newest emails appear at the top.
+33: A=4. Interaction Rules
+35: A=Component | C=Details
+36: A=Receive Reward (Trigger) | C=When a player is granted a reward, the system checks inventory and routes it directly or via email.
+37: A=Open Mailbox | C=Player taps the “Mail” icon to access the email list.
+38: A=Read Email | C=When opened, the email state changes from “Unread” → “Read”.
+39: A=Tap “Receive” | C=Checks inventory again: if enough space → add item(s) and delete the email; if not → show “Inventory Full” message.
+40: A=Expiration | C=Email is automatically deleted after 7 days.
+41: A=Manual Delete | C=Players can only delete emails that are already claimed or expired.
+42: A=Error Message | C=“Inventory full. Please clear space before claiming the reward.”
+43: A=Success Message | C=“Reward successfully added to your inventory!”

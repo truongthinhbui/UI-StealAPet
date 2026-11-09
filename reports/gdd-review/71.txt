@@ -1,0 +1,29 @@
+SHEET Player Log
+1: A=EventTypeUGCCreativeModePlayerRoundStats
+2: A=日志链接： | B=https://wiki.garena.com/display/FFDP/UGC+Creative+Mode#UGCCreativeMode-EventTypeUGCCreativeModePlayerRoundStats
+4: A=Purpose | B=Field | C=Type | D=Description
+5: A=Common information | B=version | C=int | D=Version(YYYYMMDD)
+6: B=user_status | C=int | D=1=New Player，2=Old Player
+7: B=join_time | C=int | D=Player join game(timestamp)
+8: B=quit_time | C=int | D=Player exit game(timestamp)
+9: B=entry_times | C=int | D=Number of times the player has entered the game (starting from 1)
+10: A=Economy balance | B=number_of_pet_purchase | C=int | D=Number of pet player purchased
+11: B=number_of_pet_steal | C=int | D=Number of pet player steal from other
+12: B=highest_pet_id_purchase | C=int | D=Highest pet ID the player claimed by purchase, for balancing
+13: B=highest_pet_id_steal | C=int | D=Highest pet ID the player claimed by steal, for balancing
+14: B=number_of_pet_owned | C=int | D=Number of pet owned, for balancing
+15: B=sell_count | C=int | D=Number of pets sold by the user
+16: B=last_rebirth_time | C=int | D=The time when the user last rebirthed(timestamp)
+17: B=rebirth_count | C=int | D=User rebirth count, for balancing
+18: A=Lock & Steal | B=base_lock_count | C=int | D=Number of times the base was locked
+19: B=steal_count | C=int | D=Number of times the user stole
+20: B=being_stolen_count | C=int | D=Number of times the user was stolen from other players
+21: B=base_unlock_count | C=int | D=Number of times the base was unlocked
+22: A=Check the player’s understanding of the game | B=first_steal_time | C=int | D=Time of first steal(timestamp)
+23: B=first_base_lock_time | C=int | D=Time of first base lock(timestamp)
+24: B=first_base_unlock_time | C=int | D=Time of first base unlock(timestamp)
+25: B=first_sell_time | C=int | D=Time of first pet sale(timestamp)
+26: B=first_purchase_time | C=int | D=Time of first pet purchase(timestamp)
+27: B=first_being_stolen_time | C=int | D=Time of first being stolen(timestamp)
+28: B=first_teleport_home_time | C=int | D=Time when the player used the home teleport button(timestamp)
+29: B=first_rebirth_time | C=int | D=The time when the user first rebirthed(timestamp)

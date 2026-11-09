@@ -1,0 +1,32 @@
+SHEET Favorite Pet Slot
+1: A=1. System Overview
+3: A=Field | C=Description
+4: A=Summary | C=Favorite Pet is a special 19th pet slot unlocked at Rebirth 18.
+5: C=It lets the player designate one pet as their personal companion.
+6: C=This slot is intentionally non-economic and non-stealable
+7: A=Location | C=1st floor of base
+10: A=2. Rules
+11: A=Type | C=Description
+12: A=Unlock Rule | C=Favorite Pet slot unlocks at Rebirth 18
+13: A=Assignment Rule | C=only one pet can occupy the Favorite Pet slot at a time
+14: A=Protection Rule | C=pets in the Favorite slot are owner-protected
+other players cannot:
+- steal
+- pick up
+- gift-target through world interaction
+- trigger pet interactions tied to public/base pet logic
+owner interactions remain allowed
+15: A=Economy Rule | C=Favorite slot pets do not yield pet money
+if the pet was previously in a normal slot, moving it to Favorite removes it from all money production logic immediately
+16: A=Follow Rule | C=the pet in Favorite slot follows the player after they leave the base
+18: A=3. UX
+19: A=Type | C=Description
+20: A=Unlock Presentation | C=After unlocking the slot in Rebirth 18; all pet interaction will show a Quick Equip button
+21: A=Equipped | C=Player equip favorite pet via a Quick Equip button
+22: A=Unequipped | C=- Player unequip favorite pet directly on Favorite slot. To do so, the game must check if player still have available slot in base.
+- Player also unequip favorite pet via swap it with another pet using Quick Equip button
+23: A=Equipped State | C=When occupied, slot only show:
+- pet name
+- rarity
+- mutation
+- weather effects

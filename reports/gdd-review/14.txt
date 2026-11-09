@@ -1,0 +1,31 @@
+SHEET MutaGen
+1: A=1. System Overview
+3: A=Field | C=Description
+4: A=Purpose | C=MutaGen is a targeted mutation item system. It lets players spend Pet Coins to buy a specific MutaGen and spend Money to attempt applying that exact mutation to a pet. The system is intended to burn inflated money while creating targeted late-game goals.
+5: A=Core Rule | C=Each MutaGen has exactly one target mutation. Example: MutaGen Webbed can only apply Webbed. It must never roll Magma, Golden, Frozen, or any other mutation.
+6: A=Economy Role | C=Buy cost uses Pet Coins. Use cost uses Money. This creates two separate sinks: long-term premium/event currency sink on purchase and soft-currency anti-inflation sink on each attempt.
+7: A=Design Boundary | C=MutaGen must not replace Fusion. Fusion remains the cheaper/random bulk path. MutaGen is the expensive/targeted path for players who already care about a specific pet.
+9: A=2. Player Flow
+10: A=Step 1 | C=Player buys MutaGen B / A / S from Mystery Merchant using Pet Coins.
+11: A=Step 2 | C=Player selects a pet.
+12: A=Step 3 | C=Confirm UI shows success chance, use cost, and fail consequence.
+13: A=Step 4 | C=On use, money is consumed. MutaGen is consumed whether success or fail.
+14: A=Step 5 | C=On success, apply one the mutation pool. On fail, no pet change.
+16: A=3. Rules
+17: A=Type | C=Description
+18: A=Grade | C=B / A / S. Grade changes Pet Coin buy cost and success chance. Grade does not change the target mutation.
+19: A=Can use on Normal pet | C=Yes
+20: A=Can use on already-mutated pet | C=Yes, but not with same mutation
+21: A=Can use on Secret pet | C=Yes, but with SecretChanceMultiplier.
+22: A=Can use on Limited pet | C=No unless explicitly whitelisted.
+23: A=Mutation result | C=Fixed result only. MutaGen Magma gives Magma only. MutaGen Webbed gives Webbed only.
+24: A=Pet Coin Cost | C=Static config value per item row. System does not support runtime dynamic Pet Coin pricing, so every TargetMutation + Grade combination needs its own configured price.
+25: A=Money Use Cost | C=Calculated from pet rank base cost and pet level only. Do not multiply by target mutation or grade unless the system later supports this intentionally.
+27: A=4. Formula Rules
+28: A=MutaGen attempt cost is calculated from 4 parts: BaseUseCostLv1, LevelMultiplier, PetLevel, FinalUseCost.
+29: C=Formula / Source | F=Explanation
+30: A=FinalUseCost | C==ROUNDUP(BaseUseCostLv1 * POWER(LevelMultiplier, PetLevel - 1), 0) | F=Final Money cost paid when using the MutaGen. It scales with pet level using the same 1.5x curve as pet level value growth.
+31: A=BaseUseCostLv1 | C=Direct value from Config table | F=Base Money use cost for the pet at level 1. It is selected by checking which RankMin/RankMax range contains the pet rank. | K=LevelMultiplier=1.5
+32: A=LevelMultiplier | C=Direct value from Config table | F=Same growth rule as pet leveling. Each level increases pet value by 1.5x, so mutation use cost also increases by 1.5x.
+33: A=PetLevel | C=Input from pet level system | F=Current level of the selected pet. Level 1 means no multiplier because exponent is 0.
+34: A=PowerLevelMultiplier | C==POWER(LevelMultiplier, PetLevel - 1) | F=Converts pet level into a scaling multiplier. Level 1 = 1.00, Level 2 = 1.50, Level 3 = 2.25, Level 4 = 3.375.

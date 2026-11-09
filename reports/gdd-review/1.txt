@@ -1,0 +1,7 @@
+SHEET Const
+1: A=Tom | B=GDD
+2: A=Zuto | B=Implement
+3: A=Tomo | B=QA
+4: A=Qiwei | B=Config
+5: B=Release
+6: B=Dev
