@@ -39,7 +39,7 @@
   for(const selector of ['.genBalancePreset','.genSimCount','.genSimScenario','.genSimRebirth'])setup.appendChild($(selector).closest('label'));
   const compare=$('.genCompareRebirth').closest('label');compare.classList.add('debugCompare');compare.lastChild.textContent=' So sánh cả 5 mốc Rebirth';setup.appendChild(compare);
   const presets=make('div','debugPresets');presets.appendChild(make('span','','Chọn nhanh'));
-  for(const [id,label] of [['red','Full đỏ'],['green','Full xanh'],['gold','Full vàng'],['all','6 kịch bản']]){const button=make('button','',label);button.type='button';button.dataset.simPreset=id;presets.appendChild(button);}setup.after(presets);
+  for(const [id,label] of [['red','Full đỏ'],['green','Full xanh'],['gold','Full vàng'],['all',window.GenCore.scenarios.length+' kịch bản']]){const button=make('button','',label);button.type='button';button.dataset.simPreset=id;presets.appendChild(button);}setup.after(presets);
   const advanced=make('details','debugAdvanced');advanced.appendChild(make('summary','','Nâng cao · seed & tỉ lệ tap'));
   const advancedFields=make('div','debugFieldGrid');advanced.appendChild(advancedFields);advancedFields.appendChild($('.genSimSeed').closest('label'));
   const mix=make('div','debugMixFields');for(const selector of ['.genMixRed','.genMixGreen','.genMixGold'])mix.appendChild($(selector).closest('label'));advancedFields.appendChild(mix);

@@ -180,8 +180,8 @@
   });
   function chooseMutations(count){return window.GenCore.choose(count,Math.random,rewards.castRebirth).map(({id,name})=>({id,name}));}
   root.addEventListener('fishingbalancechange',()=>{instructions[6]=qteInstruction();if(mode===6)root.querySelector('.fishingInstructions').textContent=instructions[6];if(!rewards.isCasting&&!rewards.pending)renderMutation();});
-  function renderMutation(result=false){
-    const points=Math.min(100,game?.mutationPoints||0);
+  function renderMutation(result=false,previewPoints=null){
+    const points=Math.min(100,previewPoints??game?.mutationPoints??0);
     qteLuckChip.hidden=false;
     qteLuckChip.querySelector('.mutationPercent').textContent=points.toLocaleString('vi-VN',{maximumFractionDigits:2})+'%';
     qteLuckChip.dataset.result=result?'true':'false';
@@ -770,9 +770,9 @@
     }
     if (![2, 3, 6].includes(mode)) return;
     const [start, end] = mode === 3 ? (game.marker < .55 ? [.18,.48] : [.61,.82]) : [.16,.36];
-    const arcOffset = mode === 6 ? (game.marker - game.qteArcStart + 1) % 1 : 0;
-    const gold = mode === 6 && arcOffset >= .45 && arcOffset <= .53;
-    const hit = mode === 6 ? arcOffset <= .20 || gold : game.marker >= start && game.marker <= end;
+    const timingResult=mode===6?window.GenCore.timingResult(game.marker,game.qteArcStart):null;
+    const gold = timingResult==='gold';
+    const hit = mode === 6 ? timingResult!=='red' : game.marker >= start && game.marker <= end;
     const perfect = mode===6 ? gold : hit && Math.abs(game.marker - (start + end) / 2) < .045;
     const distanceBefore = game.distance;
     if (hit) {
@@ -944,6 +944,7 @@
       case 6: {
         if(game.qteFeedbackUntil&&game.age>game.qteFeedbackUntil){delete scene.dataset.qteHit;status.textContent='';game.qteFeedbackUntil=0;}
         game.marker = (game.age / (game.qteSecondsPerRevolution * debugSettings.values[6] / 2.25)) % 1;
+        renderMutation(false,window.GenConfig.rules[window.GenCore.timingResult(game.marker,game.qteArcStart)]);
         draw(game.qteResults.length + ' / '+window.GenConfig.rules.taps+' tap', 'Green: Good · Gold: Excellent · Red: Miss', game.qteResults.length / window.GenConfig.rules.taps, 0, 0, .20, game.qteArcStart * 360);
         break;
       }

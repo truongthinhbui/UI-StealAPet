@@ -1,0 +1,14 @@
+import fs from 'node:fs/promises';
+import {FileBlob,SpreadsheetFile} from '@oai/artifact-tool';
+const out='D:/revival-prototype-ui-update/outputs/fishing-config-20261109';
+const wb=await SpreadsheetFile.importXlsx(await FileBlob.load(out+'/Fishing_Config.xlsx'));
+const gs=wb.worksheets.getItem('Gen');
+console.log((await wb.inspect({kind:'table',range:'Gen!A5:G17',tableMaxRows:14,tableMaxCols:7,maxChars:2500})).ndjson);
+const before=await wb.render({sheetName:'Gen',range:'A1:H40',scale:1,format:'png'});await fs.writeFile(out+'/gen-before-weight-edit.png',new Uint8Array(await before.arrayBuffer()));
+const weights=[[265000,232500,200000,167500,135000],[265000,232500,200000,167500,135000],...[1,2,3].map(()=>[90000,97500,105000,112500,120000]),...[1,2,3,4].map(()=>[47500,55625,63750,71875,80000]),...[1,2].map(()=>[5000,10000,15000,20000,25000])];
+gs.getRange('C6:G16').values=weights;
+wb.worksheets.getItem('Config').getRange('D8').values=[['Gen: weight theo ảnh đã xác nhận.']];
+wb.worksheets.getItem('Config').getRange('D12').values=[['Bản Excel này chưa áp dụng vào prototype.']];
+wb.recalculate();console.log((await wb.inspect({kind:'table',range:'Gen!C17:G17',tableMaxRows:1,tableMaxCols:5,maxChars:1000})).ndjson);console.log((await wb.inspect({kind:'match',searchTerm:'#REF!|#DIV/0!|#VALUE!|#NAME\\?',options:{useRegex:true,maxResults:10},maxChars:1000})).ndjson);
+const preview=await wb.render({sheetName:'Gen',range:'A1:H40',scale:1.3,format:'png'});await fs.writeFile(out+'/gen-confirmed-weights.png',new Uint8Array(await preview.arrayBuffer()));
+await(await SpreadsheetFile.exportXlsx(wb)).save(out+'/Fishing_Config_Confirmed_Weights.xlsx');

@@ -7,7 +7,7 @@ const core=context.window.GenCore,config=core.config;
 const count=Number(process.argv[2]||1000000),seed=Number(process.argv[3]||20261105);
 if(!Number.isInteger(count)||count<1||count>1000000||!Number.isInteger(seed)||seed<0||seed>4294967295)throw Error('Count: 1–1000000. Seed: 0–4294967295.');
 assert.equal(new Set(config.catalog.map(gen=>gen.id)).size,config.catalog.length);
-assert.equal(config.catalog.length,21);assert.equal(core.pool.length,21);assert.equal(core.total,1000000);
+assert.equal(config.catalog.length,11);assert.equal(core.pool.length,11);assert.equal(core.total,1000000);
 for(const gen of config.catalog){assert(fs.existsSync(path.join(root,gen.icon.file||'assets/mutations/gen-atlas.png')));}
 for(const [points,expected] of [[0,0],[30,1],[60,1],[120,1]])assert.equal(core.count(points,()=>0),expected);
 assert.equal(core.count(120,()=>.2),1);assert.equal(core.count(60,()=>.6),0);

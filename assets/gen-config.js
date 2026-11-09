@@ -722,7 +722,7 @@ window.GenConfig = {
     }
   ],
   "timeBalance": {
-    "reference": "Gameplay aligned with saved simulation: green +10 points, gold +34, red 0; 3 taps capped at 100%; max 1 Gen. Seven-day cohort snapshot 601/1000, not guaranteed.",
+    "reference": "Single-tap gameplay: green 50%, gold 100%, red 0%; max 1 Gen. Cohort results depend on player skill and session assumptions.",
     "defaultPreset": "saved",
     "secondsPerCast": 10,
     "weatherCycleMinutes": 69,
@@ -743,7 +743,7 @@ window.GenConfig = {
   },
   "balancePresets": {
     "online": {
-      "label": "4–5 ngày · 1 giờ online/ngày",
+      "label": "Thử nghiệm · xanh 8,29% / vàng 16,58%",
       "timeBasis": "online-with-weather-wait",
       "targetDays": 4.5,
       "hoursPerDay": 1,
@@ -752,7 +752,7 @@ window.GenConfig = {
       "red": 0
     },
     "active": {
-      "label": "4–5 ngày · 1 giờ thực sự câu/ngày",
+      "label": "Thử nghiệm · xanh 1,32% / vàng 2,64%",
       "timeBasis": "active-fishing",
       "targetDays": 4.5,
       "hoursPerDay": 1,
@@ -761,7 +761,7 @@ window.GenConfig = {
       "red": 0
     },
     "weekly": {
-      "label": "7 ngày · mục tiêu 75–80% có Apex + Gen",
+      "label": "Thử nghiệm · xanh 40% / vàng 60%",
       "timeBasis": "seven-day-cohort",
       "targetShareMin": 0.75,
       "targetShareMax": 0.8,

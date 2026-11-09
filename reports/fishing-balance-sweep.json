@@ -1,0 +1,92 @@
+[
+  {
+    "factor": 1,
+    "rate": 64.19,
+    "groups": [
+      {
+        "name": "Casual",
+        "rate": 32.6
+      },
+      {
+        "name": "Thường",
+        "rate": 67.45
+      },
+      {
+        "name": "Hardcore",
+        "rate": 86
+      }
+    ]
+  },
+  {
+    "factor": 1.4,
+    "rate": 75.01,
+    "groups": [
+      {
+        "name": "Casual",
+        "rate": 43.35
+      },
+      {
+        "name": "Thường",
+        "rate": 79.28333333333333
+      },
+      {
+        "name": "Hardcore",
+        "rate": 93.85
+      }
+    ]
+  },
+  {
+    "factor": 1.6,
+    "rate": 78.71,
+    "groups": [
+      {
+        "name": "Casual",
+        "rate": 47.599999999999994
+      },
+      {
+        "name": "Thường",
+        "rate": 83.3
+      },
+      {
+        "name": "Hardcore",
+        "rate": 96.05
+      }
+    ]
+  },
+  {
+    "factor": 1.8,
+    "rate": 81.75,
+    "groups": [
+      {
+        "name": "Casual",
+        "rate": 51.349999999999994
+      },
+      {
+        "name": "Thường",
+        "rate": 86.71666666666667
+      },
+      {
+        "name": "Hardcore",
+        "rate": 97.25
+      }
+    ]
+  },
+  {
+    "factor": 2,
+    "rate": 84.49,
+    "groups": [
+      {
+        "name": "Casual",
+        "rate": 55.25
+      },
+      {
+        "name": "Thường",
+        "rate": 89.71666666666667
+      },
+      {
+        "name": "Hardcore",
+        "rate": 98.05
+      }
+    ]
+  }
+]

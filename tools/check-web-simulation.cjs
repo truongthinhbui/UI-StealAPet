@@ -1,0 +1,22 @@
+const fs=require('fs'),vm=require('vm'),a=require('assert/strict');global.window=global;
+for(const f of ['fishing-config','fishing-pool','gen-config','gen-core','fishing-cohort'])vm.runInThisContext(fs.readFileSync('assets/'+f+'.js','utf8'));
+const core=GenCore,engine=FishingCohort;
+a.equal(engine.create({players:1,preset:'weekly'}).result.tapValues.green,40);
+a.equal(engine.create({players:1,preset:'weekly'}).result.tapValues.gold,60);
+a.equal(engine.create({players:1,preset:'weekly',tapGreen:50}).result.tapValues.green,50);
+a.throws(()=>engine.create({rebirthPerDay:.5}));a.throws(()=>engine.create({groups:engine.defaults.groups.map(g=>({...g,red:100}))}));
+const opts={players:1500,seed:732819,rebirthMin:9,rebirthMax:30,rebirthPerDay:1};const one=engine.create(opts),chunk=engine.create(opts);one.step(1500);while(!chunk.step(37)){}a.deepEqual(one.result,chunk.result);
+a.throws(()=>one.step(-1));a.throws(()=>core.simulation(core.scenarios[0],1).step(.5));
+const offline=engine.create({players:100,attendance:0});offline.step(100);a.equal(offline.result.casts,0);a.equal(offline.result.playersApex,0);a.equal(offline.result.playersApexGen,0);
+const alwaysGold=engine.create({players:1000,groups:engine.defaults.groups.map(g=>({...g,red:0,green:0,gold:100}))});alwaysGold.step(1000);a.equal(alwaysGold.result.genCatches,alwaysGold.result.casts);a.equal(alwaysGold.result.apex,alwaysGold.result.apexGen);
+const alwaysRed=engine.create({players:1000,groups:engine.defaults.groups.map(g=>({...g,red:100,green:0,gold:0}))});alwaysRed.step(1000);a.equal(alwaysRed.result.genCatches,0);
+core.setBalancePreset('saved');const fixed=core.simulation(core.scenarios.find(s=>s.id==='green'),123,{fishing:true}),ref=core.simulation(core.scenarios.find(s=>s.id==='green'),123,{fishing:true});fixed.step(500);core.setBalancePreset('weekly');fixed.step(500);core.setBalancePreset('saved');ref.step(1000);a.deepEqual(fixed.result,ref.result);
+const oldsig=engine.signature();FishingConfig.pets[0].weights[4]++;a.notEqual(engine.signature(),oldsig);FishingConfig.pets[0].weights[4]--;
+for(const [marker,start,want]of [[0,0,'green'],[.2,0,'green'],[.201,0,'red'],[.45,0,'gold'],[.53,0,'gold'],[.531,0,'red'],[.05,.9,'green'],[.4,.9,'gold']])a.equal(core.timingResult(marker,start),want);
+const run=engine.create({players:100000,seed:20261109});run.step(100000);const r=run.result;
+a.equal(r.casts,Object.values(r.petCounts).reduce((s,p)=>s+p.count,0));a.equal(r.genCatches,Object.values(r.genCounts).reduce((s,p)=>s+p.count,0));a.equal(r.casts,Object.values(r.combos).reduce((s,p)=>s+p.count,0));a.equal(r.casts,r.daily.reduce((s,d)=>s+d.casts,0));a.equal(r.apexGen,r.daily.reduce((s,d)=>s+d.apexGen,0));a.equal(r.playersApexGen,r.firstApexGenDays.reduce((s,n)=>s+n,0));a.equal(r.playersApexGen,r.daily.at(-1).playersApexGen);
+for(let i=0;i<r.daily.length;i++){const d=r.daily[i];a(d.playersApex>=d.playersApexGen);if(i){a(d.playersApex>=r.daily[i-1].playersApex);a(d.playersApexGen>=r.daily[i-1].playersApexGen);}}
+const pA=FishingPool.profile(19).pets.filter(p=>p.rarity==='APEX').reduce((s,p)=>s+p.weights[4],0)/FishingPool.profile(19).total;
+const analytic=r.groups.map(g=>{const q=(g.green*.5+g.gold)/100,players=r.players.filter(p=>p.group===g.id),expected=players.reduce((s,p)=>s+1-Math.pow(1-pA*q,p.casts),0),variance=players.reduce((s,p)=>{const v=1-Math.pow(1-pA*q,p.casts);return s+v*(1-v);},0);a(Math.abs(g.playersApexGen-expected)<7*Math.sqrt(variance));return {group:g.name,observed:g.playersApexGen/g.players,expected:expected/g.players};});
+const {players,...snapshot}=r;snapshot.csvPath='reports/cohort-single-tap-original-pool/players.csv';fs.writeFileSync('assets/fishing-cohort-snapshot.js','window.FishingCohortSnapshot='+JSON.stringify(snapshot)+';\n');fs.writeFileSync('reports/fishing-single-tap-cohort.json',JSON.stringify(snapshot,null,2));const keys=Object.keys(players[0]);fs.writeFileSync(snapshot.csvPath,[keys.join(','),...players.map(p=>keys.map(k=>p[k]??'').join(','))].join('\n'));
+const report={checks:['presets and overrides','input guards','chunk reproducibility','zero attendance','all-gold and all-red','frozen run config','snapshot fingerprint','timing zones','pet/gen/combo/day conservation','daily cumulative counters','analytic Apex+Gen expectation'],players:r.completed,casts:r.casts,apexGenPercent:r.playersApexGen/r.completed*100,analytic};fs.writeFileSync('reports/web-simulation-audit.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));

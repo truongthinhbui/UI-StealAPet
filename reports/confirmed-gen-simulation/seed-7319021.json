@@ -1,0 +1,126 @@
+{
+  "seed": 7319021,
+  "players": 100000,
+  "casts": 21752713,
+  "apexGenPercent": 65.322,
+  "apexPercent": 78.85799999999999,
+  "genPercent": 70.01884316682705,
+  "groups": [
+    {
+      "name": "Casual",
+      "castsPerPlayer": 108.04255,
+      "apexGenPercent": 33.074999999999996,
+      "genPercent": 47.488882852172594
+    },
+    {
+      "name": "Thường",
+      "castsPerPlayer": 217.5143,
+      "apexGenPercent": 68.44333333333333,
+      "genPercent": 67.50194508284436
+    },
+    {
+      "name": "Hardcore",
+      "castsPerPlayer": 327.0502,
+      "apexGenPercent": 88.205,
+      "genPercent": 82.48353005134992
+    }
+  ],
+  "gen": [
+    {
+      "name": "Gale",
+      "percentOfGen": 12.004223229495532,
+      "playersPercent": 99.958,
+      "apexPlayersPercent": 13.245999999999999
+    },
+    {
+      "name": "Frozen",
+      "percentOfGen": 11.987067426573098,
+      "playersPercent": 99.95100000000001,
+      "apexPlayersPercent": 13.236
+    },
+    {
+      "name": "Soaked",
+      "percentOfGen": 13.507900138914074,
+      "playersPercent": 99.977,
+      "apexPlayersPercent": 14.587
+    },
+    {
+      "name": "Thundered",
+      "percentOfGen": 8.015003350404221,
+      "playersPercent": 99.678,
+      "apexPlayersPercent": 9.112
+    },
+    {
+      "name": "Clover",
+      "percentOfGen": 8.00171466111413,
+      "playersPercent": 99.66000000000001,
+      "apexPlayersPercent": 8.866
+    },
+    {
+      "name": "Frost",
+      "percentOfGen": 11.993120871002674,
+      "playersPercent": 99.95,
+      "apexPlayersPercent": 13.075000000000001
+    },
+    {
+      "name": "Magma",
+      "percentOfGen": 7.986666402293534,
+      "playersPercent": 99.65899999999999,
+      "apexPlayersPercent": 8.855
+    },
+    {
+      "name": "Eclipse",
+      "percentOfGen": 8.004452498779134,
+      "playersPercent": 99.648,
+      "apexPlayersPercent": 8.962
+    },
+    {
+      "name": "Golden",
+      "percentOfGen": 13.495858905634417,
+      "playersPercent": 99.978,
+      "apexPlayersPercent": 14.610000000000001
+    },
+    {
+      "name": "Fossilized",
+      "percentOfGen": 2.5050229801093797,
+      "playersPercent": 92.818,
+      "apexPlayersPercent": 3.0620000000000003
+    },
+    {
+      "name": "Prismatic",
+      "percentOfGen": 2.4989695356798025,
+      "playersPercent": 92.93299999999999,
+      "apexPlayersPercent": 2.897
+    }
+  ],
+  "daily": [
+    {
+      "day": 1,
+      "apexGenPercent": 15.310000000000002
+    },
+    {
+      "day": 2,
+      "apexGenPercent": 27.983999999999998
+    },
+    {
+      "day": 3,
+      "apexGenPercent": 38.308
+    },
+    {
+      "day": 4,
+      "apexGenPercent": 46.887
+    },
+    {
+      "day": 5,
+      "apexGenPercent": 54.16
+    },
+    {
+      "day": 6,
+      "apexGenPercent": 60.232
+    },
+    {
+      "day": 7,
+      "apexGenPercent": 65.322
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "checks": [
+    "presets and overrides",
+    "input guards",
+    "chunk reproducibility",
+    "zero attendance",
+    "all-gold and all-red",
+    "frozen run config",
+    "snapshot fingerprint",
+    "timing zones",
+    "pet/gen/combo/day conservation",
+    "daily cumulative counters",
+    "analytic Apex+Gen expectation"
+  ],
+  "players": 100000,
+  "casts": 21767196,
+  "apexGenPercent": 64.94,
+  "analytic": [
+    {
+      "group": "Casual",
+      "observed": 0.3288,
+      "expected": 0.3287693896826136
+    },
+    {
+      "group": "Thường",
+      "observed": 0.6799666666666667,
+      "expected": 0.6811617521286467
+    },
+    {
+      "group": "Hardcore",
+      "observed": 0.8783,
+      "expected": 0.8777588497119148
+    }
+  ]
+}

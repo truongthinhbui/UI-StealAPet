@@ -1,0 +1,75 @@
+{
+  "oldApexChance": 0.007786371394581311,
+  "newApexChance": 0.011635742845590548,
+  "results": [
+    {
+      "seed": 20261109,
+      "players": 100000,
+      "casts": 21767196,
+      "rate": 0.77209,
+      "groups": [
+        {
+          "name": "Casual",
+          "rate": 0.449,
+          "genChance": 0.47500346270172267
+        },
+        {
+          "name": "Thường",
+          "rate": 0.8184666666666667,
+          "genChance": 0.6749619407044405
+        },
+        {
+          "name": "Hardcore",
+          "rate": 0.95605,
+          "genChance": 0.824840200029878
+        }
+      ]
+    },
+    {
+      "seed": 7319021,
+      "players": 100000,
+      "casts": 21752713,
+      "rate": 0.77314,
+      "groups": [
+        {
+          "name": "Casual",
+          "rate": 0.4484,
+          "genChance": 0.4748888285217259
+        },
+        {
+          "name": "Thường",
+          "rate": 0.8200666666666667,
+          "genChance": 0.6750194508284436
+        },
+        {
+          "name": "Hardcore",
+          "rate": 0.9571,
+          "genChance": 0.8248353005134992
+        }
+      ]
+    },
+    {
+      "seed": 390761842,
+      "players": 100000,
+      "casts": 21759586,
+      "rate": 0.77533,
+      "groups": [
+        {
+          "name": "Casual",
+          "rate": 0.4541,
+          "genChance": 0.475404444518455
+        },
+        {
+          "name": "Thường",
+          "rate": 0.82215,
+          "genChance": 0.6748530380211929
+        },
+        {
+          "name": "Hardcore",
+          "rate": 0.9561,
+          "genChance": 0.8248303664524678
+        }
+      ]
+    }
+  ]
+}

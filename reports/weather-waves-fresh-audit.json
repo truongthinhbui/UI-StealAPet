@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1.0,
+    "type": 10.0,
+    "duration": 3.0,
+    "name": "GroundShake"
+  },
+  {
+    "id": 2.0,
+    "type": 3.0,
+    "duration": 3.0,
+    "name": "Windy"
+  },
+  {
+    "id": 3.0,
+    "type": 8.0,
+    "duration": 3.0,
+    "name": "HighTide"
+  },
+  {
+    "id": 4.0,
+    "type": 3.0,
+    "duration": 3.0,
+    "name": "Windy"
+  },
+  {
+    "id": 5.0,
+    "type": 10.0,
+    "duration": 3.0,
+    "name": "GroundShake"
+  },
+  {
+    "id": 6.0,
+    "type": 4.0,
+    "duration": 3.0,
+    "name": "Shadowfall"
+  },
+  {
+    "id": 7.0,
+    "type": 10.0,
+    "duration": 3.0,
+    "name": "GroundShake"
+  },
+  {
+    "id": 8.0,
+    "type": 2.0,
+    "duration": 3.0,
+    "name": "Snowy"
+  },
+  {
+    "id": 9.0,
+    "type": 8.0,
+    "duration": 3.0,
+    "name": "HighTide"
+  },
+  {
+    "id": 10.0,
+    "type": 5.0,
+    "duration": 3.0,
+    "name": "Rainbow"
+  },
+  {
+    "id": 11.0,
+    "type": 10.0,
+    "duration": 3.0,
+    "name": "GroundShake"
+  },
+  {
+    "id": 12.0,
+    "type": 6.0,
+    "duration": 3.0,
+    "name": "Tempest"
+  },
+  {
+    "id": 13.0,
+    "type": 10.0,
+    "duration": 3.0,
+    "name": "GroundShake"
+  },
+  {
+    "id": 14.0,
+    "type": 7.0,
+    "duration": 2.0,
+    "name": "Nebula"
+  },
+  {
+    "id": 15.0,
+    "type": 1.0,
+    "duration": 1.0,
+    "name": "Rainy"
+  },
+  {
+    "id": 16.0,
+    "type": 9.0,
+    "duration": 2.0,
+    "name": "HeavyRain"
+  },
+  {
+    "id": 17.0,
+    "type": 1.0,
+    "duration": 2.0,
+    "name": "Rainy"
+  },
+  {
+    "id": 18.0,
+    "type": 0.0,
+    "duration": 2.0,
+    "name": "Normal"
+  },
+  {
+    "id": 19.0,
+    "type": 10.0,
+    "duration": 3.0,
+    "name": "GroundShake"
+  },
+  {
+    "id": 20.0,
+    "type": 4.0,
+    "duration": 5.0,
+    "name": "Shadowfall"
+  },
+  {
+    "id": 21.0,
+    "type": 10.0,
+    "duration": 3.0,
+    "name": "GroundShake"
+  },
+  {
+    "id": 22.0,
+    "type": 3.0,
+    "duration": 3.0,
+    "name": "Windy"
+  },
+  {
+    "id": 23.0,
+    "type": 9.0,
+    "duration": 3.0,
+    "name": "HeavyRain"
+  },
+  {
+    "id": 24.0,
+    "type": 1.0,
+    "duration": 3.0,
+    "name": "Rainy"
+  },
+  {
+    "id": 25.0,
+    "type": 11.0,
+    "duration": 1.0,
+    "name": "GiftboxStorm"
+  }
+]

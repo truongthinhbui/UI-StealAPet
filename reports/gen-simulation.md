@@ -1,19 +1,17 @@
 # Fishing Gen simulation
 
-Config: merged-gen-5-single. Seed: 20261105. Each scenario uses 1,000,000 casts. This is a prototype balance proposal, not a workbook drop-rate export.
+Config: merged-gen-25-price-rarity. Seed: 20261109. Each scenario uses 100,000 casts. This is a prototype balance proposal, not a workbook drop-rate export.
 
 | Scenario | No Gen | 1 Gen | 2 Gen | Any Gen observed | Any Gen expected |
 |---|---:|---:|---:|---:|---:|
-| Full đỏ | 1000000 | 0 | 0 | 0.0000% | 0.0000% |
-| Full xanh | 699250 | 300750 | 0 | 30.0750% | 30.0000% |
-| 2 xanh + 1 vàng | 599778 | 400222 | 0 | 40.0222% | 40.0000% |
-| 1 xanh + 2 vàng | 499430 | 500570 | 0 | 50.0570% | 50.0000% |
-| Full vàng | 399326 | 600674 | 0 | 60.0674% | 60.0000% |
-| Ngẫu nhiên theo tỉ lệ tap | 730491 | 269509 | 0 | 26.9509% | 27.0000% |
+| Full đỏ · saved | 100000 | 0 | 0 | 0.0000% | 0.0000% |
+| Full xanh · saved | 50191 | 49809 | 0 | 49.8090% | 50.0000% |
+| Full vàng · saved | 0 | 100000 | 0 | 100.0000% | 100.0000% |
+| Ngẫu nhiên theo tỉ lệ tap · saved | 54881 | 45119 | 0 | 45.1190% | 45.0000% |
 
 Gen incidence is measured per cast. Each cast awards at most one Gen. Gen incidence sums to the chance of receiving a Gen.
 
-## Full đỏ
+## Full đỏ · saved
 
 | Gen | Count | Observed per cast | Expected per cast |
 |---|---:|---:|---:|
@@ -28,143 +26,51 @@ Gen incidence is measured per cast. Each cast awards at most one Gen. Gen incide
 | Eclipse | 0 | 0.0000% | 0.0000% |
 | Fossilized | 0 | 0.0000% | 0.0000% |
 | Prismatic | 0 | 0.0000% | 0.0000% |
-| Vortex | 0 | 0.0000% | 0.0000% |
-| Sequin | 0 | 0.0000% | 0.0000% |
-| Sweetheart | 0 | 0.0000% | 0.0000% |
-| Crystalline | 0 | 0.0000% | 0.0000% |
-| Radioactive | 0 | 0.0000% | 0.0000% |
-| Webbed | 0 | 0.0000% | 0.0000% |
-| Bling Bling | 0 | 0.0000% | 0.0000% |
-| Stormspark | 0 | 0.0000% | 0.0000% |
-| Galaxy | 0 | 0.0000% | 0.0000% |
-| Aurora | 0 | 0.0000% | 0.0000% |
 
-## Full xanh
+## Full xanh · saved
 
 | Gen | Count | Observed per cast | Expected per cast |
 |---|---:|---:|---:|
-| Golden | 165044 | 16.5044% | 16.4775% |
-| Soaked | 89206 | 8.9206% | 8.8725% |
-| Frozen | 29674 | 2.9674% | 2.9700% |
-| Frost | 13487 | 1.3487% | 1.3500% |
-| Gale | 1839 | 0.1839% | 0.1800% |
-| Magma | 604 | 0.0604% | 0.0607% |
-| Thundered | 407 | 0.0407% | 0.0405% |
-| Clover | 210 | 0.0210% | 0.0202% |
-| Eclipse | 136 | 0.0136% | 0.0135% |
-| Fossilized | 50 | 0.0050% | 0.0054% |
-| Prismatic | 31 | 0.0031% | 0.0034% |
-| Vortex | 24 | 0.0024% | 0.0020% |
-| Sequin | 16 | 0.0016% | 0.0016% |
-| Sweetheart | 4 | 0.0004% | 0.0011% |
-| Crystalline | 6 | 0.0006% | 0.0003% |
-| Radioactive | 5 | 0.0005% | 0.0003% |
-| Webbed | 1 | 0.0001% | 0.0003% |
-| Bling Bling | 0 | 0.0000% | 0.0002% |
-| Stormspark | 5 | 0.0005% | 0.0002% |
-| Galaxy | 0 | 0.0000% | 0.0001% |
-| Aurora | 1 | 0.0001% | 0.0001% |
+| Golden | 15962 | 15.9620% | 16.1250% |
+| Soaked | 16098 | 16.0980% | 16.1250% |
+| Frozen | 4445 | 4.4450% | 4.5000% |
+| Frost | 4576 | 4.5760% | 4.5000% |
+| Gale | 2315 | 2.3150% | 2.3750% |
+| Magma | 2371 | 2.3710% | 2.3750% |
+| Thundered | 1496 | 1.4960% | 1.5000% |
+| Clover | 1015 | 1.0150% | 1.0000% |
+| Eclipse | 1011 | 1.0110% | 1.0000% |
+| Fossilized | 266 | 0.2660% | 0.2500% |
+| Prismatic | 254 | 0.2540% | 0.2500% |
 
-## 2 xanh + 1 vàng
+## Full vàng · saved
 
 | Gen | Count | Observed per cast | Expected per cast |
 |---|---:|---:|---:|
-| Golden | 219951 | 21.9951% | 21.9700% |
-| Soaked | 118327 | 11.8327% | 11.8300% |
-| Frozen | 39630 | 3.9630% | 3.9600% |
-| Frost | 17928 | 1.7928% | 1.8000% |
-| Gale | 2374 | 0.2374% | 0.2400% |
-| Magma | 821 | 0.0821% | 0.0810% |
-| Thundered | 532 | 0.0532% | 0.0540% |
-| Clover | 290 | 0.0290% | 0.0270% |
-| Eclipse | 181 | 0.0181% | 0.0180% |
-| Fossilized | 74 | 0.0074% | 0.0072% |
-| Prismatic | 35 | 0.0035% | 0.0045% |
-| Vortex | 28 | 0.0028% | 0.0027% |
-| Sequin | 24 | 0.0024% | 0.0022% |
-| Sweetheart | 6 | 0.0006% | 0.0014% |
-| Crystalline | 5 | 0.0005% | 0.0004% |
-| Radioactive | 5 | 0.0005% | 0.0004% |
-| Webbed | 4 | 0.0004% | 0.0004% |
-| Bling Bling | 0 | 0.0000% | 0.0003% |
-| Stormspark | 5 | 0.0005% | 0.0003% |
-| Galaxy | 0 | 0.0000% | 0.0001% |
-| Aurora | 2 | 0.0002% | 0.0001% |
+| Golden | 32355 | 32.3550% | 32.2500% |
+| Soaked | 32157 | 32.1570% | 32.2500% |
+| Frozen | 9171 | 9.1710% | 9.0000% |
+| Frost | 8918 | 8.9180% | 9.0000% |
+| Gale | 4689 | 4.6890% | 4.7500% |
+| Magma | 4761 | 4.7610% | 4.7500% |
+| Thundered | 2967 | 2.9670% | 3.0000% |
+| Clover | 1961 | 1.9610% | 2.0000% |
+| Eclipse | 2024 | 2.0240% | 2.0000% |
+| Fossilized | 498 | 0.4980% | 0.5000% |
+| Prismatic | 499 | 0.4990% | 0.5000% |
 
-## 1 xanh + 2 vàng
+## Ngẫu nhiên theo tỉ lệ tap · saved
 
 | Gen | Count | Observed per cast | Expected per cast |
 |---|---:|---:|---:|
-| Golden | 275027 | 27.5027% | 27.4625% |
-| Soaked | 148144 | 14.8144% | 14.7875% |
-| Frozen | 49388 | 4.9388% | 4.9500% |
-| Frost | 22548 | 2.2548% | 2.2500% |
-| Gale | 2985 | 0.2985% | 0.3000% |
-| Magma | 1018 | 0.1018% | 0.1012% |
-| Thundered | 657 | 0.0657% | 0.0675% |
-| Clover | 357 | 0.0357% | 0.0338% |
-| Eclipse | 216 | 0.0216% | 0.0225% |
-| Fossilized | 88 | 0.0088% | 0.0090% |
-| Prismatic | 46 | 0.0046% | 0.0056% |
-| Vortex | 32 | 0.0032% | 0.0034% |
-| Sequin | 30 | 0.0030% | 0.0027% |
-| Sweetheart | 13 | 0.0013% | 0.0018% |
-| Crystalline | 3 | 0.0003% | 0.0006% |
-| Radioactive | 4 | 0.0004% | 0.0005% |
-| Webbed | 6 | 0.0006% | 0.0004% |
-| Bling Bling | 0 | 0.0000% | 0.0004% |
-| Stormspark | 6 | 0.0006% | 0.0003% |
-| Galaxy | 0 | 0.0000% | 0.0002% |
-| Aurora | 2 | 0.0002% | 0.0001% |
-
-## Full vàng
-
-| Gen | Count | Observed per cast | Expected per cast |
-|---|---:|---:|---:|
-| Golden | 330250 | 33.0250% | 32.9550% |
-| Soaked | 177753 | 17.7753% | 17.7450% |
-| Frozen | 59101 | 5.9101% | 5.9400% |
-| Frost | 26932 | 2.6932% | 2.7000% |
-| Gale | 3610 | 0.3610% | 0.3600% |
-| Magma | 1242 | 0.1242% | 0.1215% |
-| Thundered | 812 | 0.0812% | 0.0810% |
-| Clover | 432 | 0.0432% | 0.0405% |
-| Eclipse | 274 | 0.0274% | 0.0270% |
-| Fossilized | 98 | 0.0098% | 0.0108% |
-| Prismatic | 60 | 0.0060% | 0.0068% |
-| Vortex | 38 | 0.0038% | 0.0040% |
-| Sequin | 34 | 0.0034% | 0.0032% |
-| Sweetheart | 15 | 0.0015% | 0.0022% |
-| Crystalline | 3 | 0.0003% | 0.0007% |
-| Radioactive | 5 | 0.0005% | 0.0006% |
-| Webbed | 6 | 0.0006% | 0.0005% |
-| Bling Bling | 0 | 0.0000% | 0.0005% |
-| Stormspark | 7 | 0.0007% | 0.0004% |
-| Galaxy | 0 | 0.0000% | 0.0002% |
-| Aurora | 2 | 0.0002% | 0.0001% |
-
-## Ngẫu nhiên theo tỉ lệ tap
-
-| Gen | Count | Observed per cast | Expected per cast |
-|---|---:|---:|---:|
-| Golden | 147908 | 14.7908% | 14.8298% |
-| Soaked | 79630 | 7.9630% | 7.9853% |
-| Frozen | 26816 | 2.6816% | 2.6730% |
-| Frost | 12256 | 1.2256% | 1.2150% |
-| Gale | 1583 | 0.1583% | 0.1620% |
-| Magma | 517 | 0.0517% | 0.0547% |
-| Thundered | 354 | 0.0354% | 0.0364% |
-| Clover | 197 | 0.0197% | 0.0182% |
-| Eclipse | 131 | 0.0131% | 0.0122% |
-| Fossilized | 39 | 0.0039% | 0.0049% |
-| Prismatic | 28 | 0.0028% | 0.0031% |
-| Vortex | 23 | 0.0023% | 0.0018% |
-| Sequin | 10 | 0.0010% | 0.0015% |
-| Sweetheart | 4 | 0.0004% | 0.0010% |
-| Crystalline | 3 | 0.0003% | 0.0003% |
-| Radioactive | 1 | 0.0001% | 0.0003% |
-| Webbed | 2 | 0.0002% | 0.0002% |
-| Bling Bling | 3 | 0.0003% | 0.0002% |
-| Stormspark | 3 | 0.0003% | 0.0002% |
-| Galaxy | 1 | 0.0001% | 0.0001% |
-| Aurora | 0 | 0.0000% | 0.0001% |
+| Golden | 14546 | 14.5460% | 14.5125% |
+| Soaked | 14608 | 14.6080% | 14.5125% |
+| Frozen | 3994 | 3.9940% | 4.0500% |
+| Frost | 4094 | 4.0940% | 4.0500% |
+| Gale | 2165 | 2.1650% | 2.1375% |
+| Magma | 2076 | 2.0760% | 2.1375% |
+| Thundered | 1380 | 1.3800% | 1.3500% |
+| Clover | 883 | 0.8830% | 0.9000% |
+| Eclipse | 931 | 0.9310% | 0.9000% |
+| Fossilized | 233 | 0.2330% | 0.2250% |
+| Prismatic | 209 | 0.2090% | 0.2250% |
