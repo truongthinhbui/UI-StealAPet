@@ -2,7 +2,7 @@ import * as THREE from './vendor/three/three.module.js';
 import {FBXLoader} from './vendor/three/FBXLoader.js';
 import {AnimationBlend} from './animation-blend.js';
 import {setupRopeGame} from './rope-3d.js?v=locked-4';
-import {setupGlitchGame} from './glitch-3d.js?v=third-person-5';
+import {setupGlitchGame} from './glitch-3d.js?v=entry-expand-8';
 
 const root=document.getElementById('tab-character-3d');
 root.innerHTML=`<header class="characterHeader"><div><span class="characterKicker">CHARACTER PLAYGROUND</span><h2>Kelly · 3D Movement</h2><p>Điều khiển tức thì, animation chuyển mượt. Nhảy không lấy đà.</p></div><span class="characterState" role="status">Đang tải</span></header><div class="characterStage"><span class="characterViewLabel">THIRD PERSON / TRAINING GROUND</span><span class="characterFloorHint">Kéo chuột hoặc vuốt bên phải để xoay camera</span><span class="characterCrosshair" aria-hidden="true"></span><div class="characterLoad"><strong>Đang chuẩn bị nhân vật…</strong><p>Đang tải model, texture và 4 animation.</p></div><div class="characterJoystick" role="group" aria-label="Joystick di chuyển"><span></span></div><div class="characterTouchActions"><button type="button" data-3d="death" disabled>Ngã</button><button type="button" data-3d="jump" disabled>Nhảy</button></div></div><div class="characterToolbar"><div class="characterAnimList"><span data-clip="idle">01 Idle</span><span data-clip="walking">02 Walking</span><span data-clip="jump">03 Jump</span><span data-clip="death">04 Flying Back Death</span></div><button type="button" data-3d="reset" disabled>Đặt lại nhân vật</button></div><div class="characterInstructions"><kbd>W A S D</kbd> hoặc <kbd>↑ ↓ ← →</kbd> Đi bộ &nbsp; <kbd>Space</kbd> Nhảy &nbsp; <kbd>K</kbd> Thử ngã &nbsp; <kbd>R</kbd> Đặt lại<br>Mobile: joystick trái để đi, vuốt vùng bên phải để nhìn. Nhấp vào sân để dùng bàn phím. Animation ngã phát một lần và giữ tư thế cuối.</div>`;
@@ -55,10 +55,9 @@ function animate(now){
     ropeGame.update(dt);
   }else if(glitchGame?.active){
     let moving=false;
-    if(glitchGame.canMove&&!dead){let x=(keys.has('d')||keys.has('arrowright')?1:0)-(keys.has('a')||keys.has('arrowleft')?1:0)+stick.x,z=(keys.has('s')||keys.has('arrowdown')?1:0)-(keys.has('w')||keys.has('arrowup')?1:0)+stick.y;const len=Math.hypot(x,z);moving=len>.04;if(moving){x/=len;z/=len;const wx=x*Math.cos(yaw)+z*Math.sin(yaw),wz=-x*Math.sin(yaw)+z*Math.cos(yaw);position.x+=wx*2.8*dt;position.z+=wz*2.8*dt;const r=Math.hypot(position.x,position.z),limit=glitchGame.engine.arenaRadius;if(r>limit){position.x*=limit/r;position.z*=limit/r;}const turn=Math.atan2(Math.sin(Math.atan2(wx,wz)-actor.rotation.y),Math.cos(Math.atan2(wx,wz)-actor.rotation.y));actor.rotation.y+=turn*(1-Math.exp(-30*dt));}}
+    if(glitchGame.canMove&&!dead){let x=(keys.has('d')||keys.has('arrowright')?1:0)-(keys.has('a')||keys.has('arrowleft')?1:0)+stick.x,z=(keys.has('s')||keys.has('arrowdown')?1:0)-(keys.has('w')||keys.has('arrowup')?1:0)+stick.y;const len=Math.hypot(x,z);moving=len>.04;if(moving){x/=len;z/=len;const wx=x*Math.cos(yaw)+z*Math.sin(yaw),wz=-x*Math.sin(yaw)+z*Math.cos(yaw);position.x+=wx*2.8*dt;position.z+=wz*2.8*dt;position.x=THREE.MathUtils.clamp(position.x,-worldSize,worldSize);position.z=THREE.MathUtils.clamp(position.z,-worldSize,worldSize);const turn=Math.atan2(Math.sin(Math.atan2(wx,wz)-actor.rotation.y),Math.cos(Math.atan2(wx,wz)-actor.rotation.y));actor.rotation.y+=turn*(1-Math.exp(-30*dt));}}
     if(jumpRemaining>0)jumpRemaining=Math.max(0,jumpRemaining-dt);
     if(!dead&&jumpRemaining===0)setState(moving?'walking':'idle');glitchGame.update(dt);
-    if(glitchGame.atHome){dead=false;stage.dataset.dead='false';actor.rotation.y=Math.PI;setState('idle');}
   }else if(!dead){
     let x=(keys.has('d')||keys.has('arrowright')?1:0)-(keys.has('a')||keys.has('arrowleft')?1:0)+stick.x;
     let z=(keys.has('s')||keys.has('arrowdown')?1:0)-(keys.has('w')||keys.has('arrowup')?1:0)+stick.y;
