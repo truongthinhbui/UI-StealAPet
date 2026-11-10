@@ -1,6 +1,7 @@
+import {glitchBonus} from './glitch-rewards.js?v=items-13';
 export class GlitchEscape {
-  constructor(random=Math.random){this.random=random;this.bestStreak=0;this.charges=0;this.money=0;this.moneyPerCircle=1;this.arenaRadius=3;this.safeRadius=.85;this.duration=3;this.testMode=false;this.reset();}
-  reset(){this.streak=0;this.lastStreak=0;this.lastReward=0;this.level=1;this.duration=3;this.safeRadius=.85;this.state='ready';this.time=0;this.round=0;this.safeX=0;this.safeZ=0;this.success=false;this.rewardTime=0;this.expandTime=0;}
+  constructor(random=Math.random){this.random=random;this.items={dust:0,spins:0,pet:0,mutagen:0};this.bestStreak=0;this.charges=0;this.money=0;this.moneyPerCircle=1;this.arenaRadius=3;this.safeRadius=.85;this.duration=3;this.testMode=false;this.reset();}
+  reset(){this.lastBonus=null;this.streak=0;this.lastStreak=0;this.lastReward=0;this.level=1;this.duration=3;this.safeRadius=.85;this.state='ready';this.time=0;this.round=0;this.safeX=0;this.safeZ=0;this.success=false;this.rewardTime=0;this.expandTime=0;}
   nextCircle(){this.level=1+Math.min(6,Math.floor(this.streak/5));this.duration=3-(this.level-1)*.2;this.safeRadius=.85-(this.level-1)*.05;const previousX=this.safeX,previousZ=this.safeZ;let angle=this.random()*Math.PI*2,r=1.25+this.random()*.75;let x=Math.cos(angle)*r,z=Math.sin(angle)*r;if(this.round>0&&Math.hypot(x-previousX,z-previousZ)<this.safeRadius*2){x=-previousX;z=-previousZ;}this.safeX=x;this.safeZ=z;this.round++;this.time=0;this.state='dodge';}
   get nextReward(){return this.moneyPerCircle*Math.min(3,1+Math.floor((this.streak+1)/5));}
   get multiplier(){return Math.min(3,1+Math.floor(this.streak/5));}
@@ -16,7 +17,7 @@ export class GlitchEscape {
       this.time+=dt;
       this.success=Math.hypot(x-this.safeX,z-this.safeZ)<=this.safeRadius;
       if(!this.testMode&&this.time>this.duration){this.finish('failed');}
-      else if(this.success){this.charges++;this.streak++;this.bestStreak=Math.max(this.bestStreak,this.streak);this.lastReward=this.moneyPerCircle*this.multiplier;this.money+=this.lastReward;this.rewardTime=1.2;this.nextCircle();}
+      else if(this.success){this.charges++;this.streak++;this.bestStreak=Math.max(this.bestStreak,this.streak);this.lastReward=this.moneyPerCircle*this.multiplier;this.money+=this.lastReward;this.lastBonus=glitchBonus(this.streak);if(this.lastBonus)this.items[this.lastBonus.type]+=this.lastBonus.amount;this.rewardTime=1.2;this.nextCircle();}
       else if(!this.testMode&&this.time>=this.duration)this.finish('failed');
     }
   }
