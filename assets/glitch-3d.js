@@ -1,4 +1,4 @@
-import {createGlitchJuice} from './glitch-juice.js?v=juice-9';
+import {createGlitchJuice} from './glitch-juice.js?v=fire-11';
 import {GlitchEscape} from './glitch-engine.js?v=money-10';
 export function setupGlitchGame({THREE:T,root,stage,scene,position,clearInput,focusStage,onLost,onRestart}){
   const engine=new GlitchEscape(),world=new T.Group();scene.add(world);world.visible=false;
@@ -30,7 +30,7 @@ export function setupGlitchGame({THREE:T,root,stage,scene,position,clearInput,fo
     if(!active)return;
     const previousState=engine.state;
     const previousMoney=engine.money,previousX=engine.safeX,previousZ=engine.safeZ;
-    engine.update(dt,position.x,position.z);clock+=dt;if(engine.state==='expanding'&&previousState!=='expanding')juice.expand();juice.update(dt,engine);
+    engine.update(dt,position.x,position.z);clock+=dt;if(engine.state==='expanding'&&previousState!=='expanding')juice.expand();if(engine.state==='ended'&&previousState!=='ended')juice.exit();juice.update(dt,engine);
     if(engine.money>previousMoney)celebrate(previousX,previousZ);
     fxTime=Math.max(0,fxTime-dt);const progress=1-fxTime/.7;
     burst.visible=fxTime>0;burst.position.set(fxX,.10,fxZ);burst.scale.setScalar(1+progress*1.8);burst.material.opacity=1-progress;

@@ -6,6 +6,8 @@
  const voices=new Set();
  try{enabled=localStorage.getItem('revival-sound')!=='off';}catch{}
  const cues={
+  glitchIgnite:{notes:[110,165,330],duration:.19,level:.06,type:'sawtooth',priority:2},
+  glitchExit:{notes:[330,180,90],duration:.16,level:.05,type:'triangle',priority:2},
   glitchOpen:{notes:[130,260,520,1040],duration:.16,level:.065,type:'triangle',priority:2},
   glitchJump:{notes:[310,465],duration:.065,level:.035,type:'sine',priority:0},
   glitchLand:{notes:[140,100],duration:.065,level:.04,type:'triangle',priority:0},
