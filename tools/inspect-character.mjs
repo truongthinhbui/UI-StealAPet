@@ -1,0 +1,5 @@
+import fs from 'node:fs';
+import {FBXLoader} from '../assets/vendor/three/FBXLoader.js';
+import {Box3,Vector3} from '../assets/vendor/three/three.module.js';
+globalThis.window=globalThis;globalThis.document={createElementNS(){return {addEventListener(){},removeEventListener(){},set src(v){}};}};
+for(const f of ['idle','walking','jump','death']){const b=fs.readFileSync('assets/character-3d/'+f+'.fbx'),o=new FBXLoader().parse(b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength),'assets/character-3d/');const meshes=[];o.traverse(m=>{if(m.isMesh)meshes.push({name:m.name,skin:m.isSkinnedMesh,materials:(Array.isArray(m.material)?m.material:[m.material]).map(m=>({name:m.name,map:m.map?.name})),vertices:m.geometry.attributes.position.count,bones:m.skeleton?.bones.length});});console.log(JSON.stringify({f,meshes,box:new Box3().setFromObject(o).getSize(new Vector3()).toArray(),clips:o.animations.map(a=>({name:a.name,duration:a.duration,tracks:a.tracks.length,first:a.tracks.slice(0,4).map(t=>t.name)}))},null,2));}

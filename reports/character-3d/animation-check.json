@@ -1,0 +1,34 @@
+[
+  {
+    "animation": "idle",
+    "duration": 16.616666793823242,
+    "tracks": 53,
+    "verticalHipTravel": 0.023602139188763076,
+    "once": false,
+    "pausedAtEnd": false
+  },
+  {
+    "animation": "walking",
+    "duration": 0.949999988079071,
+    "tracks": 53,
+    "verticalHipTravel": 0.05017382873617577,
+    "once": false,
+    "pausedAtEnd": false
+  },
+  {
+    "animation": "jump",
+    "duration": 1.6666666269302368,
+    "tracks": 53,
+    "verticalHipTravel": 0.615926190640439,
+    "once": true,
+    "pausedAtEnd": true
+  },
+  {
+    "animation": "death",
+    "duration": 3.0166666507720947,
+    "tracks": 53,
+    "verticalHipTravel": 1.1731863012512331,
+    "once": true,
+    "pausedAtEnd": true
+  }
+]
