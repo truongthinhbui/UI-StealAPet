@@ -1,12 +1,12 @@
 import {createGlitchJuice} from './glitch-juice.js?v=juice-9';
-import {GlitchEscape} from './glitch-engine.js?v=entry-expand-8';
+import {GlitchEscape} from './glitch-engine.js?v=money-10';
 export function setupGlitchGame({THREE:T,root,stage,scene,position,clearInput,focusStage,onLost,onRestart}){
   const engine=new GlitchEscape(),world=new T.Group();scene.add(world);world.visible=false;
   const mode=document.createElement('button');mode.type='button';mode.dataset.ropeMode='glitch';mode.textContent='Vòng tròn Glitch';root.querySelector('.ropeModes').append(mode);
-  const panel=document.createElement('section');panel.className='glitchPanel';panel.innerHTML='<div class="glitchTop"><strong>Chạm vòng · 3 giây · Vô hạn vòng</strong><span data-glitch-charges>0 Glitch Charge</span></div><p data-glitch-message></p><div class="glitchProgress"><i></i></div><div class="glitchActions"><button type="button" data-glitch-start>Đặt lại vị trí</button></div>';stage.before(panel);
+  const panel=document.createElement('section');panel.className='glitchPanel';panel.innerHTML='<div class="glitchTop"><strong>Chạm vòng · 3 giây · Vô hạn vòng</strong><span data-glitch-money role="status" aria-live="polite">0 tiền</span></div><p data-glitch-message></p><div class="glitchProgress"><i></i></div><div class="glitchActions"><button type="button" data-glitch-start>Đặt lại vị trí</button></div>';stage.before(panel);
   const staticFx=document.createElement('div');staticFx.className='glitchStatic';staticFx.setAttribute('aria-hidden','true');stage.append(staticFx);
   const cue=document.createElement('div');cue.className='glitchCue';cue.setAttribute('role','status');stage.append(cue);
-  const message=panel.querySelector('[data-glitch-message]'),start=panel.querySelector('[data-glitch-start]'),bar=panel.querySelector('.glitchProgress i'),count=panel.querySelector('[data-glitch-charges]');
+  const message=panel.querySelector('[data-glitch-message]'),start=panel.querySelector('[data-glitch-start]'),bar=panel.querySelector('.glitchProgress i'),count=panel.querySelector('[data-glitch-money]');
   function box(w,h,d,color){return new T.Mesh(new T.BoxGeometry(w,h,d),new T.MeshStandardMaterial({color,roughness:.7}));}
   function disc(radius,color,y,opacity=1){const m=new T.Mesh(new T.CircleGeometry(radius,80),new T.MeshBasicMaterial({color,transparent:opacity<1,opacity,depthWrite:opacity===1}));m.rotation.x=-Math.PI/2;m.position.y=y;world.add(m);return m;}
   function ring(radius,color,y){const m=new T.Mesh(new T.TorusGeometry(radius,.035,8,80),new T.MeshBasicMaterial({color}));m.rotation.x=-Math.PI/2;m.position.y=y;world.add(m);return m;}
@@ -20,7 +20,7 @@ export function setupGlitchGame({THREE:T,root,stage,scene,position,clearInput,fo
   const juice=createGlitchJuice({THREE:T,world,stage,panel,arena,entry,position});
   let active=false,lastState='',fxTime=0,fxX=0,fxZ=0,clock=0;
   function resetFx(){juice.reset();fxTime=0;burst.visible=false;sparks.forEach(m=>m.visible=false);reward.classList.remove('pop');reward.hidden=true;stage.classList.remove('glitchHit','glitchDanger','glitchDead');}
-  function celebrate(x,z){juice.pickup(x,z);count.animate?.([{transform:'scale(1.18)',color:'#fff'},{transform:'scale(1)',color:'#bcf4df'}],{duration:220,easing:'ease-out'});fxTime=.7;fxX=x;fxZ=z;reward.hidden=false;reward.textContent='+1 GLITCH CHARGE';reward.classList.remove('pop');stage.classList.remove('glitchHit');void reward.offsetWidth;reward.classList.add('pop');stage.classList.add('glitchHit');window.RevivalAudio?.play('excellent');}
+  function celebrate(x,z){juice.pickup(x,z);count.animate?.([{transform:'scale(1.18)',color:'#fff'},{transform:'scale(1)',color:'#bcf4df'}],{duration:220,easing:'ease-out'});fxTime=.7;fxX=x;fxZ=z;reward.hidden=false;reward.textContent='+'+engine.moneyPerCircle+' TIỀN';reward.classList.remove('pop');stage.classList.remove('glitchHit');void reward.offsetWidth;reward.classList.add('pop');stage.classList.add('glitchHit');window.RevivalAudio?.play('excellent');}
 
   function text(el,value){if(el.textContent!==value)el.textContent=value;}
   function startRound(){engine.reset();resetFx();onRestart();position.set(0,0,5);clearInput();lastState='';focusStage();}
@@ -29,9 +29,9 @@ export function setupGlitchGame({THREE:T,root,stage,scene,position,clearInput,fo
   function update(dt){
     if(!active)return;
     const previousState=engine.state;
-    const previousCharges=engine.charges,previousX=engine.safeX,previousZ=engine.safeZ;
+    const previousMoney=engine.money,previousX=engine.safeX,previousZ=engine.safeZ;
     engine.update(dt,position.x,position.z);clock+=dt;if(engine.state==='expanding'&&previousState!=='expanding')juice.expand();juice.update(dt,engine);
-    if(engine.charges>previousCharges)celebrate(previousX,previousZ);
+    if(engine.money>previousMoney)celebrate(previousX,previousZ);
     fxTime=Math.max(0,fxTime-dt);const progress=1-fxTime/.7;
     burst.visible=fxTime>0;burst.position.set(fxX,.10,fxZ);burst.scale.setScalar(1+progress*1.8);burst.material.opacity=1-progress;
     sparks.forEach((m,i)=>{m.visible=fxTime>0;const a=i*Math.PI*2/sparks.length,r=.2+progress*1.45;m.position.set(fxX+Math.cos(a)*r,.12+Math.sin(progress*Math.PI)*(.3+i%3*.1),fxZ+Math.sin(a)*r);m.material.opacity=1-progress;m.rotation.x+=dt*5;m.rotation.z+=dt*4;});
@@ -40,8 +40,8 @@ export function setupGlitchGame({THREE:T,root,stage,scene,position,clearInput,fo
     if(stateKey!==lastState){
       lastState=stateKey;
       if(engine.state==='failed'){onLost();window.RevivalAudio?.play('fail');}
-      const copy={ready:'Bạn đang ở ngoài sân. Đi tới điểm glitch tím phía trước để tự động mở minigame.',expanding:'Glitch đang mở rộng thành sân tròn…',ended:'Đã ra khỏi sân · Lượt chơi kết thúc. Giữ nguyên Charge đã nhận. Bấm Chơi lại để trở về điểm xuất phát.',dodge:'Vòng '+engine.round+' · Chạm vòng xanh: +1 Charge ngay và chuyển vòng tiếp theo. Mỗi vòng 3 giây.',failed:'Bạn đã chết vì đứng ngoài vòng xanh. Bấm Thử lại để chơi tiếp.'};text(message,copy[engine.state]);
-      start.disabled=engine.state==='expanding';text(start,engine.state==='ready'?'Đặt lại vị trí':engine.state==='dodge'?'Kết thúc & đặt lại':'Chơi lại');text(count,engine.charges+' Glitch Charge');
+      const copy={ready:'Bạn đang ở ngoài sân. Đi tới điểm glitch tím phía trước để tự động mở minigame.',expanding:'Glitch đang mở rộng thành sân tròn…',ended:'Đã ra khỏi sân · Lượt chơi kết thúc. Giữ nguyên tiền đã nhận. Bấm Chơi lại để trở về điểm xuất phát.',dodge:'Vòng '+engine.round+' · Chạm vòng xanh: +'+engine.moneyPerCircle+' tiền ngay và chuyển vòng tiếp theo. Mỗi vòng 3 giây.',failed:'Bạn đã chết vì đứng ngoài vòng xanh. Bấm Thử lại để chơi tiếp.'};text(message,copy[engine.state]);
+      start.disabled=engine.state==='expanding';text(start,engine.state==='ready'?'Đặt lại vị trí':engine.state==='dodge'?'Kết thúc & đặt lại':'Chơi lại');text(count,engine.money.toLocaleString('vi-VN')+' tiền');
     }
     const playing=engine.state==='dodge',inside=Math.hypot(position.x-engine.safeX,position.z-engine.safeZ)<=engine.safeRadius;
     text(cue,playing?'VÒNG '+engine.round+' · '+Math.max(0,engine.duration-engine.time).toFixed(1)+'s':engine.state==='failed'?'ĐÃ CHẾT':engine.state==='ended'?'ĐÃ KẾT THÚC':engine.state==='expanding'?'GLITCH ĐANG MỞ':'ĐI TỚI ĐIỂM GLITCH');
