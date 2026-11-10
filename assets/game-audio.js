@@ -6,6 +6,9 @@
  const voices=new Set();
  try{enabled=localStorage.getItem('revival-sound')!=='off';}catch{}
  const cues={
+  glitchOpen:{notes:[130,260,520,1040],duration:.16,level:.065,type:'triangle',priority:2},
+  glitchJump:{notes:[310,465],duration:.065,level:.035,type:'sine',priority:0},
+  glitchLand:{notes:[140,100],duration:.065,level:.04,type:'triangle',priority:0},
   tap:{notes:[420],duration:.045,level:.07,type:'sine',priority:0},
   good:{notes:[660,880],duration:.11,level:.10,type:'sine',priority:1},
   excellent:{notes:[784,1047,1319,1568],duration:.18,level:.10,type:'triangle',priority:2},
