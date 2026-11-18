@@ -1,28 +1,28 @@
 import assert from 'node:assert/strict';
-import {KickRound,judgeShot,powerAt,GREEN_MIN,GREEN_MAX,GOAL_Z,GOAL_WIDTH} from '../assets/kick-ball-engine.js';
-assert.equal(judgeShot(GREEN_MIN),'goal');assert.equal(judgeShot(GREEN_MAX),'goal');assert.equal(judgeShot(GREEN_MIN-.001),'low');assert.equal(judgeShot(GREEN_MAX+.001),'high');assert.equal(powerAt(0),0);assert(Math.abs(powerAt(.9)-.5)<1e-10);assert(Math.abs(powerAt(1.8))<1e-10);
-const game=new KickRound();for(let i=0;i<6;i++){assert(game.shoot(i,[.1,.5,.9][i%3]));assert.equal(game.shoot(i,.5),null,'No duplicate input during ball flight');game.settle();}assert.equal(game.phase,'done');assert.equal(game.shots.length,6);assert.equal(game.goals,2);assert.equal(game.shoot(0,.5),null);game.reset();assert.equal(game.phase,'ready');assert.equal(game.shots.length,0);assert.equal(game.goals,0);console.log('PASS green boundaries, low/high misses, repeating low-to-high power, all attempts count, flight input guard, six-shot limit, score and restart.');
-import {aimCell,flightPoint} from '../assets/kick-ball-engine.js';
-for(let cell=0;cell<6;cell++)for(const power of [GREEN_MIN,.52,GREEN_MAX]){
- const round=new KickRound(),shot=round.shoot(cell,power);assert.equal(round.score,0,'No points before arrival');
- const cross=flightPoint(shot,.82);assert.equal(cross.z,GOAL_Z);assert(Math.abs(cross.x-shot.aim.x)<1e-9);assert(Math.abs(cross.y-shot.aim.y)<1e-9);assert.equal(aimCell(cross.x,cross.y),cell);
- const end=flightPoint(shot,1);assert(end.z<GOAL_Z&&end.z>GOAL_Z-2);assert(end.x> -GOAL_WIDTH/2&&end.x<GOAL_WIDTH/2);assert(end.y>=.2&&end.y<3.4);round.settle();assert.equal(round.score,10);round.settle();assert.equal(round.score,10,'Settle cannot duplicate score');
-}
-for(const x of [-3.65,0,3.65])for(const y of [.35,.9,2.7,3.25]){const round=new KickRound();const point={x,y};const shot=round.shoot(aimCell(x,y),.52,point);point.x=999;const cross=flightPoint(shot,.82);assert.equal(cross.x,x,'Aim captured at shot');assert(Math.abs(cross.y-y)<1e-9);}
-for(const power of [.1,.9]){const round=new KickRound(),shot=round.shoot(0,power);const cross=flightPoint(shot,.82);assert(power<.42?cross.z>GOAL_Z:cross.y>3.8);round.settle();assert.equal(round.score,0);}
-console.log('PASS all six cells and green edges cross the selected target; green balls stay inside net; drag aim snapshot; points only on settled hits, no duplicate points; low/high miss trajectories.');
 import * as THREE from '../assets/vendor/three/three.module.js';
-import {cameraAim,pointCamera,rotateAimCamera} from '../assets/kick-ball-camera.js';
-for(const [z,y] of [[6.8,1.7],[8.2,1.9]]){
- const camera=new THREE.PerspectiveCamera(45,1266/710,.1,140);camera.position.set(.45,y,z);
- pointCamera(camera,{x:0,y:.9});const before=camera.quaternion.clone();const scenePoint=new THREE.Vector3(-GOAL_WIDTH/2,3.6,GOAL_Z).project(camera);
- let aim=rotateAimCamera(camera,80,-40);assert(aim.x>0&&aim.y>.9);assert(!camera.quaternion.equals(before),'Dragging must rotate actual camera');
- const afterPoint=new THREE.Vector3(-GOAL_WIDTH/2,3.6,GOAL_Z).project(camera);assert(scenePoint.distanceTo(afterPoint)>.01,'World must move on screen');
- const center=new THREE.Vector3(aim.x,aim.y,GOAL_Z).project(camera);assert(Math.abs(center.x)<1e-8&&Math.abs(center.y)<1e-8,'Aim stays screen-centered');
- for(const cell of [0,1,2,3,4,5]){pointCamera(camera,{x:(cell%3-1)*GOAL_WIDTH/3,y:cell<3?2.7:.9});const p=cameraAim(camera);assert.equal(aimCell(p.x,p.y),cell);}
- for(const d of [-100000,100000]){aim=rotateAimCamera(camera,d,d);assert(aim.x>=-GOAL_WIDTH/2+.349999&&aim.x<=GOAL_WIDTH/2-.349999);assert(aim.y>=.349999&&aim.y<=3.250001);}
+import {KickRound,judgeShot,powerAt,GREEN_MIN,GREEN_MAX,GOAL_Z,TARGET_RADIUS,BALL_RADIUS,targetAt,targetCenter} from '../assets/kick-ball-engine.js';
+import {flightPoint} from '../assets/kick-ball-engine.js';
+import {cameraAim,pointCamera,rotateAimCamera,resizeOrbit} from '../assets/kick-ball-camera.js';
+assert.equal(judgeShot(GREEN_MIN),'goal');assert.equal(judgeShot(GREEN_MAX),'goal');assert.equal(judgeShot(GREEN_MIN-.001),'low');assert.equal(judgeShot(GREEN_MAX+.001),'high');assert.equal(powerAt(0),0);assert(Math.abs(powerAt(.9)-.5)<1e-10);assert(Math.abs(powerAt(1.8))<1e-10);
+for(let id=0;id<6;id++)for(const power of [GREEN_MIN,.52,GREEN_MAX]){
+ const round=new KickRound(),center=targetCenter(id),shot=round.shoot(id,power);assert.equal(targetAt(center.x,center.y),id);assert.equal(round.score,0);
+ const cross=flightPoint(shot,.82);assert.equal(cross.z,GOAL_Z);assert(Math.abs(cross.x-center.x)<1e-9);assert(Math.abs(cross.y-center.y)<1e-9);assert.equal(shot.result,'goal');
+ const end=flightPoint(shot,1);assert(end.z<GOAL_Z&&end.z>GOAL_Z-2);assert(round.impact());assert(!round.impact());assert.equal(round.score,10);round.settle();assert.equal(round.score,10);assert(round.cleared.has(id));assert.equal(round.shoot(id,.52),null);assert.equal(round.shots.length,1);
+ const radius=TARGET_RADIUS-BALL_RADIUS;assert.equal(targetAt(center.x+radius,center.y),id);assert.equal(targetAt(center.x+radius+.001,center.y),-1);assert.equal(targetAt(center.x+radius*.8,center.y+radius*.8),-1,'Square corners outside circle must miss');
 }
-console.log('PASS real camera rotation, moving world projection, fixed center reticle, all six camera targets and rotation limits on desktop/mobile.');
-const clears=new KickRound();assert(clears.shoot(2,.52));assert.equal(clears.impact(),true);assert(clears.cleared.has(2));assert.equal(clears.score,10);assert.equal(clears.impact(),false);assert.equal(clears.score,10);clears.settle();assert.equal(clears.shoot(2,.52),null,'Cleared cell rejects shots without using an attempt');assert.equal(clears.shots.length,1);assert(clears.shoot(1,.1));clears.settle();assert(clears.canTarget(1),'Miss leaves target available');for(const cell of [0,1,3,4]){assert(clears.shoot(cell,.52));clears.impact();clears.settle();}assert.equal(clears.phase,'done');assert.equal(clears.shots.length,6);assert.equal(clears.score,50);clears.reset();assert.equal(clears.cleared.size,0);assert(clears.canTarget(2));
+assert.equal(targetAt(NaN,0),-1);assert.equal(targetAt(100,0),-1);
+const off=new KickRound();const c=targetCenter(0),shot=off.shoot(0,.52,{x:c.x+.6,y:c.y+.6});assert.equal(shot.result,'miss');off.settle();assert.equal(off.score,0);assert(off.canTarget(0));
+for(const power of [.1,.9]){const round=new KickRound(),shot=round.shoot(0,power);const cross=flightPoint(shot,.82);assert(power<.42?cross.z>GOAL_Z:cross.y>3.8);round.settle();assert.equal(round.score,0);assert(round.canTarget(0));}
+const game=new KickRound();for(let i=0;i<6;i++){assert(game.shoot(i,[.1,.5,.9][i%3]));assert.equal(game.shoot(i,.5),null);game.settle();}assert.equal(game.phase,'done');assert.equal(game.goals,2);assert.equal(game.shoot(0,.5),null);game.reset();assert.equal(game.phase,'ready');assert.equal(game.shots.length,0);assert.equal(game.cleared.size,0);
 const perfect=new KickRound();for(let i=0;i<6;i++){perfect.shoot(i,.52);perfect.impact();perfect.settle();}assert.equal(perfect.cleared.size,6);assert.equal(perfect.score,60);assert.equal(perfect.phase,'done');
-console.log('PASS impact-time score and single feedback signal, cleared-cell lock without spending attempt, missed cell reusable, six-shot finish, 6/6 perfect run and reset restores targets.');
+console.log('PASS six circular targets, edge clearance for ball radius, square-corner misses, goal trajectories, exact-once score, cleared target lock, six-shot finish and reset.');
+for(const portrait of [false,true]){
+ const camera=new THREE.PerspectiveCamera(45,portrait?.65:1266/710,.1,140);resizeOrbit(camera,portrait);
+ for(let id=0;id<6;id++){const center=targetCenter(id),point=pointCamera(camera,center);assert(point);assert(Math.abs(point.x-center.x)<1e-8&&Math.abs(point.y-center.y)<1e-8);assert.equal(targetAt(point.x,point.y),id);const projected=new THREE.Vector3(center.x,center.y,GOAL_Z).project(camera);assert(Math.abs(projected.x)<1e-8&&Math.abs(projected.y)<1e-8);}
+ pointCamera(camera,targetCenter(4));const start=camera.position.clone(),quaternion=camera.quaternion.clone();rotateAimCamera(camera,100,0);assert(camera.position.distanceTo(start)>.5,'Orbit must move camera position around Kelly');assert(!camera.quaternion.equals(quaternion));
+ pointCamera(camera,targetCenter(4));const initial=camera.position.clone();rotateAimCamera(camera,Math.PI/.004,0);assert(camera.position.z<3,'Half orbit shows front of Kelly');assert.equal(cameraAim(camera),null,'Looking away cannot target goal');rotateAimCamera(camera,Math.PI/.004,0);assert(camera.position.distanceTo(initial)<1e-7,'Full 360 degree orbit');
+ const pivot=new THREE.Vector3(-.15,1.45,3),distance=camera.position.distanceTo(pivot);for(let i=0;i<40;i++){rotateAimCamera(camera,74,0);assert(Math.abs(camera.position.distanceTo(pivot)-distance)<1e-8);}
+ rotateAimCamera(camera,0,-100000);assert(camera.position.y>.1,'Lower pitch keeps camera above pitch');rotateAimCamera(camera,0,100000);assert(camera.position.y>pivot.y);assert(Number.isFinite(camera.quaternion.w));
+ pointCamera(camera,targetCenter(2));resizeOrbit(camera,!portrait);const after=cameraAim(camera);assert(after&&targetAt(after.x,after.y)===2,'Resize retains orbit direction and aim');
+}
+console.log('PASS actual orbital position change, front/back views, 360° wrap, constant radius, pitch limits, centered ray for all six targets and resize preservation.');
