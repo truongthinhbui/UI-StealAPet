@@ -1,5 +1,5 @@
 import * as THREE from './vendor/three/three.module.js';
-import {BALL_RADIUS} from './kick-ball-engine.js?v=physical-v7';
+import {BALL_RADIUS} from './kick-ball-engine.js?v=moving-v8';
 export function createFootball(scene){
  const ball=new THREE.Group(),skin=new THREE.Group(),seed=new THREE.IcosahedronGeometry(1,0),raw=seed.attributes.position,vertices=[],faces=[],lookup=new Map();
  for(let i=0;i<raw.count;i+=3){const face=[];for(let j=0;j<3;j++){const p=new THREE.Vector3().fromBufferAttribute(raw,i+j).normalize(),key=p.toArray().map(x=>x.toFixed(5)).join(',');if(!lookup.has(key)){lookup.set(key,vertices.length);vertices.push(p);}face.push(lookup.get(key));}faces.push(face);}seed.dispose();

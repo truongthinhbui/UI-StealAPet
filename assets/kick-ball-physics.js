@@ -1,4 +1,4 @@
-import {BALL_RADIUS,GOAL_Z,GOAL_WIDTH,GOAL_HEIGHT,targetAt} from './kick-ball-engine.js?v=physical-v7';
+import {BALL_RADIUS,GOAL_Z,GOAL_WIDTH,GOAL_HEIGHT,targetAt} from './kick-ball-engine.js?v=moving-v8';
 export const BALL_START={x:.33,y:BALL_RADIUS,z:2.5};
 export const PHYSICS_DT=1/120;
 export const BALL_MASS=.43;
@@ -15,7 +15,7 @@ export class BallPhysics{
  if(shot.result==='low'){this.velocity.x*=.4;this.velocity.z*=.4;this.velocity.y=1.4+shot.power;}
  this.angular={x:this.velocity.z/BALL_RADIUS*.22,y:1.8*(shot.power-.52),z:-this.velocity.x/BALL_RADIUS*.22};
  }
- resolve(result){if(this.resolved)return;this.resolved=true;this.resolvedAt=this.time;this.events.push({type:'result',result,position:copy(this.position)});}
+ resolve(result,cell=-1){if(this.resolved)return;this.resolved=true;this.resolvedAt=this.time;this.events.push({type:'result',result,cell,position:copy(this.position)});}
  update(delta){this.events=[];if(!this.active)return this.events;this.accumulator+=Math.min(.1,Math.max(0,delta));while(this.accumulator+1e-10>=PHYSICS_DT){this.step(PHYSICS_DT);this.accumulator-=PHYSICS_DT;}return this.events;}
  step(dt){
  this.time+=dt;const old=copy(this.position),p=this.position,v=this.velocity,oldV=copy(this.velocity),k=DRAG,e=Math.exp(-k*dt),a=(1-e)/k;
@@ -26,7 +26,7 @@ export class BallPhysics{
   const dx=p.x-closest.x,dy=p.y-closest.y,dz=p.z-closest.z,d=Math.hypot(dx,dy,dz),r=BALL_RADIUS+.085;
   if(d>0&&d<r){const nx=dx/d,ny=dy/d,nz=dz/d,normal=v.x*nx+v.y*ny+v.z*nz;if(normal<0){p.x=closest.x+nx*r;p.y=closest.y+ny*r;p.z=closest.z+nz*r;v.x-=1.62*normal*nx;v.y-=1.62*normal*ny;v.z-=1.62*normal*nz;this.events.push({type:'frame',position:copy(p),speed:-normal});this.resolve('miss');}}
  }
- if(!this.resolved&&old.z>GOAL_Z&&p.z<=GOAL_Z){const crossing=-Math.log(1-DRAG*(GOAL_Z-old.z)/oldV.z)/DRAG,travel=(1-Math.exp(-DRAG*crossing))/DRAG,x=old.x+oldV.x*travel,y=old.y+(oldV.y+GRAVITY/DRAG)*travel-GRAVITY/DRAG*crossing;this.resolve(this.shot.result==='low'?'low':this.shot.result==='high'?'high':targetAt(x,y)===this.shot.cell?'goal':'miss');}
+ if(!this.resolved&&old.z>GOAL_Z&&p.z<=GOAL_Z){const crossing=-Math.log(1-DRAG*(GOAL_Z-old.z)/oldV.z)/DRAG,travel=(1-Math.exp(-DRAG*crossing))/DRAG,x=old.x+oldV.x*travel,y=old.y+(oldV.y+GRAVITY/DRAG)*travel-GRAVITY/DRAG*crossing;const targetTime=(this.shot.targetTime||0)+this.time-dt+crossing,hit=targetAt(x,y,targetTime,this.shot.targetMode||'static',this.shot.targetSpeed??1,this.shot.ignoredTargets||[]);this.resolve(this.shot.result==='low'?'low':this.shot.result==='high'?'high':hit>=0?'goal':'miss',hit);}
  // A soft rear net absorbs most of the shot, then lets the ball drop to the grass.
  const netZ=GOAL_Z-2+BALL_RADIUS;
  if(old.z>netZ&&p.z<=netZ&&Math.abs(p.x)<GOAL_WIDTH/2&&Math.max(p.y,BALL_RADIUS)<GOAL_HEIGHT){const speed=-v.z;p.z=netZ;v.z=Math.abs(v.z)*NET_RESTITUTION;v.x*=.45;v.y*=.38;this.angular.x*=.45;this.angular.z*=.45;this.events.push({type:'net',position:copy(p),speed});}

@@ -1,0 +1,143 @@
+.fishingLuckPreview {
+  border: 1px solid #ffdd78;
+  border-radius: 8px;
+  background: #163c47;
+  color: #ffebaa;
+  padding: .45em .75em;
+  font-weight: 700;
+}
+
+.fishingLuckAnnouncement {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.fishingLuck {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: inherit;
+  background: radial-gradient(ellipse at 50% 50%, #2448522b, #001925be);
+  touch-action: none;
+}
+
+.fishingLuck[hidden] { display: none; }
+
+.fishingLuckRunner {
+  position: absolute;
+  width: 21%;
+  left: 50%;
+  top: 4%;
+  animation: fishingLuckDash var(--luck-duration) linear both;
+  filter: drop-shadow(0 .5cqw 1cqw #05232b80);
+}
+
+.fishingLuckGift {
+  position: absolute;
+  width: 16%;
+  left: 50%;
+  top: 48%;
+  aspect-ratio: 1;
+  animation: fishingLuckDrop var(--luck-duration) cubic-bezier(.36,.05,.52,.96) both;
+}
+
+.fishingLuckBase, .fishingLuckLid { width: 100%; display: block; }
+.fishingLuckLid {
+  position: absolute;
+  width: 106%;
+  left: -3%;
+  top: -26%;
+  animation: fishingLuckOpen var(--luck-duration) ease-out both;
+}
+
+.fishingLuckBurst {
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  width: 53%;
+  aspect-ratio: 1;
+  background:
+    radial-gradient(circle, #fffad0 4%, #ffda5570 29%, transparent 67%),
+    repeating-conic-gradient(from 5deg, #ffdb6aab 0deg 4deg, transparent 9deg 28deg);
+  mask-image: radial-gradient(circle, black 12%, transparent 66%);
+  animation: fishingLuckFlash var(--luck-duration) ease-out both;
+}
+
+.fishingLuckReward {
+  position: absolute;
+  left: 50%;
+  top: 13%;
+  width: 34%;
+  display: grid;
+  justify-items: center;
+  gap: .3cqw;
+  color: #fff8db;
+  font: 800 clamp(10px, 2cqw, 25px)/1.06 'GFF Latin', Arial, sans-serif;
+  text-align: center;
+  text-shadow: 0 2px 5px #001015;
+  animation: fishingLuckReveal var(--luck-duration) ease-out both;
+}
+
+.fishingLuckReward :is(img, svg) { width: 66%; aspect-ratio: 1.45; object-fit: contain; }
+.fishingLuckReward [hidden] { display: none; }
+.fishingLuckReward strong {
+  padding: .2em .65em;
+  border: 1px solid #ffe88b;
+  border-radius: 999px;
+  color: #ffe88b;
+  background: #492b32;
+  letter-spacing: .12em;
+}
+
+@keyframes fishingLuckDash {
+  0% { transform: translate(-360%, 5%) rotate(-8deg); }
+  8% { transform: translate(-230%, -5%) rotate(4deg); }
+  15% { transform: translate(-120%, 5%) rotate(-4deg); }
+  22% { transform: translate(-50%, -6%) rotate(5deg); }
+  29% { transform: translate(95%, 4%) rotate(-4deg); }
+  38%, 100% { transform: translate(270%, -10%) rotate(4deg); }
+}
+
+@keyframes fishingLuckDrop {
+  0%, 21% { opacity: 0; transform: translate(-50%, -130%) scale(.56) rotate(-12deg); }
+  22% { opacity: 1; transform: translate(-50%, -130%) scale(.56) rotate(-12deg); }
+  43% { transform: translate(-50%, 0) scale(1.12,.84); }
+  49% { transform: translate(-50%, -21%) scale(1); }
+  55% { transform: translate(-50%, 0) rotate(-4deg); }
+  60% { transform: translate(-50%, 0) rotate(4deg); }
+  65%, 100% { transform: translate(-50%, 0); }
+}
+
+@keyframes fishingLuckOpen {
+  0%, 64% { transform: none; opacity: 1; }
+  72% { transform: translate(38%, -85%) rotate(28deg); opacity: 1; }
+  84%, 100% { transform: translate(102%, -120%) rotate(57deg); opacity: 0; }
+}
+
+@keyframes fishingLuckFlash {
+  0%, 66% { transform: translate(-50%, -50%) scale(.12); opacity: 0; }
+  71% { opacity: .85; }
+  86% { opacity: .32; }
+  100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0; }
+}
+
+@keyframes fishingLuckReveal {
+  0%, 67% { transform: translate(-50%, 60%) scale(.23); opacity: 0; }
+  81% { transform: translate(-50%, -4%) scale(1.08); opacity: 1; }
+  90%, 100% { transform: translate(-50%, 0) scale(1); opacity: 1; }
+}
+
+.fishingLuckReduced :is(.fishingLuckRunner, .fishingLuckGift, .fishingLuckLid, .fishingLuckBurst) {
+  display: none;
+}
+
+.fishingLuckReduced .fishingLuckReward {
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: none;
+}
