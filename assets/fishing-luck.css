@@ -24,6 +24,7 @@
   border-radius: inherit;
   background: radial-gradient(ellipse at 50% 50%, #2448522b, #001925be);
   touch-action: none;
+  animation: fishingLuckImpact var(--luck-duration) linear both;
 }
 
 .fishingLuck[hidden] { display: none; }
@@ -35,6 +36,12 @@
   top: 4%;
   animation: fishingLuckDash var(--luck-duration) linear both;
   filter: drop-shadow(0 .5cqw 1cqw #05232b80);
+}
+
+.fishingLuckRunner img {
+  display: block;
+  width: 100%;
+  animation: fishingLuckStride 280ms ease-in-out 7 alternate both;
 }
 
 .fishingLuckGift {
@@ -66,6 +73,37 @@
     repeating-conic-gradient(from 5deg, #ffdb6aab 0deg 4deg, transparent 9deg 28deg);
   mask-image: radial-gradient(circle, black 12%, transparent 66%);
   animation: fishingLuckFlash var(--luck-duration) ease-out both;
+}
+
+.fishingLuckRing, .fishingLuckParticles {
+  position: absolute;
+  left: 50%;
+  top: 56%;
+  pointer-events: none;
+}
+
+.fishingLuckRing {
+  width: 14%;
+  aspect-ratio: 1;
+  border: .4cqw solid #fff4b2;
+  border-radius: 50%;
+  box-shadow: 0 0 1.5cqw #ffd55b;
+  animation: fishingLuckShockwave var(--luck-duration) ease-out both;
+}
+
+.fishingLuckParticles i {
+  position: absolute;
+  width: .72cqw;
+  aspect-ratio: 1;
+  border-radius: 30%;
+  background: var(--particle-color);
+  box-shadow: 0 0 .8cqw var(--particle-color);
+  animation: fishingLuckParticle var(--luck-duration) ease-out both;
+}
+
+.fishingLuckParticles .is-sparkle {
+  width: 1.65cqw;
+  clip-path: polygon(50% 0, 62% 37%, 100% 50%, 62% 63%, 50% 100%, 38% 63%, 0 50%, 38% 37%);
 }
 
 .fishingLuckReward {
@@ -103,13 +141,20 @@
   38%, 100% { transform: translate(270%, -10%) rotate(4deg); }
 }
 
+@keyframes fishingLuckStride {
+  from { transform: translateY(5%) scale(1.04, .93) rotate(4deg); }
+  to { transform: translateY(-8%) scale(.96, 1.05) rotate(-5deg); }
+}
+
 @keyframes fishingLuckDrop {
   0%, 21% { opacity: 0; transform: translate(-50%, -130%) scale(.56) rotate(-12deg); }
   22% { opacity: 1; transform: translate(-50%, -130%) scale(.56) rotate(-12deg); }
   43% { transform: translate(-50%, 0) scale(1.12,.84); }
   49% { transform: translate(-50%, -21%) scale(1); }
   55% { transform: translate(-50%, 0) rotate(-4deg); }
-  60% { transform: translate(-50%, 0) rotate(4deg); }
+  59% { transform: translate(-50%, 0) rotate(5deg); }
+  62% { transform: translate(-50%, 0) scale(.93, 1.08) rotate(-6deg); }
+  64% { transform: translate(-50%, 0) scale(1.16, .88); }
   65%, 100% { transform: translate(-50%, 0); }
 }
 
@@ -126,13 +171,35 @@
   100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0; }
 }
 
+@keyframes fishingLuckImpact {
+  0%, 66%, 73%, 100% { transform: none; }
+  67% { transform: translate(.65cqw, -.4cqw) scale(1.026); }
+  69% { transform: translate(-.52cqw, .3cqw) scale(1.014); }
+  71% { transform: translate(.28cqw, 0) scale(1.008); }
+}
+
+@keyframes fishingLuckShockwave {
+  0%, 66% { opacity: 0; transform: translate(-50%, -50%) scale(.25); }
+  68% { opacity: .9; }
+  83%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(3.4); }
+}
+
+@keyframes fishingLuckParticle {
+  0%, 66% { opacity: 0; transform: scale(.25); }
+  68% { opacity: 1; }
+  83% { opacity: .94; transform: translate(var(--particle-x), var(--particle-y)) rotate(var(--particle-spin)); }
+  96%, 100% { opacity: 0; transform: translate(var(--particle-x), calc(var(--particle-y) + 6cqw)) rotate(var(--particle-spin)) scale(.35); }
+}
+
 @keyframes fishingLuckReveal {
   0%, 67% { transform: translate(-50%, 60%) scale(.23); opacity: 0; }
   81% { transform: translate(-50%, -4%) scale(1.08); opacity: 1; }
   90%, 100% { transform: translate(-50%, 0) scale(1); opacity: 1; }
 }
 
-.fishingLuckReduced :is(.fishingLuckRunner, .fishingLuckGift, .fishingLuckLid, .fishingLuckBurst) {
+.fishingLuckReduced { animation: none; }
+
+.fishingLuckReduced :is(.fishingLuckRunner, .fishingLuckGift, .fishingLuckBurst, .fishingLuckRing, .fishingLuckParticles) {
   display: none;
 }
 

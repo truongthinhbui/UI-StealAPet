@@ -4,6 +4,7 @@
   const tab = document.getElementById('tab-fishing');
   const scene = tab.querySelector('.fishingScene');
   const duration = 5000;
+  const kirinSprite = 'assets/fishing-luck-kirin.png';
   const preview = document.createElement('button');
   preview.type = 'button';
   preview.className = 'fishingLuckPreview';
@@ -20,40 +21,42 @@
   overlay.hidden = true;
   overlay.setAttribute('aria-hidden', 'true');
   overlay.innerHTML = `
-    <img class="fishingLuckRunner" src="assets/fishing-luck-kirin.png" alt="">
+    <div class="fishingLuckRunner"><img src="${kirinSprite}" alt=""></div>
     <div class="fishingLuckGift">
       <img class="fishingLuckBase" src="assets/fishing-luck-base.png" alt="">
       <img class="fishingLuckLid" src="assets/fishing-luck-lid.png" alt="">
     </div>
     <div class="fishingLuckBurst"></div>
+    <div class="fishingLuckRing"></div>
+    <div class="fishingLuckParticles"></div>
     <div class="fishingLuckReward">
-      <img alt="">
-      <svg viewBox="0 0 120 75"><path d="M28 37 7 15v45l21-19C53 72 95 63 117 38 93 11 53 7 28 37Z" fill="#ffcf60" stroke="#fff2b0" stroke-width="4" stroke-linejoin="round"/><circle cx="90" cy="33" r="5" fill="#754429"/></svg>
+      <img src="${kirinSprite}" alt="">
       <strong>APEX</strong>
-      <span></span>
+      <span>KIRIN</span>
     </div>`;
   scene.append(overlay);
 
-  const reward = overlay.querySelector('.fishingLuckReward');
-  const rewardImage = reward.querySelector('img');
-  const rewardIcon = reward.querySelector('svg');
-  const demo = { name: 'GOLDFISH', rarity: 'APEX' };
+  const particles = overlay.querySelector('.fishingLuckParticles');
+  const colors = ['#fff3aa', '#ffc440', '#fffdf1', '#57e1c9'];
+  for (let index = 0; index < 24; index++) {
+    const particle = document.createElement('i');
+    const angle = index * Math.PI * 2 / 24;
+    const distance = 10 + (index * 7 % 16);
+    particle.style.setProperty('--particle-x', Math.cos(angle) * distance + 'cqw');
+    particle.style.setProperty('--particle-y', (Math.sin(angle) * distance * .68 - 7) + 'cqw');
+    particle.style.setProperty('--particle-spin', (index % 2 ? -1 : 1) * (100 + index * 11) + 'deg');
+    particle.style.setProperty('--particle-color', colors[index % colors.length]);
+    particle.classList.toggle('is-sparkle', index % 3 === 0);
+    particles.append(particle);
+  }
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
-  const goldfish = new Image();
-  goldfish.src = 'assets/fishing-luck-goldfish.png';
   let playing = false;
 
-  function play(pet) {
+  function play() {
     if (playing) return;
     playing = true;
     preview.disabled = true;
-    const name = pet.name.replaceAll('_', ' ');
     announcement.textContent = 'Luck Burst started.';
-    reward.querySelector('span').textContent = name;
-    const hasArtwork = pet.name === demo.name;
-    rewardImage.hidden = !hasArtwork;
-    rewardIcon.hidden = hasArtwork;
-    if (hasArtwork) rewardImage.src = goldfish.src;
     const controls = [...scene.querySelectorAll('button:not([inert])')];
     controls.forEach(control => { control.inert = true; });
     overlay.hidden = false;
@@ -70,15 +73,15 @@
       controls.forEach(control => { control.inert = false; });
       preview.disabled = false;
       playing = false;
-      announcement.textContent = 'Apex reveal: ' + name;
+      announcement.textContent = 'Luck Burst: Kirin revealed.';
     });
   }
 
   preview.addEventListener('click', () => {
-    if (!window.FishingRewards?.isCasting && !scene.hasAttribute('data-active')) play(demo);
+    if (!window.FishingRewards?.isCasting && !scene.hasAttribute('data-active')) play();
   });
   tab.addEventListener('fishingcatch', event => {
     const pet = event.detail.catch;
-    if (pet?.rarity === 'APEX') play(pet);
+    if (pet?.rarity === 'APEX') play();
   });
 })();
