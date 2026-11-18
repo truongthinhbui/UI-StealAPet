@@ -1,0 +1,13 @@
+{
+  "checks": [
+    "17 alias mappings match SAP IDs and names",
+    "22 source records, unique IDs within each table",
+    "Weather Icon is not EffectKey",
+    "pool weights and rules unchanged",
+    "seeded 200-player seven-day simulation identical before/after"
+  ],
+  "oldSnapshotSignature": "8f565eb1",
+  "newSnapshotSignature": "8f565eb1",
+  "active": 11,
+  "retired": 6
+}

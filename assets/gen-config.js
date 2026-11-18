@@ -141,7 +141,7 @@ window.GenConfig = {
       },
       "configured": true,
       "effectSource": {
-        "sheet": "Mutation 2.0",
+        "sheet": "Mutation (V2.3.1)",
         "sourceName": "Golden",
         "sourceId": 2,
         "materialKey": "GoldenMat",
@@ -149,13 +149,20 @@ window.GenConfig = {
         "valueField": "Multiplier",
         "value": 1.33,
         "levelCostMultiplier": 1.15,
-        "mergedStackingRule": null
+        "mergedStackingRule": null,
+        "sourceRow": 4,
+        "iconKey": null
       },
       "rarityBasis": {
         "field": "BuyCostPetCoin",
         "grade": "SSS",
         "value": 30
-      }
+      },
+      "effectType": "Mutation",
+      "effectId": 2,
+      "effectRef": "Mutation:2",
+      "mutationId": 2,
+      "weatherEffectId": null
     },
     {
       "id": "soaked",
@@ -196,17 +203,24 @@ window.GenConfig = {
         "sourceName": "Soaked",
         "sourceId": 1,
         "materialKey": null,
-        "effectKey": "Soaked",
+        "effectKey": null,
         "valueField": "MultiplierPrice",
         "value": 0.05,
         "levelCostMultiplier": 1.03,
-        "mergedStackingRule": null
+        "mergedStackingRule": null,
+        "sourceRow": 3,
+        "iconKey": "Soaked"
       },
       "rarityBasis": {
         "field": "BuyCostPetCoin",
         "grade": "SSS",
         "value": 25
-      }
+      },
+      "effectType": "WeatherEffect",
+      "effectId": 1,
+      "effectRef": "WeatherEffect:1",
+      "mutationId": null,
+      "weatherEffectId": 1
     },
     {
       "id": "frost",
@@ -243,7 +257,7 @@ window.GenConfig = {
       },
       "configured": true,
       "effectSource": {
-        "sheet": "Mutation 2.0",
+        "sheet": "Mutation (V2.3.1)",
         "sourceName": "Frozen",
         "sourceId": 3,
         "materialKey": "IceMat",
@@ -251,13 +265,20 @@ window.GenConfig = {
         "valueField": "Multiplier",
         "value": 1.66,
         "levelCostMultiplier": 1.3,
-        "mergedStackingRule": null
+        "mergedStackingRule": null,
+        "sourceRow": 5,
+        "iconKey": null
       },
       "rarityBasis": {
         "field": "BuyCostPetCoin",
         "grade": "SSS",
         "value": 50
-      }
+      },
+      "effectType": "Mutation",
+      "effectId": 3,
+      "effectRef": "Mutation:3",
+      "mutationId": 3,
+      "weatherEffectId": null
     },
     {
       "id": "ice",
@@ -298,17 +319,24 @@ window.GenConfig = {
         "sourceName": "Frost",
         "sourceId": 2,
         "materialKey": null,
-        "effectKey": "Frost",
+        "effectKey": null,
         "valueField": "MultiplierPrice",
         "value": 0.09,
         "levelCostMultiplier": 1.05,
-        "mergedStackingRule": null
+        "mergedStackingRule": null,
+        "sourceRow": 4,
+        "iconKey": "Frost"
       },
       "rarityBasis": {
         "field": "BuyCostPetCoin",
         "grade": "SSS",
         "value": 50
-      }
+      },
+      "effectType": "WeatherEffect",
+      "effectId": 2,
+      "effectRef": "WeatherEffect:2",
+      "mutationId": null,
+      "weatherEffectId": 2
     },
     {
       "id": "wind",
@@ -349,17 +377,24 @@ window.GenConfig = {
         "sourceName": "Gale",
         "sourceId": 3,
         "materialKey": null,
-        "effectKey": "Gale",
+        "effectKey": null,
         "valueField": "MultiplierPrice",
         "value": 0.08,
         "levelCostMultiplier": 1.05,
-        "mergedStackingRule": null
+        "mergedStackingRule": null,
+        "sourceRow": 5,
+        "iconKey": "Gale"
       },
       "rarityBasis": {
         "field": "BuyCostPetCoin",
         "grade": "SSS",
         "value": 70
-      }
+      },
+      "effectType": "WeatherEffect",
+      "effectId": 3,
+      "effectRef": "WeatherEffect:3",
+      "mutationId": null,
+      "weatherEffectId": 3
     },
     {
       "id": "coral",
@@ -396,21 +431,28 @@ window.GenConfig = {
       },
       "configured": true,
       "effectSource": {
-        "sheet": "Mutation 2.0",
+        "sheet": "Mutation (V2.3.1)",
         "sourceName": "Magma",
         "sourceId": 4,
         "materialKey": "MagmaMat",
         "effectKey": "magmaEffect",
         "valueField": "Multiplier",
-        "value": 2,
+        "value": 2.0,
         "levelCostMultiplier": 1.45,
-        "mergedStackingRule": null
+        "mergedStackingRule": null,
+        "sourceRow": 6,
+        "iconKey": null
       },
       "rarityBasis": {
         "field": "BuyCostPetCoin",
         "grade": "SSS",
         "value": 100
-      }
+      },
+      "effectType": "Mutation",
+      "effectId": 4,
+      "effectRef": "Mutation:4",
+      "mutationId": 4,
+      "weatherEffectId": null
     },
     {
       "id": "thundered",
@@ -451,17 +493,24 @@ window.GenConfig = {
         "sourceName": "Thundered",
         "sourceId": 4,
         "materialKey": null,
-        "effectKey": "Thundered",
+        "effectKey": null,
         "valueField": "MultiplierPrice",
         "value": 0.12,
         "levelCostMultiplier": 1.07,
-        "mergedStackingRule": null
+        "mergedStackingRule": null,
+        "sourceRow": 6,
+        "iconKey": "Thundered"
       },
       "rarityBasis": {
         "field": "BuyCostPetCoin",
         "grade": "SSS",
         "value": 120
-      }
+      },
+      "effectType": "WeatherEffect",
+      "effectId": 4,
+      "effectRef": "WeatherEffect:4",
+      "mutationId": null,
+      "weatherEffectId": 4
     },
     {
       "id": "clover",
@@ -498,7 +547,7 @@ window.GenConfig = {
       },
       "configured": true,
       "effectSource": {
-        "sheet": "Mutation 2.0",
+        "sheet": "Mutation (V2.3.1)",
         "sourceName": "Clover",
         "sourceId": 5,
         "materialKey": "CloverMat",
@@ -506,13 +555,20 @@ window.GenConfig = {
         "valueField": "Multiplier",
         "value": 2.13,
         "levelCostMultiplier": 1.5,
-        "mergedStackingRule": null
+        "mergedStackingRule": null,
+        "sourceRow": 7,
+        "iconKey": null
       },
       "rarityBasis": {
         "field": "BuyCostPetCoin",
         "grade": "SSS",
         "value": 180
-      }
+      },
+      "effectType": "Mutation",
+      "effectId": 5,
+      "effectRef": "Mutation:5",
+      "mutationId": 5,
+      "weatherEffectId": null
     },
     {
       "id": "lunar",
@@ -553,17 +609,24 @@ window.GenConfig = {
         "sourceName": "Eclipse",
         "sourceId": 5,
         "materialKey": null,
-        "effectKey": "Eclipse",
+        "effectKey": null,
         "valueField": "MultiplierPrice",
         "value": 0.15,
         "levelCostMultiplier": 1.08,
-        "mergedStackingRule": null
+        "mergedStackingRule": null,
+        "sourceRow": 7,
+        "iconKey": "Eclipse"
       },
       "rarityBasis": {
         "field": "BuyCostPetCoin",
         "grade": "SSS",
         "value": 180
-      }
+      },
+      "effectType": "WeatherEffect",
+      "effectId": 5,
+      "effectRef": "WeatherEffect:5",
+      "mutationId": null,
+      "weatherEffectId": 5
     },
     {
       "id": "fossilized",
@@ -600,7 +663,7 @@ window.GenConfig = {
       },
       "configured": true,
       "effectSource": {
-        "sheet": "Mutation 2.0",
+        "sheet": "Mutation (V2.3.1)",
         "sourceName": "Fossilized",
         "sourceId": 6,
         "materialKey": "FossilizedMat",
@@ -608,13 +671,20 @@ window.GenConfig = {
         "valueField": "Multiplier",
         "value": 2.25,
         "levelCostMultiplier": 1.6,
-        "mergedStackingRule": null
+        "mergedStackingRule": null,
+        "sourceRow": 8,
+        "iconKey": null
       },
       "rarityBasis": {
         "field": "BuyCostPetCoin",
         "grade": "SSS",
         "value": 275
-      }
+      },
+      "effectType": "Mutation",
+      "effectId": 6,
+      "effectRef": "Mutation:6",
+      "mutationId": 6,
+      "weatherEffectId": null
     },
     {
       "id": "rainbow",
@@ -655,17 +725,24 @@ window.GenConfig = {
         "sourceName": "Prismatic",
         "sourceId": 6,
         "materialKey": null,
-        "effectKey": "Prismatic",
+        "effectKey": null,
         "valueField": "MultiplierPrice",
         "value": 0.14,
         "levelCostMultiplier": 1.08,
-        "mergedStackingRule": null
+        "mergedStackingRule": null,
+        "sourceRow": 8,
+        "iconKey": "Prismatic"
       },
       "rarityBasis": {
         "field": "BuyCostPetCoin",
         "grade": "SSS",
         "value": 250
-      }
+      },
+      "effectType": "WeatherEffect",
+      "effectId": 6,
+      "effectRef": "WeatherEffect:6",
+      "mutationId": null,
+      "weatherEffectId": 6
     }
   ],
   "notes": [
@@ -818,12 +895,19 @@ window.GenConfig = {
         "sourceName": "Vortex",
         "sourceId": 7,
         "materialKey": null,
-        "effectKey": "Vortex",
+        "effectKey": null,
         "valueField": "MultiplierPrice",
         "value": 0.16,
         "levelCostMultiplier": 1.09,
-        "mergedStackingRule": null
-      }
+        "mergedStackingRule": null,
+        "sourceRow": 9,
+        "iconKey": "Vortex"
+      },
+      "effectType": "WeatherEffect",
+      "effectId": 7,
+      "effectRef": "WeatherEffect:7",
+      "mutationId": null,
+      "weatherEffectId": 7
     },
     {
       "id": "sequin",
@@ -864,12 +948,19 @@ window.GenConfig = {
         "sourceName": "Sequin",
         "sourceId": 8,
         "materialKey": null,
-        "effectKey": "Sequin",
+        "effectKey": null,
         "valueField": "MultiplierPrice",
         "value": 0.17,
         "levelCostMultiplier": 1.1,
-        "mergedStackingRule": null
-      }
+        "mergedStackingRule": null,
+        "sourceRow": 10,
+        "iconKey": "Sequin"
+      },
+      "effectType": "WeatherEffect",
+      "effectId": 8,
+      "effectRef": "WeatherEffect:8",
+      "mutationId": null,
+      "weatherEffectId": 8
     },
     {
       "id": "sweetheart",
@@ -906,7 +997,7 @@ window.GenConfig = {
       },
       "configured": true,
       "effectSource": {
-        "sheet": "Mutation 2.0",
+        "sheet": "Mutation (V2.3.1)",
         "sourceName": "Sweetheart",
         "sourceId": 7,
         "materialKey": "SweetheartMat",
@@ -914,8 +1005,15 @@ window.GenConfig = {
         "valueField": "Multiplier",
         "value": 2.3,
         "levelCostMultiplier": 1.65,
-        "mergedStackingRule": null
-      }
+        "mergedStackingRule": null,
+        "sourceRow": 9,
+        "iconKey": null
+      },
+      "effectType": "Mutation",
+      "effectId": 7,
+      "effectRef": "Mutation:7",
+      "mutationId": 7,
+      "weatherEffectId": null
     },
     {
       "id": "diamond",
@@ -952,7 +1050,7 @@ window.GenConfig = {
       },
       "configured": true,
       "effectSource": {
-        "sheet": "Mutation 2.0",
+        "sheet": "Mutation (V2.3.1)",
         "sourceName": "Crystalline",
         "sourceId": 8,
         "materialKey": "CrystallineMat",
@@ -960,8 +1058,15 @@ window.GenConfig = {
         "valueField": "Multiplier",
         "value": 2.37,
         "levelCostMultiplier": 1.85,
-        "mergedStackingRule": null
-      }
+        "mergedStackingRule": null,
+        "sourceRow": 10,
+        "iconKey": null
+      },
+      "effectType": "Mutation",
+      "effectId": 8,
+      "effectRef": "Mutation:8",
+      "mutationId": 8,
+      "weatherEffectId": null
     },
     {
       "id": "radioactive",
@@ -998,7 +1103,7 @@ window.GenConfig = {
       },
       "configured": true,
       "effectSource": {
-        "sheet": "Mutation 2.0",
+        "sheet": "Mutation (V2.3.1)",
         "sourceName": "Radioactive",
         "sourceId": 11,
         "materialKey": "RadioactiveMat",
@@ -1006,8 +1111,15 @@ window.GenConfig = {
         "valueField": "Multiplier",
         "value": 2.5,
         "levelCostMultiplier": 2.15,
-        "mergedStackingRule": null
-      }
+        "mergedStackingRule": null,
+        "sourceRow": 13,
+        "iconKey": null
+      },
+      "effectType": "Mutation",
+      "effectId": 11,
+      "effectRef": "Mutation:11",
+      "mutationId": 11,
+      "weatherEffectId": null
     },
     {
       "id": "webbed",
@@ -1044,7 +1156,7 @@ window.GenConfig = {
       },
       "configured": true,
       "effectSource": {
-        "sheet": "Mutation 2.0",
+        "sheet": "Mutation (V2.3.1)",
         "sourceName": "Webbed",
         "sourceId": 9,
         "materialKey": "WebbedMat",
@@ -1052,8 +1164,15 @@ window.GenConfig = {
         "valueField": "Multiplier",
         "value": 2.4,
         "levelCostMultiplier": 2.05,
-        "mergedStackingRule": null
-      }
+        "mergedStackingRule": null,
+        "sourceRow": 11,
+        "iconKey": null
+      },
+      "effectType": "Mutation",
+      "effectId": 9,
+      "effectRef": "Mutation:9",
+      "mutationId": 9,
+      "weatherEffectId": null
     }
   ],
   "typeGroups": {
@@ -1080,5 +1199,259 @@ window.GenConfig = {
       ]
     },
     "method": "One merged pool. Equal weight within rarity, higher rarity less frequent at every band, normalize to 1000000."
+  },
+  "effectTables": {
+    "Mutation": {
+      "sheet": "Mutation (V2.3.1)",
+      "rows": [
+        {
+          "ID": 1,
+          "Name": "Normal",
+          "MaterialKey": "None",
+          "EffectKey": "None",
+          "Multiplier": 1.0,
+          "Weight": 3550.0,
+          "FUSIONWEIGHT": 2500.0,
+          "Tier": 0.0,
+          "LvUpCostMultiplier": 1.0,
+          "sourceRow": 3
+        },
+        {
+          "ID": 2,
+          "Name": "Golden",
+          "MaterialKey": "GoldenMat",
+          "EffectKey": "goldenEffect",
+          "Multiplier": 1.33,
+          "Weight": 700.0,
+          "FUSIONWEIGHT": 2000.0,
+          "Tier": 1.0,
+          "LvUpCostMultiplier": 1.15,
+          "sourceRow": 4
+        },
+        {
+          "ID": 3,
+          "Name": "Frozen",
+          "MaterialKey": "IceMat",
+          "EffectKey": "frozenEffect",
+          "Multiplier": 1.66,
+          "Weight": 420.0,
+          "FUSIONWEIGHT": 1750.0,
+          "Tier": 2.0,
+          "LvUpCostMultiplier": 1.3,
+          "sourceRow": 5
+        },
+        {
+          "ID": 4,
+          "Name": "Magma",
+          "MaterialKey": "MagmaMat",
+          "EffectKey": "magmaEffect",
+          "Multiplier": 2.0,
+          "Weight": 210.0,
+          "FUSIONWEIGHT": 1420.0,
+          "Tier": 3.0,
+          "LvUpCostMultiplier": 1.45,
+          "sourceRow": 6
+        },
+        {
+          "ID": 5,
+          "Name": "Clover",
+          "MaterialKey": "CloverMat",
+          "EffectKey": "cloverEffect",
+          "Multiplier": 2.13,
+          "Weight": 76.0,
+          "FUSIONWEIGHT": 1200.0,
+          "Tier": 4.0,
+          "LvUpCostMultiplier": 1.5,
+          "sourceRow": 7
+        },
+        {
+          "ID": 6,
+          "Name": "Fossilized",
+          "MaterialKey": "FossilizedMat",
+          "EffectKey": "fossilizedEffect",
+          "Multiplier": 2.25,
+          "Weight": 20.0,
+          "FUSIONWEIGHT": 730.0,
+          "Tier": 5.0,
+          "LvUpCostMultiplier": 1.6,
+          "sourceRow": 8
+        },
+        {
+          "ID": 7,
+          "Name": "Sweetheart",
+          "MaterialKey": "SweetheartMat",
+          "EffectKey": "sweetheartEffect",
+          "Multiplier": 2.3,
+          "Weight": 10.0,
+          "FUSIONWEIGHT": 200.0,
+          "Tier": 6.0,
+          "LvUpCostMultiplier": 1.65,
+          "sourceRow": 9
+        },
+        {
+          "ID": 8,
+          "Name": "Crystalline",
+          "MaterialKey": "CrystallineMat",
+          "EffectKey": "crystallineEffect",
+          "Multiplier": 2.37,
+          "Weight": 5.0,
+          "FUSIONWEIGHT": 70.0,
+          "Tier": 7.0,
+          "LvUpCostMultiplier": 1.85,
+          "sourceRow": 10
+        },
+        {
+          "ID": 9,
+          "Name": "Webbed",
+          "MaterialKey": "WebbedMat",
+          "EffectKey": "webbedEffect",
+          "Multiplier": 2.4,
+          "Weight": 3.0,
+          "FUSIONWEIGHT": 50.0,
+          "Tier": 8.0,
+          "LvUpCostMultiplier": 2.05,
+          "sourceRow": 11
+        },
+        {
+          "ID": 10,
+          "Name": "Football",
+          "MaterialKey": "FootballMat",
+          "EffectKey": "RadioactiveEffect",
+          "Multiplier": 2.37,
+          "Weight": 5.0,
+          "FUSIONWEIGHT": 70.0,
+          "Tier": 7.0,
+          "LvUpCostMultiplier": 1.65,
+          "sourceRow": 12
+        },
+        {
+          "ID": 11,
+          "Name": "Radioactive",
+          "MaterialKey": "RadioactiveMat",
+          "EffectKey": "RadioactiveEffect",
+          "Multiplier": 2.5,
+          "Weight": 1.0,
+          "FUSIONWEIGHT": 10.0,
+          "Tier": 9.0,
+          "LvUpCostMultiplier": 2.15,
+          "sourceRow": 13
+        }
+      ]
+    },
+    "WeatherEffect": {
+      "sheet": "Weather Effects",
+      "rows": [
+        {
+          "ID": 1,
+          "Name": "Soaked",
+          "Icon": "Soaked",
+          "Chance": 0.04,
+          "MultiplierPrice": 0.05,
+          "LvUpCostMultiplier": 1.03,
+          "sourceRow": 3
+        },
+        {
+          "ID": 2,
+          "Name": "Frost",
+          "Icon": "Frost",
+          "Chance": 0.02,
+          "MultiplierPrice": 0.09,
+          "LvUpCostMultiplier": 1.05,
+          "sourceRow": 4
+        },
+        {
+          "ID": 3,
+          "Name": "Gale",
+          "Icon": "Gale",
+          "Chance": 0.05,
+          "MultiplierPrice": 0.08,
+          "LvUpCostMultiplier": 1.05,
+          "sourceRow": 5
+        },
+        {
+          "ID": 4,
+          "Name": "Thundered",
+          "Icon": "Thundered",
+          "Chance": 0.009,
+          "MultiplierPrice": 0.12,
+          "LvUpCostMultiplier": 1.07,
+          "sourceRow": 6
+        },
+        {
+          "ID": 5,
+          "Name": "Eclipse",
+          "Icon": "Eclipse",
+          "Chance": 0.0077,
+          "MultiplierPrice": 0.15,
+          "LvUpCostMultiplier": 1.08,
+          "sourceRow": 7
+        },
+        {
+          "ID": 6,
+          "Name": "Prismatic",
+          "Icon": "Prismatic",
+          "Chance": 0.0082,
+          "MultiplierPrice": 0.14,
+          "LvUpCostMultiplier": 1.08,
+          "sourceRow": 8
+        },
+        {
+          "ID": 7,
+          "Name": "Vortex",
+          "Icon": "Vortex",
+          "Chance": 0.0082,
+          "MultiplierPrice": 0.16,
+          "LvUpCostMultiplier": 1.09,
+          "sourceRow": 9
+        },
+        {
+          "ID": 8,
+          "Name": "Sequin",
+          "Icon": "Sequin",
+          "Chance": 0.0082,
+          "MultiplierPrice": 0.17,
+          "LvUpCostMultiplier": 1.1,
+          "sourceRow": 10
+        },
+        {
+          "ID": 9,
+          "Name": "Sparkle",
+          "Icon": "Sparkle",
+          "Chance": 0.0,
+          "MultiplierPrice": 0.2,
+          "LvUpCostMultiplier": 1.3,
+          "sourceRow": 11
+        },
+        {
+          "ID": 10,
+          "Name": "Aurora",
+          "Icon": "Aurora",
+          "Chance": 0.0082,
+          "MultiplierPrice": 0.18,
+          "LvUpCostMultiplier": 1.15,
+          "sourceRow": 12
+        },
+        {
+          "ID": 11,
+          "Name": "Stormspark",
+          "Icon": "Stormspark",
+          "Chance": 0.005,
+          "MultiplierPrice": 0.2,
+          "LvUpCostMultiplier": 1.3,
+          "sourceRow": 13
+        }
+      ]
+    }
+  },
+  "effectSourceAudit": {
+    "workbook": "[Craftland] Steal A Pet Master Data.xlsx",
+    "sha256": "63a0e439773fbdaa32ed7e82e654a9c059c8d1f045add50dce41dfede4da31a1",
+    "localFileModified": "2026-11-05",
+    "mutationSheet": "Mutation (V2.3.1)",
+    "weatherSheet": "Weather Effects",
+    "weatherIdMeaning": "WeatherID = WeatherEffectID; not WeatherType",
+    "weatherEffectKeyNote": "Source has Icon, not EffectKey. Preserve Icon separately; do not infer a VFX key.",
+    "idPolicy": "id is the stable Gen alias; use effectType + effectId for SAP references.",
+    "footballNote": "Mutation ID 10 Football uses RadioactiveEffect in source; preserved without guessing."
   }
 };

@@ -1,0 +1,18 @@
+﻿GenID,Name,EffectType,ID,EffectRef,SourceSheet,MaterialKey,EffectKey,Icon,ValueField,Value,FishingActive
+gold,Golden,Mutation,2,Mutation:2,Mutation (V2.3.1),GoldenMat,goldenEffect,,Multiplier,1.33,True
+soaked,Soaked,WeatherEffect,1,WeatherEffect:1,Weather Effects,,,Soaked,MultiplierPrice,0.05,True
+frost,Frozen,Mutation,3,Mutation:3,Mutation (V2.3.1),IceMat,frozenEffect,,Multiplier,1.66,True
+ice,Frost,WeatherEffect,2,WeatherEffect:2,Weather Effects,,,Frost,MultiplierPrice,0.09,True
+wind,Gale,WeatherEffect,3,WeatherEffect:3,Weather Effects,,,Gale,MultiplierPrice,0.08,True
+coral,Magma,Mutation,4,Mutation:4,Mutation (V2.3.1),MagmaMat,magmaEffect,,Multiplier,2.0,True
+thundered,Thundered,WeatherEffect,4,WeatherEffect:4,Weather Effects,,,Thundered,MultiplierPrice,0.12,True
+clover,Clover,Mutation,5,Mutation:5,Mutation (V2.3.1),CloverMat,cloverEffect,,Multiplier,2.13,True
+lunar,Eclipse,WeatherEffect,5,WeatherEffect:5,Weather Effects,,,Eclipse,MultiplierPrice,0.15,True
+fossilized,Fossilized,Mutation,6,Mutation:6,Mutation (V2.3.1),FossilizedMat,fossilizedEffect,,Multiplier,2.25,True
+rainbow,Prismatic,WeatherEffect,6,WeatherEffect:6,Weather Effects,,,Prismatic,MultiplierPrice,0.14,True
+vortex,Vortex,WeatherEffect,7,WeatherEffect:7,Weather Effects,,,Vortex,MultiplierPrice,0.16,False
+sequin,Sequin,WeatherEffect,8,WeatherEffect:8,Weather Effects,,,Sequin,MultiplierPrice,0.17,False
+sweetheart,Sweetheart,Mutation,7,Mutation:7,Mutation (V2.3.1),SweetheartMat,sweetheartEffect,,Multiplier,2.3,False
+diamond,Crystalline,Mutation,8,Mutation:8,Mutation (V2.3.1),CrystallineMat,crystallineEffect,,Multiplier,2.37,False
+radioactive,Radioactive,Mutation,11,Mutation:11,Mutation (V2.3.1),RadioactiveMat,RadioactiveEffect,,Multiplier,2.5,False
+webbed,Webbed,Mutation,9,Mutation:9,Mutation (V2.3.1),WebbedMat,webbedEffect,,Multiplier,2.4,False

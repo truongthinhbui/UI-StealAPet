@@ -1,0 +1,23 @@
+﻿EffectType,ID,Name,MaterialKey,EffectKey,Icon,Multiplier,MultiplierPrice,Chance,LvUpCostMultiplier,Weight,FUSIONWEIGHT,Tier,SourceSheet,sourceRow
+Mutation,1,Normal,None,None,,1.0,,,1.0,3550.0,2500.0,0.0,Mutation (V2.3.1),3
+Mutation,2,Golden,GoldenMat,goldenEffect,,1.33,,,1.15,700.0,2000.0,1.0,Mutation (V2.3.1),4
+Mutation,3,Frozen,IceMat,frozenEffect,,1.66,,,1.3,420.0,1750.0,2.0,Mutation (V2.3.1),5
+Mutation,4,Magma,MagmaMat,magmaEffect,,2.0,,,1.45,210.0,1420.0,3.0,Mutation (V2.3.1),6
+Mutation,5,Clover,CloverMat,cloverEffect,,2.13,,,1.5,76.0,1200.0,4.0,Mutation (V2.3.1),7
+Mutation,6,Fossilized,FossilizedMat,fossilizedEffect,,2.25,,,1.6,20.0,730.0,5.0,Mutation (V2.3.1),8
+Mutation,7,Sweetheart,SweetheartMat,sweetheartEffect,,2.3,,,1.65,10.0,200.0,6.0,Mutation (V2.3.1),9
+Mutation,8,Crystalline,CrystallineMat,crystallineEffect,,2.37,,,1.85,5.0,70.0,7.0,Mutation (V2.3.1),10
+Mutation,9,Webbed,WebbedMat,webbedEffect,,2.4,,,2.05,3.0,50.0,8.0,Mutation (V2.3.1),11
+Mutation,10,Football,FootballMat,RadioactiveEffect,,2.37,,,1.65,5.0,70.0,7.0,Mutation (V2.3.1),12
+Mutation,11,Radioactive,RadioactiveMat,RadioactiveEffect,,2.5,,,2.15,1.0,10.0,9.0,Mutation (V2.3.1),13
+WeatherEffect,1,Soaked,,,Soaked,,0.05,0.04,1.03,,,,Weather Effects,3
+WeatherEffect,2,Frost,,,Frost,,0.09,0.02,1.05,,,,Weather Effects,4
+WeatherEffect,3,Gale,,,Gale,,0.08,0.05,1.05,,,,Weather Effects,5
+WeatherEffect,4,Thundered,,,Thundered,,0.12,0.009,1.07,,,,Weather Effects,6
+WeatherEffect,5,Eclipse,,,Eclipse,,0.15,0.0077,1.08,,,,Weather Effects,7
+WeatherEffect,6,Prismatic,,,Prismatic,,0.14,0.0082,1.08,,,,Weather Effects,8
+WeatherEffect,7,Vortex,,,Vortex,,0.16,0.0082,1.09,,,,Weather Effects,9
+WeatherEffect,8,Sequin,,,Sequin,,0.17,0.0082,1.1,,,,Weather Effects,10
+WeatherEffect,9,Sparkle,,,Sparkle,,0.2,0.0,1.3,,,,Weather Effects,11
+WeatherEffect,10,Aurora,,,Aurora,,0.18,0.0082,1.15,,,,Weather Effects,12
+WeatherEffect,11,Stormspark,,,Stormspark,,0.2,0.005,1.3,,,,Weather Effects,13

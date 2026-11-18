@@ -50,17 +50,17 @@
   }
   function list(){
     const query=$('.poolSearch').value.trim().toLowerCase(),group=$('.poolGroup').value,family=$('.poolFamily').value;
-    return (kind==='fish'?window.FishingConfig.pets:window.GenConfig.catalog).filter(item=>(!query||item.name.toLowerCase().includes(query)||String(item.id).toLowerCase().includes(query))&&(group==='all'||(kind==='fish'?item.rarity:item.tier)===group)&&(kind==='fish'||family==='all'||item.family===family));
+    return (kind==='fish'?window.FishingConfig.pets:window.GenConfig.catalog).filter(item=>(!query||item.name.toLowerCase().includes(query)||String(item.id).toLowerCase().includes(query)||(kind==='gen'&&String(item.effectId).includes(query)))&&(group==='all'||(kind==='fish'?item.rarity:item.tier)===group)&&(kind==='fish'||family==='all'||item.family===family));
   }
   function weight(item,index){return kind==='fish'?item.weights[index]:item.fishingEnabled?window.GenConfig.rebirthProfiles[index].weights[item.id]||0:0;}
   function total(index){return kind==='fish'?window.FishingPool.profile(window.FishingConfig.bands[index].min).total:window.GenCore.profile(window.GenConfig.rebirthProfiles[index].min).total;}
   function render(){
     const index=Number($('.poolBand').value),all=$('.poolAllBands').checked,items=list(),band=bands()[index];
     shell.classList.toggle('poolAllColumns',all);$('.poolBand').disabled=all;
-    const headers=['ID',kind==='fish'?'Cá':'Gen','Nhóm',kind==='fish'?'Rank':'Family',...(kind==='gen'?['Giá SSS · Pet Coin']:[]),...(all?[...bands().map(b=>'Weight '+b.label),...bands().map(b=>'Rate '+b.label)]:['Weight '+band.label,'Rate '+band.label])];
+    const headers=['ID',kind==='fish'?'Cá':'Gen','Nhóm',kind==='fish'?'Rank':'Family',...(kind==='gen'?['SAP ID','SAP Type','MaterialKey','EffectKey','Icon key','Giá SSS · Pet Coin']:[]),...(all?[...bands().map(b=>'Weight '+b.label),...bands().map(b=>'Rate '+b.label)]:['Weight '+band.label,'Rate '+band.label])];
     const rows=items.map(item=>{
       let label=item.name;if(kind==='gen'){label=document.createElement('span');label.className='genCatalogLabel';label.append(window.GenCore.icon(item),document.createTextNode(item.name));}
-      return [item.id,label,kind==='fish'?item.rarity:tiers[item.tier],kind==='fish'?item.rank:item.family,...(kind==='gen'?[number(item.rarityBasis.value)]:[]),...(all?[...bands().map((_,b)=>number(weight(item,b))),...bands().map((_,b)=>percent(weight(item,b)/total(b)))]:[number(weight(item,index)),percent(weight(item,index)/total(index))])];
+      return [item.id,label,kind==='fish'?item.rarity:tiers[item.tier],kind==='fish'?item.rank:item.family,...(kind==='gen'?[item.effectId,item.effectType,item.effectSource.materialKey??'—',item.effectSource.effectKey??'—',item.effectSource.iconKey??'—',number(item.rarityBasis.value)]:[]),...(all?[...bands().map((_,b)=>number(weight(item,b))),...bands().map((_,b)=>percent(weight(item,b)/total(b)))]:[number(weight(item,index)),percent(weight(item,index)/total(index))])];
     });
     $(kind==='fish'?'.poolFishTable':'.poolGenTable').replaceChildren(table(headers,rows));
     $('.poolStats').textContent='Hiện '+items.length+' / '+(kind==='fish'?window.FishingConfig.pets.length:window.GenConfig.catalog.length)+' loại · '+(all?'Đủ 5 mốc · 5 cột Weight + 5 cột Rate':band.label+' · Tổng weight pool trước lọc: '+number(total(index)));
@@ -82,8 +82,8 @@
   function current(){ $('.poolBand').value=String(currentIndex());render(); }
   $('.poolCurrent').addEventListener('click',()=>{$('.poolAllBands').checked=false;current();});
   $('.poolCsv').addEventListener('click',()=>{
-    const rows=[['Config','ID','Name','Group','Family',...bands().flatMap(b=>['Weight_'+b.label,'Rate_'+b.label])]];
-    for(const item of list())rows.push([kind==='fish'?window.FishingConfig.version:window.GenConfig.version,item.id,item.name,kind==='fish'?item.rarity:tiers[item.tier],kind==='fish'?'Fish':item.family,...bands().flatMap((_,index)=>[weight(item,index),weight(item,index)/total(index)])]);
+    const rows=[['Config','ID','Name','Group','Family',...(kind==='gen'?['SAP_ID','SAP_Type','SAP_Ref','MaterialKey','EffectKey','Icon']:[]),...bands().flatMap(b=>['Weight_'+b.label,'Rate_'+b.label])]];
+    for(const item of list())rows.push([kind==='fish'?window.FishingConfig.version:window.GenConfig.version,item.id,item.name,kind==='fish'?item.rarity:tiers[item.tier],kind==='fish'?'Fish':item.family,...(kind==='gen'?[item.effectId,item.effectType,item.effectRef,item.effectSource.materialKey??'',item.effectSource.effectKey??'',item.effectSource.iconKey??'']:[]),...bands().flatMap((_,index)=>[weight(item,index),weight(item,index)/total(index)])]);
     const csv='\uFEFF'+rows.map(row=>row.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\r\n'),url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'})),link=document.createElement('a');link.href=url;link.download=(kind==='fish'?'fish':'muta-weather-gen')+'-pool.csv';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);
   });
   root.addEventListener('fishingbalancechange',render);

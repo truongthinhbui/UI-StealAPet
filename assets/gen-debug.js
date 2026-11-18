@@ -34,9 +34,9 @@
     for(const cells of rows){const row=document.createElement('tr');for(const content of cells){const cell=document.createElement('td');if(content instanceof Node)cell.appendChild(content);else cell.textContent=content;row.appendChild(cell);}body.appendChild(row);}element.appendChild(body);return element;
   }
   function genLabel(gen){const label=document.createElement('span');label.className='genCatalogLabel';label.append(core.icon(gen),document.createTextNode(gen.name));return label;}
-  $('.genCatalog .genTableScroll').appendChild(table(['Gen','Nguồn','Nhóm','Fishing / lần chọn đầu R9','Giá S (Pet Coin)','Chance S cơ bản'],config.catalog.map(gen=>{
+  $('.genCatalog .genTableScroll').appendChild(table(['Gen','SAP ID','SAP Type','Nguồn','Nhóm','Fishing / lần chọn đầu R9','Giá S (Pet Coin)','Chance S cơ bản'],config.catalog.map(gen=>{
     const grade=gen.source.grades.find(g=>g.grade==='S');
-    return [genLabel(gen),gen.family,tiers[gen.tier],gen.fishingEnabled?percent(gen.fishingWeight/core.total):'Khóa · 0%',grade?.petCoinCost===null?'Chưa có':String(grade?.petCoinCost??'Chưa có'),grade?.baseChance===null?'Chưa có':percent(grade?.baseChance||0)];
+    return [genLabel(gen),gen.effectId,gen.effectType,gen.family,tiers[gen.tier],gen.fishingEnabled?percent(gen.fishingWeight/core.total):'Khóa · 0%',grade?.petCoinCost===null?'Chưa có':String(grade?.petCoinCost??'Chưa có'),grade?.baseChance===null?'Chưa có':percent(grade?.baseChance||0)];
   })));
   $('.genCatalog .genTableScroll').appendChild(table(['Gen / Rebirth',...config.rebirthProfiles.map(p=>p.label)],core.pool.map(gen=>[genLabel(gen),...config.rebirthProfiles.map(p=>percent((p.weights[gen.id]||0)/core.profile(p.min).total))])));
   const chartHost=document.createElement('section');panel.appendChild(chartHost);const chart=window.FishingChart(chartHost);
