@@ -79,17 +79,74 @@
       <span>KIRIN</span>
     </div>`;
   scene.append(overlay);
+  const idleTools = document.createElement('div');
+  idleTools.className = 'burstIdleTools';
+  idleTools.setAttribute('aria-hidden', 'true');
+  idleTools.append(
+    overlay.querySelector('.burstShovel').cloneNode(true),
+    overlay.querySelector('.burstFishingRod').cloneNode(true)
+  );
+  const meter = document.createElement('div');
+  meter.className = 'burstLuckMeter';
+  meter.innerHTML = '<i class="burstClover"><b></b><b></b><b></b><b></b></i><span>0%</span>';
+  meter.setAttribute('aria-hidden', 'true');
+  const pulse = document.createElement('div');
+  pulse.className = 'burstLuckPulse';
+  pulse.setAttribute('aria-hidden', 'true');
+  scene.append(idleTools, pulse, meter);
+
+  const debug = document.createElement('div');
+  debug.className = 'burstLuckDebug';
+  debug.innerHTML = `
+    <label for="burstLuckInput">Debug Luck</label>
+    <input id="burstLuckInput" type="range" min="0" max="100" value="0">
+    <output for="burstLuckInput">0%</output>
+    <button type="button">+10%</button>`;
+  scene.before(debug);
+  const luckInput = debug.querySelector('input');
+  const luckAdd = debug.querySelector('button');
+  const luckOutput = debug.querySelector('output');
+  const meterText = meter.querySelector('span');
+  const versions = [...previews.querySelectorAll('button')];
+  let selectedActivity = versions.find(button => button.dataset.burstVersion === '7');
+  let triggering = false;
+
+  function selectActivity(button) {
+    selectedActivity = button;
+    scene.dataset.activity = button.dataset.burstVersion;
+    versions.filter(item => activityTiming[item.dataset.burstVersion]).forEach(item => {
+      item.setAttribute('aria-pressed', String(item === button));
+    });
+  }
+  selectActivity(selectedActivity);
+
+  function setControls(disabled) {
+    versions.forEach(item => { item.disabled = disabled; });
+    luckInput.disabled = disabled;
+    luckAdd.disabled = disabled;
+  }
+
+  function renderLuck() {
+    const value = Number(luckInput.value);
+    const label = value + '%';
+    meterText.textContent = label;
+    luckOutput.value = label;
+    meter.style.setProperty('--luck-size', 1 + value / 100);
+  }
 
   const particles = overlay.querySelector('.fishingLuckParticles');
   const colors = ['#fff3aa', '#ffc440', '#fffdf1', '#57e1c9'];
   for (let index = 0; index < 24; index++) {
     const particle = document.createElement('i');
-    const angle = index * Math.PI * 2 / 24;
-    const distance = 10 + (index * 7 % 16);
+    const jitter = (index * 53 % 17) / 17;
+    const angle = index * Math.PI * 2 / 24 + (jitter - .5) * .35;
+    const distance = 9 + (index * 7 % 17) + jitter * 5;
     particle.style.setProperty('--particle-x', Math.cos(angle) * distance + 'cqw');
     particle.style.setProperty('--particle-y', (Math.sin(angle) * distance * .68 - 7) + 'cqw');
     particle.style.setProperty('--particle-spin', (index % 2 ? -1 : 1) * (100 + index * 11) + 'deg');
     particle.style.setProperty('--particle-color', colors[index % colors.length]);
+    particle.style.setProperty('--particle-scale', (.7 + jitter * .6).toFixed(2));
+    particle.style.setProperty('--particle-delay', Math.round(jitter * 70) + 'ms');
     particle.classList.toggle('is-sparkle', index % 3 === 0);
     particles.append(particle);
   }
@@ -111,7 +168,8 @@
     const version = button.dataset.burstVersion;
     const { duration, openingDuration } = activityTiming[version] ?? defaultTiming;
     playing = true;
-    previews.querySelectorAll('button').forEach(item => { item.disabled = true; });
+    setControls(true);
+    scene.classList.add('burstActivityPlaying');
     overlay.dataset.version = version;
     button.classList.add('is-playing');
     announcement.textContent = 'Lucky Burst started.';
@@ -131,7 +189,12 @@
       audioTimers.forEach(timer => clearTimeout(timer));
       overlay.hidden = true;
       clock.cancel();
-      previews.querySelectorAll('button').forEach(item => { item.disabled = false; });
+      setControls(false);
+      scene.classList.remove('burstActivityPlaying', 'burstLuckCharged');
+      if (activityTiming[version]) {
+        luckInput.value = 0;
+        renderLuck();
+      }
       button.classList.remove('is-playing');
       playing = false;
       announcement.textContent = 'Lucky Burst: Kirin revealed.';
@@ -140,6 +203,37 @@
 
   previews.addEventListener('click', event => {
     const button = event.target.closest('button[data-burst-version]');
-    if (button) play(button);
+    if (!button || playing || triggering) return;
+    if (activityTiming[button.dataset.burstVersion]) selectActivity(button);
+    else play(button);
+  });
+
+  function updateLuck() {
+    if (playing || triggering) return;
+    renderLuck();
+    if (Number(luckInput.value) !== 100) return;
+    if (motion.matches) {
+      play(selectedActivity);
+      return;
+    }
+    triggering = true;
+    setControls(true);
+    announcement.textContent = 'Luck đã đạt 100%.';
+    scene.classList.add('burstLuckCharged');
+    const flight = meter.animate([
+      { left: '7%', top: '83%', translate: '-50% -50%', scale: 1 },
+      { left: '50%', top: '50%', translate: '-50% -50%', scale: 1.2, offset: .65 },
+      { left: '50%', top: '50%', translate: '-50% -50%', scale: 1.55, opacity: 0 }
+    ], { duration: 850, easing: 'ease-in-out', fill: 'both' });
+    flight.finished.then(() => {
+      triggering = false;
+      play(selectedActivity);
+      flight.cancel();
+    });
+  }
+  luckInput.addEventListener('input', updateLuck);
+  luckAdd.addEventListener('click', () => {
+    luckInput.value = Math.min(100, Number(luckInput.value) + 10);
+    updateLuck();
   });
 })();
