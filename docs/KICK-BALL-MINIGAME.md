@@ -14,3 +14,6 @@ A fixed third-person camera behind the existing Kelly idle model faces an 8m × 
 
 ## Drag aiming update
 Drag the field with mouse or touch to move a reticle across the goal, with a highlight for its current cell. Aim is clamped inside the posts and captured when shooting. Score is 10 per landed goal; misses give zero. Power is captured on pointer-down from the last rendered meter position. Green shots cross the goal plane exactly at the reticle and settle inside the net, remaining visible for 650ms before the next ball. Low shots fall short; high shots clear the bar. Tests cover every goal cell and both green boundaries, drag extremes, frozen shot aim, scoring on arrival and duplicate-settle protection.
+
+## Camera aiming correction
+Dragging now rotates the actual third-person camera in yaw/pitch. The reticle stays fixed at screen center; its camera ray intersects the goal plane to determine the shot aim and highlighted cell. Clicking a numbered cell or using keyboard selection also points the camera at that cell. Resize preserves the selected world aim. Rotation limits retain aim inside the posts. Camera tests verify quaternion changes, moving world projection, centered aim, all six targets, and desktop/mobile limits.

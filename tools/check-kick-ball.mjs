@@ -11,3 +11,15 @@ for(let cell=0;cell<6;cell++)for(const power of [GREEN_MIN,.52,GREEN_MAX]){
 for(const x of [-3.65,0,3.65])for(const y of [.35,.9,2.7,3.25]){const round=new KickRound();const point={x,y};const shot=round.shoot(aimCell(x,y),.52,point);point.x=999;const cross=flightPoint(shot,.82);assert.equal(cross.x,x,'Aim captured at shot');assert(Math.abs(cross.y-y)<1e-9);}
 for(const power of [.1,.9]){const round=new KickRound(),shot=round.shoot(0,power);const cross=flightPoint(shot,.82);assert(power<.42?cross.z>-10:cross.y>3.8);round.settle();assert.equal(round.score,0);}
 console.log('PASS all six cells and green edges cross the selected target; green balls stay inside net; drag aim snapshot; points only on settled hits, no duplicate points; low/high miss trajectories.');
+import * as THREE from '../assets/vendor/three/three.module.js';
+import {cameraAim,pointCamera,rotateAimCamera} from '../assets/kick-ball-camera.js';
+for(const [z,y] of [[9,2.7],[11,3.2]]){
+ const camera=new THREE.PerspectiveCamera(49,1,.1,140);camera.position.set(.45,y,z);
+ pointCamera(camera,{x:0,y:.9});const before=camera.quaternion.clone();const scenePoint=new THREE.Vector3(-4,3.6,-10).project(camera);
+ let aim=rotateAimCamera(camera,80,-40);assert(aim.x>0&&aim.y>.9);assert(!camera.quaternion.equals(before),'Dragging must rotate actual camera');
+ const afterPoint=new THREE.Vector3(-4,3.6,-10).project(camera);assert(scenePoint.distanceTo(afterPoint)>.01,'World must move on screen');
+ const center=new THREE.Vector3(aim.x,aim.y,-10).project(camera);assert(Math.abs(center.x)<1e-8&&Math.abs(center.y)<1e-8,'Aim stays screen-centered');
+ for(const cell of [0,1,2,3,4,5]){pointCamera(camera,{x:(cell%3-1)*8/3,y:cell<3?2.7:.9});const p=cameraAim(camera);assert.equal(aimCell(p.x,p.y),cell);}
+ for(const d of [-100000,100000]){aim=rotateAimCamera(camera,d,d);assert(aim.x>=-3.650001&&aim.x<=3.650001);assert(aim.y>=.349999&&aim.y<=3.250001);}
+}
+console.log('PASS real camera rotation, moving world projection, fixed center reticle, all six camera targets and rotation limits on desktop/mobile.');
