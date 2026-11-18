@@ -1,0 +1,19 @@
+{
+  "version": "2.3.1",
+  "files": [
+    "SKILL.md",
+    "references/wireframe-reference.md",
+    "references/concept-sheet.md",
+    "references/visual-acceptance.md",
+    "production-contract.json",
+    "package-manifest.json"
+  ],
+  "before": {
+    "SKILL.md": "0caa0b30a2eb98e59971e7bcda560bb91f57b0f927653b4ae10e1ad0fda1cba1",
+    "references/wireframe-reference.md": null,
+    "references/concept-sheet.md": "2a55f456a27f41ec54b0694326e2f8c354bc7a9b2dc8d5d64ee1a7b1d3878c01",
+    "references/visual-acceptance.md": "14e096a2640f945d2c0a38bf5265a16fdf4b8ef7f8e7afad96886596f49d6f98",
+    "production-contract.json": "35f74bfe40ecf6ebfb54a498a7076096a55df51f74e9d93e88e1769d550aacda",
+    "package-manifest.json": "e6260ce9b04e86ee8ef6336fac16eda2018e0e5405aa2cac11e585989fd664eb"
+  }
+}

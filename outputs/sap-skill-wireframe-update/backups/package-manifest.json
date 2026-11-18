@@ -1,0 +1,739 @@
+{
+  "schema_version": 1,
+  "package_version": "2.3.0",
+  "hash_algorithm": "sha256",
+  "files": {
+    "SKILL.md": {
+      "bytes": 10851,
+      "sha256": "0caa0b30a2eb98e59971e7bcda560bb91f57b0f927653b4ae10e1ad0fda1cba1"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "bytes": 1180,
+      "sha256": "b12e363b2b1635248cf457dd6d1fb5ecf86835f9a67ab39798a70b8be5e109dd"
+    },
+    "agents/openai.yaml": {
+      "bytes": 272,
+      "sha256": "6e034ad902618005f5a09e575a7205d7fc0a3616432167dd5d0bd450a5080735"
+    },
+    "assets/OnlyModel/ARTICFOX.png": {
+      "bytes": 18261,
+      "sha256": "346e0160d9402653a2341c123fdeebac9733d78fe172573df08011c205660b1a"
+    },
+    "assets/OnlyModel/AllPets.png": {
+      "bytes": 3826084,
+      "sha256": "c58e12d35117fa3b4e02e1534dc46b3d99ff9d2f6986cb6f063299e231560b86"
+    },
+    "assets/OnlyModel/ArcticFox.fbx": {
+      "bytes": 69340,
+      "sha256": "14ace8d3d9f834a69d57b3ba93e605f119dea16fda121f860ac2c8d352e5f161"
+    },
+    "assets/OnlyModel/ELEPHANT.png": {
+      "bytes": 36083,
+      "sha256": "464efe08964602621db98d0e3f0cdb848ca2ceb59c5c55aead976acfd9f7a832"
+    },
+    "assets/OnlyModel/Elephant.fbx": {
+      "bytes": 87372,
+      "sha256": "d956351a6302693b9f5abbd4b15df8c79a5c2ee6bbd2e2c445c905aa90c1b7c5"
+    },
+    "assets/OnlyModel/FrillNeckedLizard.fbx": {
+      "bytes": 66716,
+      "sha256": "69bb2c8c711e8d4a666f85c16ba2afa460222db0ba4e42a717ff0c398061aa84"
+    },
+    "assets/OnlyModel/FrillNeckedLizard.png": {
+      "bytes": 23002,
+      "sha256": "f30a7473099511a82c77f2131f2c00d7cbdc897be7a68da603f9f6dee057959e"
+    },
+    "assets/OnlyModel/GIRAFFE.png": {
+      "bytes": 28496,
+      "sha256": "cf5bd729ef61e308d22d679e8ad93aec8776fb41ca23a90bbf2c70ce7ad1b9a0"
+    },
+    "assets/OnlyModel/Giraffe.fbx": {
+      "bytes": 103660,
+      "sha256": "bc685b36ba77c5b0fe139dd1a837cdbf24231b6c3a9f3961a759d55bcbbfd495"
+    },
+    "assets/OnlyModel/MOOSE.png": {
+      "bytes": 42410,
+      "sha256": "760005ff023643708305d9f58a8e9fe94a7ce8d95d406e005afd5570a0a23ca4"
+    },
+    "assets/OnlyModel/Moose.fbx": {
+      "bytes": 113436,
+      "sha256": "b0d31b71893b1f1d53e9f1e0ab2ceac532f9608f71060e2bd2813bc660141f1e"
+    },
+    "assets/OnlyModel/NARWHAL.png": {
+      "bytes": 30563,
+      "sha256": "7a317b0546b366deb55e20a95ec77fb706ed2d47ca3ee54b28a12be8b51d3bd9"
+    },
+    "assets/OnlyModel/Narwhal.fbx": {
+      "bytes": 47292,
+      "sha256": "933413869ea7ab0697976b85ffb4b6fa5d1c3a40ec373d30b618ef2ecf473321"
+    },
+    "assets/OnlyModel/PENGUIN.png": {
+      "bytes": 25797,
+      "sha256": "d761649ef931b5b1fa20f1eb691ff0fd928e8a2562eaad434db1784e8d40dde1"
+    },
+    "assets/OnlyModel/Penguin.fbx": {
+      "bytes": 58444,
+      "sha256": "f841186bf45b498a1d7d911a5db8e257730987d0624869e176826973ac95f1da"
+    },
+    "assets/OnlyModel/REINDEER.png": {
+      "bytes": 37077,
+      "sha256": "8f9e0db7dff53cd6f71967f96789c79359262be8270cc1d23c42cdf16c927272"
+    },
+    "assets/OnlyModel/RHINO.png": {
+      "bytes": 25138,
+      "sha256": "c367bdca86956228032be4fbfed8ab79c5e28ec6adadef358d0c322095f07c0a"
+    },
+    "assets/OnlyModel/Reindeer.fbx": {
+      "bytes": 92092,
+      "sha256": "da8e7a9f7b776bf8f27ab14af7a61b147159ea517ce4ffc7617158ea77346bfc"
+    },
+    "assets/OnlyModel/Rhino.fbx": {
+      "bytes": 65084,
+      "sha256": "39432d8ccc3b72cf5f73c03ed50d4faa4a48fda468634d951bc4928526e36bc7"
+    },
+    "assets/OnlyModel/TURTLE.png": {
+      "bytes": 23061,
+      "sha256": "116d5cf554588070c83e87c8f017f884e65b7c000a35be682f5c15e95ca599c6"
+    },
+    "assets/OnlyModel/Turtle.fbx": {
+      "bytes": 74892,
+      "sha256": "eac60dae74d242cadda143dfc9a6f700b0883edf4d8df18831ec702135e38a9b"
+    },
+    "assets/OnlyRig/01_熔骨盲鳗/AshboneMoray.blend": {
+      "bytes": 178255,
+      "sha256": "a9186e7c7371ef5df18054df14f1731cd09524e2be8217ab9c95751b6051902f"
+    },
+    "assets/OnlyRig/01_熔骨盲鳗/AshboneMoray_Move.fbx": {
+      "bytes": 111148,
+      "sha256": "624b77a2f330cf96217444290cfd87b2295d9532d015776ec21ac9f68ab8bc1d"
+    },
+    "assets/OnlyRig/01_熔骨盲鳗/AshboneMoray_Rig.fbx": {
+      "bytes": 99868,
+      "sha256": "df8b9e49c4e80feec8be08681049e53600564b9352b06e95e390d36476dcc48e"
+    },
+    "assets/OnlyRig/01_熔骨盲鳗/ashboneMoray_D.png": {
+      "bytes": 194,
+      "sha256": "5f3785806a0a25df4853223d5331a6a4c70858bf308c7f01d5518841a8f2c15c"
+    },
+    "assets/OnlyRig/02_幽灵鱼/GhostMinnow.blend": {
+      "bytes": 155178,
+      "sha256": "71d90661e21ea5d4c153d0f41abdbbeb773179a230375adae40959aaa93bf03a"
+    },
+    "assets/OnlyRig/02_幽灵鱼/GhostMinnow_Move.fbx": {
+      "bytes": 100588,
+      "sha256": "17643b6ca81dc6c1e8fa12fdd718b4bce618a7f0e9b9dc3c926c2cbcea73ee46"
+    },
+    "assets/OnlyRig/02_幽灵鱼/GhostMinnow_Rig.fbx": {
+      "bytes": 99964,
+      "sha256": "455cc78e55a949c94a08def00a8b9af90de3c41d3254dfb194187ff297c82973"
+    },
+    "assets/OnlyRig/02_幽灵鱼/ghostMinnow_D.png": {
+      "bytes": 167,
+      "sha256": "a3745b118f6e7dd23b7acd8381c9bee424b3e3e0870739b4463036dfa1ffe63e"
+    },
+    "assets/OnlyRig/03_南瓜鱼/PumpkinPuffer.blend": {
+      "bytes": 146975,
+      "sha256": "266601865258e3e2fa126bc36de61d9b17277ce2dad7308e347bd8fed9262c1a"
+    },
+    "assets/OnlyRig/03_南瓜鱼/PumpkinPuffer_Move.fbx": {
+      "bytes": 109676,
+      "sha256": "16b3c4aa1cc6bb2babb0830b73e00a412b6fadbd68fc1eb19c13a704910def32"
+    },
+    "assets/OnlyRig/03_南瓜鱼/PumpkinPuffer_Rig.fbx": {
+      "bytes": 78508,
+      "sha256": "0c4a2b8583587a60972240dc00d4074a13cbeea6bf518c14de6a1be820bc7795"
+    },
+    "assets/OnlyRig/03_南瓜鱼/pumpkinPuffer_D.png": {
+      "bytes": 182,
+      "sha256": "535b2e96b51ffac358c3e38334e7ea2e4d0916cb8d0463906682e96eea26612f"
+    },
+    "assets/baselines/index.json": {
+      "bytes": 1017,
+      "sha256": "ef1a0793cf53d1bc20ead8f1ee8dd00fa11ac9e89048c74b2478210583529cc6"
+    },
+    "assets/baselines/winter-palette/palette-512.png": {
+      "bytes": 4721,
+      "sha256": "b0da0d33e0ef66bcd01fa2991c25db93824f8236fb803d94d2dd2faba4cb9c58"
+    },
+    "assets/baselines/winter-palette/palette-spec.json": {
+      "bytes": 1578,
+      "sha256": "e74dd5a4000837ea0cd171a40390d91130c26a4c092b40221865770a25b5dcaf"
+    },
+    "assets/baselines/yeti/PocketYeti.blend": {
+      "bytes": 158470,
+      "sha256": "11a85c39f16445c0c4255e8120dad86e7427d20c25a4a8619e05aefb0748d2d6"
+    },
+    "assets/baselines/yeti/PocketYeti.fbx": {
+      "bytes": 65100,
+      "sha256": "cb3cc374dacfb339038d8b872c1a0f4cce2aea6524bacf09bd0226591667d679"
+    },
+    "assets/baselines/yeti/PocketYeti_Hero.png": {
+      "bytes": 665715,
+      "sha256": "b23d563de8850f8d2983a5464d00ec4aae81d255e469c4dbc12bc39c6e9df390"
+    },
+    "assets/baselines/yeti/PocketYeti_ModelSheet.png": {
+      "bytes": 1140092,
+      "sha256": "608d895d91ffafb2cc9d45df1c0f6e1e7d077572e1df98f032eb713d39c32dd7"
+    },
+    "assets/baselines/yeti/PocketYeti_palette.json": {
+      "bytes": 1510,
+      "sha256": "18b0c3fa847496bc328d5c234adb340561a88b9f52ce84e185f44cb38f694d1c"
+    },
+    "assets/baselines/yeti/PocketYeti_validation.json": {
+      "bytes": 4030,
+      "sha256": "93a038a225e9476993647360b31c61c5a4f29e9c737920a532d11d9030829462"
+    },
+    "assets/baselines/yeti/pocketYeti_D.png": {
+      "bytes": 4910,
+      "sha256": "ac37c554c67bb21baec5738f8e169e5292a94c5bd19d2c6f425f7286da17ae8f"
+    },
+    "assets/baselines/yeti/project-handoff.json": {
+      "bytes": 2756,
+      "sha256": "72db2d9cbc9bde110ccfb5bfd6005d2e75afad0ca461d7b5d414bdfa3067d0c1"
+    },
+    "assets/baselines/yeti/render-settings.json": {
+      "bytes": 880,
+      "sha256": "99b8225cf3a14e4369221df1d8940f8a43049ad840b6a86bd886935134903703"
+    },
+    "assets/concept-template.png": {
+      "bytes": 684542,
+      "sha256": "97e092fee70cf84a1728d09d089204e1a1f0b5519a1fcb261131dc9cd315e26a"
+    },
+    "assets/eye-reference/ARTICFOX.png": {
+      "bytes": 18261,
+      "sha256": "346e0160d9402653a2341c123fdeebac9733d78fe172573df08011c205660b1a"
+    },
+    "assets/eye-reference/ELEPHANT.png": {
+      "bytes": 36083,
+      "sha256": "464efe08964602621db98d0e3f0cdb848ca2ceb59c5c55aead976acfd9f7a832"
+    },
+    "assets/eye-reference/PENGUIN.png": {
+      "bytes": 25797,
+      "sha256": "d761649ef931b5b1fa20f1eb691ff0fd928e8a2562eaad434db1784e8d40dde1"
+    },
+    "assets/reference_eye_template.json": {
+      "bytes": 22728,
+      "sha256": "e0ba036eafaa80a2be7d12b26d65698177e643d1c1ceaa64cc094d284824b7c5"
+    },
+    "production-contract.json": {
+      "bytes": 3943,
+      "sha256": "35f74bfe40ecf6ebfb54a498a7076096a55df51f74e9d93e88e1769d550aacda"
+    },
+    "references/attachment-and-rotation.md": {
+      "bytes": 6329,
+      "sha256": "ae49721ba3ab8dde4cc5bdb50bcdc3a6e123aea7e25ebdb5606f2212a68cbaaa"
+    },
+    "references/blender/INDEX.md": {
+      "bytes": 9279,
+      "sha256": "2da595318f4bdf613c2e6744f3f83387eec8befa5a6ea9ef513aab63c945fb69"
+    },
+    "references/blender/LICENSE": {
+      "bytes": 1105,
+      "sha256": "321b43f50b2b27273bbd0d8395e15f665a5c0d44469cfd7dd4ed2b8147ec80b0"
+    },
+    "references/blender/REFERENCE_COMPENDIUM.md": {
+      "bytes": 120226,
+      "sha256": "6c9e87fd9c02fccbc5892962697cca705c11985d94cd33e9780dfbd53f639455"
+    },
+    "references/blender/core-references/api-changes-5x.md": {
+      "bytes": 6666,
+      "sha256": "adc6abbff9aa0d57158805aaabf63cff3088779eb0a957253dfea1247f08bcaa"
+    },
+    "references/blender/core-references/bpy-patterns.md": {
+      "bytes": 7793,
+      "sha256": "ba7bbc708bf198bdcdfa59d9d41d830a4ae119c24ae9457830b73d9e818e2af8"
+    },
+    "references/blender/inventory.json": {
+      "bytes": 31798,
+      "sha256": "49c9b8695337674259b75bfdae3f8b57116897b2ee02c95bdf3691ffa5ac3529"
+    },
+    "references/blender/modules/analog-found-footage-horror.md": {
+      "bytes": 792,
+      "sha256": "0c6c7171611c6ffeeddcb1f8560377e675b42f51256538ee96f01acb29845590"
+    },
+    "references/blender/modules/animation.md": {
+      "bytes": 3631,
+      "sha256": "2bfe833bf06d01f83068d49cf4d113f7f41ac04b0f7850d5cda0c4eab6bdf170"
+    },
+    "references/blender/modules/anime-style.md": {
+      "bytes": 2196,
+      "sha256": "4990abd9100b8f1b80156fcb14b3cccc0834d7d4dd782402d4c37f72d2377983"
+    },
+    "references/blender/modules/apocalypse-worlds.md": {
+      "bytes": 713,
+      "sha256": "784f618d21ebc8d3b75ba9aa3bc7f961646b3ba8648f3152dec5fe9756229446"
+    },
+    "references/blender/modules/archviz.md": {
+      "bytes": 1981,
+      "sha256": "3c2d19353141397eb1b140b344ee5a1dc2763d459ba3e08362f8e8e41f06c78c"
+    },
+    "references/blender/modules/asset-optimization.md": {
+      "bytes": 3811,
+      "sha256": "cc08cb4267436e6b8c644b43bd0885837761f9ba01ac4d975f699e97647d6fb9"
+    },
+    "references/blender/modules/biome-worlds.md": {
+      "bytes": 557,
+      "sha256": "1b3ce4a92e1a94df44186797bb8fe02e82989ac7f9dcf686b636a6728e1e199b"
+    },
+    "references/blender/modules/blender-asset-qa.md": {
+      "bytes": 5810,
+      "sha256": "cb227c3e544da35ecf1aee5ca90a553342699008e516a35c7bf5946411144be4"
+    },
+    "references/blender/modules/blender-core.md": {
+      "bytes": 7572,
+      "sha256": "609fd0c1bb81763570b8d4d0e92fc4d25c34e4d72de90c2dd7ec5c0856949fae"
+    },
+    "references/blender/modules/blender-director.md": {
+      "bytes": 20648,
+      "sha256": "f1764fc410e094b6949bbaf1d781d87a1b1e5bef79ff0fc5756a9fbec0410411"
+    },
+    "references/blender/modules/blender-game-optimization.md": {
+      "bytes": 6590,
+      "sha256": "ccf839221de4b131a1102d7926ff1e90cfab60df833ca943a70e054992b3e776"
+    },
+    "references/blender/modules/blender-modeler.md": {
+      "bytes": 5193,
+      "sha256": "bcfc503f85bd3f4c6b63055f54a00208264463b9df5ceb04ce534146cf3ee26a"
+    },
+    "references/blender/modules/body-horror-style.md": {
+      "bytes": 805,
+      "sha256": "c3af4c78276e9b0199b64676c0b25d11c7499977f9723fd2776d9558566ad844"
+    },
+    "references/blender/modules/brutalist-mood.md": {
+      "bytes": 549,
+      "sha256": "f1d76a135bbdfc0efd6f52747ac1b00b60e4a469c89b70c7c2e731997fbfb4db"
+    },
+    "references/blender/modules/camera-cinematography.md": {
+      "bytes": 2707,
+      "sha256": "aeb14bfb06977bad71c953a46ff4996596057d977fb69fdf09ee97be5cbdaf71"
+    },
+    "references/blender/modules/cartoon-style.md": {
+      "bytes": 1083,
+      "sha256": "4a694a99f13a121946d1c639b26cdbe8bfa8c49e30e98983136aa87f17e413ca"
+    },
+    "references/blender/modules/character-archetypes.md": {
+      "bytes": 739,
+      "sha256": "f0c2acb912ad673e0c7add271d38b04c43047b7ceeb05527b33bba25a9945f77"
+    },
+    "references/blender/modules/character-artist.md": {
+      "bytes": 4181,
+      "sha256": "a488f4f4f8b34f38693f2fb83aa9bad135f2544350c46fea4497c400a31e0a98"
+    },
+    "references/blender/modules/chibi-style.md": {
+      "bytes": 638,
+      "sha256": "6de57d147e6263bb8e24658c9fe0235aec1dccef1d8d1f88cc9889efe2502548"
+    },
+    "references/blender/modules/cloth-sim.md": {
+      "bytes": 2553,
+      "sha256": "46de061ecfe8c5a195ac6a0a4761bc8a0f8714b33c698e88cb0b050ae8a7d7b1"
+    },
+    "references/blender/modules/collision-proxy.md": {
+      "bytes": 2365,
+      "sha256": "c553d6d422d8c3b368fa8810b3f05cd7344c5efab966a37996f5cbc7a6b3ea0d"
+    },
+    "references/blender/modules/comic-book-style.md": {
+      "bytes": 901,
+      "sha256": "23a631f8e75845a932e67208d022e3972c273fbbac0204618d3b1eb739d67281"
+    },
+    "references/blender/modules/compositing.md": {
+      "bytes": 2378,
+      "sha256": "2981848b5ac300c3c5a5c3ad1e8b390f3daf17b6714f105aa92e3eb9ef80fd77"
+    },
+    "references/blender/modules/cosmic-eldritch-horror.md": {
+      "bytes": 821,
+      "sha256": "523819f27825d933f4e79a5b019f2efb2ec56ceb47c18012663c49400e5ceb91"
+    },
+    "references/blender/modules/cozy-wholesome-mood.md": {
+      "bytes": 703,
+      "sha256": "2b6176406a1f397be663ccd81fd2dc6c1cb6ef581a9c2bbb542f2aa88b54e48f"
+    },
+    "references/blender/modules/creature-artist.md": {
+      "bytes": 4153,
+      "sha256": "34a14110abce816682c89a15605a93ec6f907a1f2cfe862af1a6a22b26d5a9e2"
+    },
+    "references/blender/modules/dark-gritty-mood.md": {
+      "bytes": 568,
+      "sha256": "02ab7567f0a1ae9efbe38bd7bdbe6d585e955036b78b3488392195ff3a85f0cf"
+    },
+    "references/blender/modules/dream-surreal-mood.md": {
+      "bytes": 551,
+      "sha256": "2b9a22c04375df38faa65ab889816f328b9d49743988cb75fa2ccf4b354532a8"
+    },
+    "references/blender/modules/dream-weirdcore-style.md": {
+      "bytes": 754,
+      "sha256": "e8f7a8e09400ece8249c09bfaac4ed1f75d4b0c7f8afdcacc213b8284c083404"
+    },
+    "references/blender/modules/environment-artist.md": {
+      "bytes": 5067,
+      "sha256": "32b3bfb100fb35e979e12bbb0fccd38dc7543ed6b9d94ef9cbfd7ff03ab5aaec"
+    },
+    "references/blender/modules/export-pipeline.md": {
+      "bytes": 4336,
+      "sha256": "45f7cee02efe306f36e2de562232ad552b72f8d5df5abf46b071c054737449b0"
+    },
+    "references/blender/modules/fantasy-worlds.md": {
+      "bytes": 813,
+      "sha256": "079844fd478a30942c97d095746a9a097c5b4a42f0c91a97cfa8d383851e81a2"
+    },
+    "references/blender/modules/folk-horror-style.md": {
+      "bytes": 738,
+      "sha256": "c3d7e4732b7c687f97434ac848d4c60682baa0bd7bb46b6f5cebd3c43a4139f8"
+    },
+    "references/blender/modules/frutiger-aero-style.md": {
+      "bytes": 575,
+      "sha256": "949138511a3f3a1d9f33391bd4d535e1ca9983594e82fdf960e874ef88c2b00e"
+    },
+    "references/blender/modules/genre-action-combat.md": {
+      "bytes": 579,
+      "sha256": "f44b71c67ddf60c07e16709bd47839e8aa6b7122d48e5ed29ab4b9a40f5fee7f"
+    },
+    "references/blender/modules/genre-card-party-idle.md": {
+      "bytes": 599,
+      "sha256": "bc378f474bbc4a5e2a5652f1a7bf5c67a40b879f99c0bf3ae87295c8203bb8a6"
+    },
+    "references/blender/modules/genre-metroidvania-roguelike.md": {
+      "bytes": 584,
+      "sha256": "79ad49bb22ea1cf8e4ef3608c10df09b3a0d303136dbb93e19ff6bb87c18b7c3"
+    },
+    "references/blender/modules/genre-narrative-vn.md": {
+      "bytes": 585,
+      "sha256": "a37aac1239a5401412582f3e99dc2b63baa84cb18d98d2e539c92b07fd8e66e5"
+    },
+    "references/blender/modules/genre-open-world-sandbox.md": {
+      "bytes": 588,
+      "sha256": "2aeaeee47cd0510f52d7d0c6b39ab724c7223e21f5f5b4154e3990fc45ae97ae"
+    },
+    "references/blender/modules/genre-puzzle-platformer.md": {
+      "bytes": 581,
+      "sha256": "690956db26345dfba6f63053e6a2f37088bd31af0e18111aa0b8c35e9dfd5884"
+    },
+    "references/blender/modules/genre-racing-sports.md": {
+      "bytes": 582,
+      "sha256": "7207cc5532dd3616041140e5f63770936a1f23dc12f091bb6b897dc51b6fa61e"
+    },
+    "references/blender/modules/genre-rpg.md": {
+      "bytes": 573,
+      "sha256": "b74b9283caa228d1430d1b2fc4474a84d1c6cfeab1eb2cc74a9633b8064c6f65"
+    },
+    "references/blender/modules/genre-shooter.md": {
+      "bytes": 579,
+      "sha256": "0a746542c8c65d720fff2a21ab29df8ec04ecff98ee6b6375a075edc66a2b57a"
+    },
+    "references/blender/modules/genre-soulslike.md": {
+      "bytes": 595,
+      "sha256": "58543754a0bff4b30998cfb2013fc7e34f06fd96a0138281c837a5dfd752b7f8"
+    },
+    "references/blender/modules/genre-stealth.md": {
+      "bytes": 560,
+      "sha256": "bf6d5a1732b111f905cffaf38c43346cd74376fd34c807e441f405f5c6e3c1e9"
+    },
+    "references/blender/modules/genre-strategy-sim.md": {
+      "bytes": 584,
+      "sha256": "efbbb0a66e6d6a2c63c0530e392e8127c39b62651a31aa6839a4496bbab0b46e"
+    },
+    "references/blender/modules/genre-survival.md": {
+      "bytes": 569,
+      "sha256": "f72e224cb535466c4b61682e5f2b23f1932be108d1fce97cf523514606988518"
+    },
+    "references/blender/modules/geometry-nodes.md": {
+      "bytes": 3972,
+      "sha256": "d03bcb8d7ea48daa33d45be335d905c9875b68b2a20db076c58da650276d0580"
+    },
+    "references/blender/modules/godot-export.md": {
+      "bytes": 1965,
+      "sha256": "410715cc40aded90bd89daff4e33f33570f5dded762f11dd49204792d435d226"
+    },
+    "references/blender/modules/hair-groom.md": {
+      "bytes": 2693,
+      "sha256": "cd37e7d074a23476933385b891e27b21515aa0a7a29e2e6ca7fb4969e83b3ad3"
+    },
+    "references/blender/modules/hand-painted-style.md": {
+      "bytes": 750,
+      "sha256": "db36bfa704bf84ff2796d3ae264c9d211a16a2a30dccbc84f3e058d75f628a88"
+    },
+    "references/blender/modules/hard-surface.md": {
+      "bytes": 5578,
+      "sha256": "51016d3dfd7f79d5c96ca2448cc754bd0daf0cd31f762e5c33ad211a43d9ef3c"
+    },
+    "references/blender/modules/hd-2d-style.md": {
+      "bytes": 740,
+      "sha256": "93456543662d87deb4557dcf8d8236080d5400c0bf1c8698ac26aa36f25a6735"
+    },
+    "references/blender/modules/historical-worlds.md": {
+      "bytes": 706,
+      "sha256": "aebbb42a702b6c6e123720e56e8c0708f4a7051cb710b0b286ce8366c90cbe87"
+    },
+    "references/blender/modules/horror-style.md": {
+      "bytes": 5063,
+      "sha256": "cf546ee6ccde1f7e3cda7e34630b55e9933a2985ce776b79633db67bf77735fa"
+    },
+    "references/blender/modules/indie-horror-aesthetics.md": {
+      "bytes": 741,
+      "sha256": "e6638893ef814acf74b7ea75b5b72178aa4d7ccd094028729633c8edaa623fe5"
+    },
+    "references/blender/modules/isometric-style.md": {
+      "bytes": 2034,
+      "sha256": "f7559925038f5f32b7e41363163ba6c51ed1f3eef73238c71d9623bcd5e0ca72"
+    },
+    "references/blender/modules/lighting.md": {
+      "bytes": 3764,
+      "sha256": "2b970dfc398ec5ac721857cc69131e8ed80d49b67783f5e0e22b78ba1b0b16f6"
+    },
+    "references/blender/modules/liminal-space-style.md": {
+      "bytes": 885,
+      "sha256": "f50d002137dc45ffe87bda87471edba07ccf721c8e2fd5f89ffdd5ce04a8a388"
+    },
+    "references/blender/modules/lod-pipeline.md": {
+      "bytes": 2465,
+      "sha256": "2686ba6a7b48234e0bb90136e518b661c75251207f3ed5cf57f2606a3585e234"
+    },
+    "references/blender/modules/lookdev.md": {
+      "bytes": 2041,
+      "sha256": "a4be57d970c19e8116803f8eaf9c538f86dbac92f4aa2fee1c1a0985889b3807"
+    },
+    "references/blender/modules/lowpoly-style.md": {
+      "bytes": 3887,
+      "sha256": "0443319121829ce36b0f110cdf95aeca1b84e644c6f1969450cba98ec2f6744c"
+    },
+    "references/blender/modules/manga-style.md": {
+      "bytes": 879,
+      "sha256": "7cdaa3c1c139ee968f3fcedf3827b2fe42605feee335ac9e2cb1c63f0ba4b5e6"
+    },
+    "references/blender/modules/mascot-puppet-horror.md": {
+      "bytes": 800,
+      "sha256": "4f47eaa693473fb177fe2ac331d35124d9012e1cee87b4f228dd2c0ec6337bec"
+    },
+    "references/blender/modules/materials.md": {
+      "bytes": 3914,
+      "sha256": "92a37404e398d308f325b57befe5df4987ab72d2d1408e8f59fe316cf85f2c0c"
+    },
+    "references/blender/modules/minimalist-style.md": {
+      "bytes": 685,
+      "sha256": "3203856f72f82ad30ddd346f4f2fb4fb3ac4b26ab8639db243173b2b09d2f5cb"
+    },
+    "references/blender/modules/neon-retrofuturism.md": {
+      "bytes": 567,
+      "sha256": "a7b079c9594fa78a01009e62ae40ed24c1ef773f0df8ead2bf96b751b9b03d1f"
+    },
+    "references/blender/modules/noir-style.md": {
+      "bytes": 734,
+      "sha256": "1d5285725514c730049945644e86ab0a206407d53d3ce42a1357b1296b94d726"
+    },
+    "references/blender/modules/painterly-style.md": {
+      "bytes": 821,
+      "sha256": "8e54b96b93c2e1392a9faaa9944693fc6c4dc50875eb2b1a42fd0a6ba412d5b7"
+    },
+    "references/blender/modules/physics-sim.md": {
+      "bytes": 2565,
+      "sha256": "ab3b71065d163489df84de3e9d35f806fe093b6258b7994dfaa9df54d100e4b0"
+    },
+    "references/blender/modules/pixel-art-style.md": {
+      "bytes": 844,
+      "sha256": "1d3162d87a0a96f232617ef759a3a59490261e89f44f8a9af3b6edc90aebdcd4"
+    },
+    "references/blender/modules/procedural-modeling.md": {
+      "bytes": 3644,
+      "sha256": "a300da0531b29332043adb18f666e764bb685c331838303c58284768067871ec"
+    },
+    "references/blender/modules/prop-artist.md": {
+      "bytes": 2876,
+      "sha256": "83a07d23b4da1c4280705caa22d055e18104e58923a2ff01ddbfdba89e4e1df8"
+    },
+    "references/blender/modules/psx-horror-style.md": {
+      "bytes": 2394,
+      "sha256": "42f4b509fe8ea8d5b9e811fe196793e4273a1406bab08c5b6e080ed9495ff683"
+    },
+    "references/blender/modules/qa-review.md": {
+      "bytes": 2761,
+      "sha256": "3dabdfb47b69d38ab5ea5c9cd8ed026a52fcc1a5956fb5decec706ac7668bb87"
+    },
+    "references/blender/modules/realistic-style.md": {
+      "bytes": 4199,
+      "sha256": "d30de89087f593cf919ebb977df74ebfcde274ab66913278938b3d7fb7edcadc"
+    },
+    "references/blender/modules/rendering.md": {
+      "bytes": 4817,
+      "sha256": "29070751f67572ab215a0722279ac1835490ec53e3c191a949f2eb3dd6fc882f"
+    },
+    "references/blender/modules/retopology.md": {
+      "bytes": 3918,
+      "sha256": "0badae969c865527a7cfa6719aee9fa95e24f595a1c2495168c77ee76a69e7aa"
+    },
+    "references/blender/modules/retro-16bit-style.md": {
+      "bytes": 570,
+      "sha256": "9037867dbc79b7f82fa67bfc0eca9057acb76d17bfa0086543416e911f9bc9a9"
+    },
+    "references/blender/modules/retro-8bit-style.md": {
+      "bytes": 658,
+      "sha256": "922d9963ebc7363104a814196447e10d1eeb378b88ba460f0a5d1c5e70b8df28"
+    },
+    "references/blender/modules/rigging.md": {
+      "bytes": 3924,
+      "sha256": "2517debeee9b975bd4171d3450dca2eb5217b41831ab89dedf28a87a9102b31c"
+    },
+    "references/blender/modules/scene-assembly.md": {
+      "bytes": 2332,
+      "sha256": "6fa38dffdd501b537d2e6b1f8986318a0cacd4bbb0bfa0e8bef195b979a530bd"
+    },
+    "references/blender/modules/sci-fi-punk-worlds.md": {
+      "bytes": 724,
+      "sha256": "0b5994990447f5de970b5723b0dd678fe3de64d59e3e911cbab38e6768dcb1a1"
+    },
+    "references/blender/modules/sculpting.md": {
+      "bytes": 4284,
+      "sha256": "f6e87586ee70909fd856393ee415b95f68271e01b48b0d2dec6ec513351d4ec9"
+    },
+    "references/blender/modules/set-dressing.md": {
+      "bytes": 2058,
+      "sha256": "800699bb35dcc35d0f55a2b7bf383ae7ea780b36069c815de6150f7c1cbb18e0"
+    },
+    "references/blender/modules/stop-motion-craft-style.md": {
+      "bytes": 821,
+      "sha256": "856dfef24b27cc2231e48b632834d3a5686b41d975268ef5d417aa6b87e8ec67"
+    },
+    "references/blender/modules/stylized-style.md": {
+      "bytes": 4480,
+      "sha256": "184b51b0d4fb79cd5cda25a9727af11674581290c148c5fd5f330f2f79f4a415"
+    },
+    "references/blender/modules/texture-workflow.md": {
+      "bytes": 4112,
+      "sha256": "53dadff11dd91e51326533572fa8cda1e5a57526a89174f4996d7d40a174a876"
+    },
+    "references/blender/modules/unity-export.md": {
+      "bytes": 2475,
+      "sha256": "67d52c64f24d72aa0246707e46438ea2f331a363a9aa3cfdbe801d140d4d3034"
+    },
+    "references/blender/modules/unreal-export.md": {
+      "bytes": 2525,
+      "sha256": "f41b95b3ce1c8359a55a83ba07a2af7b0d2d868073385da622f03379b0492930"
+    },
+    "references/blender/modules/uv-workflow.md": {
+      "bytes": 4348,
+      "sha256": "3abe57cb342239ac0f7b1d86ad03ab0fa83f003fba6605a5dae145a6fd4b3731"
+    },
+    "references/blender/modules/vector-style.md": {
+      "bytes": 569,
+      "sha256": "723026f14f45a993495b71231674fdaef2eff0616f5d68ff34192a74ae473e30"
+    },
+    "references/blender/modules/vegetation-artist.md": {
+      "bytes": 2037,
+      "sha256": "8c08b3316a2a534213157bffb60b8bb38c0d1a85cbf7d3f9dfa6b7e0b2635635"
+    },
+    "references/blender/modules/vehicle-artist.md": {
+      "bytes": 3003,
+      "sha256": "b3ba75e490cfeff99dd72ceded31bcca0a667b54766a2da032c6f6924e4915c7"
+    },
+    "references/blender/modules/vfx-fx.md": {
+      "bytes": 2556,
+      "sha256": "ad58ac514ad253f68846a164f6fec9342e4b61432e6cdf22ca678e64c94a8055"
+    },
+    "references/blender/modules/visual-console-eras.md": {
+      "bytes": 589,
+      "sha256": "065d5b3939db6d673aea1103f62f32d7652af8126af39de83e51c64eb0d13179"
+    },
+    "references/blender/modules/voxel-style.md": {
+      "bytes": 2061,
+      "sha256": "58d1bf356002197258514f3a9e24d35f409b9f098683fec700d8fec415a81f5a"
+    },
+    "references/chatgpt.md": {
+      "bytes": 4904,
+      "sha256": "098a9fafa7e7aa27f5ef2eeaa444a7613a3f3af2f9d7b65b368fce618b2d7384"
+    },
+    "references/concept-sheet.md": {
+      "bytes": 4133,
+      "sha256": "2a55f456a27f41ec54b0694326e2f8c354bc7a9b2dc8d5d64ee1a7b1d3878c01"
+    },
+    "references/eye-optimization.md": {
+      "bytes": 3272,
+      "sha256": "b1f32dee8c5304753258e572f60de642e69d0975654eeb26dff8dffdadbe154f"
+    },
+    "references/eyes-standard.md": {
+      "bytes": 4804,
+      "sha256": "f31893dd38da0e87bbfdc92f8f2ff50072da6d814dcd1e0a27740272ec5c6b7d"
+    },
+    "references/mesh-optimization.md": {
+      "bytes": 6887,
+      "sha256": "e1cdd07f06f88facd198be1d5fa6da0cbe37f8af31408ed8f69ea22ae2ceb9be"
+    },
+    "references/optimization-skills.md": {
+      "bytes": 2194,
+      "sha256": "f7cacf9c651a4e2fa56d0c6d35ab1a8975d972a68ea72c99b1ca08f17d60a6e0"
+    },
+    "references/pet-style.md": {
+      "bytes": 8351,
+      "sha256": "9a7a474637f0e4f9661bf633b88127e315286e44fabfd8dcfc0a4f1f9dbc5f04"
+    },
+    "references/portability.md": {
+      "bytes": 6915,
+      "sha256": "88c96099660336414b93ca8a66877783df8858e3f29af87e502daec364136d61"
+    },
+    "references/production-checks.md": {
+      "bytes": 7470,
+      "sha256": "345458bbd506f724ef6e19817f25bb70da48595798291cb97e792db01e6a87b1"
+    },
+    "references/rig-and-export.md": {
+      "bytes": 6760,
+      "sha256": "f9dd4e612326da5ac59c4e5d27db95a893f1a174c3c7060971fc73c4f587d38d"
+    },
+    "references/runtime.md": {
+      "bytes": 3257,
+      "sha256": "ea056ced859d7b78c5d5172d28f5cabc52b80768c945e3a2ebf7fdaa9f6bb356"
+    },
+    "references/scene-hierarchy.md": {
+      "bytes": 2496,
+      "sha256": "445f587d8aa128ac5995348abe76fb523b4ca6d4cffbe4467a6109f4a23efc93"
+    },
+    "references/supplied-atlas.md": {
+      "bytes": 5151,
+      "sha256": "6dc6da7ca2c617a5ff51c0d85fb0f1db62d09cb00f6cd7ac9e0e15c24eb511e4"
+    },
+    "references/visual-acceptance.md": {
+      "bytes": 9023,
+      "sha256": "14e096a2640f945d2c0a38bf5265a16fdf4b8ef7f8e7afad96886596f49d6f98"
+    },
+    "scripts/LICENSE": {
+      "bytes": 1105,
+      "sha256": "321b43f50b2b27273bbd0d8395e15f665a5c0d44469cfd7dd4ed2b8147ec80b0"
+    },
+    "scripts/_bpyx.py": {
+      "bytes": 4503,
+      "sha256": "a3339ba8a678469e8ed29510e32a7331e0235202191ca4edb977af4720819b4b"
+    },
+    "scripts/audit_pet.py": {
+      "bytes": 7653,
+      "sha256": "d60296f813e0c44e6dd46f8a24b64cd572717d5256d2bf798694c00223e56ed0"
+    },
+    "scripts/blender/_bpyx.py": {
+      "bytes": 4503,
+      "sha256": "a3339ba8a678469e8ed29510e32a7331e0235202191ca4edb977af4720819b4b"
+    },
+    "scripts/blender/env_report.py": {
+      "bytes": 2015,
+      "sha256": "e628feed806dd265e0c1ce803d92591aac208a9f463d8c47cbb939476d3b347a"
+    },
+    "scripts/blender/make_lods.py": {
+      "bytes": 3956,
+      "sha256": "61076e02df93cfa8126a54466540db5a87d763a9910c9e650d441608678c15de"
+    },
+    "scripts/blender/mesh_stats.py": {
+      "bytes": 3920,
+      "sha256": "6f48790b87b90cd15d4c20e6884dcfedf9aa65292f4afcc7fad9fcf7eb8216bc"
+    },
+    "scripts/blender/run_in_blender.py": {
+      "bytes": 3292,
+      "sha256": "e97e078c1b52475d386af2b8f9d27c7578a55c250ccd43ff50bed9c33d380355"
+    },
+    "scripts/preflight.py": {
+      "bytes": 4570,
+      "sha256": "81a21597a86801bcc739e9bcfb46c5ea36d0e5f3de2e3e54c86b66041a1bbd7c"
+    },
+    "scripts/qa_check.py": {
+      "bytes": 20244,
+      "sha256": "37d01051f98fdafd3a9f13f7525804174c68a7bacb446d5bd5b2f43fc2785cca"
+    },
+    "scripts/review_shots.py": {
+      "bytes": 6292,
+      "sha256": "ffd4361f313592b67c124cdf0ec54b8d9866c9b29eefdac5c47731ce133d3f01"
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "package_version": "2.3.0",
+  "precedence": [
+    "current specific user instruction",
+    "selected project handoff and latest user-edited source",
+    "current defaults",
+    "historical examples"
+  ],
+  "defaults": {
+    "max_exported_triangles": 1500,
+    "vertex_ceiling": null,
+    "shading": "smooth with geometry supporting rounded silhouette",
+    "topology": "actual triangulated delivery mesh",
+    "symmetry": "local sagittal anatomy, paired eyes and markings; explicit decorative exceptions",
+    "eye_authority": "latest user-approved live source; OnlyModel fallback",
+    "palette": {
+      "mode": "primary_atlas",
+      "asset": "assets/OnlyModel/AllPets.png",
+      "export_filename": "AllPets.png",
+      "sha256": "c58e12d35117fa3b4e02e1534dc46b3d99ff9d2f6986cb6f063299e231560b86",
+      "width": 2048,
+      "height": 2048,
+      "bit_depth": 8,
+      "png_color_type": 6,
+      "color_space": "sRGB",
+      "image_bytes": "preserve exact source",
+      "layout": "existing atlas regions; inspect flat base-color patches",
+      "fixed_color_count": null,
+      "scope": "All in-scope SAP render models, including pets and associated props; only explicit user override permits another texture."
+    },
+    "uv": {
+      "channel": "UVChannel_1",
+      "method": "real nonzero-area islands",
+      "minimum_color_region_padding_pixels": null,
+      "unintended_overlap": false,
+      "padding_policy": "Measure and report pixel padding for the chosen atlas patches and filtering; no fixed generated-palette margin."
+    },
+    "sap_render_asset": {
+      "meshes": 1,
+      "materials": 1
+    },
+    "rig_or_animation": "only when requested",
+    "scene_organization": {
+      "per_asset_collection": true,
+      "root_pattern": "COL_<AssetName>",
+      "render_geometry_child": "COL_<AssetName>_GEO",
+      "optional_helpers": [
+        "RIG",
+        "REF",
+        "STUDIO"
+      ],
+      "create_before_geometry": true,
+      "preserve_unrelated_collections": true,
+      "shared_image_for_pets_and_props": "assets/OnlyModel/AllPets.png",
+      "reference": "references/scene-hierarchy.md"
+    }
+  },
+  "runtime_baseline": {
+    "blender_version": "5.3.0",
+    "blender_build_hash": "02f0899d78e3",
+    "platform_tested": "Windows x64",
+    "python_dependencies": [
+      "Blender bundled bpy, bmesh, mathutils",
+      "numpy"
+    ],
+    "fbx_import_export_required_for_fbx_tasks": true,
+    "blender_binary_included": false,
+    "mcp_server_included": false
+  },
+  "reproducibility": {
+    "exact_existing_asset": "transfer the selected mesh, textures and settings with hashes; do not regenerate",
+    "new_ai_design": "style and acceptance criteria can be standardized; identical geometry or pixels are not guaranteed",
+    "render_comparison": "same saved camera, size, world, lights, engine, seed and color management; record device/version differences"
+  },
+  "primary_host": "ChatGPT",
+  "blender_library": {
+    "instruction_modules": 97,
+    "supporting_reference_sections": 175,
+    "index": "references/blender/INDEX.md",
+    "mcp_server_included": false
+  },
+  "texture_modes": {
+    "atlas": {
+      "default": true,
+      "reference": "assets/OnlyModel/AllPets.png",
+      "policy": "Use unchanged primary AllPets image for new pets and UV/material work; share image across selected pets."
+    },
+    "palette": {
+      "width": 512,
+      "height": 512,
+      "bit_depth": 8,
+      "png_color_type": 2,
+      "color_space": "sRGB",
+      "layout": "approximately equal-area used-color regions covering full canvas",
+      "fixed_color_count": null,
+      "activation": "Only when explicitly requested, or when auditing a historical generated-palette fixture."
+    },
+    "supplied": {
+      "activation": "User explicitly chooses another atlas",
+      "source_sha256": "verify when supplied; report if not checked",
+      "reference": "references/supplied-atlas.md"
+    }
+  }
+}

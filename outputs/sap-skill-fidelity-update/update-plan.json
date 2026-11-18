@@ -1,0 +1,20 @@
+{
+  "files": [
+    "SKILL.md",
+    "references/concept-model-fidelity.md",
+    "references/concept-sheet.md",
+    "references/visual-acceptance.md",
+    "references/wireframe-reference.md",
+    "production-contract.json",
+    "package-manifest.json"
+  ],
+  "before": {
+    "SKILL.md": "4c3588703d4c46ea939359d4213a0b6f022ab5d03e158907319f984d95dd136f",
+    "references/concept-model-fidelity.md": null,
+    "references/concept-sheet.md": "14b0b0689b984d82b5cae1629c2cc9424b7989a0a6b34bbf9f28da014fd59628",
+    "references/visual-acceptance.md": "cee60a245b79f0e368afe85f75f09fc0f68c51fada10f3d9e1927e4241e07529",
+    "references/wireframe-reference.md": "bb0f9d05c8e15ea781791dd4cd1dedde4974d4d76c518529da889c09b5d9eed8",
+    "production-contract.json": "956a8efee8f84d8b1372b2d9e9822671ac89a9bc9d7e817bb860f2ee7c425fa3",
+    "package-manifest.json": "69ed5597f31bdc6dfc2ab59341519cbe8c662cc1f921c2fe2a3d5b50c08ceffe"
+  }
+}

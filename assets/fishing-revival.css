@@ -330,15 +330,15 @@
 .fishingScene[data-mode="6"] .qteCenter>strong{font-size:clamp(8px,1.3cqw,17px);color:white;text-shadow:0 1px 3px #102337}
 .fishingScene[data-mode="6"] .qtePips,.fishingScene[data-mode="6"] .qteLuckChip{display:none!important}
 .fishingScene[data-mode="6"] .fishingTap{width:17%;z-index:6}
-.fishingScene[data-mode="6"] .qteFishIcon{width:clamp(14px,2.3cqw,27px)}
+.fishingScene[data-mode="6"] .qteFishIcon{width:clamp(22px,3.5cqw,42px)}
 .fishingScene[data-mode="6"] .fishingFeedback{left:81.8%;top:81%;max-width:32%;white-space:normal;font-size:clamp(9px,1.3cqw,16px)}
 .fishingScene[data-mode="6"][data-fishing-round="2"] .fishingRing{--qte-fish-color:#27df87;--qte-fish-fin:#b6ffda}
 
 /* Bonus preview stays above the action, clear of the player's thumb. */
-.fishingBonusPreview{position:absolute;left:81.8%;bottom:43%;translate:-50% 0;width:31%;box-sizing:border-box;padding:1cqw;border:2px solid #9effc9;border-radius:1.2cqw;background:linear-gradient(150deg,#123e40f5,#102a41f5);box-shadow:0 0 2cqw #35ea8f55,0 .5cqw 1.3cqw #071c4666;color:#eafff3;text-align:center;z-index:7;pointer-events:none;animation:fishingBonusReveal .65s ease-out both}
+.fishingBonusPreview{position:absolute;left:81.8%;bottom:43%;translate:-50% 0;width:20%;box-sizing:border-box;padding:.65cqw;border:2px solid #9effc9;border-radius:1.2cqw;background:linear-gradient(150deg,#123e40f5,#102a41f5);box-shadow:0 0 2cqw #35ea8f55,0 .5cqw 1.3cqw #071c4666;color:#eafff3;text-align:center;z-index:7;pointer-events:none;animation:fishingBonusReveal .65s ease-out both}
 .fishingBonusPreview[hidden],.fishingScene[data-offer] .fishingBonusPreview,.fishingScene:not([data-mode="6"]) .fishingBonusPreview{display:none}
-.fishingBonusPreview>strong{display:block;font-size:clamp(11px,1.7cqw,22px);color:#b3ffd2;text-shadow:0 0 1cqw #39e78d}
-.fishingBonusPreview>span{display:block;margin:.4cqw 0 .8cqw;font-size:clamp(8px,1cqw,13px)}
+.fishingBonusPreview>strong{display:block;font-size:clamp(9px,1.2cqw,16px);color:#b3ffd2;text-shadow:0 0 1cqw #39e78d}
+.fishingBonusPreview>span{display:block;margin:.25cqw 0 .4cqw;font-size:clamp(7px,.85cqw,11px)}
 .fishingBonusPool{display:flex;flex-wrap:wrap;justify-content:center;gap:.7cqw}
 .fishingBonusItem{display:flex;flex-direction:column;align-items:center;width:4.5cqw;gap:.3cqw}
 .fishingBonusItem>.genAtlasIcon,.fishingBonusItem>img{display:block;width:3.6cqw;height:3.6cqw;object-fit:contain;filter:drop-shadow(0 0 .4cqw #88ffc988)}
@@ -347,3 +347,21 @@
 @keyframes fishingBonusReveal{from{opacity:0;scale:.65;filter:brightness(2)}60%{opacity:1;scale:1.06}to{opacity:1;scale:1;filter:brightness(1)}}
 @keyframes fishingBonusRing{from{box-shadow:0 0 0 2cqw #8bffcbaa}to{box-shadow:0 0 1.3cqw #48ffab88}}
 @media(prefers-reduced-motion:reduce){.fishingBonusPreview,.fishingScene[data-fishing-round="2"] .fishingRing{animation:none}}
+
+.fishingBonusPreview .fishingBonusItem{width:auto;min-width:8cqw}
+.fishingBonusPreview .fishingBonusItem>.genAtlasIcon,.fishingBonusPreview .fishingBonusItem>img{width:4cqw;height:4cqw}
+.fishingBonusPreview .fishingBonusItem small{font-size:clamp(8px,1cqw,13px);font-weight:700;color:#eafff3}
+
+/* Bare bonus label and reward icon, without a notification card. */
+.fishingBonusPreview{width:max-content;max-width:30%;padding:0;border:0;border-radius:0;background:none;box-shadow:none}
+.fishingBonusPreview>strong{margin-bottom:.5cqw;color:#d2ffe6;text-shadow:0 1px 3px #123640,0 0 .5cqw #123640}
+.fishingBonusPreview .fishingBonusItem{min-width:0}
+
+/* Give the bonus reveal its own beat and leave space above the reel. */
+.fishingBonusPreview{bottom:48%}
+.fishingScene[data-bonus-transition] .fishingBonusPreview{animation:fishingBonusCelebrate .9s ease-out both}
+.fishingScene[data-bonus-transition] .fishingTap::after{content:'✦ BONUS!';position:absolute;left:50%;top:-25%;translate:-50% -50%;white-space:nowrap;color:#e0ffed;font:800 clamp(12px,2cqw,26px)/1 'GFF Latin',Arial,sans-serif;text-shadow:0 2px 3px #103f3b,0 0 1cqw #42ffa6;pointer-events:none;animation:fishingBonusFlash .9s ease-out both}
+.fishingScene[data-bonus-transition] .fishingRing{animation:fishingBonusRing .9s ease-out}
+@keyframes fishingBonusCelebrate{0%{opacity:0;scale:.7;filter:brightness(2.2)}45%{opacity:1;scale:1.18;filter:brightness(1.6)}100%{opacity:1;scale:1;filter:brightness(1)}}
+@keyframes fishingBonusFlash{0%{opacity:0;scale:.6}25%{opacity:1;scale:1.15}65%{opacity:1;scale:1}100%{opacity:0;translate:-50% -120%;scale:1}}
+@media(prefers-reduced-motion:reduce){.fishingScene[data-bonus-transition] .fishingBonusPreview,.fishingScene[data-bonus-transition] .fishingRing,.fishingScene[data-bonus-transition] .fishingTap::after{animation:none}.fishingScene[data-bonus-transition] .fishingTap::after{content:'BONUS!'}}

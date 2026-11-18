@@ -140,11 +140,11 @@
   const jointCount = root.querySelector('#fishingJointCount');
   const jointThickness = root.querySelector('#fishingJointThickness');
   const debugControls = root.querySelector('.fishingDebug');
-  const debugSettings = {speed:1, values:{0:5,2:0,3:2.3,4:.30,6:2.25}};
+  const debugSettings = {forceBonus:false,speed:1, values:{0:5,2:0,3:2.3,4:.30,6:2.25}};
   let debugPaused = false;
   const debugPanel = document.createElement('details');
   debugPanel.className = 'fishingDebugPanel';
-  debugPanel.innerHTML = '<summary>Debug · tùy chỉnh cơ chế</summary><div class="fishingDebugTools"><label>Tốc độ mô phỏng <select class="debugSpeed"><option value=".5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label><label class="debugModeLabel"><span></span><select class="debugModeValue"></select></label><button type="button" data-debug="restart">Chơi lại</button><button type="button" data-debug="pause" aria-pressed="false">Tạm dừng</button><button type="button" data-debug="step">Bước +1/30s</button><button type="button" data-debug="shuffle">Đổi mục tiêu</button><button type="button" data-debug="win">Thử bắt cá</button><button type="button" data-debug="lose">Thử thất bại</button><button type="button" data-debug="defaults">Mặc định</button></div><output class="fishingDebugReadout" aria-live="off"></output>';
+  debugPanel.innerHTML = '<summary>Debug · tùy chỉnh cơ chế</summary><div class="fishingDebugTools"><label>Tốc độ mô phỏng <select class="debugSpeed"><option value=".5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label><label title="Bắt cá thành công luôn mở vòng 2"><input type="checkbox" class="debugForceBonus"> 100% vào vòng 2</label><label class="debugModeLabel"><span></span><select class="debugModeValue"></select></label><button type="button" data-debug="restart">Chơi lại</button><button type="button" data-debug="pause" aria-pressed="false">Tạm dừng</button><button type="button" data-debug="step">Bước +1/30s</button><button type="button" data-debug="shuffle">Đổi mục tiêu</button><button type="button" data-debug="win">Thử bắt cá</button><button type="button" data-debug="lose">Thử thất bại</button><button type="button" data-debug="defaults">Mặc định</button></div><output class="fishingDebugReadout" aria-live="off"></output>';
   debugControls.before(debugPanel);
   debugPanel.appendChild(debugControls);
   window.initFishingRewards();
@@ -185,18 +185,22 @@
   bonusPreview.setAttribute('role','status');
   bonusPreview.setAttribute('aria-live','polite');
   bonusPreview.hidden=true;
-  bonusPreview.innerHTML='<strong>✦ BONUS UNLOCKED!</strong><span>Trúng ô xanh · Nhận 1 Mutation / Weather</span><div class="fishingBonusPool"></div>';
+  bonusPreview.innerHTML='<strong></strong><div class="fishingBonusPool"></div>';
   scene.appendChild(bonusPreview);
   function showFishingBonus(){
     const pool=bonusPreview.querySelector('.fishingBonusPool');
-    pool.replaceChildren(...window.GenCore.profile(rewards.castRebirth).pool.map(gen=>{
+    const reward=rewards.reserveBonus();
+    bonusPreview.querySelector('strong').textContent=reward?.effectType==='WeatherEffect'?'BONUS WEATHER':'BONUS MUTATION';
+    pool.replaceChildren(...(reward?[reward]:[]).map(gen=>{
       const item=document.createElement('span');
       item.className='fishingBonusItem';item.title=gen.name;
       const icon=window.GenCore.icon(gen);icon.setAttribute('aria-hidden','true');
-      const label=document.createElement('small');label.textContent=gen.name;
-      item.append(icon,label);return item;
+      item.setAttribute('aria-label',gen.name);
+      item.append(icon);return item;
     }));
     bonusPreview.hidden=false;
+    scene.dataset.bonusTransition='';
+    celebrateFishingBonus();
     haptic('bonus');
   }
   function chooseMutations(count){return window.GenCore.choose(count,Math.random,rewards.castRebirth).map(({id,name})=>({id,name}));}
@@ -267,10 +271,10 @@
     }
     fireworksCanvas.hidden=false;
     const now=performance.now();
-    const shells=kind==='catch'?[[.24,.32,0],[.76,.32,240],[.5,.38,480]]:[[.5,.42,0]];
+    const shells=kind==='bonus'?[[.71,.47,0],[.91,.43,160],[.81,.34,320]]:kind==='catch'?[[.24,.32,0],[.76,.32,240],[.5,.38,480]]:[[.5,.42,0]];
     for(const [x,y,delay] of shells){
       if(fireworksQueue.length>=6)break;
-      fireworksQueue.push({x:x*width,y:y*height,born:now+delay+170,launch:now+delay,count:kind==='catch'?48:kind==='excellent'?36:20,power:kind==='catch'?1:kind==='excellent'?.8:.6});
+      fireworksQueue.push({x:x*width,y:y*height,born:now+delay+170,launch:now+delay,count:kind==='catch'?48:kind==='bonus'?40:kind==='excellent'?36:20,power:kind==='catch'?1:kind==='bonus'?.65:kind==='excellent'?.8:.6});
     }
     if(fireworksFrame)return;
     fireworksLast=now;
@@ -308,6 +312,25 @@
     fireworksFrame=requestAnimationFrame(draw);
   }
   const impactMotions = new Map();
+  function celebrateFishingBonus(){
+    if(document.hidden||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    fireworks('bonus');
+    hitJuice(81.8,68.5,true);
+    impactPunch(bonusPreview.querySelector('.fishingBonusItem'),true);
+    impactPunch(root.querySelector('.fishingRing'),true);
+    impactMotions.get(scene)?.cancel();
+    const motion=scene.animate([
+      {transform:'translate(0,0)'},
+      {transform:'translate(-3px,2px)',offset:.12},
+      {transform:'translate(3px,-2px)',offset:.25},
+      {transform:'translate(-2px,1px)',offset:.42},
+      {transform:'translate(2px,-1px)',offset:.6},
+      {transform:'translate(0,0)'}
+    ],{duration:420,easing:'ease-out'});
+    impactMotions.set(scene,motion);
+    const cleanup=()=>{if(impactMotions.get(scene)===motion)impactMotions.delete(scene);};
+    motion.onfinish=cleanup;motion.oncancel=cleanup;
+  }
   function impactPunch(element, strong=false) {
     if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
     impactMotions.get(element)?.cancel();
@@ -651,6 +674,7 @@
     state = 'idle';
     delete scene.dataset.fishRarity;
     delete scene.dataset.fishingRound;
+    delete scene.dataset.bonusTransition;
     bonusPreview.hidden=true;
     scene.style.removeProperty('--qte-round-color');
     scene.style.removeProperty('--qte-fish-color');
@@ -845,7 +869,7 @@
       scene.dataset.qteHit=hit?'hit':'miss';haptic(hit?'good':'miss');
       if(game.fishingRound===1){
         if(!hit){finish(false,'CÁ ĐÃ THOÁT!');return;}
-        if(Math.random()<.20){
+        if(debugSettings.forceBonus||Math.random()<.20){
           game.fishingRound=2;game.roundStartedAt=game.age+.9;game.marker=0;
           game.qteArcStart=fishingTargetStart();scene.dataset.fishingRound='2';
           scene.style.setProperty('--qte-round-color','#27df87');
@@ -944,6 +968,7 @@
         break;
       }
       case 6: {
+        if(scene.hasAttribute('data-bonus-transition')&&game.age>=game.roundStartedAt)delete scene.dataset.bonusTransition;
         if(game.qteFeedbackUntil&&game.age>game.qteFeedbackUntil){delete scene.dataset.qteHit;status.textContent='';game.qteFeedbackUntil=0;}
         game.marker = (Math.max(0,game.age-game.roundStartedAt) / (game.qteSecondsPerRevolution * debugSettings.values[6] / 2.25)) % 1;
         qteLuckChip.hidden=true;
@@ -1027,6 +1052,9 @@
   debugPanel.querySelector('.debugSpeed').addEventListener('change',event=>{
     debugSettings.speed=Number(event.target.value);
   });
+  debugPanel.querySelector('.debugForceBonus').addEventListener('change',event=>{
+    debugSettings.forceBonus=event.target.checked;
+  });
   debugModeValue.addEventListener('change',()=>{
     debugSettings.values[mode]=Number(debugModeValue.value);
     tapsPerJoint=debugSettings.values[0];
@@ -1039,6 +1067,8 @@
     if(action==='defaults'){
       if(game){game.mutationPoints=0;game.mutations=0;}renderMutation();
       debugSettings.speed=1;
+      debugSettings.forceBonus=false;
+      debugPanel.querySelector('.debugForceBonus').checked=false;
       Object.assign(debugSettings.values,{0:5,2:0,3:2.3,4:.30,6:2.25});
       tapsPerJoint=5;jointCount.value='3';jointThickness.value='mixed';buildJoints();
       debugPanel.querySelector('.debugSpeed').value='1';reset();

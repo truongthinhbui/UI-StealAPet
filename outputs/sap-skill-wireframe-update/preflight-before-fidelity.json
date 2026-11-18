@@ -1,0 +1,26 @@
+{
+  "checked_pass": true,
+  "package_version": "2.3.1",
+  "files_checked": 184,
+  "errors": [],
+  "warnings": [
+    "File integrity only: rerun inside Blender for Blender/NumPy/FBX checks."
+  ],
+  "runtime": {
+    "python": "3.12.14",
+    "blender": "NOT_CHECKED",
+    "mcp_connection": "NOT_CHECKED"
+  },
+  "blender_library": {
+    "instruction_modules": 97,
+    "supporting_reference_sections": 175,
+    "index": "references/blender/INDEX.md",
+    "mcp_server_included": false
+  },
+  "not_checked": [
+    "destination ChatGPT/agent behavior",
+    "asset visual acceptance",
+    "actual second computer",
+    "target game"
+  ]
+}

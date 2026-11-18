@@ -95,11 +95,16 @@
     get castRarity(){return cast?.pet.rarity??null;},
     begin(){const error=eligibility();if(error)return error;if(cast)return 'Đang câu.';cast={id:crypto.randomUUID(),rebirth:settings.rebirth,version:config.version,pet:pick(settings.rebirth)};return '';},
     cancelCast(){cast=null;},
+    reserveBonus(){
+      if(!cast)return null;
+      if(!cast.bonusReward)cast.bonusReward=window.GenCore.choose(1,Math.random,cast.rebirth)[0];
+      return cast.bonusReward;
+    },
     resolve(detail){
       if(account.pending)return account.pending;
       if(!cast)return null;
       const mutationPoints=detail.bonusWon===true?100:0;
-      const pet=cast.pet,rewards=detail.bonusWon===true?window.GenCore.choose(1,Math.random,cast.rebirth):[];
+      const pet=cast.pet,rewards=detail.bonusWon===true&&cast.bonusReward?[cast.bonusReward]:[];
       const priceQuote=window.FishingPool.quote(pet,rewards);
       account.pending={catchId:cast.id,petId:pet.id,name:pet.name,rarity:pet.rarity,...priceQuote,rebirth:cast.rebirth,poolVersion:cast.version,genVersion:window.GenConfig.version,balancePreset:window.GenConfig.activeBalancePreset,mutationPoints,mutationRewards:rewards.map(({id,name})=>({id,name})),bonusWon:detail.bonusWon===true,results:detail.results.slice(0,2)};
       cast=null;save();render();return account.pending;

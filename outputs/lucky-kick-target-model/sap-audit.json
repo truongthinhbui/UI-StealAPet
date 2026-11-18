@@ -1,0 +1,86 @@
+{
+  "checked_pass": true,
+  "violations": [],
+  "total_triangles": 296,
+  "max_triangles": 300,
+  "objects": {
+    "SM_LuckyKick_TargetMedal": {
+      "vertices": 174,
+      "triangles": 296,
+      "uv_channel": "UVChannel_1",
+      "collapsed_uv_triangles": 0,
+      "nontriangle_faces": 0,
+      "smooth_faces": 148
+    }
+  },
+  "general_qa": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [],
+    "ground_z": 0.0,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [],
+    "enclosed": [],
+    "objects": {
+      "SM_LuckyKick_TargetMedal": {
+        "verts": 174,
+        "faces": 296,
+        "tris": 296,
+        "ngons": 0,
+        "boundary_edges": 26,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 0,
+        "islands": 9,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 0.0,
+        "uv_coverage_pct": 0.0
+      }
+    }
+  },
+  "qa_distances": {
+    "eps": 0.0005,
+    "tol": 0.007
+  },
+  "texture_header": {
+    "width": 2048,
+    "height": 2048,
+    "bit_depth": 8,
+    "color_type": 6,
+    "texture_mode": "atlas",
+    "sha256": "c58e12d35117fa3b4e02e1534dc46b3d99ff9d2f6986cb6f063299e231560b86"
+  },
+  "portable_image_links": [
+    {
+      "name": "AllPets.png",
+      "packed": true,
+      "relative_path": true,
+      "external_exists": true
+    }
+  ],
+  "not_checked": [
+    "visual acceptance",
+    "anatomy symmetry and center seam correspondence",
+    "eye preservation and mounting",
+    "UV island quality, exact overlap and padding",
+    "texture linking, flat-region color assignment (equal areas only for generated palettes)",
+    "FBX round-trip/encoding",
+    "rig deformation and animation",
+    "target-game acceptance"
+  ]
+}

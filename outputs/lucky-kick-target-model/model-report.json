@@ -1,0 +1,48 @@
+{
+  "object": "SM_LuckyKick_TargetMedal",
+  "triangles": 296,
+  "vertices": 174,
+  "dimensions": [
+    1.399999976158142,
+    0.4399999976158142,
+    2.065000057220459
+  ],
+  "materials": 1,
+  "uv_channel": "UVChannel_1",
+  "texture_sha256": "c58e12d35117fa3b4e02e1534dc46b3d99ff9d2f6986cb6f063299e231560b86",
+  "status": "MODELED_NOT_YET_REVIEWED",
+  "scene": "LuckyKick_TargetMedal_300T",
+  "technical": "PASS - saved .blend audited in isolated background Blender",
+  "visual": "REVIEWED - low-poly interpretation of generated concept; simplified paw contours",
+  "texture_sample_colors": [
+    [
+      111,
+      158,
+      164
+    ],
+    [
+      216,
+      146,
+      72
+    ],
+    [
+      237,
+      201,
+      44
+    ],
+    [
+      249,
+      228,
+      198
+    ]
+  ],
+  "uv_min_triangle_area": 7.4969875640818e-08,
+  "uv_samples_per_triangle": 7,
+  "symmetry": "PASS mirrored vertex positions at 1e-6 precision",
+  "construction": "9 intentional shells: disc, star, stem, base and 5 open front paw appliques; static asset",
+  "rig": "NONE - static prop",
+  "game_import": "NOT CHECKED",
+  "fbx": "NOT REQUESTED / NOT EXPORTED",
+  "wireframe": "Actual 296-triangle mesh; matched orthographic cameras",
+  "review_sheet": "TargetMedal-color-wireframe.png"
+}
