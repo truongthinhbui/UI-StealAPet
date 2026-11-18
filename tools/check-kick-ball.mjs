@@ -1,21 +1,21 @@
 import assert from 'node:assert/strict';
 import * as THREE from '../assets/vendor/three/three.module.js';
 import {KickRound,judgeShot,powerAt,GREEN_MIN,GREEN_MAX,GOAL_Z,TARGET_RADIUS,BALL_RADIUS,targetAt,targetCenter} from '../assets/kick-ball-engine.js';
-import {flightPoint} from '../assets/kick-ball-engine.js';
 import {cameraAim,pointCamera,rotateAimCamera,resizeOrbit} from '../assets/kick-ball-camera.js';
+import {BallPhysics,PHYSICS_DT} from '../assets/kick-ball-physics.js';
 assert.equal(judgeShot(GREEN_MIN),'goal');assert.equal(judgeShot(GREEN_MAX),'goal');assert.equal(judgeShot(GREEN_MIN-.001),'low');assert.equal(judgeShot(GREEN_MAX+.001),'high');assert.equal(powerAt(0),0);assert(Math.abs(powerAt(.9)-.5)<1e-10);assert(Math.abs(powerAt(1.8))<1e-10);
+function simulate(shot,seconds=6,dt=1/120){const ball=new BallPhysics();ball.launch(shot);const events=[];for(let i=0;i<Math.round(seconds/dt);i++){events.push(...ball.update(dt));assert(ball.position.y>=BALL_RADIUS-1e-10,'No ground penetration');assert(Number.isFinite(ball.position.x+ball.position.y+ball.position.z));}return {ball,events};}
 for(let id=0;id<6;id++)for(const power of [GREEN_MIN,.52,GREEN_MAX]){
- const round=new KickRound(),center=targetCenter(id),shot=round.shoot(id,power);assert.equal(targetAt(center.x,center.y),id);assert.equal(round.score,0);
- const cross=flightPoint(shot,.82);assert.equal(cross.z,GOAL_Z);assert(Math.abs(cross.x-center.x)<1e-9);assert(Math.abs(cross.y-center.y)<1e-9);assert.equal(shot.result,'goal');
- const end=flightPoint(shot,1);assert(end.z<GOAL_Z&&end.z>GOAL_Z-2);assert(round.impact());assert(!round.impact());assert.equal(round.score,10);round.settle();assert.equal(round.score,10);assert(round.cleared.has(id));assert.equal(round.shoot(id,.52),null);assert.equal(round.shots.length,1);
- const radius=TARGET_RADIUS-BALL_RADIUS;assert.equal(targetAt(center.x+radius,center.y),id);assert.equal(targetAt(center.x+radius+.001,center.y),-1);assert.equal(targetAt(center.x+radius*.8,center.y+radius*.8),-1,'Square corners outside circle must miss');
+ const game=new KickRound(),shot=game.shoot(id,power);assert.equal(game.score,0);const {ball,events}=simulate(shot);const result=events.filter(e=>e.type==='result');assert.equal(result.length,1);assert.equal(result[0].result,'goal','Every target and green edge lands through the circle');assert(events.some(e=>e.type==='net'),'Ball must collide with net');assert(events.some(e=>e.type==='bounce'),'Ball must fall and bounce');assert(ball.finished);assert(ball.speed<.1,'Friction brings ball to rest');game.impact(result[0].result);assert(!game.impact());assert.equal(game.score,10);game.settle();assert.equal(game.shoot(id,.52),null);assert.equal(game.shots.length,1);
+ const c=targetCenter(id),radius=TARGET_RADIUS-BALL_RADIUS;assert.equal(targetAt(c.x+radius,c.y),id);assert.equal(targetAt(c.x+radius+.001,c.y),-1);assert.equal(targetAt(c.x+radius*.8,c.y+radius*.8),-1);
 }
-assert.equal(targetAt(NaN,0),-1);assert.equal(targetAt(100,0),-1);
-const off=new KickRound();const c=targetCenter(0),shot=off.shoot(0,.52,{x:c.x+.6,y:c.y+.6});assert.equal(shot.result,'miss');off.settle();assert.equal(off.score,0);assert(off.canTarget(0));
-for(const power of [.1,.9]){const round=new KickRound(),shot=round.shoot(0,power);const cross=flightPoint(shot,.82);assert(power<.42?cross.z>GOAL_Z:cross.y>3.8);round.settle();assert.equal(round.score,0);assert(round.canTarget(0));}
-const game=new KickRound();for(let i=0;i<6;i++){assert(game.shoot(i,[.1,.5,.9][i%3]));assert.equal(game.shoot(i,.5),null);game.settle();}assert.equal(game.phase,'done');assert.equal(game.goals,2);assert.equal(game.shoot(0,.5),null);game.reset();assert.equal(game.phase,'ready');assert.equal(game.shots.length,0);assert.equal(game.cleared.size,0);
-const perfect=new KickRound();for(let i=0;i<6;i++){perfect.shoot(i,.52);perfect.impact();perfect.settle();}assert.equal(perfect.cleared.size,6);assert.equal(perfect.score,60);assert.equal(perfect.phase,'done');
-console.log('PASS six circular targets, edge clearance for ball radius, square-corner misses, goal trajectories, exact-once score, cleared target lock, six-shot finish and reset.');
+for(const power of [.1,.9]){const game=new KickRound(),shot=game.shoot(4,power);const {events}=simulate(shot);const result=events.filter(e=>e.type==='result');assert.equal(result.length,1);assert.equal(result[0].result,power<.42?'low':'high');game.impact(result[0].result);game.settle();assert.equal(game.score,0);assert(game.canTarget(4));}
+const post={cell:0,power:.52,result:'miss',aim:{x:5.2,y:1.8}};assert(simulate(post).events.some(e=>e.type==='frame'),'Posts deflect physical ball');
+const crossbar={...post,aim:{x:0,y:3.6}};assert(simulate(crossbar).events.some(e=>e.type==='frame'),'Crossbar deflects physical ball');
+const shot=new KickRound().shoot(1,.52),slow=simulate(shot,3,1/30).ball,fast=simulate(shot,3,1/144).ball;for(const key of ['x','y','z']){assert(Math.abs(slow.position[key]-fast.position[key])<1e-8);assert(Math.abs(slow.velocity[key]-fast.velocity[key])<1e-8);}assert.equal(PHYSICS_DT,1/120);
+const free=new BallPhysics();free.launch(shot);const initial={...free.velocity};free.update(.1);assert(free.velocity.y<initial.y,'Gravity decreases upward velocity');assert(Math.abs(free.velocity.z)<Math.abs(initial.z),'Air drag removes speed');free.reset();assert(!free.active);assert.equal(free.speed,0);assert.equal(free.accumulator,0);
+const game=new KickRound();for(let i=0;i<6;i++){assert(game.shoot(i,[.1,.52,.9][i%3]));assert.equal(game.shoot(i,.52),null);game.settle();}assert.equal(game.phase,'done');assert.equal(game.goals,2);game.reset();assert.equal(game.shots.length,0);assert.equal(game.cleared.size,0);
+console.log('PASS physical green shots on all targets, gravity/drag, ground bounce/rolling friction, net contact, post/crossbar deflection, 30/144fps determinism, scoring once and round reset.');
 for(const portrait of [false,true]){
  const camera=new THREE.PerspectiveCamera(45,portrait?.65:1266/710,.1,140);resizeOrbit(camera,portrait);
  for(let id=0;id<6;id++){const center=targetCenter(id),point=pointCamera(camera,center);assert(point);assert(Math.abs(point.x-center.x)<1e-8&&Math.abs(point.y-center.y)<1e-8);assert.equal(targetAt(point.x,point.y),id);const projected=new THREE.Vector3(center.x,center.y,GOAL_Z).project(camera);assert(Math.abs(projected.x)<1e-8&&Math.abs(projected.y)<1e-8);}

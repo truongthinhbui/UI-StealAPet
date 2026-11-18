@@ -1,0 +1,21 @@
+import * as THREE from './vendor/three/three.module.js';
+import {BALL_RADIUS} from './kick-ball-engine.js?v=physical-v7';
+export function createFootball(scene){
+ const ball=new THREE.Group(),skin=new THREE.Group(),seed=new THREE.IcosahedronGeometry(1,0),raw=seed.attributes.position,vertices=[],faces=[],lookup=new Map();
+ for(let i=0;i<raw.count;i+=3){const face=[];for(let j=0;j<3;j++){const p=new THREE.Vector3().fromBufferAttribute(raw,i+j).normalize(),key=p.toArray().map(x=>x.toFixed(5)).join(',');if(!lookup.has(key)){lookup.set(key,vertices.length);vertices.push(p);}face.push(lookup.get(key));}faces.push(face);}seed.dispose();
+ ball.add(skin);
+ const cut=(a,b)=>vertices[a].clone().multiplyScalar(2/3).addScaledVector(vertices[b],1/3).normalize().multiplyScalar(BALL_RADIUS);
+ const white=[],black=[],neighbors=vertices.map(()=>new Set());
+ function panel(points,output){const center=points.reduce((c,p)=>c.add(p),new THREE.Vector3()).multiplyScalar(1/points.length);points=points.map(p=>p.clone().sub(center).multiplyScalar(.981).add(center));for(let k=0;k<points.length;k++)output.push(...center.toArray(),...points[k].toArray(),...points[(k+1)%points.length].toArray());}
+ for(const [a,b,c] of faces){neighbors[a].add(b).add(c);neighbors[b].add(a).add(c);neighbors[c].add(a).add(b);panel([cut(a,b),cut(b,a),cut(b,c),cut(c,b),cut(c,a),cut(a,c)],white);}
+ vertices.forEach((v,i)=>{const points=[...neighbors[i]].map(j=>cut(i,j)),u=points[0].clone().sub(v.clone().multiplyScalar(points[0].dot(v))).normalize(),w=new THREE.Vector3().crossVectors(v,u);points.sort((a,b)=>Math.atan2(a.dot(w),a.dot(u))-Math.atan2(b.dot(w),b.dot(u)));panel(points,black);});
+ for(const [data,color] of [[white,0xf5f1df],[black,0x1b2831]]){const geometry=new THREE.BufferGeometry();geometry.setAttribute('position',new THREE.Float32BufferAttribute(data,3));geometry.computeVertexNormals();const m=new THREE.Mesh(geometry,new THREE.MeshStandardMaterial({color,roughness:.56,metalness:.025,side:THREE.DoubleSide}));m.castShadow=true;skin.add(m);}
+ const seams=new THREE.Mesh(new THREE.SphereGeometry(.177,24,16),new THREE.MeshStandardMaterial({color:0x465054,roughness:.9}));skin.add(seams);scene.add(ball);
+ const canvas=document.createElement('canvas');canvas.width=canvas.height=64;const ctx=canvas.getContext('2d'),gradient=ctx.createRadialGradient(32,32,2,32,32,32);gradient.addColorStop(0,'rgba(12,31,20,.6)');gradient.addColorStop(1,'rgba(12,31,20,0)');ctx.fillStyle=gradient;ctx.fillRect(0,0,64,64);
+ const shadow=new THREE.Mesh(new THREE.PlaneGeometry(.75,.75),new THREE.MeshBasicMaterial({map:new THREE.CanvasTexture(canvas),transparent:true,depthWrite:false,opacity:.7}));shadow.rotation.x=-Math.PI/2;shadow.position.y=.012;scene.add(shadow);
+ const trailPositions=new Float32Array(9*3),geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.BufferAttribute(trailPositions,3));const trail=new THREE.Line(geo,new THREE.LineBasicMaterial({color:0xfff8dc,transparent:true,opacity:0,depthWrite:false}));trail.frustumCulled=false;scene.add(trail);
+ const history=[],axis=new THREE.Vector3(),rotation=new THREE.Quaternion();let bounceAge=10;
+ function update(state,dt,alpha=1){ball.position.set(state.position.x,state.position.y,state.position.z);axis.set(state.angular.x,state.angular.y,state.angular.z);const speed=axis.length();if(speed>0){axis.multiplyScalar(1/speed);rotation.setFromAxisAngle(axis,speed*dt);skin.quaternion.premultiply(rotation);}bounceAge+=dt;const squash=Math.max(0,1-bounceAge/.13)*.09;ball.scale.set(1+squash,1-squash,1+squash);ball.visible=alpha>.01;skin.children.forEach(m=>{m.material.transparent=alpha<1;m.material.opacity=alpha;});const height=Math.max(0,state.position.y-BALL_RADIUS);shadow.position.set(state.position.x,.012,state.position.z);shadow.scale.setScalar(1+Math.min(2,height*.32));shadow.material.opacity=alpha*.65/(1+height*.75);const p=state.position;history.unshift([p.x,p.y,p.z]);if(history.length>9)history.pop();for(let i=0;i<9;i++)trailPositions.set(history[Math.min(i,history.length-1)],i*3);geo.attributes.position.needsUpdate=true;trail.material.opacity=state.speed>7?alpha*.13:0;}
+ function reset(){skin.quaternion.identity();ball.scale.setScalar(1);history.length=0;bounceAge=10;trail.material.opacity=0;}
+ return {ball,shadow,update,reset,bounce(){bounceAge=0;}};
+}

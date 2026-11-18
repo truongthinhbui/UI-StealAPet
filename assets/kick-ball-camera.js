@@ -1,4 +1,4 @@
-import {GOAL_Z,GOAL_WIDTH,GOAL_HEIGHT} from './kick-ball-engine.js?v=orbit-targets-v6';
+import {GOAL_Z,GOAL_WIDTH,GOAL_HEIGHT} from './kick-ball-engine.js?v=physical-v7';
 import * as THREE from './vendor/three/three.module.js';
 const rigs=new WeakMap();
 function rigFor(camera){if(!rigs.has(camera))rigs.set(camera,{pivot:new THREE.Vector3(-.15,1.45,3),yaw:0,pitch:.07,radius:3.8,shoulder:.55});return rigs.get(camera);}

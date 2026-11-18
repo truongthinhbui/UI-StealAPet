@@ -6,6 +6,11 @@
  const voices=new Set();
  try{enabled=localStorage.getItem('revival-sound')!=='off';}catch{}
  const cues={
+  kickCharge:{notes:[105],duration:.07,level:.035,type:'sine',priority:1},
+  kick:{notes:[82,130],duration:.065,level:.16,type:'triangle',priority:2},
+  ballBounce:{notes:[125,95],duration:.045,level:.065,type:'sine',priority:0},
+  ballNet:{notes:[190,125],duration:.08,level:.045,type:'triangle',priority:0},
+  ballPost:{notes:[660,415],duration:.12,level:.07,type:'triangle',priority:1},
   glitchIgnite:{notes:[110,165,330],duration:.19,level:.06,type:'sawtooth',priority:2},
   glitchExit:{notes:[330,180,90],duration:.16,level:.05,type:'triangle',priority:2},
   glitchOpen:{notes:[130,260,520,1040],duration:.16,level:.065,type:'triangle',priority:2},
