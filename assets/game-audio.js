@@ -55,12 +55,11 @@
   button.textContent=AudioEngine?'Âm: '+(enabled?'Bật':'Tắt'):'Âm: Không hỗ trợ';
   button.setAttribute('aria-pressed',String(enabled&&!!AudioEngine));button.disabled=!AudioEngine;
  });}
+ function toggle(){enabled=!enabled;try{localStorage.setItem('revival-sound',enabled?'on':'off');}catch{}if(!enabled)stop();else{unlock();play('good');}sync();}
  function attachControls(){
   document.querySelectorAll('.previewControls,.fishingViewControls').forEach(parent=>{
    const button=document.createElement('button');button.type='button';button.className='gameSoundToggle';
-   button.addEventListener('click',()=>{
-    enabled=!enabled;try{localStorage.setItem('revival-sound',enabled?'on':'off');}catch{}
-    if(!enabled)stop();else{unlock();play('good');}sync();
+   button.addEventListener('click',()=>{toggle();
    });parent.appendChild(button);
   });sync();
  }
@@ -72,6 +71,6 @@
  document.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' ')unlock();},{capture:true});
  document.addEventListener('visibilitychange',()=>{if(document.hidden){stop();if(context?.state==='running')context.suspend().catch(()=>{});}else unlock();});
  window.addEventListener('blur',stop);
- window.RevivalAudio={play,stop};
+ window.RevivalAudio={play,stop,toggle,sync};
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',attachControls,{once:true});else attachControls();
 })();
