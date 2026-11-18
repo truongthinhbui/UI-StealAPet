@@ -321,3 +321,29 @@
 .fishingOffer[data-rarity="mythic"]{--rarity-ink:#ba3030;--rarity-bg:#ffe8e4;--rarity-edge:#ec9e93}
 .offerMutation[data-tier="rare"]{--gen-ink:#93600a;--gen-bg:#fff1c8;--gen-edge:#e8c25c}
 .offerMutation[data-tier="epic"]{--gen-ink:#ba3030;--gen-bg:#ffe8e4;--gen-edge:#ec9e93}
+
+/* Two-round fishing lives on the scene's fish action button. */
+.fishingScene[data-mode="6"] .fishingRing{left:81.8%;top:68.5%;width:17%;translate:-50% -50%;background:radial-gradient(circle,#15334ded 0 70%,var(--qte-round-color,var(--qte-fish-color,#a9bdce)) 71% 100%);z-index:3}
+.fishingScene[data-mode="6"] .fishingRing::before{background:conic-gradient(from var(--ring-start,57.6deg),var(--qte-round-color,var(--qte-fish-color,#a9bdce)) 0 20%,#102337 20% 100%)}
+.fishingScene[data-mode="6"] .fishingRing::after{display:none}
+.fishingScene[data-mode="6"] .qteCenter{left:81.8%;top:68.5%;width:11%;z-index:4;gap:0}
+.fishingScene[data-mode="6"] .qteCenter>strong{font-size:clamp(8px,1.3cqw,17px);color:white;text-shadow:0 1px 3px #102337}
+.fishingScene[data-mode="6"] .qtePips,.fishingScene[data-mode="6"] .qteLuckChip{display:none!important}
+.fishingScene[data-mode="6"] .fishingTap{width:17%;z-index:6}
+.fishingScene[data-mode="6"] .qteFishIcon{width:clamp(14px,2.3cqw,27px)}
+.fishingScene[data-mode="6"] .fishingFeedback{left:81.8%;top:81%;max-width:32%;white-space:normal;font-size:clamp(9px,1.3cqw,16px)}
+.fishingScene[data-mode="6"][data-fishing-round="2"] .fishingRing{--qte-fish-color:#27df87;--qte-fish-fin:#b6ffda}
+
+/* Bonus preview stays above the action, clear of the player's thumb. */
+.fishingBonusPreview{position:absolute;left:81.8%;bottom:43%;translate:-50% 0;width:31%;box-sizing:border-box;padding:1cqw;border:2px solid #9effc9;border-radius:1.2cqw;background:linear-gradient(150deg,#123e40f5,#102a41f5);box-shadow:0 0 2cqw #35ea8f55,0 .5cqw 1.3cqw #071c4666;color:#eafff3;text-align:center;z-index:7;pointer-events:none;animation:fishingBonusReveal .65s ease-out both}
+.fishingBonusPreview[hidden],.fishingScene[data-offer] .fishingBonusPreview,.fishingScene:not([data-mode="6"]) .fishingBonusPreview{display:none}
+.fishingBonusPreview>strong{display:block;font-size:clamp(11px,1.7cqw,22px);color:#b3ffd2;text-shadow:0 0 1cqw #39e78d}
+.fishingBonusPreview>span{display:block;margin:.4cqw 0 .8cqw;font-size:clamp(8px,1cqw,13px)}
+.fishingBonusPool{display:flex;flex-wrap:wrap;justify-content:center;gap:.7cqw}
+.fishingBonusItem{display:flex;flex-direction:column;align-items:center;width:4.5cqw;gap:.3cqw}
+.fishingBonusItem>.genAtlasIcon,.fishingBonusItem>img{display:block;width:3.6cqw;height:3.6cqw;object-fit:contain;filter:drop-shadow(0 0 .4cqw #88ffc988)}
+.fishingBonusItem small{font-size:clamp(6px,.75cqw,10px);line-height:1.1;overflow-wrap:anywhere}
+.fishingScene[data-fishing-round="2"] .fishingRing{box-shadow:0 0 1.3cqw #48ffab88;animation:fishingBonusRing .9s ease-out}
+@keyframes fishingBonusReveal{from{opacity:0;scale:.65;filter:brightness(2)}60%{opacity:1;scale:1.06}to{opacity:1;scale:1;filter:brightness(1)}}
+@keyframes fishingBonusRing{from{box-shadow:0 0 0 2cqw #8bffcbaa}to{box-shadow:0 0 1.3cqw #48ffab88}}
+@media(prefers-reduced-motion:reduce){.fishingBonusPreview,.fishingScene[data-fishing-round="2"] .fishingRing{animation:none}}

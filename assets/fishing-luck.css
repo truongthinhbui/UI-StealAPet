@@ -1,3 +1,53 @@
+.luckyBurstLab {
+  width: min(100%, 1100px);
+  margin: 0 auto;
+}
+
+.luckyBurstHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  margin-block: 1rem;
+}
+
+.luckyBurstHeader h2 { margin: 0; }
+
+.luckyBurstStage {
+  position: relative;
+  container-type: inline-size;
+  overflow: hidden;
+  border: 1px solid #417078;
+  border-radius: 12px;
+  background: #163c47;
+}
+
+.luckyBurstStage > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.luckyBurstConcepts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: .8rem;
+  padding-bottom: 1rem;
+}
+
+.luckyBurstConcepts article {
+  padding: 1rem;
+  border: 1px solid #417078;
+  border-radius: 10px;
+  background: #122e39;
+  color: #e5f4f2;
+}
+
+.luckyBurstConcepts h3 { margin: 0; color: #fff1ae; }
+.luckyBurstConcepts p { line-height: 1.55; }
+.luckyBurstConcepts a { color: #9ce5d9; }
+
 .fishingLuckPreview {
   border: 1px solid #ffdd78;
   border-radius: 8px;
@@ -96,8 +146,8 @@
   width: .72cqw;
   aspect-ratio: 1;
   border-radius: 30%;
-  background: var(--particle-color);
-  box-shadow: 0 0 .8cqw var(--particle-color);
+  background: var(--burst-particle-color, var(--particle-color));
+  box-shadow: 0 0 .8cqw var(--burst-particle-color, var(--particle-color));
   animation: fishingLuckParticle var(--luck-duration) ease-out both;
 }
 
@@ -207,4 +257,198 @@
   top: 50%;
   transform: translate(-50%, -50%);
   animation: none;
+}
+
+.luckyBurstPreviews { display: flex; flex-wrap: wrap; gap: .4rem; }
+.fishingLuckPreview.is-playing { background: #ffe393; color: #183940; }
+
+.burstStorm, .burstEgg, .burstChestBeam, .burstPack, .burstCard { display: none; }
+.fishingLuck:not([data-version="1"]) .fishingLuckRunner,
+.fishingLuck:is([data-version="3"], [data-version="5"]) .fishingLuckGift { display: none; }
+
+.fishingLuck:not(.fishingLuckReduced)[data-version="2"] .burstStorm,
+.fishingLuck:not(.fishingLuckReduced)[data-version="3"] .burstEgg,
+.fishingLuck:not(.fishingLuckReduced)[data-version="4"] .burstChestBeam,
+.fishingLuck:not(.fishingLuckReduced)[data-version="5"] :is(.burstPack, .burstCard) { display: block; }
+
+.fishingLuck[data-version="2"] { --burst-particle-color: #b4eaff; }
+.fishingLuck[data-version="3"] .fishingLuckParticles i:not(.is-sparkle) {
+  background: #a5f7f6;
+  border: .12cqw solid #e5ffff;
+  border-radius: 50%;
+}
+.fishingLuck[data-version="5"] .fishingLuckParticles i:not(.is-sparkle) {
+  width: 1cqw;
+  aspect-ratio: 1.7;
+  border-radius: 0;
+}
+
+.fishingLuck:not(.fishingLuckReduced):is([data-version="2"], [data-version="4"]) .fishingLuckGift {
+  animation-name: burstEarlyDrop;
+}
+
+@keyframes burstEarlyDrop {
+  0% { transform: translate(-50%, -450%) rotate(-16deg); }
+  22% { transform: translate(-50%, 0) scale(1.14, .83); }
+  27% { transform: translate(-50%, -18%) scale(.95, 1.08); }
+  33%, 58% { transform: translate(-50%, 0); }
+  62% { transform: translate(-50%, 0) rotate(-6deg) scale(.95, 1.08); }
+  65%, 100% { transform: translate(-50%, 0); }
+}
+
+.burstStorm {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, #101741ee 12%, transparent 69%);
+  pointer-events: none;
+  animation: burstCloud var(--luck-duration) linear both;
+}
+.burstStorm :is(i, b) {
+  position: absolute;
+  top: 0;
+  left: 41%;
+  width: 17%;
+  height: 57%;
+  opacity: 0;
+  background: linear-gradient(#bfeeff, #ffffff 80%);
+  clip-path: polygon(54% 0, 79% 0, 47% 42%, 73% 39%, 33% 100%, 48% 52%, 20% 55%);
+  animation: burstLightning var(--luck-duration) linear both;
+}
+.burstStorm i:nth-child(1) { transform: rotate(-24deg); transform-origin: 35% 100%; }
+.burstStorm i:nth-child(2) { transform: rotate(25deg); transform-origin: 36% 100%; animation-name: burstLightningSecond; }
+.burstStorm i:nth-child(3) { transform: scaleX(.7); animation-name: burstLightningThird; }
+.burstStorm b { width: 22%; left: 39%; background: #fff1a1; animation-name: burstLightningFinal; }
+@keyframes burstCloud { 0%, 100% { opacity: 0; } 22%, 73% { opacity: 1; } }
+@keyframes burstLightning { 0%, 23%, 31%, 100% { opacity: 0; } 26% { opacity: .65; } }
+@keyframes burstLightningSecond { 0%, 35%, 44%, 100% { opacity: 0; } 38% { opacity: .8; } }
+@keyframes burstLightningThird { 0%, 47%, 57%, 100% { opacity: 0; } 51% { opacity: .9; } }
+@keyframes burstLightningFinal { 0%, 63%, 76%, 100% { opacity: 0; } 66% { opacity: 1; } }
+
+.burstEgg {
+  position: absolute;
+  left: 50%;
+  top: 34%;
+  width: 17%;
+  aspect-ratio: .77;
+  animation: burstEggRise var(--luck-duration) ease-out both;
+}
+.burstEgg i {
+  position: absolute;
+  inset: 0;
+  border-radius: 50% 50% 46% 46% / 63% 63% 37% 37%;
+  background: radial-gradient(ellipse at 31% 26%, #fffbe7, #f5d26a 39%, #34a89a 83%);
+  box-shadow: inset -.8cqw -.4cqw 1.2cqw #225d62a0;
+  clip-path: polygon(0 0, 100% 0, 100% 52%, 76% 54%, 63% 45%, 48% 58%, 32% 47%, 16% 55%, 0 50%);
+  animation: burstShellTop var(--luck-duration) ease-out both;
+}
+.burstEgg i:nth-child(2) {
+  clip-path: polygon(0 50%, 16% 55%, 32% 47%, 48% 58%, 63% 45%, 76% 54%, 100% 52%, 100% 100%, 0 100%);
+  animation-name: burstShellBottom;
+}
+.burstEgg b {
+  position: absolute;
+  inset: 0;
+  background: #8e6544;
+  clip-path: polygon(0 50%,16% 54%,32% 46%,48% 56%,63% 44%,76% 53%,100% 51%,100% 54%,76% 56%,63% 47%,48% 60%,32% 49%,16% 57%,0 53%);
+  animation: burstCrack var(--luck-duration) linear both;
+}
+@keyframes burstEggRise {
+  0% { opacity: 0; transform: translate(-50%, 110%) scale(.68); }
+  24% { opacity: 1; transform: translate(-50%, 8%) scale(.86); }
+  36% { transform: translate(-50%, 0) rotate(-6deg) scale(.95); }
+  47% { transform: translate(-50%, -6%) rotate(7deg) scale(1.07); }
+  60% { transform: translate(-50%, 0) rotate(-5deg) scale(1.14); }
+  65%, 100% { transform: translate(-50%, 0) scale(1.17); }
+}
+@keyframes burstCrack { 0%, 35%, 66%, 100% { opacity: 0; } 40% { opacity: .45; } 51%, 64% { opacity: 1; } }
+@keyframes burstShellTop { 0%, 65% { opacity: 1; transform: none; } 88%, 100% { opacity: 0; transform: translate(115%, -95%) rotate(126deg); } }
+@keyframes burstShellBottom { 0%, 65% { opacity: 1; transform: none; } 90%, 100% { opacity: 0; transform: translate(-130%, 53%) rotate(-105deg); } }
+
+.burstChestBeam {
+  position: absolute;
+  left: 50%;
+  bottom: 43%;
+  width: 37%;
+  height: 58%;
+  transform-origin: 50% 100%;
+  clip-path: polygon(41% 100%, 0 0, 100% 0, 59% 100%);
+  background: linear-gradient(transparent, #ffc34388 54%, #fff6b5);
+  animation: burstApexBeam var(--luck-duration) ease-out both;
+}
+.fishingLuck:not(.fishingLuckReduced)[data-version="4"] .fishingLuckReward {
+  animation-name: burstApexSilhouette;
+}
+.fishingLuck[data-version="4"] .fishingLuckLid { animation-name: burstChestOpen; }
+@keyframes burstChestOpen { 0%, 49% { transform: none; } 56%, 65% { transform: translateY(-11%) rotate(-4deg); opacity: 1; } 89%, 100% { transform: translate(102%, -120%) rotate(57deg); opacity: 0; } }
+@keyframes burstApexBeam {
+  0%, 47% { opacity: 0; transform: translateX(-50%) scale(.15, .25); }
+  60% { opacity: .75; transform: translateX(-50%) scale(.64, 1); }
+  73% { opacity: 1; transform: translateX(-50%) scale(1.3, 1); }
+  100% { opacity: 0; transform: translateX(-50%) scale(1.65, 1); }
+}
+@keyframes burstApexSilhouette {
+  0%, 56% { opacity: 0; transform: translate(-50%, 50%) rotateY(-55deg) scale(.35); filter: brightness(0); }
+  64% { opacity: 1; transform: translate(-50%, 6%) rotateY(-33deg) scale(.9); filter: brightness(0); }
+  74% { opacity: 1; transform: translate(-50%, 0) rotateY(0) scale(1.11); filter: brightness(1.22); }
+  100% { opacity: 1; transform: translate(-50%, 0); filter: none; }
+}
+
+.burstPack, .burstCard {
+  position: absolute;
+  left: 50%;
+  width: 15%;
+  top: 33%;
+  aspect-ratio: .76;
+}
+.burstPack { animation: burstPackLift var(--luck-duration) ease-out both; }
+.burstPack::before {
+  content: '';
+  position: absolute;
+  bottom: 98%;
+  left: 50%;
+  height: 120%;
+  border-left: .2cqw solid #e1fff7;
+}
+.burstPack :is(i, b) {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, #d8fff5, #1cb39e 31%, #094f62 52%, #4ccbb0 75%, #d8ffdf);
+  border: .4cqw solid #c2fff0;
+  border-radius: .6cqw;
+  clip-path: polygon(0 20%, 21% 17%, 35% 22%, 53% 17%, 72% 22%, 100% 18%, 100% 100%, 0 100%);
+}
+.burstPack b {
+  clip-path: polygon(0 0, 100% 0, 100% 18%, 72% 22%, 53% 17%, 35% 22%, 21% 17%, 0 20%);
+  animation: burstPackTear var(--luck-duration) ease-out both;
+}
+.burstCard { animation: burstCardFlip var(--luck-duration) ease-in-out both; transform-style: preserve-3d; }
+.burstCard :is(i, img) {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  border: .5cqw solid #ffe99b;
+  border-radius: 1cqw;
+  background: radial-gradient(ellipse, #2c8d84, #183a5b);
+  color: #ffec9f;
+  font-size: 5cqw;
+  backface-visibility: hidden;
+}
+.burstCard img { object-fit: contain; transform: rotateY(180deg); background: #ffe8a1; }
+@keyframes burstPackLift {
+  0% { transform: translate(-50%, 180%) rotate(-8deg); }
+  24% { transform: translate(-50%, 0) rotate(5deg); }
+  37%, 64% { opacity: 1; transform: translate(-50%, 0); }
+  84%, 100% { opacity: 0; transform: translate(-50%, 90%) rotate(-12deg); }
+}
+@keyframes burstPackTear { 0%, 34% { opacity: 1; transform: none; } 55%, 100% { opacity: 0; transform: translate(72%, -78%) rotate(24deg); } }
+@keyframes burstCardFlip {
+  0%, 39% { opacity: 0; transform: translate(-50%, 24%) rotateY(0deg) scale(.68); }
+  45% { opacity: 1; }
+  59% { opacity: 1; transform: translate(-50%, -29%) rotateY(0deg) scale(.95); }
+  68% { opacity: 1; transform: translate(-50%, -39%) rotateY(180deg) scale(1.09); }
+  81%, 100% { opacity: 0; transform: translate(-50%, -43%) rotateY(180deg) scale(1.19); }
 }

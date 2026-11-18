@@ -178,6 +178,27 @@
     token.appendChild(window.GenCore.icon(mutationPool.find(gen=>gen.id===id)));
     qteLuckChip.querySelector('.mutationPool').appendChild(token);
   });
+  // Keep the entire 72-degree target above the finger-covered lower semicircle.
+  function fishingTargetStart(random=Math.random){return (.75+random()*.30)%1;}
+  const bonusPreview=document.createElement('section');
+  bonusPreview.className='fishingBonusPreview';
+  bonusPreview.setAttribute('role','status');
+  bonusPreview.setAttribute('aria-live','polite');
+  bonusPreview.hidden=true;
+  bonusPreview.innerHTML='<strong>✦ BONUS UNLOCKED!</strong><span>Trúng ô xanh · Nhận 1 Mutation / Weather</span><div class="fishingBonusPool"></div>';
+  scene.appendChild(bonusPreview);
+  function showFishingBonus(){
+    const pool=bonusPreview.querySelector('.fishingBonusPool');
+    pool.replaceChildren(...window.GenCore.profile(rewards.castRebirth).pool.map(gen=>{
+      const item=document.createElement('span');
+      item.className='fishingBonusItem';item.title=gen.name;
+      const icon=window.GenCore.icon(gen);icon.setAttribute('aria-hidden','true');
+      const label=document.createElement('small');label.textContent=gen.name;
+      item.append(icon,label);return item;
+    }));
+    bonusPreview.hidden=false;
+    haptic('bonus');
+  }
   function chooseMutations(count){return window.GenCore.choose(count,Math.random,rewards.castRebirth).map(({id,name})=>({id,name}));}
   root.addEventListener('fishingbalancechange',()=>{instructions[6]=qteInstruction();if(mode===6)root.querySelector('.fishingInstructions').textContent=instructions[6];if(!rewards.isCasting&&!rewards.pending)renderMutation();});
   function renderMutation(result=false,previewPoints=null){
@@ -528,7 +549,7 @@
     });
   }
   const modes = Array.from(root.querySelectorAll('[data-fishing-mode]'));
-  function qteInstruction(){const r=window.GenConfig.rules,p=n=>n.toLocaleString('vi-VN',{maximumFractionDigits:2})+'%';return 'Bấm 1 lần để nhận cá. Xanh '+p(r.green)+', vàng '+p(r.gold)+', đỏ '+p(r.red)+' nhận Gen · tối đa 1 Gen.';}
+  function qteInstruction(){return 'Vòng 1: trúng ô màu rarity để bắt cá. 20% mở vòng thưởng xanh lá: trúng nhận 1 Mutation hoặc Weather; trượt vẫn giữ cá.';}
   const instructions = [
     'Hold to the next joint, then tap to break it. Hold again after breaking a joint to keep the bar from draining.',
     'Hold to pull toward Catch. Release to cool the line.',
@@ -592,7 +613,7 @@
       return;
     }
     if(caught&&mode===6){
-      const pending=rewards.resolve({mutationPoints:game.mutationPoints,results:game.qteResults});
+      const pending=rewards.resolve({mutationPoints:game.mutationPoints,results:game.qteResults,bonusWon:game.bonusWon});
       game.mutationPoints=pending.mutationPoints;game.mutationRewards=pending.mutationRewards;game.mutations=pending.mutationRewards.length;
       renderMutation(true);
       const detail={mode:7,mutationPoints:game.mutationPoints,mutations:game.mutations,mutationRewards:game.mutationRewards.map(reward=>({...reward})),results:[...game.qteResults]};
@@ -629,6 +650,9 @@
     cancelAnimationFrame(frame);
     state = 'idle';
     delete scene.dataset.fishRarity;
+    delete scene.dataset.fishingRound;
+    bonusPreview.hidden=true;
+    scene.style.removeProperty('--qte-round-color');
     scene.style.removeProperty('--qte-fish-color');
     scene.style.removeProperty('--qte-fish-fin');
     delete scene.dataset.revealing;
@@ -712,10 +736,13 @@
       position:.42, tension:0, distance:mode === 3 ? 35 : 25, zone:.60, fish:.48, marker:0, hits:0, misses:0, combo:0,
       roundAge:0, roundPause:0, timingScale:1.65, roundSpeed:circularSpeed(), distancePhase:0, distanceFreezeUntil:0,
       qteSecondsPerRevolution:fishTiming.secondsPerRevolution,
-      qteArcStart:Math.random(), mutationPoints:0, mutations:0, qteResults:[], knots:[], bonusScore:0};
+      fishingRound:1, bonusWon:false, roundStartedAt:0, qteArcStart:fishingTargetStart(), mutationPoints:0, mutations:0, qteResults:[], knots:[], bonusScore:0};
     if (mode === 3) [0, 1].forEach(spawnDistanceKnot);
     if (mode === 3 || mode === 6) status.textContent='';
     if (mode === 6) {
+      scene.dataset.fishingRound='1';
+      scene.style.setProperty('--qte-round-color',fishTiming.color);
+      root.querySelector('.qteCenter strong').textContent='CÂU CÁ';
       renderMutation();
       scene.style.setProperty('--ring-start', game.qteArcStart * 360 + 'deg');
       scene.style.setProperty('--angle', '0deg');
@@ -770,7 +797,8 @@
     }
     if (![2, 3, 6].includes(mode)) return;
     const [start, end] = mode === 3 ? (game.marker < .55 ? [.18,.48] : [.61,.82]) : [.16,.36];
-    const timingResult=mode===6?window.GenCore.timingResult(game.marker,game.qteArcStart):null;
+    if(mode===6&&game.age<game.roundStartedAt)return;
+    const timingResult=mode===6?((game.marker-game.qteArcStart+1)%1<=.20?'green':'red'):null;
     const gold = timingResult==='gold';
     const hit = mode === 6 ? timingResult!=='red' : game.marker >= start && game.marker <= end;
     const perfect = mode===6 ? gold : hit && Math.abs(game.marker - (start + end) / 2) < .045;
@@ -813,49 +841,23 @@
       }
     }
     if (mode === 6) {
-      scene.dataset.qteHit = gold ? 'gold' : hit ? 'hit' : 'miss';
-      game.qteResults.push(gold ? 'gold' : hit ? 'green' : 'red');
-      game.mutationPoints=window.GenCore.points(game.qteResults);
-      renderMutation();
-      game.qteFeedbackUntil=game.age+(gold? .85 : hit? .45 : .65);
-      if(hit){
-        status.textContent=gold?'EXCELLENT!':'GOOD!';impactPunch(qteLuckChip,gold);
-        if(gold&&game.qteResults.length<window.GenConfig.rules.taps)luckMotes(qteHitPoint());impactPunch(status,gold);
-      }
-      qtePips.forEach((pip, index) => {
-        pip.classList.toggle('is-filled', index < game.qteResults.length);
-        if(game.qteResults[index])pip.dataset.result=game.qteResults[index];
-      });
-      impactPunch(qtePips[game.qteResults.length-1],gold);
-      haptic(gold ? 'bonus' : hit ? 'good' : 'fail');
-      if (hit) {
-        const point=qteHitPoint();hitJuice(point.x,point.y,gold);
-      }
-      if(hit)impactPunch(root.querySelector('.fishingRing'),gold);
-      if(hit&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
-        const contact=document.createElement('span');contact.className='qteContact'+(gold?' qteContact-gold':'');
-        contact.style.transform='rotate('+(game.marker*360)+'deg)';contact.appendChild(document.createElement('b'));
-        root.querySelector('.fishingRing').appendChild(contact);
-        const contactMotion=contact.animate([{opacity:1},{opacity:0}],{duration:gold?500:280,easing:'ease-out'});
-        sharedEffects.add(contactMotion);
-        const cleanContact=()=>{sharedEffects.delete(contactMotion);contact.remove();};
-        contactMotion.onfinish=cleanContact;contactMotion.oncancel=cleanContact;
-        impactPunch(root.querySelector('.qteFishIcon'),gold);
-      }
-      if(gold)fireworks('excellent');
-      if(!hit)badFeedback(root.querySelector('.qteCenter'));
-      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        qteMotion?.cancel();
-        qteMotion = root.querySelector('.qteCenter').animate([{scale:.97},{scale:gold?1.10:1.025,offset:.3},{scale:1}],{duration:gold?320:180,easing:'cubic-bezier(.16,1,.3,1)'});
-      }
-      if (hit && game.qteResults.length < window.GenConfig.rules.taps) {
-        game.qteArcStart = (game.qteArcStart + .25 + Math.random() * .5) % 1;
-        scene.style.setProperty('--ring-start', game.qteArcStart * 360 + 'deg');
-      }
-    }
-    if (mode === 6) {
-      if(game.qteResults.length===window.GenConfig.rules.taps)finish(true);
-      return;
+      game.qteResults.push(hit?'green':'red');
+      scene.dataset.qteHit=hit?'hit':'miss';haptic(hit?'good':'miss');
+      if(game.fishingRound===1){
+        if(!hit){finish(false,'CÁ ĐÃ THOÁT!');return;}
+        if(Math.random()<.20){
+          game.fishingRound=2;game.roundStartedAt=game.age+.9;game.marker=0;
+          game.qteArcStart=fishingTargetStart();scene.dataset.fishingRound='2';
+          scene.style.setProperty('--qte-round-color','#27df87');
+          scene.style.setProperty('--ring-start',game.qteArcStart*360+'deg');
+          scene.style.setProperty('--angle','0deg');
+          root.querySelector('.qteCenter strong').textContent='THƯỞNG';
+          showFishingBonus();
+          status.textContent='VÒNG 2 · MUTATION / WEATHER';
+          game.qteFeedbackUntil=game.age+1;delete scene.dataset.qteHit;return;
+        }
+      }else{game.bonusWon=hit;game.mutationPoints=hit?100:0;}
+      finish(true);return;
     }
     if ((mode === 3 && game.distance === 0) || (mode !== 3 && game.hits >= 5)) finish(true);
     else if (mode !== 3 && game.misses >= 4) finish(false);
@@ -943,9 +945,9 @@
       }
       case 6: {
         if(game.qteFeedbackUntil&&game.age>game.qteFeedbackUntil){delete scene.dataset.qteHit;status.textContent='';game.qteFeedbackUntil=0;}
-        game.marker = (game.age / (game.qteSecondsPerRevolution * debugSettings.values[6] / 2.25)) % 1;
-        renderMutation(false,window.GenConfig.rules[window.GenCore.timingResult(game.marker,game.qteArcStart)]);
-        draw(game.qteResults.length + ' / '+window.GenConfig.rules.taps+' tap', 'Green: Good · Gold: Excellent · Red: Miss', game.qteResults.length / window.GenConfig.rules.taps, 0, 0, .20, game.qteArcStart * 360);
+        game.marker = (Math.max(0,game.age-game.roundStartedAt) / (game.qteSecondsPerRevolution * debugSettings.values[6] / 2.25)) % 1;
+        qteLuckChip.hidden=true;
+        draw('Vòng '+game.fishingRound, 'Bấm trúng ô mục tiêu', 0, 0, 0, .20, game.qteArcStart * 360);
         break;
       }
       case 3:
@@ -1067,7 +1069,7 @@
       if(state!=='active')return;
       if(mode===3)[0,1].forEach(spawnDistanceKnot);
       if(mode===2){game.roundAge=0;game.roundPause=0;game.roundSpeed=circularSpeed();game.timingScale=1.65;scene.style.setProperty('--timing-scale','1.65');delete scene.dataset.judgement;status.textContent='';}
-      if(mode===6){game.qteArcStart=Math.random();scene.style.setProperty('--ring-start',game.qteArcStart*360+'deg');delete scene.dataset.qteHit;}
+      if(mode===6){game.qteArcStart=fishingTargetStart();scene.style.setProperty('--ring-start',game.qteArcStart*360+'deg');delete scene.dataset.qteHit;}
     }
     syncDebug();
   });
