@@ -11,3 +11,6 @@ A fixed third-person camera behind the existing Kelly idle model faces an 8m × 
 
 ## Validation
 `node tools/check-kick-ball.mjs` covers timing boundaries, low/high misses, all attempts counting, input locking, six-shot finish, score and reset. `node tools/check-web-entrypoints.cjs` checks all linked scripts and the existing config fingerprint.
+
+## Drag aiming update
+Drag the field with mouse or touch to move a reticle across the goal, with a highlight for its current cell. Aim is clamped inside the posts and captured when shooting. Score is 10 per landed goal; misses give zero. Power is captured on pointer-down from the last rendered meter position. Green shots cross the goal plane exactly at the reticle and settle inside the net, remaining visible for 650ms before the next ball. Low shots fall short; high shots clear the bar. Tests cover every goal cell and both green boundaries, drag extremes, frozen shot aim, scoring on arrival and duplicate-settle protection.
