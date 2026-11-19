@@ -135,19 +135,35 @@
   }
 
   const particles = overlay.querySelector('.fishingLuckParticles');
-  const colors = ['#fff3aa', '#ffc440', '#fffdf1', '#57e1c9'];
+  // Two emitter groups lifted from the real Steal A Pet particle assets:
+  // ApexHighlight.particles (upward cone, orange -> red) and
+  // GoldenHit.particles (flat low disc, lemon -> white, fast-then-slow fade).
+  const apexColors = ['#ff9a3d', '#ff7800', '#ff6f6f'];
+  const goldenColors = ['#e7ff00', '#fff9b0', '#ffffff'];
   for (let index = 0; index < 24; index++) {
     const particle = document.createElement('i');
     const jitter = (index * 53 % 17) / 17;
-    const angle = index * Math.PI * 2 / 24 + (jitter - .5) * .35;
-    const distance = 9 + (index * 7 % 17) + jitter * 5;
+    const isApex = index % 5 !== 0;
+    let angle, distance;
+    if (isApex) {
+      // Cone pointing up (ShapeRotation.x 90deg): spread around -90deg (up).
+      const spread = ((index * 37 % 13) / 13 - .5) * 1.5;
+      angle = -Math.PI / 2 + spread;
+      distance = 11 + (index * 7 % 15) + jitter * 6;
+    } else {
+      // Flat disc at the base (ShapeScale {0.5, 0, 0.5}): low, wide spread.
+      angle = (index * 71 % 360) * Math.PI / 180;
+      distance = 7 + (index * 5 % 9) + jitter * 3;
+    }
     particle.style.setProperty('--particle-x', Math.cos(angle) * distance + 'cqw');
-    particle.style.setProperty('--particle-y', (Math.sin(angle) * distance * .68 - 7) + 'cqw');
+    particle.style.setProperty('--particle-y', (Math.sin(angle) * distance * (isApex ? .78 : .32) - (isApex ? 9 : 2)) + 'cqw');
     particle.style.setProperty('--particle-spin', (index % 2 ? -1 : 1) * (100 + index * 11) + 'deg');
-    particle.style.setProperty('--particle-color', colors[index % colors.length]);
-    particle.style.setProperty('--particle-scale', (.7 + jitter * .6).toFixed(2));
-    particle.style.setProperty('--particle-delay', Math.round(jitter * 70) + 'ms');
-    particle.classList.toggle('is-sparkle', index % 3 === 0);
+    const palette = isApex ? apexColors : goldenColors;
+    particle.style.setProperty('--particle-color', palette[index % palette.length]);
+    particle.style.setProperty('--particle-scale', ((isApex ? .85 : .55) + jitter * .6).toFixed(2));
+    particle.style.setProperty('--particle-delay', Math.round(jitter * (isApex ? 90 : 40)) + 'ms');
+    particle.classList.toggle('is-sparkle', isApex && index % 3 === 0);
+    particle.classList.toggle('is-flat', !isApex);
     particles.append(particle);
   }
   const motion = matchMedia('(prefers-reduced-motion: reduce)');

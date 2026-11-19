@@ -154,6 +154,13 @@
   animation: fishingLuckParticle var(--luck-duration) ease-out var(--particle-delay, 0ms) both;
 }
 
+.fishingLuckParticles .is-flat {
+  border-radius: 50%;
+  filter: blur(.05cqw);
+  animation-name: fishingLuckParticleFlat;
+  animation-timing-function: cubic-bezier(.08, .85, .2, 1);
+}
+
 .fishingLuckParticles .is-sparkle {
   width: 1.65cqw;
   clip-path: polygon(50% 0, 62% 37%, 100% 50%, 62% 63%, 50% 100%, 38% 63%, 0 50%, 38% 37%);
@@ -334,6 +341,13 @@
   68% { opacity: 1; }
   83% { opacity: .94; transform: translate(var(--particle-x), var(--particle-y)) rotate(var(--particle-spin)) scale(var(--particle-scale, 1)); }
   96%, 100% { opacity: 0; transform: translate(var(--particle-x), calc(var(--particle-y) + 6cqw)) rotate(var(--particle-spin)) scale(calc(var(--particle-scale, 1) * .35)); }
+}
+
+@keyframes fishingLuckParticleFlat {
+  0%, 66% { opacity: 0; transform: translate(0, 0) scale(.4); }
+  68% { opacity: 1; transform: translate(calc(var(--particle-x) * .35), calc(var(--particle-y) * .35)) scale(var(--particle-scale, 1)); }
+  74% { opacity: .8; transform: translate(var(--particle-x), var(--particle-y)) scale(calc(var(--particle-scale, 1) * .7)); }
+  80%, 100% { opacity: 0; transform: translate(calc(var(--particle-x) * 1.08), calc(var(--particle-y) * 1.08)) scale(.1); }
 }
 
 @keyframes fishingLuckReveal {
@@ -748,13 +762,10 @@
   background: radial-gradient(circle, #fff5cc 16%, #508fa1 24% 58%, #184958 64%);
 }
 @keyframes burstRodPull {
-  0%, 6% { opacity: 1; transform: none; }
-  12% { transform: translateY(-10%) rotate(11deg); }
-  22% { opacity: 1; transform: none; }
-  35% { transform: translateY(9%) rotate(-14deg) scaleY(.82); }
-  39% { transform: translateY(12%) rotate(-19deg) scaleY(.78); animation-timing-function: cubic-bezier(.12,.75,.27,1); }
-  43% { transform: translateY(-18%) rotate(27deg) scaleY(1.06); }
-  50% { transform: translateY(-6%) rotate(13deg); }
+  0%, 34% { opacity: 1; transform: translateY(11%) rotate(-16deg) scaleY(.86); }
+  38% { transform: translateY(14%) rotate(-20deg) scaleY(.8); animation-timing-function: cubic-bezier(.12,.75,.27,1); }
+  43% { transform: translateY(-19%) rotate(29deg) scaleY(1.08); }
+  50% { transform: translateY(-7%) rotate(14deg); }
   56% { opacity: 1; transform: translateY(-9%) rotate(18deg); }
   65%, 100% { opacity: 0; transform: translate(22%, -16%) rotate(24deg); }
 }
@@ -863,17 +874,18 @@
   54%, 100% { opacity: 0; }
 }
 @keyframes burstFloatDip {
-  0% { opacity: 0; transform: translate(-50%, -350%); }
-  16% { opacity: 1; transform: translate(-50%, -50%); }
-  26% { opacity: 1; transform: translate(-50%, -65%); }
-  36% { opacity: .75; transform: translate(-50%, 27%); }
-  41%, 100% { opacity: 0; transform: translate(-50%, 65%); }
+  0% { opacity: 0; transform: translate(-50%, -120%) scale(.7); }
+  10% { opacity: 1; transform: translate(-50%, 18%) scale(1); }
+  34% { opacity: .9; transform: translate(-50%, 24%) scale(1); }
+  38% { transform: translate(-50%, 30%) scale(.94); animation-timing-function: cubic-bezier(.12,.75,.27,1); }
+  43% { opacity: 1; transform: translate(-50%, -150%) rotate(-12deg) scale(1); }
+  48%, 100% { opacity: 0; transform: translate(-50%, -190%) rotate(-12deg); }
 }
 @keyframes burstWaterRipple {
-  0%, 22% { opacity: 0; transform: translate(-50%, -50%) scale(.25); }
-  25% { opacity: .55; transform: translate(-50%, -50%) scale(.44); }
-  36% { opacity: 0; transform: translate(-50%, -50%) scale(1.16); }
-  39% { opacity: 0; transform: translate(-50%, -50%) scale(.4); }
+  0%, 8% { opacity: 0; transform: translate(-50%, -50%) scale(.25); }
+  14% { opacity: .5; transform: translate(-50%, -50%) scale(.5); }
+  28% { opacity: 0; transform: translate(-50%, -50%) scale(1.16); }
+  38% { opacity: 0; transform: translate(-50%, -50%) scale(.4); }
   43% { opacity: .95; transform: translate(-50%, -50%) scale(.88); }
   61%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(1.9); }
 }
