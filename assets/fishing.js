@@ -140,13 +140,27 @@
   const jointCount = root.querySelector('#fishingJointCount');
   const jointThickness = root.querySelector('#fishingJointThickness');
   const debugControls = root.querySelector('.fishingDebug');
-  const debugSettings = {forceBonus:false,speed:1, values:{0:5,2:0,3:2.3,4:.30,6:2.25}};
+  const debugSettings = {forceBonus:false,speed:1, flow:'A', values:{0:5,2:0,3:2.3,4:.30,6:2.25}};
   try { debugSettings.forceBonus = localStorage.getItem('revival-fishing-force-bonus') === 'on'; } catch {}
+  try { const savedFlow = localStorage.getItem('revival-fishing-flow'); if(savedFlow==='A'||savedFlow==='B')debugSettings.flow=savedFlow; } catch {}
+  // Plan A: cá chắc chắn ngay sau vòng 1, vòng 2 chỉ là thưởng hiếm (có pity).
+  // Plan B: vòng 1 chỉ "dính câu", vòng 2 luôn chạy và hẹp hơn, cá chỉ reveal sau vòng 2.
+  const flowPlans = {
+    A:{label:'Plan A · cá sau vòng 1', bonusRate:.30, pity:4, window2:.20, hookBeat:1.2,
+       hookStatus:'CÁ ĐÃ CẮN CÂU — chắc chắn có cá!', hookCenter:'ĐÃ BẮT',
+       round2Status:'VÒNG 2 · THƯỞNG THÊM (trượt vẫn giữ cá)', round2Center:'THƯỞNG'},
+    B:{label:'Plan B · 2 vòng rồi reveal', bonusRate:1, pity:0, window2:.13, hookBeat:.75,
+       hookStatus:'DÍNH CÂU! — kéo lên nào', hookCenter:'DÍNH CÂU',
+       round2Status:'VÒNG 2 · QUYẾT ĐỊNH PHẦN THƯỞNG', round2Center:'KÉO CÁ'}
+  };
+  const flowPlan = () => flowPlans[debugSettings.flow] || flowPlans.A;
+  let bonusPity = 0;
   let debugPaused = false;
   const debugPanel = document.createElement('details');
   debugPanel.className = 'fishingDebugPanel';
-  debugPanel.innerHTML = '<summary>Debug · tùy chỉnh cơ chế</summary><div class="fishingDebugTools"><label>Tốc độ mô phỏng <select class="debugSpeed"><option value=".5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label><label title="Bắt cá thành công luôn mở vòng 2"><input type="checkbox" class="debugForceBonus"> 100% vào vòng 2</label><label class="debugModeLabel"><span></span><select class="debugModeValue"></select></label><button type="button" data-debug="restart">Chơi lại</button><button type="button" data-debug="pause" aria-pressed="false">Tạm dừng</button><button type="button" data-debug="step">Bước +1/30s</button><button type="button" data-debug="shuffle">Đổi mục tiêu</button><button type="button" data-debug="win">Thử bắt cá</button><button type="button" data-debug="lose">Thử thất bại</button><button type="button" data-debug="defaults">Mặc định</button></div><output class="fishingDebugReadout" aria-live="off"></output>';
+  debugPanel.innerHTML = '<summary>Debug · tùy chỉnh cơ chế</summary><div class="fishingDebugTools"><label>Tốc độ mô phỏng <select class="debugSpeed"><option value=".5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label><label title="Flow câu cá">Flow <select class="debugFlow"><option value="A">Plan A · cá sau vòng 1</option><option value="B">Plan B · 2 vòng rồi reveal</option></select></label><label title="Bắt cá thành công luôn mở vòng 2"><input type="checkbox" class="debugForceBonus"> 100% vào vòng 2</label><label class="debugModeLabel"><span></span><select class="debugModeValue"></select></label><button type="button" data-debug="restart">Chơi lại</button><button type="button" data-debug="pause" aria-pressed="false">Tạm dừng</button><button type="button" data-debug="step">Bước +1/30s</button><button type="button" data-debug="shuffle">Đổi mục tiêu</button><button type="button" data-debug="win">Thử bắt cá</button><button type="button" data-debug="lose">Thử thất bại</button><button type="button" data-debug="defaults">Mặc định</button></div><output class="fishingDebugReadout" aria-live="off"></output>';
   debugPanel.querySelector('.debugForceBonus').checked = debugSettings.forceBonus;
+  debugPanel.querySelector('.debugFlow').value = debugSettings.flow;
   debugControls.before(debugPanel);
   debugPanel.appendChild(debugControls);
   window.initFishingRewards();
@@ -574,7 +588,11 @@
     });
   }
   const modes = Array.from(root.querySelectorAll('[data-fishing-mode]'));
-  function qteInstruction(){return 'Vòng 1: trúng ô màu rarity để bắt cá. 20% mở vòng thưởng xanh lá: trúng nhận 1 Mutation hoặc Weather; trượt vẫn giữ cá.';}
+  function qteInstruction(){
+    return debugSettings.flow==='B'
+      ? 'Vòng 1: trúng ô màu rarity để dính câu (trượt là mất cá). Vòng 2 luôn chạy và ô hẹp hơn: trúng nhận 1 Mutation hoặc Weather, trượt vẫn được cá thường. Cá chỉ hiện sau vòng 2.'
+      : 'Vòng 1: trúng ô màu rarity là có cá ngay. '+Math.round(flowPlans.A.bonusRate*100)+'% mở vòng thưởng xanh lá (pity '+flowPlans.A.pity+' lượt): trúng nhận 1 Mutation hoặc Weather; trượt vẫn giữ cá.';
+  }
   const instructions = [
     'Hold to the next joint, then tap to break it. Hold again after breaking a joint to keep the bar from draining.',
     'Hold to pull toward Catch. Release to cool the line.',
@@ -602,7 +620,11 @@
   function updateDebugReadout() {
     debugReadout.dataset.time=state==='active'?game.age.toFixed(3):'';
     debugReadout.textContent = 'Tab '+(mode+1)+' · '+(state==='idle'?'Sẵn sàng':state==='result'?'Kết quả':debugPaused?'Tạm dừng':'Đang chạy')+(state==='active'?' · '+game.age.toFixed(1)+'s · Combo '+game.combo:'');
-    if(mode===6)debugReadout.textContent+=' · Vòng 2: '+(debugSettings.forceBonus?'100% (DEBUG)':'20%');
+    if(mode===6){
+      const plan=flowPlan();
+      debugReadout.textContent+=' · '+plan.label+' · Vòng 2: '+(debugSettings.forceBonus?'100% (DEBUG)':Math.round(plan.bonusRate*100)+'%')
+        +(plan.pity?' · pity '+bonusPity+'/'+plan.pity:'');
+    }
   }
   function renderPreview() {
     status.textContent='';
@@ -619,8 +641,30 @@
       distanceKnots.forEach((knot,index)=>{knot.style.left=(index===0?'33%':'71.5%');knot.hidden=false;});
     }
     if(mode===4){title.textContent='KEEP FISH IN GREEN';detail.textContent='Hold ↑ · Release ↓';}
-    if(mode===6){scene.dataset.timing='';scene.style.setProperty('--ring-start','57.6deg');scene.style.setProperty('--ring-fill','20%');}
+    if(mode===6){scene.dataset.timing='';scene.style.setProperty('--ring-start','57.6deg');scene.style.setProperty('--ring-fill','20%');if(game)game.qteWindow=.20;}
     updateDebugReadout();
+  }
+
+  // Khoảnh khắc "dính cá" tách riêng, rồi mới mở vòng 2. Plan A gọi nó là ĐÃ BẮT,
+  // Plan B gọi là DÍNH CÂU vì cá chỉ được công bố sau vòng 2.
+  function enterSecondRound(plan){
+    game.fishingRound=2;
+    game.roundStartedAt=game.age+plan.hookBeat;
+    game.marker=0;
+    game.qteWindow=plan.window2;
+    game.qteArcStart=fishingTargetStart();
+    scene.dataset.fishingRound='2';
+    scene.style.setProperty('--qte-round-color','#27df87');
+    scene.style.setProperty('--ring-start',game.qteArcStart*360+'deg');
+    scene.style.setProperty('--angle','0deg');
+    root.querySelector('.qteCenter strong').textContent=plan.hookCenter;
+    showFishingBonus();
+    status.textContent=plan.hookStatus;
+    impactPunch(status,true);
+    haptic('catch');
+    game.round2LabelAt=game.roundStartedAt;
+    game.qteFeedbackUntil=game.age+plan.hookBeat;
+    delete scene.dataset.qteHit;
   }
 
   function finish(caught, reason, reveal=false) {
@@ -763,7 +807,7 @@
       position:.42, tension:0, distance:mode === 3 ? 35 : 25, zone:.60, fish:.48, marker:0, hits:0, misses:0, combo:0,
       roundAge:0, roundPause:0, timingScale:1.65, roundSpeed:circularSpeed(), distancePhase:0, distanceFreezeUntil:0,
       qteSecondsPerRevolution:fishTiming.secondsPerRevolution,
-      fishingRound:1, bonusWon:false, roundStartedAt:0, qteArcStart:fishingTargetStart(), mutationPoints:0, mutations:0, qteResults:[], knots:[], bonusScore:0};
+      fishingRound:1, bonusWon:false, roundStartedAt:0, qteWindow:.20, round2LabelAt:0, qteArcStart:fishingTargetStart(), mutationPoints:0, mutations:0, qteResults:[], knots:[], bonusScore:0};
     if (mode === 3) [0, 1].forEach(spawnDistanceKnot);
     if (mode === 3 || mode === 6) status.textContent='';
     if (mode === 6) {
@@ -825,7 +869,7 @@
     if (![2, 3, 6].includes(mode)) return;
     const [start, end] = mode === 3 ? (game.marker < .55 ? [.18,.48] : [.61,.82]) : [.16,.36];
     if(mode===6&&game.age<game.roundStartedAt)return;
-    const timingResult=mode===6?((game.marker-game.qteArcStart+1)%1<=.20?'green':'red'):null;
+    const timingResult=mode===6?((game.marker-game.qteArcStart+1)%1<=game.qteWindow?'green':'red'):null;
     const gold = timingResult==='gold';
     const hit = mode === 6 ? timingResult!=='red' : game.marker >= start && game.marker <= end;
     const perfect = mode===6 ? gold : hit && Math.abs(game.marker - (start + end) / 2) < .045;
@@ -870,19 +914,18 @@
     if (mode === 6) {
       game.qteResults.push(hit?'green':'red');
       scene.dataset.qteHit=hit?'hit':'miss';haptic(hit?'good':'miss');
+      const plan=flowPlan();
       if(game.fishingRound===1){
+        // Trượt vòng 1 không được gì, nên cũng không bị trừ tiến độ pity.
         if(!hit){finish(false,'CÁ ĐÃ THOÁT!');return;}
-        if(debugSettings.forceBonus||Math.random()<.20){
-          game.fishingRound=2;game.roundStartedAt=game.age+.9;game.marker=0;
-          game.qteArcStart=fishingTargetStart();scene.dataset.fishingRound='2';
-          scene.style.setProperty('--qte-round-color','#27df87');
-          scene.style.setProperty('--ring-start',game.qteArcStart*360+'deg');
-          scene.style.setProperty('--angle','0deg');
-          root.querySelector('.qteCenter strong').textContent='THƯỞNG';
-          showFishingBonus();
-          status.textContent='VÒNG 2 · MUTATION / WEATHER';
-          game.qteFeedbackUntil=game.age+1;delete scene.dataset.qteHit;return;
+        const openRound2 = debugSettings.forceBonus || plan.bonusRate>=1
+          || (plan.pity>0 && bonusPity>=plan.pity-1) || Math.random()<plan.bonusRate;
+        if(openRound2){
+          bonusPity=0;
+          enterSecondRound(plan);
+          return;
         }
+        bonusPity++;
       }else{game.bonusWon=hit;game.mutationPoints=hit?100:0;}
       finish(true);return;
     }
@@ -972,10 +1015,17 @@
       }
       case 6: {
         if(scene.hasAttribute('data-bonus-transition')&&game.age>=game.roundStartedAt)delete scene.dataset.bonusTransition;
+        if(game.round2LabelAt&&game.age>=game.round2LabelAt){
+          const labelPlan=flowPlan();
+          root.querySelector('.qteCenter strong').textContent=labelPlan.round2Center;
+          status.textContent=labelPlan.round2Status;
+          game.qteFeedbackUntil=game.age+1.1;
+          game.round2LabelAt=0;
+        }
         if(game.qteFeedbackUntil&&game.age>game.qteFeedbackUntil){delete scene.dataset.qteHit;status.textContent='';game.qteFeedbackUntil=0;}
         game.marker = (Math.max(0,game.age-game.roundStartedAt) / (game.qteSecondsPerRevolution * debugSettings.values[6] / 2.25)) % 1;
         qteLuckChip.hidden=true;
-        draw('Vòng '+game.fishingRound, 'Bấm trúng ô mục tiêu', 0, 0, 0, .20, game.qteArcStart * 360);
+        draw('Vòng '+game.fishingRound, 'Bấm trúng ô mục tiêu', 0, 0, 0, game.qteWindow, game.qteArcStart * 360);
         break;
       }
       case 3:
@@ -1055,6 +1105,15 @@
   debugPanel.querySelector('.debugSpeed').addEventListener('change',event=>{
     debugSettings.speed=Number(event.target.value);
   });
+  debugPanel.querySelector('.debugFlow').addEventListener('change',event=>{
+    debugSettings.flow=event.target.value==='B'?'B':'A';
+    try { localStorage.setItem('revival-fishing-flow',debugSettings.flow); } catch {}
+    bonusPity=0;
+    instructions[6]=qteInstruction();
+    if(mode===6)root.querySelector('.fishingInstructions').textContent=instructions[6];
+    reset();
+    updateDebugReadout();
+  });
   debugPanel.querySelector('.debugForceBonus').addEventListener('change',event=>{
     debugSettings.forceBonus=event.target.checked;
     try { localStorage.setItem('revival-fishing-force-bonus',debugSettings.forceBonus?'on':'off'); } catch {}
@@ -1073,8 +1132,13 @@
       if(game){game.mutationPoints=0;game.mutations=0;}renderMutation();
       debugSettings.speed=1;
       debugSettings.forceBonus=false;
-      try { localStorage.removeItem('revival-fishing-force-bonus'); } catch {}
+      debugSettings.flow='A';
+      bonusPity=0;
+      try { localStorage.removeItem('revival-fishing-force-bonus');localStorage.removeItem('revival-fishing-flow'); } catch {}
       debugPanel.querySelector('.debugForceBonus').checked=false;
+      debugPanel.querySelector('.debugFlow').value='A';
+      instructions[6]=qteInstruction();
+      if(mode===6)root.querySelector('.fishingInstructions').textContent=instructions[6];
       Object.assign(debugSettings.values,{0:5,2:0,3:2.3,4:.30,6:2.25});
       tapsPerJoint=5;jointCount.value='3';jointThickness.value='mixed';buildJoints();
       debugPanel.querySelector('.debugSpeed').value='1';reset();

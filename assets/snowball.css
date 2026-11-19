@@ -1,0 +1,78 @@
+/* Mini game · Throw Snowball — ném tuyết theo cảm giác ném lựu đạn Free Fire. */
+#tab-snowball{--sbInk:#eaf6ff;--sbDim:#8fb4cf;--sbEdge:#1b3f5c;--sbPanel:#0e2235;--sbAccent:#5fd0ff;--sbGood:#49e08a;--sbCrit:#ffd75e;--sbBad:#ff7a7a}
+.sbHeader{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between;padding:18px 20px;border:1px solid var(--sbEdge);border-radius:14px;background:linear-gradient(135deg,#0d2639,#122d44 60%,#0b1d2c);margin-bottom:14px}
+.sbHeader h2{margin:4px 0 6px;font-size:22px;letter-spacing:.02em;color:var(--sbInk)}
+.sbHeader>div:first-child>span{font-size:11px;letter-spacing:.18em;color:var(--sbAccent);text-transform:uppercase}
+.sbHeader p{margin:0;max-width:46ch;font-size:13px;line-height:1.5;color:var(--sbDim)}
+.sbScore{text-align:right;min-width:120px}
+.sbScore strong{display:block;font-size:34px;line-height:1;color:var(--sbCrit)}
+.sbScore span{font-size:11px;letter-spacing:.12em;color:var(--sbDim)}
+
+.sbStage{position:relative;border:1px solid var(--sbEdge);border-radius:14px;overflow:hidden;background:#071624;touch-action:none;user-select:none;aspect-ratio:16/9;max-height:62vh}
+.sbStage canvas{display:block;width:100%;height:100%}
+.sbStage:focus-visible{outline:2px solid var(--sbAccent);outline-offset:2px}
+
+.sbHud{position:absolute;inset:10px 12px auto;display:flex;justify-content:space-between;gap:10px;pointer-events:none;font-size:12px;letter-spacing:.08em;color:var(--sbInk);text-shadow:0 1px 3px #000a}
+.sbHud b{color:var(--sbCrit)}
+.sbWind{display:flex;align-items:center;gap:6px}
+.sbWind[hidden]{display:none}
+.sbWind i{font-style:normal;color:var(--sbAccent)}
+
+.sbCallout{position:absolute;left:50%;top:38%;translate:-50% -50%;text-align:center;pointer-events:none;opacity:0;transition:opacity .15s}
+.sbCallout[data-show]{opacity:1}
+.sbCallout strong{display:block;font-size:30px;letter-spacing:.06em;text-shadow:0 2px 8px #000b}
+.sbCallout span{font-size:12px;letter-spacing:.14em;color:var(--sbDim)}
+.sbCallout[data-kind=perfect] strong{color:var(--sbCrit)}
+.sbCallout[data-kind=good] strong{color:var(--sbGood)}
+.sbCallout[data-kind=miss] strong{color:var(--sbBad)}
+
+.sbPowerWrap{position:absolute;left:12px;right:112px;bottom:14px;pointer-events:none}
+.sbPowerLabels{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.12em;color:var(--sbDim);margin-bottom:4px}
+.sbPower{position:relative;height:10px;border-radius:6px;background:#0a2033b8;border:1px solid var(--sbEdge);overflow:hidden}
+.sbPower i{position:absolute;inset:0 auto 0 0;width:var(--sb-power,0%);background:linear-gradient(90deg,#2f7fb0,#5fd0ff 60%,#ffd75e);transition:width .04s linear}
+.sbPower b{position:absolute;top:-3px;bottom:-3px;width:2px;background:#ffffffcc;left:var(--sb-sweet,70%)}
+
+.sbThrow{position:absolute;right:14px;bottom:14px;width:88px;height:88px;border-radius:50%;border:2px solid var(--sbAccent);background:radial-gradient(circle at 35% 30%,#1d4f70,#0b2436);color:var(--sbInk);display:grid;place-content:center;gap:2px;cursor:pointer;touch-action:none}
+.sbThrow span{font-size:26px;line-height:1}
+.sbThrow b{font-size:12px;letter-spacing:.14em}
+.sbThrow small{font-size:9px;letter-spacing:.1em;color:var(--sbDim)}
+.sbThrow[data-charging]{border-color:var(--sbCrit);box-shadow:0 0 0 6px #ffd75e22}
+.sbThrow:disabled{opacity:.45;cursor:default}
+
+.sbRoll{position:absolute;right:112px;bottom:30px;padding:8px 12px;border-radius:10px;border:1px solid var(--sbEdge);background:#0d2639cc;color:var(--sbDim);font-size:11px;letter-spacing:.1em;cursor:pointer}
+.sbRoll[aria-pressed=true]{color:var(--sbInk);border-color:var(--sbAccent);background:#14405bcc}
+
+.sbHint{position:absolute;left:0;right:0;bottom:-2px;text-align:center;font-size:11px;letter-spacing:.1em;color:var(--sbDim);pointer-events:none;padding-bottom:6px}
+
+.sbResult{margin-top:14px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:14px 16px;border:1px solid var(--sbEdge);border-radius:12px;background:var(--sbPanel)}
+.sbHistory{display:flex;gap:6px}
+.sbHistory span{width:26px;height:26px;border-radius:7px;display:grid;place-content:center;font-size:13px;background:#0a1e2e;border:1px solid var(--sbEdge);color:var(--sbDim)}
+.sbHistory span[data-r=perfect]{color:#0a1e2e;background:var(--sbCrit);border-color:var(--sbCrit)}
+.sbHistory span[data-r=good]{color:#0a1e2e;background:var(--sbGood);border-color:var(--sbGood)}
+.sbHistory span[data-r=miss]{color:var(--sbBad);border-color:#5c2b2b}
+.sbVerdict{font-size:13px;color:var(--sbInk)}
+.sbVerdict b{color:var(--sbCrit)}
+
+.sbDebug{margin-top:14px;border:1px solid var(--sbEdge);border-radius:12px;background:var(--sbPanel);padding:0 14px}
+.sbDebug summary{cursor:pointer;padding:12px 0;font-size:13px;letter-spacing:.06em;color:var(--sbInk)}
+.sbDebugTools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding-bottom:12px}
+.sbDebugTools label{display:flex;flex-direction:column;gap:4px;font-size:11px;letter-spacing:.06em;color:var(--sbDim)}
+.sbDebugTools select,.sbDebugTools button{background:#0a1e2e;color:var(--sbInk);border:1px solid var(--sbEdge);border-radius:8px;padding:6px 10px;font-size:12px}
+.sbDebugTools button{cursor:pointer}
+.sbDebugReadout{display:block;padding-bottom:12px;font-size:11px;color:var(--sbDim)}
+
+.sbPlan{margin-top:16px;border:1px solid var(--sbEdge);border-radius:12px;background:var(--sbPanel);padding:0 16px}
+.sbPlan summary{cursor:pointer;padding:14px 0;font-size:13px;letter-spacing:.06em;color:var(--sbInk)}
+.sbPlan h3{margin:14px 0 6px;font-size:13px;letter-spacing:.1em;color:var(--sbAccent);text-transform:uppercase}
+.sbPlan p,.sbPlan li{font-size:13px;line-height:1.6;color:var(--sbDim)}
+.sbPlan table{width:100%;border-collapse:collapse;margin:8px 0 14px;font-size:12px}
+.sbPlan th,.sbPlan td{border:1px solid var(--sbEdge);padding:7px 9px;text-align:left;vertical-align:top;color:var(--sbDim)}
+.sbPlan th{color:var(--sbInk);background:#0a1e2e;font-weight:600}
+.sbPlan ul{margin:6px 0 14px;padding-left:20px}
+
+@media (max-width:720px){
+  .sbStage{aspect-ratio:4/3;max-height:none}
+  .sbThrow{width:74px;height:74px}
+  .sbPowerWrap{right:96px}
+  .sbRoll{right:96px;bottom:24px}
+}

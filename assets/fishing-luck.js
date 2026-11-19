@@ -174,8 +174,8 @@
     4: [[.22, 'glitchLand'], [.56, 'glitchOpen'], [.73, 'bonus']],
     5: [[.35, 'break'], [.62, 'glitchJump'], [.70, 'bonus']],
     6: [[.22, 'glitchLand'], [.41, 'glitchJump'], [.53, 'glitchJump'], [.65, 'break'], [.75, 'bonus']],
-    7: [[.24, 'glitchLand'], [.39, 'glitchLand'], [.55, 'glitchJump'], [.60, 'glitchJump'], [.65, 'break'], [.74, 'bonus']],
-    8: [[.24, 'ballBounce'], [.33, 'kickCharge'], [.40, 'kick'], [.55, 'glitchJump'], [.60, 'glitchJump'], [.65, 'break'], [.74, 'bonus']]
+    7: [[.22, 'glitchLand'], [.54, 'glitchJump'], [.59, 'glitchJump'], [.65, 'break'], [.74, 'bonus']],
+    8: [[.10, 'ballBounce'], [.16, 'kickCharge'], [.22, 'kick'], [.54, 'glitchJump'], [.59, 'glitchJump'], [.65, 'break'], [.74, 'bonus']]
   };
   let playing = false;
 
@@ -237,7 +237,7 @@
     announcement.textContent = 'Luck đã đạt 100%.';
     scene.classList.add('burstLuckCharged');
     const flight = meter.animate([
-      { left: '7%', top: '83%', translate: '-50% -50%', scale: 1 },
+      { left: '31%', top: '90%', translate: '-50% -50%', scale: 1 },
       { left: '50%', top: '50%', translate: '-50% -50%', scale: 1.2, offset: .65 },
       { left: '50%', top: '50%', translate: '-50% -50%', scale: 1.55, opacity: 0 }
     ], { duration: 850, easing: 'ease-in-out', fill: 'both' });
