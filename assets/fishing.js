@@ -141,10 +141,12 @@
   const jointThickness = root.querySelector('#fishingJointThickness');
   const debugControls = root.querySelector('.fishingDebug');
   const debugSettings = {forceBonus:false,speed:1, values:{0:5,2:0,3:2.3,4:.30,6:2.25}};
+  try { debugSettings.forceBonus = localStorage.getItem('revival-fishing-force-bonus') === 'on'; } catch {}
   let debugPaused = false;
   const debugPanel = document.createElement('details');
   debugPanel.className = 'fishingDebugPanel';
   debugPanel.innerHTML = '<summary>Debug · tùy chỉnh cơ chế</summary><div class="fishingDebugTools"><label>Tốc độ mô phỏng <select class="debugSpeed"><option value=".5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label><label title="Bắt cá thành công luôn mở vòng 2"><input type="checkbox" class="debugForceBonus"> 100% vào vòng 2</label><label class="debugModeLabel"><span></span><select class="debugModeValue"></select></label><button type="button" data-debug="restart">Chơi lại</button><button type="button" data-debug="pause" aria-pressed="false">Tạm dừng</button><button type="button" data-debug="step">Bước +1/30s</button><button type="button" data-debug="shuffle">Đổi mục tiêu</button><button type="button" data-debug="win">Thử bắt cá</button><button type="button" data-debug="lose">Thử thất bại</button><button type="button" data-debug="defaults">Mặc định</button></div><output class="fishingDebugReadout" aria-live="off"></output>';
+  debugPanel.querySelector('.debugForceBonus').checked = debugSettings.forceBonus;
   debugControls.before(debugPanel);
   debugPanel.appendChild(debugControls);
   window.initFishingRewards();
@@ -600,6 +602,7 @@
   function updateDebugReadout() {
     debugReadout.dataset.time=state==='active'?game.age.toFixed(3):'';
     debugReadout.textContent = 'Tab '+(mode+1)+' · '+(state==='idle'?'Sẵn sàng':state==='result'?'Kết quả':debugPaused?'Tạm dừng':'Đang chạy')+(state==='active'?' · '+game.age.toFixed(1)+'s · Combo '+game.combo:'');
+    if(mode===6)debugReadout.textContent+=' · Vòng 2: '+(debugSettings.forceBonus?'100% (DEBUG)':'20%');
   }
   function renderPreview() {
     status.textContent='';
@@ -1054,6 +1057,8 @@
   });
   debugPanel.querySelector('.debugForceBonus').addEventListener('change',event=>{
     debugSettings.forceBonus=event.target.checked;
+    try { localStorage.setItem('revival-fishing-force-bonus',debugSettings.forceBonus?'on':'off'); } catch {}
+    updateDebugReadout();
   });
   debugModeValue.addEventListener('change',()=>{
     debugSettings.values[mode]=Number(debugModeValue.value);
@@ -1068,6 +1073,7 @@
       if(game){game.mutationPoints=0;game.mutations=0;}renderMutation();
       debugSettings.speed=1;
       debugSettings.forceBonus=false;
+      try { localStorage.removeItem('revival-fishing-force-bonus'); } catch {}
       debugPanel.querySelector('.debugForceBonus').checked=false;
       Object.assign(debugSettings.values,{0:5,2:0,3:2.3,4:.30,6:2.25});
       tapsPerJoint=5;jointCount.value='3';jointThickness.value='mixed';buildJoints();
