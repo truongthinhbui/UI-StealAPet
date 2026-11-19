@@ -5,8 +5,8 @@
   const scene = tab.querySelector('.luckyBurstStage');
   const defaultTiming = { duration: 5000, openingDuration: 3000 };
   const activityTiming = {
-    7: { duration: 6400, openingDuration: 4200 },
-    8: { duration: 7200, openingDuration: 5000 }
+    7: { duration: 4800, openingDuration: 3000 },
+    8: { duration: 5400, openingDuration: 3600 }
   };
   const kirinSprite = 'assets/fishing-luck-kirin.png';
   const preview = tab.querySelector('.fishingLuckPreview');

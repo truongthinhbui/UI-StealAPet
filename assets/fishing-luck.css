@@ -762,12 +762,12 @@
   background: radial-gradient(circle, #fff5cc 16%, #508fa1 24% 58%, #184958 64%);
 }
 @keyframes burstRodPull {
-  0%, 34% { opacity: 1; transform: translateY(11%) rotate(-16deg) scaleY(.86); }
-  38% { transform: translateY(14%) rotate(-20deg) scaleY(.8); animation-timing-function: cubic-bezier(.12,.75,.27,1); }
-  43% { transform: translateY(-19%) rotate(29deg) scaleY(1.08); }
-  50% { transform: translateY(-7%) rotate(14deg); }
-  56% { opacity: 1; transform: translateY(-9%) rotate(18deg); }
-  65%, 100% { opacity: 0; transform: translate(22%, -16%) rotate(24deg); }
+  0%, 10% { opacity: 1; transform: translateY(11%) rotate(-16deg) scaleY(.86); }
+  16% { transform: translateY(14%) rotate(-20deg) scaleY(.8); animation-timing-function: cubic-bezier(.12,.75,.27,1); }
+  22% { transform: translateY(-19%) rotate(29deg) scaleY(1.08); }
+  30% { transform: translateY(-7%) rotate(14deg); }
+  36% { opacity: 1; transform: translateY(-9%) rotate(18deg); }
+  50%, 100% { opacity: 0; transform: translate(22%, -16%) rotate(24deg); }
 }
 .burstPuddle {
   border-radius: 50%;
@@ -839,35 +839,29 @@
 .burstActivitySpray i:nth-child(2) { --spray-x: -6cqw; --spray-y: -12cqw; }
 .burstActivitySpray i:nth-child(4) { --spray-x: 10cqw; --spray-y: -11cqw; }
 .burstActivitySpray i:nth-child(5) { --spray-x: 15cqw; --spray-y: -5cqw; }
-.fishingLuck[data-version="8"] .burstActivitySpray i { border-radius: 50% 50% 50% 12%; background: #a0efff; }
+.fishingLuck[data-version="8"] .burstActivitySpray i { border-radius: 50% 50% 50% 12%; background: #a0efff; animation-name: burstDigDirt; }
 .fishingLuck[data-version="7"] .burstActivitySpray i { animation-name: burstDigDirt; }
 
 @keyframes burstDigSwing {
-  0% { transform: translate(-95%, 8%) rotate(24deg); }
-  5% { transform: translate(-95%, 8%) rotate(24deg); }
-  10% { transform: translate(-79%, -31%) rotate(26deg); }
-  15% { transform: translate(-45%, -28%) rotate(36deg); }
-  21% { transform: translate(-38%, -23%) rotate(37deg); animation-timing-function: cubic-bezier(.6,.05,.9,.42); }
-  24% { transform: translate(-5%, 35%) rotate(4deg); }
-  31% { transform: translate(-40%, -20%) rotate(38deg); }
-  36% { transform: translate(-36%, -23%) rotate(41deg); animation-timing-function: cubic-bezier(.6,.05,.9,.42); }
-  39% { transform: translate(13%, 39%) rotate(-5deg); }
-  46% { opacity: 1; transform: translate(-36%, -32%) rotate(-42deg); }
-  58%, 100% { opacity: 0; transform: translate(-240%, -20%) rotate(-55deg); }
+  0%, 8% { opacity: 1; transform: translate(-6%, 36%) rotate(5deg); }
+  14% { transform: translate(-9%, 39%) rotate(2deg); animation-timing-function: cubic-bezier(.12,.75,.27,1); }
+  22% { opacity: 1; transform: translate(-37%, -32%) rotate(-42deg); }
+  30% { transform: translate(-34%, -27%) rotate(-38deg); }
+  46%, 100% { opacity: 0; transform: translate(-240%, -20%) rotate(-55deg); }
 }
 @keyframes burstGiftDigUp {
-  0%, 41% { opacity: 0; transform: translate(-50%, 92%) rotate(-12deg) scale(.6); }
-  44% { opacity: 1; }
-  49% { transform: translate(-50%, -31%) rotate(8deg) scale(1.05); }
-  52% { transform: translate(-50%, 4%) scale(1.05, .95); }
-  54%, 100% { transform: translate(-50%, 0); }
+  0%, 20% { opacity: 0; transform: translate(-50%, 92%) rotate(-12deg) scale(.6); }
+  24% { opacity: 1; }
+  29% { transform: translate(-50%, -31%) rotate(8deg) scale(1.05); }
+  32% { transform: translate(-50%, 4%) scale(1.05, .95); }
+  35%, 100% { transform: translate(-50%, 0); }
 }
 @keyframes burstGiftReelUp {
-  0%, 39% { opacity: 0; transform: translate(-50%, 98%) scale(.62); }
-  42% { opacity: 1; transform: translate(-50%, 34%) scale(.84); animation-timing-function: cubic-bezier(.12,.78,.3,1); }
-  48% { transform: translate(-50%, -63%) rotate(-12deg) scale(.94, 1.09); }
-  52% { transform: translate(-50%, 3%) rotate(4deg) scale(1.1, .91); }
-  54%, 100% { transform: translate(-50%, 0); }
+  0%, 18% { opacity: 0; transform: translate(-50%, 98%) scale(.62); }
+  21% { opacity: 1; transform: translate(-50%, 34%) scale(.84); animation-timing-function: cubic-bezier(.12,.78,.3,1); }
+  27% { transform: translate(-50%, -63%) rotate(-12deg) scale(.94, 1.09); }
+  31% { transform: translate(-50%, 3%) rotate(4deg) scale(1.1, .91); }
+  34%, 100% { transform: translate(-50%, 0); }
 }
 @keyframes burstLineRelease {
   0%, 49% { opacity: 1; }
@@ -875,19 +869,19 @@
 }
 @keyframes burstFloatDip {
   0% { opacity: 0; transform: translate(-50%, -120%) scale(.7); }
-  10% { opacity: 1; transform: translate(-50%, 18%) scale(1); }
-  34% { opacity: .9; transform: translate(-50%, 24%) scale(1); }
-  38% { transform: translate(-50%, 30%) scale(.94); animation-timing-function: cubic-bezier(.12,.75,.27,1); }
-  43% { opacity: 1; transform: translate(-50%, -150%) rotate(-12deg) scale(1); }
-  48%, 100% { opacity: 0; transform: translate(-50%, -190%) rotate(-12deg); }
+  5% { opacity: 1; transform: translate(-50%, 18%) scale(1); }
+  12% { opacity: .9; transform: translate(-50%, 24%) scale(1); }
+  16% { transform: translate(-50%, 30%) scale(.94); animation-timing-function: cubic-bezier(.12,.75,.27,1); }
+  22% { opacity: 1; transform: translate(-50%, -150%) rotate(-12deg) scale(1); }
+  28%, 100% { opacity: 0; transform: translate(-50%, -190%) rotate(-12deg); }
 }
 @keyframes burstWaterRipple {
-  0%, 8% { opacity: 0; transform: translate(-50%, -50%) scale(.25); }
-  14% { opacity: .5; transform: translate(-50%, -50%) scale(.5); }
-  28% { opacity: 0; transform: translate(-50%, -50%) scale(1.16); }
-  38% { opacity: 0; transform: translate(-50%, -50%) scale(.4); }
-  43% { opacity: .95; transform: translate(-50%, -50%) scale(.88); }
-  61%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(1.9); }
+  0%, 4% { opacity: 0; transform: translate(-50%, -50%) scale(.25); }
+  8% { opacity: .5; transform: translate(-50%, -50%) scale(.5); }
+  14% { opacity: 0; transform: translate(-50%, -50%) scale(1.16); }
+  17% { opacity: 0; transform: translate(-50%, -50%) scale(.4); }
+  22% { opacity: .95; transform: translate(-50%, -50%) scale(.88); }
+  46%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(1.9); }
 }
 @keyframes burstActivitySpray {
   0%, 39% { opacity: 0; transform: none; }
@@ -896,13 +890,10 @@
   67%, 100% { opacity: 0; transform: translate(var(--spray-x), 3cqw) rotate(180deg); }
 }
 @keyframes burstDigDirt {
-  0%, 23% { opacity: 0; transform: none; }
-  25% { opacity: 1; }
-  34% { opacity: 0; transform: translate(calc(var(--spray-x) * .55), calc(var(--spray-y) * .45)) rotate(65deg); }
-  38% { opacity: 0; transform: none; }
-  41% { opacity: 1; }
-  49% { opacity: .94; transform: translate(var(--spray-x), var(--spray-y)) rotate(80deg); }
-  64%, 100% { opacity: 0; transform: translate(var(--spray-x), 3cqw) rotate(180deg); }
+  0%, 18% { opacity: 0; transform: none; }
+  22% { opacity: 1; }
+  30% { opacity: .94; transform: translate(var(--spray-x), var(--spray-y)) rotate(80deg); }
+  50%, 100% { opacity: 0; transform: translate(var(--spray-x), 3cqw) rotate(180deg); }
 }
 .burstLuckDebug {
   display: flex;
