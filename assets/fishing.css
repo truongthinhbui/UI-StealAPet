@@ -4,7 +4,9 @@
 .fishingModes button[aria-pressed="true"]{background:#215372;border-color:#b4e6ff}
 .fishingInstructions{font-size:13px;color:#c4dbea}
 .fishingScene{position:relative;container-type:inline-size}
-.fishingScene>img{display:block;width:100%;height:auto}
+.fishingScene>.fishingSceneBg{display:block;width:100%;height:auto;object-fit:contain}
+/* Decorative overlays must never inherit the full-width scene image layout. */
+.fishingScene>.fishingRoundOneLogo{display:none;position:absolute;left:50%;top:28%;translate:-50% -50%;width:18%;max-width:150px;height:22%;object-fit:contain;object-position:center;pointer-events:none}
 .fishingTap,.fishingRing{position:absolute;left:81.8%;top:68.5%;width:12.6%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%}
 .fishingTap{border:0;padding:0;background:transparent;touch-action:manipulation}
 .fishingTap:hover,.fishingTap:active{background:#ffdd6333}

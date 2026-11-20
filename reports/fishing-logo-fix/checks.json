@@ -1,0 +1,69 @@
+{
+  "results": [
+    {
+      "width": 1440,
+      "scene": {
+        "width": 1098,
+        "height": 620.75
+      },
+      "logo": {
+        "width": 150,
+        "height": 136.5625
+      },
+      "visible": true,
+      "loaded": true,
+      "contained": true,
+      "overlap": false,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "scene": {
+        "width": 735.28125,
+        "height": 415.6875
+      },
+      "logo": {
+        "width": 132.34375,
+        "height": 91.4375
+      },
+      "visible": true,
+      "loaded": true,
+      "contained": true,
+      "overlap": false,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "scene": {
+        "width": 368,
+        "height": 208.046875
+      },
+      "logo": {
+        "width": 66.234375,
+        "height": 45.765625
+      },
+      "visible": true,
+      "loaded": true,
+      "contained": true,
+      "overlap": false,
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "scene": {
+        "width": 298,
+        "height": 168.46875
+      },
+      "logo": {
+        "width": 53.625,
+        "height": 37.0625
+      },
+      "visible": true,
+      "loaded": true,
+      "contained": true,
+      "overlap": false,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

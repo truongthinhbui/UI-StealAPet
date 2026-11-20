@@ -353,8 +353,8 @@
 .fishingBonusPreview .fishingBonusItem small{font-size:clamp(8px,1cqw,13px);font-weight:700;color:#eafff3}
 
 .fishingScene>.fishingRoundOneLogo{display:none}
-.fishingScene[data-mode="6"][data-active][data-fishing-round="2"]>.fishingRoundOneLogo{display:block;position:absolute;left:50%;top:30%;width:clamp(72px,13%,180px);height:auto;translate:-50% -50%;object-fit:contain;z-index:10;pointer-events:none;filter:drop-shadow(0 4px 12px #10233788);animation:fishingBonusReveal .4s ease-out both}
-@media(prefers-reduced-motion:reduce){.fishingScene[data-fishing-round="2"]>.fishingRoundOneLogo{animation:none}}
+.fishingScene[data-mode="6"][data-active][data-fishing-round="2"]>.fishingRoundOneLogo{display:block;z-index:1;animation:fishingBonusReveal .4s ease-out both}
+@media(prefers-reduced-motion:reduce){.fishingScene[data-mode="6"][data-active][data-fishing-round="2"]>.fishingRoundOneLogo{animation:none}}
 
 /* Bare bonus label and reward icon, without a notification card. */
 .fishingBonusPreview{width:max-content;max-width:30%;padding:0;border:0;border-radius:0;background:none;box-shadow:none}
