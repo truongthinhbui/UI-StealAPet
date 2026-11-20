@@ -352,10 +352,17 @@
 .fishingBonusPreview .fishingBonusItem>.genAtlasIcon,.fishingBonusPreview .fishingBonusItem>img{width:4cqw;height:4cqw}
 .fishingBonusPreview .fishingBonusItem small{font-size:clamp(8px,1cqw,13px);font-weight:700;color:#eafff3}
 
+.fishingScene>.fishingRoundOneLogo{display:none}
+.fishingScene[data-mode="6"][data-active][data-fishing-round="2"]>.fishingRoundOneLogo{display:block;position:absolute;left:50%;top:30%;width:clamp(72px,13%,180px);height:auto;translate:-50% -50%;object-fit:contain;z-index:10;pointer-events:none;filter:drop-shadow(0 4px 12px #10233788);animation:fishingBonusReveal .4s ease-out both}
+@media(prefers-reduced-motion:reduce){.fishingScene[data-fishing-round="2"]>.fishingRoundOneLogo{animation:none}}
+
 /* Bare bonus label and reward icon, without a notification card. */
 .fishingBonusPreview{width:max-content;max-width:30%;padding:0;border:0;border-radius:0;background:none;box-shadow:none}
 .fishingBonusPreview>strong{margin-bottom:.5cqw;color:#d2ffe6;text-shadow:0 1px 3px #123640,0 0 .5cqw #123640}
 .fishingBonusPreview .fishingBonusItem{min-width:0}
+.fishingBonusPreview>.offerMutation,.fishingBonusPreview .fishingBonusItem.offerMutation{padding:0;border:0;border-radius:0;background:none;color:var(--gen-ink);text-shadow:0 1px 2px #fff,0 0 .4cqw #ffffffaa}
+.fishingBonusPreview .fishingBonusItem.offerMutation{display:flex;flex-direction:column;gap:.35cqw}
+.fishingBonusPreview .fishingBonusItem small{color:inherit;font-weight:800;font-size:clamp(10px,1.15cqw,15px);line-height:1.25}
 
 /* Give the bonus reveal its own beat and leave space above the reel. */
 .fishingBonusPreview{bottom:48%}

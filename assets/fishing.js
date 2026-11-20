@@ -206,13 +206,19 @@
   function showFishingBonus(){
     const pool=bonusPreview.querySelector('.fishingBonusPool');
     const reward=rewards.reserveBonus();
-    bonusPreview.querySelector('strong').textContent=reward?.effectType==='WeatherEffect'?'BONUS WEATHER':'BONUS MUTATION';
+    const heading=bonusPreview.querySelector('strong');
+    heading.textContent=reward?.effectType==='WeatherEffect'?'BONUS WEATHER':'BONUS MUTATION';
+    heading.className='offerMutation';
+    heading.dataset.tier=reward?.tier||'basic';
+    heading.dataset.gen=reward?.id||'';
     pool.replaceChildren(...(reward?[reward]:[]).map(gen=>{
       const item=document.createElement('span');
-      item.className='fishingBonusItem';item.title=gen.name;
+      item.className='fishingBonusItem offerMutation';item.title=gen.name;
+      item.dataset.tier=gen.tier||'basic';item.dataset.gen=gen.id;
       const icon=window.GenCore.icon(gen);icon.setAttribute('aria-hidden','true');
       item.setAttribute('aria-label',gen.name);
-      item.append(icon);return item;
+      const name=document.createElement('small');name.textContent=gen.name;
+      item.append(icon,name);return item;
     }));
     bonusPreview.hidden=false;
     scene.dataset.bonusTransition='';
@@ -649,7 +655,8 @@
   // Plan B gọi là DÍNH CÂU vì cá chỉ được công bố sau vòng 2.
   function enterSecondRound(plan){
     game.fishingRound=2;
-    game.roundStartedAt=game.age+plan.hookBeat;
+    const transitionBeat=Math.max(1.2,plan.hookBeat);
+    game.roundStartedAt=game.age+transitionBeat;
     game.marker=0;
     game.qteWindow=plan.window2;
     game.qteArcStart=fishingTargetStart();
@@ -663,7 +670,7 @@
     impactPunch(status,true);
     haptic('catch');
     game.round2LabelAt=game.roundStartedAt;
-    game.qteFeedbackUntil=game.age+plan.hookBeat;
+    game.qteFeedbackUntil=game.age+transitionBeat;
     delete scene.dataset.qteHit;
   }
 
