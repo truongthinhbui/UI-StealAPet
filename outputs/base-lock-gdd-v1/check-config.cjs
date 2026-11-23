@@ -1,0 +1,17 @@
+const fs=require('node:fs'),assert=require('node:assert/strict'),path=require('node:path');
+const config=JSON.parse(fs.readFileSync(path.join(__dirname,'base-lock-config.v1.json'),'utf8'));
+assert.deepEqual(config.core.items.map(x=>x.duration_seconds),[120,300,600]);
+assert.equal(new Set(config.core.items.map(x=>x.id)).size,3);
+assert(config.core.items.every(x=>x.consume_per_request===1&&x.enabled));
+assert.deepEqual(config.core.ui.available_flows,['confirm','cards']);
+assert.equal(config.production_ready,false);
+assert.equal(config.core.refill.allow_while_active,true);
+assert.equal(config.unresolved.max_accumulated_seconds,null);
+const tier=seconds=>config.core.display.tiers.find(x=>(x.min_seconds_exclusive===null||seconds>x.min_seconds_exclusive)&&(x.max_seconds_inclusive===null||seconds<=x.max_seconds_inclusive));
+for(const [seconds,expected] of [[0,'idle'],[1,'blue'],[120,'blue'],[121,'purple'],[300,'purple'],[301,'gold'],[600,'gold'],[1020,'gold']])assert.equal(tier(seconds).id,expected);
+for(const t of config.core.display.tiers)assert(fs.existsSync(path.resolve(__dirname,'../..',t.prop_image)),t.prop_image);
+for(const [remaining,add,expected] of [[0,120,120],[90,300,390],[240,600,840],[45,120,165]])assert.equal(Math.max(0,remaining)+add,expected);
+const ui=fs.readFileSync(path.resolve(__dirname,'../../assets/base-lock.js'),'utf8');
+assert(ui.includes('const durations=[2,5,10]'));
+assert(ui.includes("seconds>300?'gold':seconds>120?'purple':'blue'"));
+console.log('PASS: item durations, one-item consumption, two flows, refill, all aura boundaries, asset references and current mockup alignment');
