@@ -1,0 +1,20 @@
+/* SAP_GDD Collection / Activities adapters. Slice order: top right bottom left. */
+:root{--sap-ink:#245481;--sap-paper:#deebff;--sap-blue:#327adb;--sap-edge:#94bcf0}
+main>.prototypeTabs{padding:8px;background:#c7ddfa;border:2px solid #6497d9;border-radius:14px;box-shadow:0 4px 0 #163c6360;gap:7px}
+.prototypeTabs button,.prototypeTabs button:not(.active):hover,.fishingSubtabs button{border:6px solid transparent;border-image:url('sap-ui/NewAssets__NormalTabBG.png') 20 fill / 6px stretch;background:none;border-radius:0;color:var(--sap-ink);padding:7px 12px;font-weight:700;box-shadow:none;min-height:44px}
+.prototypeTabs button.active,.fishingSubtabs button[aria-selected=true]{border-image-source:url('sap-ui/NewAssets__SelectTabBG.png');border-image-slice:10;color:#174c83;background:none;text-shadow:0 1px #fff;box-shadow:none}
+.prototypeTabs button:hover:not(:disabled),.fishingSubtabs button:hover{filter:brightness(1.05)}
+.fishingSubtabs{gap:8px;flex-wrap:wrap}
+.fishingViewport{border:3px solid #79a9e9;border-radius:16px;box-shadow:0 5px 0 #173858,0 14px 32px #03101e55;background:var(--sap-paper)}
+.fishingViewControls{padding:10px 14px;gap:10px;background:#deebff;border-bottom:1px solid #99bdf0;color:var(--sap-ink)}
+.fishingViewControls :is(.fishingHapticStatus,.fishingHapticFeel){color:var(--sap-ink)}
+.fishingViewControls button,.offerActions button{border:solid transparent;border-width:8px 8px 10px 18px;border-image:url('sap-ui/NewAssets__BlueButton.png') 20 20 25 50 fill / 8px 8px 10px 18px stretch;border-radius:0;background:none;color:white;min-height:44px;padding:3px 10px 3px 3px;font-weight:700;box-shadow:none;text-shadow:0 1px 2px #204e8a}
+.fishingViewControls button[aria-pressed=true],.offerActions button[data-offer=buy]{border-image-source:url('sap-ui/NewAssets__YellowButton.png');background:none;color:#634313;text-shadow:0 1px #fff4c8}
+.fishingViewControls button:hover:not(:disabled),.offerActions button:hover:not(:disabled){filter:brightness(1.08)}
+.fishingViewControls button:disabled,.offerActions button:disabled{filter:grayscale(.6);opacity:.55}
+.fishingOffer{border:solid transparent;border-width:12px 12px 14px;border-image:url('sap-ui/NewAssets__ContainerBG.png') 32 33 39 34 fill / 12px 12px 14px stretch;background:none;border-radius:0;box-shadow:0 8px 22px #12385966;padding:1cqw;overflow:visible}
+.fishingOffer .offerHeading{background:url('sap-ui/NewAssets__TitleBG.png') center / 100% 100% no-repeat;margin:-1cqw -1cqw .6cqw;padding:1.5cqw 1cqw .6cqw 2.5cqw;border:0;border-radius:0;color:white;text-shadow:0 1px 2px #154f98;line-height:1.4}
+.fishingOffer .offerMutations .offerMutation{border:6px solid transparent;border-image:url('sap-ui/NewAssets__ItemBG.png') 20 fill / 6px stretch;background:none;border-radius:0}
+.offerActions{gap:10px}
+main button:focus-visible{outline:3px solid #ffdf77;outline-offset:3px}
+@media(max-width:600px){main>.prototypeTabs{gap:5px;padding:6px}.prototypeTabs button{padding:5px 8px;font-size:12px}.fishingViewControls{padding:8px;gap:6px}.fishingViewControls button{font-size:12px}.fishingOffer{border-width:8px;border-image-width:8px;padding:1cqw}.fishingOffer .offerHeading{font-size:11px;padding-top:2cqw}.offerActions button{min-height:36px;font-size:11px}}

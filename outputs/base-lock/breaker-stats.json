@@ -1,0 +1,78 @@
+{
+  "triangles": 1416,
+  "vertices": 3586,
+  "parts": [
+    {
+      "name": "Wide plinth",
+      "triangles": 64
+    },
+    {
+      "name": "Pale plinth trim",
+      "triangles": 64
+    },
+    {
+      "name": "Status light band",
+      "triangles": 64
+    },
+    {
+      "name": "Support post",
+      "triangles": 124
+    },
+    {
+      "name": "Rounded control cabinet",
+      "triangles": 124
+    },
+    {
+      "name": "Cream cabinet face",
+      "triangles": 124
+    },
+    {
+      "name": "Gold rain hood",
+      "triangles": 124
+    },
+    {
+      "name": "Switch recess",
+      "triangles": 124
+    },
+    {
+      "name": "Switch travel mark",
+      "triangles": 12
+    },
+    {
+      "name": "Switch travel mark",
+      "triangles": 12
+    },
+    {
+      "name": "Lever pivot",
+      "triangles": 48
+    },
+    {
+      "name": "Lever arm",
+      "triangles": 32
+    },
+    {
+      "name": "Wide lever grip",
+      "triangles": 124
+    },
+    {
+      "name": "Status lamp housing",
+      "triangles": 124
+    },
+    {
+      "name": "Status lamp",
+      "triangles": 124
+    },
+    {
+      "name": "Cabinet fastening",
+      "triangles": 24
+    },
+    {
+      "name": "Cabinet fastening",
+      "triangles": 24
+    },
+    {
+      "name": "Conduit",
+      "triangles": 80
+    }
+  ]
+}

@@ -116,6 +116,7 @@ html[data-smooth] #scene .today{display:none!important}#scene .taskGuideButton{w
 #scene{font-family:'GFF Latin',Arial,sans-serif!important;font-synthesis:none;font-style:normal}#scene .polishheader,#scene .head .title,#scene .activityhead,#scene .herocopy h2,#scene .loginpanel.withtabs .herocopy h2{font-weight:700}#scene .total,#scene .meta,#scene .row .pts,#scene .msnode{font-weight:700;font-variant-numeric:tabular-nums}#scene .row .name,#scene .msrow .label,#scene .logincard .itemname,#scene .herocopy p,#scene .row small{font-weight:400}#scene .logincard .day,#scene .row .done{font-weight:500}#scene .taskGuideButton,#scene .taskReady,#scene .gddClaim,#scene .originalBuy,#scene .logincard button,#scene [data-reward-state="ready"] button,#scene .rewardbox button{font-weight:700}#scene .row small,#scene .logincard .later{font-weight:400}#scene .rewardbox h2{font-weight:700}#scene .originalSuggestion{font-weight:500}#scene .originalShopBack{font-weight:500}
 #scene .logincard .itemname,#scene .herocopy h2,#scene .loginpanel.withtabs .herocopy h2,#scene .liveProductName{font-weight:700}#scene .originalPetName{position:absolute;width:256px;height:29px;background:#bed8fa;color:#315f89;padding:2px 9px;font-size:24px;line-height:25px;font-weight:700;pointer-events:none}</style><link rel="stylesheet" href="assets/visual-refresh.css"><link rel="stylesheet" href="assets/web-responsive.css"><link rel="stylesheet" href="assets/activity-polish.css"><link rel="stylesheet" href="assets/secret-luck.css"><main><h1>Revival Event · Mobile preview</h1>
 <ul class="prototypeTabs" role="tablist">
+<li><button id="base-lock-tab" type="button" role="tab" aria-selected="false" aria-controls="tab-base-lock" data-tab="tab-base-lock">Khóa Base</button></li>
 <li><button type="button" class="active" role="tab" aria-selected="true" data-tab="tab-fishing">Fishing</button></li>
 <li><button id="lucky-burst-tab" type="button" role="tab" aria-selected="false" aria-controls="tab-lucky-burst" data-tab="tab-lucky-burst">Lucky Burst</button></li>
 <li><button type="button" role="tab" aria-selected="false" data-tab="tab-fishing-lab">Fishing · Mô phỏng 7 ngày</button></li>
@@ -128,6 +129,7 @@ html[data-smooth] #scene .today{display:none!important}#scene .taskGuideButton{w
 <li><button type="button" role="tab" aria-selected="false" data-tab="tab-secret-luck" disabled aria-disabled="true">Lucky Box Bar · 🔒</button></li>
 </ul>
 <nav style="display:none"><button onclick="replay()">Replay +7 points</button><button onclick="reset()">Reset demo</button><button onclick="toggleTasks()">Login / Tasks</button></nav>
+<section id="tab-base-lock" class="prototypePane" role="tabpanel" aria-labelledby="base-lock-tab"></section>
 <section id="tab-kick-ball" class="prototypePane" role="tabpanel" aria-label="Lucky Kick"></section>
 <section id="tab-snowball" class="prototypePane" role="tabpanel" aria-label="Mini game throw snowball"></section>
 <section id="tab-character-3d" class="prototypePane" role="tabpanel" aria-labelledby="character-3d-tab"></section>
@@ -283,6 +285,7 @@ html[data-smooth] #scene .today{display:none!important}#scene .taskGuideButton{w
 document.querySelectorAll('.lbSubBtn').forEach(function(btn){btn.addEventListener('click',function(){var pane=btn.closest('.prototypePane');pane.querySelectorAll('.lbSubBtn').forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false')});pane.querySelectorAll('.lbSubPane').forEach(function(p){p.classList.remove('active')});btn.classList.add('active');btn.setAttribute('aria-selected','true');document.getElementById(btn.dataset.sub).classList.add('active')})});
 
 </script><script src="assets/page-routing.js?v=1"></script><script src="assets/pity-concepts.js"></script><script src="assets/dig-pity.js"></script><script src="assets/secret-luck.js"></script>
+<link rel="stylesheet" href="assets/base-lock.css?v=17"><script src="assets/base-lock.js?v=17"></script>
 </html>
 
 

@@ -1,0 +1,10 @@
+{
+  "triangles_checked": 1316,
+  "color_sample_errors": [],
+  "exact_uv_overlap_pairs": [],
+  "uv_areas_px2": {
+    "min": 0.0014342665672302246,
+    "max": 16.64283385872841
+  },
+  "note": "Packed connected surface islands in small exact-color atlas patches. Base-color only; not suitable for detailed texture painting. Game mip/filter behavior not checked."
+}

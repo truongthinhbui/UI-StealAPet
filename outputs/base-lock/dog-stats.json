@@ -1,0 +1,102 @@
+{
+  "triangles": 1267,
+  "vertices": 1371,
+  "parts": [
+    {
+      "name": "Wide plinth",
+      "triangles": 64
+    },
+    {
+      "name": "Pale plinth trim",
+      "triangles": 64
+    },
+    {
+      "name": "Status light band",
+      "triangles": 64
+    },
+    {
+      "name": "Seated dog torso",
+      "triangles": 100
+    },
+    {
+      "name": "Seated haunch",
+      "triangles": 48
+    },
+    {
+      "name": "Rear paw",
+      "triangles": 48
+    },
+    {
+      "name": "Seated haunch",
+      "triangles": 48
+    },
+    {
+      "name": "Rear paw",
+      "triangles": 48
+    },
+    {
+      "name": "Dog head",
+      "triangles": 144
+    },
+    {
+      "name": "Floppy ear",
+      "triangles": 64
+    },
+    {
+      "name": "Floppy ear",
+      "triangles": 64
+    },
+    {
+      "name": "Muzzle",
+      "triangles": 80
+    },
+    {
+      "name": "Nose",
+      "triangles": 48
+    },
+    {
+      "name": "Light eye front",
+      "triangles": 48
+    },
+    {
+      "name": "Dark pupil",
+      "triangles": 12
+    },
+    {
+      "name": "Light eye front",
+      "triangles": 48
+    },
+    {
+      "name": "Dark pupil",
+      "triangles": 12
+    },
+    {
+      "name": "Gold shield rim",
+      "triangles": 68
+    },
+    {
+      "name": "Blue shield face",
+      "triangles": 7
+    },
+    {
+      "name": "Paw holding shield",
+      "triangles": 48
+    },
+    {
+      "name": "Paw holding shield",
+      "triangles": 48
+    },
+    {
+      "name": "Shield keyhole round",
+      "triangles": 10
+    },
+    {
+      "name": "Shield keyhole stem",
+      "triangles": 2
+    },
+    {
+      "name": "Curled tail",
+      "triangles": 80
+    }
+  ]
+}

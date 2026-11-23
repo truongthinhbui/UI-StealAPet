@@ -1,0 +1,78 @@
+{
+  "triangles": 976,
+  "vertices": 1810,
+  "parts": [
+    {
+      "name": "Wide plinth",
+      "triangles": 64
+    },
+    {
+      "name": "Pale plinth trim",
+      "triangles": 64
+    },
+    {
+      "name": "Status light band",
+      "triangles": 64
+    },
+    {
+      "name": "Short shield support",
+      "triangles": 124
+    },
+    {
+      "name": "Thick gold shield rim",
+      "triangles": 132
+    },
+    {
+      "name": "Blue shield inset",
+      "triangles": 15
+    },
+    {
+      "name": "Rear shield panel",
+      "triangles": 15
+    },
+    {
+      "name": "Central lock housing",
+      "triangles": 124
+    },
+    {
+      "name": "Lock shackle",
+      "triangles": 168
+    },
+    {
+      "name": "Dark keyhole round",
+      "triangles": 12
+    },
+    {
+      "name": "Dark keyhole stem",
+      "triangles": 2
+    },
+    {
+      "name": "Paw palm",
+      "triangles": 48
+    },
+    {
+      "name": "Paw toe",
+      "triangles": 24
+    },
+    {
+      "name": "Paw toe",
+      "triangles": 24
+    },
+    {
+      "name": "Paw toe",
+      "triangles": 24
+    },
+    {
+      "name": "Paw toe",
+      "triangles": 24
+    },
+    {
+      "name": "Shield rivet",
+      "triangles": 24
+    },
+    {
+      "name": "Shield rivet",
+      "triangles": 24
+    }
+  ]
+}

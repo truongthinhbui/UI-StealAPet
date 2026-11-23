@@ -1,0 +1,53 @@
+{
+  "id": "popup-frame",
+  "name": "Khung trang trí popup",
+  "sourcePath": "PetsCollection/Container/BG",
+  "sourceId": "sRToCiPA",
+  "group": "Khung",
+  "status": "real",
+  "slots": [
+    {
+      "name": "visible",
+      "type": "active",
+      "path": "PetsCollection/Container/BG",
+      "field": "active",
+      "default": true
+    },
+    {
+      "name": "art",
+      "type": "sprite",
+      "path": "PetsCollection/Container/BG",
+      "field": "image.spriteKey",
+      "default": "Assets/Sprites/NewAssets/ContainerBG.png"
+    },
+    {
+      "name": "tint",
+      "type": "tint",
+      "path": "PetsCollection/Container/BG",
+      "field": "image.color",
+      "default": "#FFFFFF"
+    }
+  ],
+  "states": [],
+  "usedIn": [
+    {
+      "screen": "collection",
+      "note": "Có subtree trong PetsCollection.ui"
+    },
+    {
+      "screen": "shop",
+      "note": "Đề xuất tái dùng; chưa đăng ký .ui",
+      "planned": true
+    },
+    {
+      "screen": "mission",
+      "note": "Đề xuất tái dùng; chưa đăng ký .ui",
+      "planned": true
+    }
+  ],
+  "composedOf": [],
+  "notes": [
+    "Bản mặc định giữ dữ liệu serialize .ui; không chạy binder Collection.",
+    "Chọn BG gồm decor; Container chứa toàn màn nên chỉ dùng cho list-popup. Title là sibling, được tách riêng."
+  ]
+}

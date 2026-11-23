@@ -1,0 +1,94 @@
+{
+  "checked_pass": true,
+  "violations": [],
+  "total_triangles": 1316,
+  "max_triangles": 1500,
+  "objects": {
+    "SM_Lockshield": {
+      "vertices": 686,
+      "triangles": 1316,
+      "uv_channel": "UVChannel_1",
+      "collapsed_uv_triangles": 0,
+      "nontriangle_faces": 0,
+      "smooth_faces": 1316
+    }
+  },
+  "general_qa": {
+    "ok": true,
+    "pass": true,
+    "errors": [],
+    "warnings": [
+      "SM_Lockshield: duplicate verts=23 loose verts=0",
+      "hidden back-to-back faces: SM_Lockshield (74 pairs) - delete to save tris"
+    ],
+    "ground_z": 0.0,
+    "zfighting": [],
+    "floating": [],
+    "back_to_back": [
+      {
+        "where": "SM_Lockshield",
+        "tri_pairs": 74
+      }
+    ],
+    "enclosed": [],
+    "objects": {
+      "SM_Lockshield": {
+        "verts": 686,
+        "faces": 1316,
+        "tris": 1316,
+        "ngons": 0,
+        "boundary_edges": 0,
+        "nonmanifold_edges": 0,
+        "wire_edges": 0,
+        "loose_verts": 0,
+        "degenerate_faces": 0,
+        "zero_length_edges": 0,
+        "inconsistent_normals_edges": 0,
+        "duplicate_verts": 23,
+        "islands": 14,
+        "inside_out_islands": 0,
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "materials": 1,
+        "uv_maps": 1,
+        "uv_oob_pct": 0.0,
+        "uv_zero_area_faces": 0,
+        "uv_overlap_pct": 0.0,
+        "uv_coverage_pct": 0.0
+      }
+    }
+  },
+  "qa_distances": {
+    "eps": 0.0003169087204306012,
+    "tol": 0.003169087204306012
+  },
+  "texture_header": {
+    "width": 2048,
+    "height": 2048,
+    "bit_depth": 8,
+    "color_type": 6,
+    "texture_mode": "atlas",
+    "sha256": "c58e12d35117fa3b4e02e1534dc46b3d99ff9d2f6986cb6f063299e231560b86"
+  },
+  "portable_image_links": [
+    {
+      "name": "AllPets.png",
+      "packed": true,
+      "relative_path": true,
+      "external_exists": true
+    }
+  ],
+  "not_checked": [
+    "visual acceptance",
+    "anatomy symmetry and center seam correspondence",
+    "eye preservation and mounting",
+    "UV island quality, exact overlap and padding",
+    "texture linking, flat-region color assignment (equal areas only for generated palettes)",
+    "FBX round-trip/encoding",
+    "rig deformation and animation",
+    "target-game acceptance"
+  ]
+}

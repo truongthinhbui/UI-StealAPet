@@ -1,0 +1,204 @@
+{
+  "source": "SAP_GDD/SAP_GDD",
+  "note": "Original exported sprites; CSS uses source border slices. HTML adapters retain prototype interactions.",
+  "sprites": [
+    {
+      "key": "Assets/Sprites/NewAssets/ContainerBG.png",
+      "declaredKey": "Assets/_Test/NewUI/Assets/Img_bg02_BG.png",
+      "declaredKeys": [
+        "Assets/_Test/NewUI/Assets/Img_bg02_BG.png"
+      ],
+      "fileId": "gszc833692p-mu6veyfp-g1yynwpple7",
+      "output": "./assets/ui-sprites/collection/NewAssets__ContainerBG.png",
+      "missing": false,
+      "references": [
+        "PetsCollection/Container/BG"
+      ],
+      "origins": [
+        ".ui"
+      ],
+      "border": {
+        "left": 34,
+        "right": 33,
+        "top": 32,
+        "bottom": 39
+      },
+      "width": 106,
+      "height": 118,
+      "sourceScreen": "collection",
+      "local": "NewAssets__ContainerBG.png"
+    },
+    {
+      "key": "Assets/Sprites/NewAssets/TitleBG.png",
+      "declaredKey": "Assets/Sprites/NewAssets/TitleBG.png",
+      "declaredKeys": [
+        "Assets/Sprites/NewAssets/TitleBG.png"
+      ],
+      "fileId": "zkfpx1yzvtc-mu6xhq5y-nv8ey9h3kfj",
+      "output": "./assets/ui-sprites/collection/NewAssets__TitleBG.png",
+      "missing": false,
+      "references": [
+        "PetsCollection/Container/Title"
+      ],
+      "origins": [
+        ".ui"
+      ],
+      "border": {
+        "left": 113,
+        "right": 12,
+        "top": 48,
+        "bottom": 18
+      },
+      "width": 752,
+      "height": 126,
+      "sourceScreen": "collection",
+      "local": "NewAssets__TitleBG.png"
+    },
+    {
+      "key": "Assets/Sprites/NewAssets/NormalTabBG.png",
+      "declaredKey": "Assets/Sprites/NewAssets/NormalTabBG.png",
+      "declaredKeys": [
+        "Assets/Sprites/NewAssets/NormalTabBG.png"
+      ],
+      "fileId": "8q8jtos36t8-mu9bpuqq-pdwrr2shljg",
+      "output": "./assets/ui-sprites/collection/NewAssets__NormalTabBG.png",
+      "missing": false,
+      "references": [
+        "PetsCollection/Container/RarityTabsLayout/CommonTabButton",
+        "PetsCollection/Container/RarityTabsLayout/RareTabButton",
+        "PetsCollection/Container/RarityTabsLayout/EpicTabButton",
+        "PetsCollection/Container/RarityTabsLayout/LegendaryTabButton",
+        "PetsCollection/Container/RarityTabsLayout/MythicTabButton",
+        "PetsCollection/Container/RarityTabsLayout/ApexTabButton",
+        "PetsCollection/Container/RarityTabsLayout/LimitedTabButton",
+        "PetsCollection/Container/DetailsTabsLayout/MutationsTabButton",
+        "PetsCollection/Container/DetailsTabsLayout/WeathersTabButton"
+      ],
+      "origins": [
+        ".ui"
+      ],
+      "border": {
+        "left": 20,
+        "right": 20,
+        "top": 20,
+        "bottom": 20
+      },
+      "width": 96,
+      "height": 98,
+      "sourceScreen": "collection",
+      "local": "NewAssets__NormalTabBG.png"
+    },
+    {
+      "key": "Assets/Sprites/NewAssets/SelectTabBG.png",
+      "declaredKey": "Assets/Sprites/NewAssets/SelectTabBG.png",
+      "declaredKeys": [
+        "Assets/Sprites/NewAssets/SelectTabBG.png"
+      ],
+      "fileId": "f2arxt0zsis-mu9bpuhj-5tki52jlbcn",
+      "output": "./assets/ui-sprites/collection/NewAssets__SelectTabBG.png",
+      "missing": false,
+      "references": [
+        "PetsCollection/Container/DetailsTabsLayout/InfoTabButton"
+      ],
+      "origins": [
+        ".ui"
+      ],
+      "border": {
+        "left": 10,
+        "right": 10,
+        "top": 10,
+        "bottom": 10
+      },
+      "width": 96,
+      "height": 96,
+      "sourceScreen": "collection",
+      "local": "NewAssets__SelectTabBG.png"
+    },
+    {
+      "key": "Assets/Sprites/NewAssets/ItemBG.png",
+      "declaredKey": "Assets/Sprites/NewAssets/ItemBG.png",
+      "declaredKeys": [
+        "Assets/Sprites/NewAssets/ItemBG.png"
+      ],
+      "fileId": "uxm85o6u4w-mu6xhq1i-eqcetnq7xhd",
+      "output": "./assets/ui-sprites/collection/NewAssets__ItemBG.png",
+      "missing": false,
+      "references": [
+        "PetsCollection/Container/PetsLayout/Pet (1)",
+        "PetsCollection/Container/PetDetails/Pet",
+        "PetsCollection/Container/PetDetails/Obtain/BG",
+        "PetsCollection/Container/Recipe/Pet",
+        "PetsCollection/Container/Recipe/Pet"
+      ],
+      "origins": [
+        ".ui"
+      ],
+      "border": {
+        "left": 20,
+        "right": 20,
+        "top": 20,
+        "bottom": 20
+      },
+      "width": 90,
+      "height": 90,
+      "sourceScreen": "collection",
+      "local": "NewAssets__ItemBG.png"
+    },
+    {
+      "key": "Assets/Sprites/NewAssets/BlueButton.png",
+      "declaredKey": "Assets/Sprites/NewAssets/BlueButton.png",
+      "declaredKeys": [
+        "Assets/Sprites/NewAssets/BlueButton.png"
+      ],
+      "fileId": "mgcae4djxp-mu6vevy5-j3m6yz6bep",
+      "output": "./assets/ui-sprites/activities/NewAssets__BlueButton.png",
+      "missing": false,
+      "references": [
+        "Activities/Activities/Container/Missions/Scroll View/Missions/Mission/Progress/ClaimButton",
+        "runtime:Activities:BlueButton"
+      ],
+      "origins": [
+        ".ui",
+        "runtime-code + ResourceRegisteration.asset"
+      ],
+      "border": {
+        "left": 50,
+        "right": 20,
+        "top": 20,
+        "bottom": 25
+      },
+      "width": 160,
+      "height": 66,
+      "sourceScreen": "activities",
+      "local": "NewAssets__BlueButton.png"
+    },
+    {
+      "key": "Assets/Sprites/NewAssets/YellowButton.png",
+      "declaredKey": "Assets/Sprites/NewAssets/YellowButton.png",
+      "declaredKeys": [
+        "Assets/Sprites/NewAssets/YellowButton.png"
+      ],
+      "fileId": "155t2glvvdq-mu6vewp3-o48sy8osfsn",
+      "output": "./assets/ui-sprites/activities/NewAssets__YellowButton.png",
+      "missing": false,
+      "references": [
+        "Activities/Activities/ClaimAllButton",
+        "runtime:Activities:YellowButton"
+      ],
+      "origins": [
+        ".ui",
+        "runtime-code + ResourceRegisteration.asset"
+      ],
+      "border": {
+        "left": 50,
+        "right": 20,
+        "top": 20,
+        "bottom": 25
+      },
+      "width": 160,
+      "height": 66,
+      "sourceScreen": "activities",
+      "local": "NewAssets__YellowButton.png"
+    }
+  ]
+}

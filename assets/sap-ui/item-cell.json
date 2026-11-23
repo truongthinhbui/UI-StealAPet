@@ -1,0 +1,92 @@
+{
+  "id": "item-cell",
+  "name": "Ô vật phẩm",
+  "sourcePath": "PetsCollection/Container/PetsLayout/Pet (1)",
+  "sourceId": "Y9R2FYBj",
+  "group": "Hiển thị dữ liệu",
+  "status": "real",
+  "slots": [
+    {
+      "name": "visible",
+      "type": "active",
+      "path": "PetsCollection/Container/PetsLayout/Pet (1)",
+      "field": "active",
+      "default": true
+    },
+    {
+      "name": "label",
+      "type": "text",
+      "path": "PetsCollection/Container/PetsLayout/Pet (1)/HasMW/Count",
+      "field": "text.value",
+      "default": "27",
+      "sample": "Nội dung mẫu"
+    },
+    {
+      "name": "art",
+      "type": "sprite",
+      "path": "PetsCollection/Container/PetsLayout/Pet (1)",
+      "field": "image.spriteKey",
+      "default": "Assets/Sprites/NewAssets/ItemBG.png"
+    },
+    {
+      "name": "tint",
+      "type": "tint",
+      "path": "PetsCollection/Container/PetsLayout/Pet (1)",
+      "field": "image.color",
+      "default": "#ffffff"
+    },
+    {
+      "name": "selected",
+      "type": "active",
+      "path": "PetsCollection/Container/PetsLayout/Pet (1)/SelectBorder",
+      "field": "active",
+      "default": true
+    }
+  ],
+  "states": [
+    {
+      "name": "Không chọn",
+      "when": "isSelected = false",
+      "ruleSource": "runtimeAssignments.37",
+      "overrides": [
+        {
+          "path": "PetsCollection/Container/PetsLayout/Pet (1)/SelectBorder",
+          "field": "active",
+          "value": false
+        }
+      ]
+    },
+    {
+      "name": "Chọn",
+      "when": "isSelected = true",
+      "ruleSource": "runtimeAssignments.37",
+      "overrides": [
+        {
+          "path": "PetsCollection/Container/PetsLayout/Pet (1)/SelectBorder",
+          "field": "active",
+          "value": true
+        }
+      ]
+    }
+  ],
+  "usedIn": [
+    {
+      "screen": "collection",
+      "note": "Có subtree trong PetsCollection.ui"
+    },
+    {
+      "screen": "shop",
+      "note": "Đề xuất tái dùng; chưa đăng ký .ui",
+      "planned": true
+    },
+    {
+      "screen": "mission",
+      "note": "Đề xuất tái dùng; chưa đăng ký .ui",
+      "planned": true
+    }
+  ],
+  "composedOf": [],
+  "notes": [
+    "Bản mặc định giữ dữ liệu serialize .ui; không chạy binder Collection."
+  ]
+}

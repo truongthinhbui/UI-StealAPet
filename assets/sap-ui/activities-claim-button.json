@@ -1,0 +1,79 @@
+{
+  "id": "activities-claim-button",
+  "name": "Activities · Nút nhận thưởng",
+  "sourceScreen": "activities",
+  "sourcePath": "Activities/Activities/Container/Missions/Scroll View/Missions/Mission/Progress/ClaimButton",
+  "sourceId": "UaEwmJ0H",
+  "group": "Điều khiển",
+  "status": "runtime",
+  "slots": [
+    {
+      "name": "visible",
+      "type": "active",
+      "path": "Activities/Activities/Container/Missions/Scroll View/Missions/Mission/Progress/ClaimButton",
+      "sourceId": "UaEwmJ0H",
+      "field": "active",
+      "default": true
+    },
+    {
+      "name": "label",
+      "type": "text",
+      "path": "Activities/Activities/Container/Missions/Scroll View/Missions/Mission/Progress/ClaimButton/Text",
+      "sourceId": "TUrhtG94",
+      "field": "text.key",
+      "default": "HUD_ACTIVITIES_CLAIM",
+      "sample": "Nhận mẫu"
+    }
+  ],
+  "states": [
+    {
+      "name": "Có thể nhận",
+      "when": "isClaimable=true",
+      "ruleSource": "bindings.mission",
+      "overrides": [
+        {
+          "path": "Activities/Activities/Container/Missions/Scroll View/Missions/Mission/Progress/ClaimButton",
+          "sourceId": "UaEwmJ0H",
+          "field": "button.spriteKey",
+          "value": "Assets/Sprites/NewAssets/YellowButton.png"
+        },
+        {
+          "path": "Activities/Activities/Container/Missions/Scroll View/Missions/Mission/Progress/ClaimButton",
+          "sourceId": "UaEwmJ0H",
+          "field": "button.normal",
+          "value": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "name": "Chưa thể nhận",
+      "when": "isClaimable=false",
+      "ruleSource": "bindings.mission",
+      "overrides": [
+        {
+          "path": "Activities/Activities/Container/Missions/Scroll View/Missions/Mission/Progress/ClaimButton",
+          "sourceId": "UaEwmJ0H",
+          "field": "button.spriteKey",
+          "value": "Assets/Sprites/NewAssets/BlueButton.png"
+        },
+        {
+          "path": "Activities/Activities/Container/Missions/Scroll View/Missions/Mission/Progress/ClaimButton",
+          "sourceId": "UaEwmJ0H",
+          "field": "button.normal",
+          "value": "#777777"
+        }
+      ]
+    }
+  ],
+  "usedIn": [
+    {
+      "screen": "activities",
+      "note": "Subtree thật từ Activities.ui; không chạy binder trong template"
+    }
+  ],
+  "composedOf": [],
+  "notes": [
+    "Bản mặc định giữ snapshot .ui. Tham số mẫu chỉ dùng xem thử, không phải config game.",
+    "Đây là biến thể hình ảnh; không gửi request nhận thưởng và không cấp quà."
+  ]
+}

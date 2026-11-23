@@ -1,0 +1,78 @@
+{
+  "triangles": 1352,
+  "vertices": 2483,
+  "parts": [
+    {
+      "name": "Wide plinth",
+      "triangles": 64
+    },
+    {
+      "name": "Pale plinth trim",
+      "triangles": 64
+    },
+    {
+      "name": "Status light band",
+      "triangles": 64
+    },
+    {
+      "name": "Rounded frame leg",
+      "triangles": 124
+    },
+    {
+      "name": "Rounded frame leg",
+      "triangles": 124
+    },
+    {
+      "name": "Frame top crossbar",
+      "triangles": 124
+    },
+    {
+      "name": "Hanging neck",
+      "triangles": 40
+    },
+    {
+      "name": "Flared bell dome",
+      "triangles": 256
+    },
+    {
+      "name": "Thick bell lip",
+      "triangles": 64
+    },
+    {
+      "name": "Dark bell underside",
+      "triangles": 64
+    },
+    {
+      "name": "Bell clapper",
+      "triangles": 48
+    },
+    {
+      "name": "Cream paw medallion",
+      "triangles": 48
+    },
+    {
+      "name": "Paw palm",
+      "triangles": 48
+    },
+    {
+      "name": "Paw toe",
+      "triangles": 24
+    },
+    {
+      "name": "Paw toe",
+      "triangles": 24
+    },
+    {
+      "name": "Paw toe",
+      "triangles": 24
+    },
+    {
+      "name": "Paw toe",
+      "triangles": 24
+    },
+    {
+      "name": "Activation plaque",
+      "triangles": 124
+    }
+  ]
+}

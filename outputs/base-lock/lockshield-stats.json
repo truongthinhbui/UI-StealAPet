@@ -1,0 +1,62 @@
+{
+  "triangles": 1228,
+  "vertices": 2571,
+  "parts": [
+    {
+      "name": "Pedestal lower foot",
+      "triangles": 80
+    },
+    {
+      "name": "Pedestal cream rim",
+      "triangles": 80
+    },
+    {
+      "name": "Pedestal upper slope",
+      "triangles": 80
+    },
+    {
+      "name": "Status band",
+      "triangles": 80
+    },
+    {
+      "name": "Pedestal collar",
+      "triangles": 64
+    },
+    {
+      "name": "Short upright support",
+      "triangles": 124
+    },
+    {
+      "name": "Original rounded gold lock housing",
+      "triangles": 124
+    },
+    {
+      "name": "Original cream inset face",
+      "triangles": 124
+    },
+    {
+      "name": "Original heavy U shackle",
+      "triangles": 216
+    },
+    {
+      "name": "Raised navy shield border",
+      "triangles": 108
+    },
+    {
+      "name": "Blue shield emblem",
+      "triangles": 12
+    },
+    {
+      "name": "Gold badge keyhole",
+      "triangles": 10
+    },
+    {
+      "name": "Badge keyhole stem",
+      "triangles": 2
+    },
+    {
+      "name": "Original rear access plate",
+      "triangles": 124
+    }
+  ]
+}

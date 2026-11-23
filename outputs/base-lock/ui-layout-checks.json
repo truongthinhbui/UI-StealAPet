@@ -1,0 +1,170 @@
+[
+  {
+    "width": 1440,
+    "overflow": false,
+    "dialogInFrame": true,
+    "scrolling": false,
+    "buttons": [
+      {
+        "width": 318,
+        "height": 64,
+        "textWidth": 82.40625,
+        "centerOffsetX": 0,
+        "centerOffsetY": -2.40625,
+        "font": "\"GFF Latin\", Arial, sans-serif"
+      },
+      {
+        "width": 318,
+        "height": 64,
+        "textWidth": 133.25,
+        "centerOffsetX": 0,
+        "centerOffsetY": -2.40625,
+        "font": "\"GFF Latin\", Arial, sans-serif"
+      }
+    ],
+    "fonts": [
+      "700",
+      "400"
+    ]
+  },
+  {
+    "width": 1024,
+    "overflow": false,
+    "dialogInFrame": true,
+    "scrolling": false,
+    "buttons": [
+      {
+        "width": 318,
+        "height": 64,
+        "textWidth": 82.40625,
+        "centerOffsetX": 0,
+        "centerOffsetY": -2.40625,
+        "font": "\"GFF Latin\", Arial, sans-serif"
+      },
+      {
+        "width": 318,
+        "height": 64,
+        "textWidth": 133.25,
+        "centerOffsetX": 0,
+        "centerOffsetY": -2.40625,
+        "font": "\"GFF Latin\", Arial, sans-serif"
+      }
+    ],
+    "fonts": [
+      "700",
+      "400"
+    ]
+  },
+  {
+    "width": 768,
+    "overflow": false,
+    "dialogInFrame": true,
+    "scrolling": false,
+    "buttons": [
+      {
+        "width": 308.640625,
+        "height": 64,
+        "textWidth": 82.40625,
+        "centerOffsetX": -0.0078125,
+        "centerOffsetY": -2.40625,
+        "font": "\"GFF Latin\", Arial, sans-serif"
+      },
+      {
+        "width": 308.640625,
+        "height": 64,
+        "textWidth": 133.25,
+        "centerOffsetX": -0.0078125,
+        "centerOffsetY": -2.40625,
+        "font": "\"GFF Latin\", Arial, sans-serif"
+      }
+    ],
+    "fonts": [
+      "700",
+      "400"
+    ]
+  },
+  {
+    "width": 650,
+    "overflow": false,
+    "dialogInFrame": true,
+    "scrolling": false,
+    "buttons": [
+      {
+        "width": 277,
+        "height": 52,
+        "textWidth": 61.8125,
+        "centerOffsetX": 0,
+        "centerOffsetY": -2.296875,
+        "font": "\"GFF Latin\", Arial, sans-serif"
+      },
+      {
+        "width": 277,
+        "height": 52,
+        "textWidth": 99.9375,
+        "centerOffsetX": 0,
+        "centerOffsetY": -2.296875,
+        "font": "\"GFF Latin\", Arial, sans-serif"
+      }
+    ],
+    "fonts": [
+      "700",
+      "400"
+    ]
+  },
+  {
+    "width": 390,
+    "overflow": false,
+    "dialogInFrame": true,
+    "scrolling": false,
+    "buttons": [
+      {
+        "width": 147,
+        "height": 52,
+        "textWidth": 61.8125,
+        "centerOffsetX": 0,
+        "centerOffsetY": -2.296875,
+        "font": "\"GFF Latin\", Arial, sans-serif"
+      },
+      {
+        "width": 147,
+        "height": 52,
+        "textWidth": 99.9375,
+        "centerOffsetX": 0,
+        "centerOffsetY": -2.296875,
+        "font": "\"GFF Latin\", Arial, sans-serif"
+      }
+    ],
+    "fonts": [
+      "700",
+      "400"
+    ]
+  },
+  {
+    "width": 320,
+    "overflow": false,
+    "dialogInFrame": true,
+    "scrolling": false,
+    "buttons": [
+      {
+        "width": 116,
+        "height": 52,
+        "textWidth": 54.9375,
+        "centerOffsetX": 0,
+        "centerOffsetY": -1.59375,
+        "font": "\"GFF Latin\", Arial, sans-serif"
+      },
+      {
+        "width": 116,
+        "height": 52,
+        "textWidth": 88.84375,
+        "centerOffsetX": 0,
+        "centerOffsetY": -1.59375,
+        "font": "\"GFF Latin\", Arial, sans-serif"
+      }
+    ],
+    "fonts": [
+      "700",
+      "400"
+    ]
+  }
+]

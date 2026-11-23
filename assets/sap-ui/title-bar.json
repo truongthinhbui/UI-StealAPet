@@ -1,0 +1,62 @@
+{
+  "id": "title-bar",
+  "name": "Thanh tiêu đề",
+  "sourcePath": "PetsCollection/Container/Title",
+  "sourceId": "JUnMlJee",
+  "group": "Khung",
+  "status": "real",
+  "slots": [
+    {
+      "name": "visible",
+      "type": "active",
+      "path": "PetsCollection/Container/Title",
+      "field": "active",
+      "default": true
+    },
+    {
+      "name": "label",
+      "type": "text",
+      "path": "PetsCollection/Container/Title/Label",
+      "field": "text.key",
+      "default": "HUD_COLLECTION_TITLE",
+      "sample": "Nội dung mẫu"
+    },
+    {
+      "name": "art",
+      "type": "sprite",
+      "path": "PetsCollection/Container/Title",
+      "field": "image.spriteKey",
+      "default": "Assets/Sprites/NewAssets/TitleBG.png"
+    },
+    {
+      "name": "tint",
+      "type": "tint",
+      "path": "PetsCollection/Container/Title",
+      "field": "image.color",
+      "default": "#ffffff"
+    }
+  ],
+  "states": [],
+  "usedIn": [
+    {
+      "screen": "collection",
+      "note": "Có subtree trong PetsCollection.ui"
+    },
+    {
+      "screen": "shop",
+      "note": "Đề xuất tái dùng; chưa đăng ký .ui",
+      "planned": true
+    },
+    {
+      "screen": "mission",
+      "note": "Đề xuất tái dùng; chưa đăng ký .ui",
+      "planned": true
+    }
+  ],
+  "composedOf": [
+    "close-button"
+  ],
+  "notes": [
+    "Bản mặc định giữ dữ liệu serialize .ui; không chạy binder Collection."
+  ]
+}

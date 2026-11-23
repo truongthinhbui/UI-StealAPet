@@ -1,0 +1,74 @@
+{
+  "triangles": 1348,
+  "vertices": 2458,
+  "parts": [
+    {
+      "name": "Pedestal lower foot",
+      "triangles": 80
+    },
+    {
+      "name": "Pedestal cream rim",
+      "triangles": 80
+    },
+    {
+      "name": "Pedestal upper slope",
+      "triangles": 80
+    },
+    {
+      "name": "Status band",
+      "triangles": 80
+    },
+    {
+      "name": "Pedestal collar",
+      "triangles": 64
+    },
+    {
+      "name": "Short upright support",
+      "triangles": 124
+    },
+    {
+      "name": "Rounded gold lock housing",
+      "triangles": 124
+    },
+    {
+      "name": "Cream inset face",
+      "triangles": 124
+    },
+    {
+      "name": "Heavy U shackle",
+      "triangles": 216
+    },
+    {
+      "name": "Paw palm",
+      "triangles": 48
+    },
+    {
+      "name": "Paw toe L outer",
+      "triangles": 48
+    },
+    {
+      "name": "Paw toe L inner",
+      "triangles": 48
+    },
+    {
+      "name": "Paw toe R inner",
+      "triangles": 48
+    },
+    {
+      "name": "Paw toe R outer",
+      "triangles": 48
+    },
+    {
+      "name": "Keyhole round",
+      "triangles": 10
+    },
+    {
+      "name": "Keyhole stem",
+      "triangles": 2
+    },
+    {
+      "name": "Rear inset access plate",
+      "triangles": 124
+    }
+  ]
+}

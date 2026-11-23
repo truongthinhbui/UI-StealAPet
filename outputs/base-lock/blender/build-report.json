@@ -1,0 +1,53 @@
+{
+  "source_triangles": 1228,
+  "triangles": 1316,
+  "vertices": 686,
+  "height_m": 1.2000000476837158,
+  "dimensions_m": [
+    0.7317029237747192,
+    0.7317029237747192,
+    1.2000000476837158
+  ],
+  "material_count": 1,
+  "texture_sha256": "c58e12d35117fa3b4e02e1534dc46b3d99ff9d2f6986cb6f063299e231560b86",
+  "uv": {
+    "gold": {
+      "rectangle": [
+        593,
+        416,
+        19,
+        17
+      ],
+      "outer_padding_pixels": 2
+    },
+    "cream": {
+      "rectangle": [
+        572,
+        532,
+        20,
+        29
+      ],
+      "outer_padding_pixels": 2
+    },
+    "navy": {
+      "rectangle": [
+        1665,
+        1627,
+        15,
+        26
+      ],
+      "outer_padding_pixels": 2
+    },
+    "blue": {
+      "rectangle": [
+        934,
+        1693,
+        25,
+        42
+      ],
+      "outer_padding_pixels": 2
+    }
+  },
+  "collection": "COL_Lockshield",
+  "object": "SM_Lockshield"
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "flow": "confirm",
+    "width": 1440,
+    "inside": true,
+    "pageOverflow": false,
+    "dialogOverflow": false
+  },
+  {
+    "flow": "cards",
+    "width": 1440,
+    "inside": true,
+    "pageOverflow": false,
+    "dialogOverflow": false
+  },
+  {
+    "flow": "confirm",
+    "width": 768,
+    "inside": true,
+    "pageOverflow": false,
+    "dialogOverflow": false
+  },
+  {
+    "flow": "cards",
+    "width": 768,
+    "inside": true,
+    "pageOverflow": false,
+    "dialogOverflow": false
+  },
+  {
+    "flow": "confirm",
+    "width": 390,
+    "inside": true,
+    "pageOverflow": false,
+    "dialogOverflow": false
+  },
+  {
+    "flow": "cards",
+    "width": 390,
+    "inside": true,
+    "pageOverflow": false,
+    "dialogOverflow": false
+  },
+  {
+    "flow": "confirm",
+    "width": 320,
+    "inside": true,
+    "pageOverflow": false,
+    "dialogOverflow": false
+  },
+  {
+    "flow": "cards",
+    "width": 320,
+    "inside": true,
+    "pageOverflow": false,
+    "dialogOverflow": false
+  }
+]
