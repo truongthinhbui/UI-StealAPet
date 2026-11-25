@@ -1,0 +1,552 @@
+{
+  "schema_version": "3.0.0",
+  "design_id": "BASE_LOCK",
+  "version": "3.0.0",
+  "date": "2026-11-25",
+  "status": "design_draft",
+  "production_ready": false,
+  "supersedes": [
+    "base-lock-config.v1.json",
+    "base-lock-config.v2.json"
+  ],
+  "sources_checked": [
+    "[Craftland] Steal A Pet GDD.xlsx :: Unlocking Rule, Base Passives, Shop System, Current Plan, Detail Planning, Localization Key, Player Log",
+    "[Craftland] Steal A Pet Master Data.xlsx :: Rebirth 2.2, UnlockCost, ShopConfig, Tooltips, PassiveItem, TierItem, DailyActivity, CallbackMissionList, OnboardingMissionList"
+  ],
+  "changelog_v3": [
+    "Băng bảo vệ dùng chung tầm với nút mở khóa (chốt 25/11/2026)",
+    "Thêm luồng phía người đi trộm: nút đỏ XEM KHÓA, băng NHÀ ĐANG ĐƯỢC BẢO VỆ, popup KHÔNG THỂ MỞ KHÓA không hiện giá",
+    "Bảo vệ cứng: force-unlock bằng Pet Coin KHÔNG mở được base đang có khóa nạp (quyết định 25/11/2026)",
+    "Thang thời lượng: giữ 2/5/10 phút theo quyết định 25/11/2026; thang giây giữ lại làm khuyến nghị cân bằng",
+    "Bỏ barrier.block_nonowner_entry: UnlockCost ghi rõ 'Enter any base freely'",
+    "Bỏ existing_intruder_policy (đẩy người lạ ra) - không có cơ chế này trong game",
+    "Đổi ID thiết kế sang quy ước ShopConfig Name + HUD_SHOP_* localize key",
+    "Thêm integration: force-unlock, UnlockCooldown, passive Lockdown/Stronghold, mission LockBase",
+    "Neo giá và nguồn phát theo Shop System 'Under Protection' và Current Plan 3.5.0/3.6.0"
+  ],
+  "reference_data": {
+    "base_lock_time_seconds_by_rb": {
+      "1": 30,
+      "2": 35,
+      "3": 40,
+      "4": 45,
+      "5": 50,
+      "6": 60,
+      "7": 65,
+      "8": 70,
+      "9": 80,
+      "10": 90,
+      "11": 100,
+      "12": 110,
+      "13": 120,
+      "14": 130,
+      "15": 140,
+      "16": 150,
+      "17_to_30": 160
+    },
+    "unlock_cooldown_seconds_by_rb": {
+      "1_4": 15,
+      "5_9": 30,
+      "10_14": 45,
+      "15_19": 60,
+      "20_25": 90,
+      "26_28": 120,
+      "29_30": 180
+    },
+    "unlock_cost_pet_coin": {
+      "note": "UnlockCost sheet: hàng = rarity cao nhất trộm được, cột = RB gap band",
+      "bands": [
+        "<3",
+        "4-6",
+        "7-9",
+        "10+"
+      ],
+      "COMMON": [
+        4,
+        5,
+        7,
+        11
+      ],
+      "RARE": [
+        6,
+        8,
+        11,
+        18
+      ],
+      "EPIC": [
+        9,
+        12,
+        17,
+        27
+      ],
+      "LEGENDARY": [
+        13,
+        17,
+        23,
+        36
+      ],
+      "MYTHIC": [
+        19,
+        24,
+        33,
+        52
+      ],
+      "APEX": [
+        28,
+        35,
+        48,
+        75
+      ],
+      "LIMITED": [
+        40,
+        50,
+        68,
+        106
+      ]
+    },
+    "related_shop_item": {
+      "id": 15,
+      "name": "Under Protection",
+      "effect": "Protect your base for 24 hours",
+      "cost_pet_coin": 240,
+      "rebirth_requirement": 7,
+      "version": "PENDING"
+    },
+    "related_passives": [
+      {
+        "id": 4,
+        "name": "Lockdown",
+        "localize": "HUD_PASSIVE_TITLE_LOCKDOWN",
+        "effect": "+1s cost to lock time",
+        "meter": 300,
+        "ranks": "1-3 (70/25/5%)"
+      },
+      {
+        "name": "Stronghold",
+        "effect": "Extra duration on the next base lock",
+        "min": 1,
+        "max": 5,
+        "unit": "sec",
+        "status": "Demo"
+      },
+      {
+        "id": 3,
+        "name": "Fortify",
+        "localize": "HUD_PASSIVE_TITLE_FORTIFY",
+        "effect": "+20 Pet Coin to unlock base cost",
+        "meter": 250
+      }
+    ],
+    "roadmap_lines": [
+      {
+        "version": "3.5.0",
+        "priority": "P0",
+        "text": "Item protect base like VRising (purchase by diamond and claim through 7d reward)"
+      },
+      {
+        "version": "3.6.0",
+        "priority": "P2",
+        "text": "Item Protect Base by time"
+      }
+    ]
+  },
+  "core": {
+    "station": {
+      "id": "LOCKSHIELD_STATION",
+      "placement": "right_of_yellow_base_pad",
+      "status_anchor": "above_yellow_base_pad",
+      "interaction": "proximity_gated_screen_button"
+    },
+    "items": [
+      {
+        "shop_config_id": 16,
+        "name": "BaseLockKey2M",
+        "display_vi": "Khóa nhà 2 phút",
+        "duration_seconds": 120,
+        "icon_tier": "blue",
+        "consume_per_request": 1,
+        "enabled": true,
+        "name_localize": "HUD_SHOP_ITEM_BASE_LOCK_KEY_2M",
+        "description_localize": "HUD_SHOP_DETAILS_BASE_LOCK_KEY_2M"
+      },
+      {
+        "shop_config_id": 17,
+        "name": "BaseLockKey5M",
+        "display_vi": "Khóa nhà 5 phút",
+        "duration_seconds": 300,
+        "icon_tier": "purple",
+        "consume_per_request": 1,
+        "enabled": true,
+        "name_localize": "HUD_SHOP_ITEM_BASE_LOCK_KEY_5M",
+        "description_localize": "HUD_SHOP_DETAILS_BASE_LOCK_KEY_5M"
+      },
+      {
+        "shop_config_id": 18,
+        "name": "BaseLockKey10M",
+        "display_vi": "Khóa nhà 10 phút",
+        "duration_seconds": 600,
+        "icon_tier": "gold",
+        "consume_per_request": 1,
+        "enabled": true,
+        "name_localize": "HUD_SHOP_ITEM_BASE_LOCK_KEY_10M",
+        "description_localize": "HUD_SHOP_DETAILS_BASE_LOCK_KEY_10M"
+      }
+    ],
+    "duration_scale": {
+      "selected": "prototype_minutes",
+      "decided_by": "user, 25/11/2026",
+      "prototype_minutes": [
+        120,
+        300,
+        600
+      ],
+      "aligned_seconds_recommended": [
+        30,
+        60,
+        120
+      ],
+      "status": "decided_against_recommendation",
+      "open_balance_risk": "Khóa 600 giây = 3,75 lần BaseLockTime ở RB trần VÀ không có counterplay trả phí. Trần tích lũy và khan hiếm nguồn phát trở thành bắt buộc, không còn tùy chọn.",
+      "rationale_for_seconds": "BaseLockTime 30-160s; passive mạnh nhất chỉ thêm 5s.",
+      "compensation_options_remaining": [
+        "accumulation_cap",
+        "scarcity_of_supply"
+      ],
+      "compensation_option_removed": "force_unlock_bypass (bị loại bởi quyết định bảo vệ cứng)"
+    },
+    "refill": {
+      "allow_while_active": true,
+      "allow_mixed_item_types": true,
+      "quantity_per_request": 1,
+      "expiration_formula": "max(expires_at_unix_ms, server_now_unix_ms) + duration_seconds * 1000",
+      "stacking_formula": "BaseLockTime(RB) + Lockdown_bonus + Stronghold_bonus + sum(refilled_key_seconds)",
+      "multiplicative_stacking": false,
+      "cooldown_seconds": 0,
+      "timer_continues_while_dialog_open": true,
+      "close_dialog_on_success": false,
+      "close_dialog_on_expiry": false,
+      "allow_consecutive_refills_without_reopen": true,
+      "counts_as_lock_base_action": true,
+      "lock_base_mission_keys": [
+        "MISSION_LOCK_BASE",
+        "LockBase"
+      ]
+    },
+    "protection_scope": {
+      "decided_by": "user, 25/11/2026",
+      "intent": "hard_protection",
+      "blocks_nonowner_entry": false,
+      "blocks_door_unlock_for_theft": true,
+      "paid_force_unlock_still_available": false,
+      "force_unlock_blocked_while_item_lock_active": true,
+      "force_unlock_price_source_when_unprotected": "UnlockCost",
+      "defender_cooldown_source": "Rebirth 2.2!UnlockCooldown",
+      "defender_cooldown_on_item_lock": "not_applicable_no_paid_open_can_happen",
+      "owner_entry": "unrestricted",
+      "double_cost_item_effect_while_protected": "no_effect",
+      "fortify_passive_effect_while_protected": "no_effect",
+      "only_exit_is_timer_expiry": true,
+      "out_of_scope_unchanged": [
+        "natural opening",
+        "steal rules",
+        "carrying",
+        "laser wall",
+        "storage",
+        "Favorite Pet",
+        "normal relock"
+      ],
+      "breaks": [
+        "Unlocking Rule!A5 \"Keep stealing\" - base có khóa nạp là bất khả xâm phạm tới khi hết giờ",
+        "UnlockCost mất tác dụng trong thời gian bảo vệ, giảm sink Pet Coin",
+        "Passive Fortify (+20 Pet Coin vào giá mở cửa) thành vô dụng khi base đang bảo vệ",
+        "Item Double Cost (Shop System ID 3) thành vô dụng khi base đang bảo vệ",
+        "Unlocking Rule mục 3 Defender Cooldown không còn điểm kích hoạt trong thời gian bảo vệ"
+      ],
+      "required_mitigations": [
+        "Trần tích lũy bắt buộc: không cho xếp chồng vô hạn",
+        "Khan hiếm nguồn phát: giới hạn số khóa nhận mỗi ngày hoặc mỗi event",
+        "Đánh dấu base đang bảo vệ từ ngoài để người đi trộm không mất công vào"
+      ],
+      "notes_on_master_key": "Master Key không phải mechanic đang chạy. Dòng Shop System ID 12 thuộc build OB52, giữ lại như lịch sử; không thiết kế tương tác với nó."
+    },
+    "feedback": {
+      "refill_animation": {
+        "enabled": true,
+        "type": "count_up_remaining_time",
+        "duration_ms": 900,
+        "easing": "ease_out_cubic",
+        "value_from": "remaining_seconds_before_refill",
+        "value_to": "remaining_seconds_after_refill",
+        "targets": [
+          "dialog_remaining_time",
+          "world_station_timer"
+        ],
+        "scale_peak": 1.14,
+        "scale_settle": 1.04,
+        "highlight_color_hex": "#1E8F44",
+        "glow": "0 0 14px rgba(60,200,110,0.65)",
+        "tick_source": "requestAnimationFrame",
+        "blocks_input": false,
+        "restart_on_new_refill": true,
+        "cancel_on": [
+          "dialog_close",
+          "flow_reset"
+        ],
+        "authority": "client_visual_only",
+        "reduced_motion": "apply_final_value_immediately"
+      },
+      "gain_badge": {
+        "enabled": false,
+        "note": "Nhãn +N phút bỏ ngày 25/11/2026"
+      },
+      "toast_on_success": {
+        "enabled": true,
+        "duration_ms": 3500,
+        "text_key": "HUD_BASE_LOCK_REFILL_SUCCESS"
+      }
+    },
+    "display": {
+      "timer_format": "MM:SS_unbounded_minutes",
+      "seconds_rounding": "ceil",
+      "tier_source": "real_remaining_seconds",
+      "tiers": [
+        {
+          "id": "idle",
+          "min_seconds_exclusive": null,
+          "max_seconds_inclusive": 0,
+          "aura_enabled": false,
+          "rings": 0,
+          "particles": 0,
+          "rays": false,
+          "color_hex": null,
+          "prop_image": "assets/base-lock/lockshield-prop.png",
+          "label_key": ""
+        },
+        {
+          "id": "blue",
+          "min_seconds_exclusive": 0,
+          "max_seconds_inclusive": 120,
+          "aura_enabled": true,
+          "rings": 1,
+          "particles": 2,
+          "rays": false,
+          "color_hex": "#75CFFF",
+          "prop_image": "assets/base-lock/lockshield-blue.png",
+          "label_key": "HUD_BASE_LOCK_TIER_BLUE"
+        },
+        {
+          "id": "purple",
+          "min_seconds_exclusive": 120,
+          "max_seconds_inclusive": 300,
+          "aura_enabled": true,
+          "rings": 2,
+          "particles": 5,
+          "rays": false,
+          "color_hex": "#D29AFF",
+          "prop_image": "assets/base-lock/lockshield-purple.png",
+          "label_key": "HUD_BASE_LOCK_TIER_PURPLE"
+        },
+        {
+          "id": "gold",
+          "min_seconds_exclusive": 300,
+          "max_seconds_inclusive": null,
+          "aura_enabled": true,
+          "rings": 2,
+          "particles": 8,
+          "rays": true,
+          "color_hex": "#FFDC70",
+          "prop_image": "assets/base-lock/lockshield-gold.png",
+          "label_key": "HUD_BASE_LOCK_TIER_GOLD"
+        }
+      ],
+      "reduced_motion": "static_rings_no_particle_motion"
+    },
+    "ui": {
+      "available_flows": [
+        "confirm",
+        "cards"
+      ],
+      "production_selected_flow": null,
+      "prototype_default_flow": "confirm",
+      "default_item": "BaseLockKeyShort",
+      "focus_after_success": "refill_button_if_enabled_else_close_button",
+      "dialog_close_triggers": [
+        "cancel_button",
+        "close_x",
+        "escape_key"
+      ],
+      "show_quantity_selector": false,
+      "show_post_refill_time": false,
+      "show_inventory_hud": false,
+      "show_count_on_item_cards": true,
+      "strings_from_localization_sheet": true,
+      "title_localize_key": "LOCK_BASE",
+      "title_vi_official": "Khóa nhà",
+      "title_vi_in_prototype": "KHÓA BASE",
+      "title_mismatch": true,
+      "raider_view_in_prototype": true
+    },
+    "raider_view": {
+      "implemented_in_prototype": true,
+      "unprotected": {
+        "button_label": "MỞ KHÓA",
+        "button_color": "blue",
+        "dialog_title": "XÁC NHẬN MỞ KHÓA",
+        "dialog_copy": "Bạn có muốn mở khóa nhà này với giá:",
+        "show_price": true,
+        "price_source": "UnlockCost[rarity][gap_band]",
+        "actions": [
+          "KHÔNG",
+          "CÓ"
+        ]
+      },
+      "protected": {
+        "button_label": "XEM KHÓA",
+        "button_color": "red",
+        "world_banner": "NHÀ ĐANG ĐƯỢC BẢO VỆ",
+        "world_banner_shows_countdown": true,
+        "dialog_title": "KHÔNG THỂ MỞ KHÓA",
+        "dialog_copy": "Nhà này đang được bảo vệ bởi Khóa nhà cấp cao.",
+        "dialog_reason": "Không thể mở bằng Pet Coin. Chờ hết thời gian bảo vệ.",
+        "show_price": false,
+        "show_countdown": true,
+        "countdown_label": "Mở lại sau",
+        "actions": [
+          "ĐÃ HIỂU"
+        ]
+      },
+      "rules": [
+        "Không bao giờ hiện giá rồi mới từ chối: nhánh bảo vệ giấu hoàn toàn giá và icon coin",
+        "Trạng thái bảo vệ đổi khi popup đang mở thì popup đổi nội dung ngay, không chờ người chơi bấm",
+        "Không trừ Pet Coin trong mọi nhánh bị chặn",
+        "Băng NHÀ ĐANG ĐƯỢC BẢO VỆ là hiện thực của hạng mục bắt buộc \"dấu hiệu nhìn từ ngoài\""
+      ],
+      "unresolved": {
+        "sfx_on_blocked": null
+      },
+      "visibility_gate": {
+        "decided_by": "user, 25/11/2026",
+        "rule": "same_as_unlock_button",
+        "shows_at_distance_m": 3,
+        "hides_at_distance_m": 3.5,
+        "applies_to": [
+          "raid_button",
+          "world_banner",
+          "dialog"
+        ],
+        "far_state_text": "Đến gần để xem khóa nhà",
+        "readable_from_afar": "chỉ tượng và aura của trụ (lam/tím/vàng theo thời gian còn lại)",
+        "known_tradeoff": "Người đi trộm chỉ biết nhà bị khóa khi đã chạy tới nơi",
+        "widening_options_if_needed": [
+          "băng hiện sớm hơn nút",
+          "đánh dấu trên minimap"
+        ]
+      }
+    }
+  },
+  "master_data_rows_to_add": {
+    "ShopConfig": [
+      {
+        "ID": 16,
+        "Name": "BaseLockKey2M",
+        "Cost": null,
+        "Description": "HUD_SHOP_DETAILS_BASE_LOCK_KEY_2M",
+        "TimeLock": null,
+        "Requirement": 7,
+        "NameLocalize": "HUD_SHOP_ITEM_BASE_LOCK_KEY_2M"
+      },
+      {
+        "ID": 17,
+        "Name": "BaseLockKey5M",
+        "Cost": null,
+        "Description": "HUD_SHOP_DETAILS_BASE_LOCK_KEY_5M",
+        "TimeLock": null,
+        "Requirement": 7,
+        "NameLocalize": "HUD_SHOP_ITEM_BASE_LOCK_KEY_5M"
+      },
+      {
+        "ID": 18,
+        "Name": "BaseLockKey10M",
+        "Cost": null,
+        "Description": "HUD_SHOP_DETAILS_BASE_LOCK_KEY_10M",
+        "TimeLock": null,
+        "Requirement": 7,
+        "NameLocalize": "HUD_SHOP_ITEM_BASE_LOCK_KEY_10M"
+      }
+    ],
+    "Tooltips": [
+      {
+        "ID": 29,
+        "Name": "HUD_ITEM_TITLE_BASE_LOCK_KEY",
+        "Description": "HUD_REWARD_DETAIL_BASE_LOCK_KEY",
+        "Obtain": "HUD_OBTAIN_BASE_LOCK_KEY"
+      }
+    ],
+    "TierItem": [
+      {
+        "TypeItem": "BaseLockKey",
+        "Tier": "Epic",
+        "status": "requires_confirmation"
+      }
+    ],
+    "Localization Key": [
+      "LOCK_BASE_KEY",
+      "LOCK_BASE_TIME_LEFT",
+      "LOCK_BASE_REFILL"
+    ],
+    "Player Log": [
+      "base_lock_keys_refilled_count",
+      "base_lock_seconds_from_items"
+    ]
+  },
+  "prototype": {
+    "initial_inventory_per_type": 3,
+    "initial_remaining_seconds": 0,
+    "accumulation_limit_seconds": null,
+    "clock": "browser_Date_now",
+    "persistence": "none",
+    "implemented_in": "assets/base-lock.js, assets/base-lock.css",
+    "still_running_legacy_minute_scale": false,
+    "missing_vs_v3": [
+      "force_unlock",
+      "passives",
+      "missions",
+      "localization",
+      "server_authority"
+    ],
+    "scale_matches_config": true
+  },
+  "production_proposals": {
+    "status": "requires_design_confirmation",
+    "authority": "server",
+    "owner_only_refill": true,
+    "show_button_distance_m": 3,
+    "hide_button_distance_m": 3.5,
+    "server_refill_max_distance_m": 3.5,
+    "offline_policy": "continue_realtime_and_persist_expiration",
+    "cross_server_policy": "preserve_expiration_for_same_base_and_owner",
+    "transaction": {
+      "atomic_inventory_and_expiration": true,
+      "idempotency_key": "request_id",
+      "disable_submit_while_pending": true,
+      "retry_same_request_id": true,
+      "consume_only_on_server_success": true
+    }
+  },
+  "unresolved": {
+    "relation_to_under_protection_item": null,
+    "stronghold_applies_to_item_lock": null,
+    "price_by_item": null,
+    "acquisition_source": null,
+    "accumulation_cap_seconds": null,
+    "tier_item_tier": null,
+    "production_flow": null,
+    "rebirth_policy": null,
+    "ownership_transfer_policy": null,
+    "sfx_on_refill": null,
+    "accumulation_cap_status": "bắt buộc phải chốt, không còn là tùy chọn",
+    "supply_limit_per_day": null,
+    "protected_base_visible_marker": null,
+    "pet_coin_sink_compensation": null
+  }
+}

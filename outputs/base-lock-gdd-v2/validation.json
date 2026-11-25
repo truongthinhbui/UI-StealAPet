@@ -1,0 +1,34 @@
+{
+  "tierTests": [
+    {
+      "seconds": 0,
+      "actual": "idle"
+    },
+    {
+      "seconds": 1,
+      "actual": "blue"
+    },
+    {
+      "seconds": 120,
+      "actual": "blue"
+    },
+    {
+      "seconds": 121,
+      "actual": "purple"
+    },
+    {
+      "seconds": 300,
+      "actual": "purple"
+    },
+    {
+      "seconds": 301,
+      "actual": "gold"
+    }
+  ],
+  "mixedSeconds": 1020,
+  "v2DialogOpens": 1,
+  "v1DialogOpens": 3,
+  "animTotalSeconds": 2.7,
+  "sampleSeconds": 390,
+  "sampleTier": "gold"
+}

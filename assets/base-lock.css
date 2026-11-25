@@ -206,3 +206,108 @@
 @keyframes bl-time-pump{0%{transform:scale(1);color:#1c568b}25%{transform:scale(1.14);color:#1e8f44}60%{transform:scale(1.04);color:#1e8f44}100%{transform:scale(1);color:inherit}}
 .bl-current-time.bl-time-pump,.bl-timer.bl-time-pump{display:inline-block;transform-origin:left center;text-shadow:0 0 14px rgba(60,200,110,.65)}
 @media (prefers-reduced-motion:reduce){.bl-time-pump{animation-duration:.01s}}
+
+/* ===== Góc nhìn người đi trộm ===== */
+.bl-view-nav{display:flex;gap:10px;margin:0 0 10px}
+.bl-view-nav button{flex:1;display:flex;flex-direction:column;gap:2px;padding:8px 14px;border:1px solid #b8d2ea;border-radius:10px;background:#eef6ff;color:#3b6a93;font:600 15px/1.2 Arial,sans-serif;cursor:pointer}
+.bl-view-nav button small{font-size:10px;letter-spacing:1px;color:#8aa6c0}
+.bl-view-nav button[aria-pressed=true]{border-color:#2f6fa8;background:linear-gradient(#3f86c4,#2a6ba6);color:#fff;box-shadow:0 2px 0 #1d4f7e}
+.bl-view-nav button[aria-pressed=true] small{color:#cfe6ff}
+[data-view=thief] .bl-flow-nav,[data-view=thief] .bl-flow-note,[data-view=thief] .bl-toolbar{opacity:.4;pointer-events:none}
+[data-view=thief] .bl-frame{aspect-ratio:2048/946;min-height:0;background:#1b2c39 url('base-lock/locked-house-gameplay.jpg') center/100% 100% no-repeat}
+[data-view=thief] .bl-stage{visibility:hidden}
+/* The supplied gameplay image already includes the unlock HUD; make it clickable. */
+[data-view=thief] .bl-raid{left:64.5%;top:35%;right:auto;width:7%;height:19%;min-width:44px;padding:0}
+[data-view=thief] .bl-raid-icon,[data-view=thief] .bl-raid-label{visibility:hidden}
+
+.bl-raid{position:absolute;z-index:2;right:24px;top:46%;display:flex;flex-direction:column;align-items:center;gap:6px;padding:0;border:0;background:none;cursor:pointer;font:700 16px/1.2 BaseLock,Arial,sans-serif;color:#fff;text-shadow:0 2px 3px #0009}
+.bl-raid-icon{width:76px;height:76px;border-radius:50%;border:3px solid #cfe8ff;background:radial-gradient(circle at 50% 35%,#5fb2ec,#2a6ba6);box-shadow:0 4px 0 #15456f,0 8px 18px #0006;display:grid;place-items:center}
+.bl-raid-icon::before{content:"";width:34px;height:34px;background:#fff;clip-path:polygon(0 8%,62% 8%,62% 0,100% 18%,100% 82%,62% 100%,62% 92%,0 92%);opacity:.95}
+.bl-raid[data-blocked=true] .bl-raid-icon{border-color:#ffd9d9;background:radial-gradient(circle at 50% 35%,#e8736f,#a83b36);box-shadow:0 4px 0 #6f2420,0 8px 18px #0006}
+.bl-raid:hover .bl-raid-icon{filter:brightness(1.08)}
+
+.bl-raid-guard{position:absolute;z-index:2;left:50%;top:16px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;padding:8px 18px;border:2px solid #ffe08a;border-radius:999px;background:linear-gradient(#2d5f93dd,#1d4571dd);color:#ffeab5;font:700 16px/1.2 BaseLock,Arial,sans-serif;text-shadow:0 1px 2px #0008;white-space:nowrap}
+.bl-raid-guard-icon{width:20px;height:24px;background:#ffd868;clip-path:polygon(50% 0,100% 22%,100% 62%,50% 100%,0 62%,0 22%)}
+.bl-raid-guard-timer{font-variant-numeric:tabular-nums;color:#fff}
+
+.bl-raid-shade{position:absolute;z-index:4;inset:0;display:grid;place-items:center;padding:16px;background:#00000026}
+.bl-raid-dialog{position:relative;isolation:isolate;width:min(400px,100%);border:0;border-radius:12px;background:none;filter:drop-shadow(0 5px 8px #182a4540);color:#253c55;overflow:visible}
+.bl-raid-dialog::before{content:'';position:absolute;z-index:-1;inset:0;border:solid transparent;border-width:12px 12px 15px;border-image:url('base-lock/panel.png') 32 33 39 34 fill / 12px 12px 15px stretch;pointer-events:none}
+.bl-raid-shade:not([hidden]) .bl-raid-dialog{animation:bl-dialog-in .18s ease-out}
+.bl-raid-title{position:relative;isolation:isolate;margin:0;padding:10px 40px 10px 48px;color:#fff;font:700 21px/1.2 BaseLock,Arial,sans-serif;text-align:center;text-shadow:0 1px 1px #1b4f7d}
+.bl-raid-title::before{content:'';position:absolute;z-index:-1;inset:-25px 0 0;border:solid transparent;border-width:30px 8px 12px 72px;border-image:url('base-lock/title.png') 48 12 18 113 fill / 30px 8px 12px 72px stretch;pointer-events:none}
+.bl-raid-close{position:absolute;right:10px;top:8px;width:27px;height:27px;border:0;border-radius:0;background:url('base-lock/close.png') center/contain no-repeat;cursor:pointer}
+.bl-raid-close::before,.bl-raid-close::after{content:none}
+.bl-raid-close::before{transform:rotate(45deg)}.bl-raid-close::after{transform:rotate(-45deg)}
+.bl-raid-body{padding:16px 24px 20px;text-align:center}
+.bl-raid-premium-lock{display:block;width:54px;height:54px;object-fit:contain;margin:0 auto 10px}
+.bl-raid-copy{margin:0;font:400 17px/1.35 BaseLock,Arial,sans-serif;color:#253c55}
+.bl-raid-price{display:flex;align-items:center;justify-content:center;gap:10px;margin:18px 0 4px;font:700 30px/1 BaseLock,Arial,sans-serif;color:#2a5f8d}
+.bl-coin{width:34px;height:34px;border-radius:50%;background:radial-gradient(circle at 36% 30%,#ffe88a,#f0a92c);border:2px solid #c9821b;box-shadow:inset 0 -2px 0 #d9932200}
+.bl-raid-reason{margin:6px 0 0;font:400 14px/1.35 BaseLock,Arial,sans-serif;color:#506a85}
+.bl-raid-left{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px;padding:0;border:0;background:none;font:400 14px/1.2 BaseLock,Arial,sans-serif;color:#506a85}
+.bl-raid-left b{font:700 20px/1 BaseLock,Arial,sans-serif;font-variant-numeric:tabular-nums;color:#1c568b}
+.bl-raid-actions{display:flex;gap:12px;justify-content:center;margin-top:14px}
+.bl-raid-actions button{min-width:160px;min-height:52px;border-radius:12px;border:2px solid #fff;font:700 20px/1 BaseLock,Arial,sans-serif;cursor:pointer}
+.bl-raid-no{background:linear-gradient(#8fc6f0,#5ba1d8);box-shadow:0 4px 0 #2f6c9e;color:#fff;text-shadow:0 1px 0 #2f6c9e}
+.bl-raid-yes{background:linear-gradient(#ffe487,#ffcc4d);box-shadow:0 4px 0 #b8841f;color:#6a4711}
+.bl-raid-dialog[data-mode=blocked] .bl-raid-yes{background:url('base-lock/yellow.png') center/100% 100% no-repeat;border:0;border-radius:0;box-shadow:none;color:#fff;text-shadow:0 1px 1px #9b7a28;min-width:148px;min-height:42px;font-size:19px}
+.bl-raid-actions button:active{transform:translateY(3px);box-shadow:none}
+
+.bl-raid-test{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:10px;padding:10px 14px;border:1px dashed #b8d2ea;border-radius:10px;background:#f4faff;font:600 14px/1.3 Arial,sans-serif;color:#3b6a93}
+.bl-raid-test label{display:flex;align-items:center;gap:6px;font-weight:400}
+.bl-raid-test select{padding:5px 8px;border:1px solid #b8d2ea;border-radius:8px;background:#fff;color:#2a5f8d;font:600 14px/1.2 Arial,sans-serif}
+
+@media(max-width:720px){
+ .bl-raid{right:14px;top:auto;bottom:28px}
+ .bl-raid-icon{width:62px;height:62px}
+ .bl-raid-title{font-size:21px;padding:12px 50px}
+ .bl-raid-body{padding:18px 16px 20px}
+ .bl-raid-actions button{min-width:0;flex:1;font-size:17px;min-height:48px}
+ .bl-raid-guard{font-size:13px;padding:6px 12px;gap:7px}
+}
+@media(prefers-reduced-motion:reduce){.bl-raid-shade:not([hidden]) .bl-raid-dialog{animation:none}}
+.bl-raid-away{position:absolute;z-index:2;right:24px;top:46%;padding:8px 16px;border-radius:999px;border:1px solid #ffffff2e;background:#0b1b2ad9;box-shadow:0 4px 14px #0006;color:#dce9f6;font:600 17px/1.2 Arial,sans-serif;text-shadow:0 2px 3px #000a;white-space:nowrap}
+@media(max-width:720px){.bl-raid-away{right:14px;top:auto;bottom:34px;font-size:14px;padding:6px 12px}}
+
+/* Shared panel skin for the homeowner and visitor. */
+.bl-dialog,.bl-raid-dialog{width:min(400px,100%);border:0;border-radius:12px;background:none;color:#253c55;filter:drop-shadow(0 5px 8px #182a4540)}
+.bl-shade,.bl-raid-shade{padding:16px;background:#00000026}
+.bl-dialog::before,.bl-raid-dialog::before{border-width:12px 12px 15px;border-image:url('base-lock/panel.png') 32 33 39 34 fill / 12px 12px 15px stretch}
+.bl-title,.bl-raid-title{display:block;min-height:0;margin:0;padding:10px 40px 10px 48px;color:#fff;font:700 21px/1.2 BaseLock,Arial,sans-serif;text-align:center;text-shadow:0 1px 1px #1b4f7d}
+.bl-title::before,.bl-raid-title::before{inset:-25px 0 0;border-width:30px 8px 12px 72px;border-image:url('base-lock/title.png') 48 12 18 113 fill / 30px 8px 12px 72px stretch}
+.bl-close,.bl-raid-close{right:10px;top:8px;width:27px;height:27px;background:url('base-lock/close.png') center/contain no-repeat}
+.bl-dialog-body,.bl-raid-body{padding:16px 24px 20px}
+.bl-actions,.bl-raid-actions{display:flex;justify-content:center;gap:12px;margin-top:14px}
+.bl-actions button,.bl-raid-actions button,.bl-raid-dialog[data-mode=blocked] .bl-raid-yes{position:relative;isolation:isolate;flex:1;min-width:0;min-height:42px;padding:8px 10px 11px;border:0;border-radius:0;background:none;box-shadow:none;font:700 19px/1.2 BaseLock,Arial,sans-serif;color:#fff;text-shadow:0 1px 1px #346294}
+.bl-raid-dialog[data-mode=blocked] .bl-raid-yes{flex:0 1 148px}
+.bl-actions button::before,.bl-raid-actions button::before{content:'';position:absolute;inset:0;z-index:-1;border:solid transparent;border-width:8px 8px 10px 20px;border-image:url('base-lock/blue.png') 20 20 25 50 fill / 8px 8px 10px 20px stretch;pointer-events:none}
+.bl-actions .bl-use::before,.bl-raid-actions .bl-raid-yes::before{border-image-source:url('base-lock/yellow.png')}
+.bl-actions .bl-use,.bl-raid-actions .bl-raid-yes,.bl-raid-dialog[data-mode=blocked] .bl-raid-yes{color:#634313;text-shadow:0 1px #fff4bd}
+.bl-dialog .bl-key-types{gap:8px;margin-bottom:12px}
+.bl-dialog .bl-key-types button{min-height:46px;padding:7px 5px;font-size:16px;gap:6px}
+.bl-dialog .bl-key-types button[aria-pressed=true]{padding:6px 4px}
+.bl-dialog .bl-key-types small{font-size:13px}
+.bl-dialog .bl-key-types img{width:20px;height:26px}
+.bl-dialog .bl-item-row{grid-template-columns:60px minmax(0,1fr);gap:12px;padding:10px 12px;border-radius:10px}
+.bl-dialog .bl-item{width:60px}
+.bl-dialog .bl-item img{width:34px;height:44px}
+.bl-dialog .bl-item b{font-size:12px;right:2px;bottom:2px;min-width:22px;padding:2px}
+.bl-dialog .bl-item-info h3{font-size:19px;margin-bottom:6px}
+.bl-dialog .bl-item-info dl{font-size:14px}
+.bl-dialog .bl-item-info dd{font-size:15px;padding:3px 7px}
+.bl-dialog-copy{font-size:15px;padding:10px 12px;margin-top:10px;gap:8px}
+.bl-current-time{font:700 20px/1.2 BaseLock,Arial,sans-serif;letter-spacing:0}
+.bl-after{font-size:13px;margin-top:8px}
+.bl-interact{top:46%;right:24px;bottom:auto;flex-direction:column;gap:6px;min-width:0;min-height:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none;color:#fff;font:700 16px/1.2 BaseLock,Arial,sans-serif;text-shadow:0 2px 3px #0009}
+.bl-interact img{box-sizing:border-box;width:76px;height:76px;padding:17px;border:3px solid #cfe8ff;border-radius:50%;background:radial-gradient(circle at 50% 35%,#5fb2ec,#2a6ba6);box-shadow:0 4px 0 #15456f,0 8px 18px #0006;object-fit:contain}
+.bl-interact:hover{background:none;box-shadow:none;transform:none}
+.bl-interact:hover img{filter:brightness(1.08)}
+.bl-interact:active{transform:translateY(3px);box-shadow:none}
+.bl-frame[data-protected=false]>.bl-interact{animation:none}
+.bl-frame{aspect-ratio:2048/946;min-height:0}
+.bl-interact,[data-view=thief] .bl-raid{left:64.5%;top:35%;right:auto;bottom:auto;width:7%;height:19%;min-width:0;justify-content:center}
+.bl-interact{gap:.5cqw;font-size:clamp(10px,1.4cqw,28px)}
+.bl-interact img{flex-shrink:0;width:5.7cqw;height:5.7cqw;padding:1.3cqw;border-width:max(1px,.15cqw)}
+.bl-shade[data-flow=cards] .bl-key-types button{min-height:130px;font-size:17px;padding:10px 4px;gap:8px}
+.bl-shade[data-flow=cards] .bl-type-action{min-width:0;font-size:13px;padding:5px}

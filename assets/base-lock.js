@@ -26,6 +26,11 @@
  flowNav.innerHTML=Object.entries(flows).map(([id,f],i)=>`<button type="button" data-bl-flow="${id}" aria-pressed="${id==='confirm'}"><small>PHƯƠNG ÁN ${i+1}</small><span>${f.name}</span></button>`).join('');pane.prepend(flowNav);
  const flowNote=document.createElement('p');flowNote.className='bl-flow-note';flowNav.after(flowNote);
  let state = 'near', selectedMinutes=2, inventory={2:3,5:3,10:3}, near = true, expires = 0, toastUntil = 0;
+ // Góc nhìn người đi trộm. Giá lấy từ Master Data!UnlockCost (rarity cao nhất trộm được x RB gap).
+ const UNLOCK_COST={COMMON:[4,5,7,11],RARE:[6,8,11,18],EPIC:[9,12,17,27],LEGENDARY:[13,17,23,36],MYTHIC:[19,24,33,52],APEX:[28,35,48,75],LIMITED:[40,50,68,106]};
+ const GAP_BANDS=['<3','4-6','7-9','10+'];
+ let view='owner', raidRarity='APEX', raidGap=0, raidDialog=null, raidCoins=518;
+ function raidPrice(){ return UNLOCK_COST[raidRarity][raidGap]; }
  const types=document.createElement('div');types.className='bl-key-types';types.setAttribute('role','group');types.setAttribute('aria-label','Chọn loại khóa');
  types.innerHTML=durations.map(minutes=>`<button type="button" draggable="false" data-key-minutes="${minutes}" data-key-tier="${minutes===2?'blue':minutes===5?'purple':'gold'}" aria-pressed="${minutes===2}"><img src="assets/base-lock/lock.png" alt=""><span>${minutes} phút<small>×3</small></span><b class="bl-type-action">Nạp ngay</b></button>`).join('');
  q('.bl-dialog-body').prepend(types);
@@ -72,15 +77,17 @@
   types.querySelectorAll('button').forEach(button=>{const minutes=Number(button.dataset.keyMinutes);button.setAttribute('aria-pressed',String(minutes===selectedMinutes));button.querySelector('small').textContent='×'+inventory[minutes];button.disabled=flow==='cards'&&inventory[minutes]===0;button.draggable=flow==='socket'&&inventory[minutes]>0;});
   q('.bl-item-info h3').textContent=`Khóa bảo vệ ${selectedMinutes} phút`;
   q('.bl-item-info dd').textContent=`${selectedMinutes} phút`;
-  q('.bl-description').textContent = state==='dialog'?flows[flow].hint:descriptions[state];
+  q('.bl-description').textContent = view==='thief'
+   ? (active?'Góc nhìn người đi trộm · Bấm “MỞ KHÓA” để xem thông báo: nhà đang được khóa bằng ổ khóa xịn, không thể mở.':'Góc nhìn người đi trộm · Nhà không được bảo vệ. Bấm “MỞ KHÓA” để trả Pet Coin theo bảng UnlockCost.')
+   : (state==='dialog'?flows[flow].hint:descriptions[state]);
   pane.querySelectorAll('[data-bl-step]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.blStep === state)));
-  q('.bl-shade').hidden = state !== 'dialog';
-  q('.bl-interact').hidden = state === 'dialog' || !near;
+  q('.bl-shade').hidden = state !== 'dialog' || view !== 'owner';
+  q('.bl-interact').hidden = state === 'dialog' || !near || view !== 'owner';
   q('.bl-interact span').firstChild.textContent = active ? 'NẠP THÊM' : 'NẠP KHÓA';
   q('.bl-interact').setAttribute('aria-label',active?'Nạp thêm khóa vào trụ':'Mở bảng nạp khóa');
   q('.bl-world').dataset.protected=String(active);q('.bl-frame').dataset.protected=String(active);q('.bl-world').dataset.low=String(active&&seconds<=30);
-  q('.bl-away').hidden = state === 'dialog' || near;
-  q('.bl-lock-status').hidden = !active;
+  q('.bl-away').hidden = state === 'dialog' || near || view !== 'owner';
+  q('.bl-lock-status').hidden = !active || view !== 'owner';
   q('.bl-item-count').textContent = '×' + count;
   if(!gainUntil)q('.bl-current-time').textContent=formatTime(seconds);
   q('.bl-after span').textContent = Math.max(0, count - 1);
@@ -89,6 +96,7 @@
   q('.bl-distance').textContent = near ? 'Đang đứng gần' : 'Đang đứng xa'; q('.bl-distance').setAttribute('aria-pressed', String(near));
   q('.bl-expire').disabled = !active;
   if(!gainUntil)q('.bl-timer').textContent=formatTime(seconds);
+  renderRaid();
  }
  function open() { if (state === 'dialog' || !near) return; pendingMinutes=null;state = 'dialog'; render();if(flow==='cards'||q('.bl-use').disabled)q('.bl-close').focus();else q('.bl-use').focus(); }
  function close() { cancelHold();gainUntil=0;pendingMinutes=null;state = remaining()>0 ? 'locked' : 'near'; render(); if(near)q('.bl-interact').focus(); }
@@ -113,6 +121,71 @@
   requestAnimationFrame(stepGain);
  }
  function reset() {cancelHold();gainUntil=0;pendingMinutes=null;state = 'near'; selectedMinutes=2; inventory={2:3,5:3,10:3}; near = true; expires = 0; toastUntil = 0; q('.bl-toast').hidden = true; render(); }
+ /* ---- Góc nhìn người đi trộm ---- */
+ const viewNav=document.createElement('div');viewNav.className='bl-view-nav';viewNav.setAttribute('role','group');viewNav.setAttribute('aria-label','Góc nhìn');
+ viewNav.innerHTML=`<button type="button" data-bl-view="owner" aria-pressed="true"><small>GÓC NHÌN</small><span>Chủ nhà</span></button><button type="button" data-bl-view="thief" aria-pressed="false"><small>GÓC NHÌN</small><span>Người đi trộm</span></button>`;
+ pane.prepend(viewNav);
+ q('.bl-frame').insertAdjacentHTML('beforeend',`
+ <button class="bl-raid" type="button" aria-label="Mở khóa nhà"><span class="bl-raid-icon" aria-hidden="true"></span><span class="bl-raid-label">MỞ KHÓA</span></button>
+ <div class="bl-raid-guard" hidden><span class="bl-raid-guard-icon" aria-hidden="true"></span><span class="bl-raid-guard-text">NHÀ ĐANG ĐƯỢC BẢO VỆ</span><b class="bl-raid-guard-timer">00:00</b></div>
+ <span class="bl-raid-away" hidden>Đến gần để xem khóa nhà</span>
+ <div class="bl-raid-shade" hidden><section class="bl-raid-dialog" role="dialog" aria-modal="true" aria-labelledby="bl-raid-title">
+  <h2 class="bl-raid-title" id="bl-raid-title">XÁC NHẬN MỞ KHÓA</h2><button class="bl-raid-close" type="button" aria-label="Đóng"></button>
+  <div class="bl-raid-body">
+   <img class="bl-raid-premium-lock" src="assets/base-lock/lock.png" alt="Ổ khóa xịn" hidden>
+   <p class="bl-raid-copy">Bạn có muốn mở khóa nhà này với giá:</p>
+   <p class="bl-raid-price"><span class="bl-coin" aria-hidden="true"></span><b>28</b></p>
+   <p class="bl-raid-reason" hidden></p>
+   <div class="bl-raid-left" hidden><span>Mở lại sau</span><b class="bl-raid-countdown">00:00</b></div>
+   <div class="bl-raid-actions"><button class="bl-raid-no" type="button">KHÔNG</button><button class="bl-raid-yes" type="button">CÓ</button></div>
+  </div></section></div>`);
+ const raidTest=document.createElement('div');raidTest.className='bl-raid-test';
+ raidTest.innerHTML=`<span>Giá mở khóa:</span><label>Rarity cao nhất trộm được <select class="bl-raid-rarity">${Object.keys(UNLOCK_COST).map(r=>`<option${r==='APEX'?' selected':''}>${r}</option>`).join('')}</select></label><label>RB gap <select class="bl-raid-band">${GAP_BANDS.map((b,i)=>`<option value="${i}">${b}</option>`).join('')}</select></label>`;
+ q('.bl-test').after(raidTest);
+ viewNav.querySelectorAll('button').forEach(button=>button.onclick=()=>{cancelHold();view=button.dataset.blView;raidDialog=null;if(view==='thief'&&state==='dialog')state=remaining()>0?'locked':'near';render();});
+ q('.bl-raid-rarity').onchange=e=>{raidRarity=e.target.value;render();};
+ q('.bl-raid-band').onchange=e=>{raidGap=Number(e.target.value);render();};
+ function openRaid(){ raidDialog = remaining()>0 ? 'blocked' : 'confirm'; render(); (raidDialog==='blocked'?q('.bl-raid-yes'):q('.bl-raid-no')).focus(); }
+ function closeRaid(){ raidDialog=null; render(); if(view==='thief')q('.bl-raid').focus(); }
+ q('.bl-raid').onclick=openRaid;
+ q('.bl-raid-close').onclick=closeRaid; q('.bl-raid-no').onclick=closeRaid;
+ q('.bl-raid-yes').onclick=()=>{
+  if(raidDialog==='blocked'){closeRaid();return;}
+  if(remaining()>0){raidDialog='blocked';render();notify('Nhà đang được khóa bằng ổ khóa xịn, không thể mở khóa.');return;}
+  if(raidCoins<raidPrice()){notify('Không đủ Pet Coin');return;}
+  raidCoins-=raidPrice();closeRaid();notify(`Đã mở khóa nhà · Trừ ${raidPrice()} Pet Coin`);
+ };
+ pane.addEventListener('keydown',e=>{ if(raidDialog&&e.key==='Escape'){e.preventDefault();closeRaid();} });
+ function renderRaid(){
+  const seconds=remaining(), active=seconds>0, thief=view==='thief';
+  // Trạng thái bảo vệ đổi khi popup đang mở: đổi luôn nội dung popup, không để người chơi bấm nhầm.
+  if(raidDialog==='confirm'&&active)raidDialog='blocked';
+  else if(raidDialog==='blocked'&&!active)raidDialog='confirm';
+  pane.dataset.view=view;
+  viewNav.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.blView===view)));
+  raidTest.hidden=!thief;
+  q('.bl-raid').hidden=!thief||!near||raidDialog!==null;
+  q('.bl-raid').dataset.blocked=String(active);
+  q('.bl-raid-label').textContent='MỞ KHÓA';
+  // Băng bảo vệ dùng chung tầm với nút mở khóa (chốt 25/11/2026), nên cũng tắt khi đứng xa.
+  q('.bl-raid-guard').hidden=!thief||!active||!near;
+  q('.bl-raid-away').hidden=!thief||near;
+  q('.bl-raid-guard-timer').textContent=formatTime(seconds);
+  q('.bl-raid-shade').hidden=!thief||raidDialog===null;
+  const blocked=raidDialog==='blocked';
+  q('.bl-raid-dialog').dataset.mode=raidDialog||'confirm';
+  q('.bl-raid-title').textContent=blocked?'KHÔNG THỂ MỞ KHÓA':'XÁC NHẬN MỞ KHÓA';
+  q('.bl-raid-premium-lock').hidden=!blocked;
+  q('.bl-raid-copy').textContent=blocked?'Nhà này đang được khóa bằng ổ khóa xịn, không thể mở khóa.':'Bạn có muốn mở khóa nhà này với giá:';
+  q('.bl-raid-price').hidden=blocked;
+  q('.bl-raid-price b').textContent=raidPrice();
+  q('.bl-raid-reason').hidden=!blocked;
+  q('.bl-raid-reason').textContent='Vui lòng chờ hết thời gian bảo vệ.';
+  q('.bl-raid-left').hidden=!blocked;
+  q('.bl-raid-countdown').textContent=formatTime(seconds);
+  q('.bl-raid-no').hidden=blocked;
+  q('.bl-raid-yes').textContent=blocked?'ĐÃ HIỂU':'CÓ';
+ }
  q('.bl-interact').onclick = open; q('.bl-close').onclick = close; q('.bl-cancel').onclick = close; q('.bl-use').onclick=()=>{if(flow!=='hold'&&(flow!=='socket'||pendingMinutes!==null))activate();};q('.bl-reset').onclick = reset;
  function startHold(){if(flow!=='hold'||state!=='dialog'||inventory[selectedMinutes]<1||holdTimer)return;q('.bl-use').classList.add('bl-holding');holdTimer=setTimeout(()=>{holdTimer=null;if(flow==='hold'&&state==='dialog')activate();},900);}
  q('.bl-use').onpointerdown=e=>{if(flow==='hold'){e.preventDefault();q('.bl-use').setPointerCapture(e.pointerId);startHold();}};

@@ -1,0 +1,32 @@
+{
+  "tierTests": [
+    {
+      "seconds": 0,
+      "actual": "idle"
+    },
+    {
+      "seconds": 1,
+      "actual": "blue"
+    },
+    {
+      "seconds": 120,
+      "actual": "blue"
+    },
+    {
+      "seconds": 121,
+      "actual": "purple"
+    },
+    {
+      "seconds": 300,
+      "actual": "purple"
+    },
+    {
+      "seconds": 301,
+      "actual": "gold"
+    }
+  ],
+  "mixedSeconds": 1020,
+  "rb10BaseLockTime": 90,
+  "lockBaseActions": 3,
+  "ratioAtRb10": 11.333333333333334
+}

@@ -1,0 +1,139 @@
+{
+  "schema_version": "2.0.0",
+  "design_id": "BASE_LOCK",
+  "version": "2.0.0",
+  "date": "2026-11-25",
+  "status": "design_draft",
+  "production_ready": false,
+  "supersedes": "base-lock-config.v1.json",
+  "changelog_v2": [
+    "refill.close_dialog_on_success: true -> false (bảng ở lại sau khi nạp)",
+    "Thêm core.feedback.refill_animation: đồng hồ chạy số tăng dần khi cộng thời gian",
+    "Thêm core.feedback.gain_badge.enabled = false (đã bỏ nhãn +N phút)",
+    "Thêm ui.focus_after_success và ui.dialog_close_triggers"
+  ],
+  "id_namespace": "design_ids_require_sap_item_mapping",
+  "core": {
+    "station": {
+      "id": "LOCKSHIELD_STATION",
+      "placement": "right_of_yellow_base_pad",
+      "status_anchor": "above_yellow_base_pad",
+      "interaction": "proximity_gated_screen_button"
+    },
+    "items": [
+      {"id": "BASE_LOCK_2M", "name": "Khóa bảo vệ 2 phút", "duration_seconds": 120, "icon_tier": "blue", "consume_per_request": 1, "enabled": true},
+      {"id": "BASE_LOCK_5M", "name": "Khóa bảo vệ 5 phút", "duration_seconds": 300, "icon_tier": "purple", "consume_per_request": 1, "enabled": true},
+      {"id": "BASE_LOCK_10M", "name": "Khóa bảo vệ 10 phút", "duration_seconds": 600, "icon_tier": "gold", "consume_per_request": 1, "enabled": true}
+    ],
+    "refill": {
+      "allow_while_active": true,
+      "allow_mixed_item_types": true,
+      "quantity_per_request": 1,
+      "expiration_formula": "max(expires_at_unix_ms, server_now_unix_ms) + duration_seconds * 1000",
+      "cooldown_seconds": 0,
+      "timer_continues_while_dialog_open": true,
+      "close_dialog_on_success": false,
+      "close_dialog_on_expiry": false,
+      "allow_consecutive_refills_without_reopen": true
+    },
+    "feedback": {
+      "refill_animation": {
+        "enabled": true,
+        "type": "count_up_remaining_time",
+        "duration_ms": 900,
+        "easing": "ease_out_cubic",
+        "value_from": "remaining_seconds_before_refill",
+        "value_to": "remaining_seconds_after_refill",
+        "targets": ["dialog_remaining_time", "world_station_timer"],
+        "scale_peak": 1.14,
+        "scale_settle": 1.04,
+        "highlight_color_hex": "#1E8F44",
+        "glow": "0 0 14px rgba(60,200,110,0.65)",
+        "tick_source": "requestAnimationFrame",
+        "blocks_input": false,
+        "cancel_on": ["dialog_close", "flow_reset"],
+        "reduced_motion": "apply_final_value_immediately"
+      },
+      "gain_badge": {
+        "enabled": false,
+        "note": "Nhãn +N phút đã bỏ theo yêu cầu 25/11/2026; chỉ giữ số chạy"
+      },
+      "toast_on_success": {"enabled": true, "duration_ms": 3500, "text": "Đã nạp 1 khóa · Thêm {minutes} phút bảo vệ"}
+    },
+    "display": {
+      "timer_format": "MM:SS_unbounded_minutes",
+      "seconds_rounding": "ceil",
+      "tier_source": "remaining_display_seconds",
+      "tier_source_during_animation": "real_remaining_seconds",
+      "tiers": [
+        {"id": "idle", "min_seconds_exclusive": null, "max_seconds_inclusive": 0, "aura_enabled": false, "rings": 0, "particles": 0, "rays": false, "color_hex": null, "prop_image": "assets/base-lock/lockshield-prop.png", "label": ""},
+        {"id": "blue", "min_seconds_exclusive": 0, "max_seconds_inclusive": 120, "aura_enabled": true, "rings": 1, "particles": 2, "rays": false, "color_hex": "#75CFFF", "prop_image": "assets/base-lock/lockshield-blue.png", "label": "Đang bảo vệ pet"},
+        {"id": "purple", "min_seconds_exclusive": 120, "max_seconds_inclusive": 300, "aura_enabled": true, "rings": 2, "particles": 5, "rays": false, "color_hex": "#D29AFF", "prop_image": "assets/base-lock/lockshield-purple.png", "label": "Bảo vệ nâng cao"},
+        {"id": "gold", "min_seconds_exclusive": 300, "max_seconds_inclusive": null, "aura_enabled": true, "rings": 2, "particles": 8, "rays": true, "color_hex": "#FFDC70", "prop_image": "assets/base-lock/lockshield-gold.png", "label": "Bảo vệ tối thượng"}
+      ],
+      "reduced_motion": "static_rings_no_particle_motion"
+    },
+    "ui": {
+      "available_flows": ["confirm", "cards"],
+      "production_selected_flow": null,
+      "prototype_default_flow": "confirm",
+      "default_item_id": "BASE_LOCK_2M",
+      "empty_state_button": "NẠP KHÓA",
+      "active_state_button": "NẠP THÊM",
+      "confirm_action": "NẠP 1 KHÓA",
+      "empty_inventory_action": "HẾT KHÓA",
+      "focus_after_success": "refill_button_if_enabled_else_close_button",
+      "dialog_close_triggers": ["cancel_button", "close_x", "escape_key"],
+      "show_quantity_selector": false,
+      "show_post_refill_time": false,
+      "show_separate_inventory_row": false,
+      "show_inventory_hud": false,
+      "show_world_interact_hint": false,
+      "show_count_on_item_cards": true,
+      "show_post_refill_selected_item_count_footer": true
+    }
+  },
+  "prototype": {
+    "initial_inventory": {"BASE_LOCK_2M": 3, "BASE_LOCK_5M": 3, "BASE_LOCK_10M": 3},
+    "initial_remaining_seconds": 0,
+    "accumulation_limit_seconds": null,
+    "distance_simulated_by_button": true,
+    "clock": "browser_Date_now",
+    "persistence": "none",
+    "test_controls_visible": true,
+    "implemented_in": "assets/base-lock.js, assets/base-lock.css"
+  },
+  "production_proposals": {
+    "status": "requires_design_confirmation",
+    "authority": "server",
+    "owner_only_refill": true,
+    "show_button_distance_m": 3,
+    "hide_button_distance_m": 3.5,
+    "server_refill_max_distance_m": 3.5,
+    "require_line_of_sight": false,
+    "block_new_nonowner_entry_while_active": true,
+    "allow_owner_entry_while_active": true,
+    "existing_intruder_policy": "warn_then_eject_to_safe_gate_point",
+    "existing_intruder_warning_seconds": 3,
+    "already_stolen_pet_policy": "do_not_recall_or_cancel_valid_existing_theft",
+    "offline_policy": "continue_realtime_and_persist_expiration",
+    "cross_server_policy": "preserve_expiration_for_same_base_and_owner",
+    "animation_authority": "client_visual_only_server_value_is_truth",
+    "transaction": {"atomic_inventory_and_expiration": true, "idempotency_key": "request_id", "disable_submit_while_pending": true, "retry_same_request_id": true, "consume_only_on_server_success": true}
+  },
+  "unresolved": {
+    "production_flow": null,
+    "max_accumulated_seconds": null,
+    "price_by_item": null,
+    "currency": null,
+    "acquisition_sources": null,
+    "inventory_stack_limit": null,
+    "initial_player_grant": null,
+    "rebirth_policy": null,
+    "ownership_transfer_policy": null,
+    "sap_item_id_mapping": null,
+    "intruder_and_existing_theft_policy_confirmation": false,
+    "offline_policy_confirmation": false,
+    "sfx_on_refill": null
+  }
+}
