@@ -201,3 +201,8 @@
 }
 @media(max-width:360px){.bl-dialog-body{padding-inline:16px}.bl-actions button{font-size:16px;padding-inline:6px}.bl-title{font-size:24px}}
 
+
+.bl-time-pump{animation:bl-time-pump .9s ease-out}
+@keyframes bl-time-pump{0%{transform:scale(1);color:#1c568b}25%{transform:scale(1.14);color:#1e8f44}60%{transform:scale(1.04);color:#1e8f44}100%{transform:scale(1);color:inherit}}
+.bl-current-time.bl-time-pump,.bl-timer.bl-time-pump{display:inline-block;transform-origin:left center;text-shadow:0 0 14px rgba(60,200,110,.65)}
+@media (prefers-reduced-motion:reduce){.bl-time-pump{animation-duration:.01s}}

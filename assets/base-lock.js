@@ -82,24 +82,43 @@
   q('.bl-away').hidden = state === 'dialog' || near;
   q('.bl-lock-status').hidden = !active;
   q('.bl-item-count').textContent = '×' + count;
-  q('.bl-current-time').textContent=formatTime(seconds);
+  if(!gainUntil)q('.bl-current-time').textContent=formatTime(seconds);
   q('.bl-after span').textContent = Math.max(0, count - 1);
   q('.bl-use').disabled = count === 0 || (flow==='socket'&&pendingMinutes===null);q('.bl-use').textContent=count?(flow==='hold'?'GIỮ ĐỂ NẠP':'NẠP 1 KHÓA'):'HẾT KHÓA';
   q('.bl-after').hidden = !count||flow==='cards';
   q('.bl-distance').textContent = near ? 'Đang đứng gần' : 'Đang đứng xa'; q('.bl-distance').setAttribute('aria-pressed', String(near));
   q('.bl-expire').disabled = !active;
-  q('.bl-timer').textContent=formatTime(seconds);
+  if(!gainUntil)q('.bl-timer').textContent=formatTime(seconds);
  }
  function open() { if (state === 'dialog' || !near) return; pendingMinutes=null;state = 'dialog'; render();if(flow==='cards'||q('.bl-use').disabled)q('.bl-close').focus();else q('.bl-use').focus(); }
- function close() { cancelHold();pendingMinutes=null;state = remaining()>0 ? 'locked' : 'near'; render(); if(near)q('.bl-interact').focus(); }
- function activate() { if (state !== 'dialog' || inventory[selectedMinutes] < 1) return;cancelHold();inventory[selectedMinutes]--;expires=Math.max(Date.now(),expires)+selectedMinutes*60000;pendingMinutes=null;state = 'locked'; render(); notify(`Đã nạp 1 khóa · Thêm ${selectedMinutes} phút bảo vệ`); q('.bl-interact').focus(); }
- function reset() {cancelHold();pendingMinutes=null;state = 'near'; selectedMinutes=2; inventory={2:3,5:3,10:3}; near = true; expires = 0; toastUntil = 0; q('.bl-toast').hidden = true; render(); }
+ function close() { cancelHold();gainUntil=0;pendingMinutes=null;state = remaining()>0 ? 'locked' : 'near'; render(); if(near)q('.bl-interact').focus(); }
+ function activate() { if (state !== 'dialog' || inventory[selectedMinutes] < 1) return;cancelHold();
+  const before=remaining(), added=selectedMinutes*60, minutes=selectedMinutes;
+  inventory[selectedMinutes]--;expires=Math.max(Date.now(),expires)+selectedMinutes*60000;pendingMinutes=null;
+  render(); playGain(before, added); notify(`Đã nạp 1 khóa · Thêm ${minutes} phút bảo vệ`); if(!q('.bl-use').disabled)q('.bl-use').focus();else q('.bl-close').focus(); }
+ let gainUntil=0, gainFrom=0, gainAdded=0, gainStart=0;
+ const GAIN_MS=900;
+ function playGain(before, added){
+  gainFrom=before;gainAdded=added;gainStart=performance.now();gainUntil=gainStart+GAIN_MS;
+  [q('.bl-current-time'),q('.bl-timer')].forEach(el=>{el.classList.remove('bl-time-pump');void el.offsetWidth;el.classList.add('bl-time-pump');});
+  requestAnimationFrame(stepGain);
+ }
+ function stepGain(now){
+  if(!gainUntil){return;}
+  if(now>=gainUntil){gainUntil=0;render();return;}
+  const t=(now-gainStart)/GAIN_MS, eased=1-Math.pow(1-t,3);
+  const value=Math.round(gainFrom+gainAdded*eased);
+  q('.bl-current-time').textContent=formatTime(value);
+  q('.bl-timer').textContent=formatTime(value);
+  requestAnimationFrame(stepGain);
+ }
+ function reset() {cancelHold();gainUntil=0;pendingMinutes=null;state = 'near'; selectedMinutes=2; inventory={2:3,5:3,10:3}; near = true; expires = 0; toastUntil = 0; q('.bl-toast').hidden = true; render(); }
  q('.bl-interact').onclick = open; q('.bl-close').onclick = close; q('.bl-cancel').onclick = close; q('.bl-use').onclick=()=>{if(flow!=='hold'&&(flow!=='socket'||pendingMinutes!==null))activate();};q('.bl-reset').onclick = reset;
  function startHold(){if(flow!=='hold'||state!=='dialog'||inventory[selectedMinutes]<1||holdTimer)return;q('.bl-use').classList.add('bl-holding');holdTimer=setTimeout(()=>{holdTimer=null;if(flow==='hold'&&state==='dialog')activate();},900);}
  q('.bl-use').onpointerdown=e=>{if(flow==='hold'){e.preventDefault();q('.bl-use').setPointerCapture(e.pointerId);startHold();}};
  q('.bl-use').onpointerup=cancelHold;q('.bl-use').onpointercancel=cancelHold;q('.bl-use').onlostpointercapture=cancelHold;q('.bl-use').onblur=cancelHold;
  q('.bl-use').onkeydown=e=>{if(flow==='hold'&&[' ','Enter'].includes(e.key)){e.preventDefault();if(!e.repeat)startHold();}};q('.bl-use').onkeyup=e=>{if([' ','Enter'].includes(e.key))cancelHold();};
- pane.querySelectorAll('[data-bl-step]').forEach(b => b.onclick = () => { reset(); if (b.dataset.blStep !== 'near') open(); if (b.dataset.blStep === 'locked') activate(); });
+ pane.querySelectorAll('[data-bl-step]').forEach(b => b.onclick = () => { reset(); if (b.dataset.blStep !== 'near') open(); if (b.dataset.blStep === 'locked') { activate(); gainUntil=0; state='locked'; render(); } });
  q('.bl-distance').onclick = () => {cancelHold();near = !near; if (state === 'dialog') state = remaining()>0?'locked':'near'; render(); };
  q('.bl-expire').onclick = () => { expires = 0; if(state!=='dialog')state = 'near'; render(); notify('Đã hết thời gian bảo vệ · Nạp khóa để bảo vệ tiếp'); };
  q('.bl-empty').onclick = () => { reset(); inventory[selectedMinutes]=0; open(); };
