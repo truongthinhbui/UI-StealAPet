@@ -1,0 +1,9 @@
+Tool: built-in image_gen
+Edit the attached key visual with surgical changes only. Preserve exact original 16:9 composition, Steal a Pet mobile game art style, avatar appearance/pose/position on left, bent rod and line, blue fish appearance/size/position at upper right, water splash, flooded hub architecture, colors and lighting.
+Required changes:
+- Keep ONLY the original large PURPLE timing wheel at lower center-left, in its existing position and size, including its concentric blue circular face, cyan rim, centered button and centered white needle. Do not redesign it.
+- Completely remove smaller GREEN timing wheel at lower right and yellow connecting arrow; fill with seamless matching blue flood water.
+- Keep the existing mutation visual icons attached above the fish: glowing white-blue snowflake and gold sparkle icons, unchanged, clearly associated with fish.
+- Remove ALL surrounding decorative trees and palms (large foreground palms, background palm trees, bare dead tree), chicken/duck/pumpkin pet, all ducks, hippos and every background animal. Fill the removed locations naturally using matching sky, distant muted hills, building surfaces or water. Keep hub buildings and green striped awnings intact. Background becomes clean flooded architecture with no foliage/trees or animals.
+- Remove yellow attention triangles around wheel as unnecessary extra decorations.
+No text, no letters, numbers, logo, labels, additional icons or additional wheels. Preserve the original reference composition rather than replacing it with a different scene.

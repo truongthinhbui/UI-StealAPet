@@ -1,0 +1,77 @@
+[
+  {
+    "name": "tap",
+    "duration": 0.105,
+    "peak": 0.03727847124364064
+  },
+  {
+    "name": "good",
+    "duration": 0.225,
+    "peak": 0.054706791792811696
+  },
+  {
+    "name": "excellent",
+    "duration": 0.405,
+    "peak": 0.05793188046659975
+  },
+  {
+    "name": "bonus",
+    "duration": 0.375,
+    "peak": 0.05017505580333793
+  },
+  {
+    "name": "break",
+    "duration": 0.26,
+    "peak": 0.05370099568858386
+  },
+  {
+    "name": "miss",
+    "duration": 0.235,
+    "peak": 0.043913176050843945
+  },
+  {
+    "name": "fail",
+    "duration": 0.37,
+    "peak": 0.05708486360573533
+  },
+  {
+    "name": "catch",
+    "duration": 0.615,
+    "peak": 0.07248523647188368
+  },
+  {
+    "name": "glitchLand",
+    "duration": 0.18,
+    "peak": 0.020661532483970308
+  },
+  {
+    "name": "kickCharge",
+    "duration": 0.13,
+    "peak": 0.01755943001470244
+  },
+  {
+    "name": "glitchIgnite",
+    "duration": 0.36,
+    "peak": 0.03596587112908367
+  },
+  {
+    "name": "ballBounce",
+    "duration": 0.16,
+    "peak": 0.03567945554131072
+  },
+  {
+    "name": "glitchOpen",
+    "duration": 0.385,
+    "peak": 0.0375379320752597
+  },
+  {
+    "name": "glitchJump",
+    "duration": 0.18,
+    "peak": 0.019146908113226935
+  },
+  {
+    "name": "kick",
+    "duration": 0.18,
+    "peak": 0.07576478613699038
+  }
+]

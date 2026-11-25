@@ -78,7 +78,7 @@
   q('.bl-interact').hidden = state === 'dialog' || !near;
   q('.bl-interact span').firstChild.textContent = active ? 'NẠP THÊM' : 'NẠP KHÓA';
   q('.bl-interact').setAttribute('aria-label',active?'Nạp thêm khóa vào trụ':'Mở bảng nạp khóa');
-  q('.bl-world').dataset.protected=String(active);
+  q('.bl-world').dataset.protected=String(active);q('.bl-frame').dataset.protected=String(active);q('.bl-world').dataset.low=String(active&&seconds<=30);
   q('.bl-away').hidden = state === 'dialog' || near;
   q('.bl-lock-status').hidden = !active;
   q('.bl-item-count').textContent = '×' + count;

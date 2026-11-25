@@ -1,0 +1,223 @@
+[
+  {
+    "name": "tap",
+    "file": "tap.wav",
+    "duration": 0.105,
+    "peak": 0.03727847124364064,
+    "group": "fishing",
+    "notes": [
+      420
+    ],
+    "level": 0.07,
+    "type": "sine",
+    "priority": 0
+  },
+  {
+    "name": "good",
+    "file": "good.wav",
+    "duration": 0.225,
+    "peak": 0.054706791792811696,
+    "group": "fishing",
+    "notes": [
+      660,
+      880
+    ],
+    "level": 0.1,
+    "type": "sine",
+    "priority": 1
+  },
+  {
+    "name": "excellent",
+    "file": "excellent.wav",
+    "duration": 0.405,
+    "peak": 0.05793188046659975,
+    "group": "fishing",
+    "notes": [
+      784,
+      1047,
+      1319,
+      1568
+    ],
+    "level": 0.1,
+    "type": "triangle",
+    "priority": 2
+  },
+  {
+    "name": "bonus",
+    "file": "bonus.wav",
+    "duration": 0.375,
+    "peak": 0.05017505580333793,
+    "group": "fishing",
+    "notes": [
+      880,
+      1175,
+      1568,
+      1760
+    ],
+    "level": 0.09,
+    "type": "triangle",
+    "priority": 3
+  },
+  {
+    "name": "break",
+    "file": "break.wav",
+    "duration": 0.26,
+    "peak": 0.05370099568858386,
+    "group": "fishing",
+    "notes": [
+      260,
+      520,
+      1040
+    ],
+    "level": 0.1,
+    "type": "triangle",
+    "priority": 3
+  },
+  {
+    "name": "miss",
+    "file": "miss.wav",
+    "duration": 0.235,
+    "peak": 0.043913176050843945,
+    "group": "fishing",
+    "notes": [
+      220,
+      165
+    ],
+    "level": 0.08,
+    "type": "sine",
+    "priority": 1
+  },
+  {
+    "name": "fail",
+    "file": "fail.wav",
+    "duration": 0.37,
+    "peak": 0.05708486360573533,
+    "group": "fishing",
+    "notes": [
+      330,
+      247,
+      165
+    ],
+    "level": 0.1,
+    "type": "triangle",
+    "priority": 2
+  },
+  {
+    "name": "catch",
+    "file": "catch.wav",
+    "duration": 0.615,
+    "peak": 0.07248523647188368,
+    "group": "fishing",
+    "notes": [
+      523,
+      659,
+      784,
+      1047,
+      1319,
+      1568
+    ],
+    "level": 0.11,
+    "type": "triangle",
+    "priority": 4
+  },
+  {
+    "name": "glitchLand",
+    "file": "glitchLand.wav",
+    "duration": 0.18,
+    "peak": 0.020661532483970308,
+    "group": "luck-effects",
+    "notes": [
+      140,
+      100
+    ],
+    "level": 0.04,
+    "type": "triangle",
+    "priority": 0
+  },
+  {
+    "name": "kickCharge",
+    "file": "kickCharge.wav",
+    "duration": 0.13,
+    "peak": 0.01755943001470244,
+    "group": "luck-effects",
+    "notes": [
+      105
+    ],
+    "level": 0.035,
+    "type": "sine",
+    "priority": 1
+  },
+  {
+    "name": "glitchIgnite",
+    "file": "glitchIgnite.wav",
+    "duration": 0.36,
+    "peak": 0.03596587112908367,
+    "group": "luck-effects",
+    "notes": [
+      110,
+      165,
+      330
+    ],
+    "level": 0.06,
+    "type": "sawtooth",
+    "priority": 2
+  },
+  {
+    "name": "ballBounce",
+    "file": "ballBounce.wav",
+    "duration": 0.16,
+    "peak": 0.03567945554131072,
+    "group": "luck-effects",
+    "notes": [
+      125,
+      95
+    ],
+    "level": 0.065,
+    "type": "sine",
+    "priority": 0
+  },
+  {
+    "name": "glitchOpen",
+    "file": "glitchOpen.wav",
+    "duration": 0.385,
+    "peak": 0.0375379320752597,
+    "group": "luck-effects",
+    "notes": [
+      130,
+      260,
+      520,
+      1040
+    ],
+    "level": 0.065,
+    "type": "triangle",
+    "priority": 2
+  },
+  {
+    "name": "glitchJump",
+    "file": "glitchJump.wav",
+    "duration": 0.18,
+    "peak": 0.019146908113226935,
+    "group": "luck-effects",
+    "notes": [
+      310,
+      465
+    ],
+    "level": 0.035,
+    "type": "sine",
+    "priority": 0
+  },
+  {
+    "name": "kick",
+    "file": "kick.wav",
+    "duration": 0.18,
+    "peak": 0.07576478613699038,
+    "group": "luck-effects",
+    "notes": [
+      82,
+      130
+    ],
+    "level": 0.16,
+    "type": "triangle",
+    "priority": 2
+  }
+]
