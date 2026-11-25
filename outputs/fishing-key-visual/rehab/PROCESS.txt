@@ -1,0 +1,15 @@
+Source: ../sap-fishing-kv-v17.png (preserved)
+Tool: https://github.com/BlairKaiser/ai-image-rehab.git
+Commit: c573c4e684205b1068282af193673d5ea730828a
+Mode: deripple.py --painted --diff (soft shading, no neural redraw or upscaling)
+Command from workspace root:
+tools/ai-image-rehab/.venv/Scripts/python.exe tools/ai-image-rehab/app/deripple.py outputs/fishing-key-visual/rehab outputs/fishing-key-visual/sap-fishing-kv-v17.png --painted --diff
+Dependencies: Python 3.12.16, numpy 2.5.5, scipy 1.18.1, Pillow 13.0.0
+Changed >2 brightness levels: 27.9%; largest change: 30.
+ripple_check before -> after:
+grain 0.39 -> 0.19
+blotches near lines 1.18 -> 0.70
+blotches far 0.34 -> 0.26
+median echo 0.5 -> 0.0
+worst-tenth echo 12.5 -> 15.0 (not every metric improves)
+Output visually inspected; original dimensions/composition retained.
